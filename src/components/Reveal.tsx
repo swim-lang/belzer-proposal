@@ -1,4 +1,4 @@
-import { useEffect, useRef, type ReactNode } from 'react'
+import { useEffect, useRef, type ReactNode, type JSX } from 'react'
 
 export function Reveal({ children, className, as: Tag = 'div' }: { children: ReactNode; className?: string; as?: keyof JSX.IntrinsicElements }) {
   const ref = useRef<HTMLElement | null>(null)
