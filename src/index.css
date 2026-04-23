@@ -79,6 +79,18 @@ span.display {
   transform: translateY(0);
 }
 
+/* ——— Dashboard preview — soft pulsing dots ——— */
+
+@keyframes dashPulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.35; }
+}
+.dash-pulse { animation: dashPulse 2.4s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .dash-pulse { animation: none; opacity: 1; }
+}
+
 /* ——— Approve takeover screen ——— */
 
 .approve-screen {

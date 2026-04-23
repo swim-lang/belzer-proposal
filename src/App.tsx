@@ -3,6 +3,7 @@ import { Nav } from './components/Nav'
 import { Hero } from './components/Hero'
 import { WhatWeHeard } from './components/WhatWeHeard'
 import { PointOfView } from './components/PointOfView'
+import { DashboardPreview } from './components/DashboardPreview'
 import { PhaseOne } from './components/PhaseOne'
 import { Features } from './components/Features'
 import { Scope } from './components/Scope'
@@ -23,6 +24,7 @@ export default function App() {
       <Hero />
       <WhatWeHeard />
       <PointOfView />
+      <DashboardPreview />
       <PhaseOne />
       <Features />
       <Scope />
