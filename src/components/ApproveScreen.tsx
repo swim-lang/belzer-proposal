@@ -14,7 +14,7 @@ const nextSteps = [
   {
     label: 'Step 03',
     title: 'Sprint begins',
-    body: 'Once the session is scheduled, the design sprint runs 2 weeks, ending in a clear first-build recommendation and quote.',
+    body: 'Two focused weeks. You leave with high-fidelity designs, a clickable prototype, and a development-ready handoff — ready to build the moment you are.',
   },
 ]
 

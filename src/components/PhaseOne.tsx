@@ -24,10 +24,10 @@ export function PhaseOne() {
         </Reveal>
         <Reveal className="flex flex-col gap-5 flex-1 max-w-[480px] pt-2">
           <p className="text-[16px] leading-[26px] text-ink-2">
-            Before building the full system, we recommend starting with a focused design sprint.
+            Two focused weeks to turn the idea into a real product — designed, prototyped, and ready to build.
           </p>
           <p className="text-[16px] leading-[26px] text-ink-2">
-            The goal is to turn the idea into something visible, testable, and easier to quote. This gives everyone a clearer picture of what the tool could be, how it might work, what screens are needed, what features matter first, and what technical requirements will shape the build.
+            You leave the sprint with high-fidelity interface designs, a clickable prototype you can test with the team, and a development-ready handoff the first engineer can start building from on day one. Not a thought exercise — a product in motion.
           </p>
         </Reveal>
       </div>

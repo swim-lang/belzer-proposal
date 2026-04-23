@@ -18,22 +18,22 @@ export const stages = [
 ]
 
 export const sprintSteps = [
-  { num: '01', name: 'Listen', desc: 'Product strategy session with Aaron, Britt, and key stakeholders.' },
-  { num: '02', name: 'Map', desc: 'Priority use-cases, feature hierarchy, user flow.' },
-  { num: '03', name: 'Design', desc: 'Low-to-mid fidelity wireframes and interface direction.' },
-  { num: '04', name: 'Estimate', desc: 'Technical considerations and development estimate for the first build.' },
-  { num: '05', name: 'Build', desc: 'First sprint recommendation, scoped and ready to quote.' },
+  { num: '01', name: 'Listen', desc: 'Strategy + discovery session with Aaron, Britt, and the team.' },
+  { num: '02', name: 'Map', desc: 'Priority use-cases, feature architecture, end-to-end user flow.' },
+  { num: '03', name: 'Design', desc: 'High-fidelity interface designs and a clickable prototype.' },
+  { num: '04', name: 'Estimate', desc: 'Development-ready handoff, technical plan, and build quote.' },
+  { num: '05', name: 'Build', desc: 'First sprint scoped and ready to begin — on your approval.' },
 ]
 
 export const deliverables = [
-  'Product strategy session',
+  'Strategy + discovery session',
   'Priority use-case mapping',
-  'Feature hierarchy',
-  'User flow',
-  'Low-to-mid fidelity wireframes',
-  'Interface direction',
-  'First sprint recommendation',
-  'Dev estimate for build',
+  'Feature architecture',
+  'End-to-end user flow',
+  'High-fidelity interface designs',
+  'Clickable, testable prototype',
+  'Interface system + visual direction',
+  'Development-ready handoff + build estimate',
 ]
 
 export const features = [

@@ -19,10 +19,10 @@ export function NextStep() {
           </h2>
           <div className="flex flex-col gap-5 flex-1 max-w-[420px] pb-3">
             <p className="text-[16px] leading-[26px] text-ink-2">
-              We recommend beginning with Product Strategy + Interface Design.
+              Begin with the Product Strategy + Interface Design sprint — two weeks, one flat fee, a real product on the other side.
             </p>
             <p className="text-[16px] leading-[26px] text-ink-2">
-              This will allow us to define the first meaningful version of the tool, align with Aaron, Britt, and the team, and create a clear development path before anyone commits to a larger build.
+              You leave with high-fidelity designs, a working prototype, and a development-ready handoff. Aaron, Britt, and the team stay aligned throughout, and nobody commits to the larger build until the shape of the tool is clear and agreed on.
             </p>
           </div>
         </div>
