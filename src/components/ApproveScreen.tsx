@@ -141,7 +141,7 @@ export function ApproveScreen() {
                 Back to proposal
               </button>
               <a
-                href="mailto:hello@anchovies.co?subject=Belzer%20Law%20—%20Design%20Sprint"
+                href="mailto:alexis@anchovies.agency?subject=Belzer%20Law%20%E2%80%94%20Design%20Sprint%20Approved"
                 className="px-5 py-3 rounded-full text-[13px] font-medium text-paper transition-colors"
                 style={{ backgroundColor: 'var(--color-mac)' }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac-hover)')}

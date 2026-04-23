@@ -53,7 +53,7 @@ export function NextStep() {
             <div className="flex flex-col gap-1.5">
               <span className="eyebrow text-ink-2">Investment</span>
               <span className="serif text-[28px] md:text-[36px] leading-[32px] md:leading-[38px] tracking-[-0.018em]">
-                $5.5K
+                $6.5K
               </span>
             </div>
             <div className="flex flex-col gap-1.5">

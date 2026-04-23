@@ -12,7 +12,7 @@ export function PhaseOne() {
         </div>
         <div className="flex flex-col gap-1.5 items-end text-right">
           <span className="eyebrow text-ink-2">Est. 2 weeks</span>
-          <span className="eyebrow text-ink-2">$5,500</span>
+          <span className="eyebrow text-ink-2">$6,500</span>
         </div>
       </div>
 
@@ -94,7 +94,7 @@ export function PhaseOne() {
           <div className="flex flex-col gap-2.5">
             <span className="eyebrow text-ink-2">Estimated investment</span>
             <span className="display text-ink text-[44px] leading-[44px] md:text-[56px] md:leading-[56px] tracking-[-0.018em]">
-              $5.5K
+              $6.5K
             </span>
           </div>
           <div className="w-full h-px bg-[var(--color-rule)]" />
