@@ -59,7 +59,7 @@ export function NextStep() {
             <div className="flex flex-col gap-1.5">
               <span className="eyebrow text-ink-2">Timeline</span>
               <span className="serif text-[28px] md:text-[36px] leading-[32px] md:leading-[38px] tracking-[-0.018em]">
-                2–3 weeks
+                2 weeks
               </span>
             </div>
           </div>

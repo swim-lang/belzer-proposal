@@ -11,7 +11,7 @@ export function PhaseOne() {
           <span className="eyebrow">Product strategy + interface design</span>
         </div>
         <div className="flex flex-col gap-1.5 items-end text-right">
-          <span className="eyebrow text-ink-2">Est. 2–3 weeks</span>
+          <span className="eyebrow text-ink-2">Est. 2 weeks</span>
           <span className="eyebrow text-ink-2">$5,500</span>
         </div>
       </div>
@@ -101,7 +101,7 @@ export function PhaseOne() {
           <div className="flex flex-col gap-2.5">
             <span className="eyebrow text-ink-2">Timeline</span>
             <span className="serif text-[26px] leading-[30px] md:text-[32px] md:leading-[36px] tracking-[-0.015em] text-ink">
-              ~2 to 3 weeks from kickoff.
+              ~2 weeks from kickoff.
             </span>
             <span className="text-[13px] leading-[20px] text-ink-2">
               Depending on feedback and meeting availability.
