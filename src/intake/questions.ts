@@ -467,19 +467,6 @@ export const questions: Question[] = [
 
   // ——— 8. Security + permissions ———
   {
-    id: 'q26',
-    type: 'single',
-    section: S.security,
-    title: 'What level of sensitivity should we assume for the first sprint?',
-    options: [
-      'Low — mostly internal process content',
-      'Medium — some case-related content',
-      'High — active client matters',
-      'Very high — privileged or highly confidential materials',
-      'Not sure yet',
-    ],
-  },
-  {
     id: 'q27',
     type: 'single',
     section: S.security,
