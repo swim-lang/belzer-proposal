@@ -133,7 +133,10 @@ export function renderEmail(input: ReportInput): { subject: string; html: string
   const PAPER = '#F6F5F1'
   const RULE = '#1F1912'
   const MAC = '#1E3FE5'
-  const SERIF = '"Newsreader", "Source Serif Pro", Georgia, serif'
+  // Font stack matches the live proposal and intake form.
+  // Most email clients don't honor custom webfonts, so the stack falls back
+  // through Newsreader (Google Font, sometimes loaded) to Georgia (universal).
+  const SERIF = '"ABC Gaisyr", "Newsreader", "Source Serif Pro", Georgia, serif'
   const SANS = '"Helvetica Neue", Helvetica, Arial, sans-serif'
 
   const headerLeft = forAgency
