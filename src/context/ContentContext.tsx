@@ -66,9 +66,16 @@ function getPinFromURL(): string | null {
 export function ContentProvider({
   children,
   editable = false,
+  syncRemote = false,
 }: {
   children: ReactNode
   editable?: boolean
+  /**
+   * When true (and editable is false), fetch the shared draft from /api/draft on
+   * mount and merge it over defaultContent. Used by public surfaces like /intake
+   * so that admin renames/copy edits propagate without a redeploy.
+   */
+  syncRemote?: boolean
 }) {
   const [content, setContentState] = useState<Content>(() =>
     editable ? loadFromStorage() ?? defaultContent : defaultContent
@@ -77,6 +84,28 @@ export function ContentProvider({
   const pin = getPinFromURL()
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const isInitialLoad = useRef(true)
+
+  // Read-only remote sync for public surfaces like /intake
+  useEffect(() => {
+    if (editable || !syncRemote) return
+    let cancelled = false
+    ;(async () => {
+      try {
+        const res = await fetch(API_DRAFT, { cache: 'no-store' })
+        if (!res.ok) return
+        const data = (await res.json()) as { draft: Partial<Content> | null; configured: boolean }
+        if (cancelled) return
+        if (data.configured && data.draft) {
+          setContentState(deepMerge(defaultContent, data.draft))
+        }
+      } catch {
+        /* noop — stick with defaults */
+      }
+    })()
+    return () => {
+      cancelled = true
+    }
+  }, [editable, syncRemote])
 
   // Pull the remote draft on mount (editable providers only)
   useEffect(() => {

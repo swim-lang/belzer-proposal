@@ -14,7 +14,7 @@ export default function App() {
 
   if (isIntake) {
     return (
-      <ContentProvider>
+      <ContentProvider syncRemote>
         <Intake />
       </ContentProvider>
     )

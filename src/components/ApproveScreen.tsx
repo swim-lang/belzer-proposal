@@ -108,13 +108,13 @@ export function ApproveScreen() {
                 {approveScreen.ctaBack}
               </button>
               <a
-                href={approveScreen.mailTo}
+                href={approveScreen.intakeHref}
                 className="px-5 py-3 rounded-full text-[13px] font-medium text-paper transition-colors"
                 style={{ backgroundColor: 'var(--color-mac)' }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac-hover)')}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac)')}
               >
-                {approveScreen.ctaReach}
+                {approveScreen.ctaIntake}
               </a>
             </div>
           </div>

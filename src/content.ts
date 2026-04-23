@@ -311,13 +311,13 @@ export const approveScreen = {
   steps: [
     {
       label: 'Step 01',
-      title: 'Kickoff scheduling',
-      body: `We’ll reach out within the day to schedule the strategy session with ${client.teamPhrase}.`,
+      title: 'Take the intake',
+      body: 'A short, focused questionnaire — 8 to 10 minutes — so we understand exactly where the first sprint should live and what matters most.',
     },
     {
       label: 'Step 02',
-      title: 'A short intake',
-      body: 'We’ll send a brief intake document covering priority use-cases, documents to focus on, and any access questions we should map early.',
+      title: 'Kickoff scheduled',
+      body: `We’ll read your answers, pull relevant threads from the proposal, and come back with a proposed time for the strategy session with ${client.teamPhrase}.`,
     },
     {
       label: 'Step 03',
@@ -328,8 +328,8 @@ export const approveScreen = {
   preparedForLabel: 'Prepared for',
   preparedForValue: `${client.name} · ${client.location}`,
   ctaBack: 'Back to proposal',
-  ctaReach: 'Reach the team →',
-  mailTo: `mailto:${agency.email}?subject=${encodeURIComponent(client.name)}%20%E2%80%94%20${encodeURIComponent(agency.mailSubject)}`,
+  ctaIntake: 'Start intake →',
+  intakeHref: '/intake',
 }
 
 // ——— STRUCTURED LISTS (the "facts" of the proposal) ———
