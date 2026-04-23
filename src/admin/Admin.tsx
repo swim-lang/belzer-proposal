@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { ContentProvider, useContentControl } from '../context/ContentContext'
 import { Proposal } from '../Proposal'
 import { Section, TextField, ArrayField, ObjectArrayField } from './fields'
+import { SubmissionsPanel } from './Submissions'
 
 const DEFAULT_PIN = '1234' // Simple gate — change before sharing the URL
 
@@ -155,6 +156,11 @@ function Toolbar() {
   )
 }
 
+function AdminSubmissionsGate() {
+  const { pin } = useContentControl()
+  return <SubmissionsPanel pin={pin} />
+}
+
 function RenameClientButton() {
   const { content, renameAcrossContent, updateField } = useContentControl()
   const onClick = () => {
@@ -220,6 +226,10 @@ function RenameClientButton() {
 function Forms() {
   return (
     <div className="flex flex-col px-5 pb-16">
+      <Section title="Intake submissions" defaultOpen>
+        <AdminSubmissionsGate />
+      </Section>
+
       <Section title="Client" defaultOpen>
         <RenameClientButton />
         <TextField path="client.name" label="Name" />
