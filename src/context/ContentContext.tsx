@@ -1,15 +1,28 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
+import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from 'react'
 import { defaultContent, type Content } from '../content'
 
 const STORAGE_KEY = 'anchovies-admin-content-v1'
+const API_DRAFT = '/api/draft'
+
+export type SyncStatus =
+  | { kind: 'idle' }
+  | { kind: 'loading' }
+  | { kind: 'ready'; updatedAt: string | null; remote: boolean }
+  | { kind: 'saving' }
+  | { kind: 'saved'; updatedAt: string }
+  | { kind: 'offline' }
+  | { kind: 'error'; message: string }
 
 type ContentControl = {
   content: Content
   setContent: (c: Content) => void
   updateField: (path: string, value: unknown) => void
-  reset: () => void
+  reset: () => Promise<void>
   exportJSON: () => string
   renameAcrossContent: (replacements: { from: string; to: string }[]) => number
+  syncStatus: SyncStatus
+  pullLatest: () => Promise<void>
+  pin: string | null
 }
 
 const ContentContext = createContext<ContentControl | null>(null)
@@ -33,15 +46,21 @@ function deepMerge<T extends Record<string, unknown>>(base: T, override: Partial
   return out as T
 }
 
-function loadFromStorage(): Content {
+function loadFromStorage(): Content | null {
   try {
     const raw = typeof window !== 'undefined' ? window.localStorage.getItem(STORAGE_KEY) : null
-    if (!raw) return defaultContent
+    if (!raw) return null
     const parsed = JSON.parse(raw) as Partial<Content>
     return deepMerge(defaultContent, parsed)
   } catch {
-    return defaultContent
+    return null
   }
+}
+
+function getPinFromURL(): string | null {
+  if (typeof window === 'undefined') return null
+  const p = new URLSearchParams(window.location.search).get('pin')
+  return p || null
 }
 
 export function ContentProvider({
@@ -52,9 +71,56 @@ export function ContentProvider({
   editable?: boolean
 }) {
   const [content, setContentState] = useState<Content>(() =>
-    editable ? loadFromStorage() : defaultContent
+    editable ? loadFromStorage() ?? defaultContent : defaultContent
   )
+  const [syncStatus, setSyncStatus] = useState<SyncStatus>({ kind: editable ? 'loading' : 'idle' })
+  const pin = getPinFromURL()
+  const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const isInitialLoad = useRef(true)
 
+  // Pull the remote draft on mount (editable providers only)
+  useEffect(() => {
+    if (!editable) return
+    let cancelled = false
+    ;(async () => {
+      setSyncStatus({ kind: 'loading' })
+      try {
+        const res = await fetch(API_DRAFT, { cache: 'no-store' })
+        if (!res.ok) {
+          if (cancelled) return
+          setSyncStatus({ kind: 'offline' })
+          return
+        }
+        const data = (await res.json()) as {
+          draft: Partial<Content> | null
+          updatedAt: string | null
+          configured: boolean
+        }
+        if (cancelled) return
+        if (!data.configured) {
+          setSyncStatus({ kind: 'offline' })
+          return
+        }
+        if (data.draft) {
+          setContentState(deepMerge(defaultContent, data.draft))
+        }
+        setSyncStatus({ kind: 'ready', updatedAt: data.updatedAt, remote: true })
+      } catch {
+        if (cancelled) return
+        setSyncStatus({ kind: 'offline' })
+      } finally {
+        // Allow subsequent edits to trigger saves
+        setTimeout(() => {
+          isInitialLoad.current = false
+        }, 100)
+      }
+    })()
+    return () => {
+      cancelled = true
+    }
+  }, [editable])
+
+  // Persist locally + push remotely on change
   useEffect(() => {
     if (!editable) return
     try {
@@ -62,7 +128,45 @@ export function ContentProvider({
     } catch {
       /* noop */
     }
-  }, [content, editable])
+    if (isInitialLoad.current) return
+
+    if (saveTimer.current) clearTimeout(saveTimer.current)
+    saveTimer.current = setTimeout(async () => {
+      if (!pin) {
+        setSyncStatus((s) => (s.kind === 'offline' ? s : { kind: 'error', message: 'Missing ?pin in URL — remote save disabled.' }))
+        return
+      }
+      setSyncStatus({ kind: 'saving' })
+      try {
+        const res = await fetch(API_DRAFT, {
+          method: 'PUT',
+          headers: { 'content-type': 'application/json', 'x-admin-pin': pin },
+          body: JSON.stringify(content),
+        })
+        if (res.status === 401) {
+          setSyncStatus({ kind: 'error', message: 'PIN rejected by server' })
+          return
+        }
+        if (res.status === 503) {
+          setSyncStatus({ kind: 'offline' })
+          return
+        }
+        if (!res.ok) {
+          const text = await res.text().catch(() => '')
+          setSyncStatus({ kind: 'error', message: text || `HTTP ${res.status}` })
+          return
+        }
+        const data = (await res.json()) as { ok: boolean; updatedAt: string }
+        setSyncStatus({ kind: 'saved', updatedAt: data.updatedAt })
+      } catch (err) {
+        setSyncStatus({ kind: 'error', message: String(err) })
+      }
+    }, 650)
+
+    return () => {
+      if (saveTimer.current) clearTimeout(saveTimer.current)
+    }
+  }, [content, editable, pin])
 
   const updateField = (path: string, value: unknown) => {
     setContentState((prev) => {
@@ -79,22 +183,51 @@ export function ContentProvider({
     })
   }
 
-  const reset = () => {
+  const reset = async () => {
     try {
       window.localStorage.removeItem(STORAGE_KEY)
     } catch {
       /* noop */
     }
     setContentState(defaultContent)
+    if (editable && pin) {
+      try {
+        await fetch(API_DRAFT, { method: 'DELETE', headers: { 'x-admin-pin': pin } })
+      } catch {
+        /* noop */
+      }
+    }
+    setSyncStatus({ kind: 'ready', updatedAt: null, remote: true })
+  }
+
+  const pullLatest = async () => {
+    setSyncStatus({ kind: 'loading' })
+    try {
+      const res = await fetch(API_DRAFT, { cache: 'no-store' })
+      if (!res.ok) {
+        setSyncStatus({ kind: 'offline' })
+        return
+      }
+      const data = (await res.json()) as { draft: Partial<Content> | null; updatedAt: string | null; configured: boolean }
+      if (!data.configured) {
+        setSyncStatus({ kind: 'offline' })
+        return
+      }
+      if (data.draft) {
+        setContentState(deepMerge(defaultContent, data.draft))
+      } else {
+        setContentState(defaultContent)
+      }
+      setSyncStatus({ kind: 'ready', updatedAt: data.updatedAt, remote: true })
+    } catch {
+      setSyncStatus({ kind: 'offline' })
+    }
   }
 
   const exportJSON = () => JSON.stringify(content, null, 2)
 
   const setContent = (c: Content) => setContentState(c)
 
-  // Walks the content tree, replacing string occurrences.
-  // Pairs are applied in order, so pass the longest `from` values first
-  // (e.g. "Belzer Law" before "Belzer") to avoid clobbering partial matches.
   const renameAcrossContent = (replacements: { from: string; to: string }[]): number => {
     let count = 0
     const applyToString = (s: string): string => {
@@ -102,7 +235,7 @@ export function ContentProvider({
       for (const { from, to } of replacements) {
         if (!from || from === to) continue
         if (out.includes(from)) {
-          count += (out.split(from).length - 1)
+          count += out.split(from).length - 1
           out = out.split(from).join(to)
         }
       }
@@ -124,7 +257,17 @@ export function ContentProvider({
 
   return (
     <ContentContext.Provider
-      value={{ content, setContent, updateField, reset, exportJSON, renameAcrossContent }}
+      value={{
+        content,
+        setContent,
+        updateField,
+        reset,
+        exportJSON,
+        renameAcrossContent,
+        syncStatus,
+        pullLatest,
+        pin,
+      }}
     >
       {children}
     </ContentContext.Provider>

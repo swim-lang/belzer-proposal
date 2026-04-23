@@ -28,6 +28,68 @@ function Gate({ children }: { children: React.ReactNode }) {
   return <>{children}</>
 }
 
+function SyncBadge() {
+  const { syncStatus, pullLatest } = useContentControl()
+  let tone: string
+  let dot: string
+  let label: string
+  let hint: string | null = null
+  switch (syncStatus.kind) {
+    case 'loading':
+      tone = 'text-ink-2'
+      dot = '#4A4A4A'
+      label = 'Connecting…'
+      break
+    case 'ready':
+      tone = 'text-ink-2'
+      dot = '#1E3FE5'
+      label = syncStatus.remote ? 'Shared · Synced' : 'Local only'
+      hint = syncStatus.updatedAt ? `Updated ${new Date(syncStatus.updatedAt).toLocaleString()}` : null
+      break
+    case 'saving':
+      tone = 'text-ink-2'
+      dot = '#1E3FE5'
+      label = 'Saving…'
+      break
+    case 'saved':
+      tone = 'text-ink'
+      dot = '#1E3FE5'
+      label = 'Saved'
+      hint = `Updated ${new Date(syncStatus.updatedAt).toLocaleTimeString()}`
+      break
+    case 'offline':
+      tone = 'text-ink-2'
+      dot = '#4A4A4A'
+      label = 'Offline · Local only'
+      hint = 'Shared store not configured'
+      break
+    case 'error':
+      tone = 'text-ink'
+      dot = '#b94a48'
+      label = 'Error'
+      hint = syncStatus.message
+      break
+    default:
+      tone = 'text-ink-2'
+      dot = '#4A4A4A'
+      label = ''
+  }
+  return (
+    <div className="flex items-center gap-2" title={hint ?? undefined}>
+      <span className="block w-1.5 h-1.5 rounded-full" style={{ backgroundColor: dot }} />
+      <span className={`text-[11px] ${tone}`}>{label}</span>
+      <button
+        type="button"
+        onClick={pullLatest}
+        className="text-[10px] text-ink-2 hover:text-ink transition-colors"
+        title="Pull latest draft from server"
+      >
+        ↻
+      </button>
+    </div>
+  )
+}
+
 function Toolbar() {
   const { exportJSON, reset, content } = useContentControl()
   const [copied, setCopied] = useState(false)
@@ -53,39 +115,42 @@ function Toolbar() {
   }
 
   return (
-    <div className="flex items-center justify-between gap-3 px-5 py-4 border-b border-[var(--color-rule)]/20 bg-paper sticky top-0 z-10">
-      <div className="flex flex-col gap-0.5">
-        <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2">Anchovies · Admin</span>
-        <span className="text-[13px]">
-          Editing <span className="font-medium">{content.client.name}</span>
-        </span>
+    <div className="flex flex-col gap-2 px-5 py-4 border-b border-[var(--color-rule)]/20 bg-paper sticky top-0 z-10">
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex flex-col gap-0.5">
+          <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2">Anchovies · Admin</span>
+          <span className="text-[13px]">
+            Editing <span className="font-medium">{content.client.name}</span>
+          </span>
+        </div>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={copy}
+            className="px-3 py-1.5 border border-[var(--color-rule)]/30 hover:border-ink rounded-full text-[11px] text-ink-2 hover:text-ink transition-colors"
+          >
+            {copied ? 'Copied' : 'Copy JSON'}
+          </button>
+          <button
+            type="button"
+            onClick={download}
+            className="px-3 py-1.5 rounded-full text-[11px] text-paper transition-colors"
+            style={{ backgroundColor: 'var(--color-mac)' }}
+          >
+            Download JSON
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              if (confirm('Reset all edits and reload defaults? This clears shared and local drafts.')) reset()
+            }}
+            className="px-3 py-1.5 text-[11px] text-ink-2 hover:text-ink transition-colors"
+          >
+            Reset
+          </button>
+        </div>
       </div>
-      <div className="flex items-center gap-2">
-        <button
-          type="button"
-          onClick={copy}
-          className="px-3 py-1.5 border border-[var(--color-rule)]/30 hover:border-ink rounded-full text-[11px] text-ink-2 hover:text-ink transition-colors"
-        >
-          {copied ? 'Copied' : 'Copy JSON'}
-        </button>
-        <button
-          type="button"
-          onClick={download}
-          className="px-3 py-1.5 rounded-full text-[11px] text-paper transition-colors"
-          style={{ backgroundColor: 'var(--color-mac)' }}
-        >
-          Download JSON
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            if (confirm('Reset all edits and reload defaults?')) reset()
-          }}
-          className="px-3 py-1.5 text-[11px] text-ink-2 hover:text-ink transition-colors"
-        >
-          Reset
-        </button>
-      </div>
+      <SyncBadge />
     </div>
   )
 }
