@@ -8,7 +8,7 @@ export function Hero() {
       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 pb-16 lg:pb-24">
         <Reveal className="flex flex-col gap-1.5">
           <span className="eyebrow text-ink-2">§ 01 — Proposal</span>
-          <span className="eyebrow">A custom legal intelligence layer</span>
+          <span className="eyebrow">A custom-built legal intelligence tool</span>
         </Reveal>
         <Reveal className="flex flex-col gap-1.5 md:items-end md:text-right">
           <span className="eyebrow text-ink-2">Belzer Law · Colorado</span>
@@ -18,16 +18,16 @@ export function Hero() {
 
       <Reveal>
         <h1 className="display text-ink text-[44px] leading-[44px] sm:text-[64px] sm:leading-[60px] md:text-[88px] md:leading-[80px] lg:text-[112px] lg:leading-[100px] xl:text-[128px] xl:leading-[108px] tracking-[-0.025em] max-w-[1100px] pb-12 lg:pb-16">
-          A custom legal<span className="hidden md:inline"><br /></span>
-          <span className="md:inline"> intelligence layer</span><span className="hidden md:inline"><br /></span>
-          <span className="md:inline"> for Belzer Law.</span>
+          A custom-built<span className="hidden md:inline"><br /></span>
+          <span className="md:inline"> legal intelligence</span><span className="hidden md:inline"><br /></span>
+          <span className="md:inline"> tool for Belzer Law.</span>
         </h1>
       </Reveal>
 
       <div className="border-t border-[var(--color-rule)] pt-12 flex flex-col lg:flex-row gap-10 lg:gap-20 pb-16">
         <Reveal className="flex-1 max-w-[640px]">
           <h2 className="serif text-ink text-[24px] leading-[32px] md:text-[30px] md:leading-[38px] lg:text-[36px] lg:leading-[44px] tracking-[-0.02em]">
-            Not another platform to work around. A focused tool designed around how your firm reviews, organizes, researches, communicates, and practices.
+            Most software asks firms to adapt to the platform. This does the opposite, creating a proprietary tool around your workflows, documents, standards, and the way your team practices.
           </h2>
         </Reveal>
         <Reveal className="flex flex-col gap-6 max-w-[420px] pt-2">
