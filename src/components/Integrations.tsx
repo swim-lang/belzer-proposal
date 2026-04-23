@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { integrationsSection } from '../content'
 import { Reveal } from './Reveal'
 
 type NodePos = {
@@ -42,15 +43,13 @@ export function Integrations() {
     <section className="border-b border-[var(--color-rule)] px-6 md:px-16 lg:px-[120px] py-20 lg:py-[120px]">
       <div className="flex flex-col lg:flex-row lg:items-end gap-12 lg:gap-20 pb-12 border-b border-[var(--color-rule)]">
         <Reveal className="flex flex-col gap-8 flex-[1.4]">
-          <span className="eyebrow text-ink-2">§ 11 — Future considerations</span>
+          <span className="eyebrow text-ink-2">{integrationsSection.eyebrow}</span>
           <h2 className="display text-ink text-[44px] leading-[44px] md:text-[60px] md:leading-[60px] lg:text-[80px] lg:leading-[76px] tracking-[-0.022em] max-w-[860px]">
-            Built to connect, but not all at once.
+            {integrationsSection.headline}
           </h2>
         </Reveal>
         <Reveal className="flex flex-col gap-5 flex-1 max-w-[460px]">
-          <p className="text-[16px] leading-[26px] text-ink-2">
-            Potential integrations or data sources could include a handful of known systems — the first step is not connecting everything, it is identifying which connection would create the most immediate value.
-          </p>
+          <p className="text-[16px] leading-[26px] text-ink-2">{integrationsSection.intro}</p>
         </Reveal>
       </div>
 
@@ -59,14 +58,10 @@ export function Integrations() {
           ref={mapRef}
           className={`map hidden md:block relative w-full mt-12 lg:mt-20 border border-[var(--color-rule)] bg-paper overflow-hidden h-[520px] md:h-[620px] lg:h-[680px] ${active ? 'is-active' : ''}`}
         >
-          <div className="absolute top-6 left-6 eyebrow text-ink-2">Fig. 04 — Modular system map</div>
-          <div className="absolute top-6 right-6 eyebrow text-ink-2 hidden md:block">Start with one connection</div>
+          <div className="absolute top-6 left-6 eyebrow text-ink-2">{integrationsSection.figLabelLeft}</div>
+          <div className="absolute top-6 right-6 eyebrow text-ink-2 hidden md:block">{integrationsSection.figLabelRight}</div>
 
-          <svg
-            viewBox="0 0 1200 680"
-            preserveAspectRatio="none"
-            className="absolute inset-0 w-full h-full pointer-events-none"
-          >
+          <svg viewBox="0 0 1200 680" preserveAspectRatio="none" className="absolute inset-0 w-full h-full pointer-events-none">
             <defs>
               <radialGradient id="pulseGrad" cx="50%" cy="50%" r="50%">
                 <stop offset="0%" stopColor="#0A0A0A" stopOpacity="0.08" />
@@ -102,13 +97,13 @@ export function Integrations() {
           </svg>
 
           <div className="map-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] md:w-[280px] h-[140px] md:h-[160px] bg-ink rounded-2xl p-5 md:p-6 flex flex-col justify-between z-10">
-            <span className="eyebrow text-paper/66">Custom tool</span>
+            <span className="eyebrow text-paper/66">{integrationsSection.centerLabel}</span>
             <div className="flex flex-col gap-1">
               <span className="serif text-[24px] md:text-[28px] leading-[28px] md:leading-[32px] tracking-[-0.014em] text-paper">
-                Belzer Law
+                {integrationsSection.centerName}
               </span>
               <span className="serif italic text-[14px] md:text-[18px] leading-[18px] md:leading-[22px] text-paper/66">
-                legal intelligence layer
+                {integrationsSection.centerTagline}
               </span>
             </div>
           </div>
@@ -129,28 +124,26 @@ export function Integrations() {
             </div>
           ))}
 
-          <div className="absolute bottom-6 left-6 text-[11px] text-ink-2">
-            * Where access and terms allow.
-          </div>
+          <div className="absolute bottom-6 left-6 text-[11px] text-ink-2">{integrationsSection.footnote}</div>
         </div>
       </Reveal>
 
       <Reveal className="md:hidden mt-10 border border-[var(--color-rule)] rounded-2xl overflow-hidden">
         <div className="flex items-center justify-between px-5 py-4 border-b border-[var(--color-rule)]">
-          <span className="eyebrow text-ink-2">Fig. 04 — Modular system map</span>
+          <span className="eyebrow text-ink-2">{integrationsSection.figLabelLeft}</span>
         </div>
         <div className="bg-ink text-paper p-6 flex flex-col gap-1.5">
-          <span className="eyebrow text-paper/66">Custom tool</span>
+          <span className="eyebrow text-paper/66">{integrationsSection.centerLabel}</span>
           <span className="serif text-[26px] leading-[30px] tracking-[-0.014em] text-paper">
-            Belzer Law
+            {integrationsSection.centerName}
           </span>
           <span className="serif italic text-[16px] leading-[20px] text-paper/66">
-            legal intelligence layer
+            {integrationsSection.centerTagline}
           </span>
         </div>
         <div className="flex items-center gap-3 px-5 py-3 border-b border-[var(--color-rule)] bg-paper">
           <span className="serif text-ink-2 text-[18px] leading-none">↓</span>
-          <span className="eyebrow text-ink-2">Possible connections</span>
+          <span className="eyebrow text-ink-2">{integrationsSection.mobilePossibleLabel}</span>
         </div>
         {nodes.map((n, i) => (
           <div
@@ -164,7 +157,7 @@ export function Integrations() {
           </div>
         ))}
         <div className="px-5 py-3 text-[11px] text-ink-2 bg-paper border-t border-[var(--color-rule)]">
-          * Where access and terms allow.
+          {integrationsSection.footnote}
         </div>
       </Reveal>
     </section>

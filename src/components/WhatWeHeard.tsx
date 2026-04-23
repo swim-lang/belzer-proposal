@@ -1,4 +1,4 @@
-import { needs } from '../content'
+import { needs, whatWeHeard } from '../content'
 import { Reveal } from './Reveal'
 
 export function WhatWeHeard() {
@@ -6,16 +6,12 @@ export function WhatWeHeard() {
     <section id="heard" className="border-b border-[var(--color-rule)] px-6 md:px-16 lg:px-[120px] py-20 lg:py-[120px]">
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
         <Reveal className="flex flex-col gap-8 lg:w-[520px] shrink-0">
-          <span className="eyebrow text-ink-2">§ 02 — What we heard</span>
+          <span className="eyebrow text-ink-2">{whatWeHeard.eyebrow}</span>
           <h2 className="display text-ink text-[44px] leading-[44px] md:text-[56px] md:leading-[56px] lg:text-[64px] lg:leading-[64px] tracking-[-0.022em] max-w-[500px]">
-            You are not looking for AI theater.
+            {whatWeHeard.headline}
           </h2>
-          <p className="text-[15px] leading-[24px] text-ink-2 max-w-[460px]">
-            You have already looked at tools that feel built for larger firms, broader use cases, or generic chatbot-style demos. The problem is not that AI is uninteresting. The problem is that most tools are not shaped closely enough around the way your firm actually works.
-          </p>
-          <p className="text-[15px] leading-[24px] text-ink max-w-[460px]">
-            From our conversation, the clearest needs were:
-          </p>
+          <p className="text-[15px] leading-[24px] text-ink-2 max-w-[460px]">{whatWeHeard.bodyParagraph}</p>
+          <p className="text-[15px] leading-[24px] text-ink max-w-[460px]">{whatWeHeard.needsIntro}</p>
         </Reveal>
         <Reveal className="flex-1 border-t border-[var(--color-rule)]">
           {needs.map((need, i) => (

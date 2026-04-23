@@ -1,3 +1,4 @@
+import { dashboardPreview } from '../content'
 import { Reveal } from './Reveal'
 import { DashboardMock } from './DashboardMock'
 
@@ -8,13 +9,11 @@ export function DashboardPreview() {
       className="border-b border-[var(--color-rule)] px-6 md:px-16 lg:px-[120px] py-20 lg:py-[120px] flex flex-col items-center gap-12"
     >
       <Reveal className="flex flex-col items-center gap-6 max-w-[640px] text-center">
-        <span className="eyebrow text-ink-2">§ 03b — Working example</span>
+        <span className="eyebrow text-ink-2">{dashboardPreview.eyebrow}</span>
         <h2 className="display text-ink text-[36px] leading-[38px] md:text-[48px] md:leading-[50px] lg:text-[56px] lg:leading-[58px] tracking-[-0.022em]">
-          A dashboard, roughly pictured.
+          {dashboardPreview.headline}
         </h2>
-        <p className="text-[15px] leading-[24px] text-ink-2 max-w-[520px]">
-          A rough look at how Belzer&apos;s documents, cases, and firm knowledge could come together in a single view.
-        </p>
+        <p className="text-[15px] leading-[24px] text-ink-2 max-w-[520px]">{dashboardPreview.subheadline}</p>
       </Reveal>
 
       <Reveal className="w-full flex justify-center">
@@ -40,15 +39,11 @@ export function DashboardPreview() {
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                 <path d="M7 11V7a5 5 0 0 1 10 0v4" />
               </svg>
-              <span className="text-[10.5px] text-ink-2">belzer.app / matters / holloway-v-metro</span>
+              <span className="text-[10.5px] text-ink-2">{dashboardPreview.urlBar}</span>
             </div>
-            <span className="eyebrow text-ink-2 text-[9px]">Preview</span>
+            <span className="eyebrow text-ink-2 text-[9px]">{dashboardPreview.chromeBadge}</span>
           </div>
-          {/* Browser viewport — fixed-height, crops the dashboard */}
-          <div
-            className="relative w-full overflow-hidden bg-paper"
-            style={{ height: 'clamp(360px, 58vw, 560px)' }}
-          >
+          <div className="relative w-full overflow-hidden bg-paper" style={{ height: 'clamp(360px, 58vw, 560px)' }}>
             <div className="absolute top-0 left-0 origin-top-left" style={{ width: 1440, height: 900 }}>
               <DashboardMock />
             </div>
@@ -57,10 +52,7 @@ export function DashboardPreview() {
       </Reveal>
 
       <Reveal>
-        <p className="text-[12px] leading-[18px] text-ink-2 text-center max-w-[560px]">
-          Illustrative only. The real interface would be tailored to Belzer Law&apos;s voice, workflows, and visual
-          direction — defined together during the design sprint.
-        </p>
+        <p className="text-[12px] leading-[18px] text-ink-2 text-center max-w-[560px]">{dashboardPreview.footnote}</p>
       </Reveal>
     </section>
   )

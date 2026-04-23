@@ -1,3 +1,5 @@
+import { client } from '../content'
+
 const matters = [
   { num: '2025-0341', type: 'Litigation', name: 'Holloway v. Metro Realty', status: 'Deposition prep · Discovery open', active: true, badge: null as string | null },
   { num: '2025-0312', type: 'Estate', name: 'Matter of Vance Estate', status: 'Awaiting probate court response', active: false, badge: null },
@@ -74,7 +76,7 @@ export function DashboardMock() {
       <div className="flex items-center justify-between px-6 py-3.5 border-b border-[var(--color-rule)] shrink-0">
         <div className="flex items-center gap-3.5">
           <span className="block w-2 h-2 rounded-full bg-ink" />
-          <span className="text-[13px] font-medium tracking-[-0.01em]">Belzer Law</span>
+          <span className="text-[13px] font-medium tracking-[-0.01em]">{client.name}</span>
           <span className="block w-px h-[11px] bg-[var(--color-rule)]/40" />
           <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2">Case Intelligence</span>
         </div>
@@ -149,7 +151,7 @@ export function DashboardMock() {
               {[
                 ['Client', 'Holloway Family Trust'],
                 ['Filed', 'March 12, 2026'],
-                ['Lead', 'Aaron Belzer'],
+                ['Lead', client.leadName],
               ].map(([label, value]) => (
                 <div key={label} className="flex flex-col gap-0.5">
                   <span className="text-[10px] tracking-[0.11em] uppercase text-ink-2">{label}</span>
@@ -273,7 +275,7 @@ export function DashboardMock() {
             <span className="text-[10px] tracking-[0.04em] text-ink-2">Updated 8 min ago</span>
           </div>
           <div className="px-6 pb-3.5">
-            <p className="serif italic text-[14px] leading-5 text-ink-2 m-0">Observations from your 247 documents, Metro&apos;s production, and prior Belzer matters.</p>
+            <p className="serif italic text-[14px] leading-5 text-ink-2 m-0">Observations from your 247 documents, Metro&apos;s production, and prior {client.shortName} matters.</p>
           </div>
           {insights.map((ins, i) => (
             <div
