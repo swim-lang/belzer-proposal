@@ -1,6 +1,7 @@
-import { footer } from '../content'
+import { useContent } from '../context/ContentContext'
 
 export function Footer() {
+  const { footer } = useContent()
   return (
     <footer className="bg-paper border-t border-[var(--color-rule)] flex flex-col md:flex-row md:items-center justify-between gap-6 px-6 md:px-16 lg:px-[120px] py-10 md:py-12">
       <div className="flex items-center gap-5">

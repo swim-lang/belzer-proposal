@@ -1,7 +1,8 @@
-import { advantage } from '../content'
+import { useContent } from '../context/ContentContext'
 import { Reveal } from './Reveal'
 
 export function Advantage() {
+  const { advantage } = useContent()
   return (
     <section className="border-b border-[var(--color-rule)] px-6 md:px-16 lg:px-[120px] py-24 lg:py-[160px]">
       <Reveal className="flex items-start justify-between pb-8 border-b border-[var(--color-rule)] gap-6">

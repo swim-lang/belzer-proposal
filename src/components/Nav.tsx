@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
-import { nav, navSections } from '../content'
+import { useContent } from '../context/ContentContext'
 
 export function Nav() {
+  const { nav, navSections } = useContent()
   const [active, setActive] = useState('overview')
 
   useEffect(() => {

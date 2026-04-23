@@ -1,4 +1,4 @@
-import { client } from '../content'
+import { useContent } from '../context/ContentContext'
 
 const matters = [
   { num: '2025-0341', type: 'Litigation', name: 'Holloway v. Metro Realty', status: 'Deposition prep · Discovery open', active: true, badge: null as string | null },
@@ -67,6 +67,7 @@ const insights: Insight[] = [
 ]
 
 export function DashboardMock() {
+  const { client } = useContent()
   return (
     <div
       className="font-sans text-ink bg-paper flex flex-col"

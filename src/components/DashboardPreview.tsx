@@ -1,8 +1,9 @@
-import { dashboardPreview } from '../content'
+import { useContent } from '../context/ContentContext'
 import { Reveal } from './Reveal'
 import { DashboardMock } from './DashboardMock'
 
 export function DashboardPreview() {
+  const { dashboardPreview } = useContent()
   return (
     <section
       id="preview"

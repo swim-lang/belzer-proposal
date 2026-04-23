@@ -1,7 +1,8 @@
-import { closing } from '../content'
+import { useContent } from '../context/ContentContext'
 import { Reveal } from './Reveal'
 
 export function Closing() {
+  const { closing } = useContent()
   return (
     <section className="bg-ink text-paper px-6 md:px-16 lg:px-[120px] py-24 lg:py-[160px]">
       <Reveal className="flex items-center justify-between pb-8 border-b border-white/20 gap-6">

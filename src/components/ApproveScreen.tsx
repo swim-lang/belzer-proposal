@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
-import { approveScreen } from '../content'
+import { useContent } from '../context/ContentContext'
 
 export function ApproveScreen() {
+  const { approveScreen } = useContent()
   const [open, setOpen] = useState(false)
 
   useEffect(() => {

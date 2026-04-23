@@ -486,3 +486,48 @@ export const nextSteps = [
   'Review the prototype direction',
   'Quote the first build sprint',
 ]
+
+// ——— BUNDLED DEFAULT ———
+// Single object that packages every exportable piece of content.
+// Used by ContentContext so the admin can edit everything reactively.
+export const defaultContent = {
+  client,
+  agency,
+  proposal,
+  pricing,
+  navSections,
+  nav,
+  hero,
+  whatWeHeard,
+  pointOfView,
+  dashboardPreview,
+  phaseOne,
+  featuresSection,
+  scope,
+  security,
+  advantage,
+  clientExperience,
+  phaseTwo,
+  integrationsSection,
+  ownership,
+  nextStepSection,
+  closing,
+  footer,
+  approveScreen,
+  needs,
+  stages,
+  sprintSteps,
+  deliverables,
+  features,
+  notFirst,
+  betterFirst,
+  securityConsiderations,
+  internalWorkflow,
+  clientFacing,
+  buildPaths,
+  integrations,
+  ownershipShape,
+  nextSteps,
+}
+
+export type Content = typeof defaultContent

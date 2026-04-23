@@ -1,7 +1,8 @@
-import { needs, whatWeHeard } from '../content'
+import { useContent } from '../context/ContentContext'
 import { Reveal } from './Reveal'
 
 export function WhatWeHeard() {
+  const { needs, whatWeHeard } = useContent()
   return (
     <section id="heard" className="border-b border-[var(--color-rule)] px-6 md:px-16 lg:px-[120px] py-20 lg:py-[120px]">
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">

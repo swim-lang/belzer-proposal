@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { integrationsSection } from '../content'
+import { useContent } from '../context/ContentContext'
 import { Reveal } from './Reveal'
 
 type NodePos = {
@@ -23,6 +23,7 @@ const nodes: NodePos[] = [
 ]
 
 export function Integrations() {
+  const { integrationsSection } = useContent()
   const mapRef = useRef<HTMLDivElement | null>(null)
   const [active, setActive] = useState(false)
 

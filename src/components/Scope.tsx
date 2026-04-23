@@ -1,7 +1,8 @@
-import { notFirst, betterFirst, scope } from '../content'
+import { useContent } from '../context/ContentContext'
 import { Reveal } from './Reveal'
 
 export function Scope() {
+  const { notFirst, betterFirst, scope } = useContent()
   return (
     <section className="border-b border-[var(--color-rule)] px-6 md:px-16 lg:px-[120px] py-20 lg:py-[120px]">
       <div className="flex flex-col lg:flex-row lg:items-start gap-12 lg:gap-20 pb-16 lg:pb-20 border-b border-[var(--color-rule)]">

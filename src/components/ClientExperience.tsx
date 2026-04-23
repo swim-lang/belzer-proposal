@@ -1,7 +1,8 @@
-import { internalWorkflow, clientFacing, clientExperience } from '../content'
+import { useContent } from '../context/ContentContext'
 import { Reveal } from './Reveal'
 
 export function ClientExperience() {
+  const { internalWorkflow, clientFacing, clientExperience } = useContent()
   return (
     <section className="border-b border-[var(--color-rule)] px-6 md:px-16 lg:px-[120px] py-20 lg:py-[120px]">
       <div className="flex flex-col lg:flex-row lg:items-end gap-12 lg:gap-20 pb-12 border-b border-[var(--color-rule)]">

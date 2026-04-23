@@ -1,8 +1,9 @@
-import { sprintSteps, deliverables, phaseOne } from '../content'
+import { useContent } from '../context/ContentContext'
 import { Reveal } from './Reveal'
 import { UnfoldGrid } from './UnfoldGrid'
 
 export function PhaseOne() {
+  const { sprintSteps, deliverables, phaseOne } = useContent()
   return (
     <section id="sprint" className="border-b border-[var(--color-rule)] px-6 md:px-16 lg:px-[120px] py-20 lg:py-[120px]">
       <div className="flex items-start justify-between pb-12 border-b border-[var(--color-rule)] gap-6">

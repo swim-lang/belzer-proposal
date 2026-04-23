@@ -1,7 +1,8 @@
-import { nextSteps, nextStepSection } from '../content'
+import { useContent } from '../context/ContentContext'
 import { Reveal } from './Reveal'
 
 export function NextStep() {
+  const { nextSteps, nextStepSection } = useContent()
   return (
     <section id="next" className="border-b border-[var(--color-rule)] px-6 md:px-16 lg:px-[120px] py-20 lg:py-[120px]">
       <Reveal className="flex items-start justify-between pb-8 border-b border-[var(--color-rule)] gap-6">

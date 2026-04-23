@@ -1,8 +1,9 @@
-import { hero, stages } from '../content'
+import { useContent } from '../context/ContentContext'
 import { Reveal } from './Reveal'
 import { UnfoldGrid } from './UnfoldGrid'
 
 export function Hero() {
+  const { hero, stages } = useContent()
   return (
     <section id="overview" className="border-b border-[var(--color-rule)] px-6 md:px-16 lg:px-[120px] pt-20 md:pt-28 lg:pt-[120px] pb-16 lg:pb-24">
       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 pb-16 lg:pb-24">

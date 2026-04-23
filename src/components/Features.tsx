@@ -1,7 +1,8 @@
-import { features, featuresSection } from '../content'
+import { useContent } from '../context/ContentContext'
 import { Reveal } from './Reveal'
 
 export function Features() {
+  const { features, featuresSection } = useContent()
   return (
     <section id="features" className="border-b border-[var(--color-rule)] px-6 md:px-16 lg:px-[120px] py-20 lg:py-[120px]">
       <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-12 lg:pb-16 border-b border-[var(--color-rule)]">
