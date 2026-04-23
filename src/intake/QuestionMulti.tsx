@@ -50,12 +50,13 @@ export function QuestionMulti({
   const selectedCount = answer.selected.length + (answer.other ? 1 : 0)
 
   return (
-    <div className="flex-1 flex flex-col lg:flex-row gap-10 lg:gap-16 px-6 md:px-12 lg:px-[120px] pt-12 lg:pt-16 pb-10 overflow-auto">
+    <div className="flex-1 flex flex-col px-6 md:px-12 lg:px-[120px] pt-10 lg:pt-14 pb-10 gap-8 lg:gap-10 overflow-auto">
+      <SectionEyebrow
+        section={q.section}
+        kindLabel={q.maxSelect ? `Pick up to ${q.maxSelect}` : 'Multi-select'}
+      />
+      <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
       <div className="lg:w-[420px] shrink-0 flex flex-col gap-5">
-        <SectionEyebrow
-          section={q.section}
-          kindLabel={q.maxSelect ? `Pick up to ${q.maxSelect}` : 'Multi-select'}
-        />
         <h1 className="serif text-[32px] leading-[38px] md:text-[40px] md:leading-[46px] lg:text-[44px] lg:leading-[50px] tracking-[-0.016em]">
           {q.title}
         </h1>
@@ -129,6 +130,7 @@ export function QuestionMulti({
             onChange={(v) => onAnswer({ ...answer, other: v || undefined })}
           />
         )}
+      </div>
       </div>
     </div>
   )

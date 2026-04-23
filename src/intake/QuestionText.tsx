@@ -14,9 +14,9 @@ export function QuestionText({
   const val = answer.value
   const max = q.maxLength ?? 2000
   return (
-    <div className="flex-1 flex flex-col px-6 md:px-12 lg:px-[120px] pt-12 lg:pt-16 pb-10 gap-8 max-w-[960px] overflow-auto">
+    <div className="flex-1 flex flex-col px-6 md:px-12 lg:px-[120px] pt-10 lg:pt-14 pb-10 gap-8 max-w-[960px] overflow-auto">
+      <SectionEyebrow section={q.section} kindLabel={q.optional ? 'Optional' : 'Short answer'} />
       <div className="flex flex-col gap-5">
-        <SectionEyebrow section={q.section} kindLabel={q.optional ? 'Optional' : 'Short answer'} />
         <h1 className="serif text-[36px] leading-[42px] md:text-[48px] md:leading-[54px] lg:text-[56px] lg:leading-[60px] tracking-[-0.02em]">
           {q.title}
         </h1>

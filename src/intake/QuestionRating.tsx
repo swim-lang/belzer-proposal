@@ -28,9 +28,10 @@ export function QuestionRating({
   const tiles = Array.from({ length: q.scale }, (_, i) => i + 1)
 
   return (
-    <div className="flex-1 flex flex-col items-center justify-center px-6 md:px-12 lg:px-[120px] gap-14 text-center">
+    <div className="flex-1 flex flex-col px-6 md:px-12 lg:px-[120px] pt-10 lg:pt-14 pb-10 gap-10 lg:gap-14">
+      <SectionEyebrow section={q.section} kindLabel={`1 – ${q.scale}`} />
+      <div className="flex-1 flex flex-col items-center justify-center gap-14 text-center">
       <div className="flex flex-col items-center gap-5 max-w-[820px]">
-        <SectionEyebrow section={q.section} kindLabel={`1 – ${q.scale}`} />
         <h1 className="serif text-[36px] leading-[42px] md:text-[48px] md:leading-[54px] lg:text-[56px] lg:leading-[60px] tracking-[-0.02em]">
           {q.title}
         </h1>
@@ -82,6 +83,7 @@ export function QuestionRating({
           <span className="block w-[260px] h-px bg-[var(--color-rule)]/20" />
           <span className="text-[11px] tracking-[0.08em] uppercase text-ink-2">{q.maxLabel}</span>
         </div>
+      </div>
       </div>
     </div>
   )

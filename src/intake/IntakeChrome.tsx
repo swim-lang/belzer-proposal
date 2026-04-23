@@ -97,14 +97,14 @@ export function KeyHint({ keys, label }: { keys: string[]; label: string }) {
 
 export function SectionEyebrow({ section, kindLabel }: { section: { num: number; title: string }; kindLabel: string }) {
   return (
-    <div className="flex items-center gap-2.5">
-      <span className="text-[11px] tracking-[0.12em] uppercase" style={{ color: 'var(--color-mac)' }}>
+    <div className="flex items-center gap-2.5 whitespace-nowrap overflow-hidden">
+      <span className="text-[11px] tracking-[0.12em] uppercase shrink-0" style={{ color: 'var(--color-mac)' }}>
         Section {section.num}
       </span>
-      <span className="block w-1 h-1 rounded-full bg-[var(--color-rule)]/30" />
-      <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2">{section.title}</span>
-      <span className="block w-1 h-1 rounded-full bg-[var(--color-rule)]/30" />
-      <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2">{kindLabel}</span>
+      <span className="block w-1 h-1 rounded-full bg-[var(--color-rule)]/30 shrink-0" />
+      <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2 truncate">{section.title}</span>
+      <span className="block w-1 h-1 rounded-full bg-[var(--color-rule)]/30 shrink-0" />
+      <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2 shrink-0">{kindLabel}</span>
     </div>
   )
 }
