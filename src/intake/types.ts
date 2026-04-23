@@ -28,5 +28,7 @@ export type Submission = {
   submittedAt: string
   durationSeconds: number
   userAgent?: string
+  contactName?: string
+  contactEmail?: string
   answers: Answers
 }

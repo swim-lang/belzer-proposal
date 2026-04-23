@@ -3,14 +3,14 @@ import { type ReactNode } from 'react'
 export function TopBar({ step, total, clientName }: { step: number; total: number; clientName: string }) {
   const pct = Math.min(100, Math.max(0, (step / total) * 100))
   return (
-    <div className="flex items-center justify-between px-6 md:px-8 py-4 border-b border-[var(--color-rule)]/15">
-      <div className="flex items-center gap-3.5">
+    <div className="flex items-center justify-between gap-3 px-4 md:px-8 py-4 border-b border-[var(--color-rule)]/15">
+      <div className="flex items-center gap-2.5 md:gap-3.5 shrink-0">
         <span className="block w-2 h-2 rounded-full bg-ink" />
         <span className="text-[13px] font-medium tracking-[-0.01em]">Anchovies</span>
-        <span className="block w-px h-[11px] bg-[var(--color-rule)]/30" />
-        <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2">{clientName} · Intake</span>
+        <span className="hidden sm:block w-px h-[11px] bg-[var(--color-rule)]/30" />
+        <span className="hidden sm:inline text-[11px] tracking-[0.12em] uppercase text-ink-2">{clientName} · Intake</span>
       </div>
-      <div className="flex items-center gap-4 flex-1 max-w-[420px] justify-end ml-4">
+      <div className="flex items-center gap-3 md:gap-4 flex-1 max-w-[420px] justify-end">
         <div className="relative flex-1 h-[3px] bg-[var(--color-rule)]/12 rounded-full overflow-hidden max-w-[320px]">
           <div
             className="absolute top-0 left-0 h-full transition-[width] duration-500 ease-out"

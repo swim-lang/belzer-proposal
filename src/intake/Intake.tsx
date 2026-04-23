@@ -5,6 +5,7 @@ import type { Answer, Answers, MultiAnswer, RatingAnswer, SingleAnswer, TextAnsw
 import { TopBar, BottomBar, KeyHint } from './IntakeChrome'
 import { IntakeIntro } from './IntakeIntro'
 import { IntakeComplete } from './IntakeComplete'
+import { IntakeContact, isValidEmail } from './IntakeContact'
 import { QuestionMulti } from './QuestionMulti'
 import { QuestionSingle } from './QuestionSingle'
 import { QuestionRating } from './QuestionRating'
@@ -18,7 +19,13 @@ type PersistState = {
   step: number
   startedAt: string
   answers: Answers
+  contactName?: string
+  contactEmail?: string
 }
+
+// Steps: 0 = intro, 1..TOTAL = questions, TOTAL+1 = contact, TOTAL+2 = complete
+const CONTACT_STEP = questions.length + 1
+const COMPLETE_STEP = questions.length + 2
 
 function defaultAnswer(qid: string): Answer {
   const q = questions.find((x) => x.id === qid)!
@@ -55,6 +62,8 @@ export function Intake() {
   const [submitting, setSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [resumed, setResumed] = useState(false)
+  const [contactName, setContactName] = useState('')
+  const [contactEmail, setContactEmail] = useState('')
 
   // Hydrate from localStorage on mount (so an accidental close doesn't lose progress)
   useEffect(() => {
@@ -68,6 +77,8 @@ export function Intake() {
         setResumed(true)
       }
       if (parsed.startedAt) setStartedAt(parsed.startedAt)
+      if (parsed.contactName) setContactName(parsed.contactName)
+      if (parsed.contactEmail) setContactEmail(parsed.contactEmail)
     } catch {
       /* noop */
     }
@@ -81,16 +92,16 @@ export function Intake() {
     return () => clearTimeout(t)
   }, [resumed])
 
-  // Persist on change — but not on the intro (0) or completion (TOTAL+1) screens
+  // Persist on change while active (skip intro + completion)
   useEffect(() => {
-    if (step === 0 || step > TOTAL) return
+    if (step === 0 || step >= COMPLETE_STEP) return
     try {
-      const data: PersistState = { step, startedAt, answers }
+      const data: PersistState = { step, startedAt, answers, contactName, contactEmail }
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
     } catch {
       /* noop */
     }
-  }, [step, startedAt, answers])
+  }, [step, startedAt, answers, contactName, contactEmail])
 
   const currentQ = step >= 1 && step <= TOTAL ? questions[step - 1] : null
   const currentAnswer = currentQ ? answers[currentQ.id] : null
@@ -114,9 +125,14 @@ export function Intake() {
   )
 
   const canAdvance = useMemo(() => {
+    if (step === 0) return true
+    if (step === CONTACT_STEP) {
+      return contactName.trim().length > 0 && isValidEmail(contactEmail)
+    }
+    if (step > TOTAL) return true
     if (!currentQ || !currentAnswer) return true
     return isAnswered(currentAnswer, currentQ.optional)
-  }, [currentQ, currentAnswer])
+  }, [currentQ, currentAnswer, step, contactName, contactEmail])
 
   const goNext = useCallback(() => {
     if (step === 0) {
@@ -129,7 +145,12 @@ export function Intake() {
       return
     }
     if (step === TOTAL) {
-      // Submit
+      // Move from last question to contact step
+      setStep(CONTACT_STEP)
+      return
+    }
+    if (step === CONTACT_STEP) {
+      // Submit on confirm
       void submit()
     }
   }, [step])
@@ -148,10 +169,13 @@ export function Intake() {
     const localId = `local-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`
     const payload = {
       client: client.name,
+      agencyEmail: agency.email,
       startedAt,
       submittedAt: finishedAt,
       durationSeconds: Math.max(0, Math.floor((Date.parse(finishedAt) - Date.parse(startedAt)) / 1000)),
       userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : undefined,
+      contactName: contactName.trim() || undefined,
+      contactEmail: contactEmail.trim() || undefined,
       answers,
     }
 
@@ -186,7 +210,7 @@ export function Intake() {
     }
 
     setCompletedAt(finishedAt)
-    setStep(TOTAL + 1)
+    setStep(COMPLETE_STEP)
     if (warning) setSubmitError(warning)
     try {
       window.localStorage.removeItem(STORAGE_KEY)
@@ -195,7 +219,7 @@ export function Intake() {
     }
     submittingRef.current = false
     setSubmitting(false)
-  }, [answers, startedAt, client.name])
+  }, [answers, startedAt, client.name, agency.email, contactName, contactEmail])
 
   // Keyboard shortcuts: Enter to continue, ⌘+Enter on text, Escape no-op
   useEffect(() => {
@@ -232,8 +256,48 @@ export function Intake() {
     )
   }
 
+  // Contact step
+  if (step === CONTACT_STEP) {
+    return (
+      <div className="min-h-screen bg-paper text-ink flex flex-col relative">
+        <TopBar step={TOTAL} total={TOTAL} clientName={client.name} />
+        {resumed && (
+          <div
+            className="fixed top-[62px] left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] shadow-sm border"
+            style={{
+              backgroundColor: 'rgba(30, 63, 229, 0.06)',
+              borderColor: 'rgba(30, 63, 229, 0.3)',
+              color: 'var(--color-mac)',
+            }}
+          >
+            <span className="block w-1.5 h-1.5 rounded-full" style={{ backgroundColor: 'var(--color-mac)' }} />
+            <span>Welcome back — picking up where you left off.</span>
+          </div>
+        )}
+        <IntakeContact
+          clientName={client.name}
+          name={contactName}
+          email={contactEmail}
+          onChangeName={setContactName}
+          onChangeEmail={setContactEmail}
+        />
+        <BottomBar
+          leftHint={<KeyHint keys={['Tab']} label="between fields" />}
+          onBack={() => setStep(TOTAL)}
+          onNext={goNext}
+          nextDisabled={!canAdvance || submitting}
+          nextLabel={submitting ? 'Sending…' : 'Submit intake'}
+          nextKeyHint="⌘ Enter"
+        />
+        {submitError && (
+          <div className="px-6 md:px-8 pb-4 text-[12px] text-[#b94a48]">{submitError}</div>
+        )}
+      </div>
+    )
+  }
+
   // Complete screen
-  if (step === TOTAL + 1) {
+  if (step === COMPLETE_STEP) {
     const duration = completedAt
       ? Math.max(0, Math.floor((Date.parse(completedAt) - Date.parse(startedAt)) / 1000))
       : 0
@@ -263,7 +327,7 @@ export function Intake() {
       <TopBar step={step} total={TOTAL} clientName={client.name} />
       {resumed && (
         <div
-          className="fixed top-[62px] left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] shadow-sm border"
+          className="fixed bottom-[72px] md:top-[62px] md:bottom-auto left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] shadow-sm border whitespace-nowrap"
           style={{
             backgroundColor: 'rgba(30, 63, 229, 0.06)',
             borderColor: 'rgba(30, 63, 229, 0.3)',
@@ -271,7 +335,8 @@ export function Intake() {
           }}
         >
           <span className="block w-1.5 h-1.5 rounded-full" style={{ backgroundColor: 'var(--color-mac)' }} />
-          <span>Welcome back — picking up where you left off.</span>
+          <span className="hidden sm:inline">Welcome back — picking up where you left off.</span>
+          <span className="sm:hidden">Resumed</span>
         </div>
       )}
       {currentQ.type === 'multi' && (
@@ -303,8 +368,8 @@ export function Intake() {
         onBack={step > 1 ? goBack : undefined}
         onNext={goNext}
         nextDisabled={!canAdvance || submitting}
-        nextLabel={step === TOTAL ? (submitting ? 'Submitting…' : 'Submit intake') : 'Continue'}
-        nextKeyHint={step === TOTAL ? '⌘ Enter' : 'Enter'}
+        nextLabel="Continue"
+        nextKeyHint="Enter"
         onSkip={currentQ.optional ? goNext : undefined}
         skipLabel={currentQ.optional ? 'Skip' : undefined}
       />

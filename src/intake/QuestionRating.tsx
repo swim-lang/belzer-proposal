@@ -38,8 +38,8 @@ export function QuestionRating({
         {q.subtitle && <p className="text-[15px] leading-[23px] text-ink-2 max-w-[560px]">{q.subtitle}</p>}
       </div>
 
-      <div className="flex flex-col items-center gap-5">
-        <div className="flex items-center gap-3 md:gap-3.5">
+      <div className="flex flex-col items-center gap-5 w-full">
+        <div className="flex items-center gap-2 sm:gap-3 md:gap-3.5 w-full max-w-[520px] justify-center">
           {tiles.map((n) => {
             const selected = answer.value === n
             return (
@@ -47,41 +47,38 @@ export function QuestionRating({
                 key={n}
                 type="button"
                 onClick={() => onAnswer({ type: 'rating', value: n })}
-                className="flex flex-col items-center gap-2.5 transition-transform hover:-translate-y-0.5"
+                className="flex flex-col items-center gap-2 sm:gap-2.5 transition-transform hover:-translate-y-0.5 flex-1 max-w-[88px]"
               >
                 <span
-                  className="flex items-center justify-center transition-all"
+                  className="flex items-center justify-center transition-all w-full aspect-square rating-tile"
                   style={{
-                    width: 72,
-                    height: 72,
                     borderRadius: 14,
                     backgroundColor: selected ? 'var(--color-mac)' : '#FFFFFF',
                     border: selected ? '1.5px solid var(--color-mac)' : '1px solid rgba(31, 25, 18, 0.2)',
                     color: selected ? 'var(--color-paper)' : 'var(--color-ink)',
                     fontFamily: 'var(--font-serif)',
-                    fontSize: selected ? 30 : 28,
                     boxShadow: selected ? '0 10px 30px -15px rgba(30, 63, 229, 0.5)' : 'none',
                   }}
                 >
                   {n}
                 </span>
                 <span
-                  className="text-[11px] min-h-[16px]"
+                  className="text-[10px] sm:text-[11px] min-h-[16px] text-center leading-tight"
                   style={{
                     color: selected ? 'var(--color-mac)' : 'var(--color-ink-2)',
                     fontWeight: selected ? 500 : 400,
                   }}
                 >
-                  {q.tickLabels?.[n - 1] ?? (selected ? 'Your pick' : '')}
+                  {q.tickLabels?.[n - 1] ?? (selected ? 'Pick' : '')}
                 </span>
               </button>
             )
           })}
         </div>
-        <div className="flex items-center gap-5 pt-2">
-          <span className="text-[11px] tracking-[0.08em] uppercase text-ink-2">{q.minLabel}</span>
-          <span className="block w-[260px] h-px bg-[var(--color-rule)]/20" />
-          <span className="text-[11px] tracking-[0.08em] uppercase text-ink-2">{q.maxLabel}</span>
+        <div className="flex items-center justify-between w-full max-w-[420px] gap-3 pt-2 px-2">
+          <span className="text-[10px] sm:text-[11px] tracking-[0.08em] uppercase text-ink-2">{q.minLabel}</span>
+          <span className="flex-1 h-px bg-[var(--color-rule)]/20" />
+          <span className="text-[10px] sm:text-[11px] tracking-[0.08em] uppercase text-ink-2">{q.maxLabel}</span>
         </div>
       </div>
       </div>

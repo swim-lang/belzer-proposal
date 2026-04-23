@@ -79,6 +79,14 @@ span.display {
   transform: translateY(0);
 }
 
+/* ——— Intake rating tile type sizing ——— */
+.rating-tile {
+  font-size: 22px;
+}
+@media (min-width: 640px) {
+  .rating-tile { font-size: 28px; }
+}
+
 /* ——— Dashboard preview — soft pulsing dots ——— */
 
 @keyframes dashPulse {
