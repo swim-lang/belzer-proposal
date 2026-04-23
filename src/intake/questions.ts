@@ -481,20 +481,6 @@ export const questions: Question[] = [
       'Not sure yet',
     ],
   },
-  {
-    id: 'q28',
-    type: 'single',
-    section: S.security,
-    title: 'How cautious should the first sprint be with live client data?',
-    subtitle: 'Honest answers help us keep the first sprint safe.',
-    options: [
-      'Use sample or redacted data only',
-      'Use old closed matter data',
-      'Use limited active matter data',
-      'Use live data if access is controlled',
-      'Not sure — need your recommendation',
-    ],
-  },
 
   // ——— 9. Success + next step ———
   {

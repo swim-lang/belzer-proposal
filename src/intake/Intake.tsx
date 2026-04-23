@@ -11,6 +11,7 @@ import { QuestionRating } from './QuestionRating'
 import { QuestionText } from './QuestionText'
 
 const STORAGE_KEY = 'anchovies-intake-draft-v1'
+const PENDING_KEY = 'anchovies-intake-pending-v1'
 const TOTAL = questions.length
 
 type PersistState = {
@@ -53,15 +54,19 @@ export function Intake() {
   })
   const [submitting, setSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
+  const [resumed, setResumed] = useState(false)
 
-  // Hydrate from localStorage on mount
+  // Hydrate from localStorage on mount (so an accidental close doesn't lose progress)
   useEffect(() => {
     try {
       const raw = window.localStorage.getItem(STORAGE_KEY)
       if (!raw) return
       const parsed = JSON.parse(raw) as PersistState
       if (parsed.answers) setAnswers({ ...answers, ...parsed.answers })
-      if (typeof parsed.step === 'number') setStep(parsed.step)
+      if (typeof parsed.step === 'number' && parsed.step > 0) {
+        setStep(parsed.step)
+        setResumed(true)
+      }
       if (parsed.startedAt) setStartedAt(parsed.startedAt)
     } catch {
       /* noop */
@@ -69,8 +74,16 @@ export function Intake() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // Persist on change
+  // Auto-dismiss the resumed hint after a moment
   useEffect(() => {
+    if (!resumed) return
+    const t = setTimeout(() => setResumed(false), 5000)
+    return () => clearTimeout(t)
+  }, [resumed])
+
+  // Persist on change — but not on the intro (0) or completion (TOTAL+1) screens
+  useEffect(() => {
+    if (step === 0 || step > TOTAL) return
     try {
       const data: PersistState = { step, startedAt, answers }
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
@@ -132,6 +145,7 @@ export function Intake() {
     setSubmitting(true)
     setSubmitError(null)
     const finishedAt = new Date().toISOString()
+    const localId = `local-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`
     const payload = {
       client: client.name,
       startedAt,
@@ -140,32 +154,47 @@ export function Intake() {
       userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : undefined,
       answers,
     }
+
+    // Always snapshot to localStorage first so nothing is ever lost
+    try {
+      const raw = window.localStorage.getItem(PENDING_KEY)
+      const list = raw ? (JSON.parse(raw) as Array<{ id: string } & typeof payload>) : []
+      list.push({ id: localId, ...payload })
+      window.localStorage.setItem(PENDING_KEY, JSON.stringify(list))
+    } catch {
+      /* noop */
+    }
+
+    // Try remote submit; never block the completion screen on it
+    let warning: string | null = null
     try {
       const res = await fetch('/api/intake', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(payload),
       })
-      if (res.ok) {
-        setCompletedAt(finishedAt)
-        setStep(TOTAL + 1)
-        try { window.localStorage.removeItem(STORAGE_KEY) } catch { /* noop */ }
-      } else if (res.status === 503) {
-        // Backend not configured — still proceed to thank-you so demo/test flows work
-        setCompletedAt(finishedAt)
-        setStep(TOTAL + 1)
-        setSubmitError('Submitted locally — backend not yet configured. Answers are saved in this browser only.')
-        try { window.localStorage.removeItem(STORAGE_KEY) } catch { /* noop */ }
-      } else {
-        const text = await res.text().catch(() => '')
-        setSubmitError(text || `Submission failed (HTTP ${res.status})`)
+      if (!res.ok) {
+        if (res.status === 503) {
+          warning = 'Saved locally — the shared store isn\u2019t configured yet, so this copy lives in your browser until we wire it up.'
+        } else {
+          const text = await res.text().catch(() => '')
+          warning = `Saved locally — remote submission returned HTTP ${res.status}${text ? `: ${text}` : ''}.`
+        }
       }
     } catch (err) {
-      setSubmitError(String(err))
-    } finally {
-      submittingRef.current = false
-      setSubmitting(false)
+      warning = `Saved locally — couldn\u2019t reach the server (${String(err)}).`
     }
+
+    setCompletedAt(finishedAt)
+    setStep(TOTAL + 1)
+    if (warning) setSubmitError(warning)
+    try {
+      window.localStorage.removeItem(STORAGE_KEY)
+    } catch {
+      /* noop */
+    }
+    submittingRef.current = false
+    setSubmitting(false)
   }, [answers, startedAt, client.name])
 
   // Keyboard shortcuts: Enter to continue, ⌘+Enter on text, Escape no-op
@@ -230,8 +259,21 @@ export function Intake() {
   if (!currentQ || !currentAnswer) return null
 
   return (
-    <div className="min-h-screen bg-paper text-ink flex flex-col">
+    <div className="min-h-screen bg-paper text-ink flex flex-col relative">
       <TopBar step={step} total={TOTAL} clientName={client.name} />
+      {resumed && (
+        <div
+          className="fixed top-[62px] left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full text-[11px] shadow-sm border"
+          style={{
+            backgroundColor: 'rgba(30, 63, 229, 0.06)',
+            borderColor: 'rgba(30, 63, 229, 0.3)',
+            color: 'var(--color-mac)',
+          }}
+        >
+          <span className="block w-1.5 h-1.5 rounded-full" style={{ backgroundColor: 'var(--color-mac)' }} />
+          <span>Welcome back — picking up where you left off.</span>
+        </div>
+      )}
       {currentQ.type === 'multi' && (
         <QuestionMulti q={currentQ} answer={currentAnswer as MultiAnswer} onAnswer={setAnswer} pipedOptions={undefined} />
       )}
