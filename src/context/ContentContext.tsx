@@ -59,8 +59,14 @@ function loadFromStorage(): Content | null {
 
 function getPinFromURL(): string | null {
   if (typeof window === 'undefined') return null
-  const p = new URLSearchParams(window.location.search).get('pin')
-  return p || null
+  const fromURL = new URLSearchParams(window.location.search).get('pin')
+  if (fromURL) return fromURL
+  try {
+    // Fallback to session-stored pin (set by the login gate)
+    return window.sessionStorage.getItem('anchovies-admin-pin')
+  } catch {
+    return null
+  }
 }
 
 export function ContentProvider({
