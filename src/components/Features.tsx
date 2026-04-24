@@ -35,7 +35,11 @@ export function Features() {
             >
               <div className="flex items-center justify-between">
                 <span className="eyebrow text-ink-2">Feature {f.num}</span>
-                <span className="eyebrow text-ink-2 transition-transform group-hover:rotate-45">✦</span>
+                <span
+                  className="block w-1.5 h-1.5 rounded-full dash-pulse"
+                  style={{ backgroundColor: 'var(--color-mac)' }}
+                  aria-hidden
+                />
               </div>
               <h3 className="serif text-[30px] leading-[34px] md:text-[36px] md:leading-[40px] tracking-[-0.015em] text-ink">
                 {f.name}
