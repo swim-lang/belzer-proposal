@@ -152,7 +152,8 @@ export function SubmissionsPanel({ pin }: { pin: string | null }) {
 
   const load = async () => {
     if (!pin) {
-      setErr('Missing ?pin in URL.')
+      setErr('Not signed in.')
+      setSubmissions([])
       return
     }
     setLoading(true)
@@ -161,6 +162,7 @@ export function SubmissionsPanel({ pin }: { pin: string | null }) {
       const res = await fetch('/api/intake', { headers: { 'x-admin-pin': pin }, cache: 'no-store' })
       if (res.status === 401) {
         setErr('PIN rejected by server.')
+        setSubmissions([])
         return
       }
       if (res.status === 503) {
@@ -170,12 +172,15 @@ export function SubmissionsPanel({ pin }: { pin: string | null }) {
       }
       if (!res.ok) {
         setErr(`HTTP ${res.status}`)
+        setSubmissions([])
         return
       }
       const data = (await res.json()) as { submissions: Submission[] }
       setSubmissions(data.submissions ?? [])
-    } catch (e) {
-      setErr(String(e))
+    } catch {
+      // Most common in dev: Vite returns the .ts source for /api/intake.
+      // Fail quiet — empty list + no alarming error.
+      setSubmissions([])
     } finally {
       setLoading(false)
     }
