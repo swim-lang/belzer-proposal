@@ -4,7 +4,7 @@ import { Reveal } from './Reveal'
 export function Ownership() {
   const { ownershipShape, ownership } = useContent()
   return (
-    <section className="border-b border-[var(--color-rule)] px-6 md:px-16 lg:px-[120px] py-24 lg:py-[160px]">
+    <section id="ownership" className="border-b border-[var(--color-rule)] px-6 md:px-16 lg:px-[120px] py-24 lg:py-[160px]">
       <Reveal className="flex items-start justify-between pb-8 border-b border-[var(--color-rule)] gap-6">
         <span className="eyebrow text-ink-2">{ownership.eyebrow}</span>
         <span className="eyebrow text-ink-2">{ownership.metaRight}</span>

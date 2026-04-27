@@ -88,9 +88,10 @@ export function createPreMeetingContent(firmName?: string | null): Content {
     },
     navSections: [
       { id: 'overview', label: 'Overview' },
-      { id: 'features', label: 'Ideas' },
+      { id: 'features', label: 'Opportunities' },
       { id: 'systems', label: 'Systems' },
-      { id: 'next', label: 'First Steps + Cost' },
+      { id: 'ownership', label: 'Ownership' },
+      { id: 'next', label: 'Pricing' },
     ],
     nav: {
       ...defaultContent.nav,
