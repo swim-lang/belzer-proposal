@@ -90,7 +90,7 @@ export function createPreMeetingContent(firmName?: string | null): Content {
       { id: 'overview', label: 'Overview' },
       { id: 'features', label: 'Ideas' },
       { id: 'systems', label: 'Systems' },
-      { id: 'next', label: 'First Step' },
+      { id: 'next', label: 'First Steps + Cost' },
     ],
     nav: {
       ...defaultContent.nav,
@@ -286,7 +286,7 @@ export function createPreMeetingContent(firmName?: string | null): Content {
       eyebrowSection: '§ 07 — How it usually starts',
       eyebrowEmphasis: 'A focused first step',
       metaRight: 'Pre-meeting overview',
-      headline: 'Start small enough to learn. Build seriously enough to matter.',
+      headline: 'Start small. Build with purpose.',
       bodyParagraphs: [
         'Most firms do not need to start with a giant build.',
         'The better first step is a Product Strategy + Interface Design sprint. We define the highest-value use case, map the workflow, design the key screens, and create a clearer path for what should be built next.',
