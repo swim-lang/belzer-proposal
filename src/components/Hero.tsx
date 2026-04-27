@@ -4,6 +4,11 @@ import { UnfoldGrid } from './UnfoldGrid'
 
 export function Hero() {
   const { hero, stages } = useContent()
+  const primaryHref = 'ctaPrimaryHref' in hero && typeof hero.ctaPrimaryHref === 'string' ? hero.ctaPrimaryHref : null
+  const secondaryHref =
+    'ctaSecondaryHref' in hero && typeof hero.ctaSecondaryHref === 'string' ? hero.ctaSecondaryHref : '#features'
+  const hasSecondaryCTA = hero.ctaSecondary.trim().length > 0
+
   return (
     <section id="overview" className="border-b border-[var(--color-rule)] px-6 md:px-16 lg:px-[120px] pt-20 md:pt-28 lg:pt-[120px] pb-16 lg:pb-24">
       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 pb-16 lg:pb-24">
@@ -43,22 +48,36 @@ export function Hero() {
         <Reveal className="flex flex-col gap-6 max-w-[420px] pt-2">
           <p className="text-[15px] leading-[23px] text-ink-2">{hero.body}</p>
           <div className="flex flex-wrap items-center gap-3 pt-4">
-            <button
-              type="button"
-              onClick={() => window.dispatchEvent(new CustomEvent('anchovies:approve'))}
-              className="px-5 py-3.5 rounded-full text-[13px] font-medium transition-colors text-paper"
-              style={{ backgroundColor: 'var(--color-mac)' }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac-hover)')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac)')}
-            >
-              {hero.ctaPrimary}
-            </button>
-            <a
-              href="#features"
-              className="px-5 py-3.5 border border-[var(--color-rule)] rounded-full text-[13px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper"
-            >
-              {hero.ctaSecondary}
-            </a>
+            {primaryHref ? (
+              <a
+                href={primaryHref}
+                className="px-5 py-3.5 rounded-full text-[13px] font-medium whitespace-nowrap transition-colors text-paper"
+                style={{ backgroundColor: 'var(--color-mac)' }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac-hover)')}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac)')}
+              >
+                {hero.ctaPrimary}
+              </a>
+            ) : (
+              <button
+                type="button"
+                onClick={() => window.dispatchEvent(new CustomEvent('anchovies:approve'))}
+                className="px-5 py-3.5 rounded-full text-[13px] font-medium whitespace-nowrap transition-colors text-paper"
+                style={{ backgroundColor: 'var(--color-mac)' }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac-hover)')}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac)')}
+              >
+                {hero.ctaPrimary}
+              </button>
+            )}
+            {hasSecondaryCTA ? (
+              <a
+                href={secondaryHref}
+                className="px-5 py-3.5 border border-[var(--color-rule)] rounded-full text-[13px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper"
+              >
+                {hero.ctaSecondary}
+              </a>
+            ) : null}
           </div>
         </Reveal>
       </div>

@@ -73,6 +73,7 @@ export function ContentProvider({
   children,
   editable = false,
   syncRemote = false,
+  initialContent = defaultContent,
 }: {
   children: ReactNode
   editable?: boolean
@@ -82,9 +83,10 @@ export function ContentProvider({
    * so that admin renames/copy edits propagate without a redeploy.
    */
   syncRemote?: boolean
+  initialContent?: Content
 }) {
   const [content, setContentState] = useState<Content>(() =>
-    editable ? loadFromStorage() ?? defaultContent : defaultContent
+    editable ? loadFromStorage() ?? defaultContent : initialContent
   )
   const [syncStatus, setSyncStatus] = useState<SyncStatus>({ kind: editable ? 'loading' : 'idle' })
   const pin = getPinFromURL()

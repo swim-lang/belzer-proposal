@@ -1,0 +1,688 @@
+{
+  "meta": {
+    "title": "Anchovies × Belzer Law — Proposal Copy",
+    "generatedFrom": "src/content.ts",
+    "generatedAt": "2026-04-27T19:16:33.792Z",
+    "client": "Belzer Law",
+    "proposalId": "belzer",
+    "proposalVersion": "v1",
+    "prepared": "April 2026"
+  },
+  "global": {
+    "client": {
+      "name": "Belzer Law",
+      "shortName": "Belzer",
+      "possessive": "Belzer Law's",
+      "location": "Colorado",
+      "leadName": "Aaron Belzer",
+      "primary": "Aaron",
+      "secondary": "Britt",
+      "teamPhrase": "Aaron, Britt, and the team",
+      "teamPhraseWithKey": "Aaron, Britt, and key team members"
+    },
+    "agency": {
+      "name": "Anchovies",
+      "email": "alexis@anchovies.agency",
+      "mailSubject": "Design Sprint Approved"
+    },
+    "proposal": {
+      "id": "belzer",
+      "prepared": "April 2026",
+      "preparedShort": "April 2026",
+      "version": "v1",
+      "kind": "Strategy + Interface Design"
+    },
+    "pricing": {
+      "sprintShort": "$6.5K",
+      "sprintFull": "$6,500",
+      "sprintTimeline": "2 weeks",
+      "sprintTimelineLong": "~2 weeks from kickoff.",
+      "buildRange": "$10K–$15K"
+    },
+    "navigation": {
+      "sections": [
+        {
+          "id": "overview",
+          "label": "Overview"
+        },
+        {
+          "id": "heard",
+          "label": "What We Heard"
+        },
+        {
+          "id": "sprint",
+          "label": "Sprint"
+        },
+        {
+          "id": "features",
+          "label": "Features"
+        },
+        {
+          "id": "security",
+          "label": "Security"
+        },
+        {
+          "id": "investment",
+          "label": "Investment"
+        },
+        {
+          "id": "next",
+          "label": "Next Step"
+        }
+      ],
+      "copy": {
+        "topMetaLeft": "Prepared for Belzer Law",
+        "topMetaRight": [
+          "Proposal · v1",
+          "April 2026"
+        ],
+        "brandName": "Anchovies",
+        "brandPair": "Anchovies × Belzer Law",
+        "ctaApprove": "Approve Sprint"
+      }
+    }
+  },
+  "proposalPage": {
+    "sections": [
+      {
+        "id": "hero",
+        "label": "§ 01 — Proposal",
+        "copy": {
+          "eyebrowSection": "§ 01 — Proposal",
+          "eyebrowEmphasis": "A custom-built legal intelligence tool",
+          "eyebrowMetaLines": [
+            "Belzer Law · Colorado",
+            "Strategy + Interface Design"
+          ],
+          "headlineLines": [
+            "A custom-built",
+            "legal intelligence",
+            "tool for Belzer Law."
+          ],
+          "subheadline": "Most software asks firms to adapt to the platform. This does the opposite, creating a proprietary tool around your workflows, documents, standards, and the way your team practices.",
+          "body": "After our conversation, one thing was clear: the need is not another generic AI product. The need is something useful, controlled, and shaped around the work you already do.",
+          "ctaPrimary": "Begin with the first sprint →",
+          "ctaSecondary": "View proposed features",
+          "figLabelLeft": "Fig. 01 — How the system moves",
+          "figLabelRight": "Four stages"
+        },
+        "supportingList": [
+          {
+            "label": "Stage 01",
+            "name": "Documents",
+            "desc": "Pleadings, exhibits, research, notes — the universe as it exists today."
+          },
+          {
+            "label": "Stage 02",
+            "name": "Structure",
+            "desc": "Labels, timelines, relationships, a shape the firm can actually navigate."
+          },
+          {
+            "label": "Stage 03",
+            "name": "Insight",
+            "desc": "Gaps, strengths, patterns — what the materials are telling you."
+          },
+          {
+            "label": "Stage 04",
+            "name": "Action",
+            "desc": "Motions, drafts, client updates, deposition prep — work the firm can use."
+          }
+        ]
+      },
+      {
+        "id": "whatWeHeard",
+        "label": "§ 02 — What we heard",
+        "copy": {
+          "eyebrow": "§ 02 — What we heard",
+          "headline": "You are not looking for AI theater.",
+          "bodyParagraph": "You have already looked at tools that feel built for larger firms, broader use cases, or generic chatbot-style demos. The problem is not that AI is uninteresting. The problem is that most tools are not shaped closely enough around the way your firm actually works.",
+          "needsIntro": "From our conversation, the clearest needs were:"
+        },
+        "supportingList": [
+          "Reviewing and organizing large document sets",
+          "Summarizing case materials",
+          "Finding factual gaps",
+          "Identifying strengths and weaknesses",
+          "Helping prepare for depositions",
+          "Building a motions bank",
+          "Creating a useful internal wiki",
+          "Reducing tedious communication and filing updates",
+          "Exploring how AI can support a smaller, more efficient, higher-touch firm"
+        ]
+      },
+      {
+        "id": "pointOfView",
+        "label": "§ 03 — Our point of view",
+        "copy": {
+          "eyebrow": "§ 03 — Our point of view",
+          "metaRight": "Anchovies · Philosophy",
+          "headline": "The value is that it is thoughtfully yours.",
+          "paragraphs": [
+            "The best version of this is not a product with a thousand features. It is a focused system built around your documents, your process, your judgment, your preferences, and your way of practicing.",
+            "Off-the-shelf software has value. It can be tested, documented, and supported at scale. But it also comes with tradeoffs: features you do not need, workflows you may not want, and a roadmap you do not control.",
+            "This approach starts in a different place: what does Belzer Law actually need to do better, faster, clearer, or with less friction?"
+          ],
+          "pullQuoteLabel": "Pull quote",
+          "pullQuote": "“The tool should adapt to the firm, not the other way around.”"
+        }
+      },
+      {
+        "id": "dashboardPreview",
+        "label": "§ 03b — Working example",
+        "copy": {
+          "eyebrow": "§ 03b — Working example",
+          "headline": "A dashboard, roughly pictured.",
+          "subheadline": "A rough look at how Belzer Law's documents, cases, and firm knowledge could come together in a single view.",
+          "urlBar": "belzer.app / matters / holloway-v-metro",
+          "chromeBadge": "Preview",
+          "footnote": "Illustrative only. The real interface would be tailored to Belzer Law's voice, workflows, and visual direction — defined together during the design sprint."
+        }
+      },
+      {
+        "id": "phaseOne",
+        "label": "§ 04 — Phase 1",
+        "copy": {
+          "eyebrowSection": "§ 04 — Phase 1",
+          "eyebrowEmphasis": "Product strategy + interface design",
+          "metaTimeline": "Est. 2 weeks",
+          "metaPrice": "$6,500",
+          "headline": "Product Strategy + Interface Design Sprint.",
+          "bodyParagraphs": [
+            "Two focused weeks to turn the idea into a real product — designed, prototyped, and ready to build.",
+            "You leave the sprint with high-fidelity interface designs, a clickable prototype you can test with the team, and a development-ready handoff the first engineer can start building from on day one. Not a thought exercise — a product in motion."
+          ],
+          "figLabelLeft": "Fig. 02 — Sprint process",
+          "figLabelRight": "Five steps",
+          "deliverablesLabel": "Deliverables",
+          "investmentLabel": "Estimated investment",
+          "investmentValue": "$6.5K",
+          "timelineLabel": "Timeline",
+          "timelineValue": "~2 weeks from kickoff.",
+          "timelineNote": "Depending on feedback and meeting availability."
+        },
+        "sprintSteps": [
+          {
+            "num": "01",
+            "name": "Listen",
+            "desc": "Strategy + discovery session with Aaron, Britt, and the team."
+          },
+          {
+            "num": "02",
+            "name": "Map",
+            "desc": "Priority use-cases, feature architecture, end-to-end user flow."
+          },
+          {
+            "num": "03",
+            "name": "Design",
+            "desc": "High-fidelity interface designs and a clickable prototype."
+          },
+          {
+            "num": "04",
+            "name": "Estimate",
+            "desc": "Development-ready handoff, technical plan, and build quote."
+          },
+          {
+            "num": "05",
+            "name": "Build",
+            "desc": "First sprint scoped and ready to begin — on your approval."
+          }
+        ],
+        "deliverables": [
+          "Strategy + discovery session",
+          "Priority use-case mapping",
+          "Feature architecture",
+          "End-to-end user flow",
+          "High-fidelity interface designs",
+          "Clickable, testable prototype",
+          "Interface system + visual direction",
+          "Development-ready handoff + build estimate"
+        ]
+      },
+      {
+        "id": "features",
+        "label": "§ 05 — Potential build paths",
+        "copy": {
+          "eyebrow": "§ 05 — Potential build paths",
+          "headline": "A tool in the toolbox.",
+          "subheadline": "Based on the conversation, these are the most relevant feature directions to explore."
+        },
+        "features": [
+          {
+            "num": "01",
+            "name": "Case Intelligence Wiki",
+            "desc": "A searchable, structured space for case materials, notes, pleadings, motions, research, timelines, and strategy. Think of it like a private case wiki that connects related information instead of leaving it buried in folders."
+          },
+          {
+            "num": "02",
+            "name": "Document Review + Organization",
+            "desc": "A workflow for uploading or connecting document sets, summarizing materials, identifying patterns, labeling files, and preparing materials for review or exhibits."
+          },
+          {
+            "num": "03",
+            "name": "Motions Bank",
+            "desc": "A reusable internal library of past motions, legal issues, arguments, fact patterns, and related materials, designed to help the team find useful starting points from prior work."
+          },
+          {
+            "num": "04",
+            "name": "Research Gap Finder",
+            "desc": "A tool that reviews a defined universe of pleadings, facts, research, and case documents to help identify factual gaps, deposition questions, missing documents, potential weaknesses, and areas of strength."
+          },
+          {
+            "num": "05",
+            "name": "Client Communication Assistant",
+            "desc": "A lightweight system to help draft filing updates, status notes, record-sharing emails, and other routine client communications for review before sending."
+          },
+          {
+            "num": "06",
+            "name": "Internal Process Wiki",
+            "desc": "A living internal knowledge base for case flow, firm processes, recurring tasks, and team training as the firm grows."
+          }
+        ]
+      },
+      {
+        "id": "scope",
+        "label": "§ 06 — Scope discipline",
+        "copy": {
+          "eyebrow": "§ 06 — Scope discipline",
+          "headline": "Do not build the whole universe on day one.",
+          "paragraphs": [
+            "The fastest way to make this expensive, messy, or risky is to connect everything before we know what matters most.",
+            "We recommend avoiding a giant first build. Instead, we start with the clearest high-value workflow, test it, learn from it, and expand from there."
+          ],
+          "notFirst": {
+            "label": "A — Not first",
+            "headline": "Avoid on day one."
+          },
+          "betterFirst": {
+            "label": "B — Better first",
+            "headline": "Start with one useful thing."
+          }
+        },
+        "notFirst": [
+          "Full replacement of PracticePanther",
+          "Full replacement of Box",
+          "Broad client portal for every matter",
+          "Every possible integration",
+          "Fully automated legal output without review",
+          "Anything that creates unnecessary risk before the workflow is proven"
+        ],
+        "betterFirst": [
+          "One clear internal workflow",
+          "One defined document universe",
+          "One useful interface",
+          "One meaningful improvement to the way the team works"
+        ]
+      },
+      {
+        "id": "security",
+        "label": "§ 07 — Risk matters",
+        "copy": {
+          "eyebrow": "§ 07 — Risk matters",
+          "headline": "Nimble does not mean careless.",
+          "intro": "Because this involves sensitive legal work, the system should be designed with security, permissions, and review in mind from the beginning.",
+          "considerationsLabel": "Considerations",
+          "closingQuote": "The goal is not to move recklessly. The goal is to move intelligently, with the right level of control for the sensitivity of the work."
+        },
+        "considerations": [
+          "Data retention settings",
+          "No-training model configurations where available",
+          "User access and permissions",
+          "Local or controlled file storage where appropriate",
+          "Clear boundaries around what the system can access",
+          "Human review before sending, filing, or relying on outputs",
+          "Auditability where needed",
+          "Security and integration partners if the project requires deeper infrastructure support"
+        ]
+      },
+      {
+        "id": "advantage",
+        "label": "§ 08 — Strategic advantage",
+        "copy": {
+          "eyebrow": "§ 08 — Strategic advantage",
+          "metaRight": "Smaller · Sharper · More human",
+          "headline": "AI can help a smaller firm feel even more capable.",
+          "paragraphs": [
+            "A smaller firm can already offer something many larger firms struggle with: direct attention, lower overhead, clearer communication, and a more personal experience.",
+            "The right internal tools can strengthen that advantage.",
+            "AI should not replace the human value of the firm. It should remove more of the repetitive work so the team can spend more time on judgment, strategy, communication, and the parts of the work clients actually feel."
+          ],
+          "pullQuoteLabel": "Pull quote",
+          "pullQuote": "“Use AI to remove the friction, not the humanity.”",
+          "equation": [
+            "Less friction",
+            "+",
+            "more judgment",
+            "=",
+            "better client experience"
+          ]
+        }
+      },
+      {
+        "id": "clientExperience",
+        "label": "§ 09 — Beyond internal efficiency",
+        "copy": {
+          "eyebrow": "§ 09 — Beyond internal efficiency",
+          "headline": "Clients may never see the system. They will feel the difference.",
+          "paragraphs": [
+            "Some of the value may show up behind the scenes. Faster review. Cleaner organization. Better internal visibility. Fewer dropped balls.",
+            "But some of it can directly improve the client experience."
+          ],
+          "figLabelLeft": "Fig. 03 — From internal to felt",
+          "figLabelRight": "Two columns, one outcome",
+          "internalLabel": "Internal workflow",
+          "internalHeadline": "Behind the scenes.",
+          "clientLabel": "Client-facing",
+          "clientHeadline": "What the client feels.",
+          "closingNote": "The right system can make the firm feel more responsive, more buttoned up, and more intentional."
+        },
+        "internalWorkflow": [
+          "Faster review",
+          "Cleaner organization",
+          "Better internal visibility",
+          "Fewer dropped balls"
+        ],
+        "clientFacing": [
+          "Faster filing updates",
+          "Clearer record-sharing emails",
+          "More consistent communication",
+          "Easier access to selected materials",
+          "Better matter-status visibility",
+          "A more premium feeling of organization"
+        ]
+      },
+      {
+        "id": "phaseTwo",
+        "label": "§ 10 — Phase 2",
+        "copy": {
+          "eyebrowSection": "§ 10 — Phase 2",
+          "eyebrowEmphasis": "Build sprint",
+          "metaRight": "Quoted after design sprint",
+          "headline": "Build Sprint.",
+          "body": "Once the design sprint is complete, we will quote the first build phase based on the chosen feature set.",
+          "buildPathsLabel": "Possible first build directions",
+          "rangeLabel": "Estimated build range",
+          "rangeValue": "$10K–$15K",
+          "rangeNote": "The range depends on final scope, integrations, model usage, security requirements, file sources, user permissions, and whether the tool is web-only or includes mobile access through TestFlight.",
+          "rangeDisclaimer": "Note — this is an estimate, not a final quote."
+        },
+        "buildPaths": [
+          "Case Intelligence Wiki",
+          "Motions Bank",
+          "Document Review workflow",
+          "Research Gap Finder",
+          "Client Communication Assistant",
+          "Internal Process Wiki",
+          "A focused combination of the above"
+        ]
+      },
+      {
+        "id": "integrations",
+        "label": "§ 11 — Future considerations",
+        "copy": {
+          "eyebrow": "§ 11 — Future considerations",
+          "headline": "Built to connect, but not all at once.",
+          "intro": "Potential integrations or data sources could include a handful of known systems — the first step is not connecting everything, it is identifying which connection would create the most immediate value.",
+          "figLabelLeft": "Fig. 04 — Modular system map",
+          "figLabelRight": "Start with one connection",
+          "centerLabel": "Custom tool",
+          "centerName": "Belzer Law",
+          "centerTagline": "legal intelligence layer",
+          "mobilePossibleLabel": "Possible connections",
+          "footnote": "* Where access and terms allow."
+        },
+        "integrations": [
+          {
+            "label": "Storage",
+            "name": "Box"
+          },
+          {
+            "label": "Practice mgmt",
+            "name": "PracticePanther"
+          },
+          {
+            "label": "Productivity",
+            "name": "Microsoft 365"
+          },
+          {
+            "label": "Legal research",
+            "name": "Westlaw*"
+          },
+          {
+            "label": "Comms",
+            "name": "Email workflows"
+          },
+          {
+            "label": "Operations",
+            "name": "Billing / timekeeping"
+          },
+          {
+            "label": "Storage systems",
+            "name": "Document storage"
+          },
+          {
+            "label": "Internal",
+            "name": "File conventions"
+          }
+        ],
+        "figureFourRotatingIntegrations": [
+          {
+            "slot": "Storage",
+            "variants": [
+              {
+                "label": "Storage",
+                "name": "Box"
+              }
+            ]
+          },
+          {
+            "slot": "Practice management",
+            "variants": [
+              {
+                "label": "Practice mgmt",
+                "name": "PracticePanther"
+              },
+              {
+                "label": "Practice Mgmt",
+                "name": "Clio / MyCase / Filevine"
+              }
+            ]
+          },
+          {
+            "slot": "Productivity and signatures",
+            "variants": [
+              {
+                "label": "Productivity",
+                "name": "Microsoft 365"
+              },
+              {
+                "label": "Signatures + PDFs",
+                "name": "DocuSign / Adobe Acrobat"
+              }
+            ]
+          },
+          {
+            "slot": "Legal research",
+            "variants": [
+              {
+                "label": "Legal research",
+                "name": "Westlaw*"
+              },
+              {
+                "label": "Legal Research",
+                "name": "LexisNexis"
+              }
+            ]
+          },
+          {
+            "slot": "Communications",
+            "variants": [
+              {
+                "label": "Comms",
+                "name": "Email workflows"
+              }
+            ]
+          },
+          {
+            "slot": "Operations and accounting",
+            "variants": [
+              {
+                "label": "Operations",
+                "name": "Billing / timekeeping"
+              },
+              {
+                "label": "Payments + Accounting",
+                "name": "LawPay / QuickBooks"
+              }
+            ]
+          },
+          {
+            "slot": "Document management",
+            "variants": [
+              {
+                "label": "Storage systems",
+                "name": "Document storage"
+              },
+              {
+                "label": "Document Mgmt",
+                "name": "NetDocuments / iManage"
+              }
+            ]
+          },
+          {
+            "slot": "Internal and eDiscovery",
+            "variants": [
+              {
+                "label": "Internal",
+                "name": "File conventions"
+              },
+              {
+                "label": "eDiscovery",
+                "name": "Relativity / Everlaw / DISCO"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ownership",
+        "label": "§ 12 — Why custom matters",
+        "copy": {
+          "eyebrow": "§ 12 — Why custom matters",
+          "metaRight": "Ownership · Flexibility",
+          "headline": "This can become proprietary to the way Belzer Law works.",
+          "introParagraph": "One of the most interesting parts of this approach is that the system can reflect the firm's actual thinking.",
+          "disclaimerLines": [
+            "Not just generic legal AI.",
+            "Not just a chatbot.",
+            "Not just another subscription."
+          ],
+          "closingParagraph": "Over time, that becomes more valuable because it is not just software. It is the firm’s process made visible.",
+          "shapeLabel": "A tool shaped around —",
+          "pullQuote": "“Your process is the product.”"
+        },
+        "ownershipShape": [
+          "How you name files",
+          "How you review facts",
+          "How you prepare for depositions",
+          "How you reuse past work",
+          "How you communicate with clients",
+          "How you make strategic decisions"
+        ]
+      },
+      {
+        "id": "nextStep",
+        "label": "§ 13 — Next step",
+        "copy": {
+          "eyebrowSection": "§ 13 — Next step",
+          "eyebrowEmphasis": "Recommended path forward",
+          "metaRight": "Prepared April 2026",
+          "headline": "Start with the design sprint.",
+          "bodyParagraphs": [
+            "Begin with the Product Strategy + Interface Design sprint — two weeks, one flat fee, a real product on the other side.",
+            "You leave with high-fidelity designs, a working prototype, and a development-ready handoff. Aaron, Britt, and the team stays aligned throughout, and nobody commits to the larger build until the shape of the tool is clear and agreed on."
+          ],
+          "stepsLabel": "Next steps",
+          "investmentLabel": "Investment",
+          "investmentValue": "$6.5K",
+          "timelineLabel": "Timeline",
+          "timelineValue": "2 weeks",
+          "ctaPrimary": "Approve Design Sprint →",
+          "ctaSecondary": "Schedule Review Call"
+        },
+        "nextSteps": [
+          "Schedule a product strategy session with Aaron, Britt, and key team members",
+          "Confirm the first-priority use case",
+          "Map the workflow",
+          "Design the key screens",
+          "Review the prototype direction",
+          "Quote the first build sprint"
+        ]
+      },
+      {
+        "id": "closing",
+        "label": "§ 14 — Closing",
+        "copy": {
+          "eyebrow": "§ 14 — Closing",
+          "metaRight": "A smarter tool for a sharper firm",
+          "headline": "Everything is possible. The work is deciding what is worth building first.",
+          "paragraphs": [
+            "The constraints have changed. Things that used to require major software budgets, long timelines, or highly specialized teams are now much more reachable.",
+            "That does not mean everything should be built at once."
+          ],
+          "bestPathLabel": "The best path",
+          "bestPathSteps": [
+            "Solve one meaningful problem,",
+            "learn from real use,",
+            "then build from there."
+          ],
+          "closingLine": "A smarter tool for a sharper firm."
+        }
+      },
+      {
+        "id": "footer",
+        "label": "Footer",
+        "copy": {
+          "brand": "Anchovies",
+          "preparedFor": "Prepared for Belzer Law",
+          "rightLines": [
+            "April 2026",
+            "Proposal · v1"
+          ]
+        }
+      }
+    ]
+  },
+  "postApprovalPage": {
+    "approveScreen": {
+      "eyebrow": "Design sprint — approved",
+      "headline": "We’ve got it from here.",
+      "confirmationLabel": "Confirmation",
+      "confirmationBody": "Thank you. This approval signals intent — no invoice is triggered until kickoff is scheduled and confirmed.",
+      "introLabel": "What happens next",
+      "introBody": "We’ll prepare, align, and reach out to schedule the first session. No further action needed on your side for now.",
+      "introNote": "A short confirmation will land in your inbox shortly. If anything changes, reply to it directly — it’ll come from the Anchovies team.",
+      "steps": [
+        {
+          "label": "Step 01",
+          "title": "Take the intake",
+          "body": "A short, focused questionnaire — 8 to 10 minutes — so we understand exactly where the first sprint should live and what matters most."
+        },
+        {
+          "label": "Step 02",
+          "title": "Kickoff scheduled",
+          "body": "We’ll read your answers, pull relevant threads from the proposal, and come back with a proposed time for the strategy session with Aaron, Britt, and the team."
+        },
+        {
+          "label": "Step 03",
+          "title": "Sprint begins",
+          "body": "Two focused weeks. You leave with high-fidelity designs, a clickable prototype, and a development-ready handoff — ready to build the moment you are."
+        }
+      ],
+      "preparedForLabel": "Prepared for",
+      "preparedForValue": "Belzer Law · Colorado",
+      "ctaBack": "Back to proposal",
+      "ctaIntake": "Start intake →",
+      "intakeHref": "/intake"
+    }
+  }
+}

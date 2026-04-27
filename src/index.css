@@ -259,6 +259,16 @@ span.display {
   100% { offset-distance: 100%; opacity: 0; }
 }
 
+@keyframes mapNodeContentSwap {
+  0%   { opacity: 0; transform: translateY(5px) rotateX(-8deg); }
+  100% { opacity: 1; transform: translateY(0) rotateX(0); }
+}
+
+@keyframes mobileMapRowSwap {
+  0%   { opacity: 0; transform: translateY(3px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
 .map-line {
   stroke-dasharray: 1200;
   stroke-dashoffset: 1200;
@@ -299,6 +309,15 @@ span.display {
   animation-delay: 1.2s;
 }
 
+.map-node-inner {
+  transform-origin: center top;
+  animation: mapNodeContentSwap 0.52s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mobile-map-row-content {
+  animation: mobileMapRowSwap 0.42s ease;
+}
+
 .map-center {
   box-shadow: 0 0 0 0 rgba(10, 10, 10, 0.08);
   animation: mapCenterBreathe 5.5s ease-in-out infinite;
@@ -314,4 +333,5 @@ span.display {
   [data-reveal] { opacity: 1; transform: none; transition: none; }
   .map-line { stroke-dashoffset: 0; }
   .map-dot, .map-pulse, .map-node, .map-center { animation: none; opacity: 1; transform: none; }
+  .map-node-inner, .mobile-map-row-content { animation: none; transform: none; }
 }

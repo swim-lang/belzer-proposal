@@ -1,12 +1,23 @@
 import { ContentProvider } from './context/ContentContext'
 import { Proposal } from './Proposal'
+import { PreMeetingPage } from './PreMeetingPage'
+import { QuietHome } from './QuietHome'
+import { SavedFirmPage } from './SavedFirmPage'
 import { Admin } from './admin/Admin'
 import { Intake } from './intake/Intake'
+import { createPreMeetingContent, getPreMeetingFirmNameFromURL } from './preMeetingContent'
 
 export default function App() {
   const pathname = typeof window !== 'undefined' ? window.location.pathname : '/'
   const isAdmin = pathname === '/admin' || pathname.startsWith('/admin/')
   const isIntake = pathname === '/intake' || pathname.startsWith('/intake/')
+  const isBelzer = pathname === '/belzer' || pathname.startsWith('/belzer/')
+  const isFirmPage = pathname === '/firm' || pathname.startsWith('/firm/')
+  const isPreMeeting =
+    pathname === '/ai-legal-tools' ||
+    pathname.startsWith('/ai-legal-tools/') ||
+    pathname === '/pre-meeting' ||
+    pathname.startsWith('/pre-meeting/')
 
   if (isAdmin) {
     return <Admin />
@@ -20,9 +31,25 @@ export default function App() {
     )
   }
 
-  return (
-    <ContentProvider>
-      <Proposal />
-    </ContentProvider>
-  )
+  if (isPreMeeting) {
+    return (
+      <ContentProvider initialContent={createPreMeetingContent(getPreMeetingFirmNameFromURL())}>
+        <PreMeetingPage />
+      </ContentProvider>
+    )
+  }
+
+  if (isBelzer) {
+    return (
+      <ContentProvider>
+        <Proposal />
+      </ContentProvider>
+    )
+  }
+
+  if (isFirmPage) {
+    return <SavedFirmPage />
+  }
+
+  return <QuietHome />
 }

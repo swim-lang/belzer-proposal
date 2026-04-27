@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type FormEvent } from 'react'
+import { absolutePageUrl, createLocalFirmPage, readLocalFirmPages, slugifyFirmName, type FirmPage } from '../firmPages'
 import { useContent, useContentControl } from '../context/ContentContext'
 import type { Submission } from '../intake/types'
 import { navigate } from './AdminChrome'
@@ -32,6 +33,12 @@ export function Dashboard() {
   const { pin, syncStatus } = useContentControl()
   const [submissions, setSubmissions] = useState<Submission[] | null>(null)
   const [loadErr, setLoadErr] = useState<string | null>(null)
+  const [firmName, setFirmName] = useState('Example Law')
+  const [firmPages, setFirmPages] = useState<FirmPage[]>(() => readLocalFirmPages())
+  const [pageErr, setPageErr] = useState<string | null>(null)
+  const [creatingPage, setCreatingPage] = useState(false)
+  const [createStatus, setCreateStatus] = useState<string | null>(null)
+  const [copyStatus, setCopyStatus] = useState<string | null>(null)
 
   useEffect(() => {
     ;(async () => {
@@ -61,6 +68,40 @@ export function Dashboard() {
     })()
   }, [pin])
 
+  useEffect(() => {
+    ;(async () => {
+      if (!pin) {
+        setFirmPages(readLocalFirmPages())
+        return
+      }
+      try {
+        const res = await fetch('/api/firm-pages', { headers: { 'x-admin-pin': pin }, cache: 'no-store' })
+        const contentType = res.headers.get('content-type') ?? ''
+        if (!contentType.includes('application/json')) {
+          setPageErr('Supabase firm-page API is not available in this local preview. Use a Vercel preview or production deploy to test saved backend pages.')
+          setFirmPages(readLocalFirmPages())
+          return
+        }
+        if (res.status === 503) {
+          setPageErr('Supabase firm-page backend is not configured yet. Add the Supabase env vars in Vercel before sending saved links.')
+          setFirmPages(readLocalFirmPages())
+          return
+        }
+        if (!res.ok) {
+          setPageErr(`Couldn't fetch saved pages (HTTP ${res.status})`)
+          setFirmPages(readLocalFirmPages())
+          return
+        }
+        const data = (await res.json()) as { pages: FirmPage[] }
+        setPageErr(null)
+        setFirmPages(data.pages ?? [])
+      } catch {
+        setPageErr('Supabase firm-page API is not available in this local preview. Use a Vercel preview or production deploy to test saved backend pages.')
+        setFirmPages(readLocalFirmPages())
+      }
+    })()
+  }, [pin])
+
   const lastEdited =
     syncStatus.kind === 'saved'
       ? syncStatus.updatedAt
@@ -81,6 +122,51 @@ export function Dashboard() {
   ]
 
   const recent = (submissions ?? []).slice(0, 5)
+  const trimmedFirm = firmName.trim()
+  const previewPath = `/firm/${slugifyFirmName(trimmedFirm || 'Example Law')}`
+
+  const copyUrl = async (url: string) => {
+    try {
+      await navigator.clipboard.writeText(absolutePageUrl(url))
+      setCopyStatus('Copied')
+      window.setTimeout(() => setCopyStatus(null), 1800)
+    } catch {
+      setCopyStatus('Copy failed')
+    }
+  }
+
+  const createFirmPage = async (event: FormEvent) => {
+    event.preventDefault()
+    const name = firmName.trim()
+    if (!name || creatingPage) return
+
+    setCreatingPage(true)
+    setCreateStatus(null)
+    try {
+      const res = await fetch('/api/firm-pages', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          ...(pin ? { 'x-admin-pin': pin } : {}),
+        },
+        body: JSON.stringify({ firmName: name }),
+      })
+      const contentType = res.headers.get('content-type') ?? ''
+      if (!contentType.includes('application/json')) throw new Error('Backend unavailable in local preview')
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      const data = (await res.json()) as { page: FirmPage }
+      setFirmPages((pages) => [data.page, ...pages.filter((page) => page.id !== data.page.id)])
+      setPageErr(null)
+      setCreateStatus(`Created ${data.page.url}`)
+    } catch {
+      const page = createLocalFirmPage(name)
+      setFirmPages(readLocalFirmPages())
+      setPageErr('Local preview page created for UI testing. Production firm pages will save to Supabase once the Vercel env vars are configured.')
+      setCreateStatus(`Created preview ${page.url}`)
+    } finally {
+      setCreatingPage(false)
+    }
+  }
 
   return (
     <div className="flex-1 overflow-auto">
@@ -89,7 +175,7 @@ export function Dashboard() {
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-2.5">
             <span className="block w-1.5 h-1.5 rounded-full" style={{ backgroundColor: 'var(--color-mac)' }} />
-            <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2">Good to see you, Andy</span>
+            <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2">Good to see you, Sean</span>
           </div>
           <h1 className="serif text-[40px] leading-[44px] md:text-[56px] md:leading-[60px] tracking-[-0.02em]">
             {submissions
@@ -98,10 +184,120 @@ export function Dashboard() {
                 : `${submissions.length} intake submission${submissions.length === 1 ? '' : 's'} across your proposals.`
               : 'Loading your proposals…'}
           </h1>
-          <p className="text-[14px] leading-[22px] text-ink-2 max-w-[520px]">
-            Open a proposal to edit its content and see the live preview, or jump straight to the latest submissions.
+          <p className="text-[14px] leading-[22px] text-ink-2 max-w-[560px]">
+            Create pre-meeting firm pages, open the Belzer proposal, or jump straight to the latest submissions.
           </p>
         </div>
+
+        {/* Pre-meeting saved pages */}
+        <section className="flex flex-col gap-5">
+          <div className="flex items-center justify-between gap-4">
+            <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2">Create pre-meeting firm page</span>
+            <span className="text-[11px] text-ink-2">Saved URL</span>
+          </div>
+          <form
+            onSubmit={createFirmPage}
+            className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-4 p-5 md:p-6 bg-white border border-[var(--color-rule)]/20 rounded-[14px]"
+          >
+            <label className="flex flex-col gap-2">
+              <span className="text-[10px] tracking-[0.12em] uppercase text-ink-2">Firm name</span>
+              <input
+                type="text"
+                value={firmName}
+                onChange={(e) => setFirmName(e.target.value)}
+                placeholder="Example Law"
+                className="serif text-[20px] px-4 py-3 bg-paper border border-[var(--color-rule)]/25 focus:border-ink outline-none rounded-[10px] transition-colors"
+              />
+            </label>
+            <div className="flex flex-col gap-3 min-w-0">
+              <span className="text-[10px] tracking-[0.12em] uppercase text-ink-2">Next URL</span>
+              <div className="px-4 py-3 bg-paper border border-[var(--color-rule)]/20 rounded-[10px] text-[12px] leading-[18px] text-ink-2 break-all">
+                {absolutePageUrl(previewPath)}
+              </div>
+              <div className="flex items-center gap-2 flex-wrap">
+                <button
+                  type="submit"
+                  disabled={!trimmedFirm || creatingPage}
+                  className="px-3 py-1.5 rounded-full text-[12px] font-medium text-paper transition-colors disabled:opacity-45 disabled:cursor-not-allowed"
+                  style={{ backgroundColor: 'var(--color-mac)' }}
+                  onMouseEnter={(e) => {
+                    if (!e.currentTarget.disabled) e.currentTarget.style.backgroundColor = 'var(--color-mac-hover)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'var(--color-mac)'
+                  }}
+                >
+                  {creatingPage ? 'Creating…' : 'Create saved page'}
+                </button>
+                {createStatus && <span className="text-[11px] text-ink-2">{createStatus}</span>}
+              </div>
+            </div>
+          </form>
+
+          {pageErr && (
+            <div className="text-[12px] text-[#8a5a00] p-3 border border-[#8a5a00]/25 rounded-md bg-[#8a5a00]/5">
+              {pageErr}
+            </div>
+          )}
+
+          <div className="flex flex-col gap-3">
+            <div className="flex items-center justify-between gap-4">
+              <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2">Saved pre-meeting pages</span>
+              {copyStatus && <span className="text-[11px] text-ink-2">{copyStatus}</span>}
+            </div>
+            {firmPages.length === 0 ? (
+              <div className="text-[12px] text-ink-2 p-4 border border-dashed border-[var(--color-rule)]/25 rounded-md">
+                No saved pre-meeting pages yet. Create one above to generate a shareable firm URL.
+              </div>
+            ) : (
+              <div className="flex flex-col border-t border-[var(--color-rule)]/15">
+                {firmPages.map((page, index) => (
+                  <div
+                    key={page.id}
+                    className={`flex flex-col md:flex-row md:items-center md:justify-between gap-3 px-3 py-4 ${
+                      index < firmPages.length - 1 ? 'border-b border-[var(--color-rule)]/15' : ''
+                    }`}
+                  >
+                    <div className="flex flex-col gap-1 min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="serif text-[22px] leading-[26px]">{page.firmName}</span>
+                        <span className="text-[10px] tracking-[0.08em] uppercase px-2 py-0.5 rounded-full bg-ink/[0.04] text-ink-2">
+                          {page.status}
+                        </span>
+                      </div>
+                      <span className="text-[11px] leading-[16px] text-ink-2 break-all">
+                        {absolutePageUrl(page.url)}
+                      </span>
+                      <span className="text-[10px] tracking-[0.08em] uppercase text-ink-2/70">
+                        Created {formatRelative(page.createdAt)} · Updated {formatRelative(page.updatedAt)}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <a
+                        href={page.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="px-3 py-1.5 rounded-full text-[12px] font-medium text-paper transition-colors"
+                        style={{ backgroundColor: 'var(--color-mac)' }}
+                        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac-hover)')}
+                        onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac)')}
+                      >
+                        Open page ↗
+                      </a>
+                      <button
+                        type="button"
+                        onClick={() => copyUrl(page.url)}
+                        className="px-3 py-1.5 border border-[var(--color-rule)]/25 hover:border-ink rounded-full text-[12px] text-ink-2 hover:text-ink transition-colors"
+                      >
+                        Copy URL
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
 
         {/* Proposals */}
         <section className="flex flex-col gap-5">
@@ -167,7 +363,7 @@ export function Dashboard() {
                       Open editor →
                     </button>
                     <a
-                      href="/"
+                      href="/belzer"
                       target="_blank"
                       rel="noreferrer"
                       className="px-3 py-1.5 border border-[var(--color-rule)]/25 hover:border-ink rounded-full text-[12px] text-ink-2 hover:text-ink transition-colors"

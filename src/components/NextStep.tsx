@@ -3,6 +3,24 @@ import { Reveal } from './Reveal'
 
 export function NextStep() {
   const { nextSteps, nextStepSection } = useContent()
+  const primaryHref =
+    'ctaPrimaryHref' in nextStepSection && typeof nextStepSection.ctaPrimaryHref === 'string'
+      ? nextStepSection.ctaPrimaryHref
+      : null
+  const secondaryHref =
+    'ctaSecondaryHref' in nextStepSection && typeof nextStepSection.ctaSecondaryHref === 'string'
+      ? nextStepSection.ctaSecondaryHref
+      : '#'
+  const hasSecondaryCTA = nextStepSection.ctaSecondary.trim().length > 0
+  const buildLabel =
+    'buildLabel' in nextStepSection && typeof nextStepSection.buildLabel === 'string'
+      ? nextStepSection.buildLabel
+      : null
+  const buildValue =
+    'buildValue' in nextStepSection && typeof nextStepSection.buildValue === 'string'
+      ? nextStepSection.buildValue
+      : null
+
   return (
     <section id="next" className="border-b border-[var(--color-rule)] px-6 md:px-16 lg:px-[120px] py-20 lg:py-[120px]">
       <Reveal className="flex items-start justify-between pb-8 border-b border-[var(--color-rule)] gap-6">
@@ -45,7 +63,7 @@ export function NextStep() {
         </div>
 
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 p-8 md:p-12 lg:px-16 lg:py-10">
-          <div className="flex gap-10 md:gap-20">
+          <div className="flex flex-wrap gap-10 md:gap-20">
             <div className="flex flex-col gap-1.5">
               <span className="eyebrow text-ink-2">{nextStepSection.investmentLabel}</span>
               <span className="serif text-[28px] md:text-[36px] leading-[32px] md:leading-[38px] tracking-[-0.018em]">
@@ -58,24 +76,46 @@ export function NextStep() {
                 {nextStepSection.timelineValue}
               </span>
             </div>
+            {buildLabel && buildValue ? (
+              <div className="flex flex-col gap-1.5">
+                <span className="eyebrow text-ink-2">{buildLabel}</span>
+                <span className="serif text-[28px] md:text-[36px] leading-[32px] md:leading-[38px] tracking-[-0.018em]">
+                  {buildValue}
+                </span>
+              </div>
+            ) : null}
           </div>
           <div className="flex flex-wrap items-center gap-3">
-            <button
-              type="button"
-              onClick={() => window.dispatchEvent(new CustomEvent('anchovies:approve'))}
-              className="px-6 py-4 rounded-full text-[14px] font-medium text-paper transition-colors"
-              style={{ backgroundColor: 'var(--color-mac)' }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac-hover)')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac)')}
-            >
-              {nextStepSection.ctaPrimary}
-            </button>
-            <a
-              href="#"
-              className="px-6 py-4 border border-[var(--color-rule)] rounded-full text-[14px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper"
-            >
-              {nextStepSection.ctaSecondary}
-            </a>
+            {primaryHref ? (
+              <a
+                href={primaryHref}
+                className="px-6 py-4 rounded-full text-[14px] font-medium text-paper whitespace-nowrap transition-colors"
+                style={{ backgroundColor: 'var(--color-mac)' }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac-hover)')}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac)')}
+              >
+                {nextStepSection.ctaPrimary}
+              </a>
+            ) : (
+              <button
+                type="button"
+                onClick={() => window.dispatchEvent(new CustomEvent('anchovies:approve'))}
+                className="px-6 py-4 rounded-full text-[14px] font-medium text-paper whitespace-nowrap transition-colors"
+                style={{ backgroundColor: 'var(--color-mac)' }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac-hover)')}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac)')}
+              >
+                {nextStepSection.ctaPrimary}
+              </button>
+            )}
+            {hasSecondaryCTA ? (
+              <a
+                href={secondaryHref}
+                className="px-6 py-4 border border-[var(--color-rule)] rounded-full text-[14px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper"
+              >
+                {nextStepSection.ctaSecondary}
+              </a>
+            ) : null}
           </div>
         </div>
       </Reveal>

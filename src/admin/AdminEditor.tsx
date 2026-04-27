@@ -417,7 +417,7 @@ function PreviewPane() {
           <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2">Live preview</span>
         </div>
         <a
-          href="/"
+          href="/belzer"
           target="_blank"
           rel="noreferrer"
           className="text-[11px] text-ink-2 hover:text-ink transition-colors"

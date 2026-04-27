@@ -10,7 +10,7 @@ const SESSION_KEY = 'anchovies-admin-session-v1'
 const SESSION_PIN_KEY = 'anchovies-admin-pin'
 
 // Testing credentials — move to a server-side check before wider use.
-const VALID_USER = 'Andy'
+const VALID_USER = 'Sean'
 const VALID_PASS = 'Swim2424!@#'
 
 function isAuthed(): boolean {

@@ -4,6 +4,7 @@ import { useContent } from '../context/ContentContext'
 export function Nav() {
   const { nav, navSections } = useContent()
   const [active, setActive] = useState('overview')
+  const ctaHref = 'ctaHref' in nav && typeof nav.ctaHref === 'string' ? nav.ctaHref : null
 
   useEffect(() => {
     const sections = navSections
@@ -53,16 +54,28 @@ export function Nav() {
               </a>
             ))}
           </nav>
-          <button
-            type="button"
-            onClick={() => window.dispatchEvent(new CustomEvent('anchovies:approve'))}
-            className="px-4 py-2 rounded-full text-[12px] font-medium text-paper transition-colors"
-            style={{ backgroundColor: 'var(--color-mac)' }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac-hover)')}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac)')}
-          >
-            {nav.ctaApprove}
-          </button>
+          {ctaHref ? (
+            <a
+              href={ctaHref}
+              className="px-4 py-2 rounded-full text-[12px] font-medium text-paper whitespace-nowrap transition-colors"
+              style={{ backgroundColor: 'var(--color-mac)' }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac-hover)')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac)')}
+            >
+              {nav.ctaApprove}
+            </a>
+          ) : (
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new CustomEvent('anchovies:approve'))}
+              className="px-4 py-2 rounded-full text-[12px] font-medium text-paper whitespace-nowrap transition-colors"
+              style={{ backgroundColor: 'var(--color-mac)' }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac-hover)')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac)')}
+            >
+              {nav.ctaApprove}
+            </button>
+          )}
         </div>
       </div>
     </>
