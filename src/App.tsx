@@ -11,7 +11,8 @@ export default function App() {
   const pathname = typeof window !== 'undefined' ? window.location.pathname : '/'
   const isAdmin = pathname === '/admin' || pathname.startsWith('/admin/')
   const isIntake = pathname === '/intake' || pathname.startsWith('/intake/')
-  const isBelzer = pathname === '/belzer' || pathname.startsWith('/belzer/')
+  const isLegacyBelzer = pathname === '/belzer' || pathname.startsWith('/belzer/')
+  const isBelzer = pathname === '/proposal/belzer' || pathname.startsWith('/proposal/belzer/')
   const isFirmPage = pathname === '/firm' || pathname.startsWith('/firm/')
   const isPreMeeting =
     pathname === '/ai-legal-tools' ||
@@ -40,6 +41,17 @@ export default function App() {
   }
 
   if (isBelzer) {
+    return (
+      <ContentProvider>
+        <Proposal />
+      </ContentProvider>
+    )
+  }
+
+  if (isLegacyBelzer) {
+    if (typeof window !== 'undefined') {
+      window.history.replaceState(null, '', '/proposal/belzer')
+    }
     return (
       <ContentProvider>
         <Proposal />

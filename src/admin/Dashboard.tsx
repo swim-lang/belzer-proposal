@@ -363,7 +363,7 @@ export function Dashboard() {
                       Open editor →
                     </button>
                     <a
-                      href="/belzer"
+                      href="/proposal/belzer"
                       target="_blank"
                       rel="noreferrer"
                       className="px-3 py-1.5 border border-[var(--color-rule)]/25 hover:border-ink rounded-full text-[12px] text-ink-2 hover:text-ink transition-colors"
