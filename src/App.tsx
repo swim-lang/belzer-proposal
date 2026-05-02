@@ -3,6 +3,7 @@ import { Proposal } from './Proposal'
 import { PreMeetingPage } from './PreMeetingPage'
 import { QuietHome } from './QuietHome'
 import { SavedFirmPage } from './SavedFirmPage'
+import { SleepGoddessProposal } from './SleepGoddessProposal'
 import { Admin } from './admin/Admin'
 import { Intake } from './intake/Intake'
 import { createPreMeetingContent, getPreMeetingFirmNameFromURL } from './preMeetingContent'
@@ -13,6 +14,11 @@ export default function App() {
   const isIntake = pathname === '/intake' || pathname.startsWith('/intake/')
   const isLegacyBelzer = pathname === '/belzer' || pathname.startsWith('/belzer/')
   const isBelzer = pathname === '/proposal/belzer' || pathname.startsWith('/proposal/belzer/')
+  const isSleepGoddess =
+    pathname === '/proposal/sleep-like-a-goddess' ||
+    pathname.startsWith('/proposal/sleep-like-a-goddess/') ||
+    pathname === '/sleep-like-a-goddess' ||
+    pathname.startsWith('/sleep-like-a-goddess/')
   const isFirmPage = pathname === '/firm' || pathname.startsWith('/firm/')
   const isPreMeeting =
     pathname === '/ai-legal-tools' ||
@@ -46,6 +52,10 @@ export default function App() {
         <Proposal />
       </ContentProvider>
     )
+  }
+
+  if (isSleepGoddess) {
+    return <SleepGoddessProposal />
   }
 
   if (isLegacyBelzer) {
