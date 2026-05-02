@@ -3,6 +3,7 @@ import { Proposal } from './Proposal'
 import { PreMeetingPage } from './PreMeetingPage'
 import { QuietHome } from './QuietHome'
 import { SavedFirmPage } from './SavedFirmPage'
+import { HAAIProposal } from './HAAIProposal'
 import { SleepGoddessProposal } from './SleepGoddessProposal'
 import { Admin } from './admin/Admin'
 import { Intake } from './intake/Intake'
@@ -19,6 +20,11 @@ export default function App() {
     pathname.startsWith('/proposal/sleep-like-a-goddess/') ||
     pathname === '/sleep-like-a-goddess' ||
     pathname.startsWith('/sleep-like-a-goddess/')
+  const isHAAI =
+    pathname === '/proposal/haai' ||
+    pathname.startsWith('/proposal/haai/') ||
+    pathname === '/haai' ||
+    pathname.startsWith('/haai/')
   const isFirmPage = pathname === '/firm' || pathname.startsWith('/firm/')
   const isPreMeeting =
     pathname === '/ai-legal-tools' ||
@@ -56,6 +62,10 @@ export default function App() {
 
   if (isSleepGoddess) {
     return <SleepGoddessProposal />
+  }
+
+  if (isHAAI) {
+    return <HAAIProposal />
   }
 
   if (isLegacyBelzer) {
