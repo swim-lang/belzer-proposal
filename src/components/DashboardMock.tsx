@@ -34,6 +34,29 @@ const upcoming: [string, string, string][] = [
 ]
 
 type Insight = { label: string; tinted?: boolean; confidence?: string; body: React.ReactNode; cta?: string; meta?: string }
+type Matter = typeof matters[number]
+type DashboardMockContent = {
+  matters: Matter[]
+  strengths: string[]
+  weaknesses: string[]
+  docTypes: [string, string][]
+  upcoming: [string, string, string][]
+  insights: Insight[]
+  searchPlaceholder: string
+  newInsightsLabel: string
+  avatarInitials: string
+  matterId: string
+  caseTitle: string
+  caseMeta: [string, string][]
+  status: string
+  tabs: { label: string; badge?: string; pulse?: boolean }[]
+  summaryMeta: string
+  caseSummary: string
+  documentCount: string
+  documentSubLabel: string
+  intelligenceUpdated: string
+  intelligenceIntro: string
+}
 
 const insights: Insight[] = [
   {
@@ -67,7 +90,49 @@ const insights: Insight[] = [
 ]
 
 export function DashboardMock() {
-  const { client } = useContent()
+  const content = useContent()
+  const { client } = content
+  const customMock =
+    'dashboardMock' in content
+      ? (content.dashboardMock as Partial<DashboardMockContent>)
+      : {}
+  const mattersData = customMock.matters ?? matters
+  const strengthsData = customMock.strengths ?? strengths
+  const weaknessesData = customMock.weaknesses ?? weaknesses
+  const docTypesData = customMock.docTypes ?? docTypes
+  const upcomingData = customMock.upcoming ?? upcoming
+  const insightsData = customMock.insights ?? insights
+  const searchPlaceholder = customMock.searchPlaceholder ?? 'Search cases, motions, facts, documents…'
+  const newInsightsLabel = customMock.newInsightsLabel ?? '3 new insights'
+  const avatarInitials = customMock.avatarInitials ?? 'AB'
+  const matterId = customMock.matterId ?? '2025-0341'
+  const caseTitle = customMock.caseTitle ?? 'Holloway v. Metro Realty Partners'
+  const caseMeta = customMock.caseMeta ?? [
+    ['Client', 'Holloway Family Trust'],
+    ['Filed', 'March 12, 2026'],
+    ['Lead', client.leadName],
+  ]
+  const status = customMock.status ?? 'Active · Discovery'
+  const tabs = customMock.tabs ?? [
+    { label: 'Overview' },
+    { label: 'Documents', badge: '247' },
+    { label: 'Motions' },
+    { label: 'Facts' },
+    { label: 'Gaps', pulse: true },
+    { label: 'Timeline' },
+    { label: 'Communications' },
+  ]
+  const summaryMeta = customMock.summaryMeta ?? 'Drafted from 247 documents · 2h ago'
+  const caseSummary =
+    customMock.caseSummary ??
+    'The Holloway Family Trust contends that Metro Realty Partners materially misrepresented the 2023 valuation of the North Denver parcel, resulting in a forced sale at below-market value. Key dispute centers on timing of disclosures and the chain of communication between the Metro brokerage and the trust\'s investment committee.'
+  const documentCount = customMock.documentCount ?? '247'
+  const documentSubLabel = customMock.documentSubLabel ?? '247 · 6 new'
+  const intelligenceUpdated = customMock.intelligenceUpdated ?? 'Updated 8 min ago'
+  const intelligenceIntro =
+    customMock.intelligenceIntro ??
+    `Observations from your 247 documents, Metro's production, and prior ${client.shortName} matters.`
+
   return (
     <div
       className="font-sans text-ink bg-paper flex flex-col"
@@ -86,15 +151,15 @@ export function DashboardMock() {
             <circle cx="11" cy="11" r="7" />
             <path d="M21 21l-4.35-4.35" />
           </svg>
-          <span className="text-[13px] text-ink-2 flex-1">Search cases, motions, facts, documents…</span>
+          <span className="text-[13px] text-ink-2 flex-1">{searchPlaceholder}</span>
           <span className="text-[10px] tracking-[0.04em] text-ink-2 px-1.5 py-0.5 bg-paper border border-[var(--color-rule)]/20 rounded">⌘K</span>
         </div>
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
             <span className="block w-1.5 h-1.5 rounded-full dash-pulse" style={{ backgroundColor: 'var(--color-mac)' }} />
-            <span className="text-[12px]">3 new insights</span>
+            <span className="text-[12px]">{newInsightsLabel}</span>
           </div>
-          <div className="w-7 h-7 rounded-full bg-ink text-paper flex items-center justify-center text-[11px] font-medium">AB</div>
+          <div className="w-7 h-7 rounded-full bg-ink text-paper flex items-center justify-center text-[11px] font-medium">{avatarInitials}</div>
         </div>
       </div>
 
@@ -104,7 +169,7 @@ export function DashboardMock() {
         <aside className="w-[280px] shrink-0 flex flex-col border-r border-[var(--color-rule)]">
           <div className="flex items-center justify-between px-5 pt-5 pb-3.5">
             <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2">Active matters</span>
-            <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2">5</span>
+            <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2">{mattersData.length}</span>
           </div>
           <div className="mx-5 mb-4 px-3.5 py-2.5 border border-dashed border-[var(--color-rule)]/35 rounded-lg flex items-center justify-center gap-2">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#4A4A4A" strokeWidth={2}>
@@ -113,10 +178,10 @@ export function DashboardMock() {
             </svg>
             <span className="text-[12px] text-ink-2">New matter</span>
           </div>
-          {matters.map((m, i) => (
+          {mattersData.map((m, i) => (
             <div
               key={m.num}
-              className={`relative flex flex-col gap-1.5 px-5 py-3.5 ${i === 0 ? 'border-t border-[var(--color-rule)]' : ''} ${i < matters.length - 1 ? 'border-b border-[var(--color-rule)]/20' : ''} ${m.active ? 'bg-ink/[0.04]' : ''}`}
+              className={`relative flex flex-col gap-1.5 px-5 py-3.5 ${i === 0 ? 'border-t border-[var(--color-rule)]' : ''} ${i < mattersData.length - 1 ? 'border-b border-[var(--color-rule)]/20' : ''} ${m.active ? 'bg-ink/[0.04]' : ''}`}
             >
               {m.active && <span className="absolute top-0 bottom-0 left-0 w-0.5" style={{ backgroundColor: 'var(--color-mac)' }} />}
               <div className="flex items-center justify-between">
@@ -137,11 +202,11 @@ export function DashboardMock() {
             <div className="flex items-center gap-2.5">
               <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2">Matters</span>
               <span className="text-[11px] text-ink-2">/</span>
-              <span className="text-[11px] tracking-[0.12em] uppercase">2025-0341</span>
+              <span className="text-[11px] tracking-[0.12em] uppercase">{matterId}</span>
             </div>
             <div className="flex items-end justify-between gap-4">
               <h1 className="serif text-[44px] leading-[48px] tracking-[-0.02em]" style={{ margin: 0 }}>
-                Holloway v. Metro Realty Partners
+                {caseTitle}
               </h1>
               <div className="flex items-center gap-2.5">
                 <div className="px-3 py-1.5 border border-[var(--color-rule)] rounded-full text-[11px]">Ask about this case</div>
@@ -149,11 +214,7 @@ export function DashboardMock() {
               </div>
             </div>
             <div className="flex items-center gap-8">
-              {[
-                ['Client', 'Holloway Family Trust'],
-                ['Filed', 'March 12, 2026'],
-                ['Lead', client.leadName],
-              ].map(([label, value]) => (
+              {caseMeta.map(([label, value]) => (
                 <div key={label} className="flex flex-col gap-0.5">
                   <span className="text-[10px] tracking-[0.11em] uppercase text-ink-2">{label}</span>
                   <span className="text-[13px]">{value}</span>
@@ -163,7 +224,7 @@ export function DashboardMock() {
                 <span className="text-[10px] tracking-[0.11em] uppercase text-ink-2">Status</span>
                 <span className="flex items-center gap-1.5">
                   <span className="block w-1.5 h-1.5 rounded-full" style={{ backgroundColor: 'var(--color-mac)' }} />
-                  <span className="text-[13px]">Active · Discovery</span>
+                  <span className="text-[13px]">{status}</span>
                 </span>
               </div>
             </div>
@@ -171,13 +232,20 @@ export function DashboardMock() {
 
           {/* Tabs */}
           <div className="flex items-center gap-7 px-8 border-b border-[var(--color-rule)]" style={{ height: 44 }}>
-            <div className="flex items-center h-full px-0.5 border-b-2 border-ink text-[12px] font-medium">Overview</div>
-            <div className="flex items-center gap-2 text-[12px] text-ink-2">Documents <span className="text-[10px] px-1.5 py-[1px] bg-ink/[0.06] rounded-[10px] text-ink-2">247</span></div>
-            <div className="text-[12px] text-ink-2">Motions</div>
-            <div className="text-[12px] text-ink-2">Facts</div>
-            <div className="flex items-center gap-1.5 text-[12px] text-ink-2">Gaps <span className="block w-[5px] h-[5px] rounded-full" style={{ backgroundColor: 'var(--color-mac)' }} /></div>
-            <div className="text-[12px] text-ink-2">Timeline</div>
-            <div className="text-[12px] text-ink-2">Communications</div>
+            {tabs.map((tab, i) => (
+              <div
+                key={tab.label}
+                className={
+                  i === 0
+                    ? 'flex items-center h-full px-0.5 border-b-2 border-ink text-[12px] font-medium'
+                    : 'flex items-center gap-2 text-[12px] text-ink-2'
+                }
+              >
+                {tab.label}
+                {tab.badge ? <span className="text-[10px] px-1.5 py-[1px] bg-ink/[0.06] rounded-[10px] text-ink-2">{tab.badge}</span> : null}
+                {tab.pulse ? <span className="block w-[5px] h-[5px] rounded-full" style={{ backgroundColor: 'var(--color-mac)' }} /> : null}
+              </div>
+            ))}
           </div>
 
           {/* Overview body */}
@@ -187,10 +255,10 @@ export function DashboardMock() {
               <div className="flex flex-col gap-3 px-[22px] py-5 bg-white border border-[var(--color-rule)]/20 rounded-xl">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] tracking-[0.12em] uppercase text-ink-2">Case summary</span>
-                  <span className="text-[10px] tracking-[0.04em] text-ink-2">Drafted from 247 documents · 2h ago</span>
+                  <span className="text-[10px] tracking-[0.04em] text-ink-2">{summaryMeta}</span>
                 </div>
                 <p className="serif text-[18px] leading-[26px] tracking-[-0.005em] m-0">
-                  The Holloway Family Trust contends that Metro Realty Partners materially misrepresented the 2023 valuation of the North Denver parcel, resulting in a forced sale at below-market value. Key dispute centers on timing of disclosures and the chain of communication between the Metro brokerage and the trust&apos;s investment committee.
+                  {caseSummary}
                 </p>
               </div>
               {/* S/W split */}
@@ -198,10 +266,10 @@ export function DashboardMock() {
                 <div className="flex-1 flex flex-col gap-3 px-[18px] py-4 bg-white border border-[var(--color-rule)]/20 rounded-xl">
                   <div className="flex items-center justify-between">
                     <span className="text-[10px] tracking-[0.12em] uppercase text-ink-2">Strengths</span>
-                    <span className="text-[10px] text-ink-2">4</span>
+                    <span className="text-[10px] text-ink-2">{strengthsData.length}</span>
                   </div>
                   <div className="flex flex-col gap-2.5">
-                    {strengths.map((t, i) => (
+                    {strengthsData.map((t, i) => (
                       <div key={i} className="flex gap-2.5">
                         <span className="w-1 shrink-0 bg-ink rounded-sm" />
                         <span className="serif text-[14px] leading-[18px]">{t}</span>
@@ -212,10 +280,10 @@ export function DashboardMock() {
                 <div className="flex-1 flex flex-col gap-3 px-[18px] py-4 bg-white border border-[var(--color-rule)]/20 rounded-xl">
                   <div className="flex items-center justify-between">
                     <span className="text-[10px] tracking-[0.12em] uppercase text-ink-2">Weaknesses</span>
-                    <span className="text-[10px] text-ink-2">3</span>
+                    <span className="text-[10px] text-ink-2">{weaknessesData.length}</span>
                   </div>
                   <div className="flex flex-col gap-2.5">
-                    {weaknesses.map((t, i) => (
+                    {weaknessesData.map((t, i) => (
                       <div key={i} className="flex gap-2.5">
                         <span className="w-1 shrink-0 bg-[var(--color-rule)]/35 rounded-sm" />
                         <span className="serif text-[14px] leading-[18px]">{t}</span>
@@ -232,14 +300,14 @@ export function DashboardMock() {
               <div className="flex flex-col gap-3 px-[18px] py-4 bg-white border border-[var(--color-rule)]/20 rounded-xl">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] tracking-[0.12em] uppercase text-ink-2">Documents</span>
-                  <span className="text-[10px] text-ink-2">247 · 6 new</span>
+                  <span className="text-[10px] text-ink-2">{documentSubLabel}</span>
                 </div>
                 <div className="flex items-baseline gap-2">
-                  <span className="serif text-[36px] leading-[38px] tracking-[-0.02em]">247</span>
+                  <span className="serif text-[36px] leading-[38px] tracking-[-0.02em]">{documentCount}</span>
                   <span className="text-[11px] text-ink-2">items indexed</span>
                 </div>
                 <div className="flex flex-col gap-2 pt-1.5 border-t border-[var(--color-rule)]/14">
-                  {docTypes.map(([label, num]) => (
+                  {docTypesData.map(([label, num]) => (
                     <div key={label} className="flex justify-between gap-2.5">
                       <span className="text-[12px]">{label}</span>
                       <span className="text-[12px] text-ink-2">{num}</span>
@@ -251,8 +319,8 @@ export function DashboardMock() {
               <div className="flex flex-col gap-2.5 px-[18px] py-4 bg-white border border-[var(--color-rule)]/20 rounded-xl">
                 <span className="text-[10px] tracking-[0.12em] uppercase text-ink-2">Upcoming</span>
                 <div className="flex flex-col gap-2.5">
-                  {upcoming.map(([title, note, date], i) => (
-                    <div key={i} className={`flex justify-between ${i < upcoming.length - 1 ? 'pb-2.5 border-b border-[var(--color-rule)]/12' : ''}`}>
+                  {upcomingData.map(([title, note, date], i) => (
+                    <div key={i} className={`flex justify-between ${i < upcomingData.length - 1 ? 'pb-2.5 border-b border-[var(--color-rule)]/12' : ''}`}>
                       <div className="flex flex-col gap-0.5">
                         <span className="serif text-[14px] leading-[18px]">{title}</span>
                         <span className="text-[11px] text-ink-2">{note}</span>
@@ -273,15 +341,15 @@ export function DashboardMock() {
               <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2">Intelligence</span>
               <span className="block w-[5px] h-[5px] rounded-full dash-pulse" style={{ backgroundColor: 'var(--color-mac)' }} />
             </div>
-            <span className="text-[10px] tracking-[0.04em] text-ink-2">Updated 8 min ago</span>
+            <span className="text-[10px] tracking-[0.04em] text-ink-2">{intelligenceUpdated}</span>
           </div>
           <div className="px-6 pb-3.5">
-            <p className="serif italic text-[14px] leading-5 text-ink-2 m-0">Observations from your 247 documents, Metro&apos;s production, and prior {client.shortName} matters.</p>
+            <p className="serif italic text-[14px] leading-5 text-ink-2 m-0">{intelligenceIntro}</p>
           </div>
-          {insights.map((ins, i) => (
+          {insightsData.map((ins, i) => (
             <div
               key={i}
-              className={`flex flex-col gap-2.5 px-6 py-4 ${i === 0 ? 'border-t border-[var(--color-rule)]' : ''} ${i < insights.length - 1 ? 'border-b border-[var(--color-rule)]/20' : ''}`}
+              className={`flex flex-col gap-2.5 px-6 py-4 ${i === 0 ? 'border-t border-[var(--color-rule)]' : ''} ${i < insightsData.length - 1 ? 'border-b border-[var(--color-rule)]/20' : ''}`}
               style={ins.tinted ? { backgroundColor: 'rgba(30, 63, 229, 0.035)' } : {}}
             >
               <div className="flex items-center justify-between">
