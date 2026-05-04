@@ -55,6 +55,9 @@ export default function App() {
   }
 
   if (isBelzer) {
+    if (typeof document !== 'undefined') {
+      document.title = 'Anchovies × Belzer Law - Proposal'
+    }
     return (
       <ContentProvider>
         <Proposal />

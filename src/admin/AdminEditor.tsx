@@ -422,7 +422,7 @@ function PreviewPane() {
           rel="noreferrer"
           className="text-[11px] text-ink-2 hover:text-ink transition-colors"
         >
-          Open real proposal ↗
+          Open edited proposal ↗
         </a>
       </div>
       <div className="p-4">

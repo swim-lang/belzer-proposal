@@ -3,12 +3,15 @@ import { absolutePageUrl, createLocalFirmPage, readLocalFirmPages, slugifyFirmNa
 import { useContent, useContentControl } from '../context/ContentContext'
 import type { Submission } from '../intake/types'
 import { navigate } from './AdminChrome'
+import { kndContent } from '../kndContent'
 
 type Proposal = {
   id: string
   name: string
   tagline: string
   status: 'Active' | 'Draft' | 'Archived'
+  href: string
+  editable?: boolean
   lastEdited?: string | null
   submissionCount?: number
 }
@@ -109,15 +112,24 @@ export function Dashboard() {
       ? syncStatus.updatedAt
       : null
 
-  // Single-client for now. Designed to accept more entries later.
   const proposals: Proposal[] = [
     {
       id: proposal.id || 'belzer',
       name: client.name,
       tagline: `${proposal.kind} · ${client.location}`,
       status: 'Active',
+      href: `/proposal/${proposal.id || 'belzer'}`,
+      editable: true,
       lastEdited,
       submissionCount: submissions?.filter((s) => (s.client || '') === client.name).length ?? undefined,
+    },
+    {
+      id: kndContent.proposal.id,
+      name: kndContent.client.name,
+      tagline: `${kndContent.proposal.kind} · ${kndContent.client.location}`,
+      status: 'Active',
+      href: '/proposal/knd',
+      submissionCount: 0,
     },
   ]
 
@@ -185,7 +197,7 @@ export function Dashboard() {
               : 'Loading your proposals…'}
           </h1>
           <p className="text-[14px] leading-[22px] text-ink-2 max-w-[560px]">
-            Create pre-meeting firm pages, open the Belzer proposal, or jump straight to the latest submissions.
+            Create pre-meeting firm pages, open live proposals, or jump straight to the latest submissions.
           </p>
         </div>
 
@@ -352,18 +364,20 @@ export function Dashboard() {
                     </div>
                   </div>
                   <div className="flex items-center gap-2 flex-wrap">
-                    <button
-                      type="button"
-                      onClick={() => navigate('editor')}
-                      className="px-3 py-1.5 rounded-full text-[12px] font-medium text-paper transition-colors"
-                      style={{ backgroundColor: 'var(--color-mac)' }}
-                      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac-hover)')}
-                      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac)')}
-                    >
-                      Open editor →
-                    </button>
+                    {p.editable ? (
+                      <button
+                        type="button"
+                        onClick={() => navigate('editor')}
+                        className="px-3 py-1.5 rounded-full text-[12px] font-medium text-paper transition-colors"
+                        style={{ backgroundColor: 'var(--color-mac)' }}
+                        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac-hover)')}
+                        onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac)')}
+                      >
+                        Open editor →
+                      </button>
+                    ) : null}
                     <a
-                      href="/proposal/belzer"
+                      href={p.href}
                       target="_blank"
                       rel="noreferrer"
                       className="px-3 py-1.5 border border-[var(--color-rule)]/25 hover:border-ink rounded-full text-[12px] text-ink-2 hover:text-ink transition-colors"
