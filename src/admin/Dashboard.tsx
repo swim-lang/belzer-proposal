@@ -12,6 +12,7 @@ type Proposal = {
   status: 'Active' | 'Draft' | 'Archived'
   href: string
   editable?: boolean
+  intakeHref?: string
   lastEdited?: string | null
   submissionCount?: number
 }
@@ -120,6 +121,7 @@ export function Dashboard() {
       status: 'Active',
       href: `/proposal/${proposal.id || 'belzer'}`,
       editable: true,
+      intakeHref: '/intake',
       lastEdited,
       submissionCount: submissions?.filter((s) => (s.client || '') === client.name).length ?? undefined,
     },
@@ -129,7 +131,20 @@ export function Dashboard() {
       tagline: `${kndContent.proposal.kind} · ${kndContent.client.location}`,
       status: 'Active',
       href: '/proposal/knd',
-      submissionCount: 0,
+    },
+    {
+      id: 'sleep-like-a-goddess',
+      name: 'Sleep Like a Goddess',
+      tagline: 'Brand system refinement · May 2026',
+      status: 'Active',
+      href: '/proposal/sleep-like-a-goddess',
+    },
+    {
+      id: 'haai',
+      name: 'HAAI',
+      tagline: 'Brand, site, deck, and app concept · May 2026',
+      status: 'Active',
+      href: '/proposal/haai',
     },
   ]
 
@@ -190,16 +205,102 @@ export function Dashboard() {
             <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2">Good to see you, Sean</span>
           </div>
           <h1 className="serif text-[40px] leading-[44px] md:text-[56px] md:leading-[60px] tracking-[-0.02em]">
-            {submissions
-              ? submissions.length === 0
-                ? 'No intake submissions yet.'
-                : `${submissions.length} intake submission${submissions.length === 1 ? '' : 's'} across your proposals.`
-              : 'Loading your proposals…'}
+            {proposals.length} live proposal{proposals.length === 1 ? '' : 's'} in your workspace.
           </h1>
           <p className="text-[14px] leading-[22px] text-ink-2 max-w-[560px]">
-            Create pre-meeting firm pages, open live proposals, or jump straight to the latest submissions.
+            Open live proposals, create pre-meeting firm pages, or jump straight to the latest submissions.
           </p>
         </div>
+
+        {/* Proposals */}
+        <section className="flex flex-col gap-5">
+          <div className="flex items-center justify-between">
+            <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2">All proposals</span>
+            <button
+              type="button"
+              disabled
+              title="Coming soon — duplicating from template"
+              className="px-3 py-1.5 border border-dashed border-[var(--color-rule)]/30 rounded-full text-[11px] text-ink-2/60 cursor-not-allowed"
+            >
+              + New proposal
+            </button>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {proposals.map((p) => (
+              <div
+                key={p.id}
+                className="flex flex-col justify-between gap-6 p-5 md:p-6 bg-white border border-[var(--color-rule)]/20 rounded-[14px] transition-colors hover:border-ink"
+              >
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] tracking-[0.12em] uppercase text-ink-2">
+                      {p.id}
+                    </span>
+                    <span
+                      className="text-[10px] tracking-[0.08em] uppercase px-2 py-0.5 rounded-full"
+                      style={{
+                        backgroundColor: 'rgba(30, 63, 229, 0.08)',
+                        color: 'var(--color-mac)',
+                      }}
+                    >
+                      {p.status}
+                    </span>
+                  </div>
+                  <h3 className="serif text-[26px] md:text-[30px] leading-[32px] md:leading-[36px] tracking-[-0.015em]">
+                    {p.name}
+                  </h3>
+                  <p className="text-[12px] leading-[18px] text-ink-2">{p.tagline}</p>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <div className="grid grid-cols-2 gap-4 pt-4 border-t border-[var(--color-rule)]/15">
+                    <div className="flex flex-col gap-0.5">
+                      <span className="text-[10px] tracking-[0.12em] uppercase text-ink-2">Submissions</span>
+                      <span className="serif text-[20px] leading-[24px]">
+                        {p.submissionCount ?? '—'}
+                      </span>
+                    </div>
+                    <div className="flex flex-col gap-0.5">
+                      <span className="text-[10px] tracking-[0.12em] uppercase text-ink-2">Last edited</span>
+                      <span className="text-[13px]">{formatRelative(p.lastEdited)}</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    {p.editable ? (
+                      <button
+                        type="button"
+                        onClick={() => navigate('editor')}
+                        className="px-3 py-1.5 rounded-full text-[12px] font-medium text-paper transition-colors"
+                        style={{ backgroundColor: 'var(--color-mac)' }}
+                        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac-hover)')}
+                        onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac)')}
+                      >
+                        Open editor →
+                      </button>
+                    ) : null}
+                    <a
+                      href={p.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-3 py-1.5 border border-[var(--color-rule)]/25 hover:border-ink rounded-full text-[12px] text-ink-2 hover:text-ink transition-colors"
+                    >
+                      Open live site ↗
+                    </a>
+                    {p.intakeHref ? (
+                      <a
+                        href={p.intakeHref}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="px-3 py-1.5 border border-[var(--color-rule)]/25 hover:border-ink rounded-full text-[12px] text-ink-2 hover:text-ink transition-colors"
+                      >
+                        Open intake ↗
+                      </a>
+                    ) : null}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
         {/* Pre-meeting saved pages */}
         <section className="flex flex-col gap-5">
@@ -308,94 +409,6 @@ export function Dashboard() {
                 ))}
               </div>
             )}
-          </div>
-        </section>
-
-        {/* Proposals */}
-        <section className="flex flex-col gap-5">
-          <div className="flex items-center justify-between">
-            <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2">Proposals</span>
-            <button
-              type="button"
-              disabled
-              title="Coming soon — duplicating from template"
-              className="px-3 py-1.5 border border-dashed border-[var(--color-rule)]/30 rounded-full text-[11px] text-ink-2/60 cursor-not-allowed"
-            >
-              + New proposal
-            </button>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {proposals.map((p) => (
-              <div
-                key={p.id}
-                className="flex flex-col justify-between gap-6 p-5 md:p-6 bg-white border border-[var(--color-rule)]/20 rounded-[14px] transition-colors hover:border-ink"
-              >
-                <div className="flex flex-col gap-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] tracking-[0.12em] uppercase text-ink-2">
-                      {p.id}
-                    </span>
-                    <span
-                      className="text-[10px] tracking-[0.08em] uppercase px-2 py-0.5 rounded-full"
-                      style={{
-                        backgroundColor: 'rgba(30, 63, 229, 0.08)',
-                        color: 'var(--color-mac)',
-                      }}
-                    >
-                      {p.status}
-                    </span>
-                  </div>
-                  <h3 className="serif text-[26px] md:text-[30px] leading-[32px] md:leading-[36px] tracking-[-0.015em]">
-                    {p.name}
-                  </h3>
-                  <p className="text-[12px] leading-[18px] text-ink-2">{p.tagline}</p>
-                </div>
-                <div className="flex flex-col gap-3">
-                  <div className="grid grid-cols-2 gap-4 pt-4 border-t border-[var(--color-rule)]/15">
-                    <div className="flex flex-col gap-0.5">
-                      <span className="text-[10px] tracking-[0.12em] uppercase text-ink-2">Submissions</span>
-                      <span className="serif text-[20px] leading-[24px]">
-                        {p.submissionCount ?? '—'}
-                      </span>
-                    </div>
-                    <div className="flex flex-col gap-0.5">
-                      <span className="text-[10px] tracking-[0.12em] uppercase text-ink-2">Last edited</span>
-                      <span className="text-[13px]">{formatRelative(p.lastEdited)}</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2 flex-wrap">
-                    {p.editable ? (
-                      <button
-                        type="button"
-                        onClick={() => navigate('editor')}
-                        className="px-3 py-1.5 rounded-full text-[12px] font-medium text-paper transition-colors"
-                        style={{ backgroundColor: 'var(--color-mac)' }}
-                        onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac-hover)')}
-                        onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac)')}
-                      >
-                        Open editor →
-                      </button>
-                    ) : null}
-                    <a
-                      href={p.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="px-3 py-1.5 border border-[var(--color-rule)]/25 hover:border-ink rounded-full text-[12px] text-ink-2 hover:text-ink transition-colors"
-                    >
-                      Open live site ↗
-                    </a>
-                    <a
-                      href="/intake"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="px-3 py-1.5 border border-[var(--color-rule)]/25 hover:border-ink rounded-full text-[12px] text-ink-2 hover:text-ink transition-colors"
-                    >
-                      Open intake ↗
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </section>
 
