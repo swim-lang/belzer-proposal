@@ -5,6 +5,7 @@ export function Nav() {
   const { nav, navSections } = useContent()
   const [active, setActive] = useState('overview')
   const ctaHref = 'ctaHref' in nav && typeof nav.ctaHref === 'string' ? nav.ctaHref : null
+  const isExternalCTA = ctaHref?.startsWith('http') ?? false
 
   useEffect(() => {
     const sections = navSections
@@ -57,6 +58,8 @@ export function Nav() {
           {ctaHref ? (
             <a
               href={ctaHref}
+              target={isExternalCTA ? '_blank' : undefined}
+              rel={isExternalCTA ? 'noreferrer' : undefined}
               className="px-4 py-2 rounded-full text-[12px] font-medium text-paper whitespace-nowrap transition-colors"
               style={{ backgroundColor: 'var(--color-mac)' }}
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac-hover)')}

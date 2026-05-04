@@ -1,5 +1,7 @@
 import { defaultContent } from './content'
 
+const calendarHref = 'https://cal.com/anchovies/30min?overlayCalendar=true'
+
 const client = {
   name: 'KND Law Firm',
   shortName: 'KND',
@@ -35,7 +37,8 @@ export const kndContent = {
     topMetaLeft: `Prepared for ${client.name}`,
     topMetaRight: [`Proposal · ${proposal.version}`, proposal.prepared],
     brandPair: `${defaultContent.agency.name} × ${client.name}`,
-    ctaApprove: 'Approve Review Sprint',
+    ctaApprove: 'Schedule Kickoff Call',
+    ctaHref: calendarHref,
   },
   hero: {
     ...defaultContent.hero,
@@ -46,7 +49,8 @@ export const kndContent = {
       'A practical workflow layer for stronger brief review, sharper opposing-brief analysis, cleaner discovery extraction, and controlled experimentation with local or open-weight AI.',
     body:
       'The clearest opportunity is a small, useful litigation support tool that helps experienced attorneys move faster while keeping judgment, privacy, and review at the center.',
-    ctaPrimary: 'Begin with the first sprint →',
+    ctaPrimary: 'Schedule Kickoff Call →',
+    ctaPrimaryHref: calendarHref,
     ctaSecondary: 'View litigation workflows',
     figLabelRight: 'Review workflow',
   },
@@ -326,13 +330,15 @@ export const kndContent = {
   nextStepSection: {
     ...defaultContent.nextStepSection,
     metaRight: `Prepared ${proposal.prepared}`,
-    headline: 'Start with the brief review sprint.',
+    headline: 'If this sounds aligned, let’s talk through kickoff.',
     bodyParagraphs: [
-      'Begin with the Brief Review + Opposition Analysis sprint: two weeks, one flat fee, and a concrete prototype around the workflow most likely to create reliable value first.',
-      'You leave with high-fidelity designs, review logic, a clickable prototype, and a build plan for the first internal litigation assistant. The larger build is quoted after the first workflow is clear.',
+      'The next step is a kickoff conversation: confirm the review workflow, talk through the first document set, and make sure the sprint feels clear before anything begins.',
+      'From there, we can move into the two-week Brief Review + Opposition Analysis sprint and shape the first prototype around the workflow most likely to create reliable value first.',
     ],
     investmentValue: '$4.8K',
-    ctaPrimary: 'Approve Review Sprint →',
+    ctaPrimary: 'Schedule Kickoff Call →',
+    ctaPrimaryHref: calendarHref,
+    ctaSecondary: '',
   },
   closing: {
     ...defaultContent.closing,
@@ -352,6 +358,7 @@ export const kndContent = {
   },
   approveScreen: {
     ...defaultContent.approveScreen,
+    disabled: true,
     eyebrow: 'Review sprint - approved',
     headline: 'We will shape the first workflow from here.',
     confirmationBody:

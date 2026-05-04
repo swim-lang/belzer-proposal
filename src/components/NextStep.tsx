@@ -7,10 +7,12 @@ export function NextStep() {
     'ctaPrimaryHref' in nextStepSection && typeof nextStepSection.ctaPrimaryHref === 'string'
       ? nextStepSection.ctaPrimaryHref
       : null
+  const isExternalPrimary = primaryHref?.startsWith('http') ?? false
   const secondaryHref =
     'ctaSecondaryHref' in nextStepSection && typeof nextStepSection.ctaSecondaryHref === 'string'
       ? nextStepSection.ctaSecondaryHref
       : '#'
+  const isExternalSecondary = secondaryHref.startsWith('http')
   const hasSecondaryCTA = nextStepSection.ctaSecondary.trim().length > 0
   const buildLabel =
     'buildLabel' in nextStepSection && typeof nextStepSection.buildLabel === 'string'
@@ -89,6 +91,8 @@ export function NextStep() {
             {primaryHref ? (
               <a
                 href={primaryHref}
+                target={isExternalPrimary ? '_blank' : undefined}
+                rel={isExternalPrimary ? 'noreferrer' : undefined}
                 className="px-6 py-4 rounded-full text-[14px] font-medium text-paper whitespace-nowrap transition-colors"
                 style={{ backgroundColor: 'var(--color-mac)' }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac-hover)')}
@@ -111,6 +115,8 @@ export function NextStep() {
             {hasSecondaryCTA ? (
               <a
                 href={secondaryHref}
+                target={isExternalSecondary ? '_blank' : undefined}
+                rel={isExternalSecondary ? 'noreferrer' : undefined}
                 className="px-6 py-4 border border-[var(--color-rule)] rounded-full text-[14px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper"
               >
                 {nextStepSection.ctaSecondary}

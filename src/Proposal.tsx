@@ -16,8 +16,12 @@ import { Ownership } from './components/Ownership'
 import { NextStep } from './components/NextStep'
 import { Closing } from './components/Closing'
 import { Footer } from './components/Footer'
+import { useContent } from './context/ContentContext'
 
 export function Proposal() {
+  const { approveScreen } = useContent()
+  const showApproveScreen = !('disabled' in approveScreen && approveScreen.disabled === true)
+
   return (
     <main className="bg-paper text-ink">
       <Nav />
@@ -37,7 +41,7 @@ export function Proposal() {
       <NextStep />
       <Closing />
       <Footer />
-      <ApproveScreen />
+      {showApproveScreen ? <ApproveScreen /> : null}
     </main>
   )
 }

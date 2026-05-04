@@ -5,8 +5,10 @@ import { UnfoldGrid } from './UnfoldGrid'
 export function Hero() {
   const { hero, stages } = useContent()
   const primaryHref = 'ctaPrimaryHref' in hero && typeof hero.ctaPrimaryHref === 'string' ? hero.ctaPrimaryHref : null
+  const isExternalPrimary = primaryHref?.startsWith('http') ?? false
   const secondaryHref =
     'ctaSecondaryHref' in hero && typeof hero.ctaSecondaryHref === 'string' ? hero.ctaSecondaryHref : '#features'
+  const isExternalSecondary = secondaryHref.startsWith('http')
   const hasSecondaryCTA = hero.ctaSecondary.trim().length > 0
 
   return (
@@ -51,6 +53,8 @@ export function Hero() {
             {primaryHref ? (
               <a
                 href={primaryHref}
+                target={isExternalPrimary ? '_blank' : undefined}
+                rel={isExternalPrimary ? 'noreferrer' : undefined}
                 className="px-5 py-3.5 rounded-full text-[13px] font-medium whitespace-nowrap transition-colors text-paper"
                 style={{ backgroundColor: 'var(--color-mac)' }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--color-mac-hover)')}
@@ -73,6 +77,8 @@ export function Hero() {
             {hasSecondaryCTA ? (
               <a
                 href={secondaryHref}
+                target={isExternalSecondary ? '_blank' : undefined}
+                rel={isExternalSecondary ? 'noreferrer' : undefined}
                 className="px-5 py-3.5 border border-[var(--color-rule)] rounded-full text-[13px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper"
               >
                 {hero.ctaSecondary}
