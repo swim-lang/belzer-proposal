@@ -28,8 +28,8 @@ export const kndContent = {
   proposal,
   pricing: {
     ...defaultContent.pricing,
-    sprintShort: '$4.8K',
-    sprintFull: '$4,800',
+    sprintShort: '$5.8K',
+    sprintFull: '$5,800',
     buildRange: '$7K-$15K',
   },
   nav: {
@@ -167,13 +167,13 @@ export const kndContent = {
   phaseOne: {
     ...defaultContent.phaseOne,
     eyebrowEmphasis: 'Brief review + opposition analysis sprint',
-    metaPrice: '$4,800',
+    metaPrice: '$5,800',
     headline: 'Brief Review + Opposition Analysis Sprint.',
     bodyParagraphs: [
       'Two focused weeks to define and prototype the first AI workflow around the highest-confidence starting point: reviewing draft briefs and analyzing opposing briefs.',
       'You leave with high-fidelity screens, a clickable prototype, prompt and review logic, and a development-ready plan for the first build. The sprint creates a concrete path before committing to a larger system.',
     ],
-    investmentValue: '$4.8K',
+    investmentValue: '$5.8K',
   },
   phaseTwo: {
     ...defaultContent.phaseTwo,
@@ -335,7 +335,7 @@ export const kndContent = {
       'The next step is a kickoff conversation: confirm the review workflow, talk through the first document set, and make sure the sprint feels clear before anything begins.',
       'From there, we can move into the two-week Brief Review + Opposition Analysis sprint and shape the first prototype around the workflow most likely to create reliable value first.',
     ],
-    investmentValue: '$4.8K',
+    investmentValue: '$5.8K',
     ctaPrimary: 'Schedule Kickoff Call →',
     ctaPrimaryHref: calendarHref,
     ctaSecondary: '',
