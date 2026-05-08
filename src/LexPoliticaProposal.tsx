@@ -348,7 +348,7 @@ function Hero() {
 function Opportunity() {
   return (
     <section id="heard" className="border-b border-[var(--color-rule)] bg-ink px-6 py-24 text-paper md:px-16 lg:px-[120px] lg:py-[160px]">
-      <MetaRow left="§ 03 — The opportunity" right="Anchovies · Recommendation" dark />
+      <MetaRow left="§ 02 — The opportunity" right="Anchovies · Recommendation" dark />
       <Reveal>
         <h2 className="display max-w-[1100px] py-16 text-[50px] leading-[54px] tracking-[-0.026em] md:text-[78px] md:leading-[78px] lg:text-[96px] lg:leading-[92px]">
           Build the first layer of Lex Politica&apos;s internal operating system.
@@ -384,7 +384,7 @@ function Opportunity() {
 function ProposedConcept() {
   return (
     <section className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[160px]">
-      <MetaRow left="§ 04 — Proposed concept" right="Working name" />
+      <MetaRow left="§ 03 — Proposed concept" right="Working name" />
       <Reveal className="flex flex-col gap-6 py-16">
         <span className="eyebrow text-ink-2">A custom portal —</span>
         <h2 className="display max-w-[1200px] text-[58px] leading-[58px] tracking-[-0.03em] md:text-[96px] md:leading-[88px] lg:text-[144px] lg:leading-[124px]">
@@ -422,7 +422,7 @@ function ProposedConcept() {
 function Modules() {
   return (
     <section id="modules" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[160px]">
-      <MetaRow left="§ 05 — Potential modules" right="Seven candidates" />
+      <MetaRow left="§ 04 — Potential modules" right="Seven candidates" />
       <div className="flex flex-col gap-10 py-16 lg:flex-row lg:gap-20">
         <Reveal className="max-w-[600px] flex-1">
           <h2 className="display text-[44px] leading-[48px] tracking-[-0.024em] md:text-[64px] md:leading-[64px]">
@@ -465,7 +465,7 @@ function Modules() {
 function DayOneYearOne() {
   return (
     <section id="approach" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[160px]">
-      <MetaRow left="§ 07 — Day 1 to Year 1" right="A phased evolution" />
+      <MetaRow left="§ 05 — Day 1 to Year 1" right="A phased evolution" />
       <div className="flex flex-col gap-10 py-16 lg:flex-row lg:gap-20">
         <Reveal className="max-w-[600px] flex-1">
           <h2 className="display text-[48px] leading-[52px] tracking-[-0.024em] md:text-[72px] md:leading-[72px]">
@@ -499,7 +499,7 @@ function DayOneYearOne() {
 function SprintHero() {
   return (
     <section id="sprint" className="border-b border-[var(--color-rule)] bg-ink px-6 py-24 text-paper md:px-16 lg:px-[120px] lg:py-[160px]">
-      <MetaRow left="§ 08 — Recommended first step" right="Two weeks · Lower risk" dark />
+      <MetaRow left="§ 06 — Recommended first step" right="Two weeks · Lower risk" dark />
       <div className="flex flex-col gap-10 py-16 lg:flex-row lg:items-start lg:justify-between">
         <Reveal>
           <h2 className="display max-w-[700px] text-[52px] leading-[56px] tracking-[-0.025em] md:text-[84px] md:leading-[84px]">
@@ -538,7 +538,7 @@ function SprintHero() {
 function SprintScope() {
   return (
     <section className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[160px]">
-      <MetaRow left="§ 09 — Sprint scope" right="Two-week structure" />
+      <MetaRow left="§ 07 — Sprint scope" right="Two-week structure" />
       <div className="flex flex-col gap-10 py-16 lg:flex-row lg:gap-20">
         <Reveal className="max-w-[600px] flex-1">
           <h2 className="display text-[48px] leading-[52px] tracking-[-0.024em] md:text-[72px] md:leading-[72px]">Two weeks, start to handoff.</h2>
@@ -583,7 +583,7 @@ function SprintWeek({ num, title, subtitle, tasks }: { num: string; title: strin
 function SprintDeliverables() {
   return (
     <section id="investment" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[160px]">
-      <MetaRow left="§ 10 — Sprint deliverables" right="What you walk away with" />
+      <MetaRow left="§ 08 — Sprint deliverables" right="What you walk away with" />
       <div className="flex flex-col gap-10 py-16 lg:flex-row lg:gap-20">
         <Reveal className="max-w-[600px] flex-1">
           <h2 className="display text-[46px] leading-[50px] tracking-[-0.024em] md:text-[72px] md:leading-[72px]">
@@ -637,7 +637,7 @@ function DeliverableList({ title, meta, items, prefix }: { title: string; meta: 
 function WhyAnchovies() {
   return (
     <section className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[160px]">
-      <MetaRow left="§ 13 — Why Anchovies" right="Designers + builders + practical AI" />
+      <MetaRow left="§ 09 — Why Anchovies" right="Designers + builders + practical AI" />
       <Reveal>
         <h2 className="display max-w-[1200px] py-16 text-[48px] leading-[52px] tracking-[-0.024em] md:text-[82px] md:leading-[82px]">
           Custom software, but only when it&apos;s the right thing.
@@ -668,7 +668,7 @@ function WhyAnchovies() {
 function NextStep() {
   return (
     <section id="next" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[160px]">
-      <MetaRow left="§ 14 — Next step" right="A simple way to begin" />
+      <MetaRow left="§ 10 — Next step" right="A simple way to begin" />
       <Reveal className="mt-16 border border-[var(--color-rule)] p-8 md:p-14 lg:p-16">
         <div className="flex flex-col gap-8 border-b border-[var(--color-rule)] pb-10 lg:flex-row lg:items-start lg:justify-between">
           <h2 className="display max-w-[680px] text-[52px] leading-[56px] tracking-[-0.026em] md:text-[88px] md:leading-[84px]">
@@ -712,7 +712,7 @@ function NextStep() {
 function Closing() {
   return (
     <section className="bg-ink px-6 py-24 text-paper md:px-16 lg:px-[120px] lg:py-[160px]">
-      <MetaRow left="§ 15 — Closing" right="Anchovies × Lex Politica · 2026" dark />
+      <MetaRow left="§ 11 — Closing" right="Anchovies × Lex Politica · 2026" dark />
       <Reveal>
         <h2 className="display max-w-[1200px] py-16 text-[48px] leading-[52px] tracking-[-0.024em] md:text-[86px] md:leading-[84px] lg:text-[104px] lg:leading-[100px]">
           Design the whole system. Build the first useful layer.
@@ -761,7 +761,7 @@ export function LexPoliticaProposal() {
   }, [])
 
   return (
-    <main className="bg-paper text-ink">
+    <main className="lex-proposal bg-paper text-ink">
       <LexNav />
       <Hero />
       <Opportunity />
