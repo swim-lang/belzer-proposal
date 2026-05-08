@@ -744,7 +744,7 @@ function NextStep() {
       <Reveal className="mt-16 border border-[var(--color-rule)] p-8 md:p-14 lg:p-16">
         <div className="flex flex-col gap-8 border-b border-[var(--color-rule)] pb-10 lg:flex-row lg:items-end lg:justify-between">
           <h2 className="display max-w-[720px] text-[52px] leading-[56px] tracking-[-0.026em] md:text-[80px] md:leading-[80px]">
-            Begin with a focused discovery session.
+            Kick off the next chapter.
           </h2>
           <div className="lg:text-right">
             <span className="display block text-[70px] leading-[74px] tracking-[-0.03em] md:text-[88px] md:leading-[88px]">$38,500</span>
@@ -753,7 +753,7 @@ function NextStep() {
         </div>
         <div className="grid gap-10 border-b border-[var(--color-rule)] py-10 lg:grid-cols-[480px_1fr]">
           <p className="text-[15px] leading-[24px] text-ink-2">
-            If this direction feels aligned, we begin with a focused discovery session and move into the work. From there, we&apos;ll build a brand system, website, and communication toolkit that gives Genesi a more complete and elevated presence from the beginning.
+            If this direction feels aligned, we&apos;ll begin with a clear kickoff and move directly into building the brand, website, and communication system around Genesi. The goal is to create something that feels elevated from the start, gives the firm a sharper presence in the market, and sets the foundation for where you&apos;re taking the business next.
           </p>
           <div className="flex flex-col gap-3">
             <span className="eyebrow text-ink-2">From kickoff, Genesi gets —</span>
