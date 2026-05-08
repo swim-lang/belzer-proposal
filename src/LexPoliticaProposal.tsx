@@ -702,7 +702,6 @@ function NextStep() {
         </div>
         <div className="flex flex-wrap gap-4 pt-8">
           <AnchorButton>{'Schedule the sprint ->'}</AnchorButton>
-          <AnchorButton variant="outline">Schedule a kickoff call</AnchorButton>
         </div>
       </Reveal>
     </section>
