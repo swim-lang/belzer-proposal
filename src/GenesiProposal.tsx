@@ -247,13 +247,13 @@ const investmentLines = [
   ['04', 'Client communication, hiring, and visibility system', 'Proposal template, deck template, briefing templates, memo system, partnering and hiring collateral, business card, letterhead, motion, visibility concepts.', '$6,500'],
 ]
 
-const optionalVisibility = [
-  'Expanded airport advertising concepts',
-  'Additional out-of-home layouts',
-  'Expanded motion identity',
-  'LinkedIn + digital ad concepts',
-  'Event or sponsorship collateral direction',
-  'Additional business development presentation polish',
+const optionalClientApp = [
+  'Branded iOS-style app concept',
+  'Secure client communication flow',
+  'Push notification strategy',
+  'Simple document and update access',
+  'Private message-style experience',
+  'High-end client experience polish',
 ]
 
 const paymentMilestones = [
@@ -668,13 +668,13 @@ function Investment() {
       <Reveal className="mt-10 grid gap-8 border border-paper/20 p-8 lg:grid-cols-[1.1fr_1fr_180px] lg:p-10">
         <div className="flex flex-col gap-3">
           <span className="eyebrow text-paper/55">Optional extension</span>
-          <h3 className="serif text-[36px] leading-[42px] tracking-[-0.016em]">Expanded visibility package.</h3>
+          <h3 className="serif text-[36px] leading-[42px] tracking-[-0.016em]">Private client app.</h3>
           <p className="text-[14px] leading-[22px] text-paper/70">
-            Useful if you want the engagement to go further into public visibility and long-term brand building, without forcing the ad rollout into the core scope.
+            A lightweight, branded client communication tool designed to make the experience feel more secure, direct, and premium, without turning it into a heavy platform.
           </p>
         </div>
         <div className="flex flex-col gap-2">
-          {optionalVisibility.map((item) => (
+          {optionalClientApp.map((item) => (
             <div key={item} className="flex items-baseline gap-3">
               <span className="h-1 w-1 shrink-0 rounded-full bg-paper/70" />
               <span className="text-[13px] leading-[20px]">{item}</span>
