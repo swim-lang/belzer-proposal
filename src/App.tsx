@@ -4,6 +4,7 @@ import { PreMeetingPage } from './PreMeetingPage'
 import { QuietHome } from './QuietHome'
 import { SavedFirmPage } from './SavedFirmPage'
 import { HAAIProposal } from './HAAIProposal'
+import { LexPoliticaProposal } from './LexPoliticaProposal'
 import { SleepGoddessProposal } from './SleepGoddessProposal'
 import { Admin } from './admin/Admin'
 import { Intake } from './intake/Intake'
@@ -27,6 +28,9 @@ export default function App() {
     pathname.startsWith('/proposal/haai/') ||
     pathname === '/haai' ||
     pathname.startsWith('/haai/')
+  const isLexPolitica =
+    pathname === '/proposal/lex-politica' ||
+    pathname.startsWith('/proposal/lex-politica/')
   const isFirmPage = pathname === '/firm' || pathname.startsWith('/firm/')
   const isPreMeeting =
     pathname === '/ai-legal-tools' ||
@@ -82,6 +86,10 @@ export default function App() {
 
   if (isHAAI) {
     return <HAAIProposal />
+  }
+
+  if (isLexPolitica) {
+    return <LexPoliticaProposal />
   }
 
   if (isLegacyBelzer) {
