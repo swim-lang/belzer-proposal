@@ -3,6 +3,7 @@ import { Proposal } from './Proposal'
 import { PreMeetingPage } from './PreMeetingPage'
 import { QuietHome } from './QuietHome'
 import { SavedFirmPage } from './SavedFirmPage'
+import { GenesiProposal } from './GenesiProposal'
 import { HAAIProposal } from './HAAIProposal'
 import { LexPoliticaProposal } from './LexPoliticaProposal'
 import { SleepGoddessProposal } from './SleepGoddessProposal'
@@ -31,6 +32,9 @@ export default function App() {
   const isLexPolitica =
     pathname === '/proposal/lex-politica' ||
     pathname.startsWith('/proposal/lex-politica/')
+  const isGenesi =
+    pathname === '/proposal/genesi' ||
+    pathname.startsWith('/proposal/genesi/')
   const isFirmPage = pathname === '/firm' || pathname.startsWith('/firm/')
   const isPreMeeting =
     pathname === '/ai-legal-tools' ||
@@ -90,6 +94,10 @@ export default function App() {
 
   if (isLexPolitica) {
     return <LexPoliticaProposal />
+  }
+
+  if (isGenesi) {
+    return <GenesiProposal />
   }
 
   if (isLegacyBelzer) {

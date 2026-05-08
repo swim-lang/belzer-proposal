@@ -71,6 +71,13 @@ span.display {
   margin-right: auto;
 }
 
+.genesi-proposal > section > * {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @keyframes reveal {
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
