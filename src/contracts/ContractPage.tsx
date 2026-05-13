@@ -5,6 +5,13 @@ type ContractPageProps = {
   contract: ContractData
 }
 
+const agencySignature = {
+  name: 'Sean Ashlow',
+  title: 'Founder, Anchovies',
+  date: 'May 13, 2026',
+  image: '/signatures/sean-ashlow-signature.png',
+}
+
 function todayForInput() {
   return new Date().toISOString().slice(0, 10)
 }
@@ -16,7 +23,38 @@ function formatDate(value: string) {
   return new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric' }).format(new Date(year, month - 1, day))
 }
 
-function PrintButton({ onBeforePrint }: { onBeforePrint?: () => void }) {
+function trackContractEvent(input: {
+  contractSlug: string
+  eventType: 'view' | 'download_pdf'
+  signerName?: string
+  signerTitle?: string
+  signedDate?: string
+}) {
+  const payload = JSON.stringify({
+    ...input,
+    pageUrl: window.location.href,
+  })
+
+  if (navigator.sendBeacon) {
+    navigator.sendBeacon('/api/contract-events', new Blob([payload], { type: 'application/json' }))
+    return
+  }
+
+  fetch('/api/contract-events', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: payload,
+    keepalive: true,
+  }).catch(() => {
+    /* Event tracking should never block contract review. */
+  })
+}
+
+function PrintButton({
+  onBeforePrint,
+}: {
+  onBeforePrint?: () => void
+}) {
   const handlePrint = () => {
     document.documentElement.classList.add('contract-print-mode')
     onBeforePrint?.()
@@ -172,6 +210,22 @@ export function ContractPage({ contract }: ContractPageProps) {
     document.documentElement.classList.toggle('contract-print-mode', isPrintMode)
   }, [isPrintMode])
 
+  useEffect(() => {
+    if (isPrintParam) return
+    trackContractEvent({ contractSlug: contract.slug, eventType: 'view' })
+  }, [contract.slug, isPrintParam])
+
+  const preparePrint = () => {
+    trackContractEvent({
+      contractSlug: contract.slug,
+      eventType: 'download_pdf',
+      signerName,
+      signerTitle,
+      signedDate,
+    })
+    setIsPrintMode(true)
+  }
+
   return (
     <main className="contract-page bg-paper text-ink">
       {!isPrintMode && (
@@ -189,7 +243,7 @@ export function ContractPage({ contract }: ContractPageProps) {
               <a href={proposalHref} className="hidden rounded-full px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper sm:inline-flex">
                 Proposal
               </a>
-              <PrintButton onBeforePrint={() => setIsPrintMode(true)} />
+              <PrintButton onBeforePrint={preparePrint} />
             </div>
           </div>
         </div>
@@ -538,15 +592,17 @@ export function ContractPage({ contract }: ContractPageProps) {
                 <p>
                   <strong>Agency:</strong> {contract.agency.name}
                 </p>
-                <div className="signature-line" />
+                <div className="signature-line agency-signature-line">
+                  <img src={agencySignature.image} alt={agencySignature.name} />
+                </div>
                 <p>
-                  <strong>Signature:</strong> _______________________
+                  <strong>Signature:</strong> {agencySignature.name}
                 </p>
                 <p>
-                  <strong>Name / Title:</strong> Sean Ashlow · Founder, Anchovies
+                  <strong>Name / Title:</strong> {agencySignature.name} · {agencySignature.title}
                 </p>
                 <p>
-                  <strong>Date:</strong> ____________
+                  <strong>Date:</strong> {agencySignature.date}
                 </p>
               </div>
             </div>
@@ -596,7 +652,7 @@ export function ContractPage({ contract }: ContractPageProps) {
             signedDate={signedDate}
             setSignedDate={setSignedDate}
             proposalHref={proposalHref}
-            onBeforePrint={() => setIsPrintMode(true)}
+            onBeforePrint={preparePrint}
           />
         )}
       </div>

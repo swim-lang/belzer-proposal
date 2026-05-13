@@ -193,6 +193,17 @@ span.display {
   line-height: 1;
 }
 
+.agency-signature-line {
+  display: flex;
+  align-items: flex-end;
+}
+
+.agency-signature-line img {
+  width: min(260px, 100%);
+  height: auto;
+  margin-bottom: 8px;
+}
+
 .scope-phase {
   padding-top: 16px;
   margin-top: 16px;
@@ -306,6 +317,11 @@ html.contract-print-mode .signature-line {
 
 html.contract-print-mode .signature-script {
   font-size: 19pt;
+}
+
+html.contract-print-mode .agency-signature-line img {
+  width: 2.4in;
+  margin-bottom: 0.05in;
 }
 
 html.contract-print-mode .scope-phase {
@@ -426,6 +442,11 @@ html.contract-print-mode .scope-phase {
 
   .signature-script {
     font-size: 19pt;
+  }
+
+  .agency-signature-line img {
+    width: 2.4in;
+    margin-bottom: 0.05in;
   }
 
   .scope-phase {
