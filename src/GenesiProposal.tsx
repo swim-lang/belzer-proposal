@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Reveal } from './components/Reveal'
 
 const contractHref = '/proposal/genesi/contract'
+const depositHref = 'https://link.waveapps.com/gqpmrs-krmcxm'
 const workHref = 'https://pitch.com/v/anchovies-press-zwdsbn'
 
 const navSections = [
@@ -369,6 +370,9 @@ function GenesiNav() {
             <a href={contractHref} className="rounded-full border border-ink px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper whitespace-nowrap">
               Sign contract
             </a>
+            <a href={depositHref} target="_blank" rel="noreferrer" className="rounded-full bg-ink px-4 py-2 text-[12px] font-medium text-paper transition-colors hover:bg-ink-2 whitespace-nowrap">
+              Pay Deposit
+            </a>
           </div>
         </div>
       </div>
@@ -406,6 +410,9 @@ function Hero() {
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <AnchorButton href={contractHref}>{'Sign contract ->'}</AnchorButton>
+            <AnchorButton href={depositHref} variant="outline">
+              Pay Deposit
+            </AnchorButton>
             <AnchorButton href={workHref} variant="outline">
               View our work
             </AnchorButton>
@@ -779,6 +786,9 @@ function NextStep() {
         </div>
         <div className="flex flex-wrap gap-4 pt-8">
           <AnchorButton href={contractHref}>{'Sign contract ->'}</AnchorButton>
+          <AnchorButton href={depositHref} variant="outline">
+            Pay Deposit
+          </AnchorButton>
         </div>
       </Reveal>
     </section>
