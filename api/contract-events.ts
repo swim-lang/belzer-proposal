@@ -17,6 +17,13 @@ type ContractEvent = {
   signerName: string
   signerTitle: string
   signedDate: string
+  submittedAt: string
+  consentAccepted: boolean
+  signatureMethod: string
+  typedSignature: string
+  drawnSignatureDataUrl: string
+  generatedAt: string
+  signedDocumentHtml: string
 }
 
 async function sendViaResend(event: ContractEvent): Promise<{ ok: boolean; error?: string }> {
@@ -34,6 +41,19 @@ async function sendViaResend(event: ContractEvent): Promise<{ ok: boolean; error
     ['Signer', event.signerName || '-'],
     ['Title', event.signerTitle || '-'],
     ['Signed date', event.signedDate || '-'],
+    ['Submitted', event.submittedAt || '-'],
+    ['Consent accepted', event.consentAccepted ? 'Yes' : event.eventType === 'contract_signed' ? 'No' : '-'],
+    ['Signature method', event.signatureMethod || '-'],
+    [
+      'Signature',
+      event.signatureMethod === 'drawn'
+        ? event.drawnSignatureDataUrl
+          ? 'Drawn signature captured'
+          : '-'
+        : event.typedSignature || '-',
+    ],
+    ['Generated PDF', event.generatedAt || '-'],
+    ['Signed copy saved', event.signedDocumentHtml ? 'Yes' : '-'],
     ['Page', event.pageUrl],
     ['Referer', event.referer || '-'],
     ['User agent', event.userAgent || '-'],
@@ -167,6 +187,13 @@ export default async function handler(req: Request): Promise<Response> {
     signerName: typeof body.signerName === 'string' ? body.signerName : '',
     signerTitle: typeof body.signerTitle === 'string' ? body.signerTitle : '',
     signedDate: typeof body.signedDate === 'string' ? body.signedDate : '',
+    submittedAt: typeof body.submittedAt === 'string' ? body.submittedAt : '',
+    consentAccepted: body.consentAccepted === true,
+    signatureMethod: typeof body.signatureMethod === 'string' ? body.signatureMethod : '',
+    typedSignature: typeof body.typedSignature === 'string' ? body.typedSignature : '',
+    drawnSignatureDataUrl: typeof body.drawnSignatureDataUrl === 'string' ? body.drawnSignatureDataUrl : '',
+    generatedAt: typeof body.generatedAt === 'string' ? body.generatedAt : '',
+    signedDocumentHtml: typeof body.signedDocumentHtml === 'string' ? body.signedDocumentHtml : '',
   }
 
   try {

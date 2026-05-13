@@ -1,6 +1,6 @@
 import { useContentControl } from '../context/ContentContext'
 
-export type AdminView = 'dashboard' | 'editor' | 'submissions'
+export type AdminView = 'dashboard' | 'editor' | 'submissions' | 'contracts'
 
 export function signOut() {
   try {
@@ -23,6 +23,7 @@ export function navigate(view: AdminView) {
 export function viewFromPath(path: string): AdminView {
   if (path === '/admin/editor' || path.startsWith('/admin/editor/')) return 'editor'
   if (path === '/admin/submissions' || path.startsWith('/admin/submissions/')) return 'submissions'
+  if (path === '/admin/contracts' || path.startsWith('/admin/contracts/')) return 'contracts'
   return 'dashboard'
 }
 
@@ -31,6 +32,7 @@ export function AdminTopNav({ view, onChange }: { view: AdminView; onChange: (v:
     { key: 'dashboard', label: 'Dashboard' },
     { key: 'editor', label: 'Editor' },
     { key: 'submissions', label: 'Submissions' },
+    { key: 'contracts', label: 'Contracts' },
   ]
   return (
     <header className="flex items-center justify-between px-5 md:px-8 py-4 border-b border-[var(--color-rule)]/20 bg-paper sticky top-0 z-30">

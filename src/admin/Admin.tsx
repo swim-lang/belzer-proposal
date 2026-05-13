@@ -4,6 +4,7 @@ import { AdminEditor } from './AdminEditor'
 import { AdminTopNav, navigate, viewFromPath, type AdminView } from './AdminChrome'
 import { Dashboard } from './Dashboard'
 import { SubmissionsView } from './SubmissionsView'
+import { ContractEventsView } from './ContractEventsView'
 
 const DEFAULT_PIN = '1234'
 const SESSION_KEY = 'anchovies-admin-session-v1'
@@ -132,6 +133,7 @@ function AdminRouter() {
       {view === 'dashboard' && <Dashboard />}
       {view === 'editor' && <AdminEditor />}
       {view === 'submissions' && <SubmissionsView />}
+      {view === 'contracts' && <ContractEventsView />}
     </div>
   )
 }

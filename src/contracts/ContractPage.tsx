@@ -1,8 +1,20 @@
-import { useEffect, useMemo, useState, type ReactNode } from 'react'
+import { useEffect, useMemo, useRef, useState, type PointerEvent, type ReactNode } from 'react'
 import type { ContractData } from './types'
 
 type ContractPageProps = {
   contract: ContractData
+}
+
+type SignatureMethod = 'typed' | 'drawn'
+
+type SubmittedSignature = {
+  signerName: string
+  signerTitle: string
+  signedDate: string
+  submittedAt: string
+  signatureMethod: SignatureMethod
+  typedSignature: string
+  drawnSignatureDataUrl: string
 }
 
 const agencySignature = {
@@ -12,9 +24,7 @@ const agencySignature = {
   image: '/signatures/sean-ashlow-signature.png',
 }
 
-function todayForInput() {
-  return new Date().toISOString().slice(0, 10)
-}
+const depositHref = 'https://link.waveapps.com/gqpmrs-krmcxm'
 
 function formatDate(value: string) {
   if (!value) return '____________'
@@ -50,15 +60,52 @@ function trackContractEvent(input: {
   })
 }
 
+async function submitContractEvent(input: {
+  contractSlug: string
+  eventType: 'contract_signed' | 'signed_pdf_generated'
+  signerName: string
+  signerTitle: string
+  signedDate: string
+  submittedAt: string
+  consentAccepted: boolean
+  signatureMethod: SignatureMethod
+  typedSignature: string
+  drawnSignatureDataUrl: string
+  generatedAt?: string
+  signedDocumentHtml?: string
+}) {
+  const res = await fetch('/api/contract-events', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({
+      ...input,
+      pageUrl: window.location.href,
+    }),
+  })
+
+  if (!res.ok) {
+    const isLocalDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    if (isLocalDev && res.status === 404) {
+      return { ok: true, id: 'local-dev' }
+    }
+    throw new Error(`Contract event failed with ${res.status}`)
+  }
+
+  return res.json() as Promise<{ ok?: boolean; id?: string }>
+}
+
 function PrintButton({
   onBeforePrint,
+  children = 'Download PDF',
 }: {
-  onBeforePrint?: () => void
+  onBeforePrint?: () => void | Promise<void>
+  children?: ReactNode
 }) {
   const handlePrint = () => {
     document.documentElement.classList.add('contract-print-mode')
-    onBeforePrint?.()
-    window.setTimeout(() => window.print(), 100)
+    Promise.resolve(onBeforePrint?.()).finally(() => {
+      window.setTimeout(() => window.print(), 100)
+    })
   }
 
   return (
@@ -67,7 +114,7 @@ function PrintButton({
       onClick={handlePrint}
       className="rounded-full bg-ink px-5 py-3 text-[13px] font-medium text-paper transition-colors hover:bg-ink-2"
     >
-      Download PDF
+      {children}
     </button>
   )
 }
@@ -96,6 +143,144 @@ function TextField({
   )
 }
 
+function SignatureMethodButton({
+  active,
+  children,
+  onClick,
+}: {
+  active: boolean
+  children: ReactNode
+  onClick: () => void
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`rounded-full px-4 py-2 text-[12px] font-medium transition-colors ${
+        active ? 'bg-ink text-paper' : 'border border-[var(--color-rule)] text-ink hover:bg-ink hover:text-paper'
+      }`}
+    >
+      {children}
+    </button>
+  )
+}
+
+function SignaturePad({
+  value,
+  onChange,
+}: {
+  value: string
+  onChange: (value: string) => void
+}) {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null)
+  const drawingRef = useRef(false)
+  const movedRef = useRef(false)
+
+  const getContext = () => {
+    const canvas = canvasRef.current
+    if (!canvas) return null
+    return canvas.getContext('2d')
+  }
+
+  const resizeCanvas = () => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const rect = canvas.getBoundingClientRect()
+    const ratio = window.devicePixelRatio || 1
+    canvas.width = Math.max(1, Math.floor(rect.width * ratio))
+    canvas.height = Math.max(1, Math.floor(rect.height * ratio))
+    const context = canvas.getContext('2d')
+    if (!context) return
+    context.setTransform(ratio, 0, 0, ratio, 0, 0)
+    context.lineCap = 'round'
+    context.lineJoin = 'round'
+    context.lineWidth = 2.2
+    context.strokeStyle = '#0A0A0A'
+  }
+
+  useEffect(() => {
+    resizeCanvas()
+    window.addEventListener('resize', resizeCanvas)
+    return () => window.removeEventListener('resize', resizeCanvas)
+  }, [])
+
+  const pointFromEvent = (event: PointerEvent<HTMLCanvasElement>) => {
+    const canvas = canvasRef.current
+    if (!canvas) return { x: 0, y: 0 }
+    const rect = canvas.getBoundingClientRect()
+    return {
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top,
+    }
+  }
+
+  const handlePointerDown = (event: PointerEvent<HTMLCanvasElement>) => {
+    const context = getContext()
+    if (!context) return
+    const point = pointFromEvent(event)
+    drawingRef.current = true
+    movedRef.current = false
+    event.currentTarget.setPointerCapture(event.pointerId)
+    context.beginPath()
+    context.moveTo(point.x, point.y)
+  }
+
+  const handlePointerMove = (event: PointerEvent<HTMLCanvasElement>) => {
+    if (!drawingRef.current) return
+    const context = getContext()
+    if (!context) return
+    const point = pointFromEvent(event)
+    movedRef.current = true
+    context.lineTo(point.x, point.y)
+    context.stroke()
+  }
+
+  const finishDrawing = () => {
+    if (!drawingRef.current) return
+    drawingRef.current = false
+    if (!movedRef.current) return
+    const canvas = canvasRef.current
+    if (!canvas) return
+    onChange(canvas.toDataURL('image/png'))
+  }
+
+  const clear = () => {
+    const canvas = canvasRef.current
+    const context = getContext()
+    if (!canvas || !context) return
+    context.clearRect(0, 0, canvas.width, canvas.height)
+    onChange('')
+  }
+
+  return (
+    <div className="flex flex-col gap-3">
+      <canvas
+        ref={canvasRef}
+        aria-label="Draw signature"
+        className="h-[150px] w-full touch-none border border-[var(--color-rule)] bg-white"
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={finishDrawing}
+        onPointerCancel={finishDrawing}
+        onPointerLeave={finishDrawing}
+      />
+      <div className="flex items-center justify-between gap-3">
+        <span className="text-[12px] leading-[18px] text-ink-2">
+          Draw inside the box. This will appear on the signed contract.
+        </span>
+        <button
+          type="button"
+          onClick={clear}
+          disabled={!value}
+          className="rounded-full border border-[var(--color-rule)] px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:bg-transparent disabled:hover:text-ink"
+        >
+          Clear
+        </button>
+      </div>
+    </div>
+  )
+}
+
 function SignaturePanel({
   clientName,
   signerName,
@@ -104,6 +289,19 @@ function SignaturePanel({
   setSignerTitle,
   signedDate,
   setSignedDate,
+  consentAccepted,
+  setConsentAccepted,
+  signatureMethod,
+  setSignatureMethod,
+  typedSignature,
+  setTypedSignature,
+  drawnSignatureDataUrl,
+  setDrawnSignatureDataUrl,
+  canSubmit,
+  submitStatus,
+  submitError,
+  submittedSignature,
+  onSubmit,
   proposalHref,
   onBeforePrint,
 }: {
@@ -114,16 +312,57 @@ function SignaturePanel({
   setSignerTitle: (value: string) => void
   signedDate: string
   setSignedDate: (value: string) => void
+  consentAccepted: boolean
+  setConsentAccepted: (value: boolean) => void
+  signatureMethod: SignatureMethod
+  setSignatureMethod: (value: SignatureMethod) => void
+  typedSignature: string
+  setTypedSignature: (value: string) => void
+  drawnSignatureDataUrl: string
+  setDrawnSignatureDataUrl: (value: string) => void
+  canSubmit: boolean
+  submitStatus: 'idle' | 'submitting' | 'submitted' | 'error'
+  submitError: string
+  submittedSignature: SubmittedSignature | null
+  onSubmit: () => void
   proposalHref: string
-  onBeforePrint: () => void
+  onBeforePrint: () => void | Promise<void>
 }) {
+  if (submittedSignature) {
+    return (
+      <aside className="no-print order-first w-full min-w-0 border border-[var(--color-rule)] bg-paper p-6 lg:order-none lg:sticky lg:top-28 lg:self-start">
+        <div className="flex flex-col gap-2 border-b border-[var(--color-rule)] pb-5">
+          <span className="eyebrow text-ink-2">Complete</span>
+          <h2 className="serif text-[32px] leading-[36px] tracking-[-0.016em]">Contract signed and submitted.</h2>
+          <p className="text-[13px] leading-[20px] text-ink-2">
+            Submitted {new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(submittedSignature.submittedAt))}.
+          </p>
+        </div>
+        <div className="flex flex-col gap-3 pt-5">
+          <PrintButton onBeforePrint={onBeforePrint}>Download signed PDF</PrintButton>
+          <a
+            href={depositHref}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex justify-center rounded-full border border-ink px-5 py-3 text-[13px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper"
+          >
+            Pay Deposit
+          </a>
+          <a href={proposalHref} className="inline-flex justify-center rounded-full border border-[var(--color-rule)] px-5 py-3 text-[13px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper">
+            Back to proposal
+          </a>
+        </div>
+      </aside>
+    )
+  }
+
   return (
-    <aside className="no-print border border-[var(--color-rule)] bg-paper p-6 lg:sticky lg:top-28 lg:self-start">
+    <aside className="no-print order-first w-full min-w-0 border border-[var(--color-rule)] bg-paper p-6 lg:order-none lg:sticky lg:top-28 lg:self-start">
       <div className="flex flex-col gap-2 border-b border-[var(--color-rule)] pb-5">
         <span className="eyebrow text-ink-2">Ready to proceed</span>
-        <h2 className="serif text-[32px] leading-[36px] tracking-[-0.016em]">Sign on page.</h2>
+        <h2 className="serif text-[32px] leading-[36px] tracking-[-0.016em]">Review, sign, and submit.</h2>
         <p className="text-[13px] leading-[20px] text-ink-2">
-          Type the authorized signer information below, then download the finished agreement as a PDF.
+          Complete the signer details, add your electronic signature, then submit the agreement.
         </p>
       </div>
       <div className="flex flex-col gap-4 py-5">
@@ -138,9 +377,51 @@ function SignaturePanel({
             className="rounded-none border border-[var(--color-rule)] bg-paper px-4 py-3 text-[15px] outline-none transition-colors focus:border-ink"
           />
         </label>
+        <div className="flex flex-col gap-3">
+          <span className="eyebrow text-ink-2">Signature</span>
+          <div className="flex flex-wrap gap-2">
+            <SignatureMethodButton active={signatureMethod === 'typed'} onClick={() => setSignatureMethod('typed')}>
+              Type signature
+            </SignatureMethodButton>
+            <SignatureMethodButton active={signatureMethod === 'drawn'} onClick={() => setSignatureMethod('drawn')}>
+              Draw signature
+            </SignatureMethodButton>
+          </div>
+          {signatureMethod === 'typed' ? (
+            <input
+              value={typedSignature}
+              onChange={(event) => setTypedSignature(event.target.value)}
+              placeholder="Type your legal signature"
+              className="signature-typed-input rounded-none border border-[var(--color-rule)] bg-white px-4 py-4 text-[28px] leading-none outline-none transition-colors placeholder:text-ink-2/40 focus:border-ink"
+            />
+          ) : (
+            <SignaturePad value={drawnSignatureDataUrl} onChange={setDrawnSignatureDataUrl} />
+          )}
+        </div>
+        <label className="flex gap-3 border-y border-[var(--color-rule)] py-4">
+          <input
+            type="checkbox"
+            checked={consentAccepted}
+            onChange={(event) => setConsentAccepted(event.target.checked)}
+            className="mt-1 h-4 w-4 shrink-0 accent-black"
+          />
+          <span className="text-[13px] leading-[20px] text-ink-2">
+            I confirm I am authorized to sign this agreement for {clientName} and agree that my electronic signature is valid and binding.
+          </span>
+        </label>
       </div>
       <div className="flex flex-col gap-3 border-t border-[var(--color-rule)] pt-5">
-        <PrintButton onBeforePrint={onBeforePrint} />
+        <button
+          type="button"
+          onClick={onSubmit}
+          disabled={!canSubmit || submitStatus === 'submitting'}
+          className="rounded-full bg-ink px-5 py-3 text-[13px] font-medium text-paper transition-colors hover:bg-ink-2 disabled:cursor-not-allowed disabled:opacity-35"
+        >
+          {submitStatus === 'submitting' ? 'Submitting...' : 'Sign and Submit'}
+        </button>
+        {submitStatus === 'error' && (
+          <p className="text-[12px] leading-[18px] text-red-700">{submitError}</p>
+        )}
         <a href={proposalHref} className="inline-flex justify-center rounded-full border border-[var(--color-rule)] px-5 py-3 text-[13px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper">
           Back to proposal
         </a>
@@ -180,12 +461,26 @@ function BulletList({ items }: { items: string[] }) {
 
 export function ContractPage({ contract }: ContractPageProps) {
   const isPrintParam = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('print') === '1'
-  const [signerName, setSignerName] = useState(contract.client.contactName || '')
-  const [signerTitle, setSignerTitle] = useState(`Authorized signer, ${contract.client.name}`)
-  const [signedDate, setSignedDate] = useState(todayForInput())
+  const [signerName, setSignerName] = useState('')
+  const [signerTitle, setSignerTitle] = useState('')
+  const [signedDate, setSignedDate] = useState('')
+  const [consentAccepted, setConsentAccepted] = useState(false)
+  const [signatureMethod, setSignatureMethod] = useState<SignatureMethod>('drawn')
+  const [typedSignature, setTypedSignature] = useState('')
+  const [drawnSignatureDataUrl, setDrawnSignatureDataUrl] = useState('')
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'submitted' | 'error'>('idle')
+  const [submitError, setSubmitError] = useState('')
+  const [submittedSignature, setSubmittedSignature] = useState<SubmittedSignature | null>(null)
   const [isPrintMode, setIsPrintMode] = useState(isPrintParam)
-  const displayedDate = useMemo(() => formatDate(signedDate), [signedDate])
+  const displayedDate = useMemo(() => formatDate(submittedSignature?.signedDate ?? ''), [submittedSignature?.signedDate])
+  const effectiveDate = submittedSignature ? formatDate(submittedSignature.signedDate) : contract.effectiveDate
   const proposalHref = `/proposal/${contract.slug}`
+  const canSubmit =
+    !!signerName.trim() &&
+    !!signerTitle.trim() &&
+    !!signedDate &&
+    consentAccepted &&
+    (signatureMethod === 'typed' ? !!typedSignature.trim() : !!drawnSignatureDataUrl)
 
   useEffect(() => {
     document.title = `Anchovies × ${contract.client.name} — Contract`
@@ -215,15 +510,71 @@ export function ContractPage({ contract }: ContractPageProps) {
     trackContractEvent({ contractSlug: contract.slug, eventType: 'view' })
   }, [contract.slug, isPrintParam])
 
-  const preparePrint = () => {
+  const preparePrint = async () => {
     trackContractEvent({
       contractSlug: contract.slug,
       eventType: 'download_pdf',
-      signerName,
-      signerTitle,
-      signedDate,
+      signerName: submittedSignature?.signerName ?? signerName,
+      signerTitle: submittedSignature?.signerTitle ?? signerTitle,
+      signedDate: submittedSignature?.signedDate ?? signedDate,
     })
+
+    if (submittedSignature) {
+      await submitContractEvent({
+        contractSlug: contract.slug,
+        eventType: 'signed_pdf_generated',
+        signerName: submittedSignature.signerName,
+        signerTitle: submittedSignature.signerTitle,
+        signedDate: submittedSignature.signedDate,
+        submittedAt: submittedSignature.submittedAt,
+        consentAccepted: true,
+        signatureMethod: submittedSignature.signatureMethod,
+        typedSignature: submittedSignature.signatureMethod === 'typed' ? submittedSignature.typedSignature : '',
+        drawnSignatureDataUrl: submittedSignature.signatureMethod === 'drawn' ? submittedSignature.drawnSignatureDataUrl : '',
+        generatedAt: new Date().toISOString(),
+        signedDocumentHtml: document.querySelector('.contract-document')?.outerHTML ?? '',
+      })
+    }
+
     setIsPrintMode(true)
+  }
+
+  const handleSubmit = async () => {
+    if (!canSubmit || submitStatus === 'submitting') return
+
+    const submittedAt = new Date().toISOString()
+    const nextSignature: SubmittedSignature = {
+      signerName: signerName.trim(),
+      signerTitle: signerTitle.trim(),
+      signedDate,
+      submittedAt,
+      signatureMethod,
+      typedSignature: typedSignature.trim(),
+      drawnSignatureDataUrl,
+    }
+
+    setSubmitStatus('submitting')
+    setSubmitError('')
+
+    try {
+      await submitContractEvent({
+        contractSlug: contract.slug,
+        eventType: 'contract_signed',
+        signerName: nextSignature.signerName,
+        signerTitle: nextSignature.signerTitle,
+        signedDate: nextSignature.signedDate,
+        submittedAt: nextSignature.submittedAt,
+        consentAccepted: true,
+        signatureMethod: nextSignature.signatureMethod,
+        typedSignature: nextSignature.signatureMethod === 'typed' ? nextSignature.typedSignature : '',
+        drawnSignatureDataUrl: nextSignature.signatureMethod === 'drawn' ? nextSignature.drawnSignatureDataUrl : '',
+      })
+      setSubmittedSignature(nextSignature)
+      setSubmitStatus('submitted')
+    } catch {
+      setSubmitStatus('error')
+      setSubmitError('Something went wrong while submitting. Please try again.')
+    }
   }
 
   return (
@@ -243,14 +594,14 @@ export function ContractPage({ contract }: ContractPageProps) {
               <a href={proposalHref} className="hidden rounded-full px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper sm:inline-flex">
                 Proposal
               </a>
-              <PrintButton onBeforePrint={preparePrint} />
+              {submittedSignature && <PrintButton onBeforePrint={preparePrint}>Download signed PDF</PrintButton>}
             </div>
           </div>
         </div>
       )}
 
       <div className="mx-auto grid max-w-[1280px] gap-8 px-6 py-10 md:px-16 lg:grid-cols-[1fr_340px] lg:py-14">
-        <article className="contract-document bg-white px-7 py-8 shadow-[0_20px_80px_rgba(10,10,10,0.08)] md:px-12 md:py-12">
+        <article className="contract-document order-last min-w-0 bg-white px-7 py-8 shadow-[0_20px_80px_rgba(10,10,10,0.08)] lg:order-none md:px-12 md:py-12">
           <header className="contract-header">
             <div>
               <p className="eyebrow text-ink-2">Service Agreement</p>
@@ -272,7 +623,7 @@ export function ContractPage({ contract }: ContractPageProps) {
             <br />
             <strong>Client Address:</strong> {contract.client.address}
             <br />
-            <strong>Effective Date:</strong> {contract.effectiveDate}
+            <strong>Effective Date:</strong> {effectiveDate}
           </p>
 
           <ContractSection number="1" title="Scope of Work">
@@ -577,12 +928,18 @@ export function ContractPage({ contract }: ContractPageProps) {
                 <p>
                   <strong>Client:</strong> {contract.client.name}
                 </p>
-                <div className="signature-line signature-script">{signerName || '_______________________'}</div>
+                <div className="signature-line signature-script">
+                  {submittedSignature?.signatureMethod === 'drawn' && submittedSignature.drawnSignatureDataUrl ? (
+                    <img className="client-drawn-signature" src={submittedSignature.drawnSignatureDataUrl} alt={`${submittedSignature.signerName} signature`} />
+                  ) : (
+                    submittedSignature?.typedSignature || ''
+                  )}
+                </div>
                 <p>
-                  <strong>Signature:</strong> {signerName || '_______________________'}
+                  <strong>Signature:</strong> {submittedSignature?.signerName || '_______________________'}
                 </p>
                 <p>
-                  <strong>Name / Title:</strong> {signerName || '____________'} · {signerTitle || '____________'}
+                  <strong>Name / Title:</strong> {submittedSignature?.signerName || '____________'} · {submittedSignature?.signerTitle || '____________'}
                 </p>
                 <p>
                   <strong>Date:</strong> {displayedDate}
@@ -651,6 +1008,19 @@ export function ContractPage({ contract }: ContractPageProps) {
             setSignerTitle={setSignerTitle}
             signedDate={signedDate}
             setSignedDate={setSignedDate}
+            consentAccepted={consentAccepted}
+            setConsentAccepted={setConsentAccepted}
+            signatureMethod={signatureMethod}
+            setSignatureMethod={setSignatureMethod}
+            typedSignature={typedSignature}
+            setTypedSignature={setTypedSignature}
+            drawnSignatureDataUrl={drawnSignatureDataUrl}
+            setDrawnSignatureDataUrl={setDrawnSignatureDataUrl}
+            canSubmit={canSubmit}
+            submitStatus={submitStatus}
+            submitError={submitError}
+            submittedSignature={submittedSignature}
+            onSubmit={handleSubmit}
             proposalHref={proposalHref}
             onBeforePrint={preparePrint}
           />
