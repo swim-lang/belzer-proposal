@@ -1,0 +1,146 @@
+import type { ContractData } from './types'
+
+export const genesiContract: ContractData = {
+  slug: 'genesi',
+  title: 'Brand, Website, and Communication System',
+  preparedDate: 'May 2026',
+  effectiveDate: '[date both parties sign]',
+  projectStart: 'after this Contract is signed and the kickoff invoice is paid',
+  timeline: '8 to 10 weeks',
+  fee: '$30,000',
+  originalValue: '$38,500',
+  accommodation: '$8,500',
+  hourlyRate: '$125/hour',
+  client: {
+    name: 'Genesi LLC',
+    label: 'Client',
+    contactName: 'Chad Mayes',
+    email: 'chad.mayes@genesi.llc',
+    address: '1301 I Street, Sacramento, CA 95814',
+  },
+  agency: {
+    name: 'Anchovies LLC',
+    label: 'Agency',
+    address: 'Colorado limited liability company',
+  },
+  paymentMilestones: [
+    {
+      amount: '$15,000',
+      label: 'Due at project kickoff',
+      body: 'Project starts when the kickoff invoice is paid.',
+    },
+    {
+      amount: '$7,500',
+      label: 'Due after identity presentation',
+      body: 'Once the brand identity has been presented and approved.',
+    },
+    {
+      amount: '$7,500',
+      label: 'Due before final handoff',
+      body: 'Before the final asset handoff and launch support.',
+    },
+  ],
+  revisionRounds: [
+    'Discovery and positioning: 1 round of revisions on the strategy summary and creative direction.',
+    'Brand identity: 2 rounds of refinement after selecting a direction.',
+    'Website design: 2 rounds of revisions on the website design.',
+    'Website development: 1 round of implementation fixes before launch.',
+    'Communication materials: 1 round of refinement on each primary template set.',
+    'Brand guide and handoff: 1 round of cleanup edits before final delivery.',
+  ],
+  scopePhases: [
+    {
+      label: 'A',
+      title: 'Discovery, positioning, and market research',
+      price: '$3,500',
+      timing: 'Week 1 to Week 2',
+      includes: [
+        'Founder and firm discovery',
+        'Positioning alignment',
+        'Government affairs category review',
+        'Competitive visual audit',
+        'Client and prospect context',
+        'Visual territory exploration',
+        'Tone and personality direction',
+      ],
+      deliverable:
+        'A focused brand direction summary, visual moodboard, positioning language, and creative direction for the identity and website.',
+    },
+    {
+      label: 'B',
+      title: 'Brand identity and design system',
+      price: '$14,500',
+      timing: 'Week 3 to Week 5',
+      includes: [
+        'Primary logo and secondary lockups',
+        'Symbol or brand mark',
+        'Premium typeface selection and licensing guidance',
+        'Color palette and graphic language',
+        'Layout and spacing principles',
+        'Business card, letterhead, and email signature',
+        'Brand applications and mockups',
+      ],
+      deliverable:
+        'A complete visual identity system that gives Genesi a polished, repeatable design language across digital, print, and client-facing materials.',
+    },
+    {
+      label: 'C',
+      title: 'Website design and build',
+      price: '$14,000',
+      timing: 'Week 5 to Week 8',
+      includes: [
+        'Website strategy and structure',
+        'Home, About, Services, Clients, Insights, and Contact pages',
+        'Desktop and mobile design',
+        'Website build and responsive layout',
+        'Contact form setup',
+        'Foundational SEO structure',
+        'Analytics setup and launch support',
+      ],
+      deliverable:
+        'A focused, premium website that gives Genesi a strong first impression and a flexible public presence that can grow over time.',
+    },
+    {
+      label: 'D',
+      title: 'Client communication, hiring, and visibility system',
+      price: '$6,500',
+      timing: 'Week 5 to Week 10',
+      includes: [
+        'Proposal template',
+        'Digital presentation deck template',
+        'Capital update and budget briefing templates',
+        'Client memo or bulletin templates',
+        'Partnering and hiring collateral',
+        'Recruiting one-sheet',
+        'Airport ad and LinkedIn visibility concepts',
+      ],
+      deliverable:
+        'A suite of branded materials that allows major Genesi communications to feel consistent, polished, and easy to use.',
+    },
+    {
+      label: 'E',
+      title: 'Digital brand guide and handoff',
+      price: 'Included',
+      timing: 'Week 8 to Week 10',
+      includes: [
+        'Logo, typography, and color usage',
+        'Visual language guidance',
+        'Website component guidance',
+        'Document system guidance',
+        'Visibility notes and future use',
+        'Exported logo and web assets',
+        'Print-ready files and template handoff',
+      ],
+      deliverable:
+        'A practical brand guide and organized asset handoff that gives Genesi a clear system to use and build from on day one.',
+    },
+  ],
+  optionalSupport: [
+    'Priority post-launch support',
+    'Website updates and refinements',
+    'New collateral and template edits',
+    'Proposal, deck, memo, or briefing support',
+    'Vendor coordination and design oversight',
+    'Used as needed at $125/hour',
+  ],
+}

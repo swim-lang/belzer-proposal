@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Reveal } from './components/Reveal'
 
-const contractHref = '#next'
+const contractHref = '/proposal/genesi/contract'
 const workHref = 'https://pitch.com/v/anchovies-press-zwdsbn'
 
 const navSections = [

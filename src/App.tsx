@@ -9,6 +9,8 @@ import { LexPoliticaProposal } from './LexPoliticaProposal'
 import { SleepGoddessProposal } from './SleepGoddessProposal'
 import { Admin } from './admin/Admin'
 import { Intake } from './intake/Intake'
+import { ContractPage } from './contracts/ContractPage'
+import { genesiContract } from './contracts/genesiContract'
 import { createPreMeetingContent, getPreMeetingFirmNameFromURL } from './preMeetingContent'
 import { kndContent } from './kndContent'
 
@@ -35,6 +37,7 @@ export default function App() {
   const isGenesi =
     pathname === '/proposal/genesi' ||
     pathname.startsWith('/proposal/genesi/')
+  const isGenesiContract = pathname === '/proposal/genesi/contract'
   const isFirmPage = pathname === '/firm' || pathname.startsWith('/firm/')
   const isPreMeeting =
     pathname === '/ai-legal-tools' ||
@@ -94,6 +97,10 @@ export default function App() {
 
   if (isLexPolitica) {
     return <LexPoliticaProposal />
+  }
+
+  if (isGenesiContract) {
+    return <ContractPage contract={genesiContract} />
   }
 
   if (isGenesi) {

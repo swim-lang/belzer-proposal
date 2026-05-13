@@ -78,6 +78,362 @@ span.display {
   margin-right: auto;
 }
 
+.contract-document {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.58;
+}
+
+.contract-document p {
+  margin: 0 0 13px;
+}
+
+.contract-document strong {
+  font-weight: 650;
+}
+
+.contract-header {
+  display: grid;
+  gap: 24px;
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid #d8d3c8;
+}
+
+@media (min-width: 768px) {
+  .contract-header {
+    grid-template-columns: 1fr 220px;
+    align-items: end;
+  }
+}
+
+.contract-header h1 {
+  max-width: 620px;
+  margin: 10px 0 0;
+  font-family: var(--font-serif);
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.024em;
+}
+
+.contract-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink-2);
+}
+
+.contract-section {
+  padding-top: 22px;
+  margin-top: 22px;
+  border-top: 1px solid #e3ded4;
+}
+
+.contract-section h2 {
+  margin: 0 0 12px;
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.012em;
+}
+
+.contract-document h3 {
+  margin: 0 0 10px;
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.contract-document ul {
+  margin: 0 0 14px 20px;
+  padding: 0;
+}
+
+.contract-document li {
+  margin-bottom: 5px;
+}
+
+.signature-section {
+  padding: 24px 0;
+  margin-top: 24px;
+  border-top: 1px solid #d8d3c8;
+  border-bottom: 1px solid #d8d3c8;
+}
+
+.signature-grid {
+  display: grid;
+  gap: 28px;
+  margin-top: 18px;
+}
+
+@media (min-width: 768px) {
+  .signature-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.signature-line {
+  min-height: 52px;
+  margin: 18px 0 10px;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.signature-script {
+  display: flex;
+  align-items: flex-end;
+  font-family: var(--font-serif);
+  font-size: 32px;
+  line-height: 1;
+}
+
+.scope-phase {
+  padding-top: 16px;
+  margin-top: 16px;
+  border-top: 1px solid #ece6dc;
+}
+
+html.contract-print-mode,
+html.contract-print-mode body,
+html.contract-print-mode #root {
+  background: #ffffff !important;
+}
+
+html.contract-print-mode .no-print {
+  display: none !important;
+}
+
+html.contract-print-mode .contract-page {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+html.contract-print-mode .contract-page > div {
+  display: block !important;
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+html.contract-print-mode .contract-document {
+  width: 100% !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  font-size: 9.6pt;
+  line-height: 1.38;
+}
+
+html.contract-print-mode .contract-document p {
+  margin-bottom: 7pt;
+}
+
+html.contract-print-mode .contract-header {
+  grid-template-columns: 1fr 1.7in;
+  gap: 0.25in;
+  padding-bottom: 0.18in;
+  margin-bottom: 0.2in;
+  break-after: avoid;
+}
+
+html.contract-print-mode .contract-header h1 {
+  max-width: none;
+  font-size: 22pt;
+  line-height: 1.02;
+}
+
+html.contract-print-mode .contract-meta {
+  font-size: 7.4pt;
+}
+
+html.contract-print-mode .contract-section {
+  padding-top: 0.13in;
+  margin-top: 0.13in;
+  break-inside: auto;
+  page-break-inside: auto;
+}
+
+html.contract-print-mode .contract-section h2,
+html.contract-print-mode .contract-document h3 {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+html.contract-print-mode .contract-section h2 {
+  margin-bottom: 0.06in;
+  font-size: 13.5pt;
+}
+
+html.contract-print-mode .contract-document h3 {
+  margin-bottom: 0.04in;
+  font-size: 11.5pt;
+}
+
+html.contract-print-mode .contract-document ul {
+  margin-bottom: 0.08in;
+}
+
+html.contract-print-mode .contract-document li {
+  margin-bottom: 2pt;
+}
+
+html.contract-print-mode .signature-section,
+html.contract-print-mode .signature-grid > div,
+html.contract-print-mode .scope-phase {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+html.contract-print-mode .signature-section {
+  padding: 0.16in 0;
+  margin-top: 0.16in;
+}
+
+html.contract-print-mode .signature-grid {
+  grid-template-columns: 1fr 1fr;
+  gap: 0.3in;
+  margin-top: 0.1in;
+}
+
+html.contract-print-mode .signature-line {
+  min-height: 0.38in;
+  margin: 0.1in 0 0.06in;
+}
+
+html.contract-print-mode .signature-script {
+  font-size: 19pt;
+}
+
+html.contract-print-mode .scope-phase {
+  padding-top: 0.1in;
+  margin-top: 0.1in;
+}
+
+@media print {
+  @page {
+    size: letter;
+    margin: 0.55in;
+  }
+
+  html,
+  body,
+  #root {
+    background: #ffffff !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .contract-page {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .contract-page > div {
+    display: block !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  .contract-document {
+    width: 100% !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    font-size: 9.6pt;
+    line-height: 1.38;
+  }
+
+  .contract-document p {
+    margin-bottom: 7pt;
+  }
+
+  .contract-header {
+    grid-template-columns: 1fr 1.7in;
+    gap: 0.25in;
+    padding-bottom: 0.18in;
+    margin-bottom: 0.2in;
+    break-after: avoid;
+  }
+
+  .contract-header h1 {
+    max-width: none;
+    font-size: 22pt;
+    line-height: 1.02;
+  }
+
+  .contract-meta {
+    font-size: 7.4pt;
+  }
+
+  .contract-section {
+    padding-top: 0.13in;
+    margin-top: 0.13in;
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  .contract-section h2,
+  .contract-document h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .contract-section h2 {
+    margin-bottom: 0.06in;
+    font-size: 13.5pt;
+  }
+
+  .contract-document h3 {
+    margin-bottom: 0.04in;
+    font-size: 11.5pt;
+  }
+
+  .contract-document ul {
+    margin-bottom: 0.08in;
+  }
+
+  .contract-document li {
+    margin-bottom: 2pt;
+  }
+
+  .signature-section,
+  .signature-grid > div,
+  .scope-phase {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .signature-section {
+    padding: 0.16in 0;
+    margin-top: 0.16in;
+  }
+
+  .signature-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.3in;
+    margin-top: 0.1in;
+  }
+
+  .signature-line {
+    min-height: 0.38in;
+    margin: 0.1in 0 0.06in;
+  }
+
+  .signature-script {
+    font-size: 19pt;
+  }
+
+  .scope-phase {
+    padding-top: 0.1in;
+    margin-top: 0.1in;
+  }
+}
+
 @keyframes reveal {
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
