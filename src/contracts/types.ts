@@ -31,7 +31,7 @@ export type ContractData = {
   fee: string
   originalValue?: string
   accommodation?: string
-  hourlyRate?: string
+  monthlyRetainer?: string
   client: ContractParty
   agency: ContractParty
   paymentMilestones: ContractPaymentMilestone[]

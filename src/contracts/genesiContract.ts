@@ -10,7 +10,7 @@ export const genesiContract: ContractData = {
   fee: '$30,000',
   originalValue: '$38,500',
   accommodation: '$8,500',
-  hourlyRate: '$125/hour',
+  monthlyRetainer: '$1,000/month',
   client: {
     name: 'Genesi LLC',
     label: 'Client',
@@ -136,11 +136,11 @@ export const genesiContract: ContractData = {
     },
   ],
   optionalSupport: [
-    'Priority post-launch support',
+    'Priority monthly access to Anchovies',
     'Website updates and refinements',
     'New collateral and template edits',
     'Proposal, deck, memo, or briefing support',
     'Vendor coordination and design oversight',
-    'Used as needed at $125/hour',
+    'Monthly scope confirmed before support begins',
   ],
 }

@@ -577,8 +577,9 @@ export function ContractPage({ contract }: ContractPageProps) {
             <div className="scope-phase">
               <h3>Optional Ongoing Support</h3>
               <p>
-                After launch, the Client may request ongoing support as needed at {contract.hourlyRate}. Support is not a
-                required retainer commitment unless the parties separately agree in writing.
+                After launch, the Client may request optional monthly retainer support starting at{' '}
+                {contract.monthlyRetainer}. Retainer timing, monthly focus, and start date will be confirmed in writing
+                before any recurring support begins.
               </p>
               <BulletList items={contract.optionalSupport} />
             </div>

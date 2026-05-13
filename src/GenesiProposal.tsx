@@ -248,12 +248,12 @@ const investmentLines = [
 ]
 
 const retainerSupport = [
-  'Priority post-launch support',
+  'Priority monthly access to Anchovies',
   'Website updates and refinements',
   'New collateral and template edits',
   'Proposal, deck, memo, or briefing support',
   'Vendor coordination and design oversight',
-  'Used as needed at $125/hour',
+  'Monthly scope confirmed before support begins',
 ]
 
 const paymentMilestones = [
@@ -682,7 +682,7 @@ function Investment() {
           <span className="eyebrow text-paper/55">Optional ongoing support</span>
           <h3 className="serif text-[36px] leading-[42px] tracking-[-0.016em]">Retainer support.</h3>
           <p className="text-[14px] leading-[22px] text-paper/70">
-            After launch, support can stay simple: priority access to Anchovies for updates, new materials, and refinements as they come up. Some months may be active, some may be quiet. Time is billed at the agreed hourly rate.
+            After launch, support can stay simple: a monthly retainer gives Genesi priority access to Anchovies for updates, new materials, and refinements as needs come up. The structure can stay light, with the exact rhythm and monthly focus confirmed before support begins.
           </p>
         </div>
         <div className="flex flex-col gap-2">
@@ -694,8 +694,8 @@ function Investment() {
           ))}
         </div>
         <div className="lg:text-right">
-          <span className="serif block text-[44px] leading-[48px] tracking-[-0.018em]">$125/hr</span>
-          <span className="eyebrow text-paper/55">As needed after launch</span>
+          <span className="serif block text-[44px] leading-[48px] tracking-[-0.018em]">$1,000/mo</span>
+          <span className="eyebrow text-paper/55">Optional ongoing retainer</span>
         </div>
       </Reveal>
       <Reveal className="mt-14 border-t border-paper/20 pt-8">
