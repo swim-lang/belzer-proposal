@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Reveal } from './components/Reveal'
 
-const calendarHref = 'https://cal.com/anchovies/30min?overlayCalendar=true'
+const contractHref = '#next'
 const workHref = 'https://pitch.com/v/anchovies-press-zwdsbn'
 
 const navSections = [
@@ -247,13 +247,13 @@ const investmentLines = [
   ['04', 'Client communication, hiring, and visibility system', 'Proposal template, deck template, briefing templates, memo system, partnering and hiring collateral, business card, letterhead, motion, visibility concepts.', '$6,500'],
 ]
 
-const optionalClientApp = [
-  'Branded iOS-style app concept',
-  'Secure client communication flow',
-  'Push notification strategy',
-  'Simple document and update access',
-  'Private message-style experience',
-  'High-end client experience polish',
+const retainerSupport = [
+  'Priority post-launch support',
+  'Website updates and refinements',
+  'New collateral and template edits',
+  'Proposal, deck, memo, or briefing support',
+  'Vendor coordination and design oversight',
+  'Used as needed at $125/hour',
 ]
 
 const paymentMilestones = [
@@ -288,7 +288,7 @@ function MetaRow({ left, right, dark = false }: { left: string; right: string; d
 
 function AnchorButton({
   children,
-  href = calendarHref,
+  href = contractHref,
   variant = 'dark',
 }: {
   children: string
@@ -366,8 +366,8 @@ function GenesiNav() {
             <a href={workHref} target="_blank" rel="noreferrer" className="hidden rounded-full px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper whitespace-nowrap sm:inline-flex">
               Our work
             </a>
-            <a href={calendarHref} target="_blank" rel="noreferrer" className="rounded-full border border-ink px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper whitespace-nowrap">
-              Schedule kickoff
+            <a href={contractHref} className="rounded-full border border-ink px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper whitespace-nowrap">
+              Sign contract
             </a>
           </div>
         </div>
@@ -405,7 +405,7 @@ function Hero() {
             You have already built the hardest part: reputation, relationships, trust, and a client list most new firms would be lucky to have. What&apos;s next is giving Genesi a system that can carry that reputation with the same level of polish, judgment, and confidence.
           </p>
           <div className="flex flex-wrap items-center gap-4">
-            <AnchorButton>{'Schedule a kickoff meeting ->'}</AnchorButton>
+            <AnchorButton href={contractHref}>{'Sign contract ->'}</AnchorButton>
             <AnchorButton href={workHref} variant="outline">
               View our work
             </AnchorButton>
@@ -645,8 +645,8 @@ function Investment() {
           </h2>
         </Reveal>
         <Reveal className="lg:text-right">
-          <span className="display block text-[78px] leading-[82px] tracking-[-0.03em] md:text-[118px] md:leading-[112px]">$38,500</span>
-          <span className="text-[13px] leading-[18px] text-paper/55">Total recommended engagement</span>
+          <span className="display block text-[78px] leading-[82px] tracking-[-0.03em] md:text-[118px] md:leading-[112px]">$30,000</span>
+          <span className="text-[13px] leading-[18px] text-paper/55">Project total after budget accommodation</span>
         </Reveal>
       </div>
       <Reveal className="border-t border-paper/20">
@@ -658,23 +658,35 @@ function Investment() {
             <span className="serif text-[34px] leading-[38px] tracking-[-0.018em] md:text-right">{amount}</span>
           </div>
         ))}
+        <div className="grid gap-4 border-b border-paper/20 py-8 md:grid-cols-[80px_320px_1fr_180px] md:items-center md:gap-8">
+          <span className="eyebrow text-paper/55">Value</span>
+          <span className="serif text-[28px] leading-[34px]">Recommended engagement</span>
+          <span className="text-[13px] leading-[20px] text-paper/70">The full scope and deliverable set originally outlined above.</span>
+          <span className="serif text-[46px] leading-[50px] tracking-[-0.02em] md:text-right">$38,500</span>
+        </div>
+        <div className="grid gap-4 border-b border-paper/20 py-8 md:grid-cols-[80px_320px_1fr_180px] md:items-center md:gap-8">
+          <span className="eyebrow text-paper/55">Credit</span>
+          <span className="serif text-[28px] leading-[34px]">Budget accommodation</span>
+          <span className="text-[13px] leading-[20px] text-paper/70">Keeps the same deliverables and quality intact while bringing the project into the target budget.</span>
+          <span className="serif text-[46px] leading-[50px] tracking-[-0.02em] md:text-right">-$8,500</span>
+        </div>
         <div className="grid gap-4 py-8 md:grid-cols-[80px_320px_1fr_180px] md:items-center md:gap-8">
           <span className="eyebrow text-paper/55">Total</span>
-          <span className="serif text-[28px] leading-[34px]">Recommended engagement</span>
+          <span className="serif text-[28px] leading-[34px]">Project total</span>
           <span />
-          <span className="serif text-[46px] leading-[50px] tracking-[-0.02em] md:text-right">$38,500</span>
+          <span className="serif text-[46px] leading-[50px] tracking-[-0.02em] md:text-right">$30,000</span>
         </div>
       </Reveal>
       <Reveal className="mt-10 grid gap-8 border border-paper/20 p-8 lg:grid-cols-[1.1fr_1fr_180px] lg:p-10">
         <div className="flex flex-col gap-3">
-          <span className="eyebrow text-paper/55">Optional extension</span>
-          <h3 className="serif text-[36px] leading-[42px] tracking-[-0.016em]">Private client app.</h3>
+          <span className="eyebrow text-paper/55">Optional ongoing support</span>
+          <h3 className="serif text-[36px] leading-[42px] tracking-[-0.016em]">Retainer support.</h3>
           <p className="text-[14px] leading-[22px] text-paper/70">
-            A lightweight, branded client communication tool designed to make the experience feel more secure, direct, and premium, without turning it into a heavy platform.
+            After launch, support can stay simple: priority access to Anchovies for updates, new materials, and refinements as they come up. Some months may be active, some may be quiet. Time is billed at the agreed hourly rate.
           </p>
         </div>
         <div className="flex flex-col gap-2">
-          {optionalClientApp.map((item) => (
+          {retainerSupport.map((item) => (
             <div key={item} className="flex items-baseline gap-3">
               <span className="h-1 w-1 shrink-0 rounded-full bg-paper/70" />
               <span className="text-[13px] leading-[20px]">{item}</span>
@@ -682,15 +694,15 @@ function Investment() {
           ))}
         </div>
         <div className="lg:text-right">
-          <span className="serif block text-[44px] leading-[48px] tracking-[-0.018em]">+$7,500</span>
-          <span className="eyebrow text-paper/55">Brings total to $46,000</span>
+          <span className="serif block text-[44px] leading-[48px] tracking-[-0.018em]">$125/hr</span>
+          <span className="eyebrow text-paper/55">As needed after launch</span>
         </div>
       </Reveal>
       <Reveal className="mt-14 border-t border-paper/20 pt-8">
         <MetaRow left="Payment structure" right="Three milestones" dark />
         <div className="grid gap-6 lg:grid-cols-3">
           {paymentMilestones.map(([percent, title, body]) => (
-            <div key={percent} className="border border-paper/20 p-8">
+            <div key={title} className="border border-paper/20 p-8">
               <span className="display block text-[64px] leading-[68px] tracking-[-0.026em]">{percent}</span>
               <h3 className="serif pt-3 text-[22px] leading-[28px] tracking-[-0.012em]">{title}</h3>
               <p className="pt-3 text-[13px] leading-[20px] text-paper/70">{body}</p>
@@ -747,8 +759,8 @@ function NextStep() {
             Kick off the next chapter.
           </h2>
           <div className="lg:text-right">
-            <span className="display block text-[70px] leading-[74px] tracking-[-0.03em] md:text-[88px] md:leading-[88px]">$38,500</span>
-            <span className="text-[13px] leading-[18px] text-ink-2">Total engagement · 8-10 weeks</span>
+            <span className="display block text-[70px] leading-[74px] tracking-[-0.03em] md:text-[88px] md:leading-[88px]">$30,000</span>
+            <span className="text-[13px] leading-[18px] text-ink-2">$38,500 scope · $8,500 accommodation · 8-10 weeks</span>
           </div>
         </div>
         <div className="grid gap-10 border-b border-[var(--color-rule)] py-10 lg:grid-cols-[480px_1fr]">
@@ -766,7 +778,7 @@ function NextStep() {
           </div>
         </div>
         <div className="flex flex-wrap gap-4 pt-8">
-          <AnchorButton>{'Schedule a kickoff meeting ->'}</AnchorButton>
+          <AnchorButton href={contractHref}>{'Sign contract ->'}</AnchorButton>
         </div>
       </Reveal>
     </section>
