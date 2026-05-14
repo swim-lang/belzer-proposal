@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..600&display=swap");
 @import "tailwindcss";
 
 @font-face {
@@ -72,6 +73,17 @@ span.display {
 }
 
 .genesi-proposal > section > * {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lapinco-proposal {
+  --font-serif: "Newsreader", "ABC Gaisyr", ui-serif, Georgia, serif;
+}
+
+.lapinco-proposal > section > * {
   width: 100%;
   max-width: 1280px;
   margin-left: auto;

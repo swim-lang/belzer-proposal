@@ -146,6 +146,13 @@ export function Dashboard() {
       status: 'Active',
       href: '/proposal/haai',
     },
+    {
+      id: 'lapinco',
+      name: 'Lapinco',
+      tagline: 'Brand, messaging, site, and portal readiness · May 2026',
+      status: 'Active',
+      href: '/proposal/lapinco',
+    },
   ]
 
   const recent = (submissions ?? []).slice(0, 5)
