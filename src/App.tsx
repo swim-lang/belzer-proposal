@@ -3,6 +3,7 @@ import { Proposal } from './Proposal'
 import { PreMeetingPage } from './PreMeetingPage'
 import { QuietHome } from './QuietHome'
 import { SavedFirmPage } from './SavedFirmPage'
+import { FiberSoftChewProposal } from './FiberSoftChewProposal'
 import { GenesiProposal } from './GenesiProposal'
 import { HAAIProposal } from './HAAIProposal'
 import { LapincoProposal } from './LapincoProposal'
@@ -42,6 +43,9 @@ export default function App() {
   const isLapinco =
     pathname === '/proposal/lapinco' ||
     pathname.startsWith('/proposal/lapinco/')
+  const isFiberSoftChew =
+    pathname === '/proposal/fiber-soft-chew' ||
+    pathname.startsWith('/proposal/fiber-soft-chew/')
   const isFirmPage = pathname === '/firm' || pathname.startsWith('/firm/')
   const isPreMeeting =
     pathname === '/ai-legal-tools' ||
@@ -113,6 +117,10 @@ export default function App() {
 
   if (isLapinco) {
     return <LapincoProposal />
+  }
+
+  if (isFiberSoftChew) {
+    return <FiberSoftChewProposal />
   }
 
   if (isLegacyBelzer) {

@@ -153,6 +153,13 @@ export function Dashboard() {
       status: 'Active',
       href: '/proposal/lapinco',
     },
+    {
+      id: 'fiber-soft-chew',
+      name: 'Fiber Soft Chew',
+      tagline: 'Naming and brand identity · May 2026',
+      status: 'Active',
+      href: '/proposal/fiber-soft-chew',
+    },
   ]
 
   const recent = (submissions ?? []).slice(0, 5)
