@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Reveal } from './components/Reveal'
 
 const approveHref = 'mailto:sean@anchovies.agency?subject=Fiber%20Soft%20Chew%20Proposal%20Approval'
-const workHref = 'https://pitch.com/v/anchovies-press-zwdsbn'
+const workHref = 'https://anchovies.agency/work'
 
 const navSections = [
   { id: 'overview', label: 'Overview' },
