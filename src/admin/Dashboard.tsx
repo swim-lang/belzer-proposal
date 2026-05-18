@@ -154,6 +154,13 @@ export function Dashboard() {
       href: '/proposal/lapinco',
     },
     {
+      id: 'soup-to-software',
+      name: 'Soup to Software',
+      tagline: 'Strategy, identity, narrative, and site · May 2026',
+      status: 'Active',
+      href: '/proposal/soup-to-software',
+    },
+    {
       id: 'fiber-soft-chew',
       name: 'Fiber Soft Chew',
       tagline: 'Naming and brand identity · May 2026',

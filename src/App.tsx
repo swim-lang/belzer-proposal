@@ -9,6 +9,7 @@ import { HAAIProposal } from './HAAIProposal'
 import { LapincoProposal } from './LapincoProposal'
 import { LexPoliticaProposal } from './LexPoliticaProposal'
 import { SleepGoddessProposal } from './SleepGoddessProposal'
+import { SoupToSoftwareProposal } from './SoupToSoftwareProposal'
 import { Admin } from './admin/Admin'
 import { Intake } from './intake/Intake'
 import { ContractPage } from './contracts/ContractPage'
@@ -46,6 +47,9 @@ export default function App() {
   const isFiberSoftChew =
     pathname === '/proposal/fiber-soft-chew' ||
     pathname.startsWith('/proposal/fiber-soft-chew/')
+  const isSoupToSoftware =
+    pathname === '/proposal/soup-to-software' ||
+    pathname.startsWith('/proposal/soup-to-software/')
   const isFirmPage = pathname === '/firm' || pathname.startsWith('/firm/')
   const isPreMeeting =
     pathname === '/ai-legal-tools' ||
@@ -121,6 +125,10 @@ export default function App() {
 
   if (isFiberSoftChew) {
     return <FiberSoftChewProposal />
+  }
+
+  if (isSoupToSoftware) {
+    return <SoupToSoftwareProposal />
   }
 
   if (isLegacyBelzer) {
