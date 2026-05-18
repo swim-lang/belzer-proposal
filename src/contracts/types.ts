@@ -29,6 +29,7 @@ export type ContractData = {
   projectStart: string
   timeline: string
   fee: string
+  depositHref?: string
   originalValue?: string
   accommodation?: string
   monthlyRetainer?: string

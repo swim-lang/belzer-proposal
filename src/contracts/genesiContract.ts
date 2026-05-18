@@ -8,6 +8,7 @@ export const genesiContract: ContractData = {
   projectStart: 'after this Contract is signed and the kickoff invoice is paid',
   timeline: '8 to 10 weeks',
   fee: '$30,000',
+  depositHref: 'https://link.waveapps.com/gqpmrs-krmcxm',
   originalValue: '$38,500',
   accommodation: '$8,500',
   monthlyRetainer: '$1,000/month',

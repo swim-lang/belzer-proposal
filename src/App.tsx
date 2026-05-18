@@ -13,6 +13,7 @@ import { SoupToSoftwareProposal } from './SoupToSoftwareProposal'
 import { Admin } from './admin/Admin'
 import { Intake } from './intake/Intake'
 import { ContractPage } from './contracts/ContractPage'
+import { fiberSoftChewContract } from './contracts/fiberSoftChewContract'
 import { genesiContract } from './contracts/genesiContract'
 import { createPreMeetingContent, getPreMeetingFirmNameFromURL } from './preMeetingContent'
 import { kndContent } from './kndContent'
@@ -47,6 +48,7 @@ export default function App() {
   const isFiberSoftChew =
     pathname === '/proposal/fiber-soft-chew' ||
     pathname.startsWith('/proposal/fiber-soft-chew/')
+  const isFiberSoftChewContract = pathname === '/proposal/fiber-soft-chew/contract'
   const isSoupToSoftware =
     pathname === '/proposal/soup-to-software' ||
     pathname.startsWith('/proposal/soup-to-software/')
@@ -121,6 +123,10 @@ export default function App() {
 
   if (isLapinco) {
     return <LapincoProposal />
+  }
+
+  if (isFiberSoftChewContract) {
+    return <ContractPage contract={fiberSoftChewContract} />
   }
 
   if (isFiberSoftChew) {

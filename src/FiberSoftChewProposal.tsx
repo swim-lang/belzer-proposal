@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Reveal } from './components/Reveal'
 
-const approveHref = 'mailto:sean@anchovies.agency?subject=Fiber%20Soft%20Chew%20Proposal%20Approval'
+const contractHref = '/proposal/fiber-soft-chew/contract'
 const workHref = 'https://anchovies.agency/work'
 
 const navSections = [
@@ -288,7 +288,7 @@ function MetaRow({ left, right, dark = false }: { left: string; right: string; d
 
 function AnchorButton({
   children,
-  href = approveHref,
+  href = contractHref,
   variant = 'dark',
 }: {
   children: string
@@ -364,8 +364,8 @@ function FiberNav() {
             <a href={workHref} target="_blank" rel="noreferrer" className="hidden rounded-full px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper whitespace-nowrap sm:inline-flex">
               Our work
             </a>
-            <a href={approveHref} className="rounded-full bg-ink px-4 py-2 text-[12px] font-medium text-paper transition-colors hover:bg-ink-2 whitespace-nowrap">
-              Approve proposal
+            <a href={contractHref} className="rounded-full bg-ink px-4 py-2 text-[12px] font-medium text-paper transition-colors hover:bg-ink-2 whitespace-nowrap">
+              Sign contract
             </a>
           </div>
         </div>
@@ -403,7 +403,7 @@ function Hero() {
             This first phase builds the foundation before manufacturing, Shopify, TikTok Shop, and launch planning begin: naming, identity, tone, packaging direction, and a first marketing idea.
           </p>
           <div className="flex flex-wrap items-center gap-4">
-            <AnchorButton>{'Approve proposal ->'}</AnchorButton>
+            <AnchorButton>{'Sign contract ->'}</AnchorButton>
             <AnchorButton href={workHref} variant="outline">
               View our work
             </AnchorButton>
@@ -746,7 +746,7 @@ function FutureOpportunities() {
 function NextStep() {
   return (
     <section id="next" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[160px]">
-      <MetaRow left="§ 11 - Next step" right="Approve proposal" />
+      <MetaRow left="§ 11 - Next step" right="Sign contract" />
       <Reveal className="mt-16 border border-[var(--color-rule)] p-8 md:p-14 lg:p-16">
         <div className="flex flex-col gap-8 border-b border-[var(--color-rule)] pb-10 lg:flex-row lg:items-end lg:justify-between">
           <h2 className="display max-w-[720px] text-[52px] leading-[56px] tracking-[-0.026em] md:text-[80px] md:leading-[80px]">
@@ -772,7 +772,7 @@ function NextStep() {
           </div>
         </div>
         <div className="flex flex-wrap gap-4 pt-8">
-          <AnchorButton>{'Approve proposal ->'}</AnchorButton>
+          <AnchorButton>{'Sign contract ->'}</AnchorButton>
           <AnchorButton href={workHref} variant="outline">
             View our work
           </AnchorButton>

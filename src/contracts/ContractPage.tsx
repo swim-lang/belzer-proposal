@@ -24,8 +24,6 @@ const agencySignature = {
   image: '/signatures/sean-ashlow-signature.png',
 }
 
-const depositHref = 'https://link.waveapps.com/gqpmrs-krmcxm'
-
 function formatDate(value: string) {
   if (!value) return '____________'
   const [year, month, day] = value.split('-').map(Number)
@@ -303,6 +301,7 @@ function SignaturePanel({
   submittedSignature,
   onSubmit,
   proposalHref,
+  depositHref,
   onBeforePrint,
 }: {
   clientName: string
@@ -326,6 +325,7 @@ function SignaturePanel({
   submittedSignature: SubmittedSignature | null
   onSubmit: () => void
   proposalHref: string
+  depositHref?: string
   onBeforePrint: () => void | Promise<void>
 }) {
   if (submittedSignature) {
@@ -340,14 +340,16 @@ function SignaturePanel({
         </div>
         <div className="flex flex-col gap-3 pt-5">
           <PrintButton onBeforePrint={onBeforePrint}>Download signed PDF</PrintButton>
-          <a
-            href={depositHref}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex justify-center rounded-full border border-ink px-5 py-3 text-[13px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper"
-          >
-            Pay Deposit
-          </a>
+          {depositHref && (
+            <a
+              href={depositHref}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex justify-center rounded-full border border-ink px-5 py-3 text-[13px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper"
+            >
+              Pay Deposit
+            </a>
+          )}
           <a href={proposalHref} className="inline-flex justify-center rounded-full border border-[var(--color-rule)] px-5 py-3 text-[13px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper">
             Back to proposal
           </a>
@@ -366,7 +368,7 @@ function SignaturePanel({
         </p>
       </div>
       <div className="flex flex-col gap-4 py-5">
-        <TextField label="Signer name" value={signerName} onChange={setSignerName} placeholder="Chad Mayes" />
+        <TextField label="Signer name" value={signerName} onChange={setSignerName} placeholder="Authorized signer name" />
         <TextField label="Title" value={signerTitle} onChange={setSignerTitle} placeholder={`Authorized signer, ${clientName}`} />
         <label className="flex flex-col gap-2">
           <span className="eyebrow text-ink-2">Date</span>
@@ -475,6 +477,9 @@ export function ContractPage({ contract }: ContractPageProps) {
   const displayedDate = useMemo(() => formatDate(submittedSignature?.signedDate ?? ''), [submittedSignature?.signedDate])
   const effectiveDate = submittedSignature ? formatDate(submittedSignature.signedDate) : contract.effectiveDate
   const proposalHref = `/proposal/${contract.slug}`
+  const clientContactLine = [contract.client.contactName, contract.client.email].filter(Boolean).join(' · ')
+  const hasInvestmentAdjustment = !!contract.originalValue && !!contract.accommodation
+  const hasOptionalSupport = !!contract.monthlyRetainer || contract.optionalSupport.length > 0
   const canSubmit =
     !!signerName.trim() &&
     !!signerTitle.trim() &&
@@ -619,9 +624,13 @@ export function ContractPage({ contract }: ContractPageProps) {
             liability company (the &quot;Agency&quot;).
           </p>
           <p>
-            <strong>Client Contact:</strong> {contract.client.contactName} · {contract.client.email}
-            <br />
-            <strong>Client Address:</strong> {contract.client.address}
+            <strong>Client Contact:</strong> {clientContactLine || contract.client.name}
+            {contract.client.address && (
+              <>
+                <br />
+                <strong>Client Address:</strong> {contract.client.address}
+              </>
+            )}
             <br />
             <strong>Effective Date:</strong> {effectiveDate}
           </p>
@@ -659,9 +668,14 @@ export function ContractPage({ contract }: ContractPageProps) {
 
           <ContractSection number="3" title="Fees and Payment">
             <p>
-              <strong>3.1 Project Fee.</strong> The Client will pay the Agency {contract.fee} (USD). This reflects the
-              full {contract.originalValue} recommended engagement with an {contract.accommodation} budget
-              accommodation.
+              <strong>3.1 Project Fee.</strong> The Client will pay the Agency {contract.fee} (USD).
+              {hasInvestmentAdjustment && (
+                <>
+                  {' '}
+                  This reflects the full {contract.originalValue} recommended engagement with an {contract.accommodation} budget
+                  accommodation.
+                </>
+              )}
             </p>
             <p>
               <strong>3.2 Milestone Invoicing Schedule.</strong>
@@ -837,8 +851,8 @@ export function ContractPage({ contract }: ContractPageProps) {
               or properly licensed, to the best of the Agency&apos;s knowledge.
             </p>
             <p>
-              <strong>12.3 No Guaranteed Outcomes.</strong> The Agency does not guarantee business outcomes, rankings,
-              conversion metrics, public relations outcomes, or legislative outcomes.
+              <strong>12.3 No Guaranteed Outcomes.</strong> The Agency does not guarantee business outcomes, sales,
+              rankings, conversion metrics, public relations outcomes, regulatory approvals, or manufacturing outcomes.
             </p>
           </ContractSection>
 
@@ -982,20 +996,26 @@ export function ContractPage({ contract }: ContractPageProps) {
             ))}
             <div className="scope-phase">
               <h3>Investment Summary</h3>
-              <p>
-                Recommended engagement value: {contract.originalValue}. Budget accommodation: -{contract.accommodation}.
-                Project fee: {contract.fee}.
-              </p>
+              {hasInvestmentAdjustment ? (
+                <p>
+                  Recommended engagement value: {contract.originalValue}. Budget accommodation: -{contract.accommodation}.
+                  Project fee: {contract.fee}.
+                </p>
+              ) : (
+                <p>Project fee: {contract.fee}.</p>
+              )}
             </div>
-            <div className="scope-phase">
-              <h3>Optional Ongoing Support</h3>
-              <p>
-                After launch, the Client may request optional monthly retainer support starting at{' '}
-                {contract.monthlyRetainer}. Retainer timing, monthly focus, and start date will be confirmed in writing
-                before any recurring support begins.
-              </p>
-              <BulletList items={contract.optionalSupport} />
-            </div>
+            {hasOptionalSupport && (
+              <div className="scope-phase">
+                <h3>Optional Ongoing Support</h3>
+                <p>
+                  After launch, the Client may request optional additional support
+                  {contract.monthlyRetainer ? ` starting at ${contract.monthlyRetainer}` : ''}. Timing, monthly focus,
+                  and start date will be confirmed in writing before any recurring support begins.
+                </p>
+                {contract.optionalSupport.length > 0 && <BulletList items={contract.optionalSupport} />}
+              </div>
+            )}
           </ContractSection>
         </article>
 
@@ -1022,6 +1042,7 @@ export function ContractPage({ contract }: ContractPageProps) {
             submittedSignature={submittedSignature}
             onSubmit={handleSubmit}
             proposalHref={proposalHref}
+            depositHref={contract.depositHref}
             onBeforePrint={preparePrint}
           />
         )}
