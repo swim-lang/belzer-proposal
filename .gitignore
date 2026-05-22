@@ -31,3 +31,4 @@ anchovies/
 
 # local agent config
 .claude/
+.vercel

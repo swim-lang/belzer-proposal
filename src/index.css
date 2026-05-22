@@ -97,6 +97,13 @@ span.display {
   margin-right: auto;
 }
 
+.baps-charities-proposal > section > * {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .contract-document {
   font-family: var(--font-sans);
   font-size: 14px;

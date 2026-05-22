@@ -1,5 +1,5 @@
 import { Redis } from '@upstash/redis'
-import { renderEmail } from './_email'
+import { renderEmail } from './_email.js'
 
 export const config = { runtime: 'edge' }
 

@@ -154,6 +154,13 @@ export function Dashboard() {
       href: '/proposal/lapinco',
     },
     {
+      id: 'baps-charities',
+      name: 'BAPS Charities',
+      tagline: 'Website system and donation experience · May 2026',
+      status: 'Active',
+      href: '/proposal/baps-charities',
+    },
+    {
       id: 'soup-to-software',
       name: 'Soup to Software',
       tagline: 'Strategy, identity, narrative, and site · May 2026',

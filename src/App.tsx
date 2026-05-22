@@ -3,6 +3,7 @@ import { Proposal } from './Proposal'
 import { PreMeetingPage } from './PreMeetingPage'
 import { QuietHome } from './QuietHome'
 import { SavedFirmPage } from './SavedFirmPage'
+import { BapsCharitiesProposal } from './BapsCharitiesProposal'
 import { FiberSoftChewProposal } from './FiberSoftChewProposal'
 import { GenesiProposal } from './GenesiProposal'
 import { HAAIProposal } from './HAAIProposal'
@@ -25,6 +26,9 @@ export default function App() {
   const isLegacyBelzer = pathname === '/belzer' || pathname.startsWith('/belzer/')
   const isBelzer = pathname === '/proposal/belzer' || pathname.startsWith('/proposal/belzer/')
   const isKND = pathname === '/proposal/knd' || pathname.startsWith('/proposal/knd/')
+  const isBapsCharities =
+    pathname === '/proposal/baps-charities' ||
+    pathname.startsWith('/proposal/baps-charities/')
   const isSleepGoddess =
     pathname === '/proposal/sleep-like-a-goddess' ||
     pathname.startsWith('/proposal/sleep-like-a-goddess/') ||
@@ -99,6 +103,10 @@ export default function App() {
         <Proposal />
       </ContentProvider>
     )
+  }
+
+  if (isBapsCharities) {
+    return <BapsCharitiesProposal />
   }
 
   if (isSleepGoddess) {
