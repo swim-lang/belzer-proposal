@@ -19,6 +19,22 @@ test('Wildflower + Blanc proposal is registered and preserves source content', (
   assert.match(proposal, /Forty-two artifacts/)
   assert.match(proposal, /https:\/\/pitch\.com\/v\/wildflower-blanc-rt4vmj/)
   assert.match(proposal, /Wildflower \+ Blanc/)
-  assert.match(proposal, /Schedule a kickoff conversation/)
+  assert.match(proposal, /Schedule proposal review/)
+  assert.match(proposal, /4-5 weeks/)
+  assert.match(proposal, /approximately 30 days/)
   assert.doesNotMatch(proposal, /—/)
+  assert.doesNotMatch(proposal, /Schedule kickoff/)
+  assert.doesNotMatch(proposal, /Schedule a kickoff conversation/)
+  assert.doesNotMatch(proposal, /10–12 weeks/)
+  assert.doesNotMatch(proposal, /10 to 12 weeks/)
+})
+
+test('Wildflower + Blanc pillar borders stay consistent across breakpoints', () => {
+  const proposal = read('src/WildflowerBlancProposal.tsx')
+
+  assert.match(proposal, /const pillarBorderClasses = \[/)
+  assert.match(proposal, /'border-b md:border-r xl:border-b-0'/)
+  assert.match(proposal, /'border-b md:border-r-0 xl:border-r xl:border-b-0'/)
+  assert.match(proposal, /'border-b md:border-r md:border-b-0 xl:border-b-0'/)
+  assert.match(proposal, /'md:border-b-0'/)
 })

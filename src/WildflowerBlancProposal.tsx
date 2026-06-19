@@ -95,6 +95,13 @@ const pillars: Pillar[] = [
   },
 ]
 
+const pillarBorderClasses = [
+  'border-b md:border-r xl:border-b-0',
+  'border-b md:border-r-0 xl:border-r xl:border-b-0',
+  'border-b md:border-r md:border-b-0 xl:border-b-0',
+  'md:border-b-0',
+]
+
 const opportunityBullets = [
   'Turn raw ingredients into two brands with enough clarity to sell.',
   'Enough character to be remembered by planners and couples alike.',
@@ -364,33 +371,33 @@ const websiteAddOns: AddOn[] = [
 const timeline: TimelineStep[] = [
   {
     num: '01',
-    when: 'Weeks 1–2',
+    when: 'Week 1',
     title: 'Discovery & direction',
     items: ['Market review', 'Brand architecture', 'Positioning', 'Creative direction'],
   },
   {
     num: '02',
-    when: 'Weeks 3–5',
-    title: 'Wildflower identity',
-    items: ['Verbal identity', 'Visual identity development'],
+    when: 'Week 2',
+    title: 'Verbal identity',
+    items: ['Brand story', 'Messaging direction', 'Relationship language'],
   },
   {
     num: '03',
-    when: 'Weeks 6–8',
-    title: 'Blanc identity',
-    items: ['Verbal identity', 'Visual identity development'],
+    when: 'Weeks 2-3',
+    title: 'Wildflower identity',
+    items: ['Visual identity development', 'Applications', 'Refinement'],
   },
   {
     num: '04',
-    when: 'Weeks 9–10',
-    title: 'Brand-family alignment',
-    items: ['Side-by-side behavior', 'Applications', 'Canva systems'],
+    when: 'Weeks 3-4',
+    title: 'Blanc identity',
+    items: ['Visual identity development', 'Applications', 'Refinement'],
   },
   {
     num: '05',
-    when: 'Weeks 11–12',
+    when: 'Weeks 4-5',
     title: 'Refinement & handoff',
-    items: ['Guidelines', 'Production files', 'Final handoff'],
+    items: ['Brand-family alignment', 'Guidelines', 'Production files'],
   },
 ]
 
@@ -547,7 +554,7 @@ function ProposalNav() {
               View work
             </a>
             <a href={calendarHref} target="_blank" rel="noreferrer" className="rounded-full border border-ink px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper whitespace-nowrap">
-              Schedule kickoff
+              Schedule proposal review
             </a>
           </div>
         </div>
@@ -585,7 +592,7 @@ function Hero() {
             You came to us for two visual identities. We see a much larger opportunity: to build the creative foundation for two connected brands that can influence how events are imagined, styled, experienced, and remembered. Wildflower curates the pieces that bring an occasion to life. Blanc holds the occasion itself.
           </p>
           <div className="flex flex-wrap items-center gap-4">
-            <AnchorButton>{'Schedule a kickoff conversation ->'}</AnchorButton>
+            <AnchorButton>{'Schedule proposal review ->'}</AnchorButton>
             <AnchorButton href="#scope" variant="outline">
               See the scope
             </AnchorButton>
@@ -596,7 +603,7 @@ function Hero() {
         <MetaRow left="Fig. 01 / What this work creates" right="Four disciplines" />
         <div className="mt-6 grid border-y border-[var(--color-rule)] md:grid-cols-2 xl:grid-cols-4">
           {pillars.map((pillar, index) => (
-            <div key={pillar.title} className={`flex min-h-[288px] flex-col gap-6 border-[var(--color-rule)] p-8 ${index < pillars.length - 1 ? 'border-b md:border-r xl:border-b-0' : ''} ${index === 1 ? 'xl:border-r' : ''}`}>
+            <div key={pillar.title} className={`flex min-h-[288px] flex-col gap-6 border-[var(--color-rule)] p-8 ${pillarBorderClasses[index]}`}>
               <span className="eyebrow text-ink-2">{pillar.label}</span>
               <h3 className="serif text-[40px] font-medium leading-[44px] tracking-[-0.02em]">{pillar.title}</h3>
               <p className="text-[13px] leading-[20px] text-ink-2">{pillar.body}</p>
@@ -899,7 +906,7 @@ function WebsiteAddOns() {
 function Timeline() {
   return (
     <section id="timeline" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[160px]">
-      <MetaRow left="§ 10 / Process and timeline" right="10–12 weeks" />
+      <MetaRow left="§ 10 / Process and timeline" right="4-5 weeks" />
       <Reveal>
         <h2 className="serif max-w-[1100px] py-12 text-[52px] font-medium leading-[56px] tracking-[-0.032em] md:text-[92px] md:leading-[92px]">
           Thoughtful enough to matter. Paced for your season.
@@ -907,7 +914,7 @@ function Timeline() {
       </Reveal>
       <Reveal>
         <p className="max-w-[720px] pb-12 text-[15px] leading-[23px] text-ink-2">
-          The identity engagement is expected to take approximately 10 to 12 weeks. Because the team is currently in peak event season, the schedule can be paced across a three-to-four-month window without losing momentum. If a website is added, its planning can begin while the identities are being finalized.
+          The core identity engagement can move in approximately 30 days, with a focused 4-5 week schedule for strategy, verbal identity, both visual systems, and final handoff. If a website is added, its planning can begin while the identities are being finalized, then extend into a separate website build window.
         </p>
       </Reveal>
       <Reveal className="grid gap-8 md:grid-cols-2 xl:grid-cols-5">
@@ -1059,7 +1066,7 @@ function WhyAnchovies() {
 function NextStep() {
   return (
     <section id="next" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-      <MetaRow left="§ 14 / Next step" right="Begin with a kickoff" />
+      <MetaRow left="§ 14 / Next step" right="Proposal review" />
       <Reveal className="border border-[var(--color-rule)] bg-paper p-8 md:p-12 lg:p-20">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-20">
           <h2 className="serif max-w-[760px] text-[54px] font-medium leading-[58px] tracking-[-0.032em] md:text-[88px] md:leading-[84px]">
@@ -1067,12 +1074,12 @@ function NextStep() {
           </h2>
           <div className="lg:text-right">
             <div className="serif text-[56px] font-medium leading-[58px] tracking-[-0.028em] md:text-[72px] md:leading-[72px]">$11,900</div>
-            <div className="eyebrow mt-2 text-ink-2">Dual engagement · 10–12 weeks</div>
+            <div className="eyebrow mt-2 text-ink-2">Dual engagement · 4-5 weeks</div>
           </div>
         </div>
         <div className="grid gap-10 pt-14 lg:grid-cols-[1fr_480px] lg:gap-20">
           <p className="max-w-[560px] text-[15px] leading-[23px] text-ink-2">
-            The engagement begins with one shared discovery phase, followed by strategic and creative development for each company. From kickoff, Kelly and Willy receive:
+            The engagement begins with one shared discovery phase, followed by strategic and creative development for each company. After the proposal review, Kelly and Willy receive:
           </p>
           <div className="grid gap-3.5">
             {nextStepItems.map((item, index) => (
@@ -1084,7 +1091,7 @@ function NextStep() {
           </div>
         </div>
         <div className="pt-12">
-          <AnchorButton>{'Schedule a kickoff conversation ->'}</AnchorButton>
+          <AnchorButton>{'Schedule proposal review ->'}</AnchorButton>
         </div>
       </Reveal>
     </section>
