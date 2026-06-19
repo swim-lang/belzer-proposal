@@ -108,6 +108,10 @@ span.display {
   --font-serif: "Newsreader", "ABC Gaisyr", ui-serif, Georgia, serif;
 }
 
+.wildflower-blanc-proposal {
+  --font-serif: "Newsreader", "ABC Gaisyr", ui-serif, Georgia, serif;
+}
+
 .contract-document {
   font-family: var(--font-sans);
   font-size: 14px;

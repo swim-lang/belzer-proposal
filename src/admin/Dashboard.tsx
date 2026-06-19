@@ -181,6 +181,13 @@ export function Dashboard() {
       status: 'Active',
       href: '/proposal/gary-springstead',
     },
+    {
+      id: 'wildflower-blanc',
+      name: 'Wildflower + Blanc',
+      tagline: 'Dual brand identity · June 2026',
+      status: 'Active',
+      href: '/proposal/wildflower-blanc',
+    },
   ]
 
   const recent = (submissions ?? []).slice(0, 5)

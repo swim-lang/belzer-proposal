@@ -12,6 +12,7 @@ import { LapincoProposal } from './LapincoProposal'
 import { LexPoliticaProposal } from './LexPoliticaProposal'
 import { SleepGoddessProposal } from './SleepGoddessProposal'
 import { SoupToSoftwareProposal } from './SoupToSoftwareProposal'
+import { WildflowerBlancProposal } from './WildflowerBlancProposal'
 import { Admin } from './admin/Admin'
 import { Intake } from './intake/Intake'
 import { ContractPage } from './contracts/ContractPage'
@@ -57,6 +58,9 @@ export default function App() {
   const isGarySpringstead =
     pathname === '/proposal/gary-springstead' ||
     pathname.startsWith('/proposal/gary-springstead/')
+  const isWildflowerBlanc =
+    pathname === '/proposal/wildflower-blanc' ||
+    pathname.startsWith('/proposal/wildflower-blanc/')
   const isSoupToSoftware =
     pathname === '/proposal/soup-to-software' ||
     pathname.startsWith('/proposal/soup-to-software/')
@@ -147,6 +151,10 @@ export default function App() {
 
   if (isGarySpringstead) {
     return <GarySpringsteadProposal />
+  }
+
+  if (isWildflowerBlanc) {
+    return <WildflowerBlancProposal />
   }
 
   if (isSoupToSoftware) {
