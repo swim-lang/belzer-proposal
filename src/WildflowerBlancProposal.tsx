@@ -692,7 +692,7 @@ function Opportunity() {
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
         <Reveal>
           <p className="max-w-[560px] text-[17px] leading-[28px] text-paper/70">
-            The wedding and events category is crowded with familiar visual language: florals, fine-line marks, handwritten type, generic luxury, and identities designed to disappear politely into the background. These brands have permission to do something more memorable. Wildflower already reaches across furniture, tabletop, glassware, linens, lounge pieces, decor, bars, and complete tabletop “Bouquets,” and invites customers to shop by season, color, event, and theme. Blanc offers a different canvas: a RiNo destination with a gallery, courtyard, patio, gazebo, and barn, with industrial architecture, natural light, and unexpected outdoor spaces within one property.
+            The wedding and events category is crowded with familiar visual language: florals, fine-line marks, handwritten type, generic luxury, and identities designed to disappear politely into the background. These brands have permission to do something more memorable.
           </p>
         </Reveal>
         <Reveal>

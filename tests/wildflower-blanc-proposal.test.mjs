@@ -27,6 +27,8 @@ test('Wildflower + Blanc proposal is registered and preserves source content', (
   assert.doesNotMatch(proposal, /Schedule a kickoff conversation/)
   assert.doesNotMatch(proposal, /10–12 weeks/)
   assert.doesNotMatch(proposal, /10 to 12 weeks/)
+  assert.doesNotMatch(proposal, /Wildflower already reaches across furniture/)
+  assert.doesNotMatch(proposal, /Blanc offers a different canvas/)
 })
 
 test('Wildflower + Blanc pillar borders stay consistent across breakpoints', () => {
