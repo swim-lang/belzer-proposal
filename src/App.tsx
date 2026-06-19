@@ -5,6 +5,7 @@ import { QuietHome } from './QuietHome'
 import { SavedFirmPage } from './SavedFirmPage'
 import { BapsCharitiesProposal } from './BapsCharitiesProposal'
 import { FiberSoftChewProposal } from './FiberSoftChewProposal'
+import { GarySpringsteadProposal } from './GarySpringsteadProposal'
 import { GenesiProposal } from './GenesiProposal'
 import { HAAIProposal } from './HAAIProposal'
 import { LapincoProposal } from './LapincoProposal'
@@ -53,6 +54,9 @@ export default function App() {
     pathname === '/proposal/fiber-soft-chew' ||
     pathname.startsWith('/proposal/fiber-soft-chew/')
   const isFiberSoftChewContract = pathname === '/proposal/fiber-soft-chew/contract'
+  const isGarySpringstead =
+    pathname === '/proposal/gary-springstead' ||
+    pathname.startsWith('/proposal/gary-springstead/')
   const isSoupToSoftware =
     pathname === '/proposal/soup-to-software' ||
     pathname.startsWith('/proposal/soup-to-software/')
@@ -139,6 +143,10 @@ export default function App() {
 
   if (isFiberSoftChew) {
     return <FiberSoftChewProposal />
+  }
+
+  if (isGarySpringstead) {
+    return <GarySpringsteadProposal />
   }
 
   if (isSoupToSoftware) {

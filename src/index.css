@@ -104,6 +104,10 @@ span.display {
   margin-right: auto;
 }
 
+.gary-springstead-proposal {
+  --font-serif: "Newsreader", "ABC Gaisyr", ui-serif, Georgia, serif;
+}
+
 .contract-document {
   font-family: var(--font-sans);
   font-size: 14px;

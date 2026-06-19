@@ -1,0 +1,39 @@
+import { readFileSync } from 'node:fs'
+import test from 'node:test'
+import assert from 'node:assert/strict'
+
+const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8')
+
+test('Gary Springstead proposal is registered and preserves source content', () => {
+  const app = read('src/App.tsx')
+  const dashboard = read('src/admin/Dashboard.tsx')
+  const proposal = read('src/GarySpringsteadProposal.tsx')
+
+  assert.match(app, /GarySpringsteadProposal/)
+  assert.match(app, /\/proposal\/gary-springstead/)
+  assert.match(dashboard, /Gary Springstead/)
+  assert.match(dashboard, /\/proposal\/gary-springstead/)
+  assert.match(proposal, /A new firm with a reputation already built\./)
+  assert.match(proposal, /The core engagement\./)
+  assert.match(proposal, /\$23,000/)
+  assert.match(proposal, /Branding Work/)
+  assert.match(proposal, /Website Design/)
+  assert.match(proposal, /https:\/\/swim-lang\.github\.io\/blanchet-site\/index\.html/)
+  assert.match(proposal, /Password: Dolly/)
+  assert.match(proposal, /https:\/\/koplow-defense\.framer\.website\//)
+  assert.match(proposal, /https:\/\/sidweberlaw\.com\//)
+  assert.match(proposal, /https:\/\/toddburnham\.framer\.website\//)
+  assert.match(proposal, /https:\/\/mavenadvocacy\.com\//)
+  assert.match(proposal, /https:\/\/lexpolitica\.com\//)
+  assert.match(proposal, /https:\/\/burnhamlaw\.com\//)
+  assert.match(proposal, /https:\/\/belzerlawfirm\.com\//)
+  assert.match(proposal, /https:\/\/pitch\.com\/v\/anchovies-press-zwdsbn/)
+  assert.match(proposal, /The Brand Identity/)
+  assert.match(proposal, /Best Law Firm Websites 2023/)
+  assert.match(proposal, /Best Law Firm Websites 2026/)
+  assert.match(proposal, /2025 Award: Good vs\. Great/)
+  assert.match(proposal, /Schedule proposal review/)
+  assert.match(proposal, /View work/)
+  assert.match(proposal, /bg-\[var\(--color-mac\)\]/)
+  assert.doesNotMatch(proposal, /Schedule kickoff/)
+})

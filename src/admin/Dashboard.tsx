@@ -174,6 +174,13 @@ export function Dashboard() {
       status: 'Active',
       href: '/proposal/fiber-soft-chew',
     },
+    {
+      id: 'gary-springstead',
+      name: 'Gary Springstead',
+      tagline: 'Brand, identity, narrative, and website · June 2026',
+      status: 'Active',
+      href: '/proposal/gary-springstead',
+    },
   ]
 
   const recent = (submissions ?? []).slice(0, 5)
