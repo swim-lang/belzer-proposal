@@ -173,16 +173,16 @@ const investmentLines = [
     'Line 01',
     'Two-page website design',
     'Includes desktop and mobile design for two primary pages, with core website copy direction, interaction direction, and developer-ready design guidance.',
-    '$2,600',
+    '$1,400',
   ],
   [
     'Line 02',
     'Brand identity and starter system',
     'Includes logo design, color, typography, visual language, basic usage guidance, and starter brand guide.',
-    '$2,000',
+    '$1,100',
   ],
-  ['Line 03', 'Pitch deck', 'Includes structure, messaging direction, and visual design for a concise funding and partner presentation.', '$850'],
-  ['Line 04', 'Light app concept', 'Includes a small visual demo direction to help funders understand the future product experience.', '$1,000'],
+  ['Line 03', 'Pitch deck', 'Includes structure, messaging direction, and visual design for a concise funding and partner presentation.', '$500'],
+  ['Line 04', 'Light app concept', 'Includes a small visual demo direction to help funders understand the future product experience.', '$500'],
 ]
 
 const accessItems = [
@@ -581,7 +581,7 @@ function Investment() {
       <MetaRow left="§ 08 - Investment" right="Itemized · One total" />
       <div className="flex flex-col gap-10 pb-16 lg:flex-row lg:items-start lg:gap-20 lg:pb-20">
         <Reveal className="flex-[1.4]">
-          <h2 className="display text-[72px] leading-[72px] tracking-[-0.025em] sm:text-[112px] sm:leading-[106px] lg:text-[160px] lg:leading-[152px]">$6,450</h2>
+          <h2 className="display text-[72px] leading-[72px] tracking-[-0.025em] sm:text-[112px] sm:leading-[106px] lg:text-[160px] lg:leading-[152px]">$3,500</h2>
           <span className="eyebrow mt-6 block text-ink-2">Total · Three weeks · Full scope</span>
         </Reveal>
         <Reveal className="flex max-w-[460px] flex-col gap-5 pt-2 text-[15px] leading-[24px]">
@@ -603,7 +603,7 @@ function Investment() {
         <Reveal className="grid gap-4 py-8 md:grid-cols-[80px_1fr_200px] md:items-center md:gap-12">
           <span className="eyebrow text-ink-2">Total</span>
           <span className="serif text-[32px] leading-[38px] tracking-[-0.018em] md:text-[36px] md:leading-[42px]">All four lines, three weeks</span>
-          <span className="serif text-[48px] leading-[52px] tracking-[-0.02em] md:text-right md:text-[56px]">$6,450</span>
+          <span className="serif text-[48px] leading-[52px] tracking-[-0.02em] md:text-right md:text-[56px]">$3,500</span>
         </Reveal>
       </div>
     </section>
@@ -726,7 +726,7 @@ function Closing() {
           <div>
             <AnchorButton variant="light">{'Begin the discovery ->'}</AnchorButton>
           </div>
-          <span className="pt-2 text-[13px] leading-[20px] text-paper/60">$6,450 · Three weeks · Full scope</span>
+          <span className="pt-2 text-[13px] leading-[20px] text-paper/60">$3,500 · Three weeks · Full scope</span>
         </Reveal>
       </div>
     </section>
