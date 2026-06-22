@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Reveal } from './components/Reveal'
 
-const getContractHref = () =>
-  typeof window !== 'undefined' && window.location.pathname.startsWith('/proposal/off-menu')
-    ? '/proposal/off-menu/contract'
-    : '/proposal/fiber-soft-chew/contract'
+const contractHref = '/proposal/fiber-soft-chew/contract'
 const workHref = 'https://anchovies.agency/work'
 
 const navSections = [
@@ -259,8 +256,8 @@ const investmentLines = [
 ]
 
 const paymentMilestones = [
-  ['60%', 'Due at kickoff', '$3,510 starts the project when the kickoff invoice is paid.'],
-  ['40%', 'Due before final handoff', '$2,340 is due before the final asset handoff and starter brand guide delivery.'],
+  ['50%', 'Due at kickoff', 'Project starts when the kickoff invoice is paid.'],
+  ['50%', 'Due before final handoff', 'Before the final asset handoff and starter brand guide delivery.'],
 ]
 
 const whyNow = [
@@ -291,7 +288,7 @@ function MetaRow({ left, right, dark = false }: { left: string; right: string; d
 
 function AnchorButton({
   children,
-  href = getContractHref(),
+  href = contractHref,
   variant = 'dark',
 }: {
   children: string
@@ -367,7 +364,7 @@ function FiberNav() {
             <a href={workHref} target="_blank" rel="noreferrer" className="hidden rounded-full px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper whitespace-nowrap sm:inline-flex">
               Our work
             </a>
-            <a href={getContractHref()} className="rounded-full bg-ink px-4 py-2 text-[12px] font-medium text-paper transition-colors hover:bg-ink-2 whitespace-nowrap">
+            <a href={contractHref} className="rounded-full bg-ink px-4 py-2 text-[12px] font-medium text-paper transition-colors hover:bg-ink-2 whitespace-nowrap">
               Sign contract
             </a>
           </div>

@@ -18,7 +18,6 @@ import { Intake } from './intake/Intake'
 import { ContractPage } from './contracts/ContractPage'
 import { fiberSoftChewContract } from './contracts/fiberSoftChewContract'
 import { genesiContract } from './contracts/genesiContract'
-import { offMenuContract } from './contracts/offMenuContract'
 import { createPreMeetingContent, getPreMeetingFirmNameFromURL } from './preMeetingContent'
 import { kndContent } from './kndContent'
 
@@ -56,10 +55,6 @@ export default function App() {
     pathname === '/proposal/fiber-soft-chew' ||
     pathname.startsWith('/proposal/fiber-soft-chew/')
   const isFiberSoftChewContract = pathname === '/proposal/fiber-soft-chew/contract'
-  const isOffMenu =
-    pathname === '/proposal/off-menu' ||
-    pathname.startsWith('/proposal/off-menu/')
-  const isOffMenuContract = pathname === '/proposal/off-menu/contract'
   const isGarySpringstead =
     pathname === '/proposal/gary-springstead' ||
     pathname.startsWith('/proposal/gary-springstead/')
@@ -150,15 +145,7 @@ export default function App() {
     return <ContractPage contract={fiberSoftChewContract} />
   }
 
-  if (isOffMenuContract) {
-    return <ContractPage contract={offMenuContract} />
-  }
-
   if (isFiberSoftChew) {
-    return <FiberSoftChewProposal />
-  }
-
-  if (isOffMenu) {
     return <FiberSoftChewProposal />
   }
 
