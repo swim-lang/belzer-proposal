@@ -973,7 +973,7 @@ export function ContractPage({ contract }: ContractPageProps) {
                   <strong>Name / Title:</strong> {agencySignature.name} · {agencySignature.title}
                 </p>
                 <p>
-                  <strong>Date:</strong> {agencySignature.date}
+                  <strong>Date:</strong> {contract.agencySignedDate ?? agencySignature.date}
                 </p>
               </div>
             </div>

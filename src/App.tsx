@@ -10,6 +10,7 @@ import { GenesiProposal } from './GenesiProposal'
 import { HAAIProposal } from './HAAIProposal'
 import { LapincoProposal } from './LapincoProposal'
 import { LexPoliticaProposal } from './LexPoliticaProposal'
+import { OffMenuProposal } from './OffMenuProposal'
 import { SleepGoddessProposal } from './SleepGoddessProposal'
 import { SoupToSoftwareProposal } from './SoupToSoftwareProposal'
 import { WildflowerBlancProposal } from './WildflowerBlancProposal'
@@ -18,6 +19,7 @@ import { Intake } from './intake/Intake'
 import { ContractPage } from './contracts/ContractPage'
 import { fiberSoftChewContract } from './contracts/fiberSoftChewContract'
 import { genesiContract } from './contracts/genesiContract'
+import { offMenuContract } from './contracts/offMenuContract'
 import { createPreMeetingContent, getPreMeetingFirmNameFromURL } from './preMeetingContent'
 import { kndContent } from './kndContent'
 
@@ -55,6 +57,10 @@ export default function App() {
     pathname === '/proposal/fiber-soft-chew' ||
     pathname.startsWith('/proposal/fiber-soft-chew/')
   const isFiberSoftChewContract = pathname === '/proposal/fiber-soft-chew/contract'
+  const isOffMenu =
+    pathname === '/proposal/off-menu' ||
+    pathname.startsWith('/proposal/off-menu/')
+  const isOffMenuContract = pathname === '/proposal/off-menu/contract'
   const isGarySpringstead =
     pathname === '/proposal/gary-springstead' ||
     pathname.startsWith('/proposal/gary-springstead/')
@@ -147,6 +153,14 @@ export default function App() {
 
   if (isFiberSoftChew) {
     return <FiberSoftChewProposal />
+  }
+
+  if (isOffMenuContract) {
+    return <ContractPage contract={offMenuContract} />
+  }
+
+  if (isOffMenu) {
+    return <OffMenuProposal />
   }
 
   if (isGarySpringstead) {

@@ -25,6 +25,7 @@ export type ContractData = {
   slug: string
   title: string
   preparedDate: string
+  agencySignedDate?: string
   effectiveDate: string
   projectStart: string
   timeline: string
