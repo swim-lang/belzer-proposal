@@ -18,7 +18,7 @@ const movements = [
   ['Movement 01', 'Brand', 'A visual identity that holds the ambition while keeping the idea simple, human, and memorable.'],
   ['Movement 02', 'Site', 'A focused two-page website that gives the vision a credible, emotionally engaging place to land.'],
   ['Movement 03', 'Deck', 'A concise pitch deck that helps you lead funder conversations and stay memorable after the meeting.'],
-  ['Movement 04', 'App', 'A light demo concept that shows how the future HAAI platform might look, feel, and move.'],
+  ['Movement 04', 'App', 'A light demo concept that shows how the future HumanaAI platform might look, feel, and move.'],
 ]
 
 const pillars = [
@@ -34,11 +34,11 @@ const pillars = [
 const outcomes = [
   [
     'A website that gives the vision a place to land.',
-    'The website is the central deliverable in this phase. It should quickly explain what HAAI is, why it exists, who it serves, and where it is going: women connecting through pods, learning AI in context, and applying it to real-world problems.',
+    'The website is the central deliverable in this phase. It should quickly explain what HumanaAI is, why it exists, who it serves, and where it is going: women connecting through pods, learning AI in context, and applying it to real-world problems.',
   ],
   [
     'A brand identity that makes the idea easier to understand.',
-    'HAAI needs a visual identity that holds the ambition while making the idea feel simple, human, and memorable. The system should communicate global connection, intelligence, care, and future-forward thinking without falling into the usual visual language of AI.',
+    'HumanaAI needs a visual identity that holds the ambition while making the idea feel simple, human, and memorable. The system should communicate global connection, intelligence, care, and future-forward thinking without falling into the usual visual language of AI.',
   ],
   [
     'A pitch deck for conversations and funding.',
@@ -46,7 +46,7 @@ const outcomes = [
   ],
   [
     'A light app concept to make the future feel real.',
-    'Because HAAI may eventually include a platform or app experience, we recommend including a small demo concept in this first phase: a simple visual prototype showing how a woman might join, create a profile, identify a problem, get matched with a pod, or access learning resources.',
+    'Because HumanaAI may eventually include a platform or app experience, we recommend including a small demo concept in this first phase: a simple visual prototype showing how a woman might join, create a profile, identify a problem, get matched with a pod, or access learning resources.',
   ],
 ]
 
@@ -69,7 +69,7 @@ const phases = [
   {
     num: '02',
     title: 'Brand identity and visual system',
-    body: "We'll create a brand identity system that gives HAAI a clear and professional foundation: global, human, intelligent, and optimistic, with enough polish for funders and enough warmth for the women the institute is designed to serve.",
+    body: "We'll create a brand identity system that gives HumanaAI a clear and professional foundation: global, human, intelligent, and optimistic, with enough polish for funders and enough warmth for the women the institute is designed to serve.",
     goal: 'Goal - enough polish for funders, enough warmth for the women',
     includes: [
       'Logo design',
@@ -85,7 +85,7 @@ const phases = [
   {
     num: '03',
     title: 'Two-page website',
-    body: "We'll design a focused two-page website that introduces HAAI clearly and gives funders a strong place to land: a main landing page and a deeper page explaining the collective pod model and human-led AI approach.",
+    body: "We'll design a focused two-page website that introduces HumanaAI clearly and gives funders a strong place to land: a main landing page and a deeper page explaining the collective pod model and human-led AI approach.",
     goal: 'Goal - a credible, simple, future-facing place for the vision',
     includes: [
       'Two-page website design',
@@ -112,14 +112,14 @@ const phases = [
   {
     num: '05',
     title: 'Light app concept',
-    body: "We'll create a small demo concept that shows how the future HAAI platform could work: a few key screens that give the product idea shape before deeper development begins.",
+    body: "We'll create a small demo concept that shows how the future HumanaAI platform could work: a few key screens that give the product idea shape before deeper development begins.",
     goal: "Goal - give the future platform shape, even before it's built",
     includes: ['Light app concept direction', 'A small set of visual screens', 'Simple user flow', 'Demo-ready presentation visuals'],
   },
 ]
 
 const deliverables = [
-  ['D / 01', 'Brand identity system', "A coherent visual identity built around HAAI's mission and audiences.", 'Brand'],
+  ['D / 01', 'Brand identity system', "A coherent visual identity built around HumanaAI's mission and audiences.", 'Brand'],
   ['D / 02', 'Logo design', 'A primary mark designed to feel global, human, and intelligent.', 'Brand'],
   ['D / 03', 'Color and typography system', "A palette and type hierarchy that hold the institute's tone.", 'Brand'],
   ['D / 04', 'Visual language direction', 'Graphic motifs, photography direction, and the rhythm of the brand world.', 'Brand'],
@@ -209,7 +209,7 @@ const nextSteps = [
   ['02', 'Confirm the two pages', 'Decide which two pages will introduce the institute most clearly to funders and partners.'],
   ['03', 'Identify deck structure', 'Choose the deck flow that best leads funder and partner conversations.'],
   ['04', 'Define the app screens', 'Decide which moments of the future platform are most useful to show first.'],
-  ['05', 'Begin the three-week sprint', "A complete foundation for HAAI's next stage: designed, built, and handed off together."],
+  ['05', 'Begin the three-week sprint', "A complete foundation for HumanaAI's next stage: designed, built, and handed off together."],
 ]
 
 function AnchorButton({
@@ -250,7 +250,7 @@ function MetaRow({ left, right, dark = false }: { left: string; right: string; d
   )
 }
 
-function HAAINav() {
+function HumanaAINav() {
   const [active, setActive] = useState('foundation')
 
   useEffect(() => {
@@ -273,7 +273,7 @@ function HAAINav() {
         <div className="flex items-center gap-5">
           <img src="/logos/anchovies-wordmark.svg" alt="Anchovies" className="block h-[11px] w-auto" />
           <span className="block h-[10px] w-px bg-[var(--color-rule)]" />
-          <span className="eyebrow text-ink-2">Prepared for HAAI</span>
+          <span className="eyebrow text-ink-2">Prepared for HumanaAI</span>
         </div>
         <div className="flex items-center gap-5">
           <span className="eyebrow text-ink-2">Foundational Phase · v1</span>
@@ -287,7 +287,7 @@ function HAAINav() {
             <span className="hidden text-[13px] tracking-[-0.01em] text-ink-2 sm:inline">
               <span className="text-ink">Anchovies</span>
               <span className="mx-2">×</span>
-              HAAI
+              HumanaAI
             </span>
           </a>
           <nav className="hidden items-center gap-7 text-[12px] text-ink-2 lg:flex">
@@ -329,12 +329,12 @@ function Hero() {
       <div className="flex flex-col gap-10 border-t border-[var(--color-rule)] pb-16 pt-12 lg:flex-row lg:gap-20">
         <Reveal className="max-w-[640px] flex-1">
           <h2 className="serif text-[25px] leading-[33px] tracking-[-0.018em] md:text-[30px] md:leading-[38px] lg:text-[36px] lg:leading-[44px]">
-            A focused brand identity, a two-page website, a pitch deck, and a light app concept: designed to make HAAI feel real from the very first conversation.
+            A focused brand identity, a two-page website, a pitch deck, and a light app concept: designed to make HumanaAI feel real from the very first conversation.
           </h2>
         </Reveal>
         <Reveal className="flex max-w-[420px] flex-col gap-6 pt-2">
           <p className="text-[15px] leading-[23px] text-ink-2">
-            HAAI has the kind of idea that needs to feel real quickly. This first phase gives the institute a strong foundation for funders, partners, collaborators, and the women joining the network.
+            HumanaAI has the kind of idea that needs to feel real quickly. This first phase gives the institute a strong foundation for funders, partners, collaborators, and the women joining the network.
           </p>
           <div className="flex flex-wrap items-center gap-3 pt-4">
             <AnchorButton>{'Begin the project ->'}</AnchorButton>
@@ -386,7 +386,7 @@ function WhatWeHeard() {
           </h2>
         </Reveal>
         <Reveal className="flex max-w-[460px] flex-col gap-5 pt-2 text-[15px] leading-[24px]">
-          <p>HAAI is centered around the human age of AI. The heart of the idea is women using AI as a tool for connection, education, problem-solving, and public good.</p>
+          <p>HumanaAI is centered around the human age of AI. The heart of the idea is women using AI as a tool for connection, education, problem-solving, and public good.</p>
           <p className="text-ink-2">The initial audience is funders and partners. Over time, the brand will also speak directly to the women joining the network: participating in pods, learning new tools, and applying AI to problems in their communities.</p>
           <p className="text-ink-2">Funders need to see vision, credibility, and execution. Participants need to feel belonging, clarity, safety, and momentum. The best foundation can support both.</p>
         </Reveal>
@@ -421,7 +421,7 @@ function Outcomes() {
       <div className="flex flex-col gap-10 pb-16 lg:flex-row lg:items-start lg:gap-20 lg:pb-20">
         <Reveal className="flex-[1.2]">
           <h2 className="display max-w-[720px] text-[48px] leading-[48px] tracking-[-0.022em] md:text-[72px] md:leading-[70px] lg:text-[88px] lg:leading-[84px]">
-            Make HAAI feel
+            Make HumanaAI feel
             <br />
             real, quickly.
           </h2>
@@ -452,7 +452,7 @@ function DarkQuote() {
           </blockquote>
         </Reveal>
         <Reveal className="flex max-w-[360px] flex-col gap-6 pt-2 text-[15px] leading-[24px] text-paper/70 lg:pt-12">
-          <p>HAAI sits at an unusual intersection: the human age of AI, women's leadership, global community, and collective problem-solving: all moving at once.</p>
+          <p>HumanaAI sits at an unusual intersection: the human age of AI, women's leadership, global community, and collective problem-solving: all moving at once.</p>
           <p>This phase gives that vision its first clear form: something funders can read, partners can trust, and participants can feel themselves inside.</p>
         </Reveal>
       </div>
@@ -517,7 +517,7 @@ function Deliverables() {
           </h2>
         </Reveal>
         <Reveal className="max-w-[460px] flex-1 pt-2">
-          <p className="text-[15px] leading-[24px] text-ink-2">A complete foundation for HAAI's first stage: the brand, the site, the deck, and the early app concept, designed to move together.</p>
+          <p className="text-[15px] leading-[24px] text-ink-2">A complete foundation for HumanaAI's first stage: the brand, the site, the deck, and the early app concept, designed to move together.</p>
         </Reveal>
       </div>
       <div className="border-t border-[var(--color-rule)]">
@@ -547,7 +547,7 @@ function Timeline() {
           </h2>
         </Reveal>
         <Reveal className="max-w-[460px] flex-1 pt-2">
-          <p className="text-[15px] leading-[24px] text-ink-2">A focused engagement designed to move quickly without rushing: leaving HAAI with a complete first foundation by the end of week three.</p>
+          <p className="text-[15px] leading-[24px] text-ink-2">A focused engagement designed to move quickly without rushing: leaving HumanaAI with a complete first foundation by the end of week three.</p>
         </Reveal>
       </div>
       <div className="grid border-y border-[var(--color-rule)] lg:grid-cols-3">
@@ -585,7 +585,7 @@ function Investment() {
           <span className="eyebrow mt-6 block text-ink-2">Total · Three weeks · Full scope</span>
         </Reveal>
         <Reveal className="flex max-w-[460px] flex-col gap-5 pt-2 text-[15px] leading-[24px]">
-          <p>A focused investment in the foundation HAAI needs first: brand identity, two-page website, pitch deck, and a light app concept, designed to move together.</p>
+          <p>A focused investment in the foundation HumanaAI needs first: brand identity, two-page website, pitch deck, and a light app concept, designed to move together.</p>
           <p className="text-ink-2">Each line is priced individually so the value of every piece is clear. Together, they give the institute its first credible expression for funders, partners, and participants.</p>
         </Reveal>
       </div>
@@ -616,7 +616,7 @@ function Access() {
       <MetaRow left="§ 09 - What this phase gives access to" right="Eight outcomes" />
       <Reveal>
         <h2 className="display max-w-[1100px] pb-16 text-[48px] leading-[48px] tracking-[-0.022em] md:text-[72px] md:leading-[70px] lg:pb-20 lg:text-[88px] lg:leading-[84px]">
-          What this phase gives HAAI access to.
+          What this phase gives HumanaAI access to.
         </h2>
       </Reveal>
       <div className="border-t border-[var(--color-rule)] pt-8">
@@ -639,11 +639,11 @@ function BrandSite() {
       <div className="flex flex-col gap-10 pb-16 lg:flex-row lg:items-start lg:gap-20">
         <Reveal className="flex-[1.2]">
           <h2 className="serif max-w-[720px] text-[38px] leading-[44px] tracking-[-0.02em] md:text-[56px] md:leading-[62px] lg:text-[64px] lg:leading-[68px]">
-            The website is one of the first places people experience HAAI. The brand is what makes the experience feel specific.
+            The website is one of the first places people experience HumanaAI. The brand is what makes the experience feel specific.
           </h2>
         </Reveal>
         <Reveal className="flex max-w-[460px] flex-col gap-5 pt-2 text-[15px] leading-[24px]">
-          <p>The brand identity gives the website its own language: the logo, type, color, visual rhythm, tone, and design system that make every page feel like HAAI and only HAAI.</p>
+          <p>The brand identity gives the website its own language: the logo, type, color, visual rhythm, tone, and design system that make every page feel like HumanaAI and only HumanaAI.</p>
           <p className="text-ink-2">That foundation is what makes every next step easier: the deck, the future app, the partner materials. Each of them inherits the same standard.</p>
         </Reveal>
       </div>
@@ -666,12 +666,12 @@ function FutureSupport() {
       <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-20">
         <Reveal className="flex-[1.2]">
           <h2 className="serif max-w-[720px] text-[38px] leading-[44px] tracking-[-0.02em] md:text-[50px] md:leading-[56px] lg:text-[56px] lg:leading-[60px]">
-            When HAAI is ready, we can help move from concept to something more functional.
+            When HumanaAI is ready, we can help move from concept to something more functional.
           </h2>
         </Reveal>
         <Reveal className="flex max-w-[460px] flex-col gap-5 pt-2 text-[15px] leading-[24px]">
           <p>After this work is complete, we can also discuss support for full website development, expanded pitch materials, AI product strategy, or a more advanced prototype.</p>
-          <p className="text-ink-2">Because we are actively designing and building custom AI-enabled tools, we may be able to help HAAI move from early concept into something more functional when the time is right. For now, the priority is a strong first version that helps the institute tell its story, start conversations, and build momentum.</p>
+          <p className="text-ink-2">Because we are actively designing and building custom AI-enabled tools, we may be able to help HumanaAI move from early concept into something more functional when the time is right. For now, the priority is a strong first version that helps the institute tell its story, start conversations, and build momentum.</p>
         </Reveal>
       </div>
     </section>
@@ -719,7 +719,7 @@ function Closing() {
       </Reveal>
       <div className="flex flex-col gap-10 pt-12 lg:flex-row lg:items-start lg:gap-20">
         <Reveal className="max-w-[520px] flex-1">
-          <p className="text-[15px] leading-[24px] text-paper/70">In three weeks, HAAI moves from idea to identity: a brand, a site, a deck, and a glimpse of the future platform, all working together to make the institute feel real for the women, funders, and partners ready to join.</p>
+          <p className="text-[15px] leading-[24px] text-paper/70">In three weeks, HumanaAI moves from idea to identity: a brand, a site, a deck, and a glimpse of the future platform, all working together to make the institute feel real for the women, funders, and partners ready to join.</p>
         </Reveal>
         <Reveal className="flex max-w-[380px] flex-1 flex-col gap-4">
           <span className="eyebrow text-paper/60">Begin</span>
@@ -755,18 +755,18 @@ function Footer() {
   )
 }
 
-export function HAAIProposal() {
+export function HumanaAIProposal() {
   useEffect(() => {
-    document.title = 'Anchovies × HAAI — Proposal'
+    document.title = 'Anchovies × HumanaAI — Proposal'
     const meta = document.querySelector<HTMLMetaElement>('meta[name="description"]')
     if (meta) {
-      meta.content = 'A foundational brand, site, deck, and app concept proposal for HAAI from Anchovies.'
+      meta.content = 'A foundational brand, site, deck, and app concept proposal for HumanaAI from Anchovies.'
     }
   }, [])
 
   return (
     <main className="bg-paper text-ink">
-      <HAAINav />
+      <HumanaAINav />
       <Hero />
       <WhatWeHeard />
       <Outcomes />

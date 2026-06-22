@@ -140,11 +140,11 @@ export function Dashboard() {
       href: '/proposal/sleep-like-a-goddess',
     },
     {
-      id: 'haai',
-      name: 'HAAI',
+      id: 'humanaai',
+      name: 'HumanaAI',
       tagline: 'Brand, site, deck, and app concept · May 2026',
       status: 'Active',
-      href: '/proposal/haai',
+      href: '/proposal/humanaai',
     },
     {
       id: 'lapinco',

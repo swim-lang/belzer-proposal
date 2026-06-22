@@ -7,7 +7,7 @@ import { BapsCharitiesProposal } from './BapsCharitiesProposal'
 import { FiberSoftChewProposal } from './FiberSoftChewProposal'
 import { GarySpringsteadProposal } from './GarySpringsteadProposal'
 import { GenesiProposal } from './GenesiProposal'
-import { HAAIProposal } from './HAAIProposal'
+import { HumanaAIProposal } from './HAAIProposal'
 import { LapincoProposal } from './LapincoProposal'
 import { LexPoliticaProposal } from './LexPoliticaProposal'
 import { OffMenuProposal } from './OffMenuProposal'
@@ -38,7 +38,11 @@ export default function App() {
     pathname.startsWith('/proposal/sleep-like-a-goddess/') ||
     pathname === '/sleep-like-a-goddess' ||
     pathname.startsWith('/sleep-like-a-goddess/')
-  const isHAAI =
+  const isHumanaAI =
+    pathname === '/proposal/humanaai' ||
+    pathname.startsWith('/proposal/humanaai/') ||
+    pathname === '/humanaai' ||
+    pathname.startsWith('/humanaai/') ||
     pathname === '/proposal/haai' ||
     pathname.startsWith('/proposal/haai/') ||
     pathname === '/haai' ||
@@ -127,8 +131,8 @@ export default function App() {
     return <SleepGoddessProposal />
   }
 
-  if (isHAAI) {
-    return <HAAIProposal />
+  if (isHumanaAI) {
+    return <HumanaAIProposal />
   }
 
   if (isLexPolitica) {
