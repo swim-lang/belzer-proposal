@@ -140,6 +140,13 @@ export function Dashboard() {
       href: '/proposal/sleep-like-a-goddess',
     },
     {
+      id: 'soft-hours',
+      name: 'Soft Hours',
+      tagline: 'Shopify completion · June 2026',
+      status: 'Active',
+      href: '/proposal/soft-hours',
+    },
+    {
       id: 'humanaai',
       name: 'HumanaAI',
       tagline: 'Brand, site, deck, and app concept · May 2026',

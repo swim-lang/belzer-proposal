@@ -12,6 +12,7 @@ import { LapincoProposal } from './LapincoProposal'
 import { LexPoliticaProposal } from './LexPoliticaProposal'
 import { OffMenuProposal } from './OffMenuProposal'
 import { SleepGoddessProposal } from './SleepGoddessProposal'
+import { SoftHoursProposal } from './SoftHoursProposal'
 import { SoupToSoftwareProposal } from './SoupToSoftwareProposal'
 import { WildflowerBlancProposal } from './WildflowerBlancProposal'
 import { Admin } from './admin/Admin'
@@ -38,6 +39,11 @@ export default function App() {
     pathname.startsWith('/proposal/sleep-like-a-goddess/') ||
     pathname === '/sleep-like-a-goddess' ||
     pathname.startsWith('/sleep-like-a-goddess/')
+  const isSoftHours =
+    pathname === '/proposal/soft-hours' ||
+    pathname.startsWith('/proposal/soft-hours/') ||
+    pathname === '/soft-hours' ||
+    pathname.startsWith('/soft-hours/')
   const isHumanaAI =
     pathname === '/proposal/humanaai' ||
     pathname.startsWith('/proposal/humanaai/') ||
@@ -129,6 +135,10 @@ export default function App() {
 
   if (isSleepGoddess) {
     return <SleepGoddessProposal />
+  }
+
+  if (isSoftHours) {
+    return <SoftHoursProposal />
   }
 
   if (isHumanaAI) {
