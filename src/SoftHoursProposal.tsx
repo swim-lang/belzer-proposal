@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Reveal } from './components/Reveal'
 
-const calendarHref = 'https://cal.com/anchovies/30min?overlayCalendar=true'
+const acceptProposalHref = 'mailto:sean@anchovies.agency?subject=Accepting%20the%20Soft%20Hours%20Shopify%20Proposal'
 const priorWorkHref = 'https://anchovies.pro/proposal/sleep-like-a-goddess'
 
 type DetailRow = [string, string, string]
@@ -93,6 +93,7 @@ const phases: Phase[] = [
       'CTA and button language',
       'Typography, spacing, and section rhythm cleanup',
       'Conversion-focused page refinement',
+      'Value, benefits, and USP messaging',
     ],
   },
   {
@@ -132,6 +133,7 @@ const deliverables = [
   ['Design', 'Homepage polish', 'A more resolved first impression shaped around Soft Hours, shopping clarity, and conversion.'],
   ['Design', 'Collection page polish', 'A cleaner browsing path for categories, product families, or launch assortment.'],
   ['Design', 'Product page polish', 'A product detail experience shaped around fabric, fit, care, imagery, and purchase confidence.'],
+  ['Content', 'Conversion copy support', 'Focused copywriting help for value, benefits, USP, product clarity, CTAs, and purchase confidence.'],
   ['Build', 'HTML to Shopify development', 'Translation of the coded page direction into a Shopify-ready theme experience.'],
   ['Build', 'Editable design controls', 'Key sections coded so Soft Hours can update copy, imagery, CTAs, and selected page content in Shopify.'],
   ['Build', 'Core page development', 'Development support for homepage, collection, product, story, and smaller supporting pages.'],
@@ -148,7 +150,7 @@ const timeline = [
 ] as const
 
 const investmentLines = [
-  ['01', 'Shopify completion sprint', 'HTML review, Shopify theme connection, core page design and development, editable sections, mobile QA, launch basics, and handoff notes.', '$3,500'],
+  ['01', 'Shopify completion sprint', 'HTML review, Shopify theme connection, core page design and development, conversion copy support, editable sections, mobile QA, launch basics, and handoff notes.', '$3,500'],
   ['02', 'Owner setup responsibilities', 'Soft Hours owns product uploads, payment and bank connection, shipping, tax, and back-end admin setup. We provide guidance where useful.', 'Client-owned'],
   ['03', 'Post-launch additions', 'Email flows, deeper SEO, campaign pages, photography direction, paid ads, subscriptions, and ongoing optimization can be scoped later.', 'Optional'],
 ]
@@ -170,7 +172,7 @@ function MetaRow({ left, right, dark = false }: { left: string; right: string; d
 
 function AnchorButton({
   children,
-  href = calendarHref,
+  href = acceptProposalHref,
   variant = 'dark',
 }: {
   children: string
@@ -244,8 +246,8 @@ function SoftHoursNav() {
               </a>
             ))}
           </nav>
-          <a href={calendarHref} target="_blank" rel="noreferrer" className="rounded-full border border-ink px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper whitespace-nowrap">
-            Review proposal
+          <a href={acceptProposalHref} className="rounded-full border border-ink px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper whitespace-nowrap">
+            Accept proposal
           </a>
         </div>
       </div>
@@ -304,7 +306,7 @@ export function SoftHoursProposal() {
               The brand and design direction are already in motion. This phase turns the HTML head start into a Shopify experience that is calmer, clearer, more editable, and easier to buy from.
             </p>
             <div className="flex flex-wrap items-center gap-4">
-              <AnchorButton>{'Review proposal ->'}</AnchorButton>
+              <AnchorButton>{'Accept proposal ->'}</AnchorButton>
               <AnchorButton href="#approach" variant="outline">
                 View the scope
               </AnchorButton>
@@ -471,7 +473,7 @@ export function SoftHoursProposal() {
             <p className="eyebrow mt-5 text-ink-2">Total - Shopify completion sprint</p>
           </div>
           <div className="flex max-w-[560px] flex-col gap-5 text-[15px] leading-[24px] text-ink-2">
-            <p>This covers the focused work needed to turn the Soft Hours HTML head start into a Shopify site: completion map, page design and development, editable sections, mobile QA, Shopify connection support, launch basics, and handoff notes.</p>
+            <p>This covers the focused work needed to turn the Soft Hours HTML head start into a Shopify site: completion map, page design and development, conversion-focused copywriting, editable sections, mobile QA, Shopify connection support, launch basics, and handoff notes.</p>
             <p>The price assumes we are working from the current brand, design direction, and coded pages. Product uploads, payment and bank connection, shipping, tax, and back-end admin setup remain with Soft Hours.</p>
           </div>
         </Reveal>
@@ -514,7 +516,7 @@ export function SoftHoursProposal() {
         <MetaRow left="§ 09 - In closing" right="Where this lands" dark />
         <Reveal className="border-t border-paper/20 pt-16">
           <h2 className="display max-w-[1180px] text-[52px] leading-[58px] md:text-[92px] md:leading-[96px] lg:text-[124px] lg:leading-[120px]">
-            A softer, clearer Shopify store, connected enough to share.
+            From a beautiful head start to a store Soft Hours can launch with confidence.
           </h2>
         </Reveal>
         <div className="grid gap-10 pt-16 lg:grid-cols-[1fr_360px]">
@@ -523,8 +525,8 @@ export function SoftHoursProposal() {
           </Reveal>
           <Reveal className="flex flex-col gap-4">
             <span className="eyebrow text-paper/55">Begin</span>
-            <AnchorButton href={calendarHref} variant="light">
-              {'Review proposal ->'}
+            <AnchorButton href={acceptProposalHref} variant="light">
+              {'Accept proposal ->'}
             </AnchorButton>
             <p className="text-[13px] leading-[20px] text-paper/60">$3,500 - Shopify completion sprint</p>
           </Reveal>
