@@ -24,36 +24,36 @@ const navSections = [
 ]
 
 const heroCards: DetailRow[] = [
-  ['01', 'Storefront', 'A Shopify site brought from started to finished, with the brand system carried into the buying experience.'],
+  ['01', 'Shopify bridge', 'A coded HTML head start translated into a Shopify store that can actually be managed, sold from, and launched.'],
   ['02', 'Product path', 'Cleaner product, collection, and detail pages that help visitors understand the offer and move toward purchase.'],
   ['03', 'Mobile polish', 'Responsive review and refinement for the device most customers will use first.'],
-  ['04', 'Launch handoff', 'Final QA, launch basics, and a practical handoff so the store is easier to manage after launch.'],
+  ['04', 'Editable handoff', 'Final QA, launch basics, and editable Shopify sections so Soft Hours can manage more of the design after launch.'],
 ]
 
 const contextNotes = [
   {
     num: '01',
     label: 'Brand',
-    title: 'Soft Hours already has a refined emotional foundation.',
-    body: 'The work is not to reinvent the brand. It is to carry the feeling into Shopify with enough restraint, softness, and clarity.',
+    title: 'Soft Hours already has the brand foundation.',
+    body: 'The work is not to redo the brand. It is to make the existing direction work harder inside an actual Shopify shopping experience.',
   },
   {
     num: '02',
-    label: 'Site',
-    title: 'The store has already started, so the scope should stay focused.',
-    body: 'This phase helps finish the pieces that matter most for launch rather than opening a broad redesign.',
+    label: 'Head start',
+    title: 'A few designed pages have already become coded HTML.',
+    body: 'That gives the project a meaningful head start, but there is still real work in turning those pages into a connected, editable Shopify store.',
   },
   {
     num: '03',
     label: 'Product',
-    title: 'Sleepwear needs texture, trust, and a quiet purchase path.',
+    title: 'Pyjamas need texture, trust, and a quiet purchase path.',
     body: 'The site should make fabric, fit, ritual, care, and brand world easier to understand without overexplaining.',
   },
   {
     num: '04',
-    label: 'Launch',
-    title: 'Completion matters more than extra features.',
-    body: 'A clean Shopify handoff, mobile polish, and launch-ready pages will do more here than a larger engagement.',
+    label: 'Ownership',
+    title: 'The admin side should stay clearly owned.',
+    body: 'Soft Hours will handle product uploads, payment and bank setup, and back-end admin details while Anchovies focuses on design, development, Shopify connection, and handoff.',
   },
 ]
 
@@ -67,23 +67,24 @@ const opportunityLines = [
 const phases: Phase[] = [
   {
     num: '01',
-    title: 'Shopify audit and completion map',
-    body: 'We review the current Shopify build, theme setup, page structure, product content, imagery, navigation, and launch needs. The goal is to turn the remaining work into a clear completion sprint.',
-    outcome: 'A short completion plan that identifies what to preserve, polish, finish, and hand off.',
+    title: 'HTML review and Shopify completion map',
+    body: 'We review the coded HTML pages, existing design direction, likely Shopify theme path, page structure, product needs, imagery, navigation, and launch dependencies. The goal is to turn the head start into a clear Shopify completion sprint.',
+    outcome: 'A short completion plan that identifies what to preserve, connect, polish, make editable, and hand off.',
     includes: [
-      'Current Shopify review',
-      'Theme and template review',
+      'Current HTML review',
+      'Shopify theme path review',
       'Homepage and product path review',
-      'Product and collection content review',
+      'Product and collection structure review',
       'Navigation and footer review',
+      'Owner task list for product, payment, and admin setup',
       'Launch readiness checklist',
     ],
   },
   {
     num: '02',
-    title: 'Core page polish',
-    body: 'We refine the priority pages so the store feels like Soft Hours: calm, tactile, clear, and easier to shop. This assumes we are building from the existing direction rather than starting from a blank canvas.',
-    outcome: 'A more resolved homepage, collection path, product page, and supporting brand/story content.',
+    title: 'Core page design and development',
+    body: 'We refine and build the priority pages so the store feels like Soft Hours: calm, tactile, clear, and easier to shop. This assumes we are building from the current design and coded direction rather than starting from a blank canvas.',
+    outcome: 'A more resolved homepage, collection path, product page, and supporting brand/story content connected to Shopify.',
     includes: [
       'Homepage polish',
       'Collection page polish',
@@ -91,26 +92,28 @@ const phases: Phase[] = [
       'About or story section refinement',
       'CTA and button language',
       'Typography, spacing, and section rhythm cleanup',
+      'Conversion-focused page refinement',
     ],
   },
   {
     num: '03',
-    title: 'Product and content setup support',
-    body: 'We help organize the core product information so shoppers can understand the pieces and make a decision. This includes practical copy and setup support, not a full content production engagement.',
-    outcome: 'Product pages that communicate the essentials clearly and consistently.',
+    title: 'Editable Shopify sections',
+    body: 'We code the store so key areas can be edited inside Shopify, giving Soft Hours practical control over sections, imagery, copy, and product merchandising without needing every small change coded later.',
+    outcome: 'A Shopify build with editable design controls for the pages and sections most likely to change.',
     includes: [
-      'Product copy refinement',
+      'Editable homepage sections',
+      'Editable collection and product modules',
+      'Image, copy, and CTA controls',
       'Fit, fabric, care, and detail modules',
-      'Collection naming and organization support',
-      'Image placement recommendations',
-      'FAQ or care guidance section',
-      'Basic SEO title and description support',
+      'FAQ or care guidance module',
+      'Reusable content blocks',
+      'Basic handoff notes for editing',
     ],
   },
   {
     num: '04',
-    title: 'Mobile QA and launch basics',
-    body: 'We test and polish the responsive experience, then help prepare the practical launch layer. The focus is a store that can be shared confidently and managed after handoff.',
+    title: 'Mobile QA, Shopify connection, and launch basics',
+    body: 'We test and polish the responsive experience, connect the designed experience into Shopify, then help prepare the practical launch layer. Soft Hours remains responsible for product uploads, payment and bank connection, shipping and tax settings, and back-end admin decisions.',
     outcome: 'A cleaner mobile shopping experience and a practical launch handoff.',
     includes: [
       'Mobile responsive review',
@@ -118,40 +121,42 @@ const phases: Phase[] = [
       'Email capture placement',
       'Navigation and footer QA',
       'Basic analytics and pixel placement review',
+      'Shopify connection support',
       'Final launch checklist and handoff notes',
     ],
   },
 ]
 
 const deliverables = [
-  ['Strategy', 'Shopify completion plan', 'A clear map of what remains and how the sprint will finish the store.'],
-  ['Design', 'Homepage polish', 'A more resolved first impression that carries the Soft Hours brand into Shopify.'],
+  ['Strategy', 'Shopify completion plan', 'A clear map of what remains to turn the coded HTML head start into a Shopify store.'],
+  ['Design', 'Homepage polish', 'A more resolved first impression shaped around Soft Hours, shopping clarity, and conversion.'],
   ['Design', 'Collection page polish', 'A cleaner browsing path for categories, product families, or launch assortment.'],
   ['Design', 'Product page polish', 'A product detail experience shaped around fabric, fit, care, imagery, and purchase confidence.'],
-  ['Content', 'Core copy refinement', 'Light refinement for page sections, product modules, CTAs, FAQ, care, and SEO basics.'],
-  ['Build', 'Theme and section cleanup', 'Practical Shopify cleanup to improve rhythm, hierarchy, and maintainability.'],
-  ['Build', 'Product setup support', 'Support for products, collections, imagery, page modules, and core launch content.'],
+  ['Build', 'HTML to Shopify development', 'Translation of the coded page direction into a Shopify-ready theme experience.'],
+  ['Build', 'Editable design controls', 'Key sections coded so Soft Hours can update copy, imagery, CTAs, and selected page content in Shopify.'],
+  ['Build', 'Core page development', 'Development support for homepage, collection, product, story, and smaller supporting pages.'],
+  ['Owner', 'Admin setup guidance', 'Clear notes on what Soft Hours owns: product uploads, bank connection, payments, shipping, tax, and back-end admin setup.'],
   ['QA', 'Mobile responsive review', 'Responsive testing and polish across the core customer path.'],
   ['Launch', 'Launch checklist', 'A simple checklist for final Shopify launch needs, access, and remaining owner tasks.'],
-  ['Handoff', 'Store handoff notes', 'A practical handoff so the store can be managed without needing every decision explained again.'],
+  ['Handoff', 'Store editing notes', 'A practical handoff so design updates and common content changes are easier to manage after launch.'],
 ]
 
 const timeline = [
-  ['Week 01', 'Audit and page polish', ['Shopify review', 'Completion map', 'Homepage polish', 'Collection path polish', 'Product page direction']],
-  ['Week 02', 'Build cleanup and launch readiness', ['Product/content setup support', 'Mobile QA', 'Navigation and footer QA', 'Launch basics', 'Handoff notes']],
-  ['Buffer', 'If needed', ['Additional responsive cleanup', 'Content swaps', 'Final stakeholder edits', 'Launch checklist closeout']],
+  ['Week 01', 'HTML review and Shopify map', ['HTML review', 'Completion map', 'Theme path decisions', 'Homepage polish', 'Product page direction']],
+  ['Week 02', 'Shopify development and editability', ['Core page development', 'Editable sections', 'Collection path polish', 'Smaller page buildout', 'Owner admin task list']],
+  ['Buffer', 'QA and launch readiness', ['Mobile QA', 'Content swaps', 'Shopify connection support', 'Handoff notes', 'Launch checklist closeout']],
 ] as const
 
 const investmentLines = [
-  ['01', 'Shopify completion sprint', 'Audit, completion map, core page polish, product path cleanup, mobile QA, launch basics, and handoff notes.', '$2,850'],
-  ['02', 'Brand system carryover', 'Using the existing Sleep Like a Goddess/Soft Hours foundation to keep the store calm, refined, tactile, and coherent.', 'Included'],
+  ['01', 'Shopify completion sprint', 'HTML review, Shopify theme connection, core page design and development, editable sections, mobile QA, launch basics, and handoff notes.', '$3,500'],
+  ['02', 'Owner setup responsibilities', 'Soft Hours owns product uploads, payment and bank connection, shipping, tax, and back-end admin setup. We provide guidance where useful.', 'Client-owned'],
   ['03', 'Post-launch additions', 'Email flows, deeper SEO, campaign pages, photography direction, paid ads, subscriptions, and ongoing optimization can be scoped later.', 'Optional'],
 ]
 
 const nextSteps: DetailRow[] = [
-  ['01', 'Confirm scope', 'Confirm this is focused on finishing the Shopify site rather than restarting brand or site strategy.'],
-  ['02', 'Share access', 'Provide Shopify access, current theme status, product details, photography, and any outstanding launch notes.'],
-  ['03', 'Begin sprint', 'Start with the completion map, then move into page polish, setup support, mobile QA, and handoff.'],
+  ['01', 'Confirm scope', 'Confirm this is focused on turning the coded HTML head start into a Shopify site, not restarting brand or strategy.'],
+  ['02', 'Share access', 'Provide Shopify access, HTML files, current page direction, photography, product details, and any launch notes.'],
+  ['03', 'Begin sprint', 'Start with the completion map, then move into Shopify development, editable sections, mobile QA, and handoff.'],
 ]
 
 function MetaRow({ left, right, dark = false }: { left: string; right: string; dark?: boolean }) {
@@ -291,12 +296,12 @@ export function SoftHoursProposal() {
         <div className="flex flex-col gap-10 border-t border-[var(--color-rule)] pb-16 pt-12 lg:flex-row lg:gap-[140px]">
           <Reveal className="max-w-[650px] flex-1">
             <h2 className="serif text-[30px] leading-[38px] md:text-[38px] md:leading-[46px]">
-              A practical Shopify completion phase for a soft, refined sleepwear brand that already has direction and now needs the store brought to launch quality.
+              A practical Shopify completion phase for a soft, refined pyjamas brand with designed and coded pages that now need to become a connected, editable store.
             </h2>
           </Reveal>
           <Reveal className="flex max-w-[440px] flex-col gap-7">
             <p className="text-[15px] leading-[23px] text-ink-2">
-              The brand foundation from Sleep Like a Goddess gives Soft Hours a strong emotional world. This phase turns that world into a calmer, clearer Shopify experience.
+              The brand and design direction are already in motion. This phase turns the HTML head start into a Shopify experience that is calmer, clearer, more editable, and easier to buy from.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <AnchorButton>{'Review proposal ->'}</AnchorButton>
@@ -321,15 +326,15 @@ export function SoftHoursProposal() {
       </section>
 
       <section id="context" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-        <MetaRow left="§ 02 - What we know" right="A store already in motion" />
+        <MetaRow left="§ 02 - What we know" right="A head start, not a store yet" />
         <div className="grid gap-10 py-16 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
           <Reveal className="flex flex-col gap-8">
             <h2 className="display max-w-[650px] text-[48px] leading-[52px] md:text-[68px] md:leading-[70px]">
-              This is a completion sprint, not a restart.
+              This is a Shopify translation sprint, not a restart.
             </h2>
             <div className="flex max-w-[500px] flex-col gap-6 text-[15px] leading-[24px] text-ink-2">
-              <p>Soft Hours does not need the site to become louder. It needs the store to become clearer, calmer, and easier to finish.</p>
-              <p>The work is to bring the existing Shopify direction into better shape and make the customer path feel launch-ready.</p>
+              <p>Soft Hours does not need the site to become louder. It needs the design and coded HTML to become a real Shopify store.</p>
+              <p>We have a meaningful head start, but the remaining work is still about bringing pages, product paths, editability, mobile polish, and Shopify connection together.</p>
             </div>
           </Reveal>
           <Reveal className="grid gap-0 border-t border-[var(--color-rule)] sm:grid-cols-2">
@@ -353,7 +358,7 @@ export function SoftHoursProposal() {
         <MetaRow left="§ 03 - The opportunity" right="A softer path to purchase" dark />
         <Reveal>
           <h2 className="display max-w-[1180px] py-16 text-[48px] leading-[54px] md:text-[76px] md:leading-[78px] lg:text-[96px] lg:leading-[96px]">
-            The Shopify site should make the product feel tactile, understandable, and easy to buy.
+            The Shopify site should make the pyjamas feel tactile, understandable, and easy to buy.
           </h2>
         </Reveal>
         <Reveal className="ml-auto max-w-[760px] border-t border-paper/20">
@@ -374,7 +379,7 @@ export function SoftHoursProposal() {
             </h2>
           </Reveal>
           <Reveal className="max-w-[500px] text-[15px] leading-[24px] text-ink-2">
-            Four tightly scoped phases keep the work useful and affordable. The priority is getting the existing Shopify site finished, not expanding into a larger brand or growth engagement.
+            Four tightly scoped phases keep the work useful and focused. The priority is translating the existing HTML and design direction into Shopify, not expanding into a larger brand or growth engagement.
           </Reveal>
         </div>
         <div className="border-t border-[var(--color-rule)]">
@@ -408,11 +413,11 @@ export function SoftHoursProposal() {
         <div className="grid gap-10 py-16 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
           <Reveal>
             <h2 className="display max-w-[640px] text-[48px] leading-[52px] md:text-[72px] md:leading-[72px]">
-              The pieces needed to finish the store.
+              The pieces needed to bring the store together.
             </h2>
           </Reveal>
           <Reveal className="max-w-[540px] text-[15px] leading-[24px] text-ink-2">
-            A clear picture of what is included in the sprint. Each item is meant to help the Shopify site become easier to shop, easier to launch, and easier to maintain.
+            A clear picture of what is included in the sprint. Each item is meant to help the Shopify site become easier to shop, easier to launch, and easier for Soft Hours to edit.
           </Reveal>
         </div>
         <Reveal className="grid border-t border-l border-[var(--color-rule)] md:grid-cols-2 xl:grid-cols-3">
@@ -430,15 +435,15 @@ export function SoftHoursProposal() {
       </section>
 
       <section id="timeline" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-        <MetaRow left="§ 06 - Timeline" right="Two weeks, with buffer if needed" />
+        <MetaRow left="§ 06 - Timeline" right="Two weeks, with launch buffer" />
         <div className="grid gap-10 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <Reveal>
             <h2 className="display max-w-[700px] text-[48px] leading-[52px] md:text-[72px] md:leading-[72px]">
-              A focused sprint to finish what is already started.
+              A focused sprint to connect what is already started.
             </h2>
           </Reveal>
           <Reveal className="max-w-[500px] text-[15px] leading-[24px] text-ink-2">
-            The timeline assumes Shopify access, product details, photography, and key launch decisions are available at kickoff.
+            The timeline assumes Shopify access, HTML files, photography, and key launch decisions are available at kickoff. Product uploads and payment setup can happen alongside this work on the Soft Hours side.
           </Reveal>
         </div>
         <Reveal className="grid border-t border-l border-[var(--color-rule)] md:grid-cols-3">
@@ -462,12 +467,12 @@ export function SoftHoursProposal() {
         <MetaRow left="§ 07 - Investment" right="Shopify completion" />
         <Reveal className="grid gap-10 border-b border-[var(--color-rule)] py-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
-            <p className="display text-[72px] leading-none md:text-[124px]">$2,850</p>
+            <p className="display text-[72px] leading-none md:text-[124px]">$3,500</p>
             <p className="eyebrow mt-5 text-ink-2">Total - Shopify completion sprint</p>
           </div>
           <div className="flex max-w-[560px] flex-col gap-5 text-[15px] leading-[24px] text-ink-2">
-            <p>This covers the focused work needed to help complete the Soft Hours Shopify site: audit, page polish, product setup support, mobile QA, launch basics, and handoff notes.</p>
-            <p>The price assumes we are working from the current brand and site direction, not restarting the brand, writing a full content system, or building a custom Shopify app.</p>
+            <p>This covers the focused work needed to turn the Soft Hours HTML head start into a Shopify site: completion map, page design and development, editable sections, mobile QA, Shopify connection support, launch basics, and handoff notes.</p>
+            <p>The price assumes we are working from the current brand, design direction, and coded pages. Product uploads, payment and bank connection, shipping, tax, and back-end admin setup remain with Soft Hours.</p>
           </div>
         </Reveal>
         <div className="border-b border-[var(--color-rule)]">
@@ -487,11 +492,11 @@ export function SoftHoursProposal() {
         <div className="grid gap-10 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
           <Reveal>
             <h2 className="display max-w-[760px] text-[48px] leading-[52px] md:text-[72px] md:leading-[72px]">
-              If this direction feels right, we can start with access and a completion map.
+              If this direction feels right, we can start with access, HTML files, and a Shopify completion map.
             </h2>
           </Reveal>
           <Reveal className="max-w-[440px] text-[15px] leading-[24px] text-ink-2">
-            The first step is confirming what is already done, what needs polish, and which launch details still need decisions.
+            The first step is confirming what has already been designed and coded, what still needs Shopify development, and which owner-side launch details still need decisions.
           </Reveal>
         </div>
         <div className="border-t border-[var(--color-rule)]">
@@ -509,19 +514,19 @@ export function SoftHoursProposal() {
         <MetaRow left="§ 09 - In closing" right="Where this lands" dark />
         <Reveal className="border-t border-paper/20 pt-16">
           <h2 className="display max-w-[1180px] text-[52px] leading-[58px] md:text-[92px] md:leading-[96px] lg:text-[124px] lg:leading-[120px]">
-            A softer, clearer Shopify store, finished enough to share.
+            A softer, clearer Shopify store, connected enough to share.
           </h2>
         </Reveal>
         <div className="grid gap-10 pt-16 lg:grid-cols-[1fr_360px]">
           <Reveal className="max-w-[540px] text-[15px] leading-[24px] text-paper/70">
-            By handoff, Soft Hours has a more complete Shopify experience: clearer pages, stronger mobile flow, cleaner product presentation, and a practical path to launch.
+            By handoff, Soft Hours has a more complete Shopify experience: clearer pages, editable sections, stronger mobile flow, cleaner product presentation, and a practical path to launch.
           </Reveal>
           <Reveal className="flex flex-col gap-4">
             <span className="eyebrow text-paper/55">Begin</span>
             <AnchorButton href={calendarHref} variant="light">
               {'Review proposal ->'}
             </AnchorButton>
-            <p className="text-[13px] leading-[20px] text-paper/60">$2,850 - Shopify completion sprint</p>
+            <p className="text-[13px] leading-[20px] text-paper/60">$3,500 - Shopify completion sprint</p>
           </Reveal>
         </div>
       </section>
