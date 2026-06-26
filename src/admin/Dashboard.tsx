@@ -3,6 +3,7 @@ import { absolutePageUrl, createLocalFirmPage, readLocalFirmPages, slugifyFirmNa
 import { useContent, useContentControl } from '../context/ContentContext'
 import type { Submission } from '../intake/types'
 import { navigate } from './AdminChrome'
+import { belzerPilotContent } from '../belzerPilotContent'
 import { kndContent } from '../kndContent'
 
 type Proposal = {
@@ -124,6 +125,13 @@ export function Dashboard() {
       intakeHref: '/intake',
       lastEdited,
       submissionCount: submissions?.filter((s) => (s.client || '') === client.name).length ?? undefined,
+    },
+    {
+      id: belzerPilotContent.proposal.id,
+      name: 'Belzer Law: Focused Workflow Pilot',
+      tagline: `${belzerPilotContent.proposal.kind} · $3,500 flat`,
+      status: 'Active',
+      href: '/proposal/belzer-pilot',
     },
     {
       id: kndContent.proposal.id,

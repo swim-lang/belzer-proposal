@@ -22,6 +22,7 @@ import { fiberSoftChewContract } from './contracts/fiberSoftChewContract'
 import { genesiContract } from './contracts/genesiContract'
 import { offMenuContract } from './contracts/offMenuContract'
 import { createPreMeetingContent, getPreMeetingFirmNameFromURL } from './preMeetingContent'
+import { belzerPilotContent } from './belzerPilotContent'
 import { kndContent } from './kndContent'
 
 export default function App() {
@@ -30,6 +31,9 @@ export default function App() {
   const isIntake = pathname === '/intake' || pathname.startsWith('/intake/')
   const isLegacyBelzer = pathname === '/belzer' || pathname.startsWith('/belzer/')
   const isBelzer = pathname === '/proposal/belzer' || pathname.startsWith('/proposal/belzer/')
+  const isBelzerPilot =
+    pathname === '/proposal/belzer-pilot' ||
+    pathname.startsWith('/proposal/belzer-pilot/')
   const isKND = pathname === '/proposal/knd' || pathname.startsWith('/proposal/knd/')
   const isBapsCharities =
     pathname === '/proposal/baps-charities' ||
@@ -113,6 +117,17 @@ export default function App() {
     }
     return (
       <ContentProvider>
+        <Proposal />
+      </ContentProvider>
+    )
+  }
+
+  if (isBelzerPilot) {
+    if (typeof document !== 'undefined') {
+      document.title = 'Anchovies × Belzer Law - Focused Workflow Pilot'
+    }
+    return (
+      <ContentProvider initialContent={belzerPilotContent}>
         <Proposal />
       </ContentProvider>
     )
