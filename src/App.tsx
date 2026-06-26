@@ -15,6 +15,7 @@ import { SleepGoddessProposal } from './SleepGoddessProposal'
 import { SoftHoursProposal } from './SoftHoursProposal'
 import { SoupToSoftwareProposal } from './SoupToSoftwareProposal'
 import { WildflowerBlancProposal } from './WildflowerBlancProposal'
+import { BelzerPilotProposal } from './BelzerPilotProposal'
 import { Admin } from './admin/Admin'
 import { Intake } from './intake/Intake'
 import { ContractPage } from './contracts/ContractPage'
@@ -22,7 +23,6 @@ import { fiberSoftChewContract } from './contracts/fiberSoftChewContract'
 import { genesiContract } from './contracts/genesiContract'
 import { offMenuContract } from './contracts/offMenuContract'
 import { createPreMeetingContent, getPreMeetingFirmNameFromURL } from './preMeetingContent'
-import { belzerPilotContent } from './belzerPilotContent'
 import { kndContent } from './kndContent'
 
 export default function App() {
@@ -123,14 +123,7 @@ export default function App() {
   }
 
   if (isBelzerPilot) {
-    if (typeof document !== 'undefined') {
-      document.title = 'Anchovies × Belzer Law - Focused Workflow Pilot'
-    }
-    return (
-      <ContentProvider initialContent={belzerPilotContent}>
-        <Proposal />
-      </ContentProvider>
-    )
+    return <BelzerPilotProposal />
   }
 
   if (isKND) {
