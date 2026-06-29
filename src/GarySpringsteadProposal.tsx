@@ -54,12 +54,6 @@ type PaymentMilestone = {
   body: string
 }
 
-type FutureTrack = {
-  label: string
-  title: string
-  items: string[]
-}
-
 type WorkLink = {
   title: string
   href: string
@@ -430,44 +424,6 @@ const paymentMilestones: PaymentMilestone[] = [
   },
 ]
 
-const futureTracks: FutureTrack[] = [
-  {
-    label: 'Track 01',
-    title: 'Search & authority',
-    items: [
-      'Ongoing SEO strategy',
-      'Additional practice-area pages',
-      'Federal jurisdiction landing pages',
-      'Case analysis and legal insights',
-      'Attorney profile and directory optimization',
-    ],
-  },
-  {
-    label: 'Track 02',
-    title: 'Brand & business development',
-    items: [
-      'Media kit',
-      'Referral presentation',
-      'Speaking and press materials',
-      'Case-result library',
-      'Recruiting materials',
-      'Presentation and document templates',
-    ],
-  },
-  {
-    label: 'Track 03',
-    title: 'Content & campaigns',
-    items: [
-      'Thought leadership',
-      'Video and photography',
-      'Social content system',
-      'Email newsletter',
-      'High-profile matter communications',
-      'Public relations support',
-    ],
-  },
-]
-
 const nextStepItems = [
   'A clear strategic position.',
   'A distinctive visual identity.',
@@ -645,7 +601,7 @@ function Hero() {
         </Reveal>
       </div>
       <Reveal>
-        <h1 className="display max-w-[1200px] pb-16 text-[56px] leading-[54px] sm:text-[82px] sm:leading-[76px] md:text-[112px] md:leading-[98px] lg:text-[144px] lg:leading-[124px]">
+        <h1 className="display gary-hero-title max-w-[1200px] pb-16 text-[56px] sm:text-[82px] md:text-[112px] lg:text-[144px]">
           A new firm with a reputation already built.
         </h1>
       </Reveal>
@@ -687,11 +643,8 @@ function WhatWeHeard() {
       <div className="grid gap-12 pt-12 lg:grid-cols-[520px_1fr] lg:gap-20">
         <Reveal className="flex flex-col gap-8">
           <h2 className="display text-[48px] leading-[52px] md:text-[64px] md:leading-[64px]">
-            The firm is new. The credibility is not.
+            What carries forward.
           </h2>
-          <p className="text-[15px] leading-[23px] text-ink-2">
-            For more than a decade, Gary’s name has been attached to a respected criminal defense practice that grew from a two-attorney firm into a larger team. The next chapter is not about rebuilding that reputation. It is about carrying its strongest equity forward while creating something Gary and Kathryn can shape entirely on their own terms.
-          </p>
           <p className="text-[15px] leading-[23px] text-ink-2">A few things stood out from our conversation.</p>
         </Reveal>
         <Reveal className="border-t border-[var(--color-rule)] lg:border-t-0">
@@ -716,7 +669,7 @@ function Opportunity() {
       <MetaRow left="§ 03 — The opportunity" right="Catch up to the practice" dark />
       <Reveal>
         <h2 className="display max-w-[1100px] py-16 text-[52px] leading-[56px] md:text-[96px] md:leading-[94px] lg:text-[120px] lg:leading-[120px]">
-          Make the public expression catch up to the practice.
+          A sharper first impression for serious work.
         </h2>
       </Reveal>
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
@@ -741,7 +694,7 @@ function SelectedWork() {
       <div className="grid gap-12 border-t border-[var(--color-rule)] pt-14 lg:grid-cols-[1.15fr_420px] lg:gap-20">
         <Reveal>
           <h2 className="display max-w-[760px] text-[46px] leading-[50px] md:text-[64px] md:leading-[66px]">
-            One place to review the shape of the work.
+            Our Work
           </h2>
         </Reveal>
         <Reveal className="max-w-[420px] pt-2 text-[15px] leading-[24px] text-ink-2">
@@ -839,7 +792,7 @@ function Creation() {
       <MetaRow left="§ 04 — What this work creates" right="Four pillars, in depth" />
       <Reveal>
         <h2 className="display max-w-[900px] py-12 text-[48px] leading-[52px] md:text-[64px] md:leading-[64px]">
-          Built for the reputation already there. Designed for what comes next.
+          Four systems for one launch.
         </h2>
       </Reveal>
       <div className="border-t border-[var(--color-rule)]">
@@ -864,7 +817,7 @@ function Approach() {
       <div className="grid gap-12 border-t border-[var(--color-rule)] py-16 lg:grid-cols-[1.2fr_400px] lg:gap-20">
         <Reveal>
           <h2 className="display max-w-[720px] text-[42px] leading-[48px] md:text-[48px] md:leading-[52px]">
-            From an established reputation to an independent platform.
+            A focused path from decision to launch.
           </h2>
         </Reveal>
         <Reveal className="max-w-[400px] text-[15px] leading-[23px] text-ink-2">
@@ -905,7 +858,7 @@ function Deliverables() {
       <div className="grid gap-12 border-t border-[var(--color-rule)] py-16 lg:grid-cols-[1.2fr_400px] lg:gap-20">
         <Reveal>
           <h2 className="display max-w-[720px] text-[42px] leading-[48px] md:text-[48px] md:leading-[52px]">
-            Everything the new firm walks away with.
+            What Springstead receives at launch.
           </h2>
         </Reveal>
         <Reveal className="max-w-[400px] text-[15px] leading-[23px] text-ink-2">
@@ -940,7 +893,7 @@ function Timeline() {
       <MetaRow left="§ 07 — Timeline" right="Four to five weeks" />
       <Reveal>
         <h2 className="display max-w-[1100px] py-12 text-[52px] leading-[56px] md:text-[92px] md:leading-[92px]">
-          From discovery to launch in four to five weeks.
+          Four to five weeks, from direction to launch.
         </h2>
       </Reveal>
       <Reveal>
@@ -975,7 +928,7 @@ function Investment() {
       <div className="grid gap-10 py-16 lg:grid-cols-[1fr_520px] lg:items-end lg:gap-20">
         <Reveal>
           <h2 className="display max-w-[560px] text-[56px] leading-[60px] md:text-[92px] md:leading-[92px]">
-            The core engagement.
+            Core engagement and adjusted budget.
           </h2>
         </Reveal>
         <Reveal className="border border-paper/20 p-6 md:p-8">
@@ -1038,34 +991,6 @@ function Investment() {
   )
 }
 
-function FutureOpportunities() {
-  return (
-    <section className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-      <div className="grid gap-12 border-t border-[var(--color-rule)] py-16 lg:grid-cols-[1.2fr_400px] lg:gap-20">
-        <Reveal>
-          <h2 className="display max-w-[720px] text-[42px] leading-[48px] md:text-[48px] md:leading-[52px]">
-            A foundation the firm can keep building from.
-          </h2>
-        </Reveal>
-        <Reveal className="max-w-[400px] text-[15px] leading-[23px] text-ink-2">
-          Once the firm is launched, the system can expand into deeper search, business development, and content work — added and scoped as the practice grows, never all at once.
-        </Reveal>
-      </div>
-      <Reveal className="grid gap-6 lg:grid-cols-3">
-        {futureTracks.map((track) => (
-          <div key={track.label} className="border border-[var(--color-rule)] p-8">
-            <span className="eyebrow text-ink-2">{track.label}</span>
-            <h3 className="serif mt-6 text-[32px] font-medium leading-[36px] tracking-[-0.018em]">{track.title}</h3>
-            <div className="mt-6">
-              <InlineList items={track.items} />
-            </div>
-          </div>
-        ))}
-      </Reveal>
-    </section>
-  )
-}
-
 function NextStep() {
   return (
     <section id="next" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
@@ -1073,7 +998,7 @@ function NextStep() {
       <Reveal className="border border-[var(--color-rule)] bg-paper p-8 md:p-12 lg:p-20">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-20">
           <h2 className="display max-w-[760px] text-[54px] leading-[58px] md:text-[88px] md:leading-[84px]">
-            Build the next chapter.
+            Ready to begin.
           </h2>
           <div className="lg:text-right">
             <div className="eyebrow mb-2 text-ink-2">Budget-adjusted total</div>
@@ -1098,30 +1023,6 @@ function NextStep() {
           <AnchorButton>{'Schedule proposal review ->'}</AnchorButton>
         </div>
       </Reveal>
-    </section>
-  )
-}
-
-function Closing() {
-  return (
-    <section className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-      <Reveal>
-        <h2 className="display max-w-[1100px] py-16 text-[52px] leading-[56px] md:text-[92px] md:leading-[92px]">
-          A new chapter, already proven.
-        </h2>
-      </Reveal>
-      <div className="grid gap-10 lg:grid-cols-2 lg:gap-20">
-        <Reveal>
-          <p className="max-w-[560px] text-[17px] leading-[28px] text-ink-2">
-            The goal is not to manufacture authority. It is to give the authority already there a clearer form — a firm that feels independent from day one.
-          </p>
-        </Reveal>
-        <Reveal>
-          <p className="max-w-[560px] text-[17px] leading-[28px] text-ink-2">
-            Established without being conventional. Personal without appearing small. Distinct enough to lead, and disciplined enough to let the work remain the strongest proof.
-          </p>
-        </Reveal>
-      </div>
     </section>
   )
 }
@@ -1164,9 +1065,7 @@ export function GarySpringsteadProposal() {
       <Deliverables />
       <Timeline />
       <Investment />
-      <FutureOpportunities />
       <NextStep />
-      <Closing />
       <Footer />
     </main>
   )
