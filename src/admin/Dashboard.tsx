@@ -190,7 +190,7 @@ export function Dashboard() {
     },
     {
       id: 'gary-springstead',
-      name: 'Gary Springstead',
+      name: 'Springstead',
       tagline: 'Brand, identity, narrative, and website · June 2026',
       status: 'Active',
       href: '/proposal/gary-springstead',

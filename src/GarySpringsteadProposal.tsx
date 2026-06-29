@@ -410,21 +410,7 @@ const investmentSummary = {
   originalCore: '$23,000',
   accommodation: '-$6,500',
   adjustedCore: '$16,500',
-  originalWithNaming: '$27,000',
-  adjustedWithNaming: '$20,500',
-  adjustedWithNamingLabel: '$20,500 adjusted with naming',
 }
-
-const namingIncludes = [
-  'Naming criteria and strategic brief',
-  'Review of existing name equity',
-  'Competitive and category review',
-  'Curated naming directions',
-  'Name rationale and positioning',
-  'Preliminary domain availability review',
-  'Preliminary trademark knockout screening',
-  'Final recommendation and introduction language',
-]
 
 const paymentMilestones: PaymentMilestone[] = [
   {
@@ -622,7 +608,7 @@ function GaryNav() {
         <div className="flex items-center justify-between gap-5 px-6 py-4 md:px-16">
           <a href="#overview" className="flex min-w-0 items-center gap-3">
             <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-ink" />
-            <span className="truncate text-[13px] font-medium tracking-[-0.01em] text-ink">Anchovies × Gary Springstead</span>
+            <span className="truncate text-[13px] font-medium tracking-[-0.01em] text-ink">Anchovies × Springstead</span>
           </a>
           <nav className="hidden items-center gap-7 text-[12px] text-ink-2 xl:flex">
             {navSections.map((section) => (
@@ -659,13 +645,13 @@ function Hero() {
         </Reveal>
       </div>
       <Reveal>
-        <h1 className="serif max-w-[1200px] pb-16 text-[56px] font-medium leading-[54px] tracking-[-0.04em] sm:text-[82px] sm:leading-[76px] md:text-[112px] md:leading-[98px] lg:text-[144px] lg:leading-[124px]">
+        <h1 className="display max-w-[1200px] pb-16 text-[56px] leading-[54px] sm:text-[82px] sm:leading-[76px] md:text-[112px] md:leading-[98px] lg:text-[144px] lg:leading-[124px]">
           A new firm with a reputation already built.
         </h1>
       </Reveal>
       <div className="flex flex-col gap-10 pb-20 lg:flex-row lg:gap-[140px]">
         <Reveal className="max-w-[640px] flex-1">
-          <h2 className="serif text-[31px] font-medium leading-[39px] tracking-[-0.024em] md:text-[36px] md:leading-[44px]">
+          <h2 className="display text-[31px] leading-[39px] md:text-[36px] md:leading-[44px]">
             Strategy, identity, messaging, and a custom website for the next chapter of Gary and Kathryn Springstead’s criminal defense practice.
           </h2>
         </Reveal>
@@ -703,7 +689,7 @@ function WhatWeHeard() {
       <MetaRow left="§ 02 — What we heard" right="Partner discovery · 06.2026" />
       <div className="grid gap-12 pt-12 lg:grid-cols-[520px_1fr] lg:gap-20">
         <Reveal className="flex flex-col gap-8">
-          <h2 className="serif text-[48px] font-medium leading-[52px] tracking-[-0.026em] md:text-[64px] md:leading-[64px]">
+          <h2 className="display text-[48px] leading-[52px] md:text-[64px] md:leading-[64px]">
             The firm is new. The credibility is not.
           </h2>
           <p className="text-[15px] leading-[23px] text-ink-2">
@@ -732,7 +718,7 @@ function Opportunity() {
     <section id="opportunity" className="border-b border-[var(--color-rule)] bg-ink px-6 py-24 text-paper md:px-16 lg:px-[120px] lg:py-[160px]">
       <MetaRow left="§ 03 — The opportunity" right="Catch up to the practice" dark />
       <Reveal>
-        <h2 className="serif max-w-[1100px] py-16 text-[52px] font-medium leading-[56px] tracking-[-0.034em] md:text-[96px] md:leading-[94px] lg:text-[120px] lg:leading-[120px]">
+        <h2 className="display max-w-[1100px] py-16 text-[52px] leading-[56px] md:text-[96px] md:leading-[94px] lg:text-[120px] lg:leading-[120px]">
           Make the public expression catch up to the practice.
         </h2>
       </Reveal>
@@ -757,7 +743,7 @@ function SelectedWork() {
       <MetaRow left="§ 03b — Selected work" right="Branding · websites · press" />
       <div className="grid gap-12 border-t border-[var(--color-rule)] pt-14 lg:grid-cols-[1.15fr_420px] lg:gap-20">
         <Reveal>
-          <h2 className="serif max-w-[760px] text-[46px] font-medium leading-[50px] tracking-[-0.026em] md:text-[64px] md:leading-[66px]">
+          <h2 className="display max-w-[760px] text-[46px] leading-[50px] md:text-[64px] md:leading-[66px]">
             One place to review the shape of the work.
           </h2>
         </Reveal>
@@ -855,7 +841,7 @@ function Creation() {
     <section className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[160px]">
       <MetaRow left="§ 04 — What this work creates" right="Four pillars, in depth" />
       <Reveal>
-        <h2 className="serif max-w-[900px] py-12 text-[48px] font-medium leading-[52px] tracking-[-0.026em] md:text-[64px] md:leading-[64px]">
+        <h2 className="display max-w-[900px] py-12 text-[48px] leading-[52px] md:text-[64px] md:leading-[64px]">
           Built for the reputation already there. Designed for what comes next.
         </h2>
       </Reveal>
@@ -880,7 +866,7 @@ function Approach() {
       <MetaRow left="§ 05 — Our approach" right="Six phases · 4–5 weeks" />
       <div className="grid gap-12 border-t border-[var(--color-rule)] py-16 lg:grid-cols-[1.2fr_400px] lg:gap-20">
         <Reveal>
-          <h2 className="serif max-w-[720px] text-[42px] font-medium leading-[48px] tracking-[-0.024em] md:text-[48px] md:leading-[52px]">
+          <h2 className="display max-w-[720px] text-[42px] leading-[48px] md:text-[48px] md:leading-[52px]">
             From an established reputation to an independent platform.
           </h2>
         </Reveal>
@@ -921,7 +907,7 @@ function Deliverables() {
       <MetaRow left="§ 06 — Final deliverables" right="Forty artifacts" />
       <div className="grid gap-12 border-t border-[var(--color-rule)] py-16 lg:grid-cols-[1.2fr_400px] lg:gap-20">
         <Reveal>
-          <h2 className="serif max-w-[720px] text-[42px] font-medium leading-[48px] tracking-[-0.024em] md:text-[48px] md:leading-[52px]">
+          <h2 className="display max-w-[720px] text-[42px] leading-[48px] md:text-[48px] md:leading-[52px]">
             Everything the new firm walks away with.
           </h2>
         </Reveal>
@@ -956,13 +942,13 @@ function Timeline() {
     <section id="timeline" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[160px]">
       <MetaRow left="§ 07 — Timeline" right="Four to five weeks" />
       <Reveal>
-        <h2 className="serif max-w-[1100px] py-12 text-[52px] font-medium leading-[56px] tracking-[-0.032em] md:text-[92px] md:leading-[92px]">
+        <h2 className="display max-w-[1100px] py-12 text-[52px] leading-[56px] md:text-[92px] md:leading-[92px]">
           From discovery to launch in four to five weeks.
         </h2>
       </Reveal>
       <Reveal>
         <p className="max-w-[720px] pb-12 text-[14px] leading-[22px] text-ink-2">
-          A launch within approximately 30 days is achievable with timely access to content, a final naming decision, and consolidated feedback. The fifth week functions as a launch and refinement window.
+          A launch within approximately 30 days is achievable with timely access to content, clear decision-making, and consolidated feedback. The fifth week functions as a launch and refinement window.
         </p>
       </Reveal>
       <Reveal className="grid gap-8 md:grid-cols-2 xl:grid-cols-5">
@@ -989,19 +975,28 @@ function Investment() {
   return (
     <section id="investment" className="border-b border-[var(--color-rule)] bg-ink px-6 py-24 text-paper md:px-16 lg:px-[120px] lg:py-[160px]">
       <MetaRow left="§ 08 — Investment" right="Core engagement" dark />
-      <div className="flex flex-col gap-10 py-16 lg:flex-row lg:items-end lg:justify-between lg:gap-20">
+      <div className="grid gap-10 py-16 lg:grid-cols-[1fr_520px] lg:items-end lg:gap-20">
         <Reveal>
-          <h2 className="serif max-w-[560px] text-[56px] font-medium leading-[60px] tracking-[-0.034em] md:text-[92px] md:leading-[92px]">
+          <h2 className="display max-w-[560px] text-[56px] leading-[60px] md:text-[92px] md:leading-[92px]">
             The core engagement.
           </h2>
         </Reveal>
-        <Reveal className="lg:text-right">
-          <div className="eyebrow mb-3 text-paper/55">Budget-adjusted total</div>
-          <div className="serif text-[72px] font-medium leading-[76px] tracking-[-0.036em] md:text-[120px] md:leading-[116px]">{investmentSummary.adjustedCore}</div>
-          <div className="mt-3 flex flex-col gap-1 text-[13px] leading-[18px] tracking-[0.04em] text-paper/55">
-            <span>Original core engagement: {investmentSummary.originalCore}</span>
-            <span>Budget accommodation: {investmentSummary.accommodation}</span>
-            <span>Approximately 4-5 weeks</span>
+        <Reveal className="border border-paper/20 p-6 md:p-8">
+          <div className="eyebrow text-paper/55">Budget-adjusted total</div>
+          <div className="display mt-5 text-[72px] leading-[76px] md:text-[120px] md:leading-[116px]">{investmentSummary.adjustedCore}</div>
+          <div className="mt-7 grid gap-3 border-t border-paper/20 pt-5 text-[13px] leading-[18px] tracking-[0.04em] text-paper/65">
+            <div className="flex items-center justify-between gap-6">
+              <span>Original core engagement</span>
+              <span className="text-paper">{investmentSummary.originalCore}</span>
+            </div>
+            <div className="flex items-center justify-between gap-6">
+              <span>Budget accommodation</span>
+              <span className="text-paper">{investmentSummary.accommodation}</span>
+            </div>
+            <div className="flex items-center justify-between gap-6">
+              <span>Timeline</span>
+              <span className="text-paper">4-5 weeks</span>
+            </div>
           </div>
         </Reveal>
       </div>
@@ -1027,22 +1022,7 @@ function Investment() {
             <div>Original core engagement: {investmentSummary.originalCore}</div>
             <div>Budget accommodation: {investmentSummary.accommodation}</div>
           </div>
-          <span className="serif text-[48px] font-medium leading-[48px] tracking-[-0.025em] md:text-right">{investmentSummary.adjustedCore}</span>
-        </div>
-      </Reveal>
-      <Reveal className="grid gap-8 border border-[var(--color-rule)] p-8 md:p-10 lg:grid-cols-[520px_1fr_180px] lg:gap-12">
-        <div className="flex flex-col gap-3">
-          <span className="eyebrow text-paper/55">Optional add-on</span>
-          <h3 className="serif text-[40px] font-medium leading-[42px] tracking-[-0.02em]">Naming strategy and exploration.</h3>
-          <p className="text-[14px] leading-[22px] text-paper/70">
-            The Springstead name carries meaningful equity, but it also already appears in the West Michigan legal market. A naming phase lets us decide deliberately whether the new firm should retain the name through a more distinctive construction or move toward a different public identity. Formal legal or trademark clearance by intellectual property counsel is not included.
-          </p>
-        </div>
-        <InlineList items={namingIncludes} dark />
-        <div className="lg:text-right">
-          <div className="serif text-[40px] font-medium leading-[42px] tracking-[-0.02em]">+$4,000</div>
-          <div className="eyebrow mt-1 text-paper/55">{investmentSummary.adjustedWithNamingLabel}</div>
-          <div className="mt-1 text-[11px] leading-[16px] tracking-[0.04em] text-paper/45">Original with naming: {investmentSummary.originalWithNaming}</div>
+          <span className="display text-[48px] leading-[48px] md:text-right">{investmentSummary.adjustedCore}</span>
         </div>
       </Reveal>
       <Reveal className="pt-14">
@@ -1050,7 +1030,7 @@ function Investment() {
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {paymentMilestones.map((milestone) => (
             <div key={milestone.title} className="border border-[var(--color-rule)] p-8">
-              <div className="serif text-[64px] font-medium leading-[64px] tracking-[-0.03em]">{milestone.amount}</div>
+              <div className="display text-[64px] leading-[64px]">{milestone.amount}</div>
               <h3 className="serif mt-3 text-[22px] font-medium leading-[28px] tracking-[-0.014em]">{milestone.title}</h3>
               <p className="mt-3 text-[13px] leading-[20px] text-paper/70">{milestone.body}</p>
             </div>
@@ -1067,7 +1047,7 @@ function FutureOpportunities() {
       <MetaRow left="§ 09 — Future opportunities" right="After launch" />
       <div className="grid gap-12 border-t border-[var(--color-rule)] py-16 lg:grid-cols-[1.2fr_400px] lg:gap-20">
         <Reveal>
-          <h2 className="serif max-w-[720px] text-[42px] font-medium leading-[48px] tracking-[-0.024em] md:text-[48px] md:leading-[52px]">
+          <h2 className="display max-w-[720px] text-[42px] leading-[48px] md:text-[48px] md:leading-[52px]">
             A foundation the firm can keep building from.
           </h2>
         </Reveal>
@@ -1096,12 +1076,12 @@ function NextStep() {
       <MetaRow left="§ 10 — Next step" right="Begin with a kickoff" />
       <Reveal className="border border-[var(--color-rule)] bg-paper p-8 md:p-12 lg:p-20">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-20">
-          <h2 className="serif max-w-[760px] text-[54px] font-medium leading-[58px] tracking-[-0.032em] md:text-[88px] md:leading-[84px]">
+          <h2 className="display max-w-[760px] text-[54px] leading-[58px] md:text-[88px] md:leading-[84px]">
             Build the next chapter.
           </h2>
           <div className="lg:text-right">
             <div className="eyebrow mb-2 text-ink-2">Budget-adjusted total</div>
-            <div className="serif text-[56px] font-medium leading-[58px] tracking-[-0.028em] md:text-[72px] md:leading-[72px]">{investmentSummary.adjustedCore}</div>
+            <div className="display text-[56px] leading-[58px] md:text-[72px] md:leading-[72px]">{investmentSummary.adjustedCore}</div>
             <div className="eyebrow mt-2 text-ink-2">Original {investmentSummary.originalCore} · 4-5 weeks</div>
           </div>
         </div>
@@ -1131,7 +1111,7 @@ function Closing() {
     <section className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
       <MetaRow left="§ 11 — In closing" right="For Gary & Kathryn Springstead" />
       <Reveal>
-        <h2 className="serif max-w-[1100px] py-16 text-[52px] font-medium leading-[56px] tracking-[-0.032em] md:text-[92px] md:leading-[92px]">
+        <h2 className="display max-w-[1100px] py-16 text-[52px] leading-[56px] md:text-[92px] md:leading-[92px]">
           A new chapter, already proven.
         </h2>
       </Reveal>
@@ -1170,10 +1150,10 @@ function Footer() {
 
 export function GarySpringsteadProposal() {
   useEffect(() => {
-    document.title = 'Anchovies x Gary Springstead - Proposal'
+    document.title = 'Anchovies x Springstead - Proposal'
     const meta = document.querySelector('meta[name="description"]')
     if (meta) {
-      meta.setAttribute('content', 'A strategy, identity, narrative, and website proposal for Gary and Kathryn Springstead from Anchovies.')
+      meta.setAttribute('content', 'A strategy, identity, narrative, and website proposal for Springstead from Anchovies.')
     }
   }, [])
 
