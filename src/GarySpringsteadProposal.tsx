@@ -656,9 +656,6 @@ function Hero() {
           </h2>
         </Reveal>
         <Reveal className="flex max-w-[420px] flex-col gap-7">
-          <p className="text-[15px] leading-[23px] text-ink-2">
-            This is not a first introduction to the market. Gary brings more than two decades of criminal defense experience, a former career as an FBI Special Agent and Special Assistant U.S. Attorney, and a practice that moves between Michigan courts and federal matters nationwide. Kathryn adds her own former FBI experience and a strong appellate dimension.
-          </p>
           <div className="flex flex-wrap items-center gap-4">
             <AnchorButton>{'Schedule proposal review ->'}</AnchorButton>
             <AnchorButton href="#work" variant="outline">
@@ -725,7 +722,7 @@ function Opportunity() {
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
         <Reveal>
           <p className="max-w-[560px] text-[17px] leading-[28px] text-paper/70">
-            Most criminal defense brands operate from the same narrow playbook: dark blue, gold, courthouse imagery, urgent promises, and interchangeable claims about fighting hard. Gary and Kathryn have enough real substance to avoid that theater. The opportunity is to build a firm that feels established from its first day in public — a brand that can turn heads without chasing attention, a website that works as more than a glossy business card, a platform that gives clients, referral counsel, courts, and the media an immediate sense of who is leading the matter and why they are equipped to do it.
+            A brand that can turn heads without chasing attention, a website that works as more than a glossy business card, a platform that gives clients, referral counsel, courts, and the media an immediate sense of who is leading the matter and why they are equipped to do it.
           </p>
         </Reveal>
         <Reveal className="max-w-[560px]">
@@ -1044,7 +1041,6 @@ function Investment() {
 function FutureOpportunities() {
   return (
     <section className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-      <MetaRow left="§ 09 — Future opportunities" right="After launch" />
       <div className="grid gap-12 border-t border-[var(--color-rule)] py-16 lg:grid-cols-[1.2fr_400px] lg:gap-20">
         <Reveal>
           <h2 className="display max-w-[720px] text-[42px] leading-[48px] md:text-[48px] md:leading-[52px]">
@@ -1109,7 +1105,6 @@ function NextStep() {
 function Closing() {
   return (
     <section className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-      <MetaRow left="§ 11 — In closing" right="For Gary & Kathryn Springstead" />
       <Reveal>
         <h2 className="display max-w-[1100px] py-16 text-[52px] leading-[56px] md:text-[92px] md:leading-[92px]">
           A new chapter, already proven.
