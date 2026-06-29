@@ -406,6 +406,15 @@ const investmentLines: InvestmentLine[] = [
   },
 ]
 
+const investmentSummary = {
+  originalCore: '$23,000',
+  accommodation: '-$6,500',
+  adjustedCore: '$16,500',
+  originalWithNaming: '$27,000',
+  adjustedWithNaming: '$20,500',
+  adjustedWithNamingLabel: '$20,500 adjusted with naming',
+}
+
 const namingIncludes = [
   'Naming criteria and strategic brief',
   'Review of existing name equity',
@@ -421,17 +430,17 @@ const paymentMilestones: PaymentMilestone[] = [
   {
     amount: '50%',
     title: 'Due at kickoff',
-    body: '$11,500 reserves the project window and begins discovery.',
+    body: '$8,250 reserves the project window and begins discovery.',
   },
   {
     amount: '25%',
     title: 'After identity presentation',
-    body: '$5,750 is due once the primary brand identity has been presented and approved.',
+    body: '$4,125 is due once the primary brand identity has been presented and approved.',
   },
   {
     amount: '25%',
     title: 'Before launch',
-    body: '$5,750 is due before the final website launch and asset handoff.',
+    body: '$4,125 is due before the final website launch and asset handoff.',
   },
 ]
 
@@ -987,8 +996,13 @@ function Investment() {
           </h2>
         </Reveal>
         <Reveal className="lg:text-right">
-          <div className="serif text-[72px] font-medium leading-[76px] tracking-[-0.036em] md:text-[120px] md:leading-[116px]">$23,000</div>
-          <div className="mt-2 text-[13px] leading-[18px] tracking-[0.04em] text-paper/55">Core engagement · approximately 4–5 weeks</div>
+          <div className="eyebrow mb-3 text-paper/55">Budget-adjusted total</div>
+          <div className="serif text-[72px] font-medium leading-[76px] tracking-[-0.036em] md:text-[120px] md:leading-[116px]">{investmentSummary.adjustedCore}</div>
+          <div className="mt-3 flex flex-col gap-1 text-[13px] leading-[18px] tracking-[0.04em] text-paper/55">
+            <span>Original core engagement: {investmentSummary.originalCore}</span>
+            <span>Budget accommodation: {investmentSummary.accommodation}</span>
+            <span>Approximately 4-5 weeks</span>
+          </div>
         </Reveal>
       </div>
       <Reveal className="border-t border-[var(--color-rule)] pt-6">
@@ -996,7 +1010,7 @@ function Investment() {
           <span className="eyebrow text-paper/55">Line</span>
           <span className="eyebrow text-paper/55">Phase</span>
           <span className="eyebrow text-paper/55">Scope summary</span>
-          <span className="eyebrow text-right text-paper/55">Amount</span>
+          <span className="eyebrow text-right text-paper/55">Original amount</span>
         </div>
         {investmentLines.map((line) => (
           <div key={line.num} className="grid gap-5 border-b border-[var(--color-rule)] py-7 md:grid-cols-[80px_340px_1fr_180px] md:gap-0">
@@ -1008,9 +1022,12 @@ function Investment() {
         ))}
         <div className="grid gap-5 py-8 md:grid-cols-[80px_340px_1fr_180px] md:items-center md:gap-0">
           <span />
-          <h3 className="serif pr-8 text-[28px] font-medium leading-[32px] tracking-[-0.014em]">Total — Core engagement</h3>
-          <span />
-          <span className="serif text-[48px] font-medium leading-[48px] tracking-[-0.025em] md:text-right">$23,000</span>
+          <h3 className="serif pr-8 text-[28px] font-medium leading-[32px] tracking-[-0.014em]">Total - Core engagement</h3>
+          <div className="text-[13px] leading-[20px] text-paper/70">
+            <div>Original core engagement: {investmentSummary.originalCore}</div>
+            <div>Budget accommodation: {investmentSummary.accommodation}</div>
+          </div>
+          <span className="serif text-[48px] font-medium leading-[48px] tracking-[-0.025em] md:text-right">{investmentSummary.adjustedCore}</span>
         </div>
       </Reveal>
       <Reveal className="grid gap-8 border border-[var(--color-rule)] p-8 md:p-10 lg:grid-cols-[520px_1fr_180px] lg:gap-12">
@@ -1024,7 +1041,8 @@ function Investment() {
         <InlineList items={namingIncludes} dark />
         <div className="lg:text-right">
           <div className="serif text-[40px] font-medium leading-[42px] tracking-[-0.02em]">+$4,000</div>
-          <div className="eyebrow mt-1 text-paper/55">$27,000 with naming</div>
+          <div className="eyebrow mt-1 text-paper/55">{investmentSummary.adjustedWithNamingLabel}</div>
+          <div className="mt-1 text-[11px] leading-[16px] tracking-[0.04em] text-paper/45">Original with naming: {investmentSummary.originalWithNaming}</div>
         </div>
       </Reveal>
       <Reveal className="pt-14">
@@ -1082,8 +1100,9 @@ function NextStep() {
             Build the next chapter.
           </h2>
           <div className="lg:text-right">
-            <div className="serif text-[56px] font-medium leading-[58px] tracking-[-0.028em] md:text-[72px] md:leading-[72px]">$23,000</div>
-            <div className="eyebrow mt-2 text-ink-2">Core engagement · 4–5 weeks</div>
+            <div className="eyebrow mb-2 text-ink-2">Budget-adjusted total</div>
+            <div className="serif text-[56px] font-medium leading-[58px] tracking-[-0.028em] md:text-[72px] md:leading-[72px]">{investmentSummary.adjustedCore}</div>
+            <div className="eyebrow mt-2 text-ink-2">Original {investmentSummary.originalCore} · 4-5 weeks</div>
           </div>
         </div>
         <div className="grid gap-10 pt-14 lg:grid-cols-[1fr_480px] lg:gap-20">
