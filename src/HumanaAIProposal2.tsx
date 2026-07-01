@@ -398,11 +398,7 @@ function BiggerIdea() {
           <h2 className="display max-w-[760px] text-[48px] leading-[48px] tracking-[-0.022em] md:text-[72px] md:leading-[70px] lg:text-[88px] lg:leading-[84px]">
             A human-first
             <br />
-            learning platform,
-            <br />
-            not another
-            <br />
-            AI education tool.
+            learning platform.
           </h2>
         </Reveal>
         <Reveal className="flex max-w-[460px] flex-col gap-5 pt-2 text-[15px] leading-[24px]">
