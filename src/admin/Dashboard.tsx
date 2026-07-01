@@ -161,6 +161,13 @@ export function Dashboard() {
       href: '/proposal/humanaai',
     },
     {
+      id: 'humana-ai-2',
+      name: 'Humana AI',
+      tagline: 'Revised brand, site, prototype, and social · $6,500',
+      status: 'Active',
+      href: '/proposal/humana-ai-2',
+    },
+    {
       id: 'lapinco',
       name: 'Lapinco',
       tagline: 'Brand, messaging, site, and portal readiness · May 2026',

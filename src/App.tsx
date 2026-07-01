@@ -8,6 +8,7 @@ import { FiberSoftChewProposal } from './FiberSoftChewProposal'
 import { GarySpringsteadProposal } from './GarySpringsteadProposal'
 import { GenesiProposal } from './GenesiProposal'
 import { HumanaAIProposal } from './HAAIProposal'
+import { HumanaAIProposal2 } from './HumanaAIProposal2'
 import { LapincoProposal } from './LapincoProposal'
 import { LexPoliticaProposal } from './LexPoliticaProposal'
 import { OffMenuProposal } from './OffMenuProposal'
@@ -57,6 +58,9 @@ export default function App() {
     pathname.startsWith('/proposal/haai/') ||
     pathname === '/haai' ||
     pathname.startsWith('/haai/')
+  const isHumanaAIProposal2 =
+    pathname === '/proposal/humana-ai-2' ||
+    pathname.startsWith('/proposal/humana-ai-2/')
   const isLexPolitica =
     pathname === '/proposal/lex-politica' ||
     pathname.startsWith('/proposal/lex-politica/')
@@ -151,6 +155,10 @@ export default function App() {
 
   if (isHumanaAI) {
     return <HumanaAIProposal />
+  }
+
+  if (isHumanaAIProposal2) {
+    return <HumanaAIProposal2 />
   }
 
   if (isLexPolitica) {
