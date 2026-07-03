@@ -303,6 +303,8 @@ export default async function handler(req: Request): Promise<Response> {
   }
 
   try {
+    let storeError = ''
+
     if (redis) {
       await redis.set(`${ITEM_PREFIX}${id}`, event)
       await redis.lpush(INDEX_KEY, id)
@@ -313,13 +315,24 @@ export default async function handler(req: Request): Promise<Response> {
     if (supabase) {
       const saved = await saveViaSupabaseStorage(supabase, event)
       if (saved.ok) return json({ ok: true, id, saved: true, store: 'supabase-storage', emailed: false })
+      storeError = saved.error ?? 'Supabase storage save failed'
+    } else {
+      storeError = 'No KV or Supabase storage backend configured'
     }
 
     const emailed = await sendViaResend(event)
     if (emailed.ok) return json({ ok: true, id, saved: false, emailed: true })
 
     console.log('contract-event', event)
-    return json({ ok: true, id, saved: false, emailed: false, logged: true, emailError: emailed.error })
+    return json({
+      ok: true,
+      id,
+      saved: false,
+      emailed: false,
+      logged: true,
+      storeError,
+      emailError: emailed.error,
+    })
   } catch (err) {
     const emailed = await sendViaResend(event)
     if (emailed.ok) return json({ ok: true, id, saved: false, emailed: true, storeError: String(err) })
