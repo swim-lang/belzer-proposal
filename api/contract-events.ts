@@ -41,11 +41,11 @@ type ContractEventRow = {
 }
 
 async function sendViaResend(event: ContractEvent): Promise<{ ok: boolean; error?: string }> {
-  const key = process.env.RESEND_API_KEY
+  const key = envValue('RESEND_API_KEY')
   if (!key) return { ok: false, error: 'RESEND_API_KEY not configured' }
 
-  const agencyEmail = process.env.AGENCY_EMAIL ?? 'alexis@anchovies.agency'
-  const from = process.env.EMAIL_FROM ?? 'Anchovies <onboarding@resend.dev>'
+  const agencyEmail = envValue('AGENCY_EMAIL') ?? 'alexis@anchovies.agency'
+  const from = envValue('EMAIL_FROM') ?? 'Anchovies <onboarding@resend.dev>'
   const subject = `Contract event: ${event.contractSlug} ${event.eventType}`
   const rows = [
     ['Event', event.eventType],
@@ -117,9 +117,21 @@ async function sendViaResend(event: ContractEvent): Promise<{ ok: boolean; error
   }
 }
 
+function envValue(name: string): string | undefined {
+  const value = process.env[name]?.trim()
+  if (!value || value === '""' || value === "''") return undefined
+  if (
+    (value.startsWith('"') && value.endsWith('"')) ||
+    (value.startsWith("'") && value.endsWith("'"))
+  ) {
+    return value.slice(1, -1) || undefined
+  }
+  return value
+}
+
 function redisOrNull(): Redis | null {
   try {
-    if (!process.env.KV_REST_API_URL && !process.env.UPSTASH_REDIS_REST_URL) return null
+    if (!envValue('KV_REST_API_URL') && !envValue('UPSTASH_REDIS_REST_URL')) return null
     return Redis.fromEnv()
   } catch {
     return null
@@ -127,11 +139,11 @@ function redisOrNull(): Redis | null {
 }
 
 function supabaseOrNull(): SupabaseClient | null {
-  const url = process.env.SUPABASE_URL
+  const url = envValue('SUPABASE_URL')
   const key =
-    process.env.SUPABASE_SERVICE_ROLE_KEY ??
-    process.env.SUPABASE_SECRET_KEY ??
-    process.env.SUPABASE_SERVICE_KEY
+    envValue('SUPABASE_SERVICE_ROLE_KEY') ??
+    envValue('SUPABASE_SECRET_KEY') ??
+    envValue('SUPABASE_SERVICE_KEY')
 
   if (!url || !key) return null
 
