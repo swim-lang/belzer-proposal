@@ -185,7 +185,7 @@ export function ContractEventsView() {
         return
       }
       if (res.status === 503) {
-        setErr('Contract backend is not configured yet. Add KV/Upstash and ADMIN_PIN in Vercel to save retrievable signed records.')
+        setErr('Contract backend is not configured yet. Add Supabase, KV/Upstash, and ADMIN_PIN in Vercel to save retrievable signed records.')
         setEvents([])
         return
       }

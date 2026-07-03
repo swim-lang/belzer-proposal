@@ -1,9 +1,12 @@
 import { Redis } from '@upstash/redis'
+import { createClient, type SupabaseClient } from '@supabase/supabase-js'
 
 export const config = { runtime: 'edge' }
 
 const INDEX_KEY = 'anchovies:contracts:events:index'
 const ITEM_PREFIX = 'anchovies:contracts:events:item:'
+const STORAGE_BUCKET = 'contract-events'
+const STORAGE_PREFIX = 'events'
 
 type ContractEvent = {
   id: string
@@ -112,11 +115,96 @@ function redisOrNull(): Redis | null {
   }
 }
 
+function supabaseOrNull(): SupabaseClient | null {
+  const url = process.env.SUPABASE_URL
+  const key =
+    process.env.SUPABASE_SERVICE_ROLE_KEY ??
+    process.env.SUPABASE_SECRET_KEY ??
+    process.env.SUPABASE_SERVICE_KEY
+
+  if (!url || !key) return null
+
+  return createClient(url, key, {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+    },
+  })
+}
+
 function json(data: unknown, init: ResponseInit = {}): Response {
   return new Response(JSON.stringify(data), {
     ...init,
     headers: { 'content-type': 'application/json', ...(init.headers ?? {}) },
   })
+}
+
+async function ensureStorageBucket(supabase: SupabaseClient): Promise<{ ok: boolean; error?: string }> {
+  const { data: buckets, error: listError } = await supabase.storage.listBuckets()
+  if (listError) return { ok: false, error: listError.message }
+  if (buckets?.some((bucket) => bucket.name === STORAGE_BUCKET)) return { ok: true }
+
+  const { error } = await supabase.storage.createBucket(STORAGE_BUCKET, {
+    public: false,
+    fileSizeLimit: 5 * 1024 * 1024,
+  })
+
+  if (error && !/already exists/i.test(error.message)) {
+    return { ok: false, error: error.message }
+  }
+
+  return { ok: true }
+}
+
+async function saveViaSupabaseStorage(
+  supabase: SupabaseClient,
+  event: ContractEvent
+): Promise<{ ok: boolean; error?: string }> {
+  const bucket = await ensureStorageBucket(supabase)
+  if (!bucket.ok) return bucket
+
+  const path = `${STORAGE_PREFIX}/${event.id}.json`
+  const file = new Blob([JSON.stringify(event, null, 2)], { type: 'application/json' })
+  const { error } = await supabase.storage.from(STORAGE_BUCKET).upload(path, file, {
+    contentType: 'application/json',
+    upsert: true,
+  })
+
+  if (error) return { ok: false, error: error.message }
+  return { ok: true }
+}
+
+async function readSupabaseStorageEvent(
+  supabase: SupabaseClient,
+  id: string
+): Promise<ContractEvent | null> {
+  const { data, error } = await supabase.storage.from(STORAGE_BUCKET).download(`${STORAGE_PREFIX}/${id}.json`)
+  if (error || !data) return null
+  return JSON.parse(await data.text()) as ContractEvent
+}
+
+async function listSupabaseStorageEvents(supabase: SupabaseClient): Promise<ContractEvent[]> {
+  const { data, error } = await supabase.storage.from(STORAGE_BUCKET).list(STORAGE_PREFIX, {
+    limit: 100,
+    sortBy: { column: 'name', order: 'desc' },
+  })
+  if (error) throw error
+
+  const files = (data ?? [])
+    .filter((item) => item.name.endsWith('.json'))
+    .slice(0, 100)
+
+  const events = await Promise.all(
+    files.map(async (file) => {
+      try {
+        return await readSupabaseStorageEvent(supabase, file.name.replace(/\.json$/, ''))
+      } catch {
+        return null
+      }
+    })
+  )
+
+  return events.filter((event): event is ContractEvent => !!event)
 }
 
 function newId(): string {
@@ -133,6 +221,7 @@ function getIp(req: Request): string {
 
 export default async function handler(req: Request): Promise<Response> {
   const redis = redisOrNull()
+  const supabase = supabaseOrNull()
 
   if (req.method === 'GET') {
     const url = new URL(req.url)
@@ -140,25 +229,42 @@ export default async function handler(req: Request): Promise<Response> {
     const expected = process.env.ADMIN_PIN
     if (!expected) return json({ error: 'ADMIN_PIN not configured' }, { status: 503 })
     if (!pin || pin !== expected) return json({ error: 'Invalid pin' }, { status: 401 })
-    if (!redis) return json({ error: 'KV not configured', configured: false }, { status: 503 })
 
     const id = url.searchParams.get('id')
-    try {
-      if (id) {
-        const item = await redis.get(`${ITEM_PREFIX}${id}`)
-        if (!item) return json({ error: 'Not found' }, { status: 404 })
-        return json({ event: item })
-      }
+    if (redis) {
+      try {
+        if (id) {
+          const item = await redis.get(`${ITEM_PREFIX}${id}`)
+          if (!item) return json({ error: 'Not found' }, { status: 404 })
+          return json({ event: item })
+        }
 
-      const ids = (await redis.lrange(INDEX_KEY, 0, 100)) as string[]
-      if (!ids.length) return json({ events: [] })
-      const pipeline = redis.pipeline()
-      for (const eventId of ids) pipeline.get(`${ITEM_PREFIX}${eventId}`)
-      const items = (await pipeline.exec()) as (Record<string, unknown> | null)[]
-      return json({ events: items.filter((item): item is Record<string, unknown> => !!item) })
-    } catch (err) {
-      return json({ error: 'Failed to read contract events', details: String(err) }, { status: 503 })
+        const ids = (await redis.lrange(INDEX_KEY, 0, 100)) as string[]
+        if (!ids.length) return json({ events: [] })
+        const pipeline = redis.pipeline()
+        for (const eventId of ids) pipeline.get(`${ITEM_PREFIX}${eventId}`)
+        const items = (await pipeline.exec()) as (Record<string, unknown> | null)[]
+        return json({ events: items.filter((item): item is Record<string, unknown> => !!item) })
+      } catch (err) {
+        return json({ error: 'Failed to read contract events', details: String(err) }, { status: 503 })
+      }
     }
+
+    if (supabase) {
+      try {
+        if (id) {
+          const item = await readSupabaseStorageEvent(supabase, id)
+          if (!item) return json({ error: 'Not found' }, { status: 404 })
+          return json({ event: item })
+        }
+
+        return json({ events: await listSupabaseStorageEvents(supabase) })
+      } catch (err) {
+        return json({ error: 'Failed to read contract events', details: String(err) }, { status: 503 })
+      }
+    }
+
+    return json({ error: 'Contract event storage not configured', configured: false }, { status: 503 })
   }
 
   if (req.method !== 'POST') return new Response('Method not allowed', { status: 405 })
@@ -201,7 +307,12 @@ export default async function handler(req: Request): Promise<Response> {
       await redis.set(`${ITEM_PREFIX}${id}`, event)
       await redis.lpush(INDEX_KEY, id)
       await redis.ltrim(INDEX_KEY, 0, 499)
-      return json({ ok: true, id, saved: true, emailed: false })
+      return json({ ok: true, id, saved: true, store: 'kv', emailed: false })
+    }
+
+    if (supabase) {
+      const saved = await saveViaSupabaseStorage(supabase, event)
+      if (saved.ok) return json({ ok: true, id, saved: true, store: 'supabase-storage', emailed: false })
     }
 
     const emailed = await sendViaResend(event)
