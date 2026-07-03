@@ -8,6 +8,7 @@ test('Wildflower + Blanc proposal is registered and preserves source content', (
   const app = read('src/App.tsx')
   const dashboard = read('src/admin/Dashboard.tsx')
   const proposal = read('src/WildflowerBlancProposal.tsx')
+  const css = read('src/index.css')
 
   assert.match(app, /WildflowerBlancProposal/)
   assert.match(app, /\/proposal\/wildflower-blanc/)
@@ -22,6 +23,8 @@ test('Wildflower + Blanc proposal is registered and preserves source content', (
   assert.match(proposal, /Schedule proposal review/)
   assert.match(proposal, /4-5 weeks/)
   assert.match(proposal, /approximately 30 days/)
+  assert.match(css, /family=Oswald/)
+  assert.match(css, /\.wildflower-blanc-proposal\s*\{\s*--font-serif: "Oswald"/)
   assert.doesNotMatch(proposal, /—/)
   assert.doesNotMatch(proposal, /Schedule kickoff/)
   assert.doesNotMatch(proposal, /Schedule a kickoff conversation/)
