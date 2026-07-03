@@ -29,6 +29,17 @@ type ContractEvent = {
   signedDocumentHtml: string
 }
 
+type ContractEventRow = {
+  id: string
+  firm_name: string
+  slug: string
+  url: string
+  status: string
+  template: string
+  created_at: string
+  updated_at: string
+}
+
 async function sendViaResend(event: ContractEvent): Promise<{ ok: boolean; error?: string }> {
   const key = process.env.RESEND_API_KEY
   if (!key) return { ok: false, error: 'RESEND_API_KEY not configured' }
@@ -207,6 +218,60 @@ async function listSupabaseStorageEvents(supabase: SupabaseClient): Promise<Cont
   return events.filter((event): event is ContractEvent => !!event)
 }
 
+function rowToContractEvent(row: ContractEventRow): ContractEvent | null {
+  try {
+    return JSON.parse(row.firm_name) as ContractEvent
+  } catch {
+    return null
+  }
+}
+
+async function saveViaSupabaseTable(
+  supabase: SupabaseClient,
+  event: ContractEvent
+): Promise<{ ok: boolean; error?: string }> {
+  const { error } = await supabase.from('firm_pages').insert({
+    firm_name: JSON.stringify(event),
+    slug: `contract-event-${event.id}`,
+    url: event.pageUrl || `/proposal/${event.contractSlug}/contract`,
+    status: 'contract_event',
+    template: 'contractEvent',
+  })
+
+  if (error) return { ok: false, error: error.message }
+  return { ok: true }
+}
+
+async function readSupabaseTableEvent(
+  supabase: SupabaseClient,
+  id: string
+): Promise<ContractEvent | null> {
+  const { data, error } = await supabase
+    .from('firm_pages')
+    .select('id, firm_name, slug, url, status, template, created_at, updated_at')
+    .eq('template', 'contractEvent')
+    .eq('slug', `contract-event-${id}`)
+    .maybeSingle<ContractEventRow>()
+
+  if (error || !data) return null
+  return rowToContractEvent(data)
+}
+
+async function listSupabaseTableEvents(supabase: SupabaseClient): Promise<ContractEvent[]> {
+  const { data, error } = await supabase
+    .from('firm_pages')
+    .select('id, firm_name, slug, url, status, template, created_at, updated_at')
+    .eq('template', 'contractEvent')
+    .order('created_at', { ascending: false })
+    .limit(100)
+    .returns<ContractEventRow[]>()
+
+  if (error) throw error
+  return (data ?? [])
+    .map(rowToContractEvent)
+    .filter((event): event is ContractEvent => !!event)
+}
+
 function newId(): string {
   const ts = Date.now().toString(36)
   const rand = Math.random().toString(36).slice(2, 8)
@@ -251,16 +316,28 @@ export default async function handler(req: Request): Promise<Response> {
     }
 
     if (supabase) {
+      let storageError = ''
       try {
         if (id) {
           const item = await readSupabaseStorageEvent(supabase, id)
-          if (!item) return json({ error: 'Not found' }, { status: 404 })
+          if (item) return json({ event: item })
+        } else {
+          return json({ events: await listSupabaseStorageEvents(supabase) })
+        }
+      } catch (err) {
+        storageError = String(err)
+      }
+
+      try {
+        if (id) {
+          const item = await readSupabaseTableEvent(supabase, id)
+          if (!item) return json({ error: 'Not found', storageError }, { status: 404 })
           return json({ event: item })
         }
 
-        return json({ events: await listSupabaseStorageEvents(supabase) })
+        return json({ events: await listSupabaseTableEvents(supabase) })
       } catch (err) {
-        return json({ error: 'Failed to read contract events', details: String(err) }, { status: 503 })
+        return json({ error: 'Failed to read contract events', details: String(err), storageError }, { status: 503 })
       }
     }
 
@@ -315,7 +392,10 @@ export default async function handler(req: Request): Promise<Response> {
     if (supabase) {
       const saved = await saveViaSupabaseStorage(supabase, event)
       if (saved.ok) return json({ ok: true, id, saved: true, store: 'supabase-storage', emailed: false })
-      storeError = saved.error ?? 'Supabase storage save failed'
+      const storageError = saved.error ?? 'Supabase storage save failed'
+      const tableSaved = await saveViaSupabaseTable(supabase, event)
+      if (tableSaved.ok) return json({ ok: true, id, saved: true, store: 'supabase-firm-pages', emailed: false })
+      storeError = `Supabase storage: ${storageError}; Supabase table: ${tableSaved.error ?? 'save failed'}`
     } else {
       storeError = 'No KV or Supabase storage backend configured'
     }

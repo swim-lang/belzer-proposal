@@ -133,6 +133,8 @@ export default async function handler(req: Request): Promise<Response> {
     const { data, error } = await supabase
       .from('firm_pages')
       .select('id, firm_name, slug, url, status, template, created_at, updated_at')
+      .eq('template', 'preMeeting')
+      .eq('status', 'active')
       .order('created_at', { ascending: false })
       .limit(100)
       .returns<FirmPageRow[]>()
