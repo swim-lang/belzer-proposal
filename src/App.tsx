@@ -23,6 +23,7 @@ import { ContractPage } from './contracts/ContractPage'
 import { fiberSoftChewContract } from './contracts/fiberSoftChewContract'
 import { genesiContract } from './contracts/genesiContract'
 import { offMenuContract } from './contracts/offMenuContract'
+import { wildflowerBlancContract } from './contracts/wildflowerBlancContract'
 import { createPreMeetingContent, getPreMeetingFirmNameFromURL } from './preMeetingContent'
 import { kndContent } from './kndContent'
 
@@ -85,6 +86,7 @@ export default function App() {
   const isWildflowerBlanc =
     pathname === '/proposal/wildflower-blanc' ||
     pathname.startsWith('/proposal/wildflower-blanc/')
+  const isWildflowerBlancContract = pathname === '/proposal/wildflower-blanc/contract'
   const isSoupToSoftware =
     pathname === '/proposal/soup-to-software' ||
     pathname.startsWith('/proposal/soup-to-software/')
@@ -195,6 +197,10 @@ export default function App() {
 
   if (isGarySpringstead) {
     return <GarySpringsteadProposal />
+  }
+
+  if (isWildflowerBlancContract) {
+    return <ContractPage contract={wildflowerBlancContract} />
   }
 
   if (isWildflowerBlanc) {
