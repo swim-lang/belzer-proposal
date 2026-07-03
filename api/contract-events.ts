@@ -296,6 +296,10 @@ function getIp(req: Request): string {
   return req.headers.get('x-real-ip') ?? req.headers.get('cf-connecting-ip') ?? 'unknown'
 }
 
+function requiresPersistence(eventType: string): boolean {
+  return eventType === 'contract_signed' || eventType === 'signed_pdf_generated'
+}
+
 export default async function handler(req: Request): Promise<Response> {
   const redis = redisOrNull()
   const supabase = supabaseOrNull()
@@ -416,6 +420,22 @@ export default async function handler(req: Request): Promise<Response> {
     if (emailed.ok) return json({ ok: true, id, saved: false, emailed: true })
 
     console.log('contract-event', event)
+    if (requiresPersistence(event.eventType)) {
+      return json(
+        {
+          ok: false,
+          id,
+          saved: false,
+          emailed: false,
+          logged: true,
+          error: 'Contract event was not persisted',
+          storeError,
+          emailError: emailed.error,
+        },
+        { status: 503 }
+      )
+    }
+
     return json({
       ok: true,
       id,
@@ -430,6 +450,22 @@ export default async function handler(req: Request): Promise<Response> {
     if (emailed.ok) return json({ ok: true, id, saved: false, emailed: true, storeError: String(err) })
 
     console.log('contract-event', event)
+    if (requiresPersistence(event.eventType)) {
+      return json(
+        {
+          ok: false,
+          id,
+          saved: false,
+          emailed: false,
+          logged: true,
+          error: 'Contract event was not persisted',
+          storeError: String(err),
+          emailError: emailed.error,
+        },
+        { status: 503 }
+      )
+    }
+
     return json({ ok: true, id, saved: false, emailed: false, logged: true, storeError: String(err), emailError: emailed.error })
   }
 }
