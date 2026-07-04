@@ -545,8 +545,8 @@ function ProposalNav() {
             <a href="#work" className="hidden rounded-full px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper whitespace-nowrap sm:inline-flex">
               View work
             </a>
-            <a href={contractHref} className="rounded-full border border-ink px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper whitespace-nowrap">
-              Review contract
+            <a href={calendarHref} target="_blank" rel="noreferrer" className="rounded-full border border-ink px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper whitespace-nowrap">
+              Schedule a discovery
             </a>
           </div>
         </div>
@@ -584,7 +584,10 @@ function Hero() {
             You came to us for two visual identities. We see a much larger opportunity: to build the creative foundation for two connected brands that can influence how events are imagined, styled, experienced, and remembered. Wildflower curates the pieces that bring an occasion to life. Blanc holds the occasion itself.
           </p>
           <div className="flex flex-wrap items-center gap-4">
-            <AnchorButton href={contractHref}>{'Review contract ->'}</AnchorButton>
+            <AnchorButton>{'Schedule a discovery ->'}</AnchorButton>
+            <AnchorButton href={contractHref} variant="outline">
+              Review contract
+            </AnchorButton>
             <AnchorButton href="#scope" variant="outline">
               See the scope
             </AnchorButton>
@@ -1091,7 +1094,7 @@ function WhyAnchovies() {
 function NextStep() {
   return (
     <section id="next" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-      <MetaRow left="§ 14 / Next step" right="Contract review" />
+      <MetaRow left="§ 14 / Next step" right="Schedule discovery" />
       <Reveal className="border border-[var(--color-rule)] bg-paper p-8 md:p-12 lg:p-20">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-20">
           <h2 className="serif max-w-[760px] text-[54px] font-medium leading-[58px] tracking-[-0.032em] md:text-[88px] md:leading-[84px]">
@@ -1104,7 +1107,7 @@ function NextStep() {
         </div>
         <div className="grid gap-10 pt-14 lg:grid-cols-[1fr_480px] lg:gap-20">
           <p className="max-w-[560px] text-[15px] leading-[23px] text-ink-2">
-            The engagement begins with one shared discovery phase, followed by strategic and creative development for each company and a focused Blanc Shopify website build. After contract review, Kelly and Willy receive:
+            The engagement begins with one shared discovery phase, followed by strategic and creative development for each company and a focused Blanc Shopify website build. After the discovery conversation, Kelly and Willy receive:
           </p>
           <div className="grid gap-3.5">
             {nextStepItems.map((item, index) => (
@@ -1116,7 +1119,12 @@ function NextStep() {
           </div>
         </div>
         <div className="pt-12">
-          <AnchorButton href={contractHref}>{'Review and sign contract ->'}</AnchorButton>
+          <div className="flex flex-wrap items-center gap-4">
+            <AnchorButton>{'Schedule a discovery ->'}</AnchorButton>
+            <AnchorButton href={contractHref} variant="outline">
+              Review contract
+            </AnchorButton>
+          </div>
         </div>
       </Reveal>
     </section>
