@@ -6,6 +6,8 @@ const api = readFileSync(new URL('../api/contract-events.ts', import.meta.url), 
 
 test('contract event API has a direct Supabase REST persistence fallback', () => {
   assert.match(api, /function supabaseDirectOrNull/)
+  assert.match(api, /runtime: 'nodejs'/)
+  assert.match(api, /nodeRequestToWebRequest/)
   assert.match(api, /async function saveViaSupabaseRestTable/)
   assert.match(api, /async function readSupabaseRestTableEvent/)
   assert.match(api, /async function listSupabaseRestTableEvents/)

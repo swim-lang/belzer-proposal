@@ -1,7 +1,7 @@
 import { Redis } from '@upstash/redis'
 import { createClient, type SupabaseClient } from '@supabase/supabase-js'
 
-export const config = { runtime: 'edge' }
+export const config = { runtime: 'nodejs' }
 
 const INDEX_KEY = 'anchovies:contracts:events:index'
 const ITEM_PREFIX = 'anchovies:contracts:events:item:'
@@ -320,17 +320,22 @@ async function saveViaSupabaseRestTable(
   config: SupabaseDirectConfig,
   event: ContractEvent
 ): Promise<{ ok: boolean; error?: string }> {
-  const res = await supabaseRestRequest(config, '/rest/v1/firm_pages', {
-    method: 'POST',
-    headers: { prefer: 'return=minimal' },
-    body: JSON.stringify({
-      firm_name: JSON.stringify(event),
-      slug: `contract-event-${event.id}`,
-      url: event.pageUrl || `/proposal/${event.contractSlug}/contract`,
-      status: 'contract_event',
-      template: 'contractEvent',
-    }),
-  })
+  let res: Response
+  try {
+    res = await supabaseRestRequest(config, '/rest/v1/firm_pages', {
+      method: 'POST',
+      headers: { prefer: 'return=minimal' },
+      body: JSON.stringify({
+        firm_name: JSON.stringify(event),
+        slug: `contract-event-${event.id}`,
+        url: event.pageUrl || `/proposal/${event.contractSlug}/contract`,
+        status: 'contract_event',
+        template: 'contractEvent',
+      }),
+    })
+  } catch (err) {
+    return { ok: false, error: `Supabase REST threw: ${String(err)}` }
+  }
 
   if (!res.ok) {
     const body = await res.text().catch(() => '')
@@ -387,7 +392,7 @@ function requiresPersistence(eventType: string): boolean {
   return eventType === 'contract_signed' || eventType === 'signed_pdf_generated'
 }
 
-export default async function handler(req: Request): Promise<Response> {
+async function handleRequest(req: Request): Promise<Response> {
   const redis = redisOrNull()
   const supabase = supabaseOrNull()
   const supabaseDirect = supabaseDirectOrNull()
@@ -585,4 +590,57 @@ export default async function handler(req: Request): Promise<Response> {
 
     return json({ ok: true, id, saved: false, emailed: false, logged: true, storeError, emailError: emailed.error })
   }
+}
+
+async function nodeRequestToWebRequest(req: any): Promise<Request> {
+  const headers = new Headers()
+  for (const [key, value] of Object.entries(req.headers ?? {})) {
+    if (Array.isArray(value)) {
+      for (const item of value) headers.append(key, item)
+    } else if (typeof value === 'string') {
+      headers.set(key, value)
+    }
+  }
+
+  const host = headers.get('host') ?? 'anchovies.pro'
+  const url = typeof req.url === 'string' && /^https?:\/\//.test(req.url) ? req.url : `https://${host}${req.url ?? '/'}`
+  const method = req.method ?? 'GET'
+  let body: BodyInit | undefined
+
+  if (method !== 'GET' && method !== 'HEAD') {
+    if (req.body !== undefined) {
+      body = typeof req.body === 'string' ? req.body : JSON.stringify(req.body)
+    } else {
+      const chunks: Uint8Array[] = []
+      for await (const chunk of req) {
+        if (typeof chunk === 'string') {
+          chunks.push(new TextEncoder().encode(chunk))
+        } else {
+          chunks.push(new Uint8Array(chunk))
+        }
+      }
+      body = new Blob(chunks)
+    }
+  }
+
+  return new Request(url, { method, headers, body })
+}
+
+async function sendNodeResponse(res: any, webResponse: Response): Promise<void> {
+  res.statusCode = webResponse.status
+  webResponse.headers.forEach((value, key) => {
+    res.setHeader(key, value)
+  })
+  res.end(await webResponse.text())
+}
+
+export default async function handler(req: Request | any, res?: any): Promise<Response | void> {
+  if (res) {
+    const webRequest = await nodeRequestToWebRequest(req)
+    const webResponse = await handleRequest(webRequest)
+    await sendNodeResponse(res, webResponse)
+    return
+  }
+
+  return handleRequest(req as Request)
 }
