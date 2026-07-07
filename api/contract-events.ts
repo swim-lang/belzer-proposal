@@ -171,6 +171,29 @@ function supabaseDirectOrNull(): SupabaseDirectConfig | null {
   return { url, key }
 }
 
+function supabaseConfigSummary(): Record<string, unknown> {
+  const url = envValue('SUPABASE_URL')
+  const key =
+    envValue('SUPABASE_SERVICE_ROLE_KEY') ??
+    envValue('SUPABASE_SECRET_KEY') ??
+    envValue('SUPABASE_SERVICE_KEY')
+
+  let host = ''
+  if (url) {
+    try {
+      host = new URL(url).host
+    } catch {
+      host = 'invalid-url'
+    }
+  }
+
+  return {
+    supabaseUrlConfigured: !!url,
+    supabaseHost: host,
+    supabaseServiceKeyConfigured: !!key,
+  }
+}
+
 function json(data: unknown, init: ResponseInit = {}): Response {
   return new Response(JSON.stringify(data), {
     ...init,
@@ -546,6 +569,7 @@ async function handleRequest(req: Request): Promise<Response> {
           error: 'Contract event was not persisted',
           storeError,
           emailError: emailed.error,
+          config: supabaseConfigSummary(),
         },
         { status: 503 }
       )
@@ -583,6 +607,7 @@ async function handleRequest(req: Request): Promise<Response> {
           error: 'Contract event was not persisted',
           storeError,
           emailError: emailed.error,
+          config: supabaseConfigSummary(),
         },
         { status: 503 }
       )
