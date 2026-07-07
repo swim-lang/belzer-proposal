@@ -344,6 +344,29 @@ const websiteAddOns: AddOn[] = [
       'Launch QA',
     ],
   },
+  {
+    title: 'Blanc website',
+    price: '+$5,000',
+    body: "A premium, inquiry-led Shopify website that introduces the venue, tells the founders' story, and helps couples, planners, and event clients understand the full property.",
+    includes: [
+      'Website strategy and architecture',
+      'Shopify theme selection or implementation',
+      'Custom homepage design',
+      'Venue overview',
+      'Weddings page',
+      'Private and corporate events page',
+      'Spaces or property page',
+      'Gallery',
+      'Founder story',
+      'FAQ',
+      'Inquiry experience',
+      'Mobile and tablet adaptation',
+      'Core page copy refinement',
+      'Brand implementation',
+      'Basic metadata and on-page SEO',
+      'Launch QA',
+    ],
+  },
 ]
 
 const timeline: TimelineStep[] = [
@@ -373,15 +396,9 @@ const timeline: TimelineStep[] = [
   },
   {
     num: '05',
-    when: 'Weeks 4-6',
-    title: 'Blanc website',
-    items: ['Site structure', 'Core Shopify pages', 'Brand implementation'],
-  },
-  {
-    num: '06',
-    when: 'Weeks 7-8',
+    when: 'Weeks 4-5',
     title: 'Refinement & handoff',
-    items: ['Brand-family alignment', 'Website QA', 'Final files'],
+    items: ['Brand-family alignment', 'Guidelines', 'Final files'],
   },
 ]
 
@@ -398,29 +415,23 @@ const investmentLines: InvestmentLine[] = [
     summary: 'Strategy, verbal identity, visual identity, applications, and brand guide.',
     amount: '$5,950',
   },
-  {
-    num: '03',
-    phase: 'Blanc website',
-    summary: 'Shopify strategy, core page design, theme build, copy refinement, and launch QA.',
-    amount: '$5,000',
-  },
 ]
 
 const paymentMilestones: PaymentMilestone[] = [
   {
     amount: '50%',
     title: 'Due at kickoff',
-    body: '$8,450 reserves the project window and begins discovery.',
+    body: '$5,950 reserves the project window and begins discovery.',
   },
   {
     amount: '25%',
     title: 'After identity presentations',
-    body: '$4,225 is due after both primary identity directions have been presented.',
+    body: '$2,975 is due after both primary identity directions have been presented.',
   },
   {
     amount: '25%',
     title: 'At final handoff',
-    body: '$4,225 is due before delivery of final files, guidelines, and the Blanc website handoff.',
+    body: '$2,975 is due before delivery of final files and guidelines.',
   },
 ]
 
@@ -429,8 +440,7 @@ const assumptions = [
   'Kelly and Willy will provide consolidated feedback.',
   'Final company names remain Wildflower and Blanc unless naming is added through a separate scope.',
   'Printing, fabrication, signage production, vehicle installation, photography, paid fonts, premium Shopify themes, apps, hosting, and third-party costs are not included.',
-  'The Blanc website assumes theme-based Shopify implementation rather than a fully custom application.',
-  'The Wildflower website is not included in this engagement unless added through a separate written scope.',
+  'Website work is not included in this engagement unless added through a separate written scope.',
   'Large-scale product entry, catalog cleanup, inventory tools, booking systems, or advanced integrations can be scoped separately.',
   'The client will provide final product data, policies, pricing, event photography, and legally approved claims.',
   'Canva templates will be built around agreed-upon recurring workflows and delivered for client use.',
@@ -442,9 +452,8 @@ const nextStepItems = [
   'A thoughtful relationship between Wildflower and Blanc.',
   'A verbal identity and story for each company.',
   'Two complete and ownable visual identity systems.',
-  'A Blanc Shopify website that carries the new venue identity into inquiry and booking.',
   'Practical tools for planners, customers, deliveries, and marketing.',
-  'A foundation that can expand into signage, merchandise, editorial, and the future Wildflower site.',
+  'A foundation that can expand into websites, signage, merchandise, and editorial.',
 ]
 
 function MetaRow({ left, right, dark = false }: { left: string; right: string; dark?: boolean }) {
@@ -524,7 +533,7 @@ function ProposalNav() {
           <span className="eyebrow text-ink-2">Prepared for Kelly & Willy</span>
         </div>
         <div className="flex items-center gap-6">
-          <span className="eyebrow text-ink-2">Dual Brand Identity + Blanc Website · v2</span>
+          <span className="eyebrow text-ink-2">Dual Brand Identity · v3</span>
           <span className="eyebrow text-ink">July 2026</span>
         </div>
       </div>
@@ -854,51 +863,18 @@ function Deliverables() {
 function WebsiteAddOns() {
   return (
     <section className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-      <MetaRow left="§ 09 / Website scope" right="Blanc included" />
+      <MetaRow left="§ 09 / Website options" right="Future add-ons" />
       <div className="grid gap-12 border-t border-[var(--color-rule)] py-16 lg:grid-cols-[1.2fr_400px] lg:gap-20">
         <Reveal>
           <h2 className="serif max-w-[720px] text-[42px] font-medium leading-[48px] tracking-[-0.024em] md:text-[48px] md:leading-[52px]">
-            Bring Blanc fully into the customer experience.
+            Websites can follow the identities.
           </h2>
         </Reveal>
         <Reveal className="max-w-[400px] text-[15px] leading-[23px] text-ink-2">
-          The Blanc Shopify website is included in this engagement. Wildflower's website can be scoped separately later, once the new identity and rental catalog strategy are ready to move into a full storefront.
+          The selected engagement is focused on the brand systems. Either website can be added later as a separate Shopify build once the identities are ready to move into customer-facing pages.
         </Reveal>
       </div>
-      <Reveal className="grid gap-6 lg:grid-cols-[1fr_1fr]">
-        <div className="border border-[var(--color-rule)] bg-ink p-8 text-paper md:p-10">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-            <h3 className="serif text-[36px] font-medium leading-[40px] tracking-[-0.018em]">Blanc website</h3>
-            <span className="serif text-[40px] font-medium leading-[42px] tracking-[-0.02em]">Included</span>
-          </div>
-          <p className="mt-6 text-[14px] leading-[22px] text-paper/70">
-            A premium, inquiry-led Shopify website that introduces the venue, tells the founders' story, and helps couples, planners, and event clients understand the full property.
-          </p>
-          <div className="mt-8">
-            <span className="eyebrow mb-4 block text-paper/55">Includes</span>
-            <InlineList
-              items={[
-                'Website strategy and architecture',
-                'Shopify theme selection or implementation',
-                'Custom homepage design',
-                'Venue overview',
-                'Weddings page',
-                'Private and corporate events page',
-                'Spaces or property page',
-                'Gallery',
-                'Founder story',
-                'FAQ',
-                'Inquiry experience',
-                'Mobile and tablet adaptation',
-                'Core page copy refinement',
-                'Brand implementation',
-                'Basic metadata and on-page SEO',
-                'Launch QA',
-              ]}
-              dark
-            />
-          </div>
-        </div>
+      <Reveal className="grid gap-6 lg:grid-cols-2">
         {websiteAddOns.map((addOn) => (
           <div key={addOn.title} className="border border-[var(--color-rule)] p-8 md:p-10">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
@@ -915,16 +891,16 @@ function WebsiteAddOns() {
       </Reveal>
       <Reveal className="mt-6 grid gap-4 border border-[var(--color-rule)] p-6 md:grid-cols-3">
         <div className="flex items-baseline justify-between gap-4">
-          <span className="eyebrow text-ink-2">Blanc website</span>
-          <span className="serif text-[28px] font-medium leading-[32px]">$5,000</span>
+          <span className="eyebrow text-ink-2">Selected engagement</span>
+          <span className="serif text-[28px] font-medium leading-[32px]">$11,900</span>
         </div>
         <div className="flex items-baseline justify-between gap-4">
-          <span className="eyebrow text-ink-2">Included total</span>
-          <span className="serif text-[28px] font-medium leading-[32px]">$16,900</span>
-        </div>
-        <div className="flex items-baseline justify-between gap-4">
-          <span className="eyebrow text-ink-2">Wildflower website add-on</span>
+          <span className="eyebrow text-ink-2">Each website add-on</span>
           <span className="serif text-[28px] font-medium leading-[32px]">+$5,000</span>
+        </div>
+        <div className="flex items-baseline justify-between gap-4">
+          <span className="eyebrow text-ink-2">Both websites later</span>
+          <span className="serif text-[28px] font-medium leading-[32px]">$21,900</span>
         </div>
       </Reveal>
     </section>
@@ -934,7 +910,7 @@ function WebsiteAddOns() {
 function Timeline() {
   return (
     <section id="timeline" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[160px]">
-      <MetaRow left="§ 10 / Process and timeline" right="6-8 weeks" />
+      <MetaRow left="§ 10 / Process and timeline" right="4-5 weeks" />
       <Reveal>
         <h2 className="serif max-w-[1100px] py-12 text-[52px] font-medium leading-[56px] tracking-[-0.032em] md:text-[92px] md:leading-[92px]">
           Thoughtful enough to matter. Paced for your season.
@@ -942,7 +918,7 @@ function Timeline() {
       </Reveal>
       <Reveal>
         <p className="max-w-[720px] pb-12 text-[15px] leading-[23px] text-ink-2">
-          The identity work moves first, with the Blanc website planned while the brand systems are being finalized. The full engagement is paced across roughly 6-8 weeks so the venue identity can move directly into a useful Shopify experience.
+          The engagement is focused on the identities first: discovery, story, visual systems, refinement, and final handoff across roughly 4-5 weeks.
         </p>
       </Reveal>
       <Reveal className="grid gap-8 md:grid-cols-2 xl:grid-cols-6">
@@ -968,16 +944,16 @@ function Timeline() {
 function Investment() {
   return (
     <section id="investment" className="border-b border-[var(--color-rule)] bg-ink px-6 py-24 text-paper md:px-16 lg:px-[120px] lg:py-[160px]">
-      <MetaRow left="§ 11 / Investment" right="Dual brand identity + Blanc website" dark />
+      <MetaRow left="§ 11 / Investment" right="Dual brand identity" dark />
       <div className="flex flex-col gap-10 py-16 lg:flex-row lg:items-end lg:justify-between lg:gap-20">
         <Reveal>
           <h2 className="serif max-w-[560px] text-[56px] font-medium leading-[60px] tracking-[-0.034em] md:text-[92px] md:leading-[92px]">
-            Dual brand identity and Blanc website.
+            Dual brand identity engagement.
           </h2>
         </Reveal>
         <Reveal className="lg:text-right">
-          <div className="serif text-[72px] font-medium leading-[76px] tracking-[-0.036em] md:text-[120px] md:leading-[116px]">$16,900</div>
-          <div className="mt-2 text-[13px] leading-[18px] tracking-[0.04em] text-paper/55">One integrated engagement · two brands · one site</div>
+          <div className="serif text-[72px] font-medium leading-[76px] tracking-[-0.036em] md:text-[120px] md:leading-[116px]">$11,900</div>
+          <div className="mt-2 text-[13px] leading-[18px] tracking-[0.04em] text-paper/55">One integrated engagement · two brands</div>
         </Reveal>
       </div>
       <Reveal className="border-t border-[var(--color-rule)] pt-6">
@@ -999,29 +975,30 @@ function Investment() {
           <span />
           <h3 className="serif pr-8 text-[28px] font-medium leading-[32px] tracking-[-0.014em]">Total / Selected engagement</h3>
           <span />
-          <span className="serif text-[48px] font-medium leading-[48px] tracking-[-0.025em] md:text-right">$16,900</span>
+          <span className="serif text-[48px] font-medium leading-[48px] tracking-[-0.025em] md:text-right">$11,900</span>
         </div>
       </Reveal>
       <Reveal className="grid gap-8 border border-[var(--color-rule)] p-8 md:p-10 lg:grid-cols-[520px_1fr_180px] lg:gap-12">
         <div className="flex flex-col gap-3">
-          <span className="eyebrow text-paper/55">Optional add-on</span>
-          <h3 className="serif text-[40px] font-medium leading-[42px] tracking-[-0.02em]">Wildflower Shopify website.</h3>
+          <span className="eyebrow text-paper/55">Optional add-ons</span>
+          <h3 className="serif text-[40px] font-medium leading-[42px] tracking-[-0.02em]">Shopify websites.</h3>
           <p className="text-[14px] leading-[22px] text-paper/70">
-            The Wildflower website is not included in the selected engagement. It can be added later as a separate Shopify build when the rental catalog is ready to move into the new system.
+            Websites are not included in the selected engagement. Either site can be added later as a separate Shopify build when the brand systems are ready to move into customer-facing pages.
           </p>
         </div>
         <InlineList
           items={[
             'Wildflower Shopify website: $5,000',
+            'Blanc Shopify website: $5,000',
+            'Both websites: $10,000',
             'Theme-based build',
-            'Catalog, collection, and product page direction',
-            'Brand carried directly into the storefront',
+            'Brand carried directly into each storefront',
           ]}
           dark
         />
         <div className="lg:text-right">
           <div className="serif text-[40px] font-medium leading-[42px] tracking-[-0.02em]">+$5,000</div>
-          <div className="eyebrow mt-1 text-paper/55">$21,900 with Wildflower site</div>
+          <div className="eyebrow mt-1 text-paper/55">per website</div>
         </div>
       </Reveal>
       <Reveal className="pt-14">
@@ -1101,13 +1078,13 @@ function NextStep() {
             Build the brands people remember.
           </h2>
           <div className="lg:text-right">
-            <div className="serif text-[56px] font-medium leading-[58px] tracking-[-0.028em] md:text-[72px] md:leading-[72px]">$16,900</div>
-            <div className="eyebrow mt-2 text-ink-2">Selected engagement · 6-8 weeks</div>
+            <div className="serif text-[56px] font-medium leading-[58px] tracking-[-0.028em] md:text-[72px] md:leading-[72px]">$11,900</div>
+            <div className="eyebrow mt-2 text-ink-2">Selected engagement · 4-5 weeks</div>
           </div>
         </div>
         <div className="grid gap-10 pt-14 lg:grid-cols-[1fr_480px] lg:gap-20">
           <p className="max-w-[560px] text-[15px] leading-[23px] text-ink-2">
-            The engagement begins with one shared discovery phase, followed by strategic and creative development for each company and a focused Blanc Shopify website build. After the discovery conversation, Kelly and Willy receive:
+            The engagement begins with one shared discovery phase, followed by strategic and creative development for each company. After the discovery conversation, Kelly and Willy receive:
           </p>
           <div className="grid gap-3.5">
             {nextStepItems.map((item, index) => (
@@ -1167,7 +1144,7 @@ function Footer() {
       </div>
       <div className="flex flex-wrap items-center gap-6">
         <span className="eyebrow text-ink-2">July 2026</span>
-        <span className="eyebrow text-ink-2">Dual Brand Identity + Blanc Website · v2</span>
+        <span className="eyebrow text-ink-2">Dual Brand Identity · v3</span>
       </div>
     </footer>
   )
@@ -1178,7 +1155,7 @@ export function WildflowerBlancProposal() {
     document.title = 'Anchovies x Wildflower + Blanc - Proposal'
     const meta = document.querySelector('meta[name="description"]')
     if (meta) {
-      meta.setAttribute('content', 'A dual brand identity and Blanc website proposal for Wildflower and Blanc from Anchovies.')
+      meta.setAttribute('content', 'A dual brand identity proposal for Wildflower and Blanc from Anchovies.')
     }
   }, [])
 
