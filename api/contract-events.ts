@@ -40,6 +40,26 @@ type ContractEventRow = {
   updated_at: string
 }
 
+type ContractEventTableRow = {
+  id: string
+  contract_slug: string
+  event_type: string
+  occurred_at: string
+  page_url: string | null
+  signer_name: string | null
+  signer_title: string | null
+  signed_date: string | null
+  submitted_at: string | null
+  consent_accepted: boolean
+  signature_method: string | null
+  typed_signature: string | null
+  drawn_signature_data_url: string | null
+  generated_at: string | null
+  signed_document_html: string | null
+  payload: ContractEvent
+  created_at: string
+}
+
 type SupabaseDirectConfig = {
   url: string
   key: string
@@ -246,6 +266,73 @@ async function listSupabaseStorageEvents(supabase: SupabaseClient): Promise<Cont
   return events.filter((event): event is ContractEvent => !!event)
 }
 
+function toNullableDate(value: string): string | null {
+  return value ? value : null
+}
+
+function toContractEventTableRow(event: ContractEvent) {
+  return {
+    id: event.id,
+    contract_slug: event.contractSlug,
+    event_type: event.eventType,
+    occurred_at: event.occurredAt,
+    page_url: event.pageUrl || null,
+    signer_name: event.signerName || null,
+    signer_title: event.signerTitle || null,
+    signed_date: event.signedDate || null,
+    submitted_at: toNullableDate(event.submittedAt),
+    consent_accepted: event.consentAccepted,
+    signature_method: event.signatureMethod || null,
+    typed_signature: event.typedSignature || null,
+    drawn_signature_data_url: event.drawnSignatureDataUrl || null,
+    generated_at: toNullableDate(event.generatedAt),
+    signed_document_html: event.signedDocumentHtml || null,
+    payload: event,
+  }
+}
+
+function rowToContractEventTableEvent(row: ContractEventTableRow): ContractEvent {
+  return row.payload
+}
+
+async function saveViaSupabaseContractEvents(
+  supabase: SupabaseClient,
+  event: ContractEvent
+): Promise<{ ok: boolean; error?: string }> {
+  const { error } = await supabase.from('contract_events').upsert(toContractEventTableRow(event), {
+    onConflict: 'id',
+  })
+
+  if (error) return { ok: false, error: error.message }
+  return { ok: true }
+}
+
+async function readSupabaseContractEvent(
+  supabase: SupabaseClient,
+  id: string
+): Promise<ContractEvent | null> {
+  const { data, error } = await supabase
+    .from('contract_events')
+    .select('*')
+    .eq('id', id)
+    .maybeSingle<ContractEventTableRow>()
+
+  if (error || !data) return null
+  return rowToContractEventTableEvent(data)
+}
+
+async function listSupabaseContractEvents(supabase: SupabaseClient): Promise<ContractEvent[]> {
+  const { data, error } = await supabase
+    .from('contract_events')
+    .select('*')
+    .order('created_at', { ascending: false })
+    .limit(100)
+    .returns<ContractEventTableRow[]>()
+
+  if (error) throw error
+  return (data ?? []).map(rowToContractEventTableEvent)
+}
+
 function rowToContractEvent(row: ContractEventRow): ContractEvent | null {
   try {
     return JSON.parse(row.firm_name) as ContractEvent
@@ -345,6 +432,58 @@ async function saveViaSupabaseRestTable(
   return { ok: true }
 }
 
+async function saveViaSupabaseRestContractEvents(
+  config: SupabaseDirectConfig,
+  event: ContractEvent
+): Promise<{ ok: boolean; error?: string }> {
+  let res: Response
+  try {
+    res = await supabaseRestRequest(config, '/rest/v1/contract_events', {
+      method: 'POST',
+      headers: { prefer: 'resolution=merge-duplicates,return=minimal' },
+      body: JSON.stringify(toContractEventTableRow(event)),
+    })
+  } catch (err) {
+    return { ok: false, error: `Supabase REST threw: ${String(err)}` }
+  }
+
+  if (!res.ok) {
+    const body = await res.text().catch(() => '')
+    return { ok: false, error: `Supabase REST ${res.status}: ${body.slice(0, 300)}` }
+  }
+
+  return { ok: true }
+}
+
+async function readSupabaseRestContractEvent(
+  config: SupabaseDirectConfig,
+  id: string
+): Promise<ContractEvent | null> {
+  const params = new URLSearchParams({
+    select: '*',
+    id: `eq.${id}`,
+    limit: '1',
+  })
+  const res = await supabaseRestRequest(config, `/rest/v1/contract_events?${params.toString()}`)
+  if (!res.ok) throw new Error(`Supabase REST ${res.status}: ${(await res.text()).slice(0, 300)}`)
+
+  const rows = (await res.json()) as ContractEventTableRow[]
+  return rows[0] ? rowToContractEventTableEvent(rows[0]) : null
+}
+
+async function listSupabaseRestContractEvents(config: SupabaseDirectConfig): Promise<ContractEvent[]> {
+  const params = new URLSearchParams({
+    select: '*',
+    order: 'created_at.desc',
+    limit: '100',
+  })
+  const res = await supabaseRestRequest(config, `/rest/v1/contract_events?${params.toString()}`)
+  if (!res.ok) throw new Error(`Supabase REST ${res.status}: ${(await res.text()).slice(0, 300)}`)
+
+  const rows = (await res.json()) as ContractEventTableRow[]
+  return rows.map(rowToContractEventTableEvent)
+}
+
 async function readSupabaseRestTableEvent(
   config: SupabaseDirectConfig,
   id: string
@@ -424,10 +563,22 @@ async function handleRequest(req: Request): Promise<Response> {
       }
     }
 
+    let contractEventsError = ''
     let storageError = ''
     let tableError = ''
 
     if (supabase) {
+      try {
+        if (id) {
+          const item = await readSupabaseContractEvent(supabase, id)
+          if (item) return json({ event: item })
+        } else {
+          return json({ events: await listSupabaseContractEvents(supabase) })
+        }
+      } catch (err) {
+        contractEventsError = String(err)
+      }
+
       try {
         if (id) {
           const item = await readSupabaseStorageEvent(supabase, id)
@@ -455,14 +606,25 @@ async function handleRequest(req: Request): Promise<Response> {
     if (supabaseDirect) {
       try {
         if (id) {
+          const item = await readSupabaseRestContractEvent(supabaseDirect, id)
+          if (item) return json({ event: item })
+        } else {
+          return json({ events: await listSupabaseRestContractEvents(supabaseDirect) })
+        }
+      } catch (err) {
+        contractEventsError = `${contractEventsError}; Supabase REST contract_events: ${String(err)}`
+      }
+
+      try {
+        if (id) {
           const item = await readSupabaseRestTableEvent(supabaseDirect, id)
-          if (!item) return json({ error: 'Not found', storageError, tableError }, { status: 404 })
+          if (!item) return json({ error: 'Not found', contractEventsError, storageError, tableError }, { status: 404 })
           return json({ event: item })
         }
 
         return json({ events: await listSupabaseRestTableEvents(supabaseDirect) })
       } catch (err) {
-        return json({ error: 'Failed to read contract events', details: String(err), storageError, tableError }, { status: 503 })
+        return json({ error: 'Failed to read contract events', details: String(err), contractEventsError, storageError, tableError }, { status: 503 })
       }
     }
 
@@ -515,20 +677,25 @@ async function handleRequest(req: Request): Promise<Response> {
     }
 
     if (supabase) {
+      const contractSaved = await saveViaSupabaseContractEvents(supabase, event)
+      if (contractSaved.ok) return json({ ok: true, id, saved: true, store: 'supabase-contract-events', emailed: false })
+      const contractEventsError = contractSaved.error ?? 'Supabase contract_events save failed'
       const saved = await saveViaSupabaseStorage(supabase, event)
       if (saved.ok) return json({ ok: true, id, saved: true, store: 'supabase-storage', emailed: false })
       const storageError = saved.error ?? 'Supabase storage save failed'
       const tableSaved = await saveViaSupabaseTable(supabase, event)
       if (tableSaved.ok) return json({ ok: true, id, saved: true, store: 'supabase-firm-pages', emailed: false })
-      storeError = `Supabase storage: ${storageError}; Supabase table: ${tableSaved.error ?? 'save failed'}`
+      storeError = `Supabase contract_events: ${contractEventsError}; Supabase storage: ${storageError}; Supabase table: ${tableSaved.error ?? 'save failed'}`
     } else {
       storeError = 'No KV or Supabase storage backend configured'
     }
 
     if (supabaseDirect) {
+      const restContractSaved = await saveViaSupabaseRestContractEvents(supabaseDirect, event)
+      if (restContractSaved.ok) return json({ ok: true, id, saved: true, store: 'supabase-rest-contract-events', emailed: false })
       const restSaved = await saveViaSupabaseRestTable(supabaseDirect, event)
       if (restSaved.ok) return json({ ok: true, id, saved: true, store: 'supabase-rest-firm-pages', emailed: false })
-      storeError = `${storeError}; Supabase REST table: ${restSaved.error ?? 'save failed'}`
+      storeError = `${storeError}; Supabase REST contract_events: ${restContractSaved.error ?? 'save failed'}; Supabase REST table: ${restSaved.error ?? 'save failed'}`
     }
 
     const emailed = await sendViaResend(event)
@@ -560,9 +727,11 @@ async function handleRequest(req: Request): Promise<Response> {
   } catch (err) {
     let storeError = String(err)
     if (supabaseDirect) {
+      const restContractSaved = await saveViaSupabaseRestContractEvents(supabaseDirect, event)
+      if (restContractSaved.ok) return json({ ok: true, id, saved: true, store: 'supabase-rest-contract-events', emailed: false, storeError })
       const restSaved = await saveViaSupabaseRestTable(supabaseDirect, event)
       if (restSaved.ok) return json({ ok: true, id, saved: true, store: 'supabase-rest-firm-pages', emailed: false, storeError })
-      storeError = `${storeError}; Supabase REST table: ${restSaved.error ?? 'save failed'}`
+      storeError = `${storeError}; Supabase REST contract_events: ${restContractSaved.error ?? 'save failed'}; Supabase REST table: ${restSaved.error ?? 'save failed'}`
     }
 
     const emailed = await sendViaResend(event)
