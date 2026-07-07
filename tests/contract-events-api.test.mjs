@@ -14,4 +14,6 @@ test('contract event API has a direct Supabase REST persistence fallback', () =>
   assert.match(api, /store: 'supabase-rest-firm-pages'/)
   assert.match(api, /\/rest\/v1\/firm_pages/)
   assert.match(api, /requiresPersistence\(event\.eventType\)/)
+  assert.match(api, /Contract event logged but not persisted/)
+  assert.doesNotMatch(api, /supabaseConfigSummary/)
 })
