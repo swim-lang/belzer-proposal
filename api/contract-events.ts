@@ -611,15 +611,16 @@ async function nodeRequestToWebRequest(req: any): Promise<Request> {
     if (req.body !== undefined) {
       body = typeof req.body === 'string' ? req.body : JSON.stringify(req.body)
     } else {
-      const chunks: Uint8Array[] = []
+      const chunks: string[] = []
+      const decoder = new TextDecoder()
       for await (const chunk of req) {
         if (typeof chunk === 'string') {
-          chunks.push(new TextEncoder().encode(chunk))
+          chunks.push(chunk)
         } else {
-          chunks.push(new Uint8Array(chunk))
+          chunks.push(decoder.decode(chunk))
         }
       }
-      body = new Blob(chunks)
+      body = chunks.join('')
     }
   }
 
