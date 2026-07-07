@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { Reveal } from './components/Reveal'
 
 const calendarHref = 'https://cal.com/anchovies/30min?overlayCalendar=true'
-const contractHref = '/proposal/cipher/contract'
 
 type Pillar = {
   label: string
@@ -63,7 +62,6 @@ const navSections = [
   { id: 'deliverables', label: 'Deliverables' },
   { id: 'timeline', label: 'Timeline' },
   { id: 'investment', label: 'Investment' },
-  { id: 'next', label: 'Next Step' },
 ]
 
 const pillars: Pillar[] = [
@@ -200,13 +198,16 @@ const phases: Phase[] = [
     num: '04',
     title: 'Website design and build',
     body: 'We bring the brand to life through a focused, polished, responsive website designed to create curiosity, communicate credibility, and convert the right visitors into conversations.',
-    recommended: ['Home', 'Approach / What We Do', 'About / Why Cipher'],
+    recommended: ['Home', 'Solutions', 'Outcomes', 'About', 'Contact'],
     includes: [
       'Website strategy and architecture',
       'Sitemap',
       'Website copywriting',
       'Homepage design',
-      'Interior page design',
+      'Solutions page design',
+      'Outcomes page design',
+      'About page design',
+      'Contact page design',
       'Responsive desktop and mobile design',
       'Framer development',
       'Contact or inquiry experience',
@@ -251,8 +252,17 @@ const deliverableGroups: DeliverableGroup[] = [
     ],
   },
   {
-    title: 'Website · 22-26',
-    items: ['Sitemap', 'Website copy', 'Homepage design', 'Interior page designs', 'Responsive Framer website with launch QA'],
+    title: 'Website · 22-29',
+    items: [
+      'Sitemap',
+      'Website copy',
+      'Homepage design',
+      'Solutions page design',
+      'Outcomes page design',
+      'About page design',
+      'Contact page design',
+      'Responsive Framer website with launch QA',
+    ],
   },
 ]
 
@@ -273,7 +283,7 @@ const timeline: TimelineStep[] = [
     num: '03',
     when: 'Week 3',
     title: 'Identity refinement and website design',
-    items: ['Identity refinement', 'Applications', 'Website copy', 'Homepage and interior design'],
+    items: ['Identity refinement', 'Applications', 'Website copy', 'Homepage and page design'],
   },
   {
     num: '04',
@@ -288,7 +298,7 @@ const investmentLines: InvestmentLine[] = [
     num: '01',
     phase: 'Strategy + messaging',
     summary: 'Discovery, positioning, messaging, creative direction, and website strategy.',
-    amount: '$3,500',
+    amount: '$2,500',
   },
   {
     num: '02',
@@ -299,14 +309,14 @@ const investmentLines: InvestmentLine[] = [
   {
     num: '03',
     phase: 'Website design',
-    summary: 'Sitemap, copywriting, homepage, interior pages, and responsive design.',
+    summary: 'Sitemap, copywriting, five page designs, and responsive design.',
     amount: '$3,500',
   },
   {
     num: '04',
     phase: 'Website build + launch',
     summary: 'Framer development, QA, launch support, and final handoff.',
-    amount: '$3,500',
+    amount: '$4,500',
   },
 ]
 
@@ -326,25 +336,6 @@ const paymentMilestones: PaymentMilestone[] = [
     title: 'At final handoff',
     body: '$3,975 is due before delivery of final files, website transfer, and launch handoff.',
   },
-]
-
-const assumptions = [
-  'The engagement includes up to two focused refinement rounds for the primary identity presentation.',
-  'Austin, Zach, and the Cipher team will provide consolidated feedback.',
-  'Final company name remains Cipher unless naming is added through a separate scope.',
-  'Website scope includes up to three core pages.',
-  'Advanced advertising setup, media buying, analytics dashboards, CRM integrations, gated content systems, custom software, and advanced personalization logic are not included unless scoped separately.',
-  'Paid fonts, third-party software, hosting, premium plugins, stock imagery, photography, videography, and outside production costs are not included.',
-  'The client will provide final legal, compliance, and claims approvals for all public-facing language.',
-  'Timely, consolidated feedback will protect the proposed schedule.',
-]
-
-const nextStepItems = [
-  'A clear position in the market.',
-  'Messaging that makes the offering easier to understand.',
-  'A premium, digital-first visual identity system.',
-  'A focused website designed to create curiosity and convert the right conversations.',
-  'A foundation that can expand into decks, campaigns, digital ads, retargeting, and future tools.',
 ]
 
 function MetaRow({ left, right, dark = false }: { left: string; right: string; dark?: boolean }) {
@@ -442,9 +433,6 @@ function ProposalNav() {
             ))}
           </nav>
           <div className="flex items-center gap-2">
-            <a href={contractHref} className="hidden rounded-full px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper whitespace-nowrap sm:inline-flex">
-              Review contract
-            </a>
             <a href={calendarHref} target="_blank" rel="noreferrer" className="rounded-full border border-ink px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper whitespace-nowrap">
               Schedule discovery
             </a>
@@ -484,16 +472,10 @@ function Hero() {
         </Reveal>
         <Reveal className="flex max-w-[430px] flex-col gap-5">
           <p className="text-[15px] leading-[23px] text-ink-2">
-            You came to us for a brand and website. We see the opportunity to build a sharp, digital-first identity for a company that helps political and corporate clients buy media with more clarity, transparency, and strategic control.
-          </p>
-          <p className="text-[15px] leading-[23px] text-ink-2">
             The brand should feel intelligent, precise, premium, and slightly mysterious. The website should be simple, polished, and conversion-focused, giving visitors a clear sense that Cipher understands the systems others are still trying to figure out.
           </p>
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <AnchorButton>{'Schedule discovery ->'}</AnchorButton>
-            <AnchorButton href={contractHref} variant="outline">
-              Review contract
-            </AnchorButton>
             <AnchorButton href="#scope" variant="outline">
               See the scope
             </AnchorButton>
@@ -532,7 +514,7 @@ function BrandDirection() {
         </Reveal>
       </div>
       <Reveal className="pt-2">
-        <MetaRow left="Fig. 03 / Creative cues" right="63 69 70 68 65 72" dark />
+        <MetaRow left="Fig. 03 / Creative cues" right="Intelligent restraint" dark />
         <div className="mt-6 grid border-t border-paper/20 md:grid-cols-2 xl:grid-cols-4">
           {cues.map((cue, index) => (
             <div key={cue.title} className={`flex min-h-[220px] flex-col gap-5 border-paper/20 p-8 ${pillarBorderClasses[index]}`}>
@@ -580,7 +562,7 @@ function Scope() {
           </h2>
         </Reveal>
         <Reveal className="max-w-[400px] pt-2 text-[15px] leading-[23px] text-ink-2">
-          From discovery to launch: strategy, messaging, identity, and a responsive Framer build, one integrated arc of work.
+          From discovery to launch: strategy, messaging, identity, and a five-page responsive Framer build, one integrated arc of work.
         </Reveal>
       </div>
       <div className="border-t border-[var(--color-rule)]">
@@ -641,7 +623,7 @@ function WebsiteConcept() {
 function Deliverables() {
   return (
     <section id="deliverables" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-      <MetaRow left="§ 08 / Final deliverables" right="Twenty-six artifacts" />
+      <MetaRow left="§ 08 / Final deliverables" right="Twenty-nine artifacts" />
       <div className="grid gap-12 border-t border-[var(--color-rule)] py-16 lg:grid-cols-[1.2fr_400px] lg:gap-20">
         <Reveal>
           <h2 className="serif max-w-[780px] text-[50px] font-medium leading-[54px] tracking-[-0.03em] md:text-[88px] md:leading-[94px]">
@@ -649,7 +631,7 @@ function Deliverables() {
           </h2>
         </Reveal>
         <Reveal className="max-w-[400px] pt-2 text-[15px] leading-[23px] text-ink-2">
-          Twenty-six artifacts across strategy, identity, and website. The complete kit for the brand and its launch.
+          Twenty-nine artifacts across strategy, identity, and website. The complete kit for the brand and its launch.
         </Reveal>
       </div>
       <Reveal className="grid gap-0 border-t border-[var(--color-rule)] lg:grid-cols-3">
@@ -746,70 +728,10 @@ function Investment() {
   )
 }
 
-function Assumptions() {
-  return (
-    <section className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-      <MetaRow left="§ 11 / Working assumptions" right="Scope boundaries" />
-      <div className="grid gap-12 pt-12 lg:grid-cols-[380px_1fr] lg:gap-20">
-        <Reveal>
-          <h2 className="serif max-w-[380px] text-[44px] font-medium leading-[50px] tracking-[-0.024em] md:text-[56px] md:leading-[64px]">
-            A few things we are assuming.
-          </h2>
-        </Reveal>
-        <Reveal className="border-t border-[var(--color-rule)] lg:border-t-0">
-          {assumptions.map((item) => (
-            <div key={item} className="border-b border-[var(--color-rule)] py-5">
-              <p className="text-[14px] leading-[22px] text-ink">{item}</p>
-            </div>
-          ))}
-        </Reveal>
-      </div>
-    </section>
-  )
-}
-
-function NextStep() {
-  return (
-    <section id="next" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-      <MetaRow left="§ 13 / Next step" right="Schedule discovery" />
-      <div className="flex flex-col gap-8 py-12 lg:flex-row lg:items-end lg:justify-between lg:gap-20">
-        <Reveal>
-          <h2 className="serif max-w-[820px] text-[54px] font-medium leading-[58px] tracking-[-0.032em] md:text-[82px] md:leading-[86px]">
-            Build the brand that makes complexity feel controlled.
-          </h2>
-        </Reveal>
-        <Reveal className="lg:text-right">
-          <div className="serif text-[56px] font-medium leading-[58px] tracking-[-0.028em]">$15,900</div>
-          <div className="eyebrow mt-2 text-ink-2">Selected engagement · 4 weeks</div>
-        </Reveal>
-      </div>
-      <Reveal className="border-t border-[var(--color-rule)] pt-8">
-        <p className="max-w-[580px] pb-8 text-[15px] leading-[23px] text-ink-2">
-          The engagement begins with discovery, followed by strategy, messaging, identity development, website design, build, and handoff. After the discovery conversation, Cipher receives:
-        </p>
-        <div>
-          {nextStepItems.map((item, index) => (
-            <div key={item} className="grid grid-cols-[56px_1fr] gap-8 border-t border-[var(--color-rule)] py-6 last:border-b">
-              <span className="eyebrow leading-[28px] text-ink-2">{String(index + 1).padStart(2, '0')}</span>
-              <span className="serif text-[24px] leading-[30px] tracking-[-0.012em]">{item}</span>
-            </div>
-          ))}
-        </div>
-        <div className="flex flex-wrap items-center gap-4 pt-12">
-          <AnchorButton>{'Schedule discovery ->'}</AnchorButton>
-          <AnchorButton href={contractHref} variant="outline">
-            Review contract
-          </AnchorButton>
-        </div>
-      </Reveal>
-    </section>
-  )
-}
-
 function Closing() {
   return (
     <section className="bg-ink px-6 py-24 text-paper md:px-16 lg:px-[120px] lg:py-[160px]">
-      <MetaRow left="§ 14 / In closing" right="Cipher" dark />
+      <MetaRow left="§ 11 / In closing" right="Cipher" dark />
       <Reveal className="border-t border-paper/20 pt-16">
         <h2 className="serif max-w-[1000px] text-[62px] font-medium italic leading-[68px] tracking-[-0.034em] md:text-[104px] md:leading-[110px]">
           The code behind the buy.
@@ -827,9 +749,6 @@ function Closing() {
           </p>
         </Reveal>
       </div>
-      <Reveal className="pt-12 font-mono text-[11px] leading-[16px] tracking-[0.18em] text-paper/45">
-        63 69 70 68 65 72 -&gt; cipher
-      </Reveal>
     </section>
   )
 }
@@ -846,9 +765,6 @@ function Footer() {
       <div className="flex flex-wrap items-center gap-6">
         <a href={calendarHref} target="_blank" rel="noreferrer" className="eyebrow text-ink-2 hover:text-ink">
           Schedule discovery -&gt;
-        </a>
-        <a href={contractHref} className="eyebrow text-ink-2 hover:text-ink">
-          Review contract
         </a>
         <span className="eyebrow text-ink">Brand Identity + Website · v1 · July 2026</span>
       </div>
@@ -876,8 +792,6 @@ export function CipherProposal() {
       <Deliverables />
       <Timeline />
       <Investment />
-      <Assumptions />
-      <NextStep />
       <Closing />
       <Footer />
     </main>

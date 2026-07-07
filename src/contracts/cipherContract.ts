@@ -47,7 +47,7 @@ export const cipherContract: ContractData = {
     {
       label: 'A',
       title: 'Discovery and direction',
-      price: '$3,500',
+      price: '$2,500',
       timing: 'Week 1',
       includes: [
         'Founder discovery',
@@ -104,14 +104,17 @@ export const cipherContract: ContractData = {
     {
       label: 'D',
       title: 'Website design and build',
-      price: '$7,000',
+      price: '$8,000',
       timing: 'Week 3 to Week 4',
       includes: [
         'Website strategy and architecture',
         'Sitemap',
         'Website copywriting',
         'Homepage design',
-        'Interior page design',
+        'Solutions page design',
+        'Outcomes page design',
+        'About page design',
+        'Contact page design',
         'Responsive desktop and mobile design',
         'Framer development',
         'Contact or inquiry experience',
@@ -121,7 +124,7 @@ export const cipherContract: ContractData = {
         'Launch support',
       ],
       deliverable:
-        'A focused, responsive Framer website for up to three core pages, built to create curiosity, communicate credibility, and support launch.',
+        'A focused, responsive five-page Framer website, built to create curiosity, communicate credibility, and support launch.',
     },
   ],
   optionalSupport: [
