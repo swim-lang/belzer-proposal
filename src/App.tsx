@@ -4,6 +4,7 @@ import { PreMeetingPage } from './PreMeetingPage'
 import { QuietHome } from './QuietHome'
 import { SavedFirmPage } from './SavedFirmPage'
 import { BapsCharitiesProposal } from './BapsCharitiesProposal'
+import { CipherProposal } from './CipherProposal'
 import { FiberSoftChewProposal } from './FiberSoftChewProposal'
 import { GarySpringsteadProposal } from './GarySpringsteadProposal'
 import { GenesiProposal } from './GenesiProposal'
@@ -20,6 +21,7 @@ import { BelzerPilotProposal } from './BelzerPilotProposal'
 import { Admin } from './admin/Admin'
 import { Intake } from './intake/Intake'
 import { ContractPage } from './contracts/ContractPage'
+import { cipherContract } from './contracts/cipherContract'
 import { fiberSoftChewContract } from './contracts/fiberSoftChewContract'
 import { genesiContract } from './contracts/genesiContract'
 import { offMenuContract } from './contracts/offMenuContract'
@@ -87,6 +89,10 @@ export default function App() {
     pathname === '/proposal/wildflower-blanc' ||
     pathname.startsWith('/proposal/wildflower-blanc/')
   const isWildflowerBlancContract = pathname === '/proposal/wildflower-blanc/contract'
+  const isCipher =
+    pathname === '/proposal/cipher' ||
+    pathname.startsWith('/proposal/cipher/')
+  const isCipherContract = pathname === '/proposal/cipher/contract'
   const isSoupToSoftware =
     pathname === '/proposal/soup-to-software' ||
     pathname.startsWith('/proposal/soup-to-software/')
@@ -205,6 +211,14 @@ export default function App() {
 
   if (isWildflowerBlanc) {
     return <WildflowerBlancProposal />
+  }
+
+  if (isCipherContract) {
+    return <ContractPage contract={cipherContract} />
+  }
+
+  if (isCipher) {
+    return <CipherProposal />
   }
 
   if (isSoupToSoftware) {

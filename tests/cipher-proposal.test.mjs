@@ -1,0 +1,57 @@
+import { readFileSync } from 'node:fs'
+import test from 'node:test'
+import assert from 'node:assert/strict'
+
+const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf8')
+
+test('Cipher proposal is registered with Paper-sourced brand and website scope', () => {
+  const app = read('src/App.tsx')
+  const dashboard = read('src/admin/Dashboard.tsx')
+  const proposal = read('src/CipherProposal.tsx')
+  const contract = read('src/contracts/cipherContract.ts')
+
+  assert.match(app, /CipherProposal/)
+  assert.match(app, /cipherContract/)
+  assert.match(app, /\/proposal\/cipher/)
+  assert.match(app, /\/proposal\/cipher\/contract/)
+  assert.match(dashboard, /name: 'Cipher'/)
+  assert.match(dashboard, /\/proposal\/cipher/)
+
+  assert.match(proposal, /Complexity, made controlled\./)
+  assert.match(proposal, /Cipher exists to make that complexity usable\./)
+  assert.match(proposal, /Sleek in form\. Sharp in feeling\./)
+  assert.match(proposal, /What the work needs to accomplish\./)
+  assert.match(proposal, /A complete brand and website engagement\./)
+  assert.match(proposal, /A website that feels intelligent\./)
+  assert.match(proposal, /Twenty-six artifacts/)
+  assert.match(proposal, /Focused, efficient, paced for momentum\./)
+  assert.match(proposal, /\$15,900/)
+  assert.match(proposal, /\$7,950/)
+  assert.match(proposal, /\$3,975/)
+  assert.match(proposal, /Schedule discovery/)
+  assert.match(proposal, /Review contract/)
+  assert.match(proposal, /\/proposal\/cipher\/contract/)
+  assert.match(proposal, /63 69 70 68 65 72/)
+
+  assert.match(proposal, /§ 01 \/ Overview/)
+  assert.match(proposal, /§ 04 \/ Brand direction/)
+  assert.match(proposal, /§ 05 \/ Strategic priorities/)
+  assert.match(proposal, /§ 06 \/ Scope of work/)
+  assert.match(proposal, /§ 07 \/ Website concept/)
+  assert.match(proposal, /§ 08 \/ Final deliverables/)
+  assert.match(proposal, /§ 09 \/ Process and timeline/)
+  assert.match(proposal, /§ 10 \/ Investment/)
+  assert.match(proposal, /§ 11 \/ Working assumptions/)
+  assert.match(proposal, /§ 13 \/ Next step/)
+  assert.match(proposal, /§ 14 \/ In closing/)
+  assert.doesNotMatch(proposal, /§ 12 \//)
+
+  assert.match(contract, /Brand Identity \+ Website Engagement/)
+  assert.match(contract, /slug: 'cipher'/)
+  assert.match(contract, /fee: '\$15,900'/)
+  assert.match(contract, /timeline: '4 weeks'/)
+  assert.match(contract, /amount: '\$7,950'/)
+  assert.match(contract, /amount: '\$3,975'/)
+  assert.match(contract, /Website design and build/)
+  assert.match(contract, /Responsive desktop and mobile design/)
+})

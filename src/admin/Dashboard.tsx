@@ -209,6 +209,13 @@ export function Dashboard() {
       status: 'Active',
       href: '/proposal/wildflower-blanc',
     },
+    {
+      id: 'cipher',
+      name: 'Cipher',
+      tagline: 'Brand identity + website · $15,900',
+      status: 'Active',
+      href: '/proposal/cipher',
+    },
   ]
 
   const recent = (submissions ?? []).slice(0, 5)
