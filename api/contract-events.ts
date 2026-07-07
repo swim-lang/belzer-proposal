@@ -556,8 +556,15 @@ export default async function handler(req: Request): Promise<Response> {
       emailError: emailed.error,
     })
   } catch (err) {
+    let storeError = String(err)
+    if (supabaseDirect) {
+      const restSaved = await saveViaSupabaseRestTable(supabaseDirect, event)
+      if (restSaved.ok) return json({ ok: true, id, saved: true, store: 'supabase-rest-firm-pages', emailed: false, storeError })
+      storeError = `${storeError}; Supabase REST table: ${restSaved.error ?? 'save failed'}`
+    }
+
     const emailed = await sendViaResend(event)
-    if (emailed.ok) return json({ ok: true, id, saved: false, emailed: true, storeError: String(err) })
+    if (emailed.ok) return json({ ok: true, id, saved: false, emailed: true, storeError })
 
     console.log('contract-event', event)
     if (requiresPersistence(event.eventType)) {
@@ -569,13 +576,13 @@ export default async function handler(req: Request): Promise<Response> {
           emailed: false,
           logged: true,
           error: 'Contract event was not persisted',
-          storeError: String(err),
+          storeError,
           emailError: emailed.error,
         },
         { status: 503 }
       )
     }
 
-    return json({ ok: true, id, saved: false, emailed: false, logged: true, storeError: String(err), emailError: emailed.error })
+    return json({ ok: true, id, saved: false, emailed: false, logged: true, storeError, emailError: emailed.error })
   }
 }
