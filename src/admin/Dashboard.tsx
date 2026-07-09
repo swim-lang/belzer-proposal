@@ -154,6 +154,13 @@ export function Dashboard() {
       href: '/proposal/soft-hours',
     },
     {
+      id: 'molly',
+      name: 'Molly Engels',
+      tagline: 'Brand identity, website, and copy direction · $1,950',
+      status: 'Active',
+      href: '/proposal/molly',
+    },
+    {
       id: 'humanaai',
       name: 'HumanaAI',
       tagline: 'Brand, site, deck, and app concept · May 2026',

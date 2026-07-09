@@ -1,0 +1,145 @@
+import type { ContractData } from './types'
+
+export const mollyEngelsContract: ContractData = {
+  slug: 'molly',
+  title: 'Brand Identity, Website, and Copy Direction',
+  preparedDate: 'June 8, 2026',
+  agencySignedDate: 'June 8, 2026',
+  effectiveDate: '[date both parties sign]',
+  projectStart: 'after this Contract is signed and the kickoff invoice is paid',
+  timeline: '2 to 3 weeks',
+  fee: '$1,950',
+  client: {
+    name: 'Molly Engels',
+    label: 'Client',
+    contactName: 'Molly Engels',
+  },
+  agency: {
+    name: 'Anchovies LLC',
+    label: 'Agency',
+    address: 'Colorado limited liability company',
+  },
+  paymentMilestones: [
+    {
+      amount: '$975',
+      label: 'Due at project kickoff',
+      body: 'Project starts when the kickoff invoice is paid and we have reviewed the initial references.',
+    },
+    {
+      amount: '$487.50',
+      label: 'Due at the website phase',
+      body: 'Due when we move into website design and build, once the identity direction is approved.',
+    },
+    {
+      amount: '$487.50',
+      label: 'Due before final handoff',
+      body: 'Due before the final identity files, website access, and launch handoff are delivered.',
+    },
+  ],
+  revisionRounds: [
+    'Discovery and creative direction: 1 round of revisions on the creative direction summary and moodboard.',
+    'Brand identity: 2 rounds of refinement after the identity direction is presented.',
+    'Website copy and structure: 1 round of revisions on the page structure and core copy direction.',
+    'Three-page website: 1 round of design/build refinements before launch.',
+    'Final handoff: 1 round of cleanup edits before final asset delivery.',
+  ],
+  scopePhases: [
+    {
+      label: 'A',
+      title: 'Discovery and creative direction',
+      price: 'Included',
+      timing: 'Week 1',
+      includes: [
+        'Founder discovery',
+        'Audience and client discussion',
+        'Offer and service discussion',
+        'Visual direction',
+        'Reference review',
+        'Moodboard direction',
+        'Website structure planning',
+      ],
+      deliverable:
+        'A creative direction summary, moodboard, website structure recommendation, and initial direction for identity and site.',
+    },
+    {
+      label: 'B',
+      title: 'Brand identity',
+      price: '$900',
+      timing: 'Week 1',
+      includes: [
+        'Primary logo or wordmark',
+        'Secondary lockup',
+        'Color palette',
+        'Typography system',
+        'Graphic style or motif',
+        'Social/profile asset direction',
+        'Simple brand guide',
+      ],
+      deliverable:
+        'A starter identity system that gives Molly a recognizable look and a clear way to show up across the website and future materials.',
+    },
+    {
+      label: 'C',
+      title: 'Website copy and structure',
+      price: '$200',
+      timing: 'Week 1 to Week 2',
+      includes: [
+        'Homepage message direction',
+        'Services/offer language',
+        'Short about language',
+        'CTA language',
+        'Page hierarchy',
+        'Simple content flow',
+      ],
+      deliverable:
+        'A concise copy and content structure for the three website pages.',
+    },
+    {
+      label: 'D',
+      title: 'Three-page website',
+      price: '$850',
+      timing: 'Week 2 to Week 3',
+      includes: [
+        'Three-page website design',
+        'Three-page website build',
+        'Desktop design',
+        'Mobile design',
+        'Simple contact path',
+        'Basic SEO setup',
+        'Responsive layout',
+        'Launch support',
+      ],
+      deliverable:
+        'A polished three-page website that gives people a clear place to learn about Molly, understand the work, and reach out.',
+    },
+    {
+      label: 'E',
+      title: 'Final handoff',
+      price: 'Included',
+      timing: 'Week 3',
+      includes: [
+        'Final logo exports',
+        'Color and typography guidance',
+        'Website login/access handoff',
+        'Basic usage notes',
+        'Social/profile asset direction',
+        'Launch checklist',
+      ],
+      deliverable:
+        'A clean handoff so Molly can start using the brand and website right away.',
+    },
+  ],
+  optionalSupport: [
+    'Naming sprint',
+    'Expanded case studies',
+    'Additional website pages',
+    'Photography or creative direction',
+    'Media kit',
+    'Proposal template',
+    'Social templates',
+    'Resume/CV design',
+    'Client outreach materials',
+    'Newsletter or Substack direction',
+    'Collaborator introductions',
+  ],
+}
