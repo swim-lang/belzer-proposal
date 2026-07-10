@@ -1,0 +1,125 @@
+import type { ContractData } from './types'
+
+export const softHoursContract: ContractData = {
+  slug: 'soft-hours',
+  title: 'Shopify Website Completion Sprint',
+  preparedDate: 'July 10, 2026',
+  agencySignedDate: 'July 10, 2026',
+  effectiveDate: '[date both parties sign]',
+  projectStart: 'after this Contract is signed and the kickoff invoice is paid',
+  timeline: '2 weeks, with launch buffer',
+  fee: '$3,000',
+  client: {
+    name: 'Soft Hours',
+    label: 'Client',
+    contactName: 'Molly Engels',
+  },
+  agency: {
+    name: 'Anchovies LLC',
+    label: 'Agency',
+    address: 'Colorado limited liability company',
+  },
+  paymentMilestones: [
+    {
+      amount: '$1,500',
+      label: 'Due at project kickoff',
+      body: 'Project starts when the kickoff invoice is paid and Shopify access, HTML files, current page direction, photography, product details, and launch notes have been shared.',
+    },
+    {
+      amount: '$1,500',
+      label: 'Due before final handoff',
+      body: 'Due when Anchovies has completed the agreed Shopify development, editable section work, mobile QA closeout, launch checklist, and handoff notes. This final payment is not dependent on Soft Hours completing product uploads, payment and bank setup, shipping, tax, back-end admin setup, or other owner-side Shopify tasks.',
+    },
+  ],
+  revisionRounds: [
+    'Technical intake and build plan: 1 focused alignment pass on the Shopify theme path, page priorities, current HTML, mobile direction, and owner-side launch tasks.',
+    'Core page design and development: 1 round of refinement on the priority Shopify pages before final QA.',
+    'Editable Shopify sections: 1 round of refinement on key editable sections, content controls, and handoff notes.',
+    'Mobile QA and launch basics: 1 round of cleanup edits before final handoff.',
+  ],
+  scopePhases: [
+    {
+      label: 'A',
+      title: 'Technical intake and Shopify build plan',
+      price: 'Included',
+      timing: 'Week 1',
+      includes: [
+        'Light HTML and design intake',
+        'Shopify theme path confirmation',
+        'Homepage and product path review',
+        'Product and collection structure review',
+        'Navigation and footer review',
+        'Owner task list for product, payment, and admin setup',
+        'Launch readiness checklist',
+      ],
+      deliverable:
+        'A lean build plan folded into development so the coded HTML head start can become a Shopify store without restarting the brand or strategy.',
+    },
+    {
+      label: 'B',
+      title: 'Core page design and development',
+      price: '$1,500',
+      timing: 'Week 1 to Week 2',
+      includes: [
+        'Homepage polish',
+        'Collection page polish',
+        'Product detail page polish',
+        'Story or about content refinement',
+        'CTA and button placement guidance',
+        'Typography, spacing, and section rhythm cleanup',
+        'Conversion-focused page refinement',
+        'Copy placement using Soft Hours-provided language',
+      ],
+      deliverable:
+        'A more complete Shopify page experience for the homepage, collection path, product page, and supporting brand or story content.',
+    },
+    {
+      label: 'C',
+      title: 'Editable Shopify sections',
+      price: '$900',
+      timing: 'Week 2',
+      includes: [
+        'Editable homepage sections',
+        'Editable collection and product modules',
+        'Image, copy, and CTA controls',
+        'Fit, fabric, care, and detail modules',
+        'FAQ or care guidance module',
+        'Reusable content blocks',
+        'Basic handoff notes for editing',
+      ],
+      deliverable:
+        'A Shopify build with editable design controls for the sections Soft Hours is most likely to update after launch.',
+    },
+    {
+      label: 'D',
+      title: 'Mobile QA, Shopify connection, and launch basics',
+      price: '$600',
+      timing: 'Week 2 and launch buffer',
+      includes: [
+        'Mobile responsive review',
+        'Checkout path spot check',
+        'Email capture placement',
+        'Navigation and footer QA',
+        'Basic analytics and pixel placement review',
+        'Shopify connection support',
+        'Final launch checklist',
+        'Handoff notes',
+      ],
+      deliverable:
+        'A cleaner responsive shopping experience, launch checklist, and practical handoff for Soft Hours to keep moving. Final payment is tied to completion of Anchovies scope, not completion of owner-side product uploads, payment setup, or Shopify admin tasks.',
+    },
+  ],
+  optionalSupport: [
+    'Product uploads',
+    'Payment and bank setup',
+    'Shipping and tax setup',
+    'Back-end Shopify admin setup',
+    'Email flows',
+    'Deeper SEO',
+    'Campaign pages',
+    'Photography direction',
+    'Paid ads',
+    'Subscription setup',
+    'Ongoing conversion optimization',
+  ],
+}

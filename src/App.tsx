@@ -29,6 +29,7 @@ import { fiberSoftChewContract } from './contracts/fiberSoftChewContract'
 import { genesiContract } from './contracts/genesiContract'
 import { mollyEngelsContract } from './contracts/mollyEngelsContract'
 import { offMenuContract } from './contracts/offMenuContract'
+import { softHoursContract } from './contracts/softHoursContract'
 import { wildflowerBlancContract } from './contracts/wildflowerBlancContract'
 import { createPreMeetingContent, getPreMeetingFirmNameFromURL } from './preMeetingContent'
 import { kndContent } from './kndContent'
@@ -56,6 +57,7 @@ export default function App() {
     pathname.startsWith('/proposal/soft-hours/') ||
     pathname === '/soft-hours' ||
     pathname.startsWith('/soft-hours/')
+  const isSoftHoursContract = pathname === '/proposal/soft-hours/contract'
   const isHumanaAI =
     pathname === '/proposal/humanaai' ||
     pathname.startsWith('/proposal/humanaai/') ||
@@ -177,6 +179,10 @@ export default function App() {
 
   if (isSleepGoddess) {
     return withProposalGate(<SleepGoddessProposal />)
+  }
+
+  if (isSoftHoursContract) {
+    return withProposalGate(<ContractPage contract={softHoursContract} />)
   }
 
   if (isSoftHours) {

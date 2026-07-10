@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Reveal } from './components/Reveal'
 
-const acceptProposalHref = 'mailto:sean@anchovies.agency?subject=Accepting%20the%20Soft%20Hours%20Shopify%20Proposal'
+const contractHref = '/proposal/soft-hours/contract'
 const priorWorkHref = 'https://anchovies.pro/proposal/sleep-like-a-goddess'
 
 type DetailRow = [string, string, string]
@@ -172,7 +172,7 @@ function MetaRow({ left, right, dark = false }: { left: string; right: string; d
 
 function AnchorButton({
   children,
-  href = acceptProposalHref,
+  href = contractHref,
   variant = 'dark',
 }: {
   children: string
@@ -246,8 +246,8 @@ function SoftHoursNav() {
               </a>
             ))}
           </nav>
-          <a href={acceptProposalHref} className="rounded-full border border-ink px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper whitespace-nowrap">
-            Accept proposal
+          <a href={contractHref} className="rounded-full border border-ink px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper whitespace-nowrap">
+            Review contract
           </a>
         </div>
       </div>
@@ -306,7 +306,7 @@ export function SoftHoursProposal() {
               The brand and design direction are already in motion. This phase turns the HTML head start into a Shopify experience that is calmer, clearer, more editable, and easier to buy from.
             </p>
             <div className="flex flex-wrap items-center gap-4">
-              <AnchorButton>{'Accept proposal ->'}</AnchorButton>
+              <AnchorButton>{'Review contract ->'}</AnchorButton>
               <AnchorButton href="#approach" variant="outline">
                 View the scope
               </AnchorButton>
@@ -525,8 +525,8 @@ export function SoftHoursProposal() {
           </Reveal>
           <Reveal className="flex flex-col gap-4">
             <span className="eyebrow text-paper/55">Begin</span>
-            <AnchorButton href={acceptProposalHref} variant="light">
-              {'Accept proposal ->'}
+            <AnchorButton href={contractHref} variant="light">
+              {'Review contract ->'}
             </AnchorButton>
             <p className="text-[13px] leading-[20px] text-paper/60">$3,000 - Shopify completion sprint</p>
           </Reveal>
