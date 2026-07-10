@@ -4,8 +4,6 @@ import { Reveal } from './components/Reveal'
 const choosePackageHref =
   'mailto:sean@anchovies.agency?subject=Avodah%20package%20selection&body=Hi%20Sean%2C%0A%0AWe%27d%20like%20to%20move%20forward%20with%20the%20following%20Avodah%20package%3A%20%5BSearch%20Foundation%20%2F%20Employment%20Search%20Launch%20%2F%20Growth%20Launch%5D.%0A%0A'
 const calendarHref = 'https://cal.com/anchovies/30min?overlayCalendar=true'
-const doorwayGuidanceHref = 'https://developers.google.com/search/docs/essentials/spam-policies'
-const businessProfileGuidanceHref = 'https://support.google.com/business/answer/3038177'
 
 type Package = {
   number: string
@@ -35,7 +33,7 @@ const researchFoundation = [
   'Technical and content audit of avodahlegal.com',
   'Public benchmark review of vaemploymentlawyers.com',
   'Search Console, analytics, conversion, and lead-quality baseline',
-  'Domain, location, and Google Business Profile recommendation',
+  'Recommendation between an Avodah hub and an educational sister site',
   'Expansion map for employment, transactional, and traffic practices',
 ]
 
@@ -48,7 +46,7 @@ const packages: Package[] = [
     summary: 'Know where to compete, what to build, and how to measure it before committing to a website launch.',
     outcomes: [
       'A research-backed keyword, competitor, and content opportunity map',
-      'A clear domain, location, and employment hub recommendation',
+      'A clear recommendation between an Avodah service hub and an educational sister site',
       'A prioritized 90-day roadmap Avodah can implement with us or independently',
     ],
     includes: [
@@ -63,17 +61,18 @@ const packages: Package[] = [
   {
     number: '02',
     name: 'Employment Search Launch',
-    price: '$12,500',
+    price: '$14,500',
     timing: '8 to 10 weeks',
-    summary: 'Turn the research into a focused employment search hub that is designed, built, measured, and ready to generate qualified inquiries.',
+    summary: 'Turn the research into a focused employment search experience, built either inside Avodah or as a distinct educational sister resource.',
     outcomes: [
-      'A live employment search hub inside the Avodah website',
-      'Up to eight researched pages written and designed around qualified search demand',
+      'A live employment search experience in the structure the research supports',
+      'Up to eight researched pages built around informational and commercial search demand',
       'A conversion and measurement system that shows which work is creating useful inquiries',
     ],
     includes: [
       'Everything in Search Foundation',
       'Up to eight researched launch pages',
+      'Focused naming and visual direction if the sister-site path is selected',
       'Responsive Framer design and development',
       'Conversion-focused website copy',
       'One reusable CMS content template',
@@ -81,15 +80,15 @@ const packages: Package[] = [
       'Analytics, conversion events, and forms',
       'Responsive QA and launch support',
     ],
-    payment: '50% at kickoff ($6,250), 25% after strategy and design approval ($3,125), then 25% before launch ($3,125).',
+    payment: '50% at kickoff ($7,250), 25% after strategy and design approval ($3,625), then 25% before launch ($3,625).',
   },
   {
     number: '03',
     name: 'Growth Launch',
-    price: '$20,000',
+    price: '$19,500',
     timing: 'Launch plus 90 days',
     recommended: true,
-    summary: 'Launch the employment hub, then give it three months of focused publishing, optimization, and reporting so the strategy has time to produce evidence.',
+    summary: 'Launch the chosen employment search experience, then give it three months of publishing, optimization, and reporting so the strategy has time to produce evidence.',
     outcomes: [
       'The complete Employment Search Launch',
       'Six attorney-reviewed content pieces published across the first 90 days',
@@ -105,7 +104,7 @@ const packages: Package[] = [
       'Conversion and lead-quality reporting',
       'Monthly recommendations and priority planning',
     ],
-    payment: 'The $12,500 launch follows a 50/25/25 schedule. SEO management is billed at $2,500 per month for the first three months.',
+    payment: 'The $14,500 launch follows a 50/25/25 schedule. The packaged 90-day growth program is $5,000, billed half at launch and half after 45 days.',
   },
 ]
 
@@ -114,16 +113,17 @@ const workPhases = [
     number: '01',
     title: 'Research the landscape.',
     forPackages: 'Included in every package',
-    body: 'We begin with evidence: demand, competition, current performance, content gaps, location requirements, and the questions qualified employment clients are actually asking.',
+    body: 'We begin with evidence: demand, competition, current performance, content gaps, audience intent, and the questions qualified employment clients are actually asking.',
     items: researchFoundation,
   },
   {
     number: '02',
-    title: 'Build the employment hub.',
+    title: 'Build the chosen search experience.',
     forPackages: 'Launch and Growth',
-    body: 'We translate the research into a focused section of avodahlegal.com that is clear to prospects, useful to search engines, and built to convert the right inquiries.',
+    body: 'We translate the research into either an Avodah employment hub or an educational sister resource, with a clear role, useful content, and a path toward the right inquiry.',
     items: [
       'Up to eight launch pages',
+      'Focused naming and visual direction for a sister site, if selected',
       'Responsive Framer design and development',
       'Conversion copy and calls to action',
       'CMS content template',
@@ -146,7 +146,7 @@ const workPhases = [
 ]
 
 const timelineRows = [
-  ['Weeks 1 to 3', 'Foundation', 'Research demand, audit current performance, map competitors, recommend the domain and location structure, and define the employment content system.'],
+  ['Weeks 1 to 3', 'Foundation', 'Research demand, audit current performance, map competitors, recommend the site and brand structure, and define the employment content system.'],
   ['Weeks 4 to 6', 'Design and content', 'Write and design the launch pages, define the conversion flow, and build the reusable content template.'],
   ['Weeks 7 to 10', 'Development and launch', 'Develop the responsive Framer experience, configure technical SEO and measurement, complete QA, and launch.'],
   ['First 90 days', 'Growth management', 'Publish two attorney-reviewed pieces per month, optimize priority pages, monitor performance, and recommend the next moves.'],
@@ -157,8 +157,8 @@ const boundaries = [
   ['Paid acquisition', 'Paid media, paid links, sponsorships, and third-party link purchases are not included.'],
   ['Legal review', 'Avodah attorneys remain responsible for reviewing and approving legal claims, interpretations, and published legal content.'],
   ['Additional practices', 'Complete transactional and traffic practice builds are not included in these packages. Future hubs can be scoped from $6,500 each using the shared Avodah system.'],
-  ['Business profiles', 'A separate Google Business Profile is recommended only if the location meets Google requirements for staffing, signage, and customer access. Verification cannot be guaranteed.'],
-  ['Added scope', 'Pages beyond the agreed eight, custom integrations, premium software, media production, and ongoing work beyond the selected package are quoted separately.'],
+  ['Two-site separation', 'If the sister-site direction is selected, it will have its own purpose, audience, content system, and user journey. Duplicating Avodah service pages across domains is not included.'],
+  ['Added scope', 'Pages beyond the agreed eight, custom tools, a full standalone brand identity, premium software, media production, and ongoing work beyond the selected package are quoted separately.'],
 ]
 
 function MetaRow({ left, right, dark = false }: { left: string; right: string; dark?: boolean }) {
@@ -224,7 +224,7 @@ function AvodahNav() {
           <span className="eyebrow text-ink-2">Prepared for Avodah</span>
         </div>
         <div className="flex items-center gap-5">
-          <span className="eyebrow text-ink-2">Employment search · v2</span>
+          <span className="eyebrow text-ink-2">Employment search · v3</span>
           <span className="eyebrow">July 2026</span>
         </div>
       </div>
@@ -264,12 +264,12 @@ function Opportunity() {
       <div className="grid gap-10 border-t border-[var(--color-rule)] pt-12 lg:grid-cols-[1.15fr_480px] lg:gap-24">
         <Reveal>
           <h2 className="serif max-w-[700px] text-[31px] leading-[40px] md:text-[38px] md:leading-[47px]">
-            Avodah has already seen what a focused employment site can produce. The next move is to rebuild that advantage with stronger research, a better home, and a clearer path from search to qualified inquiry.
+            Avodah has already seen what a focused employment site can produce. That success matters. The next move is to rebuild that advantage with stronger research, a clearer role, and a better path from search to qualified inquiry.
           </h2>
         </Reveal>
         <Reveal className="flex flex-col gap-7">
           <p className="text-[15px] leading-[24px] text-ink-2">
-            Employment is the right first practice to develop because it has proven demand, a sophisticated audience, and a clear role inside the broader firm. This proposal gives Avodah three ways to move forward, from a decisive research sprint to a complete launch and the first 90 days of growth.
+            The question is not whether a focused site can work. It is what job the next one should do. Avodah can use its existing authority for service-intent searches, while a distinct sister resource could serve people earlier through education, tools, explanations, and decision support.
           </p>
           <div className="flex flex-wrap gap-3">
             <AnchorButton href={choosePackageHref}>Choose a package</AnchorButton>
@@ -284,38 +284,32 @@ function Opportunity() {
 function Recommendation() {
   return (
     <section id="recommendation" className="border-b border-[var(--color-rule)] bg-ink px-6 py-24 text-paper md:px-16 lg:px-[120px] lg:py-[150px]">
-      <MetaRow left="§ 02 - Recommendation" right="One domain · One first practice" dark />
+      <MetaRow left="§ 02 - Recommendation" right="Authority now · A distinct resource next" dark />
       <Reveal>
         <h2 className="display max-w-[1180px] py-16 text-[50px] leading-[54px] md:text-[78px] md:leading-[78px] lg:text-[94px] lg:leading-[92px]">
-          Build employment inside Avodah, then let the evidence guide what comes next.
+          Use Avodah for authority. Build a sister resource only when it has a different job.
         </h2>
       </Reveal>
       <div className="grid gap-12 border-t border-paper/20 pt-12 lg:grid-cols-[1fr_1fr] lg:gap-24">
         <Reveal className="flex max-w-[620px] flex-col gap-6">
           <p className="serif text-[27px] italic leading-[38px]">
-            Our starting recommendation is one employment search hub inside avodahlegal.com, likely under /employment.
+            Avodah is the likely faster path for service-intent pages because the domain already has relevance, history, and trust.
           </p>
           <p className="text-[15px] leading-[24px] text-paper/70">
-            This concentrates authority, keeps the brand connected, and gives future practice groups a shared system. A separate domain remains possible only if the research identifies a genuinely distinct audience and value proposition.
+            A sister site can still be the stronger strategic choice for informational demand if it is built as a real resource. It should help people understand employment issues before they are ready to hire a lawyer, with its own purpose, content system, and experience.
           </p>
         </Reveal>
         <Reveal className="grid gap-0 border-y border-paper/20">
           <div className="border-b border-paper/20 py-7">
-            <span className="eyebrow text-paper/45">Search structure</span>
+            <span className="eyebrow text-paper/45">Path A · Avodah employment hub</span>
             <p className="mt-3 text-[15px] leading-[24px] text-paper/75">
-              Google warns against similar websites or regional pages created mainly to capture more queries.{' '}
-              <a href={doorwayGuidanceHref} target="_blank" rel="noreferrer" className="text-white underline decoration-paper/40 underline-offset-4 hover:decoration-white">
-                Review the search guidance
-              </a>.
+              Commercial-intent pages, attorney credibility, consultations, and the fastest use of the authority Avodah has already built.
             </p>
           </div>
           <div className="py-7">
-            <span className="eyebrow text-paper/45">Location eligibility</span>
+            <span className="eyebrow text-paper/45">Path B · Educational sister site</span>
             <p className="mt-3 text-[15px] leading-[24px] text-paper/75">
-              A separate Google Business Profile should only be pursued when the location has the required staffing, signage, and customer access.{' '}
-              <a href={businessProfileGuidanceHref} target="_blank" rel="noreferrer" className="text-white underline decoration-paper/40 underline-offset-4 hover:decoration-white">
-                Review the profile guidelines
-              </a>.
+              A distinct brand and experience for employment questions, guides, tools, and learning. Clearly connected to Avodah, but useful even before someone is seeking counsel.
             </p>
           </div>
         </Reveal>
@@ -334,7 +328,7 @@ function Packages() {
         </Reveal>
         <Reveal>
           <p className="text-[15px] leading-[24px] text-ink-2">
-            Every option begins with the same research foundation. The difference is whether Avodah stops with the roadmap, launches the employment hub, or launches and actively grows it for the first 90 days.
+            Every option begins with the same research foundation. The launch can become an Avodah employment hub or a distinct educational sister resource. The research decides which role creates the stronger opportunity.
           </p>
         </Reveal>
       </div>
@@ -421,7 +415,7 @@ function Timeline() {
         </Reveal>
         <Reveal>
           <p className="text-[15px] leading-[24px] text-ink-2">
-            Search Foundation ends after week three. Employment Search Launch continues through launch. Growth Launch continues for the first 90 days after the site is live.
+            Search Foundation ends after week three. Employment Search Launch continues through the chosen site launch. Growth Launch continues for the first 90 days after it is live.
           </p>
         </Reveal>
       </div>
@@ -541,7 +535,7 @@ function Footer() {
       </div>
       <div className="flex items-center gap-5">
         <span className="eyebrow">July 2026</span>
-        <span className="eyebrow text-ink">Proposal · v2</span>
+        <span className="eyebrow text-ink">Proposal · v3</span>
       </div>
     </footer>
   )
