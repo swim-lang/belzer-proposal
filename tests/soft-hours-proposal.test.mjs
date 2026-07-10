@@ -50,6 +50,8 @@ test('Soft Hours proposal is registered as Shopify completion scope', () => {
 
   assert.match(contract, /Shopify Website Completion Sprint/)
   assert.match(contract, /fee: '\$3,000'/)
+  assert.match(contract, /name: 'Soft Hours'/)
+  assert.match(contract, /contactName: 'Marion Voldan'/)
   assert.match(contract, /amount: '\$1,500'/)
   assert.match(contract, /Core page design and development/)
   assert.match(contract, /Editable Shopify sections/)
@@ -58,4 +60,5 @@ test('Soft Hours proposal is registered as Shopify completion scope', () => {
   assert.match(contract, /Final payment is tied to completion of Anchovies scope/)
   assert.match(contract, /Product uploads/)
   assert.match(contract, /Payment and bank setup/)
+  assert.doesNotMatch(contract, /Molly Engels/)
 })

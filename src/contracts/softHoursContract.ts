@@ -12,7 +12,7 @@ export const softHoursContract: ContractData = {
   client: {
     name: 'Soft Hours',
     label: 'Client',
-    contactName: 'Molly Engels',
+    contactName: 'Marion Voldan',
   },
   agency: {
     name: 'Anchovies LLC',
