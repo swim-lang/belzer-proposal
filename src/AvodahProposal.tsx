@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Reveal } from './components/Reveal'
 
 const choosePackageHref =
-  'mailto:sean@anchovies.agency?subject=Avodah%20program%20selection&body=Hi%20Sean%2C%0A%0AWe%27d%20like%20to%20move%20forward%20with%3A%20%5BResearch%20%2B%20Avodah%20Knowledge%20Library%20%2F%20Research%20%2B%20Educational%20Resource%20Site%20%2F%20The%20complete%20program%5D.%0A%0A'
+  'mailto:sean@anchovies.agency?subject=Avodah%20program%20selection&body=Hi%20Sean%2C%0A%0AWe%27d%20like%20to%20move%20forward%20with%3A%20%5BResearch%20%2B%20Avodah%20Knowledge%20Library%20%2F%20Research%20%2B%20Practice-Area%20Resource%20Site%20%2F%20The%20complete%20program%5D.%0A%0A'
 const calendarHref = 'https://cal.com/anchovies/30min?overlayCalendar=true'
 
 type Package = {
@@ -29,12 +29,14 @@ const navSections = [
 ]
 
 const researchFoundation = [
-  'Keyword, competitor, search result, and content-gap research',
+  'Keyword, competitor, search result, and content-gap research across employment, traffic and criminal, and corporate work',
   'Technical and content audit of avodahlegal.com',
   'Public benchmark review of vaemploymentlawyers.com',
-  'Search Console, analytics, conversion, and lead-quality baseline',
-  'Recommendation for what belongs on Avodah and what could support a separate resource',
-  'Expansion map for employment, transactional, and traffic practices',
+  'Search Console, analytics, inquiry, and lead-quality baseline using first-party data',
+  'Branded-search and audience architecture that protects Avodah as the primary firm experience',
+  'Google Search, AI search, YouTube, and LinkedIn opportunity map',
+  'Recommendation for what belongs on Avodah and what should become a focused resource site',
+  'Rollout map for employment, traffic and criminal, and corporate practice areas',
 ]
 
 const packages: Package[] = [
@@ -46,15 +48,15 @@ const packages: Package[] = [
     badge: 'Required',
     summary: 'Research the search landscape once, then use the evidence to decide what Avodah should build and where it should live.',
     outcomes: [
-      'A research-backed keyword, competitor, and content opportunity map',
-      'A clear recommendation for the Avodah site, a separate resource, or both',
-      'A prioritized content and build plan for the selected direction',
+      'A research-backed opportunity map across three practice groups and multiple search channels',
+      'A plan that protects Avodah branded search while creating focused paths for consumer demand',
+      'A prioritized build sequence, baseline, and measurement plan grounded in first-party data',
     ],
     includes: [
       ...researchFoundation,
-      'Employment keyword and page map',
+      'Practice-area keyword and page map',
       'Content architecture and internal-linking plan',
-      'Measurement and reporting plan',
+      'Google Search Console, analytics, inquiry, and lead-quality measurement plan',
       'Implementation roadmap and measurement baseline',
     ],
     payment: '75% at kickoff ($2,625), then 25% before delivery ($875).',
@@ -65,44 +67,47 @@ const packages: Package[] = [
     price: '$7,000',
     timing: '6 to 8 weeks',
     badge: 'Build option',
-    summary: 'Improve the existing Avodah experience and turn employment content into a substantial, useful library instead of a conventional law firm blog.',
+    summary: 'Improve the existing Avodah experience without blurring its premium positioning, then create a substantial knowledge library around the practice areas research prioritizes.',
     outcomes: [
-      'A more useful employment section and clearer path from learning to inquiry',
-      'Fifty concise, research-backed articles organized around real employment questions',
+      'A more useful main site that keeps branded search, attorney credibility, and anchor-client trust at the center',
+      'Fifty concise, research-backed articles allocated across priority practice groups',
       'A searchable, listenable knowledge library designed for people first and search second',
     ],
     includes: [
       'Built from the approved Search Foundation',
-      'Focused improvements to Avodah employment pages and conversion paths',
-      'Employment knowledge library and CMS structure',
+      'Focused improvements to Avodah practice pages and conversion paths',
+      'Knowledge library and CMS structure that stays secondary to the main firm experience',
       'Fifty original, attorney-reviewed articles with source notes',
       'Topic clusters, tags, search, and internal linking',
       'Listen to this article audio experience across the library',
-      'Author and reviewer attribution, article schema, and metadata',
-      'Analytics, conversion events, responsive QA, and publishing',
+      'Author and reviewer attribution, article schema, AI-search structure, and metadata',
+      'Main Avodah Google Business Profile setup and Norfolk office addition once details are supplied',
+      'Avodah-owned shared marketing account setup for platform access',
+      'Analytics, inquiry events, responsive QA, and publishing',
     ],
     payment: '50% at implementation kickoff ($3,500), 25% after the content system is approved ($1,750), then 25% before publishing ($1,750).',
   },
   {
     number: '03',
-    name: 'Educational Resource Site',
+    name: 'Practice-Area Resource Site',
     price: '$9,000',
     timing: '8 to 10 weeks',
     badge: 'Optional add-on',
-    summary: 'Create a distinct seven-page destination for people trying to understand workplace issues before they are ready to choose a lawyer.',
+    summary: 'Create the first focused seven-page destination, then use its design and content system as the foundation for future practice-area sites.',
     outcomes: [
-      'A complete educational sister site with its own role, name, and visual direction',
+      'A complete educational sister site with its own role, name, and visual direction, with employment as the assumed first focus',
       'A practical destination built around guides, answers, tools, and trusted sources',
-      'A clear, appropriate connection to Avodah when a reader is ready for legal help',
+      'A reusable system for future traffic and criminal or corporate sites without producing identical copies',
     ],
     includes: [
       'Built from the approved Search Foundation',
-      'Seven core pages: Home, Start Here, Workplace Problems, Rights and Remedies, Guides and Answers, Resource Directory, and About and Get Help',
+      'Seven adaptable core pages: Home, Start Here, Common Problems, Rights and Options, Guides and Answers, Resource Directory, and About and Get Help',
       'Focused naming and visual direction',
       'Up to seventy-five curated government, nonprofit, and authoritative resources with summaries and topic tags',
-      'Plain-language glossary of up to one hundred employment terms',
+      'Plain-language glossary of up to one hundred terms for the selected practice area',
       'Six practical checklists and decision guides',
       'Connections to relevant Avodah articles without duplicating them',
+      'Reusable practice-area design and CMS system with room for each future site to vary',
       'Responsive Framer design and development',
       'CMS, technical SEO, analytics, forms, QA, and launch',
     ],
@@ -115,53 +120,53 @@ const workPhases = [
     number: '01',
     title: 'Research the landscape.',
     forPackages: 'Required foundation',
-    body: 'We begin with evidence: demand, competition, current performance, content gaps, audience intent, and the questions qualified employment clients are actually asking.',
+    body: 'We begin with evidence across employment, traffic and criminal, and corporate work. The research measures current performance, maps demand, evaluates Google and AI search, and protects the role of the main Avodah site.',
     items: researchFoundation,
   },
   {
     number: '02',
     title: 'Turn Avodah into a knowledge library.',
     forPackages: 'Avodah library',
-    body: 'We improve the employment experience and publish a deep, useful body of content. Each article is concise, sourced, reviewed by an Avodah attorney, easy to scan, and available to listen to.',
+    body: 'We make focused improvements without turning the firm website into a consumer-law destination. Each article is concise, sourced, reviewed by an Avodah attorney, easy to scan, and available to listen to.',
     items: [
       'Focused Avodah website improvements',
-      'Fifty original, attorney-reviewed employment articles with source notes',
+      'Fifty original, attorney-reviewed practice-area articles with source notes',
       'Searchable and filterable knowledge library and CMS',
       'Listen to this article audio across the library',
-      'Topic clusters, internal links, authorship, and article schema',
-      'Technical SEO, analytics, responsive QA, and publishing',
+      'Topic clusters, internal links, authorship, article schema, and AI-search structure',
+      'Main Google Business Profile setup, Norfolk office update, analytics, QA, and publishing',
     ],
   },
   {
     number: '03',
     title: 'Build a destination of its own.',
     forPackages: 'Resource site',
-    body: 'The optional sister site is not another law firm website. It is a useful employment resource with seven core pages, original guidance, curated sources, and simple tools that help people understand what to do next.',
+    body: 'The optional sister site is a useful practice-area resource, not another generic law firm website. Employment is the assumed first focus, and the system is designed to support distinct traffic and criminal or corporate versions later.',
     items: [
-      'Seven core pages: Home, Start Here, Workplace Problems, Rights and Remedies, Guides and Answers, Resource Directory, and About and Get Help',
+      'Seven adaptable core pages: Home, Start Here, Common Problems, Rights and Options, Guides and Answers, Resource Directory, and About and Get Help',
       'Up to seventy-five curated resources with summaries and topic tags',
       'Plain-language glossary of up to one hundred terms',
       'Six practical checklists and decision guides',
       'Search, filters, and connections to relevant Avodah articles',
-      'Distinct naming, visual direction, CMS, and launch',
+      'Distinct naming, visual direction, reusable CMS system, and launch',
     ],
   },
 ]
 
 const timelineRows = [
-  ['Weeks 1 to 3', 'Foundation', 'Research demand, audit current performance, map competitors, recommend the site and brand structure, and define the employment content system.'],
-  ['Weeks 4 to 6', 'Systems and direction', 'Design the knowledge library, confirm the article framework, establish the source and review process, and design the sister site if selected.'],
-  ['Weeks 7 to 10', 'Content and development', 'Produce the article library, improve Avodah, build the resource experience, and connect search, audio, analytics, and conversion paths.'],
+  ['Weeks 1 to 3', 'Foundation', 'Research three practice groups, audit current performance, establish the first-party baseline, protect branded search, and recommend the build sequence and channels.'],
+  ['Weeks 4 to 6', 'Systems and direction', 'Design the Avodah knowledge library, confirm the article framework, establish the source and review process, and design the first practice-area site if selected.'],
+  ['Weeks 7 to 10', 'Content and development', 'Produce the article library, improve Avodah, build the resource experience, and connect search, audio, AI-search structure, analytics, and inquiry paths.'],
   ['Weeks 11 to 12', 'Review and launch', 'Complete attorney review, responsive QA, final publishing, measurement setup, and launch for the selected destination or destinations.'],
 ]
 
 const boundaries = [
   ['Rankings', 'Search rankings, traffic, leads, and business outcomes cannot be guaranteed. The work is designed to improve the quality of the inputs and the clarity of the decisions.'],
-  ['Paid acquisition', 'Paid media, paid links, sponsorships, and third-party link purchases are not included.'],
-  ['Legal review', 'Avodah attorneys remain responsible for reviewing and approving legal claims, interpretations, and published legal content.'],
-  ['Content review', 'The fifty articles are concise, question-led resources based on approved briefs and sources. Avodah attorneys remain responsible for timely legal review before publishing.'],
-  ['Two-site separation', 'If the resource site is selected, it will have its own purpose, audience, and user journey. Avodah articles may be surfaced there through links, but they will not be duplicated across domains.'],
-  ['Added scope', 'Pages beyond the seven-page resource site, custom applications, premium software, ongoing content, media production beyond the article audio system, and work outside the selected layers are quoted separately.'],
+  ['Master-brand protection', 'Avodah remains the primary branded-search and firm-credibility experience. Consumer-practice content will not take over the main navigation, homepage message, or premium-client journey.'],
+  ['Review and access', 'Avodah attorneys provide subject-matter review and timely approvals. Avodah also provides an owned marketing account and necessary platform access so Anchovies can handle setup, production, and publishing with minimal lift from the firm.'],
+  ['Repeatable, not identical', 'Future practice-area sites can reuse the first site system, but each requires its own audience, content, structure, and distinguishing details. Additional launches are scoped after the first system is proven.'],
+  ['Channels and profiles', 'Main Google Business Profile facilitation and the Norfolk office update are included. YouTube and LinkedIn opportunity analysis is included in research, while ongoing video and social production are quoted separately.'],
+  ['Added scope', 'Paid media, paid links, sponsorships, pages beyond the seven-page resource site, custom applications, premium software, ongoing content, and media production beyond the article audio system are quoted separately.'],
 ]
 
 function MetaRow({ left, right, dark = false }: { left: string; right: string; dark?: boolean }) {
@@ -227,7 +232,7 @@ function AvodahNav() {
           <span className="eyebrow text-ink-2">Prepared for Avodah</span>
         </div>
         <div className="flex items-center gap-5">
-          <span className="eyebrow text-ink-2">Employment search · v4</span>
+          <span className="eyebrow text-ink-2">Practice-area search · v5</span>
           <span className="eyebrow">July 2026</span>
         </div>
       </div>
@@ -258,21 +263,21 @@ function AvodahNav() {
 function Opportunity() {
   return (
     <section id="opportunity" className="border-b border-[var(--color-rule)] px-6 pb-20 pt-20 md:px-16 md:pt-28 lg:px-[120px] lg:pb-[140px] lg:pt-[120px]">
-      <MetaRow left="§ 01 - Opportunity" right="Avodah · Employment search" />
+      <MetaRow left="§ 01 - Opportunity" right="Avodah · Practice-area search" />
       <Reveal>
-        <h1 className="display max-w-[1160px] py-16 text-[54px] leading-[58px] sm:text-[76px] sm:leading-[78px] md:text-[104px] md:leading-[100px] lg:text-[118px] lg:leading-[112px]">
-          Turn employment search into a focused growth channel.
+        <h1 className="display max-w-[1160px] py-16 text-[48px] leading-[52px] sm:text-[64px] sm:leading-[68px] md:text-[84px] md:leading-[86px] lg:text-[96px] lg:leading-[96px]">
+          Grow search without making Avodah look like a consumer law firm.
         </h1>
       </Reveal>
       <div className="grid gap-10 border-t border-[var(--color-rule)] pt-12 lg:grid-cols-[1.15fr_480px] lg:gap-24">
         <Reveal>
           <h2 className="serif max-w-[700px] text-[31px] leading-[40px] md:text-[38px] md:leading-[47px]">
-            Avodah has already seen what a focused employment site can produce. That success matters. The next move is to rebuild that advantage with stronger research, a clearer role, and a better path from search to qualified inquiry.
+            The main site should remain the clearest expression of Avodah, its attorneys, and the sophisticated clients who already drive the firm. Search growth should add focused paths around that foundation, not change what the firm looks like at its center.
           </h2>
         </Reveal>
         <Reveal className="flex flex-col gap-7">
           <p className="text-[15px] leading-[24px] text-ink-2">
-            The question is not whether a focused site can work. It is what job the next one should do. Avodah can use its existing authority for service-intent searches, while a distinct sister resource could serve people earlier through education, tools, explanations, and decision support.
+            Employment and traffic or criminal work create the clearest near-term consumer-search opportunities. Corporate work may follow differently. Research will show what belongs quietly inside Avodah, what deserves a focused resource site, and which channels can create useful demand without confusing branded search.
           </p>
           <div className="flex flex-wrap gap-3">
             <AnchorButton href={choosePackageHref}>Choose a direction</AnchorButton>
@@ -287,32 +292,32 @@ function Opportunity() {
 function Recommendation() {
   return (
     <section id="recommendation" className="border-b border-[var(--color-rule)] bg-ink px-6 py-24 text-paper md:px-16 lg:px-[120px] lg:py-[150px]">
-      <MetaRow left="§ 02 - Recommendation" right="Research once · Build with purpose" dark />
+      <MetaRow left="§ 02 - Recommendation" right="Protect the center · Build focused edges" dark />
       <Reveal>
         <h2 className="display max-w-[1180px] py-16 text-[50px] leading-[54px] md:text-[78px] md:leading-[78px] lg:text-[94px] lg:leading-[92px]">
-          Research once. Build authority on Avodah, a destination of its own, or both.
+          Keep Avodah primary. Build focused search systems around it.
         </h2>
       </Reveal>
       <div className="grid gap-12 border-t border-paper/20 pt-12 lg:grid-cols-[1fr_1fr] lg:gap-24">
         <Reveal className="flex max-w-[620px] flex-col gap-6">
           <p className="serif text-[27px] italic leading-[38px]">
-            Avodah is the likely faster path for service-intent pages because the domain already has relevance, history, and trust.
+            Branded search should continue to lead to the firm, its people, and the credibility sophisticated clients expect.
           </p>
           <p className="text-[15px] leading-[24px] text-paper/70">
-            A sister site can still be the stronger strategic choice for informational demand if it is built as a real resource. It should help people understand employment issues before they are ready to hire a lawyer, with its own purpose, content system, and experience.
+            Focused practice-area sites can pursue a different job. They can answer questions, define terms, organize trusted resources, and create a useful path for people who begin with a problem instead of a firm name.
           </p>
         </Reveal>
         <Reveal className="grid gap-0 border-y border-paper/20">
           <div className="border-b border-paper/20 py-7">
-            <span className="eyebrow text-paper/45">Path A · Avodah employment hub</span>
+            <span className="eyebrow text-paper/45">Layer A · Avodah knowledge system</span>
             <p className="mt-3 text-[15px] leading-[24px] text-paper/75">
-              Commercial-intent pages, attorney credibility, consultations, and the fastest use of the authority Avodah has already built.
+              Thoughtful articles, glossary-style answers, technical structure, the main Google Business Profile, and better measurement without crowding the premium firm experience.
             </p>
           </div>
           <div className="py-7">
-            <span className="eyebrow text-paper/45">Path B · Educational sister site</span>
+            <span className="eyebrow text-paper/45">Layer B · Practice-area resource sites</span>
             <p className="mt-3 text-[15px] leading-[24px] text-paper/75">
-              A distinct brand and experience for employment questions, guides, tools, and learning. Clearly connected to Avodah, but useful even before someone is seeking counsel.
+              A distinct, genuinely useful destination for the first priority practice, plus a reusable system for traffic and criminal or corporate versions later.
             </p>
           </div>
         </Reveal>
@@ -331,7 +336,7 @@ function Packages() {
         </Reveal>
         <Reveal>
           <p className="text-[15px] leading-[24px] text-ink-2">
-            Start with the Search Foundation. Then improve Avodah with a fifty-article knowledge library, add a distinct educational resource site, or do both as one coordinated program.
+            Start with the Search Foundation. Then improve Avodah with a fifty-article knowledge library, add the first practice-area resource site, or do both as one coordinated program.
           </p>
         </Reveal>
       </div>
@@ -367,7 +372,7 @@ function Packages() {
       <Reveal className="mt-8 border border-mac p-6 sm:p-8">
         <span className="eyebrow text-mac">How the choices work</span>
         <p className="mt-4 max-w-[1000px] serif text-[25px] leading-[34px]">
-          Search Foundation is required. Add the Avodah Knowledge Library, the Educational Resource Site, or both. The complete program is $19,500.
+          Search Foundation is required. Add the Avodah Knowledge Library, the Practice-Area Resource Site, or both. The complete program is $19,500.
         </p>
       </Reveal>
     </section>
@@ -377,7 +382,7 @@ function Packages() {
 function IncludedWork() {
   return (
     <section id="included" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-      <MetaRow left="§ 04 - Included work" right="Research · Library · Resource site" />
+      <MetaRow left="§ 04 - Included work" right="Research · Avodah · Practice-area system" />
       <Reveal>
         <h2 className="display max-w-[860px] py-16 text-[48px] leading-[52px] md:text-[72px] md:leading-[74px]">Each step produces something Avodah can use.</h2>
       </Reveal>
@@ -485,7 +490,7 @@ function Boundaries() {
         </Reveal>
         <Reveal>
           <p className="text-[15px] leading-[24px] text-ink-2">
-            The program stays focused on employment. The research defines the opportunity, the selected build layers define the deliverables, and the content review process protects quality across every page.
+            The program begins with three practice groups and one protected master brand. Research defines the priority order, selected build layers define the deliverables, and Avodah review protects quality across every page.
           </p>
         </Reveal>
       </div>
@@ -514,7 +519,7 @@ function NextStep() {
       <div className="grid gap-12 border-t border-paper/20 pt-12 lg:grid-cols-[1fr_470px] lg:gap-24">
         <Reveal>
           <p className="serif max-w-[640px] text-[28px] italic leading-[39px] text-paper/85">
-            Improve the Avodah website, build a dedicated educational destination, or connect both into one useful employment knowledge system.
+            Improve the Avodah website, build the first dedicated practice-area destination, or connect both into one search system that can grow without blurring the firm.
           </p>
         </Reveal>
         <Reveal className="flex flex-col gap-6">
@@ -542,7 +547,7 @@ function Footer() {
       </div>
       <div className="flex items-center gap-5">
         <span className="eyebrow">July 2026</span>
-        <span className="eyebrow text-ink">Proposal · v4</span>
+        <span className="eyebrow text-ink">Proposal · v5</span>
       </div>
     </footer>
   )
@@ -552,7 +557,7 @@ export function AvodahProposal() {
   useEffect(() => {
     document.title = 'Anchovies x Avodah - Proposal'
     const meta = document.querySelector('meta[name="description"]')
-    meta?.setAttribute('content', 'An employment search research, knowledge library, and educational resource-site proposal for Avodah from Anchovies.')
+    meta?.setAttribute('content', 'A practice-area search research, Avodah knowledge library, and reusable resource-site proposal from Anchovies.')
   }, [])
 
   return (
