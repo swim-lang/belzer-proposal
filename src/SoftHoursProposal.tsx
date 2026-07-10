@@ -84,12 +84,15 @@ const phases: Phase[] = [
     num: '02',
     title: 'Core page design and development',
     body: 'We refine and build the priority pages so the store feels like Soft Hours: calm, tactile, clear, and easier to shop. This assumes we are building from the current design, coded direction, and client-provided copy rather than starting from a blank canvas.',
-    outcome: 'A more resolved homepage, collection path, product page, and supporting brand/story content connected to Shopify.',
+    outcome: 'A more resolved homepage, collection path, product page, supporting brand/story content, and lightweight photography direction connected to the Shopify build.',
     includes: [
       'Homepage polish',
       'Collection page polish',
       'Product detail page polish',
       'About or story section refinement',
+      'Lightweight photography direction for launch',
+      'Priority shot list for homepage, collection, product, fabric, detail, and lifestyle imagery',
+      'Image crop, consistency, and page-usage guidance',
       'CTA and button placement guidance',
       'Typography, spacing, and section rhythm cleanup',
       'Conversion-focused page refinement',
@@ -133,6 +136,7 @@ const deliverables = [
   ['Design', 'Homepage polish', 'A more resolved first impression shaped around Soft Hours, shopping clarity, and conversion.'],
   ['Design', 'Collection page polish', 'A cleaner browsing path for categories, product families, or launch assortment.'],
   ['Design', 'Product page polish', 'A product detail experience shaped around fabric, fit, care, imagery, and purchase confidence.'],
+  ['Direction', 'Lightweight photography direction', 'A concise visual reference, priority shot list, and image-usage guidance shaped around the actual Shopify pages.'],
   ['Owner', 'Client-owned copy placement', 'Soft Hours provides final copy. Anchovies places it clearly across product, collection, CTA, and supporting sections.'],
   ['Build', 'HTML to Shopify development', 'Translation of the coded page direction into a Shopify-ready theme experience.'],
   ['Build', 'Editable design controls', 'Key sections coded so Soft Hours can update copy, imagery, CTAs, and selected page content in Shopify.'],
@@ -144,7 +148,7 @@ const deliverables = [
 ]
 
 const timeline = [
-  ['Week 01', 'Technical intake and Shopify build', ['Light HTML and design intake', 'Build plan', 'Theme path decisions', 'Homepage polish', 'Product page direction']],
+  ['Week 01', 'Technical intake and Shopify build', ['Light HTML and design intake', 'Build plan', 'Theme path decisions', 'Homepage polish', 'Product page and photography direction']],
   ['Week 02', 'Shopify development and editability', ['Core page development', 'Editable sections', 'Collection path polish', 'Smaller page buildout', 'Owner admin task list']],
   ['Buffer', 'QA and launch readiness', ['Mobile QA', 'Content swaps', 'Shopify connection support', 'Handoff notes', 'Launch checklist closeout']],
 ] as const
@@ -152,12 +156,13 @@ const timeline = [
 const investmentLines = [
   ['01', 'Shopify completion sprint', 'Technical intake, Shopify theme connection, core page design and development, editable sections, mobile QA, launch basics, and handoff notes.', '$3,000'],
   ['02', 'Owner setup responsibilities', 'Soft Hours owns product uploads, payment and bank connection, shipping, tax, and back-end admin setup. We provide guidance where useful.', 'Client-owned'],
-  ['03', 'Post-launch additions', 'Email flows, deeper SEO, campaign pages, photography direction, paid ads, subscriptions, and ongoing optimization can be scoped later.', 'Optional'],
+  ['03', 'Lightweight photography direction', 'A concise visual direction, priority shot list, and image crop and usage guidance are included. Photography production remains client-owned.', 'Included'],
+  ['04', 'Post-launch additions', 'Email flows, deeper SEO, campaign pages, paid ads, subscriptions, and ongoing optimization can be scoped later.', 'Optional'],
 ]
 
 const nextSteps: DetailRow[] = [
   ['01', 'Confirm scope', 'Confirm this is focused on turning the coded HTML head start into a Shopify site, not restarting brand or strategy.'],
-  ['02', 'Share access', 'Provide Shopify access, HTML files, current page direction, photography, product details, and any launch notes.'],
+  ['02', 'Share access', 'Provide Shopify access, HTML files, current page direction, available photography, product details, launch notes, and any known shoot timing.'],
   ['03', 'Begin sprint', 'Start with the technical intake, then move into Shopify development, editable sections, mobile QA, and handoff.'],
 ]
 
@@ -445,7 +450,7 @@ export function SoftHoursProposal() {
             </h2>
           </Reveal>
           <Reveal className="max-w-[500px] text-[15px] leading-[24px] text-ink-2">
-            The timeline assumes Shopify access, HTML files, photography, and key launch decisions are available at kickoff. Product uploads and payment setup can happen alongside this work on the Soft Hours side.
+            The timeline assumes Shopify access, HTML files, available photography, product context, and key launch decisions are available at kickoff. Any known shoot timing should also be shared so the lightweight photography direction can support the launch.
           </Reveal>
         </div>
         <Reveal className="grid border-t border-l border-[var(--color-rule)] md:grid-cols-3">
@@ -473,7 +478,7 @@ export function SoftHoursProposal() {
             <p className="eyebrow mt-5 text-ink-2">Total - Shopify completion sprint</p>
           </div>
           <div className="flex max-w-[560px] flex-col gap-5 text-[15px] leading-[24px] text-ink-2">
-            <p>This scoped-down sprint covers the focused work needed to turn the Soft Hours HTML head start into a Shopify site: technical intake, page design and development, editable sections, mobile QA, Shopify connection support, launch basics, and handoff notes.</p>
+            <p>This scoped-down sprint covers the focused work needed to turn the Soft Hours HTML head start into a Shopify site: technical intake, page design and development, lightweight photography direction, editable sections, mobile QA, Shopify connection support, launch basics, and handoff notes.</p>
             <p>The price assumes we are working from the current brand, design direction, coded pages, and Soft Hours-provided copy. Product uploads, payment and bank connection, shipping, tax, and back-end admin setup remain with Soft Hours.</p>
           </div>
         </Reveal>

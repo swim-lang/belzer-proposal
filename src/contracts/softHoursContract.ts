@@ -23,7 +23,7 @@ export const softHoursContract: ContractData = {
     {
       amount: '$1,500',
       label: 'Due at project kickoff',
-      body: 'Project starts when the kickoff invoice is paid and Shopify access, HTML files, current page direction, photography, product details, and launch notes have been shared.',
+      body: 'Project starts when the kickoff invoice is paid and Shopify access, HTML files, current page direction, available photography, product details, launch notes, and any known shoot timing have been shared.',
     },
     {
       amount: '$1,500',
@@ -33,7 +33,7 @@ export const softHoursContract: ContractData = {
   ],
   revisionRounds: [
     'Technical intake and build plan: 1 focused alignment pass on the Shopify theme path, page priorities, current HTML, mobile direction, and owner-side launch tasks.',
-    'Core page design and development: 1 round of refinement on the priority Shopify pages before final QA.',
+    'Core page design, development, and photography direction: 1 round of refinement on the priority Shopify pages, lightweight image direction, and launch shot priorities before final QA.',
     'Editable Shopify sections: 1 round of refinement on key editable sections, content controls, and handoff notes.',
     'Mobile QA and launch basics: 1 round of cleanup edits before final handoff.',
   ],
@@ -65,13 +65,16 @@ export const softHoursContract: ContractData = {
         'Collection page polish',
         'Product detail page polish',
         'Story or about content refinement',
+        'Lightweight photography direction for launch',
+        'Priority shot list for homepage, collection, product, fabric, detail, and lifestyle imagery',
+        'Image crop, consistency, and page-usage guidance',
         'CTA and button placement guidance',
         'Typography, spacing, and section rhythm cleanup',
         'Conversion-focused page refinement',
         'Copy placement using Soft Hours-provided language',
       ],
       deliverable:
-        'A more complete Shopify page experience for the homepage, collection path, product page, and supporting brand or story content.',
+        'A more complete Shopify page experience for the homepage, collection path, product page, and supporting brand or story content, plus a lightweight photography direction shaped around the actual page needs.',
     },
     {
       label: 'C',
@@ -117,7 +120,7 @@ export const softHoursContract: ContractData = {
     'Email flows',
     'Deeper SEO',
     'Campaign pages',
-    'Photography direction',
+    'Photography production, shooting, editing, and retouching',
     'Paid ads',
     'Subscription setup',
     'Ongoing conversion optimization',
