@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Reveal } from './components/Reveal'
 
 const choosePackageHref =
-  'mailto:sean@anchovies.agency?subject=Avodah%20program%20selection&body=Hi%20Sean%2C%0A%0AWe%27d%20like%20to%20move%20forward%20with%3A%20%5BResearch%20%2B%20Avodah%20Knowledge%20Library%20%2F%20Research%20%2B%20Practice-Area%20Resource%20Site%20%2F%20The%20complete%20program%5D.%0A%0A'
+  'mailto:sean@anchovies.agency?subject=Avodah%20program%20selection&body=Hi%20Sean%2C%0A%0AWe%27d%20like%20to%20move%20forward%20with%3A%20%5BResearch%20%2B%20Avodah%20Blog%20and%20Site%20Improvements%20%2F%20Research%20%2B%20Practice-Area%20Resource%20Site%20%2F%20The%20complete%20program%5D.%0A%0A'
 const calendarHref = 'https://cal.com/anchovies/30min?overlayCalendar=true'
 
 type Package = {
@@ -63,20 +63,20 @@ const packages: Package[] = [
   },
   {
     number: '02',
-    name: 'Avodah Knowledge Library',
-    price: '$7,000',
+    name: 'Avodah Blog + Site Improvements',
+    price: '$5,000',
     timing: '6 to 8 weeks',
-    badge: 'Build option',
-    summary: 'Improve the existing Avodah experience without blurring its premium positioning, then create a substantial knowledge library around the practice areas research prioritizes.',
+    badge: 'Site + content',
+    summary: "Design and code Avodah's first blog, publish a substantial launch library, and make focused improvements without blurring the firm's premium positioning.",
     outcomes: [
-      'A more useful main site that keeps branded search, attorney credibility, and anchor-client trust at the center',
+      'A newly designed and developed blog that does not exist on the current Avodah site today',
       'Fifty concise, research-backed articles allocated across priority practice groups',
-      'A searchable, listenable knowledge library designed for people first and search second',
+      'Focused usability, conversion, technical, and practice-page improvements around the existing firm experience',
     ],
     includes: [
       'Built from the approved Search Foundation',
-      'Focused improvements to Avodah practice pages and conversion paths',
-      'Knowledge library and CMS structure that stays secondary to the main firm experience',
+      'Blog strategy, responsive design, Framer development, CMS, and article templates',
+      'Focused improvements to Avodah practice pages, conversion paths, and technical structure',
       'Fifty original, attorney-reviewed articles with source notes',
       'Topic clusters, tags, search, and internal linking',
       'Listen to this article audio experience across the library',
@@ -85,24 +85,25 @@ const packages: Package[] = [
       'Avodah-owned shared marketing account setup for platform access',
       'Analytics, inquiry events, responsive QA, and publishing',
     ],
-    payment: '50% at implementation kickoff ($3,500), 25% after the content system is approved ($1,750), then 25% before publishing ($1,750).',
+    payment: '50% at implementation kickoff ($2,500), 25% after blog design approval ($1,250), then 25% before publishing ($1,250).',
   },
   {
     number: '03',
     name: 'Practice-Area Resource Site',
-    price: '$9,000',
+    price: '$11,000',
     timing: '8 to 10 weeks',
-    badge: 'Optional add-on',
-    summary: 'Create the first focused seven-page destination, then use its design and content system as the foundation for future practice-area sites.',
+    badge: 'Primary build',
+    summary: 'Create the first focused seven-page destination, launch it with its own deep content library, then use the system as the foundation for future practice-area sites.',
     outcomes: [
       'A complete educational sister site with its own role, name, and visual direction, with employment as the assumed first focus',
-      'A practical destination built around guides, answers, tools, and trusted sources',
+      'Twenty-five original cornerstone guides and answers, plus a substantial collection of tools and trusted resources',
       'A reusable system for future traffic and criminal or corporate sites without producing identical copies',
     ],
     includes: [
       'Built from the approved Search Foundation',
       'Seven adaptable core pages: Home, Start Here, Common Problems, Rights and Options, Guides and Answers, Resource Directory, and About and Get Help',
       'Focused naming and visual direction',
+      'Twenty-five original, research-backed cornerstone guides with source notes and attorney review',
       'Up to seventy-five curated government, nonprofit, and authoritative resources with summaries and topic tags',
       'Plain-language glossary of up to one hundred terms for the selected practice area',
       'Six practical checklists and decision guides',
@@ -111,7 +112,7 @@ const packages: Package[] = [
       'Responsive Framer design and development',
       'CMS, technical SEO, analytics, forms, QA, and launch',
     ],
-    payment: '50% at site kickoff ($4,500), 25% after design approval ($2,250), then 25% before launch ($2,250).',
+    payment: '50% at site kickoff ($5,500), 25% after design approval ($2,750), then 25% before launch ($2,750).',
   },
 ]
 
@@ -125,38 +126,38 @@ const workPhases = [
   },
   {
     number: '02',
-    title: 'Turn Avodah into a knowledge library.',
-    forPackages: 'Avodah library',
-    body: 'We make focused improvements without turning the firm website into a consumer-law destination. Each article is concise, sourced, reviewed by an Avodah attorney, easy to scan, and available to listen to.',
+    title: "Build Avodah's first blog.",
+    forPackages: 'Blog + improvements',
+    body: 'Avodah does not have a current blog, so this includes the strategy, design, coding, CMS, and article experience from the ground up. We also make focused improvements without turning the firm website into a consumer-law destination.',
     items: [
-      'Focused Avodah website improvements',
+      'Responsive blog design and Framer development',
       'Fifty original, attorney-reviewed practice-area articles with source notes',
       'Searchable and filterable knowledge library and CMS',
       'Listen to this article audio across the library',
       'Topic clusters, internal links, authorship, article schema, and AI-search structure',
-      'Main Google Business Profile setup, Norfolk office update, analytics, QA, and publishing',
+      'General site improvements, main Google Business Profile setup, Norfolk office update, analytics, QA, and publishing',
     ],
   },
   {
     number: '03',
     title: 'Build a destination of its own.',
     forPackages: 'Resource site',
-    body: 'The optional sister site is a useful practice-area resource, not another generic law firm website. Employment is the assumed first focus, and the system is designed to support distinct traffic and criminal or corporate versions later.',
+    body: 'The sister site is the primary new build. It combines a complete website with an original content library, curated sources, and practical tools. Employment is the assumed first focus, and the system can support distinct traffic and criminal or corporate versions later.',
     items: [
       'Seven adaptable core pages: Home, Start Here, Common Problems, Rights and Options, Guides and Answers, Resource Directory, and About and Get Help',
+      'Twenty-five original cornerstone guides and answers with source notes and attorney review',
       'Up to seventy-five curated resources with summaries and topic tags',
       'Plain-language glossary of up to one hundred terms',
       'Six practical checklists and decision guides',
-      'Search, filters, and connections to relevant Avodah articles',
-      'Distinct naming, visual direction, reusable CMS system, and launch',
+      'Search, filters, distinct naming, visual direction, reusable CMS system, and launch',
     ],
   },
 ]
 
 const timelineRows = [
   ['Weeks 1 to 3', 'Foundation', 'Research three practice groups, audit current performance, establish the first-party baseline, protect branded search, and recommend the build sequence and channels.'],
-  ['Weeks 4 to 6', 'Systems and direction', 'Design the Avodah knowledge library, confirm the article framework, establish the source and review process, and design the first practice-area site if selected.'],
-  ['Weeks 7 to 10', 'Content and development', 'Produce the article library, improve Avodah, build the resource experience, and connect search, audio, AI-search structure, analytics, and inquiry paths.'],
+  ['Weeks 4 to 6', 'Systems and direction', 'Design and develop the new Avodah blog, confirm both content frameworks, establish the source and review process, and design the first practice-area site if selected.'],
+  ['Weeks 7 to 10', 'Content and development', 'Produce the Avodah article library and sister-site guides, improve the main site, build the resource experience, and connect search, audio, AI-search structure, analytics, and inquiry paths.'],
   ['Weeks 11 to 12', 'Review and launch', 'Complete attorney review, responsive QA, final publishing, measurement setup, and launch for the selected destination or destinations.'],
 ]
 
@@ -232,7 +233,7 @@ function AvodahNav() {
           <span className="eyebrow text-ink-2">Prepared for Avodah</span>
         </div>
         <div className="flex items-center gap-5">
-          <span className="eyebrow text-ink-2">Practice-area search · v5</span>
+          <span className="eyebrow text-ink-2">Practice-area search · v6</span>
           <span className="eyebrow">July 2026</span>
         </div>
       </div>
@@ -309,15 +310,15 @@ function Recommendation() {
         </Reveal>
         <Reveal className="grid gap-0 border-y border-paper/20">
           <div className="border-b border-paper/20 py-7">
-            <span className="eyebrow text-paper/45">Layer A · Avodah knowledge system</span>
+            <span className="eyebrow text-paper/45">Layer A · Avodah blog + improvements</span>
             <p className="mt-3 text-[15px] leading-[24px] text-paper/75">
-              Thoughtful articles, glossary-style answers, technical structure, the main Google Business Profile, and better measurement without crowding the premium firm experience.
+              A new blog designed and coded from scratch, fifty articles, focused site improvements, the main Google Business Profile, and better measurement without crowding the premium firm experience.
             </p>
           </div>
           <div className="py-7">
-            <span className="eyebrow text-paper/45">Layer B · Practice-area resource sites</span>
+            <span className="eyebrow text-paper/45">Layer B · Primary sister-site build</span>
             <p className="mt-3 text-[15px] leading-[24px] text-paper/75">
-              A distinct, genuinely useful destination for the first priority practice, plus a reusable system for traffic and criminal or corporate versions later.
+              A complete website and original content library for the first priority practice, plus a reusable system for traffic and criminal or corporate versions later.
             </p>
           </div>
         </Reveal>
@@ -336,7 +337,7 @@ function Packages() {
         </Reveal>
         <Reveal>
           <p className="text-[15px] leading-[24px] text-ink-2">
-            Start with the Search Foundation. Then improve Avodah with a fifty-article knowledge library, add the first practice-area resource site, or do both as one coordinated program.
+            Start with the Search Foundation. Then build Avodah's first blog with fifty articles and focused site improvements, commission the more substantial practice-area resource site, or do both as one coordinated program.
           </p>
         </Reveal>
       </div>
@@ -372,7 +373,7 @@ function Packages() {
       <Reveal className="mt-8 border border-mac p-6 sm:p-8">
         <span className="eyebrow text-mac">How the choices work</span>
         <p className="mt-4 max-w-[1000px] serif text-[25px] leading-[34px]">
-          Search Foundation is required. Add the Avodah Knowledge Library, the Practice-Area Resource Site, or both. The complete program is $19,500.
+          Search Foundation is required. Add the Avodah Blog + Site Improvements, the Practice-Area Resource Site, or both. The complete program is $19,500.
         </p>
       </Reveal>
     </section>
@@ -382,7 +383,7 @@ function Packages() {
 function IncludedWork() {
   return (
     <section id="included" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-      <MetaRow left="§ 04 - Included work" right="Research · Avodah · Practice-area system" />
+      <MetaRow left="§ 04 - Included work" right="Research · Blog + improvements · Sister site" />
       <Reveal>
         <h2 className="display max-w-[860px] py-16 text-[48px] leading-[52px] md:text-[72px] md:leading-[74px]">Each step produces something Avodah can use.</h2>
       </Reveal>
@@ -465,11 +466,11 @@ function Investment() {
       <Reveal className="mt-10 grid gap-8 border border-paper/20 p-7 md:grid-cols-3 md:p-9">
         <div>
           <span className="eyebrow text-paper/50">Avodah path</span>
-          <p className="serif mt-4 text-[27px] leading-[36px]">Research plus the Avodah library: $10,500.</p>
+          <p className="serif mt-4 text-[27px] leading-[36px]">Research plus the Avodah blog and improvements: $8,500.</p>
         </div>
         <div>
           <span className="eyebrow text-paper/50">Resource-site path</span>
-          <p className="serif mt-4 text-[27px] leading-[36px]">Research plus the educational site: $12,500.</p>
+          <p className="serif mt-4 text-[27px] leading-[36px]">Research plus the sister site and launch content: $14,500.</p>
         </div>
         <div>
           <span className="eyebrow text-paper/50">Complete program</span>
@@ -547,7 +548,7 @@ function Footer() {
       </div>
       <div className="flex items-center gap-5">
         <span className="eyebrow">July 2026</span>
-        <span className="eyebrow text-ink">Proposal · v5</span>
+        <span className="eyebrow text-ink">Proposal · v6</span>
       </div>
     </footer>
   )
@@ -557,7 +558,7 @@ export function AvodahProposal() {
   useEffect(() => {
     document.title = 'Anchovies x Avodah - Proposal'
     const meta = document.querySelector('meta[name="description"]')
-    meta?.setAttribute('content', 'A practice-area search research, Avodah knowledge library, and reusable resource-site proposal from Anchovies.')
+    meta?.setAttribute('content', 'A practice-area search research, Avodah blog, site-improvement, and reusable sister-site proposal from Anchovies.')
   }, [])
 
   return (
