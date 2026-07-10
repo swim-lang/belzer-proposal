@@ -64,7 +64,7 @@ const packages: Package[] = [
   {
     number: '02',
     name: 'Avodah Blog + Site Improvements',
-    price: '$5,000',
+    price: '$4,500',
     timing: '6 to 8 weeks',
     badge: 'Site + content',
     summary: "Design and code Avodah's first blog, publish a substantial launch library, and make focused improvements without blurring the firm's premium positioning.",
@@ -85,12 +85,12 @@ const packages: Package[] = [
       'Avodah-owned shared marketing account setup for platform access',
       'Analytics, inquiry events, responsive QA, and publishing',
     ],
-    payment: '50% at implementation kickoff ($2,500), 25% after blog design approval ($1,250), then 25% before publishing ($1,250).',
+    payment: '50% at implementation kickoff ($2,250), 25% after blog design approval ($1,125), then 25% before publishing ($1,125).',
   },
   {
     number: '03',
     name: 'Practice-Area Resource Site',
-    price: '$11,000',
+    price: '$10,500',
     timing: '8 to 10 weeks',
     badge: 'Primary build',
     summary: 'Create the first focused seven-page destination, launch it with its own deep content library, then use the system as the foundation for future practice-area sites.',
@@ -112,7 +112,7 @@ const packages: Package[] = [
       'Responsive Framer design and development',
       'CMS, technical SEO, analytics, forms, QA, and launch',
     ],
-    payment: '50% at site kickoff ($5,500), 25% after design approval ($2,750), then 25% before launch ($2,750).',
+    payment: '50% at site kickoff ($5,250), 25% after design approval ($2,625), then 25% before launch ($2,625).',
   },
 ]
 
@@ -373,7 +373,7 @@ function Packages() {
       <Reveal className="mt-8 border border-mac p-6 sm:p-8">
         <span className="eyebrow text-mac">How the choices work</span>
         <p className="mt-4 max-w-[1000px] serif text-[25px] leading-[34px]">
-          Search Foundation is required. Add the Avodah Blog + Site Improvements, the Practice-Area Resource Site, or both. The complete program is $19,500.
+          Search Foundation is required. Add the Avodah Blog + Site Improvements, the Practice-Area Resource Site, or both. The complete program is $18,500.
         </p>
       </Reveal>
     </section>
@@ -466,15 +466,15 @@ function Investment() {
       <Reveal className="mt-10 grid gap-8 border border-paper/20 p-7 md:grid-cols-3 md:p-9">
         <div>
           <span className="eyebrow text-paper/50">Avodah path</span>
-          <p className="serif mt-4 text-[27px] leading-[36px]">Research plus the Avodah blog and improvements: $8,500.</p>
+          <p className="serif mt-4 text-[27px] leading-[36px]">Research plus the Avodah blog and improvements: $8,000.</p>
         </div>
         <div>
           <span className="eyebrow text-paper/50">Resource-site path</span>
-          <p className="serif mt-4 text-[27px] leading-[36px]">Research plus the sister site and launch content: $14,500.</p>
+          <p className="serif mt-4 text-[27px] leading-[36px]">Research plus the sister site and launch content: $14,000.</p>
         </div>
         <div>
           <span className="eyebrow text-paper/50">Complete program</span>
-          <p className="serif mt-4 text-[27px] leading-[36px]">Research and both build layers: $19,500.</p>
+          <p className="serif mt-4 text-[27px] leading-[36px]">Research and both build layers: $18,500.</p>
         </div>
       </Reveal>
     </section>
