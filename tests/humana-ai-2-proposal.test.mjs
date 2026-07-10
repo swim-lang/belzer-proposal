@@ -6,14 +6,13 @@ const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf
 
 test('Humana AI proposal 2 is registered as a revised proposal', () => {
   const app = read('src/App.tsx')
-  const dashboard = read('src/admin/Dashboard.tsx')
+  const manifest = read('src/proposalManifest.json')
   const proposal = read('src/HumanaAIProposal2.tsx')
 
   assert.match(app, /HumanaAIProposal2/)
-  assert.match(app, /\/proposal\/humana-ai-2/)
-  assert.match(app, /\/proposal\/humanaai/)
-  assert.match(dashboard, /Humana AI/)
-  assert.match(dashboard, /\/proposal\/humana-ai-2/)
+  assert.match(manifest, /Humana AI/)
+  assert.match(manifest, /\/proposal\/humana-ai-2/)
+  assert.match(manifest, /\/proposal\/humanaai/)
 
   assert.match(proposal, /Prepared for Humana AI/)
   assert.match(proposal, /Anchovies[\s\S]*Humana AI/)

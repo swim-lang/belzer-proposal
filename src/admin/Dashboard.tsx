@@ -2,8 +2,8 @@ import { useEffect, useState, type FormEvent } from 'react'
 import { absolutePageUrl, createLocalFirmPage, readLocalFirmPages, slugifyFirmName, type FirmPage } from '../firmPages'
 import { useContent, useContentControl } from '../context/ContentContext'
 import type { Submission } from '../intake/types'
+import { proposalManifest } from '../proposalManifest'
 import { navigate } from './AdminChrome'
-import { kndContent } from '../kndContent'
 
 type Proposal = {
   id: string
@@ -113,117 +113,21 @@ export function Dashboard() {
       ? syncStatus.updatedAt
       : null
 
-  const proposals: Proposal[] = [
-    {
-      id: proposal.id || 'belzer',
-      name: client.name,
-      tagline: `${proposal.kind} · ${client.location}`,
-      status: 'Active',
-      href: `/proposal/${proposal.id || 'belzer'}`,
-      editable: true,
-      intakeHref: '/intake',
-      lastEdited,
-      submissionCount: submissions?.filter((s) => (s.client || '') === client.name).length ?? undefined,
-    },
-    {
-      id: 'belzer-pilot',
-      name: 'Belzer Law: Focused Workflow Pilot',
-      tagline: 'Focused Workflow Pilot · $4,500 flat',
-      status: 'Active',
-      href: '/proposal/belzer-pilot',
-    },
-    {
-      id: kndContent.proposal.id,
-      name: kndContent.client.name,
-      tagline: `${kndContent.proposal.kind} · ${kndContent.client.location}`,
-      status: 'Active',
-      href: '/proposal/knd',
-    },
-    {
-      id: 'sleep-like-a-goddess',
-      name: 'Sleep Like a Goddess',
-      tagline: 'Brand system refinement · May 2026',
-      status: 'Active',
-      href: '/proposal/sleep-like-a-goddess',
-    },
-    {
-      id: 'soft-hours',
-      name: 'Soft Hours',
-      tagline: 'Shopify completion · June 2026',
-      status: 'Active',
-      href: '/proposal/soft-hours',
-    },
-    {
-      id: 'molly',
-      name: 'Molly Engels',
-      tagline: 'Brand identity, website, and copy direction · $1,950',
-      status: 'Active',
-      href: '/proposal/molly',
-    },
-    {
-      id: 'humanaai',
-      name: 'HumanaAI',
-      tagline: 'Brand, site, deck, and app concept · May 2026',
-      status: 'Active',
-      href: '/proposal/humanaai',
-    },
-    {
-      id: 'humana-ai-2',
-      name: 'Humana AI',
-      tagline: 'Revised brand, site, prototype, and social · $6,500',
-      status: 'Active',
-      href: '/proposal/humana-ai-2',
-    },
-    {
-      id: 'lapinco',
-      name: 'Lapinco',
-      tagline: 'Brand, messaging, site, and portal readiness · May 2026',
-      status: 'Active',
-      href: '/proposal/lapinco',
-    },
-    {
-      id: 'baps-charities',
-      name: 'BAPS Charities',
-      tagline: 'Website system and donation experience · May 2026',
-      status: 'Active',
-      href: '/proposal/baps-charities',
-    },
-    {
-      id: 'soup-to-software',
-      name: 'Soup to Software',
-      tagline: 'Strategy, identity, narrative, and site · May 2026',
-      status: 'Active',
-      href: '/proposal/soup-to-software',
-    },
-    {
-      id: 'fiber-soft-chew',
-      name: 'Fiber Soft Chew',
-      tagline: 'Naming and brand identity · May 2026',
-      status: 'Active',
-      href: '/proposal/fiber-soft-chew',
-    },
-    {
-      id: 'gary-springstead',
-      name: 'Springstead',
-      tagline: 'Brand, identity, narrative, and website · June 2026',
-      status: 'Active',
-      href: '/proposal/gary-springstead',
-    },
-    {
-      id: 'wildflower-blanc',
-      name: 'Wildflower + Blanc',
-      tagline: 'Dual brand identity · June 2026',
-      status: 'Active',
-      href: '/proposal/wildflower-blanc',
-    },
-    {
-      id: 'cipher',
-      name: 'Cipher',
-      tagline: 'Brand identity + website · $15,900',
-      status: 'Active',
-      href: '/proposal/cipher',
-    },
-  ]
+  const proposals: Proposal[] = proposalManifest
+    .filter((entry) => entry.showInDashboard)
+    .map((entry) => {
+      if (entry.id !== 'belzer') return entry
+
+      return {
+        ...entry,
+        name: client.name,
+        tagline: `${proposal.kind} · ${client.location}`,
+        editable: true,
+        intakeHref: '/intake',
+        lastEdited,
+        submissionCount: submissions?.filter((s) => (s.client || '') === client.name).length ?? undefined,
+      }
+    })
 
   const recent = (submissions ?? []).slice(0, 5)
   const trimmedFirm = firmName.trim()
@@ -282,7 +186,7 @@ export function Dashboard() {
             <span className="text-[11px] tracking-[0.12em] uppercase text-ink-2">Good to see you, Sean</span>
           </div>
           <h1 className="serif text-[40px] leading-[44px] md:text-[56px] md:leading-[60px] tracking-[-0.02em]">
-            {proposals.length} live proposal{proposals.length === 1 ? '' : 's'} in your workspace.
+            {proposals.length} proposal{proposals.length === 1 ? '' : 's'} in your workspace.
           </h1>
           <p className="text-[14px] leading-[22px] text-ink-2 max-w-[560px]">
             Open live proposals, create pre-meeting firm pages, or jump straight to the latest submissions.

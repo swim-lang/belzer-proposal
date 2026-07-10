@@ -6,15 +6,14 @@ const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf
 
 test('Springstead proposal is registered and preserves source content', () => {
   const app = read('src/App.tsx')
-  const dashboard = read('src/admin/Dashboard.tsx')
+  const manifest = read('src/proposalManifest.json')
   const proposal = read('src/GarySpringsteadProposal.tsx')
   const css = read('src/index.css')
 
   assert.match(app, /GarySpringsteadProposal/)
-  assert.match(app, /\/proposal\/gary-springstead/)
-  assert.match(dashboard, /Springstead/)
-  assert.doesNotMatch(dashboard, /name: 'Gary Springstead'/)
-  assert.match(dashboard, /\/proposal\/gary-springstead/)
+  assert.match(manifest, /Springstead/)
+  assert.doesNotMatch(manifest, /"name": "Gary Springstead"/)
+  assert.match(manifest, /\/proposal\/gary-springstead/)
   assert.match(proposal, /Anchovies × Springstead/)
   assert.match(proposal, /Anchovies x Springstead - Proposal/)
   assert.match(proposal, /A new firm with a reputation already built\./)

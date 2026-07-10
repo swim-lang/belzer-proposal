@@ -1,111 +1,50 @@
 import type { ReactNode } from 'react'
-import { ContentProvider } from './context/ContentContext'
-import { Proposal } from './Proposal'
-import { PreMeetingPage } from './PreMeetingPage'
-import { QuietHome } from './QuietHome'
-import { SavedFirmPage } from './SavedFirmPage'
+import { AvodahProposal } from './AvodahProposal'
 import { BapsCharitiesProposal } from './BapsCharitiesProposal'
+import { BelzerPilotProposal } from './BelzerPilotProposal'
 import { CipherProposal } from './CipherProposal'
 import { FiberSoftChewProposal } from './FiberSoftChewProposal'
 import { GarySpringsteadProposal } from './GarySpringsteadProposal'
 import { GenesiProposal } from './GenesiProposal'
 import { HumanaAIProposal } from './HAAIProposal'
+import { HomemadeProposal } from './HomemadeProposal'
 import { HumanaAIProposal2 } from './HumanaAIProposal2'
 import { LapincoProposal } from './LapincoProposal'
 import { LexPoliticaProposal } from './LexPoliticaProposal'
+import { LittleTechAssociationProposal } from './LittleTechAssociationProposal'
 import { MollyEngelsProposal } from './MollyEngelsProposal'
 import { OffMenuProposal } from './OffMenuProposal'
+import { PathLawGroupProposal } from './PathLawGroupProposal'
+import { PreMeetingPage } from './PreMeetingPage'
+import { Proposal } from './Proposal'
+import { QuietHome } from './QuietHome'
+import { SavedFirmPage } from './SavedFirmPage'
 import { SleepGoddessProposal } from './SleepGoddessProposal'
 import { SoftHoursProposal } from './SoftHoursProposal'
 import { SoupToSoftwareProposal } from './SoupToSoftwareProposal'
+import { TamrahProposal } from './TamrahProposal'
 import { WildflowerBlancProposal } from './WildflowerBlancProposal'
-import { BelzerPilotProposal } from './BelzerPilotProposal'
-import { ProposalGate } from './components/ProposalGate'
 import { Admin } from './admin/Admin'
-import { Intake } from './intake/Intake'
+import { ProposalGate } from './components/ProposalGate'
+import { ContentProvider } from './context/ContentContext'
 import { ContractPage } from './contracts/ContractPage'
 import { cipherContract } from './contracts/cipherContract'
 import { fiberSoftChewContract } from './contracts/fiberSoftChewContract'
 import { genesiContract } from './contracts/genesiContract'
+import { lapincoContract } from './contracts/lapincoContract'
 import { mollyEngelsContract } from './contracts/mollyEngelsContract'
 import { offMenuContract } from './contracts/offMenuContract'
 import { softHoursContract } from './contracts/softHoursContract'
 import { wildflowerBlancContract } from './contracts/wildflowerBlancContract'
-import { createPreMeetingContent, getPreMeetingFirmNameFromURL } from './preMeetingContent'
+import { Intake } from './intake/Intake'
 import { kndContent } from './kndContent'
+import { createPreMeetingContent, getPreMeetingFirmNameFromURL } from './preMeetingContent'
+import { findProposalManifestEntry } from './proposalManifest'
 
 export default function App() {
   const pathname = typeof window !== 'undefined' ? window.location.pathname : '/'
   const isAdmin = pathname === '/admin' || pathname.startsWith('/admin/')
   const isIntake = pathname === '/intake' || pathname.startsWith('/intake/')
-  const isLegacyBelzer = pathname === '/belzer' || pathname.startsWith('/belzer/')
-  const isBelzer = pathname === '/proposal/belzer' || pathname.startsWith('/proposal/belzer/')
-  const isBelzerPilot =
-    pathname === '/proposal/belzer-pilot' ||
-    pathname.startsWith('/proposal/belzer-pilot/')
-  const isKND = pathname === '/proposal/knd' || pathname.startsWith('/proposal/knd/')
-  const isBapsCharities =
-    pathname === '/proposal/baps-charities' ||
-    pathname.startsWith('/proposal/baps-charities/')
-  const isSleepGoddess =
-    pathname === '/proposal/sleep-like-a-goddess' ||
-    pathname.startsWith('/proposal/sleep-like-a-goddess/') ||
-    pathname === '/sleep-like-a-goddess' ||
-    pathname.startsWith('/sleep-like-a-goddess/')
-  const isSoftHours =
-    pathname === '/proposal/soft-hours' ||
-    pathname.startsWith('/proposal/soft-hours/') ||
-    pathname === '/soft-hours' ||
-    pathname.startsWith('/soft-hours/')
-  const isSoftHoursContract = pathname === '/proposal/soft-hours/contract'
-  const isHumanaAI =
-    pathname === '/proposal/humanaai' ||
-    pathname.startsWith('/proposal/humanaai/') ||
-    pathname === '/humanaai' ||
-    pathname.startsWith('/humanaai/') ||
-    pathname === '/proposal/haai' ||
-    pathname.startsWith('/proposal/haai/') ||
-    pathname === '/haai' ||
-    pathname.startsWith('/haai/')
-  const isHumanaAIProposal2 =
-    pathname === '/proposal/humana-ai-2' ||
-    pathname.startsWith('/proposal/humana-ai-2/')
-  const isLexPolitica =
-    pathname === '/proposal/lex-politica' ||
-    pathname.startsWith('/proposal/lex-politica/')
-  const isMolly =
-    pathname === '/proposal/molly' ||
-    pathname.startsWith('/proposal/molly/')
-  const isMollyContract = pathname === '/proposal/molly/contract'
-  const isGenesi =
-    pathname === '/proposal/genesi' ||
-    pathname.startsWith('/proposal/genesi/')
-  const isGenesiContract = pathname === '/proposal/genesi/contract'
-  const isLapinco =
-    pathname === '/proposal/lapinco' ||
-    pathname.startsWith('/proposal/lapinco/')
-  const isFiberSoftChew =
-    pathname === '/proposal/fiber-soft-chew' ||
-    pathname.startsWith('/proposal/fiber-soft-chew/')
-  const isFiberSoftChewContract = pathname === '/proposal/fiber-soft-chew/contract'
-  const isOffMenu =
-    pathname === '/proposal/off-menu' ||
-    pathname.startsWith('/proposal/off-menu/')
-  const isOffMenuContract = pathname === '/proposal/off-menu/contract'
-  const isGarySpringstead =
-    pathname === '/proposal/gary-springstead' ||
-    pathname.startsWith('/proposal/gary-springstead/')
-  const isWildflowerBlanc =
-    pathname === '/proposal/wildflower-blanc' ||
-    pathname.startsWith('/proposal/wildflower-blanc/')
-  const isWildflowerBlancContract = pathname === '/proposal/wildflower-blanc/contract'
-  const isCipher =
-    pathname === '/proposal/cipher' ||
-    pathname.startsWith('/proposal/cipher/')
-  const isCipherContract = pathname === '/proposal/cipher/contract'
-  const isSoupToSoftware =
-    pathname === '/proposal/soup-to-software' ||
-    pathname.startsWith('/proposal/soup-to-software/')
   const isFirmPage = pathname === '/firm' || pathname.startsWith('/firm/')
   const isPreMeeting =
     pathname === '/ai-legal-tools' ||
@@ -113,17 +52,8 @@ export default function App() {
     pathname === '/pre-meeting' ||
     pathname.startsWith('/pre-meeting/')
   const isProposalPath = pathname === '/proposal' || pathname.startsWith('/proposal/')
-  const isLegacyProposalPath =
-    isLegacyBelzer ||
-    pathname === '/sleep-like-a-goddess' ||
-    pathname.startsWith('/sleep-like-a-goddess/') ||
-    pathname === '/soft-hours' ||
-    pathname.startsWith('/soft-hours/') ||
-    pathname === '/humanaai' ||
-    pathname.startsWith('/humanaai/') ||
-    pathname === '/haai' ||
-    pathname.startsWith('/haai/')
-  const shouldGateProposal = isProposalPath || isLegacyProposalPath
+  const proposalEntry = findProposalManifestEntry(pathname)
+  const shouldGateProposal = isProposalPath || Boolean(proposalEntry)
   const withProposalGate = (children: ReactNode) =>
     shouldGateProposal ? <ProposalGate>{children}</ProposalGate> : children
 
@@ -147,134 +77,90 @@ export default function App() {
     )
   }
 
-  if (isBelzer) {
-    if (typeof document !== 'undefined') {
-      document.title = 'Anchovies × Belzer Law - Proposal'
+  if (proposalEntry) {
+    switch (proposalEntry.id) {
+      case 'belzer': {
+        if (pathname === '/belzer' || pathname.startsWith('/belzer/')) {
+          window.history.replaceState(null, '', '/proposal/belzer')
+        }
+        document.title = 'Anchovies × Belzer Law - Proposal'
+        return withProposalGate(
+          <ContentProvider>
+            <Proposal />
+          </ContentProvider>,
+        )
+      }
+      case 'belzer-pilot':
+        return withProposalGate(<BelzerPilotProposal />)
+      case 'knd':
+        document.title = 'Anchovies × KND Law Firm - Proposal'
+        return withProposalGate(
+          <ContentProvider initialContent={kndContent}>
+            <Proposal />
+          </ContentProvider>,
+        )
+      case 'baps-charities':
+        return withProposalGate(<BapsCharitiesProposal />)
+      case 'sleep-like-a-goddess':
+        return withProposalGate(<SleepGoddessProposal />)
+      case 'soft-hours-contract':
+        return withProposalGate(<ContractPage contract={softHoursContract} />)
+      case 'soft-hours':
+        return withProposalGate(<SoftHoursProposal />)
+      case 'humanaai':
+        return withProposalGate(<HumanaAIProposal />)
+      case 'humana-ai-2':
+        return withProposalGate(<HumanaAIProposal2 />)
+      case 'lex-politica':
+        return withProposalGate(<LexPoliticaProposal />)
+      case 'molly-contract':
+        return withProposalGate(<ContractPage contract={mollyEngelsContract} />)
+      case 'molly':
+        return withProposalGate(<MollyEngelsProposal />)
+      case 'genesi-contract':
+        return withProposalGate(<ContractPage contract={genesiContract} />)
+      case 'genesi':
+        return withProposalGate(<GenesiProposal />)
+      case 'lapinco-contract':
+        return withProposalGate(<ContractPage contract={lapincoContract} />)
+      case 'lapinco':
+        return withProposalGate(<LapincoProposal />)
+      case 'fiber-soft-chew-contract':
+        return withProposalGate(<ContractPage contract={fiberSoftChewContract} />)
+      case 'fiber-soft-chew':
+        return withProposalGate(<FiberSoftChewProposal />)
+      case 'off-menu-contract':
+        return withProposalGate(<ContractPage contract={offMenuContract} />)
+      case 'off-menu':
+        return withProposalGate(<OffMenuProposal />)
+      case 'gary-springstead':
+        return withProposalGate(<GarySpringsteadProposal />)
+      case 'wildflower-blanc-contract':
+        return withProposalGate(<ContractPage contract={wildflowerBlancContract} />)
+      case 'wildflower-blanc':
+        return withProposalGate(<WildflowerBlancProposal />)
+      case 'cipher-contract':
+        return withProposalGate(<ContractPage contract={cipherContract} />)
+      case 'cipher':
+        return withProposalGate(<CipherProposal />)
+      case 'soup-to-software':
+        return withProposalGate(<SoupToSoftwareProposal />)
+      case 'homemade':
+        return withProposalGate(<HomemadeProposal />)
+      case 'avodah':
+        return withProposalGate(<AvodahProposal />)
+      case 'little-tech-association':
+        return withProposalGate(<LittleTechAssociationProposal />)
+      case 'tamrah':
+        return withProposalGate(<TamrahProposal />)
+      case 'path-law-group':
+        return withProposalGate(<PathLawGroupProposal />)
     }
-    return withProposalGate(
-      <ContentProvider>
-        <Proposal />
-      </ContentProvider>,
-    )
-  }
-
-  if (isBelzerPilot) {
-    return withProposalGate(<BelzerPilotProposal />)
-  }
-
-  if (isKND) {
-    if (typeof document !== 'undefined') {
-      document.title = 'Anchovies × KND Law Firm - Proposal'
-    }
-    return withProposalGate(
-      <ContentProvider initialContent={kndContent}>
-        <Proposal />
-      </ContentProvider>,
-    )
-  }
-
-  if (isBapsCharities) {
-    return withProposalGate(<BapsCharitiesProposal />)
-  }
-
-  if (isSleepGoddess) {
-    return withProposalGate(<SleepGoddessProposal />)
-  }
-
-  if (isSoftHoursContract) {
-    return withProposalGate(<ContractPage contract={softHoursContract} />)
-  }
-
-  if (isSoftHours) {
-    return withProposalGate(<SoftHoursProposal />)
-  }
-
-  if (isHumanaAI) {
-    return withProposalGate(<HumanaAIProposal />)
-  }
-
-  if (isHumanaAIProposal2) {
-    return withProposalGate(<HumanaAIProposal2 />)
-  }
-
-  if (isLexPolitica) {
-    return withProposalGate(<LexPoliticaProposal />)
-  }
-
-  if (isMollyContract) {
-    return withProposalGate(<ContractPage contract={mollyEngelsContract} />)
-  }
-
-  if (isMolly) {
-    return withProposalGate(<MollyEngelsProposal />)
-  }
-
-  if (isGenesiContract) {
-    return withProposalGate(<ContractPage contract={genesiContract} />)
-  }
-
-  if (isGenesi) {
-    return withProposalGate(<GenesiProposal />)
-  }
-
-  if (isLapinco) {
-    return withProposalGate(<LapincoProposal />)
-  }
-
-  if (isFiberSoftChewContract) {
-    return withProposalGate(<ContractPage contract={fiberSoftChewContract} />)
-  }
-
-  if (isFiberSoftChew) {
-    return withProposalGate(<FiberSoftChewProposal />)
-  }
-
-  if (isOffMenuContract) {
-    return withProposalGate(<ContractPage contract={offMenuContract} />)
-  }
-
-  if (isOffMenu) {
-    return withProposalGate(<OffMenuProposal />)
-  }
-
-  if (isGarySpringstead) {
-    return withProposalGate(<GarySpringsteadProposal />)
-  }
-
-  if (isWildflowerBlancContract) {
-    return withProposalGate(<ContractPage contract={wildflowerBlancContract} />)
-  }
-
-  if (isWildflowerBlanc) {
-    return withProposalGate(<WildflowerBlancProposal />)
-  }
-
-  if (isCipherContract) {
-    return withProposalGate(<ContractPage contract={cipherContract} />)
-  }
-
-  if (isCipher) {
-    return withProposalGate(<CipherProposal />)
-  }
-
-  if (isSoupToSoftware) {
-    return withProposalGate(<SoupToSoftwareProposal />)
-  }
-
-  if (isLegacyBelzer) {
-    if (typeof window !== 'undefined') {
-      window.history.replaceState(null, '', '/proposal/belzer')
-    }
-    return withProposalGate(
-      <ContentProvider>
-        <Proposal />
-      </ContentProvider>,
-    )
   }
 
   if (isFirmPage) {
     return <SavedFirmPage />
   }
 
-  return <QuietHome />
+  return shouldGateProposal ? withProposalGate(<QuietHome />) : <QuietHome />
 }

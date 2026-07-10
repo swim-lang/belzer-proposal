@@ -6,17 +6,16 @@ const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf
 
 test('Wildflower + Blanc proposal is registered and preserves source content', () => {
   const app = read('src/App.tsx')
-  const dashboard = read('src/admin/Dashboard.tsx')
+  const manifest = read('src/proposalManifest.json')
   const proposal = read('src/WildflowerBlancProposal.tsx')
   const contract = read('src/contracts/wildflowerBlancContract.ts')
   const css = read('src/index.css')
 
   assert.match(app, /WildflowerBlancProposal/)
   assert.match(app, /wildflowerBlancContract/)
-  assert.match(app, /\/proposal\/wildflower-blanc/)
-  assert.match(app, /\/proposal\/wildflower-blanc\/contract/)
-  assert.match(dashboard, /Wildflower \+ Blanc/)
-  assert.match(dashboard, /\/proposal\/wildflower-blanc/)
+  assert.match(manifest, /Wildflower \+ Blanc/)
+  assert.match(manifest, /\/proposal\/wildflower-blanc/)
+  assert.match(manifest, /\/proposal\/wildflower-blanc\/contract/)
   assert.match(proposal, /From what fills the room to the room itself\./)
   assert.match(proposal, /Two complete identities, developed as one engagement\./)
   assert.match(proposal, /\$11,900/)

@@ -6,15 +6,14 @@ const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf
 
 test('Molly proposal and contract are restored with original terms', () => {
   const app = read('src/App.tsx')
-  const dashboard = read('src/admin/Dashboard.tsx')
+  const manifest = read('src/proposalManifest.json')
   const proposal = read('src/MollyEngelsProposal.tsx')
   const contract = read('src/contracts/mollyEngelsContract.ts')
 
-  assert.match(app, /\/proposal\/molly/)
-  assert.match(app, /\/proposal\/molly\/contract/)
   assert.match(app, /MollyEngelsProposal/)
   assert.match(app, /mollyEngelsContract/)
-  assert.match(dashboard, /\/proposal\/molly/)
+  assert.match(manifest, /\/proposal\/molly/)
+  assert.match(manifest, /\/proposal\/molly\/contract/)
 
   assert.match(proposal, /\$1,950/)
   assert.match(proposal, /50%/)

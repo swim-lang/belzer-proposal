@@ -6,16 +6,15 @@ const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf
 
 test('Cipher proposal is registered with Paper-sourced brand and website scope', () => {
   const app = read('src/App.tsx')
-  const dashboard = read('src/admin/Dashboard.tsx')
+  const manifest = read('src/proposalManifest.json')
   const proposal = read('src/CipherProposal.tsx')
   const contract = read('src/contracts/cipherContract.ts')
 
   assert.match(app, /CipherProposal/)
   assert.match(app, /cipherContract/)
-  assert.match(app, /\/proposal\/cipher/)
-  assert.match(app, /\/proposal\/cipher\/contract/)
-  assert.match(dashboard, /name: 'Cipher'/)
-  assert.match(dashboard, /\/proposal\/cipher/)
+  assert.match(manifest, /"name": "Cipher"/)
+  assert.match(manifest, /\/proposal\/cipher/)
+  assert.match(manifest, /\/proposal\/cipher\/contract/)
 
   assert.match(proposal, /Complexity, made controlled\./)
   assert.match(proposal, /Cipher exists to make that complexity usable\./)

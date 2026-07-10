@@ -6,16 +6,15 @@ const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf
 
 test('Soft Hours proposal is registered as Shopify completion scope', () => {
   const app = read('src/App.tsx')
-  const dashboard = read('src/admin/Dashboard.tsx')
+  const manifest = read('src/proposalManifest.json')
   const proposal = read('src/SoftHoursProposal.tsx')
   const contract = read('src/contracts/softHoursContract.ts')
 
   assert.match(app, /SoftHoursProposal/)
   assert.match(app, /softHoursContract/)
-  assert.match(app, /\/proposal\/soft-hours/)
-  assert.match(app, /\/proposal\/soft-hours\/contract/)
-  assert.match(dashboard, /Soft Hours/)
-  assert.match(dashboard, /\/proposal\/soft-hours/)
+  assert.match(manifest, /Soft Hours/)
+  assert.match(manifest, /\/proposal\/soft-hours/)
+  assert.match(manifest, /\/proposal\/soft-hours\/contract/)
   assert.match(proposal, /Prepared for Soft Hours/)
   assert.match(proposal, /Shopify Website Completion/)
   assert.match(proposal, /focused sprint to finish the Soft Hours Shopify store/)

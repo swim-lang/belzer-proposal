@@ -6,14 +6,15 @@ const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf
 
 test('Off Menu web proposal and contract are registered with web-stage terms', () => {
   const app = read('src/App.tsx')
+  const manifest = read('src/proposalManifest.json')
   const proposal = read('src/OffMenuProposal.tsx')
   const contract = read('src/contracts/offMenuContract.ts')
   const fiberContract = read('src/contracts/fiberSoftChewContract.ts')
 
   assert.match(app, /OffMenuProposal/)
   assert.match(app, /offMenuContract/)
-  assert.match(app, /\/proposal\/off-menu/)
-  assert.match(app, /\/proposal\/off-menu\/contract/)
+  assert.match(manifest, /\/proposal\/off-menu/)
+  assert.match(manifest, /\/proposal\/off-menu\/contract/)
 
   assert.match(proposal, /Shopify Website, Launch Ads & Site Refresh/)
   assert.match(proposal, /Payment structure" right="60 \/ 40"/)

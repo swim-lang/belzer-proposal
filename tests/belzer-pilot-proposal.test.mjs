@@ -6,16 +6,14 @@ const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), 'utf
 
 test('Belzer pilot proposal is registered as a low-risk three-option pilot', () => {
   const app = read('src/App.tsx')
-  const dashboard = read('src/admin/Dashboard.tsx')
+  const manifest = read('src/proposalManifest.json')
   const proposal = read('src/BelzerPilotProposal.tsx')
 
   assert.match(app, /BelzerPilotProposal/)
-  assert.match(app, /\/proposal\/belzer-pilot/)
-  assert.match(app, /\/proposal\/belzer/)
-
-  assert.match(dashboard, /Belzer Law: Focused Workflow Pilot/)
-  assert.match(dashboard, /\/proposal\/belzer-pilot/)
-  assert.match(dashboard, /\$4,500 flat/)
+  assert.match(manifest, /Belzer Law: Focused Workflow Pilot/)
+  assert.match(manifest, /\/proposal\/belzer-pilot/)
+  assert.match(manifest, /\/proposal\/belzer/)
+  assert.match(manifest, /\$4,500 flat/)
 
   assert.match(proposal, /Focused Workflow Pilot/)
   assert.match(proposal, /\$4,500/)

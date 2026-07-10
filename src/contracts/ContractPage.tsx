@@ -1017,6 +1017,17 @@ export function ContractPage({ contract }: ContractPageProps) {
               </div>
             )}
           </ContractSection>
+
+          {contract.additionalTerms && contract.additionalTerms.length > 0 && (
+            <ContractSection number="19" title="Additional Terms">
+              {contract.additionalTerms.map((term) => (
+                <div key={term.title} className="scope-phase">
+                  <h3>{term.title}</h3>
+                  <p>{term.body}</p>
+                </div>
+              ))}
+            </ContractSection>
+          )}
         </article>
 
         {!isPrintMode && (
