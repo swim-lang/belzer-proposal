@@ -21,29 +21,14 @@ export const avodahContract: ContractData = {
   },
   paymentMilestones: [
     {
-      amount: '$2,625',
-      label: 'Due at research kickoff',
+      amount: '$4,000',
+      label: 'Due at project kickoff',
       body: 'This reserves the project window and begins the Search Foundation phase.',
     },
     {
-      amount: '$875',
-      label: 'Due before research delivery',
-      body: 'Due before delivery of the final research findings, opportunity map, and implementation roadmap.',
-    },
-    {
-      amount: '$2,250',
-      label: 'Due at implementation kickoff',
-      body: 'Due when the approved Search Foundation moves into the Avodah Blog and Site Improvements phase.',
-    },
-    {
-      amount: '$1,125',
-      label: 'Due after blog design approval',
-      body: 'Due after the responsive blog system and primary article experience have been presented and approved.',
-    },
-    {
-      amount: '$1,125',
-      label: 'Due before publishing and final handoff',
-      body: 'Due before the article library is published and final website, measurement, and handoff work is completed.',
+      amount: '$4,000',
+      label: 'Due at project completion',
+      body: 'Due when Anchovies has completed the full contracted scope and presented the work as ready for final publishing and handoff.',
     },
   ],
   revisionRounds: [
