@@ -297,6 +297,17 @@
     "showInDashboard": true
   },
   {
+    "id": "avodah-contract",
+    "name": "Avodah Contract",
+    "tagline": "Search foundation and Avodah website improvements agreement",
+    "status": "Active",
+    "href": "/proposal/avodah/contract",
+    "paths": ["/proposal/avodah/contract"],
+    "sourceFile": "src/contracts/avodahContract.ts",
+    "kind": "contract",
+    "showInDashboard": false
+  },
+  {
     "id": "avodah",
     "name": "Avodah",
     "tagline": "Employment search launch and growth · July 2026",

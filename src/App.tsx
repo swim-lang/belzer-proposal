@@ -28,6 +28,7 @@ import { Admin } from './admin/Admin'
 import { ProposalGate } from './components/ProposalGate'
 import { ContentProvider } from './context/ContentContext'
 import { ContractPage } from './contracts/ContractPage'
+import { avodahContract } from './contracts/avodahContract'
 import { cipherContract } from './contracts/cipherContract'
 import { fiberSoftChewContract } from './contracts/fiberSoftChewContract'
 import { genesiContract } from './contracts/genesiContract'
@@ -147,6 +148,8 @@ export default function App() {
         return withProposalGate(<SoupToSoftwareProposal />)
       case 'homemade':
         return withProposalGate(<HomemadeProposal />)
+      case 'avodah-contract':
+        return withProposalGate(<ContractPage contract={avodahContract} />)
       case 'avodah':
         return withProposalGate(<AvodahProposal />)
       case 'little-tech-association':

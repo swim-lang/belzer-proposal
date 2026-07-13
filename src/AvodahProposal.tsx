@@ -4,6 +4,7 @@ import { Reveal } from './components/Reveal'
 const choosePackageHref =
   'mailto:sean@anchovies.agency?subject=Avodah%20program%20selection&body=Hi%20Sean%2C%0A%0AWe%27d%20like%20to%20move%20forward%20with%3A%20%5BResearch%20%2B%20Avodah%20Blog%20and%20Site%20Improvements%20%2F%20Research%20%2B%20Practice-Area%20Resource%20Site%20%2F%20The%20complete%20program%5D.%0A%0A'
 const calendarHref = 'https://cal.com/anchovies/30min?overlayCalendar=true'
+const contractHref = '/proposal/avodah/contract'
 
 type Package = {
   number: string
@@ -254,7 +255,7 @@ function AvodahNav() {
               </a>
             ))}
           </nav>
-          <AnchorButton href={choosePackageHref}>Choose a direction</AnchorButton>
+          <AnchorButton href={contractHref}>Review contract</AnchorButton>
         </div>
       </div>
     </>
@@ -281,7 +282,7 @@ function Opportunity() {
             Employment and traffic or criminal work create the clearest near-term consumer-search opportunities. Corporate work may follow differently. Research will show what belongs quietly inside Avodah, what deserves a focused resource site, and which channels can create useful demand without confusing branded search.
           </p>
           <div className="flex flex-wrap gap-3">
-            <AnchorButton href={choosePackageHref}>Choose a direction</AnchorButton>
+            <AnchorButton href={contractHref}>Review contract</AnchorButton>
             <AnchorButton href={calendarHref} variant="outline">Schedule a proposal review</AnchorButton>
           </div>
         </Reveal>
@@ -511,24 +512,24 @@ function Boundaries() {
 function NextStep() {
   return (
     <section id="next" className="bg-ink px-6 py-24 text-paper md:px-16 lg:px-[120px] lg:py-[150px]">
-      <MetaRow left="§ 08 - Next step" right="Choose · Confirm · Begin" dark />
+      <MetaRow left="§ 08 - Next step" right="Review · Sign · Begin" dark />
       <Reveal>
         <h2 className="display max-w-[1120px] py-16 text-[52px] leading-[56px] md:text-[86px] md:leading-[84px] lg:text-[100px] lg:leading-[96px]">
-          Start with research. Then choose where the knowledge should live.
+          Begin with research. Then put the findings to work on Avodah.
         </h2>
       </Reveal>
       <div className="grid gap-12 border-t border-paper/20 pt-12 lg:grid-cols-[1fr_470px] lg:gap-24">
         <Reveal>
           <p className="serif max-w-[640px] text-[28px] italic leading-[39px] text-paper/85">
-            Improve the Avodah website, build the first dedicated practice-area destination, or connect both into one search system that can grow without blurring the firm.
+            The first engagement covers the Search Foundation, Avodah's first blog, fifty articles, and focused improvements to the existing website.
           </p>
         </Reveal>
         <Reveal className="flex flex-col gap-6">
           <p className="text-[15px] leading-[24px] text-paper/70">
-            Choose a direction by email, or schedule a proposal review so we can confirm the research foundation and compare the two build layers together.
+            Review and sign the contract to begin. The separate practice-area resource site can be added later once the first phase is underway.
           </p>
           <div className="flex flex-wrap gap-3">
-            <AnchorButton href={choosePackageHref}>Choose a direction</AnchorButton>
+            <AnchorButton href={contractHref}>Review contract</AnchorButton>
             <AnchorButton href={calendarHref} variant="light">Schedule a proposal review</AnchorButton>
           </div>
         </Reveal>
