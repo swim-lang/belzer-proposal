@@ -60,7 +60,7 @@ const packages: Package[] = [
       'Google Search Console, analytics, inquiry, and lead-quality measurement plan',
       'Implementation roadmap and measurement baseline',
     ],
-    payment: '75% at kickoff ($2,625), then 25% before delivery ($875).',
+    payment: 'Selected $8,000 engagement: 50% at project kickoff ($4,000), then 50% at project completion ($4,000).',
   },
   {
     number: '02',
@@ -86,7 +86,7 @@ const packages: Package[] = [
       'Avodah-owned shared marketing account setup for platform access',
       'Analytics, inquiry events, responsive QA, and publishing',
     ],
-    payment: '50% at implementation kickoff ($2,250), 25% after blog design approval ($1,125), then 25% before publishing ($1,125).',
+    payment: 'Selected $8,000 engagement: 50% at project kickoff ($4,000), then 50% at project completion ($4,000).',
   },
   {
     number: '03',
@@ -467,7 +467,7 @@ function Investment() {
       <Reveal className="mt-10 grid gap-8 border border-paper/20 p-7 md:grid-cols-3 md:p-9">
         <div>
           <span className="eyebrow text-paper/50">Avodah path</span>
-          <p className="serif mt-4 text-[27px] leading-[36px]">Research plus the Avodah blog and improvements: $8,000.</p>
+          <p className="serif mt-4 text-[27px] leading-[36px]">Research plus the Avodah blog and improvements: $8,000. Pay $4,000 at kickoff and $4,000 at completion.</p>
         </div>
         <div>
           <span className="eyebrow text-paper/50">Resource-site path</span>
