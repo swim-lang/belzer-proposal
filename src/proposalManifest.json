@@ -350,5 +350,16 @@
     "sourceFile": "src/PathLawGroupProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
+  },
+  {
+    "id": "double-up-daves",
+    "name": "Double Up Daves",
+    "tagline": "Brand identity and website · July 2026",
+    "status": "Active",
+    "href": "/proposal/double-up-daves",
+    "paths": ["/proposal/double-up-daves"],
+    "sourceFile": "src/DoubleUpDavesProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true
   }
 ]

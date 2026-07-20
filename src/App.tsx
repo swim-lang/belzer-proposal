@@ -3,6 +3,7 @@ import { AvodahProposal } from './AvodahProposal'
 import { BapsCharitiesProposal } from './BapsCharitiesProposal'
 import { BelzerPilotProposal } from './BelzerPilotProposal'
 import { CipherProposal } from './CipherProposal'
+import { DoubleUpDavesProposal } from './DoubleUpDavesProposal'
 import { FiberSoftChewProposal } from './FiberSoftChewProposal'
 import { GarySpringsteadProposal } from './GarySpringsteadProposal'
 import { GenesiProposal } from './GenesiProposal'
@@ -144,6 +145,8 @@ export default function App() {
         return withProposalGate(<ContractPage contract={cipherContract} />)
       case 'cipher':
         return withProposalGate(<CipherProposal />)
+      case 'double-up-daves':
+        return withProposalGate(<DoubleUpDavesProposal />)
       case 'soup-to-software':
         return withProposalGate(<SoupToSoftwareProposal />)
       case 'homemade':

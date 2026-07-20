@@ -53,6 +53,10 @@ html {
   letter-spacing: -0.02em;
 }
 
+.double-up-daves-proposal .display {
+  letter-spacing: 0;
+}
+
 /* Slightly looser leading on all display headings, regardless of Tailwind leading-[X] values */
 h1.display,
 h2.display,
