@@ -4,9 +4,9 @@ import { Reveal } from './components/Reveal'
 const acceptProposalHref = 'mailto:sean@anchovies.agency?subject=Accepting%20the%20Hike%20Doggie%20SOP%20%26%20Prototype%20Proposal'
 
 // ── Pricing (edit here) ──────────────────────────────────────────────
-const PRICE_SOP_FOUNDATION = '$7,500'
+const PRICE_SOP_FOUNDATION = '$5,500'
 const PRICE_PROTOTYPE = '$6,500'
-const PRICE_TOTAL = '$14,000'
+const PRICE_TOTAL = '$12,000'
 const PRICE_ADVISORY = '$1,500/mo'
 // ─────────────────────────────────────────────────────────────────────
 
