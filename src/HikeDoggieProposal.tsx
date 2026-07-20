@@ -83,6 +83,7 @@ const outcomeLines = [
   'A new operator should digest, learn, and prove every SOP inside one system.',
   'Training should get faster because the work is optimized, not compressed.',
   'Your context, from calls to trails to judgment, should compound into an asset you own.',
+  'Discipline should be designed into the system, so the standards manage the results.',
   'Every improvement should be measured against yesterday, not the dream.',
 ]
 
@@ -106,7 +107,7 @@ const phases: Phase[] = [
   {
     num: '02',
     title: 'Prototype: design the real thing',
-    body: 'With the SOP library in hand, we decide the feature set together, grounded in what the content actually needs, not guesses. Then we evolve the quick concept into a usable, testable prototype: the screens, flows, and structure a trainee would actually move through. The prototype does double duty: it proves the experience, and it defines the scope that prices the build.',
+    body: 'With the SOP library in hand, we decide the feature set together, grounded in what the content actually needs, not guesses. Then we evolve the quick concept into a usable, testable prototype: the screens, flows, and structure a trainee would actually move through, built the way adults actually learn: by doing. The prototype does double duty: it proves the experience, and it defines the scope that prices the build.',
     outcome: 'A usable prototype that demonstrates the training experience and produces a firm, honest estimate for the app build.',
     includes: [
       'Feature decisions workshop (from Phase 1 findings)',
@@ -120,12 +121,14 @@ const phases: Phase[] = [
   {
     num: '03',
     title: 'Build and beta: priced by the prototype',
-    body: 'The app build, beta testing with real trainees, and finalization follow the prototype and are quoted from it. We will not price features that have not been chosen yet. When the prototype is approved, the build estimate comes with it, and this engagement rolls forward only if the numbers make sense to you.',
-    outcome: 'A firm build quote derived from an approved prototype. No guessing, no padding.',
+    body: 'The build covers the trainee app, a desktop version, and the backend controls that let Hike Doggie manage SOPs, assignments, and agents themselves. By that point, much of the foundation already exists: the content, the standard, the prototype. The remaining work is the deep agentic nuance, and where it lands in the range depends entirely on the features you choose. The approved prototype turns the range into a firm quote.',
+    outcome: 'An indicative range of $8k to $20k today, turned into a firm quote by the approved prototype.',
     includes: [
-      'Build quote delivered with the approved prototype',
+      'Trainee app build',
+      'Desktop version',
+      'Admin backend for SOPs, assignments, and agents',
+      'Agentic integrations and tuning',
       'Beta plan with real trainees',
-      'Phased rollout recommendation',
       'Continuation and maintenance outline',
     ],
   },
@@ -189,8 +192,26 @@ const investmentLines = [
   [
     '05',
     'App build and beta',
-    'Quoted from the approved prototype. Features first, price second. No number today is more honest than a made-up one.',
-    'Scoped after prototype',
+    'App, desktop version, and admin backend. Much will already be built by then; the remaining work is agentic nuance, and the range depends on the features you choose. The approved prototype turns this into a firm quote.',
+    '$8k to $20k',
+  ],
+]
+
+const breakEven: DetailRow[] = [
+  [
+    '01',
+    'A faster launch',
+    'Every week trimmed from a new operator ramp is a week of revenue-producing hikes gained. Multiply that by every operator who ever onboards.',
+  ],
+  [
+    '02',
+    'A saved sale',
+    'One closed deal that would have slipped past an undertrained operator covers a meaningful share of this entire engagement.',
+  ],
+  [
+    '03',
+    'A standard that lasts',
+    'SOPs done once, in a portable format every future tool can use. This work never has to be paid for twice.',
   ],
 ]
 
@@ -528,7 +549,22 @@ export function HikeDoggieProposal() {
             <p>Advisory runs alongside as a month-to-month retainer, cancel anytime. Pricing reflects a founding-client consideration in exchange for case-study rights and referenceable results as this work becomes a portfolio.</p>
           </div>
         </Reveal>
-        <div className="border-b border-[var(--color-rule)]">
+        <Reveal className="pt-12">
+          <MetaRow left="Fig. 02 - How to judge the number" right="Outcomes, not hours" />
+          <p className="max-w-[640px] pt-6 text-[15px] leading-[24px] text-ink-2">
+            We think about price the way you will: against outcomes. A few ways this investment covers itself.
+          </p>
+          <div className="mt-8 grid border-y border-[var(--color-rule)] md:grid-cols-3">
+            {breakEven.map(([num, title, body], index) => (
+              <div key={title} className={`flex min-h-[220px] flex-col gap-5 border-[var(--color-rule)] p-7 ${index < breakEven.length - 1 ? 'border-b md:border-b-0 md:border-r' : ''}`}>
+                <span className="eyebrow text-ink-2">B / {num}</span>
+                <h3 className="serif text-[27px] leading-[32px]">{title}</h3>
+                <p className="text-[13px] leading-[20px] text-ink-2">{body}</p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+        <div className="mt-12 border-b border-t border-[var(--color-rule)]">
           {investmentLines.map(([num, title, body, price]) => (
             <Reveal key={num} className="grid gap-6 border-b border-ink/20 py-8 last:border-b-0 md:grid-cols-[80px_1fr_minmax(0,1.25fr)_200px]">
               <span className="serif text-[40px] leading-none">{num}</span>
@@ -572,7 +608,7 @@ export function HikeDoggieProposal() {
         </Reveal>
         <div className="grid gap-10 pt-16 lg:grid-cols-[1fr_360px]">
           <Reveal className="max-w-[540px] text-[15px] leading-[24px] text-paper/70">
-            By the end of this engagement, Hike Doggie owns a complete, consistent SOP library; a context asset that grows daily; a tested prototype of the training experience; and an honest, prototype-priced path to the app.
+            By the end of this engagement, Hike Doggie owns a complete, consistent SOP library; a context asset that grows daily; a tested prototype of the training experience; and an honest, prototype-priced path to the full build: app, desktop, and the backend to run it all.
           </Reveal>
           <Reveal className="flex flex-col gap-4">
             <span className="eyebrow text-paper/55">Begin</span>
