@@ -333,13 +333,13 @@ export function BelzerSystemsProposal() {
           <Reveal className="grid border border-white/25 md:grid-cols-2">
             <div className="border-b border-white/25 p-7 md:border-b-0 md:border-r md:p-9">
               <span className="eyebrow text-paper/55">One system</span>
-              <span className="display mt-8 block text-[72px] leading-none">16 hours</span>
-              <p className="mt-5 text-[15px] leading-[24px] text-paper/70">$8,000 divided by an illustrative $500 attorney hour.</p>
+              <span className="display mt-8 block text-[72px] leading-none">20 hours</span>
+              <p className="mt-5 text-[15px] leading-[24px] text-paper/70">$8,000 divided by an illustrative $400 attorney hour.</p>
             </div>
             <div className="p-7 md:p-9">
               <span className="eyebrow text-paper/55">Both systems</span>
-              <span className="display mt-8 block text-[72px] leading-none">32 hours</span>
-              <p className="mt-5 text-[15px] leading-[24px] text-paper/70">$16,000 divided by the same illustrative $500 attorney hour.</p>
+              <span className="display mt-8 block text-[72px] leading-none">40 hours</span>
+              <p className="mt-5 text-[15px] leading-[24px] text-paper/70">$16,000 divided by the same illustrative $400 attorney hour.</p>
             </div>
             <p className="border-t border-white/25 p-7 text-[13px] leading-[21px] text-paper/55 md:col-span-2 md:p-9">
               This is transparent break-even math, not a guaranteed savings claim. The actual value depends on adoption, usage, matter volume, and the time each system recovers across the firm.

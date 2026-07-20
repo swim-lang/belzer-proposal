@@ -57,9 +57,9 @@ test('Belzer systems proposal includes milestone payments, support, and transpar
   assert.match(proposal, /Two structured feedback rounds/)
   assert.match(proposal, /30-day stabilization period/)
 
-  assert.match(proposal, /16 hours/)
-  assert.match(proposal, /32 hours/)
-  assert.match(proposal, /\$500 attorney hour/)
+  assert.match(proposal, /20 hours/)
+  assert.match(proposal, /40 hours/)
+  assert.match(proposal, /\$400 attorney hour/)
   assert.match(proposal, /transparent break-even math, not a guaranteed savings claim/)
 
   assert.match(proposal, /Schedule a proposal review/)
