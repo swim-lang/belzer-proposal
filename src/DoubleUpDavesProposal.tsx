@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react'
 import { Reveal } from './components/Reveal'
 
 const calendarHref = 'https://cal.com/anchovies/30min?overlayCalendar=true'
-const chooseHref =
-  'mailto:sean@anchovies.agency?subject=Double%20Up%20Daves%20proposal&body=Hi%20Sean%2C%0A%0AI%27d%20like%20to%20move%20forward%20with%20the%20following%20Double%20Up%20Daves%20proposal%20direction%3A%0A%0A%5B%20%5D%20Website%20Foundation%20-%20%242%2C400%0A%5B%20%5D%20Brand%20%2B%20Website%20-%20%243%2C900%0A%5B%20%5D%20Brand%20%2B%20Website%20%2B%20SEO%20-%20%244%2C500%0A%5B%20%5D%20Complete%20Launch%20-%20%245%2C000%0A%0AThanks!'
+const workHref = 'https://anchovies.agency/work'
 
 type ScopeItem = {
   num: string
@@ -220,7 +219,7 @@ function ProposalNav() {
               </a>
             ))}
           </nav>
-          <AnchorButton href={chooseHref}>Choose a direction</AnchorButton>
+          <AnchorButton href={calendarHref}>Schedule a proposal review</AnchorButton>
         </div>
       </div>
     </>
@@ -260,8 +259,8 @@ function Hero() {
             Dave is building toward making this his full-time work. The foundation should support that ambition, stay flexible as the offer evolves, and keep his knowledge and relationships at the center.
           </p>
           <div className="flex flex-wrap gap-3 pt-2">
-            <AnchorButton href={chooseHref}>Choose a direction</AnchorButton>
-            <AnchorButton href="#website" variant="outline">See the website</AnchorButton>
+            <AnchorButton href={calendarHref}>Schedule a proposal review</AnchorButton>
+            <AnchorButton href={workHref} variant="outline">View our work</AnchorButton>
           </div>
         </Reveal>
       </div>
@@ -564,7 +563,7 @@ function Boundaries() {
 function NextStep() {
   return (
     <section className="bg-ink px-6 py-20 text-paper md:px-16 lg:px-[120px] lg:py-[120px]">
-      <MetaRow left="§ 08 - Next step" right="Choose a direction" dark />
+      <MetaRow left="§ 08 - Next step" right="Meet and choose a direction" dark />
       <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-24">
         <Reveal>
           <h2 className="display max-w-[880px] text-[54px] leading-[54px] md:text-[82px] md:leading-[78px] lg:text-[104px] lg:leading-[96px]">
@@ -572,10 +571,10 @@ function NextStep() {
           </h2>
         </Reveal>
         <Reveal className="flex max-w-[500px] flex-col gap-6">
-          <p className="text-[15px] leading-[24px] text-paper/65">Choose the scope that fits this stage. We will confirm the direction, send a simple agreement and first invoice, then schedule the work.</p>
+          <p className="text-[15px] leading-[24px] text-paper/65">Schedule a proposal review so we can talk through the right scope together. From there, we will confirm the direction, send a simple agreement and first invoice, then schedule the work.</p>
           <div className="flex flex-wrap gap-3 pt-2">
-            <AnchorButton href={chooseHref}>Choose a direction</AnchorButton>
-            <AnchorButton href={calendarHref} variant="light">Schedule a proposal review</AnchorButton>
+            <AnchorButton href={calendarHref}>Schedule a proposal review</AnchorButton>
+            <AnchorButton href={workHref} variant="light">View our work</AnchorButton>
           </div>
         </Reveal>
       </div>
