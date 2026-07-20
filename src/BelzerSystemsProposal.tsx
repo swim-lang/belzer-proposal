@@ -210,7 +210,7 @@ function SystemCard({ system }: { system: System }) {
           <div className="flex flex-wrap items-start justify-between gap-4">
             <span className="eyebrow text-ink-2">System {system.number}</span>
             <div className="text-right">
-              <span className="display block text-[40px] leading-none">$8,000</span>
+              <span className="display block text-[40px] leading-none">$7,900</span>
               <span className="eyebrow mt-2 block text-ink-2">About six weeks</span>
             </div>
           </div>
@@ -265,7 +265,7 @@ export function BelzerSystemsProposal() {
       <ProposalNav />
 
       <section id="overview" className="border-b border-[var(--color-rule)] px-5 py-12 md:px-10 md:py-16 lg:px-[96px]">
-        <MetaRow left="Belzer Law / Client + Firm Systems" right="$8,000 each · $16,000 together" />
+        <MetaRow left="Belzer Law / Client + Firm Systems" right="$7,900 each · $15,800 together" />
         <div className="mt-10 grid gap-12 lg:grid-cols-[1.12fr_0.88fr] lg:items-end">
           <Reveal>
             <h1 className="display max-w-[920px] text-[54px] leading-[54px] md:text-[86px] md:leading-[84px] lg:text-[108px] lg:leading-[102px]">
@@ -314,7 +314,7 @@ export function BelzerSystemsProposal() {
             Choose where clarity would matter most first.
           </h2>
           <p className="max-w-[560px] text-[17px] leading-[28px] text-ink-2">
-            Both systems are designed around a bounded first release. Either one can stand alone. The second can be added later for the same $8,000 investment.
+            Both systems are designed around a bounded first release. Either one can stand alone. The second can be added later for the same $7,900 investment.
           </p>
         </Reveal>
         <div className="mt-12 flex flex-col gap-8">
@@ -333,13 +333,13 @@ export function BelzerSystemsProposal() {
           <Reveal className="grid border border-white/25 md:grid-cols-2">
             <div className="border-b border-white/25 p-7 md:border-b-0 md:border-r md:p-9">
               <span className="eyebrow text-paper/55">One system</span>
-              <span className="display mt-8 block text-[72px] leading-none">20 hours</span>
-              <p className="mt-5 text-[15px] leading-[24px] text-paper/70">$8,000 divided by an illustrative $400 attorney hour.</p>
+              <span className="display mt-8 block text-[72px] leading-none">Under 20 hours</span>
+              <p className="mt-5 text-[15px] leading-[24px] text-paper/70">$7,900 divided by an illustrative $400 attorney hour is 19.75 hours.</p>
             </div>
             <div className="p-7 md:p-9">
               <span className="eyebrow text-paper/55">Both systems</span>
-              <span className="display mt-8 block text-[72px] leading-none">40 hours</span>
-              <p className="mt-5 text-[15px] leading-[24px] text-paper/70">$16,000 divided by the same illustrative $400 attorney hour.</p>
+              <span className="display mt-8 block text-[72px] leading-none">Under 40 hours</span>
+              <p className="mt-5 text-[15px] leading-[24px] text-paper/70">$15,800 divided by the same illustrative $400 attorney hour is 39.5 hours.</p>
             </div>
             <p className="border-t border-white/25 p-7 text-[13px] leading-[21px] text-paper/55 md:col-span-2 md:p-9">
               This is transparent break-even math, not a guaranteed savings claim. The actual value depends on adoption, usage, matter volume, and the time each system recovers across the firm.
@@ -353,17 +353,17 @@ export function BelzerSystemsProposal() {
         <div className="mt-10 grid border border-[var(--color-rule)] lg:grid-cols-3">
           <Reveal className="border-b border-[var(--color-rule)] p-6 md:p-8 lg:border-b-0 lg:border-r lg:p-10">
             <span className="eyebrow text-ink-2">Client Experience App</span>
-            <span className="display mt-7 block text-[62px] leading-none">$8,000</span>
+            <span className="display mt-7 block text-[62px] leading-none">$7,900</span>
             <p className="mt-4 text-[15px] leading-[24px] text-ink-2">Approximately six weeks, ending with TestFlight onboarding.</p>
           </Reveal>
           <Reveal className="border-b border-[var(--color-rule)] p-6 md:p-8 lg:border-b-0 lg:border-r lg:p-10">
             <span className="eyebrow text-ink-2">Firm Workflow Portal</span>
-            <span className="display mt-7 block text-[62px] leading-none">$8,000</span>
+            <span className="display mt-7 block text-[62px] leading-none">$7,900</span>
             <p className="mt-4 text-[15px] leading-[24px] text-ink-2">Approximately six weeks, ending with team onboarding.</p>
           </Reveal>
           <Reveal className="bg-mac p-6 text-white md:p-8 lg:p-10">
             <span className="eyebrow text-white/65">Both systems</span>
-            <span className="display mt-7 block text-[62px] leading-none">$16,000</span>
+            <span className="display mt-7 block text-[62px] leading-none">$15,800</span>
             <p className="mt-4 text-[15px] leading-[24px] text-white/80">Approximately ten weeks as one coordinated engagement.</p>
           </Reveal>
         </div>
@@ -377,9 +377,9 @@ export function BelzerSystemsProposal() {
           </Reveal>
           <Reveal className="border-t border-[var(--color-rule)]">
             {[
-              ['50%', 'At kickoff', '$4,000 for one system · $8,000 for both'],
-              ['25%', 'After approval of the working prototype and core experience', '$2,000 for one system · $4,000 for both'],
-              ['25%', 'At launch or TestFlight onboarding', '$2,000 for one system · $4,000 for both'],
+              ['50%', 'At kickoff', '$3,950 for one system · $7,900 for both'],
+              ['25%', 'After approval of the working prototype and core experience', '$1,975 for one system · $3,950 for both'],
+              ['25%', 'At launch or TestFlight onboarding', '$1,975 for one system · $3,950 for both'],
             ].map(([percent, milestone, amount]) => (
               <div key={milestone} className="grid gap-3 border-b border-[var(--color-rule)] py-5 sm:grid-cols-[70px_1fr_auto] sm:items-center sm:gap-6">
                 <span className="display text-[30px] leading-none">{percent}</span>
