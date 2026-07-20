@@ -7,6 +7,7 @@ import { BapsCharitiesProposal } from './BapsCharitiesProposal'
 import { FiberSoftChewProposal } from './FiberSoftChewProposal'
 import { GarySpringsteadProposal } from './GarySpringsteadProposal'
 import { GenesiProposal } from './GenesiProposal'
+import { HikeDoggieProposal } from './HikeDoggieProposal'
 import { HumanaAIProposal } from './HAAIProposal'
 import { LapincoProposal } from './LapincoProposal'
 import { LexPoliticaProposal } from './LexPoliticaProposal'
@@ -53,6 +54,9 @@ export default function App() {
     pathname.startsWith('/proposal/haai/') ||
     pathname === '/haai' ||
     pathname.startsWith('/haai/')
+  const isHikeDoggie =
+    pathname === '/proposal/hike-doggie' ||
+    pathname.startsWith('/proposal/hike-doggie/')
   const isLexPolitica =
     pathname === '/proposal/lex-politica' ||
     pathname.startsWith('/proposal/lex-politica/')
@@ -143,6 +147,10 @@ export default function App() {
 
   if (isHumanaAI) {
     return <HumanaAIProposal />
+  }
+
+  if (isHikeDoggie) {
+    return <HikeDoggieProposal />
   }
 
   if (isLexPolitica) {
