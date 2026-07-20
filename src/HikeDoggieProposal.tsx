@@ -38,7 +38,7 @@ const heroCards: DetailRow[] = [
   [
     '02',
     'A usable prototype',
-    'The quick concept evolves into a testable prototype — shaped by what Phase 1 teaches us, and precise enough to price the build.',
+    'The quick concept evolves into a testable prototype, shaped by what Phase 1 teaches us and precise enough to price the build.',
   ],
   [
     '03',
@@ -48,7 +48,7 @@ const heroCards: DetailRow[] = [
   [
     '04',
     'A partner in the room',
-    'Ongoing advisory as the team learns to run and evolve agentic systems — the big questions and the small ones, throughout.',
+    'Ongoing advisory as the team learns to run and evolve agentic systems. The big questions and the small ones, throughout.',
   ],
 ]
 
@@ -57,41 +57,41 @@ const contextNotes = [
     num: '01',
     label: 'The session',
     title: 'The direction is aligned.',
-    body: 'We presented the full approach — SOPs digested, learned, and proven through one system. This proposal turns that direction into scoped, priced, outcome-focused work.',
+    body: 'We presented the full approach: SOPs digested, learned, and proven through one system. This proposal turns that direction into scoped, priced, outcome-focused work.',
   },
   {
     num: '02',
     label: 'Delight Tree',
     title: 'No migration required.',
-    body: 'Delight Tree stays as long as it is useful. But the content has to come out: extraction, de-duplication, and organization is real manual work, and it is priced into this scope. The result is portable — usable in Delight Tree today, required for anything we build tomorrow.',
+    body: 'Delight Tree stays as long as it is useful. But the content has to come out: extraction, de-duplication, and organization is real manual work, and it is priced into this scope. The result is portable: usable in Delight Tree today, required for anything we build tomorrow.',
   },
   {
     num: '03',
     label: 'The prototype',
     title: 'A head start, not a product.',
-    body: 'The concept you saw was built quickly to show possibilities. The real prototype gets designed from what Phase 1 teaches us — then it becomes the estimating document for the build.',
+    body: 'The concept you saw was built quickly to show possibilities. The real prototype gets designed from what Phase 1 teaches us. Then it becomes the estimating document for the build.',
   },
   {
     num: '04',
     label: 'Pricing',
     title: 'We price outcomes, not hours.',
-    body: 'Each line below is tied to something finished you can point at. Anything we cannot responsibly price yet — the app build — waits for the prototype to define it.',
+    body: 'Each line below is tied to something finished you can point at. Anything we cannot responsibly price yet, like the app build, waits for the prototype to define it.',
   },
 ]
 
 const outcomeLines = [
   'A new operator should digest, learn, and prove every SOP inside one system.',
-  'Training should get faster because the work is optimized — not compressed.',
-  'Your context — calls, trails, judgment — should compound into an asset you own.',
+  'Training should get faster because the work is optimized, not compressed.',
+  'Your context, from calls to trails to judgment, should compound into an asset you own.',
   'Every improvement should be measured against yesterday, not the dream.',
 ]
 
 const phases: Phase[] = [
   {
     num: '01',
-    title: 'SOP Foundation — extract, organize, standardize',
-    body: 'We pull everything out of Delight Tree and the surrounding spreadsheets, docs, and drives — then do the unglamorous work: inventory, de-duplication, cleanup, and general organization. From there, every SOP is reformatted into one consistent, AI-ready standard with a named owner and a completion cadence. Alongside the content work, we fix the process basics: sales calls get recorded, training time gets protected, and the measurement baseline gets set.',
-    outcome: 'One complete, consistent, portable SOP library that Hike Doggie owns — plus the process foundations that make it stick.',
+    title: 'SOP Foundation: extract, organize, standardize',
+    body: 'We pull everything out of Delight Tree and the surrounding spreadsheets, docs, and drives. Then we do the unglamorous work: inventory, de-duplication, cleanup, and general organization. From there, every SOP is reformatted into one consistent, AI-ready standard with a named owner and a completion cadence. Alongside the content work, we fix the process basics: sales calls get recorded, training time gets protected, and the measurement baseline gets set.',
+    outcome: 'One complete, consistent, portable SOP library that Hike Doggie owns, plus the process foundations that make it stick.',
     includes: [
       'Full SOP inventory and audit',
       'Delight Tree content extraction',
@@ -105,8 +105,8 @@ const phases: Phase[] = [
   },
   {
     num: '02',
-    title: 'Prototype — design the real thing',
-    body: 'With the SOP library in hand, we decide the feature set together — grounded in what the content actually needs, not guesses. Then we evolve the quick concept into a usable, testable prototype: the screens, flows, and structure a trainee would actually move through. The prototype does double duty: it proves the experience, and it defines the scope that prices the build.',
+    title: 'Prototype: design the real thing',
+    body: 'With the SOP library in hand, we decide the feature set together, grounded in what the content actually needs, not guesses. Then we evolve the quick concept into a usable, testable prototype: the screens, flows, and structure a trainee would actually move through. The prototype does double duty: it proves the experience, and it defines the scope that prices the build.',
     outcome: 'A usable prototype that demonstrates the training experience and produces a firm, honest estimate for the app build.',
     includes: [
       'Feature decisions workshop (from Phase 1 findings)',
@@ -119,9 +119,9 @@ const phases: Phase[] = [
   },
   {
     num: '03',
-    title: 'Build and beta — priced by the prototype',
-    body: 'The app build, beta testing with real trainees, and finalization follow the prototype — and are quoted from it. We will not price features that have not been chosen yet. When the prototype is approved, the build estimate comes with it, and this engagement rolls forward only if the numbers make sense to you.',
-    outcome: 'A firm build quote derived from an approved prototype — no guessing, no padding.',
+    title: 'Build and beta: priced by the prototype',
+    body: 'The app build, beta testing with real trainees, and finalization follow the prototype and are quoted from it. We will not price features that have not been chosen yet. When the prototype is approved, the build estimate comes with it, and this engagement rolls forward only if the numbers make sense to you.',
+    outcome: 'A firm build quote derived from an approved prototype. No guessing, no padding.',
     includes: [
       'Build quote delivered with the approved prototype',
       'Beta plan with real trainees',
@@ -133,14 +133,14 @@ const phases: Phase[] = [
 
 const deliverables = [
   ['Foundation', 'SOP inventory and audit', 'A complete accounting of every SOP, where it lives, what shape it is in, and what is missing.'],
-  ['Foundation', 'Extracted content library', 'All SOP content out of Delight Tree and scattered docs — organized, de-duplicated, and owned by Hike Doggie.'],
+  ['Foundation', 'Extracted content library', 'All SOP content out of Delight Tree and scattered docs: organized, de-duplicated, and owned by Hike Doggie.'],
   ['System', 'SOP master template', 'One consistent structure every SOP follows: purpose, steps, proof, owner, cadence.'],
-  ['System', 'Reformatted SOP library', 'The full library rewritten to the standard — consistent, complete, and AI-ready.'],
+  ['System', 'Reformatted SOP library', 'The full library rewritten to the standard: consistent, complete, and AI-ready.'],
   ['System', 'Measurement definitions', 'What we measure and why, tied to outcomes: SOP velocity, time to first solo, context captured.'],
-  ['Process', 'Call-recording workflow', 'Sales calls recorded and stored from week one — the start of the context asset.'],
+  ['Process', 'Call-recording workflow', 'Sales calls recorded and stored from week one. The start of the context asset.'],
   ['Product', 'Prototype design', 'A usable, testable prototype of the training experience, built from the real SOP content.'],
   ['Product', 'Build estimate', 'A firm quote for the app build, derived line-by-line from the approved prototype.'],
-  ['Advisory', 'Ongoing counsel', 'Regular working sessions plus async access — how to run, evolve, and think in agentic systems.'],
+  ['Advisory', 'Ongoing counsel', 'Regular working sessions plus async access: how to run, evolve, and think in agentic systems.'],
 ]
 
 const timeline = [
@@ -177,7 +177,7 @@ const investmentLines = [
   [
     '03',
     'Advisory retainer',
-    'Ongoing counsel throughout the engagement — working sessions and async access on agentic systems, big and small. Month to month, cancel anytime.',
+    'Ongoing counsel throughout the engagement: working sessions and async access on agentic systems, big and small. Month to month, cancel anytime.',
     PRICE_ADVISORY,
   ],
   [
@@ -189,7 +189,7 @@ const investmentLines = [
   [
     '05',
     'App build and beta',
-    'Quoted from the approved prototype — features first, price second. No number today is more honest than a made-up one.',
+    'Quoted from the approved prototype. Features first, price second. No number today is more honest than a made-up one.',
     'Scoped after prototype',
   ],
 ]
@@ -198,7 +198,7 @@ const nextSteps: DetailRow[] = [
   [
     '01',
     'Confirm scope',
-    'Confirm this engagement covers the SOP Foundation, the prototype, and advisory — with the build quoted after the prototype is approved.',
+    'Confirm this engagement covers the SOP Foundation, the prototype, and advisory, with the build quoted after the prototype is approved.',
   ],
   [
     '02',
@@ -208,7 +208,7 @@ const nextSteps: DetailRow[] = [
   [
     '03',
     'Begin Sprint 01',
-    'Extraction and inventory start immediately — and sales calls start recording the same week. Small wins, right away.',
+    'Extraction and inventory start immediately, and sales calls start recording the same week. Small wins, right away.',
   ],
 ]
 
@@ -349,12 +349,12 @@ export function HikeDoggieProposal() {
         <div className="flex flex-col gap-10 border-t border-[var(--color-rule)] pb-16 pt-12 lg:flex-row lg:gap-[140px]">
           <Reveal className="max-w-[650px] flex-1">
             <h2 className="serif text-[30px] leading-[38px] md:text-[38px] md:leading-[46px]">
-              An outcome-focused engagement to transform Hike Doggie's SOPs into a system people actually complete — and to design the app that will deliver them.
+              An outcome-focused engagement to transform Hike Doggie's SOPs into a system people actually complete, and to design the app that will deliver them.
             </h2>
           </Reveal>
           <Reveal className="flex max-w-[440px] flex-col gap-7">
             <p className="text-[15px] leading-[23px] text-ink-2">
-              The direction is set — we walked it together in the working session. This proposal prices the first two phases, keeps advisory in the room throughout, and lets the prototype price the build honestly.
+              The direction is set. We walked it together in the working session. This proposal prices the first two phases, keeps advisory in the room throughout, and lets the prototype price the build honestly.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <AnchorButton>{'Accept proposal ->'}</AnchorButton>
@@ -387,7 +387,7 @@ export function HikeDoggieProposal() {
             </h2>
             <div className="flex max-w-[500px] flex-col gap-6 text-[15px] leading-[24px] text-ink-2">
               <p>The working session established the direction: SOPs digested, learned, and proven through one system Hike Doggie owns.</p>
-              <p>This proposal scopes only what can be scoped honestly today — and commits to small wins with tangible, measurable outcomes from the first week.</p>
+              <p>This proposal scopes only what can be scoped honestly today, and commits to small wins with tangible, measurable outcomes from the first week.</p>
             </div>
           </Reveal>
           <Reveal className="grid gap-0 border-t border-[var(--color-rule)] sm:grid-cols-2">
@@ -411,7 +411,7 @@ export function HikeDoggieProposal() {
         <MetaRow left="§ 03 - The outcomes" right="Measured against yesterday" dark />
         <Reveal>
           <h2 className="display max-w-[1180px] py-16 text-[48px] leading-[54px] md:text-[76px] md:leading-[78px] lg:text-[96px] lg:leading-[96px]">
-            Efficiency in the right places — and a standard that carries itself.
+            Efficiency in the right places, and a standard that carries itself.
           </h2>
         </Reveal>
         <Reveal className="ml-auto max-w-[760px] border-t border-paper/20">
@@ -432,7 +432,7 @@ export function HikeDoggieProposal() {
             </h2>
           </Reveal>
           <Reveal className="max-w-[500px] text-[15px] leading-[24px] text-ink-2">
-            The unglamorous work comes first — getting the content out of Delight Tree and into one owned, consistent standard. The prototype follows from what that work teaches us. The build is quoted only when the prototype has defined it.
+            The unglamorous work comes first: getting the content out of Delight Tree and into one owned, consistent standard. The prototype follows from what that work teaches us. The build is quoted only when the prototype has defined it.
           </Reveal>
         </div>
         <div className="border-t border-[var(--color-rule)]">
@@ -445,7 +445,7 @@ export function HikeDoggieProposal() {
               <div className="max-w-[650px]">
                 <h3 className="serif pb-5 text-[34px] leading-[40px]">{phase.title}</h3>
                 <p className="pb-5 text-[15px] leading-[24px] text-ink-2">{phase.body}</p>
-                <p className="text-[13px] leading-[20px] text-ink">Outcome - {phase.outcome}</p>
+                <p className="text-[14px] leading-[21px] font-semibold text-ink">Outcome - {phase.outcome}</p>
               </div>
               <div className="flex flex-col gap-3 pt-2">
                 <span className="eyebrow text-ink-2">Includes</span>
@@ -470,7 +470,7 @@ export function HikeDoggieProposal() {
             </h2>
           </Reveal>
           <Reveal className="max-w-[540px] text-[15px] leading-[24px] text-ink-2">
-            Outcome-focused means each deliverable is a finished, usable thing — not a report about one. The library is yours, the standard is yours, and the context you start capturing is yours to keep.
+            Outcome-focused means each deliverable is a finished, usable thing, not a report about one. The library is yours, the standard is yours, and the context you start capturing is yours to keep.
           </Reveal>
         </div>
         <Reveal className="grid border-t border-l border-[var(--color-rule)] md:grid-cols-2 xl:grid-cols-3">
@@ -496,7 +496,7 @@ export function HikeDoggieProposal() {
             </h2>
           </Reveal>
           <Reveal className="max-w-[500px] text-[15px] leading-[24px] text-ink-2">
-            Sprint dates are confirmed at kickoff, once Delight Tree access and the SOP materials are in hand. Call recording starts in week one regardless — context capture should never wait on a plan.
+            Sprint dates are confirmed at kickoff, once Delight Tree access and the SOP materials are in hand. Call recording starts in week one regardless. Context capture should never wait on a plan.
           </Reveal>
         </div>
         <Reveal className="grid border-t border-l border-[var(--color-rule)] md:grid-cols-3">
@@ -524,7 +524,7 @@ export function HikeDoggieProposal() {
             <p className="eyebrow mt-5 text-ink-2">Total - SOP Foundation and Prototype · plus {PRICE_ADVISORY} advisory</p>
           </div>
           <div className="flex max-w-[560px] flex-col gap-5 text-[15px] leading-[24px] text-ink-2">
-            <p>This covers the two phases that can be priced honestly today: the full SOP Foundation — including the manual work of extracting and organizing everything out of Delight Tree — and the prototype that will define and price the build.</p>
+            <p>This covers the two phases that can be priced honestly today: the full SOP Foundation, including the manual work of extracting and organizing everything out of Delight Tree, and the prototype that will define and price the build.</p>
             <p>Advisory runs alongside as a month-to-month retainer, cancel anytime. Pricing reflects a founding-client consideration in exchange for case-study rights and referenceable results as this work becomes a portfolio.</p>
           </div>
         </Reveal>
@@ -545,7 +545,7 @@ export function HikeDoggieProposal() {
         <div className="grid gap-10 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
           <Reveal>
             <h2 className="display max-w-[760px] text-[48px] leading-[52px] md:text-[72px] md:leading-[72px]">
-              If this feels right, we start with access — and the calls start recording the same week.
+              If this feels right, we start with access, and the calls start recording the same week.
             </h2>
           </Reveal>
           <Reveal className="max-w-[440px] text-[15px] leading-[24px] text-ink-2">
