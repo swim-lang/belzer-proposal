@@ -510,12 +510,26 @@ function Investment() {
         ))}
       </div>
 
-      <Reveal className="mt-12 grid gap-8 border-y border-[var(--color-rule)] py-10 md:grid-cols-[0.8fr_1.2fr] md:items-center md:gap-16">
-        <div>
-          <span className="eyebrow block text-ink-2">Payment structure</span>
-          <span className="serif mt-3 block text-[42px] leading-[46px]">50% / 50%</span>
+      <Reveal className="mt-12 border-y border-[var(--color-rule)] py-10">
+        <div className="flex flex-col gap-3 pb-8 sm:flex-row sm:items-end sm:justify-between">
+          <span className="eyebrow text-ink-2">Payment structure</span>
+          <span className="serif text-[38px] leading-[42px] md:text-[42px] md:leading-[46px]">50% / 25% / 25%</span>
         </div>
-        <p className="max-w-[660px] text-[15px] leading-[24px] text-ink-2">Fifty percent of the selected scope is due to schedule and begin. The remaining fifty percent is due when the selected scope is complete, before final launch or handoff.</p>
+        <div className="grid border-t border-[var(--color-rule)] md:grid-cols-3">
+          {[
+            ['50%', 'To begin', 'Due to schedule the project and begin the selected scope.'],
+            ['25%', 'Direction approved', 'Due after approval of the core design direction and priority page experience.'],
+            ['25%', 'At launch', 'Due when the selected work launches, with final files and handoff to follow.'],
+          ].map(([amount, title, body], index) => (
+            <div key={title} className={`flex min-h-[190px] flex-col gap-5 py-8 md:p-8 ${index < 2 ? 'border-b border-[var(--color-rule)] md:border-b-0 md:border-r' : ''} ${index === 0 ? 'md:pl-0' : ''}`}>
+              <span className="serif text-[42px] leading-[46px] text-mac">{amount}</span>
+              <div className="mt-auto">
+                <span className="eyebrow block text-ink-2">{title}</span>
+                <p className="max-w-[340px] pt-3 text-[13px] leading-[20px] text-ink-2">{body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </Reveal>
     </section>
   )
