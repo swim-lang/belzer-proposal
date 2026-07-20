@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import { AvodahProposal } from './AvodahProposal'
 import { BapsCharitiesProposal } from './BapsCharitiesProposal'
 import { BelzerPilotProposal } from './BelzerPilotProposal'
+import { BelzerSystemsProposal } from './BelzerSystemsProposal'
 import { CipherProposal } from './CipherProposal'
 import { DoubleUpDavesProposal } from './DoubleUpDavesProposal'
 import { FiberSoftChewProposal } from './FiberSoftChewProposal'
@@ -27,6 +28,7 @@ import { TamrahProposal } from './TamrahProposal'
 import { WildflowerBlancProposal } from './WildflowerBlancProposal'
 import { Admin } from './admin/Admin'
 import { ProposalGate } from './components/ProposalGate'
+import { LockedProposalNotice } from './components/LockedProposalNotice'
 import { ContentProvider } from './context/ContentContext'
 import { ContractPage } from './contracts/ContractPage'
 import { avodahContract } from './contracts/avodahContract'
@@ -80,6 +82,10 @@ export default function App() {
   }
 
   if (proposalEntry) {
+    if (proposalEntry.access === 'locked') {
+      return withProposalGate(<LockedProposalNotice />)
+    }
+
     switch (proposalEntry.id) {
       case 'belzer': {
         if (pathname === '/belzer' || pathname.startsWith('/belzer/')) {
@@ -94,6 +100,8 @@ export default function App() {
       }
       case 'belzer-pilot':
         return withProposalGate(<BelzerPilotProposal />)
+      case 'belzer-systems':
+        return withProposalGate(<BelzerSystemsProposal />)
       case 'knd':
         document.title = 'Anchovies × KND Law Firm - Proposal'
         return withProposalGate(

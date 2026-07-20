@@ -3,23 +3,37 @@
     "id": "belzer",
     "name": "Belzer Law",
     "tagline": "Custom software proposal",
-    "status": "Active",
+    "status": "Archived",
     "href": "/proposal/belzer",
     "paths": ["/proposal/belzer", "/belzer"],
     "sourceFile": "src/Proposal.tsx",
     "kind": "proposal",
-    "showInDashboard": true
+    "showInDashboard": true,
+    "access": "locked"
   },
   {
     "id": "belzer-pilot",
     "name": "Belzer Law: Focused Workflow Pilot",
     "tagline": "Focused Workflow Pilot · $4,500 flat",
-    "status": "Active",
+    "status": "Archived",
     "href": "/proposal/belzer-pilot",
     "paths": ["/proposal/belzer-pilot"],
     "sourceFile": "src/BelzerPilotProposal.tsx",
     "kind": "proposal",
-    "showInDashboard": true
+    "showInDashboard": true,
+    "access": "locked"
+  },
+  {
+    "id": "belzer-systems",
+    "name": "Belzer Law: Client + Firm Systems",
+    "tagline": "Client experience app + firm workflow portal · $8,000 each",
+    "status": "Active",
+    "href": "/proposal/belzer-systems",
+    "paths": ["/proposal/belzer-systems"],
+    "sourceFile": "src/BelzerSystemsProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true,
+    "access": "active"
   },
   {
     "id": "knd",

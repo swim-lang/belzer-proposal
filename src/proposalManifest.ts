@@ -10,6 +10,7 @@ export type ProposalManifestEntry = {
   sourceFile: string
   kind: 'proposal' | 'contract'
   showInDashboard: boolean
+  access?: 'active' | 'locked'
 }
 
 export const proposalManifest = manifest as ProposalManifestEntry[]
