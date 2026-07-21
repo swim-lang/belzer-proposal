@@ -148,17 +148,17 @@ const deliverables = [
 
 const timeline = [
   [
-    'Sprint 01',
+    'Week 01',
     'Extract and inventory',
     ['Delight Tree extraction', 'SOP inventory and audit', 'De-duplication and cleanup', 'Call recording begins', 'Master template drafted'],
   ],
   [
-    'Sprint 02',
+    'Week 02',
     'Standardize the library',
     ['Every SOP reformatted', 'Owners and cadences assigned', 'Measurement baseline set', 'Consistency review with the team', 'Library handoff'],
   ],
   [
-    'Sprint 03',
+    'Week 03',
     'Prototype',
     ['Feature decisions workshop', 'Prototype scope locked', 'Screen design and content flow', 'Team walkthrough', 'Build estimate delivered'],
   ],
@@ -233,7 +233,7 @@ const nextSteps: DetailRow[] = [
   ],
   [
     '03',
-    'Begin Sprint 01',
+    'Begin Week 01',
     'Extraction and inventory start immediately, and sales calls start recording the same week. Small wins, right away.',
   ],
 ]
@@ -514,7 +514,7 @@ export function HikeDoggieProposal() {
       </section>
 
       <section id="timeline" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-        <MetaRow left="§ 06 - Timeline" right="Phases 1 and 2: two to three weeks" />
+        <MetaRow left="§ 06 - Timeline" right="Two weeks SOP, one week prototype" />
         <div className="grid gap-10 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <Reveal>
             <h2 className="display max-w-[700px] text-[48px] leading-[52px] md:text-[72px] md:leading-[72px]">
@@ -522,7 +522,7 @@ export function HikeDoggieProposal() {
             </h2>
           </Reveal>
           <Reveal className="max-w-[500px] text-[15px] leading-[24px] text-ink-2">
-            Realistically, Phases 1 and 2 land in two to three weeks with everyone moving. Sprint dates are confirmed at kickoff, once Delight Tree access and the SOP materials are in hand. Call recording starts in week one regardless. Context capture should never wait on a plan.
+            Realistically: two weeks for the SOP Foundation, one week for the prototype, with everyone moving. Exact dates are confirmed at kickoff, once Delight Tree access and the SOP materials are in hand. Call recording starts in week one regardless. Context capture should never wait on a plan.
           </Reveal>
         </div>
         <Reveal className="grid border-t border-l border-[var(--color-rule)] md:grid-cols-3">
