@@ -213,6 +213,11 @@ const breakEven: DetailRow[] = [
     'A standard that lasts',
     'SOPs done once, in a portable format every future tool can use. This work never has to be paid for twice.',
   ],
+  [
+    '04',
+    'Yours to repurpose',
+    'You own this outright: the library, the system, the build. If it proves itself, repurpose it for your other clients however you like. Nothing is licensed back to us.',
+  ],
 ]
 
 const nextSteps: DetailRow[] = [
@@ -509,7 +514,7 @@ export function HikeDoggieProposal() {
       </section>
 
       <section id="timeline" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-        <MetaRow left="§ 06 - Timeline" right="Three sprints, small wins weekly" />
+        <MetaRow left="§ 06 - Timeline" right="Phases 1 and 2: two to three weeks" />
         <div className="grid gap-10 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <Reveal>
             <h2 className="display max-w-[700px] text-[48px] leading-[52px] md:text-[72px] md:leading-[72px]">
@@ -517,7 +522,7 @@ export function HikeDoggieProposal() {
             </h2>
           </Reveal>
           <Reveal className="max-w-[500px] text-[15px] leading-[24px] text-ink-2">
-            Sprint dates are confirmed at kickoff, once Delight Tree access and the SOP materials are in hand. Call recording starts in week one regardless. Context capture should never wait on a plan.
+            Realistically, Phases 1 and 2 land in two to three weeks with everyone moving. Sprint dates are confirmed at kickoff, once Delight Tree access and the SOP materials are in hand. Call recording starts in week one regardless. Context capture should never wait on a plan.
           </Reveal>
         </div>
         <Reveal className="grid border-t border-l border-[var(--color-rule)] md:grid-cols-3">
@@ -554,9 +559,9 @@ export function HikeDoggieProposal() {
           <p className="max-w-[640px] pt-6 text-[15px] leading-[24px] text-ink-2">
             We think about price the way you will: against outcomes. A few ways this investment covers itself.
           </p>
-          <div className="mt-8 grid border-y border-[var(--color-rule)] md:grid-cols-3">
+          <div className="mt-8 grid border-y border-[var(--color-rule)] md:grid-cols-2 xl:grid-cols-4">
             {breakEven.map(([num, title, body], index) => (
-              <div key={title} className={`flex min-h-[220px] flex-col gap-5 border-[var(--color-rule)] p-7 ${index < breakEven.length - 1 ? 'border-b md:border-b-0 md:border-r' : ''}`}>
+              <div key={title} className={`flex min-h-[220px] flex-col gap-5 border-[var(--color-rule)] p-7 ${fourCardBorderClass(index, breakEven.length)}`}>
                 <span className="eyebrow text-ink-2">B / {num}</span>
                 <h3 className="serif text-[27px] leading-[32px]">{title}</h3>
                 <p className="text-[13px] leading-[20px] text-ink-2">{body}</p>
@@ -608,7 +613,7 @@ export function HikeDoggieProposal() {
         </Reveal>
         <div className="grid gap-10 pt-16 lg:grid-cols-[1fr_360px]">
           <Reveal className="max-w-[540px] text-[15px] leading-[24px] text-paper/70">
-            By the end of this engagement, Hike Doggie owns a complete, consistent SOP library; a context asset that grows daily; a tested prototype of the training experience; and an honest, prototype-priced path to the full build: app, desktop, and the backend to run it all.
+            By the end of this engagement, Hike Doggie owns a complete, consistent SOP library; a context asset that grows daily; a tested prototype of the training experience; and an honest, prototype-priced path to the full build: app, desktop, and the backend to run it all. Every piece is owned outright, and yours to repurpose for other clients if it proves itself.
           </Reveal>
           <Reveal className="flex flex-col gap-4">
             <span className="eyebrow text-paper/55">Begin</span>
