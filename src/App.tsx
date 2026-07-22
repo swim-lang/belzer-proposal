@@ -8,6 +8,7 @@ import { DoubleUpDavesProposal } from './DoubleUpDavesProposal'
 import { FiberSoftChewProposal } from './FiberSoftChewProposal'
 import { GarySpringsteadProposal } from './GarySpringsteadProposal'
 import { GenesiProposal } from './GenesiProposal'
+import { HikeDoggieProposal } from './HikeDoggieProposal'
 import { HumanaAIProposal } from './HAAIProposal'
 import { HomemadeProposal } from './HomemadeProposal'
 import { HumanaAIProposal2 } from './HumanaAIProposal2'
@@ -121,6 +122,8 @@ export default function App() {
         return withProposalGate(<HumanaAIProposal />)
       case 'humana-ai-2':
         return withProposalGate(<HumanaAIProposal2 />)
+      case 'hike-doggie':
+        return withProposalGate(<HikeDoggieProposal />)
       case 'lex-politica':
         return withProposalGate(<LexPoliticaProposal />)
       case 'molly-contract':

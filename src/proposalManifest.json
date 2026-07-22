@@ -366,6 +366,17 @@
     "showInDashboard": true
   },
   {
+    "id": "hike-doggie",
+    "name": "Hike Doggie",
+    "tagline": "SOP foundation and working prototype · July 2026",
+    "status": "Active",
+    "href": "/proposal/hike-doggie",
+    "paths": ["/proposal/hike-doggie"],
+    "sourceFile": "src/HikeDoggieProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true
+  },
+  {
     "id": "double-up-daves",
     "name": "Double Up Daves",
     "tagline": "Brand identity and website · July 2026",
