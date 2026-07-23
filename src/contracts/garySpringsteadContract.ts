@@ -12,9 +12,9 @@ export const garySpringsteadContract: ContractData = {
   originalValue: '$23,000',
   accommodation: '$6,500',
   client: {
-    name: 'Gary and Kathryn Springstead',
+    name: 'Gary, Kathryn, and Nicole Springstead',
     label: 'Client',
-    contactName: 'Gary and Kathryn Springstead',
+    contactName: 'Gary, Kathryn, and Nicole Springstead',
   },
   agency: {
     name: 'Anchovies LLC',
@@ -97,6 +97,7 @@ export const garySpringsteadContract: ContractData = {
         'Firm introduction copy',
         'Gary Springstead biography',
         'Kathryn Springstead biography',
+        'Nicole Springstead biography',
         'Federal criminal defense framing',
         'Michigan criminal defense framing',
         'Practice-area language',

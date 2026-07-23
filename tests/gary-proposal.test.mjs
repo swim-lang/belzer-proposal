@@ -88,7 +88,11 @@ test('Springstead proposal is registered and preserves source content', () => {
 
   assert.match(contract, /slug: 'gary-springstead'/)
   assert.match(contract, /Brand Identity, Narrative, and Website Engagement/)
-  assert.match(contract, /name: 'Gary and Kathryn Springstead'/)
+  assert.match(proposal, /Gary, Kathryn & Nicole Springstead/)
+  assert.match(proposal, /Gary, Kathryn, and Nicole Springstead/)
+  assert.match(proposal, /Nicole Springstead biography/)
+  assert.match(contract, /name: 'Gary, Kathryn, and Nicole Springstead'/)
+  assert.match(contract, /Nicole Springstead biography/)
   assert.match(contract, /fee: '\$16,500'/)
   assert.match(contract, /originalValue: '\$23,000'/)
   assert.match(contract, /accommodation: '\$6,500'/)

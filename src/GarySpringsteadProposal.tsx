@@ -167,7 +167,7 @@ const phases: Phase[] = [
   {
     num: '01',
     title: 'Discovery, audit, and market framing',
-    body: "We begin with Gary and Kathryn's backgrounds, current public profiles, existing brand equity, target matters, referral network, search considerations, and goals for the new practice. This phase is about understanding what should carry forward, what should change, and what the independent firm must communicate from day one.",
+    body: "We begin with Gary, Kathryn, and Nicole's backgrounds, current public profiles, existing brand equity, target matters, referral network, search considerations, and goals for the new practice. This phase is about understanding what should carry forward, what should change, and what the independent firm must communicate from day one.",
     deliverable: 'Strategic direction summary, audience framework, market observations, website priorities, and creative direction moodboard.',
     includes: [
       'Partner discovery',
@@ -226,6 +226,7 @@ const phases: Phase[] = [
       'Firm introduction',
       'Gary Springstead biography',
       'Kathryn Springstead biography',
+      'Nicole Springstead biography',
       'Federal criminal defense framing',
       'Michigan criminal defense framing',
       'Practice-area language',
@@ -554,7 +555,7 @@ function GaryNav() {
         <div className="flex items-center gap-6">
           <span className="eyebrow font-medium text-ink">Anchovies</span>
           <span className="block h-[10px] w-px bg-[var(--color-rule)]" />
-          <span className="eyebrow text-ink-2">Prepared for Gary & Kathryn Springstead</span>
+          <span className="eyebrow text-ink-2">Prepared for Gary, Kathryn & Nicole Springstead</span>
         </div>
         <div className="flex items-center gap-6">
           <span className="eyebrow text-ink-2">Brand · Identity · Website · v1</span>
@@ -609,7 +610,7 @@ function Hero() {
       <div className="flex flex-col gap-10 pb-20 lg:flex-row lg:gap-[140px]">
         <Reveal className="max-w-[640px] flex-1">
           <h2 className="display text-[31px] leading-[39px] md:text-[36px] md:leading-[44px]">
-            Strategy, identity, messaging, and a custom website for the next chapter of Gary and Kathryn Springstead’s criminal defense practice.
+            Strategy, identity, messaging, and a custom website for the next chapter of Gary, Kathryn, and Nicole Springstead’s criminal defense practice.
           </h2>
         </Reveal>
         <Reveal className="flex max-w-[420px] flex-col gap-7">
@@ -1009,7 +1010,7 @@ function NextStep() {
         </div>
         <div className="grid gap-10 pt-14 lg:grid-cols-[1fr_480px] lg:gap-20">
           <p className="max-w-[560px] text-[15px] leading-[23px] text-ink-2">
-            This is an opportunity to introduce a new firm without looking new. The work begins with a focused discovery session, then moves quickly through positioning, identity, messaging, website design, development, and launch — a complete public platform that carries the reputation Gary and Kathryn have already earned. From kickoff, the firm receives:
+            This is an opportunity to introduce a new firm without looking new. The work begins with a focused discovery session, then moves quickly through positioning, identity, messaging, website design, development, and launch — a complete public platform that carries the reputation Gary, Kathryn, and Nicole have already earned. From kickoff, the firm receives:
           </p>
           <div className="grid gap-3.5">
             {nextStepItems.map((item, index) => (
@@ -1040,7 +1041,7 @@ function Footer() {
         <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-ink" />
         <span className="text-[12px] leading-[16px] tracking-[0.02em] text-ink">Anchovies</span>
         <span className="block h-[10px] w-px bg-[var(--color-rule)]" />
-        <span className="text-[12px] leading-[16px] tracking-[0.02em]">Prepared for Gary & Kathryn Springstead</span>
+        <span className="text-[12px] leading-[16px] tracking-[0.02em]">Prepared for Gary, Kathryn & Nicole Springstead</span>
       </div>
       <div className="flex flex-wrap items-center gap-6">
         <span className="eyebrow text-ink-2">June 2026</span>
