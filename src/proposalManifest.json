@@ -5,7 +5,10 @@
     "tagline": "Custom software proposal",
     "status": "Archived",
     "href": "/proposal/belzer",
-    "paths": ["/proposal/belzer", "/belzer"],
+    "paths": [
+      "/proposal/belzer",
+      "/belzer"
+    ],
     "sourceFile": "src/Proposal.tsx",
     "kind": "proposal",
     "showInDashboard": true,
@@ -14,10 +17,12 @@
   {
     "id": "belzer-pilot",
     "name": "Belzer Law: Focused Workflow Pilot",
-    "tagline": "Focused Workflow Pilot · $4,500 flat",
+    "tagline": "Focused Workflow Pilot \u00b7 $4,500 flat",
     "status": "Archived",
     "href": "/proposal/belzer-pilot",
-    "paths": ["/proposal/belzer-pilot"],
+    "paths": [
+      "/proposal/belzer-pilot"
+    ],
     "sourceFile": "src/BelzerPilotProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true,
@@ -26,10 +31,12 @@
   {
     "id": "belzer-systems",
     "name": "Belzer Law: Client + Firm Systems",
-    "tagline": "Client experience app + firm workflow portal · $7,900 each",
+    "tagline": "Client experience app + firm workflow portal \u00b7 $7,900 each",
     "status": "Active",
     "href": "/proposal/belzer-systems",
-    "paths": ["/proposal/belzer-systems"],
+    "paths": [
+      "/proposal/belzer-systems"
+    ],
     "sourceFile": "src/BelzerSystemsProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true,
@@ -41,7 +48,9 @@
     "tagline": "Custom software proposal",
     "status": "Active",
     "href": "/proposal/knd",
-    "paths": ["/proposal/knd"],
+    "paths": [
+      "/proposal/knd"
+    ],
     "sourceFile": "src/Proposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
@@ -49,10 +58,12 @@
   {
     "id": "baps-charities",
     "name": "BAPS Charities",
-    "tagline": "Website system and donation experience · May 2026",
+    "tagline": "Website system and donation experience \u00b7 May 2026",
     "status": "Active",
     "href": "/proposal/baps-charities",
-    "paths": ["/proposal/baps-charities"],
+    "paths": [
+      "/proposal/baps-charities"
+    ],
     "sourceFile": "src/BapsCharitiesProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
@@ -60,10 +71,13 @@
   {
     "id": "sleep-like-a-goddess",
     "name": "Sleep Like a Goddess",
-    "tagline": "Brand system refinement · May 2026",
+    "tagline": "Brand system refinement \u00b7 May 2026",
     "status": "Active",
     "href": "/proposal/sleep-like-a-goddess",
-    "paths": ["/proposal/sleep-like-a-goddess", "/sleep-like-a-goddess"],
+    "paths": [
+      "/proposal/sleep-like-a-goddess",
+      "/sleep-like-a-goddess"
+    ],
     "sourceFile": "src/SleepGoddessProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
@@ -74,7 +88,9 @@
     "tagline": "Shopify completion agreement",
     "status": "Archived",
     "href": "/proposal/soft-hours/contract",
-    "paths": ["/proposal/soft-hours/contract"],
+    "paths": [
+      "/proposal/soft-hours/contract"
+    ],
     "sourceFile": "src/contracts/softHoursContract.ts",
     "kind": "contract",
     "showInDashboard": false
@@ -82,10 +98,13 @@
   {
     "id": "soft-hours",
     "name": "Soft Hours",
-    "tagline": "Shopify completion · June 2026",
+    "tagline": "Shopify completion \u00b7 June 2026",
     "status": "Active",
     "href": "/proposal/soft-hours",
-    "paths": ["/proposal/soft-hours", "/soft-hours"],
+    "paths": [
+      "/proposal/soft-hours",
+      "/soft-hours"
+    ],
     "sourceFile": "src/SoftHoursProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
@@ -93,10 +112,15 @@
   {
     "id": "humanaai",
     "name": "HumanaAI",
-    "tagline": "Brand, site, deck, and app concept · May 2026",
+    "tagline": "Brand, site, deck, and app concept \u00b7 May 2026",
     "status": "Active",
     "href": "/proposal/humanaai",
-    "paths": ["/proposal/humanaai", "/humanaai", "/proposal/haai", "/haai"],
+    "paths": [
+      "/proposal/humanaai",
+      "/humanaai",
+      "/proposal/haai",
+      "/haai"
+    ],
     "sourceFile": "src/HAAIProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
@@ -104,10 +128,12 @@
   {
     "id": "humana-ai-2",
     "name": "Humana AI",
-    "tagline": "Revised brand, site, prototype, and social · $6,500",
+    "tagline": "Revised brand, site, prototype, and social \u00b7 $6,500",
     "status": "Active",
     "href": "/proposal/humana-ai-2",
-    "paths": ["/proposal/humana-ai-2"],
+    "paths": [
+      "/proposal/humana-ai-2"
+    ],
     "sourceFile": "src/HumanaAIProposal2.tsx",
     "kind": "proposal",
     "showInDashboard": true
@@ -118,7 +144,9 @@
     "tagline": "Brand and website proposal",
     "status": "Active",
     "href": "/proposal/lex-politica",
-    "paths": ["/proposal/lex-politica"],
+    "paths": [
+      "/proposal/lex-politica"
+    ],
     "sourceFile": "src/LexPoliticaProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
@@ -129,7 +157,9 @@
     "tagline": "Brand identity, website, and copy agreement",
     "status": "Archived",
     "href": "/proposal/molly/contract",
-    "paths": ["/proposal/molly/contract"],
+    "paths": [
+      "/proposal/molly/contract"
+    ],
     "sourceFile": "src/contracts/mollyEngelsContract.ts",
     "kind": "contract",
     "showInDashboard": false
@@ -137,10 +167,12 @@
   {
     "id": "molly",
     "name": "Molly Engels",
-    "tagline": "Brand identity, website, and copy direction · $1,950",
+    "tagline": "Brand identity, website, and copy direction \u00b7 $1,950",
     "status": "Active",
     "href": "/proposal/molly",
-    "paths": ["/proposal/molly"],
+    "paths": [
+      "/proposal/molly"
+    ],
     "sourceFile": "src/MollyEngelsProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
@@ -151,7 +183,9 @@
     "tagline": "Service agreement",
     "status": "Archived",
     "href": "/proposal/genesi/contract",
-    "paths": ["/proposal/genesi/contract"],
+    "paths": [
+      "/proposal/genesi/contract"
+    ],
     "sourceFile": "src/contracts/genesiContract.ts",
     "kind": "contract",
     "showInDashboard": false
@@ -162,7 +196,9 @@
     "tagline": "Brand and digital proposal",
     "status": "Active",
     "href": "/proposal/genesi",
-    "paths": ["/proposal/genesi"],
+    "paths": [
+      "/proposal/genesi"
+    ],
     "sourceFile": "src/GenesiProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
@@ -173,7 +209,9 @@
     "tagline": "Brand, messaging, website, and portal readiness agreement",
     "status": "Archived",
     "href": "/proposal/lapinco/contract",
-    "paths": ["/proposal/lapinco/contract"],
+    "paths": [
+      "/proposal/lapinco/contract"
+    ],
     "sourceFile": "src/contracts/lapincoContract.ts",
     "kind": "contract",
     "showInDashboard": false
@@ -181,10 +219,12 @@
   {
     "id": "lapinco",
     "name": "Lapinco",
-    "tagline": "Brand, messaging, site, and portal readiness · May 2026",
+    "tagline": "Brand, messaging, site, and portal readiness \u00b7 May 2026",
     "status": "Active",
     "href": "/proposal/lapinco",
-    "paths": ["/proposal/lapinco"],
+    "paths": [
+      "/proposal/lapinco"
+    ],
     "sourceFile": "src/LapincoProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
@@ -195,7 +235,9 @@
     "tagline": "Naming and brand identity agreement",
     "status": "Archived",
     "href": "/proposal/fiber-soft-chew/contract",
-    "paths": ["/proposal/fiber-soft-chew/contract"],
+    "paths": [
+      "/proposal/fiber-soft-chew/contract"
+    ],
     "sourceFile": "src/contracts/fiberSoftChewContract.ts",
     "kind": "contract",
     "showInDashboard": false
@@ -203,10 +245,12 @@
   {
     "id": "fiber-soft-chew",
     "name": "Fiber Soft Chew",
-    "tagline": "Naming and brand identity · May 2026",
+    "tagline": "Naming and brand identity \u00b7 May 2026",
     "status": "Active",
     "href": "/proposal/fiber-soft-chew",
-    "paths": ["/proposal/fiber-soft-chew"],
+    "paths": [
+      "/proposal/fiber-soft-chew"
+    ],
     "sourceFile": "src/FiberSoftChewProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
@@ -217,7 +261,9 @@
     "tagline": "Website design and Shopify agreement",
     "status": "Archived",
     "href": "/proposal/off-menu/contract",
-    "paths": ["/proposal/off-menu/contract"],
+    "paths": [
+      "/proposal/off-menu/contract"
+    ],
     "sourceFile": "src/contracts/offMenuContract.ts",
     "kind": "contract",
     "showInDashboard": false
@@ -228,7 +274,9 @@
     "tagline": "Website design and Shopify proposal",
     "status": "Active",
     "href": "/proposal/off-menu",
-    "paths": ["/proposal/off-menu"],
+    "paths": [
+      "/proposal/off-menu"
+    ],
     "sourceFile": "src/OffMenuProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
@@ -236,10 +284,12 @@
   {
     "id": "gary-springstead",
     "name": "Springstead",
-    "tagline": "Brand, identity, narrative, and website · June 2026",
+    "tagline": "Brand, identity, narrative, and website \u00b7 June 2026",
     "status": "Active",
     "href": "/proposal/gary-springstead",
-    "paths": ["/proposal/gary-springstead"],
+    "paths": [
+      "/proposal/gary-springstead"
+    ],
     "sourceFile": "src/GarySpringsteadProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
@@ -250,7 +300,9 @@
     "tagline": "Brand, identity, narrative, and website agreement",
     "status": "Active",
     "href": "/proposal/gary-springstead/contract",
-    "paths": ["/proposal/gary-springstead/contract"],
+    "paths": [
+      "/proposal/gary-springstead/contract"
+    ],
     "sourceFile": "src/contracts/garySpringsteadContract.ts",
     "kind": "contract",
     "showInDashboard": false
@@ -261,7 +313,9 @@
     "tagline": "Brand identity agreement",
     "status": "Archived",
     "href": "/proposal/wildflower-blanc/contract",
-    "paths": ["/proposal/wildflower-blanc/contract"],
+    "paths": [
+      "/proposal/wildflower-blanc/contract"
+    ],
     "sourceFile": "src/contracts/wildflowerBlancContract.ts",
     "kind": "contract",
     "showInDashboard": false
@@ -269,10 +323,12 @@
   {
     "id": "wildflower-blanc",
     "name": "Wildflower + Blanc",
-    "tagline": "Dual brand identity · June 2026",
+    "tagline": "Dual brand identity \u00b7 June 2026",
     "status": "Active",
     "href": "/proposal/wildflower-blanc",
-    "paths": ["/proposal/wildflower-blanc"],
+    "paths": [
+      "/proposal/wildflower-blanc"
+    ],
     "sourceFile": "src/WildflowerBlancProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
@@ -283,7 +339,9 @@
     "tagline": "Brand identity and website agreement",
     "status": "Archived",
     "href": "/proposal/cipher/contract",
-    "paths": ["/proposal/cipher/contract"],
+    "paths": [
+      "/proposal/cipher/contract"
+    ],
     "sourceFile": "src/contracts/cipherContract.ts",
     "kind": "contract",
     "showInDashboard": false
@@ -291,10 +349,12 @@
   {
     "id": "cipher",
     "name": "Cipher",
-    "tagline": "Brand identity + website · $15,900",
+    "tagline": "Brand identity + website \u00b7 $15,900",
     "status": "Active",
     "href": "/proposal/cipher",
-    "paths": ["/proposal/cipher"],
+    "paths": [
+      "/proposal/cipher"
+    ],
     "sourceFile": "src/CipherProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
@@ -302,10 +362,12 @@
   {
     "id": "soup-to-software",
     "name": "Soup to Software",
-    "tagline": "Strategy, identity, narrative, and site · May 2026",
+    "tagline": "Strategy, identity, narrative, and site \u00b7 May 2026",
     "status": "Active",
     "href": "/proposal/soup-to-software",
-    "paths": ["/proposal/soup-to-software"],
+    "paths": [
+      "/proposal/soup-to-software"
+    ],
     "sourceFile": "src/SoupToSoftwareProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
@@ -313,10 +375,12 @@
   {
     "id": "homemade",
     "name": "Homemade",
-    "tagline": "Naming, brand identity, and marketplace prototype · June 2026",
+    "tagline": "Naming, brand identity, and marketplace prototype \u00b7 June 2026",
     "status": "Archived",
     "href": "/proposal/homemade",
-    "paths": ["/proposal/homemade"],
+    "paths": [
+      "/proposal/homemade"
+    ],
     "sourceFile": "src/HomemadeProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
@@ -327,7 +391,9 @@
     "tagline": "Search foundation and Avodah website improvements agreement",
     "status": "Active",
     "href": "/proposal/avodah/contract",
-    "paths": ["/proposal/avodah/contract"],
+    "paths": [
+      "/proposal/avodah/contract"
+    ],
     "sourceFile": "src/contracts/avodahContract.ts",
     "kind": "contract",
     "showInDashboard": false
@@ -335,10 +401,12 @@
   {
     "id": "avodah",
     "name": "Avodah",
-    "tagline": "Employment search launch and growth · July 2026",
+    "tagline": "Employment search launch and growth \u00b7 July 2026",
     "status": "Active",
     "href": "/proposal/avodah",
-    "paths": ["/proposal/avodah"],
+    "paths": [
+      "/proposal/avodah"
+    ],
     "sourceFile": "src/AvodahProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
@@ -346,10 +414,12 @@
   {
     "id": "little-tech-association",
     "name": "Little Tech Association",
-    "tagline": "Brand refinement and launch website · May 2026",
+    "tagline": "Brand refinement and launch website \u00b7 May 2026",
     "status": "Archived",
     "href": "/proposal/little-tech-association",
-    "paths": ["/proposal/little-tech-association"],
+    "paths": [
+      "/proposal/little-tech-association"
+    ],
     "sourceFile": "src/LittleTechAssociationProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
@@ -357,10 +427,12 @@
   {
     "id": "tamrah",
     "name": "Tamrah",
-    "tagline": "Website design sprint and Square launch · May 2026",
+    "tagline": "Website design sprint and Square launch \u00b7 May 2026",
     "status": "Archived",
     "href": "/proposal/tamrah",
-    "paths": ["/proposal/tamrah"],
+    "paths": [
+      "/proposal/tamrah"
+    ],
     "sourceFile": "src/TamrahProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
@@ -368,21 +440,38 @@
   {
     "id": "path-law-group",
     "name": "Path Law Group",
-    "tagline": "Brand identity and digital experience · March 2026",
+    "tagline": "Brand identity and digital experience \u00b7 March 2026",
     "status": "Archived",
     "href": "/proposal/path-law-group",
-    "paths": ["/proposal/path-law-group"],
+    "paths": [
+      "/proposal/path-law-group"
+    ],
     "sourceFile": "src/PathLawGroupProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true
+  },
+  {
+    "id": "hike-doggie-board",
+    "name": "Hike Doggie Board Overview",
+    "tagline": "SOP Training App board one-pager \u00b7 July 2026",
+    "status": "Active",
+    "href": "/proposal/hike-doggie/board",
+    "paths": [
+      "/proposal/hike-doggie/board"
+    ],
+    "sourceFile": "src/HikeDoggieBoardOverview.tsx",
     "kind": "proposal",
     "showInDashboard": true
   },
   {
     "id": "hike-doggie",
     "name": "Hike Doggie",
-    "tagline": "SOP foundation and working prototype · July 2026",
+    "tagline": "SOP foundation and working prototype \u00b7 July 2026",
     "status": "Active",
     "href": "/proposal/hike-doggie",
-    "paths": ["/proposal/hike-doggie"],
+    "paths": [
+      "/proposal/hike-doggie"
+    ],
     "sourceFile": "src/HikeDoggieProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
@@ -390,10 +479,12 @@
   {
     "id": "double-up-daves",
     "name": "Double Up Daves",
-    "tagline": "Brand identity and website · July 2026",
+    "tagline": "Brand identity and website \u00b7 July 2026",
     "status": "Active",
     "href": "/proposal/double-up-daves",
-    "paths": ["/proposal/double-up-daves"],
+    "paths": [
+      "/proposal/double-up-daves"
+    ],
     "sourceFile": "src/DoubleUpDavesProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
