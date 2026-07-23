@@ -1,0 +1,168 @@
+import type { ContractData } from './types'
+
+export const garySpringsteadContract: ContractData = {
+  slug: 'gary-springstead',
+  title: 'Brand Identity, Narrative, and Website Engagement',
+  preparedDate: 'July 23, 2026',
+  agencySignedDate: 'July 23, 2026',
+  effectiveDate: '[date both parties sign]',
+  projectStart: 'after this Contract is signed and the kickoff invoice is paid',
+  timeline: '4 to 5 weeks',
+  fee: '$16,500',
+  originalValue: '$23,000',
+  accommodation: '$6,500',
+  client: {
+    name: 'Gary and Kathryn Springstead',
+    label: 'Client',
+    contactName: 'Gary and Kathryn Springstead',
+  },
+  agency: {
+    name: 'Anchovies LLC',
+    label: 'Agency',
+    address: 'Colorado limited liability company',
+  },
+  paymentMilestones: [
+    {
+      amount: '$8,250',
+      label: 'Due at project kickoff',
+      body: 'This reserves the project window and begins discovery, positioning, and creative direction.',
+    },
+    {
+      amount: '$4,125',
+      label: 'Due after identity presentation',
+      body: 'Due once the primary brand identity has been presented and approved.',
+    },
+    {
+      amount: '$4,125',
+      label: 'Due before final handoff',
+      body: 'Due before the final website launch, asset delivery, and handoff materials are completed.',
+    },
+  ],
+  revisionRounds: [
+    'Discovery and positioning: 1 round of refinement on the strategy summary, audience framework, website priorities, and creative direction.',
+    'Brand identity: up to 2 focused refinement rounds after the primary identity direction is presented.',
+    'Narrative, copy, and site architecture: 1 consolidated refinement round on the core messaging, biographies, practice framing, calls to action, and sitemap.',
+    'Website design and development: 1 round of design refinement, plus cleanup fixes during build and launch QA.',
+    'Final handoff: 1 round of cleanup edits before final file delivery, website launch, and ownership handoff.',
+  ],
+  scopePhases: [
+    {
+      label: 'A',
+      title: 'Discovery, audit, and positioning',
+      price: '$3,500',
+      timing: 'Week 1',
+      includes: [
+        'Partner discovery',
+        'Background and credential review',
+        'Current digital presence review',
+        'Competitive and category review',
+        'Audience and referral-path discussion',
+        'State and federal practice framing',
+        'Search and domain considerations',
+        'Creative direction moodboard',
+      ],
+      deliverable:
+        'A strategic direction summary, audience framework, market observations, website priorities, positioning foundation, and creative direction for the identity and website.',
+    },
+    {
+      label: 'B',
+      title: 'Brand identity and launch system',
+      price: '$5,500',
+      timing: 'Week 2 to Week 3',
+      includes: [
+        'Primary logo or wordmark',
+        'Secondary lockup',
+        'Monogram or supporting mark, if appropriate',
+        'Typography system',
+        'Color system',
+        'Graphic language and layout direction',
+        'Photography and portrait art direction',
+        'Foundational brand guide',
+        'Business card',
+        'Letterhead',
+        'Email signature',
+        'Social and directory profile assets',
+      ],
+      deliverable:
+        'A complete visual identity and launch system prepared for the firm website, professional materials, profiles, and future brand applications.',
+    },
+    {
+      label: 'C',
+      title: 'Narrative, copy, and site architecture',
+      price: '$3,500',
+      timing: 'Week 3',
+      includes: [
+        'Core messaging framework',
+        'Homepage narrative',
+        'Firm introduction copy',
+        'Gary Springstead biography',
+        'Kathryn Springstead biography',
+        'Federal criminal defense framing',
+        'Michigan criminal defense framing',
+        'Practice-area language',
+        'Experience and results framing',
+        'Contact and CTA language',
+        'Tone and writing guidance',
+        'Sitemap and page hierarchy',
+        'Search-conscious content structure',
+      ],
+      deliverable:
+        'A clear narrative and website content system that explains the firm, its experience, its practice areas, and the next step for prospective clients and referral counsel.',
+    },
+    {
+      label: 'D',
+      title: 'Website design, development, and launch',
+      price: '$10,500',
+      timing: 'Week 3 to Week 5',
+      includes: [
+        'Custom desktop design',
+        'Custom tablet and mobile design',
+        'Development in Framer',
+        'Up to eight core pages',
+        'Reusable practice-area page system',
+        'Reusable insights or news system',
+        'Contact and consultation form',
+        'CMS configuration',
+        'Basic accessibility considerations',
+        'Page titles and metadata',
+        'Sitemap and indexing setup',
+        'Analytics and Search Console setup',
+        'Redirect planning for firm domains',
+        'Performance and browser QA',
+        'Domain connection',
+        'Final asset exports',
+        'Recorded website walkthrough',
+        'Launch support',
+      ],
+      deliverable:
+        'A complete, responsive, launch-ready website with the identity, narrative, CMS structure, foundational SEO setup, QA, launch support, and organized final handoff.',
+    },
+  ],
+  optionalSupport: [
+    'Additional practice-area pages',
+    'Additional attorney, staff, or advisor profiles',
+    'Expanded case results or representative matters library',
+    'Blog, insights, or media publishing support',
+    'Ongoing website updates and optimization',
+    'Additional collateral, presentations, or document templates',
+    'Press, awards, or directory submission support',
+    'Advanced SEO, paid media, or content campaigns',
+  ],
+  additionalTerms: [
+    {
+      title: 'Legal and Professional Content Review',
+      body:
+        'The Client is responsible for reviewing and approving all legal, professional, biography, practice-area, representative matter, ethics, and advertising content before publication. Anchovies does not provide legal advice or guarantee compliance with attorney advertising rules.',
+    },
+    {
+      title: 'Third-Party Costs',
+      body:
+        'Domain registration, paid fonts, photography, hosting, software subscriptions, plugins, third-party integrations, stock assets, printing, filing, directory fees, and other third-party costs are not included unless expressly listed in Section 18.',
+    },
+    {
+      title: 'Search and Business Outcomes',
+      body:
+        'The work is intended to improve the quality, clarity, credibility, and usability of the firm brand and website. Search rankings, traffic, inquiries, media attention, client matters, and business outcomes are not guaranteed.',
+    },
+  ],
+}

@@ -245,6 +245,17 @@
     "showInDashboard": true
   },
   {
+    "id": "gary-springstead-contract",
+    "name": "Springstead Contract",
+    "tagline": "Brand, identity, narrative, and website agreement",
+    "status": "Active",
+    "href": "/proposal/gary-springstead/contract",
+    "paths": ["/proposal/gary-springstead/contract"],
+    "sourceFile": "src/contracts/garySpringsteadContract.ts",
+    "kind": "contract",
+    "showInDashboard": false
+  },
+  {
     "id": "wildflower-blanc-contract",
     "name": "Wildflower + Blanc Contract",
     "tagline": "Brand identity agreement",

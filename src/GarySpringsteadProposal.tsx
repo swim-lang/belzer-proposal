@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Reveal } from './components/Reveal'
 
 const calendarHref = 'https://cal.com/anchovies/30min?overlayCalendar=true'
+const contractHref = '/proposal/gary-springstead/contract'
 
 type Pillar = {
   label: string
@@ -577,8 +578,8 @@ function GaryNav() {
             <a href="#work" className="hidden rounded-full border border-[var(--color-mac)] px-4 py-2 text-[12px] font-medium text-[var(--color-mac)] transition-colors hover:bg-[var(--color-mac)] hover:text-paper whitespace-nowrap sm:inline-flex">
               View work
             </a>
-            <a href={calendarHref} target="_blank" rel="noreferrer" className="rounded-full bg-[var(--color-mac)] px-4 py-2 text-[12px] font-medium text-paper transition-colors hover:bg-[var(--color-mac-hover)] whitespace-nowrap">
-              Schedule proposal review
+            <a href={contractHref} className="rounded-full bg-[var(--color-mac)] px-4 py-2 text-[12px] font-medium text-paper transition-colors hover:bg-[var(--color-mac-hover)] whitespace-nowrap">
+              Review contract
             </a>
           </div>
         </div>
@@ -613,7 +614,7 @@ function Hero() {
         </Reveal>
         <Reveal className="flex max-w-[420px] flex-col gap-7">
           <div className="flex flex-wrap items-center gap-4">
-            <AnchorButton>{'Schedule proposal review ->'}</AnchorButton>
+            <AnchorButton href={contractHref}>{'Review contract ->'}</AnchorButton>
             <AnchorButton href="#work" variant="outline">
               View work
             </AnchorButton>
@@ -1020,7 +1021,12 @@ function NextStep() {
           </div>
         </div>
         <div className="pt-12">
-          <AnchorButton>{'Schedule proposal review ->'}</AnchorButton>
+          <div className="flex flex-wrap gap-4">
+            <AnchorButton href={contractHref}>{'Review contract ->'}</AnchorButton>
+            <AnchorButton href={calendarHref} variant="outline">
+              Schedule proposal review
+            </AnchorButton>
+          </div>
         </div>
       </Reveal>
     </section>

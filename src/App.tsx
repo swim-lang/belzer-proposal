@@ -35,6 +35,7 @@ import { ContractPage } from './contracts/ContractPage'
 import { avodahContract } from './contracts/avodahContract'
 import { cipherContract } from './contracts/cipherContract'
 import { fiberSoftChewContract } from './contracts/fiberSoftChewContract'
+import { garySpringsteadContract } from './contracts/garySpringsteadContract'
 import { genesiContract } from './contracts/genesiContract'
 import { lapincoContract } from './contracts/lapincoContract'
 import { mollyEngelsContract } from './contracts/mollyEngelsContract'
@@ -146,6 +147,8 @@ export default function App() {
         return withProposalGate(<ContractPage contract={offMenuContract} />)
       case 'off-menu':
         return withProposalGate(<OffMenuProposal />)
+      case 'gary-springstead-contract':
+        return withProposalGate(<ContractPage contract={garySpringsteadContract} />)
       case 'gary-springstead':
         return withProposalGate(<GarySpringsteadProposal />)
       case 'wildflower-blanc-contract':
