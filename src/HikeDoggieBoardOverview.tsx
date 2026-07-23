@@ -358,7 +358,7 @@ export function HikeDoggieBoardOverview() {
         </div>
         <Reveal>
           <h1 className="display max-w-[1180px] pb-12 text-[48px] leading-[52px] sm:text-[72px] sm:leading-[72px] md:text-[92px] md:leading-[90px] lg:pb-14 lg:text-[110px] lg:leading-[104px]">
-            A $12,000 decision, not a $30,000 one.
+            Zees earning in week two, not week nine.
           </h1>
         </Reveal>
         <div className="flex flex-col gap-10 border-t border-[var(--color-rule)] pb-14 pt-12 lg:flex-row lg:gap-[140px]">
