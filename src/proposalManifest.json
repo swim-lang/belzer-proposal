@@ -54,6 +54,20 @@
     "showInDashboard": true
   },
   {
+    "id": "emergences-labs",
+    "name": "Emergences Labs",
+    "tagline": "Brand identity and product design system · $35,000",
+    "status": "Active",
+    "href": "/proposal/emergences-labs",
+    "paths": [
+      "/proposal/emergences-labs"
+    ],
+    "sourceFile": "src/EmergencesLabsProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true,
+    "access": "active"
+  },
+  {
     "id": "knd",
     "name": "KND Law Firm",
     "tagline": "Custom software proposal",

@@ -6,6 +6,7 @@ import { BelzerSystemsProposal } from './BelzerSystemsProposal'
 import { BlanchetSearchVisibilityProposal } from './BlanchetSearchVisibilityProposal'
 import { CipherProposal } from './CipherProposal'
 import { DoubleUpDavesProposal } from './DoubleUpDavesProposal'
+import { EmergencesLabsProposal } from './EmergencesLabsProposal'
 import { FiberSoftChewProposal } from './FiberSoftChewProposal'
 import { GarySpringsteadProposal } from './GarySpringsteadProposal'
 import { GenesiProposal } from './GenesiProposal'
@@ -167,6 +168,8 @@ export default function App() {
         return withProposalGate(<CipherProposal />)
       case 'double-up-daves':
         return withProposalGate(<DoubleUpDavesProposal />)
+      case 'emergences-labs':
+        return withProposalGate(<EmergencesLabsProposal />)
       case 'soup-to-software':
         return withProposalGate(<SoupToSoftwareProposal />)
       case 'homemade':

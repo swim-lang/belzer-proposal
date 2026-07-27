@@ -87,6 +87,13 @@ span.display {
   margin-right: auto;
 }
 
+.emergences-labs-proposal > section > * {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .lapinco-proposal {
   --font-serif: "Newsreader", "ABC Gaisyr", ui-serif, Georgia, serif;
 }
