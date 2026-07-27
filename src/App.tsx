@@ -9,6 +9,7 @@ import { DoubleUpDavesProposal } from './DoubleUpDavesProposal'
 import { FiberSoftChewProposal } from './FiberSoftChewProposal'
 import { GarySpringsteadProposal } from './GarySpringsteadProposal'
 import { GenesiProposal } from './GenesiProposal'
+import { HikeDoggieBoardOverview } from './HikeDoggieBoardOverview'
 import { HikeDoggieProposal } from './HikeDoggieProposal'
 import { HumanaAIProposal } from './HAAIProposal'
 import { HomemadeProposal } from './HomemadeProposal'
@@ -126,6 +127,8 @@ export default function App() {
         return withProposalGate(<HumanaAIProposal />)
       case 'humana-ai-2':
         return withProposalGate(<HumanaAIProposal2 />)
+      case 'hike-doggie-board':
+        return withProposalGate(<HikeDoggieBoardOverview />)
       case 'hike-doggie':
         return withProposalGate(<HikeDoggieProposal />)
       case 'lex-politica':
