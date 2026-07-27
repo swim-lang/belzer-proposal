@@ -30,7 +30,7 @@ const navSections = [
 const signals = [
   ['01', 'Already strong', 'The website is fast, the technical basics are in place, and the site has already been built with clear search signals.'],
   ['02', 'Still new', 'Google may need more time, clearer ownership signals, and more trusted references before the site rises for branded and attorney-name searches.'],
-  ['03', 'More proof', 'Third-party listings, firm profiles, attorney profiles, and short news updates can help Google connect Blanchet to the right searches.'],
+  ['03', 'More proof', 'Third-party listings, firm profiles, approved attorney-profile updates, and short news updates can help Google connect Blanchet to the right searches.'],
   ['04', 'Better tracking', 'Search Console gives us a way to watch indexing, branded searches, search impressions, and the pages Google is actually seeing.'],
 ]
 
@@ -54,6 +54,7 @@ const sprintSteps: Step[] = [
     body: 'Google Search Console gives us the baseline. It lets us see whether Google has indexed the site, what terms are beginning to show, and whether there are any avoidable issues slowing the site down.',
     items: [
       'Google Search Console setup or verification',
+      'Google Business Profile eligibility and ownership check',
       'Sitemap submission',
       'URL inspection for homepage and attorney pages',
       'Branded-search baseline',
@@ -64,11 +65,11 @@ const sprintSteps: Step[] = [
   {
     num: '03',
     title: 'Build outside confirmation.',
-    body: 'The website should not be the only place Google sees Blanchet. We will create or clean up a focused set of trusted listings and profiles so the firm name, address, website, and attorneys appear consistently across the web.',
+    body: 'The website should not be the only place Google sees Blanchet. We will create or clean up a focused set of trusted firm listings and review attorney profiles for client-approved updates so the firm name, address, website, and attorneys appear consistently across the web.',
     items: [
       'Firm-owned setup email recommendation',
       'Core legal directory listing pass',
-      'LinkedIn and public profile review',
+      'LinkedIn and public attorney-profile recommendations',
       'Apple Maps, Bing Places, or local listing recommendations',
       'Name, address, phone, and website consistency check',
       'Priority citation list for future updates',
@@ -120,7 +121,7 @@ const timelineRows: TimelineRow[] = [
 const boundaries = [
   ['Ranking timeline', 'Google can take days to weeks to recrawl and reprocess changes. The sprint is designed to improve the signals, not promise an exact ranking date.'],
   ['Primary goal', 'The priority is branded visibility: Blanchet, the firm name, and individual attorney-name searches. Broader competitive SEO can be scoped later if needed.'],
-  ['Client access', 'Blanchet will provide or approve a firm-owned email for account creation, plus any listing verification details required by third-party platforms.'],
+  ['Client access', 'Blanchet will provide or approve a firm-owned email and any verification details required by third-party platforms. We will check whether the firm has an eligible Google Business Profile that can be claimed or updated. If not, we will focus on the strongest available directory, map, and website signals instead.'],
   ['Ongoing SEO', 'Monthly SEO, large content programs, paid media, paid placements, reputation management, and advanced link-building are not included in this sprint.'],
 ]
 
@@ -341,7 +342,7 @@ function Investment() {
         </div>
         <div className="border border-mac p-7 sm:p-9">
           <span className="eyebrow text-mac">Project fee</span>
-          <div className="display mt-5 text-[82px] leading-[84px]">$2,500</div>
+          <div className="display mt-5 text-[82px] leading-[84px]">$2,750</div>
           <div className="mt-7 grid gap-3 border-t border-[var(--color-rule)] pt-5 text-[13px] leading-[19px] text-ink-2">
             <div className="flex items-center justify-between gap-5">
               <span>Timeline</span>
@@ -349,7 +350,7 @@ function Investment() {
             </div>
             <div className="flex items-center justify-between gap-5">
               <span>Payment</span>
-              <span className="text-ink">50% to begin, 50% on completion</span>
+              <span className="text-ink">Due to begin</span>
             </div>
             <div className="flex items-center justify-between gap-5">
               <span>Primary outcome</span>
