@@ -3,6 +3,7 @@ import { AvodahProposal } from './AvodahProposal'
 import { BapsCharitiesProposal } from './BapsCharitiesProposal'
 import { BelzerPilotProposal } from './BelzerPilotProposal'
 import { BelzerSystemsProposal } from './BelzerSystemsProposal'
+import { BlanchetSearchVisibilityProposal } from './BlanchetSearchVisibilityProposal'
 import { CipherProposal } from './CipherProposal'
 import { DoubleUpDavesProposal } from './DoubleUpDavesProposal'
 import { FiberSoftChewProposal } from './FiberSoftChewProposal'
@@ -104,6 +105,8 @@ export default function App() {
         return withProposalGate(<BelzerPilotProposal />)
       case 'belzer-systems':
         return withProposalGate(<BelzerSystemsProposal />)
+      case 'blanchet-search-visibility':
+        return withProposalGate(<BlanchetSearchVisibilityProposal />)
       case 'knd':
         document.title = 'Anchovies × KND Law Firm - Proposal'
         return withProposalGate(

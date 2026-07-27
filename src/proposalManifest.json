@@ -36,6 +36,17 @@
     "access": "active"
   },
   {
+    "id": "blanchet-search-visibility",
+    "name": "Blanchet",
+    "tagline": "Search visibility sprint · $2,500 · 7 days",
+    "status": "Active",
+    "href": "/proposal/blanchet-search-visibility",
+    "paths": ["/proposal/blanchet-search-visibility"],
+    "sourceFile": "src/BlanchetSearchVisibilityProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true
+  },
+  {
     "id": "knd",
     "name": "KND Law Firm",
     "tagline": "Custom software proposal",
