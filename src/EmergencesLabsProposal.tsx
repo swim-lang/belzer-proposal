@@ -74,13 +74,20 @@ const processSignals = [
   { label: 'Curiosity', note: 'A perpetual practice, not a workshop exercise.', x: 75, y: 17 },
   { label: 'Empathy', note: "Feeling the stakes and matching the client's passion.", x: 19, y: 42 },
   { label: 'Culture', note: 'Context gathered from living curiously in the world.', x: 48, y: 36 },
-  { label: 'Memory', note: 'What worked, what failed, and what still echoes.', x: 78, y: 44 },
+  { label: 'Memory', note: 'What worked, what failed, and what still echoes.', x: 82, y: 37 },
   { label: 'Taste', note: 'Recognizing the difference between new and meaningful.', x: 13, y: 74 },
   { label: 'Imagination', note: 'A sense of what tomorrow could make possible.', x: 35, y: 69 },
   { label: 'Courage', note: 'The willingness to choose the unexpected idea.', x: 59, y: 65 },
   { label: 'Decisiveness', note: 'Having the guts to follow the signal.', x: 80, y: 72 },
   { label: 'Love', note: 'Caring about the work beyond the contract.', x: 61, y: 88 },
   { label: 'Restraint', note: 'Knowing when not to add another thing.', x: 28, y: 90 },
+  {
+    label: 'The big idea',
+    note: 'A vessel for what makes you special, made clear enough for the world to recognize.',
+    x: 50,
+    y: 52,
+    outcome: true,
+  },
 ]
 
 const processConnections = [
@@ -111,6 +118,18 @@ const processConnections = [
   [8, 10],
   [9, 10],
   [10, 11],
+  [0, 12],
+  [1, 12],
+  [2, 12],
+  [3, 12],
+  [4, 12],
+  [5, 12],
+  [6, 12],
+  [7, 12],
+  [8, 12],
+  [9, 12],
+  [10, 12],
+  [11, 12],
 ]
 
 function getProcessPath(from: number, to: number, index: number) {
@@ -505,7 +524,7 @@ function Process() {
               Before the idea becomes clear.
             </h3>
             <p className="max-w-[620px] text-[15px] leading-[25px] text-paper/65">
-              I made this while thinking about your question. It did not exist before this proposal. It is not a diagram of a system. It is a glimpse at the relationships moving underneath a creative decision. The connections keep changing because they do in me, too.
+              I made this while thinking about your question. It did not exist before this proposal. The relationships keep changing because they do in me, too. What remains at the center is the outcome: everything comes together to form the big idea, a vessel for what makes you special.
             </p>
           </div>
           <div className="relative mx-auto aspect-[4/5] max-w-[1120px] border-y border-paper/20 md:aspect-[16/8]">
@@ -562,6 +581,7 @@ function Process() {
               })}
             </svg>
             {processSignals.map((signal, index) => {
+              const isOutcome = 'outcome' in signal && signal.outcome
               const tooltipBelow = signal.y < 24
               const tooltipAlign =
                 signal.x < 25 ? 'left-0' : signal.x > 72 ? 'right-0' : 'left-1/2 -translate-x-1/2'
@@ -570,15 +590,19 @@ function Process() {
                 type="button"
                 key={signal.label}
                 aria-label={`${signal.label}: ${signal.note}`}
-                className="group absolute flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 bg-ink px-2 py-2 text-left md:gap-3 md:px-3"
+                className={`group absolute flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 bg-ink text-left md:gap-3 ${
+                  isOutcome ? 'border border-mac px-4 py-3 md:px-5 md:py-4' : 'px-2 py-2 md:px-3'
+                }`}
                 style={{ left: `${signal.x}%`, top: `${signal.y}%` }}
                 onMouseEnter={() => setActiveSignal(index)}
                 onMouseLeave={() => setActiveSignal(null)}
                 onFocus={() => setActiveSignal(index)}
                 onBlur={() => setActiveSignal(null)}
               >
-                <span className={`h-2 w-2 shrink-0 bg-mac transition-transform duration-300 ${activeSignal === index ? 'scale-150' : ''}`} />
-                <span className="serif whitespace-nowrap text-[15px] leading-[20px] md:text-[23px] md:leading-[28px]">{signal.label}</span>
+                <span className={`${isOutcome ? 'h-3 w-3' : 'h-2 w-2'} shrink-0 bg-mac transition-transform duration-300 ${activeSignal === index ? 'scale-150' : ''}`} />
+                <span className={`serif whitespace-nowrap ${isOutcome ? 'text-[18px] leading-[23px] md:text-[28px] md:leading-[32px]' : 'text-[15px] leading-[20px] md:text-[23px] md:leading-[28px]'}`}>
+                  {signal.label}
+                </span>
                 <span
                   role="tooltip"
                   className={`pointer-events-none absolute z-10 w-[190px] border border-paper/20 bg-paper px-4 py-3 text-[12px] leading-[18px] text-ink opacity-0 shadow-lg transition-all duration-200 group-hover:opacity-100 group-focus-visible:opacity-100 ${
@@ -618,10 +642,13 @@ function Process() {
                 Then there is decisiveness. Intuition may catch the right frequency, but being decisive is having the guts to follow it. That means knowing when difference is meaningful, when risk is worth taking, when restraint is smarter, and when an idea needs to be protected before everyone else can see it.
               </p>
               <p>
+                The environment changes too. Some ideas arrive in seconds. Others take weeks. The challenge may send me into the woods for two weeks or into a happy hour full of suits. Sometimes I need distance. Sometimes I need to get close to the people, rituals, and context surrounding the work. The process is mental, environmental, and specific to the question in front of me.
+              </p>
+              <p>
                 I would like to simplify that for you, but I cannot do it honestly. It is a web of references, conversations, failures, obsessions, taste, timing, memory, instinct, and relationships between things I may not fully recognize until the work reveals them. The deliverables and decisions will be clear. The inner process will always contain some mystery. I do not think that is a weakness in creative work. I think it is where much of the value lives.
               </p>
               <p>
-                That is why the question feels so appropriate coming from Emergences Labs. In the mysteries underneath AI, there is a mystery to my creative process too. The outcomes can be clear even when the inner workings are harder to quantify. I can tell you exactly how we will work together. I just cannot pretend the creative leap comes from a recipe.
+                That is why the question feels so appropriate coming from Emergences Labs. In the mysteries underneath AI, there is a mystery to my creative process too. The route may change, but the thing I am after does not: the big idea. It is the vessel for what makes you special, clear enough for strategy, identity, product, and every expression that follows to belong to it. I can tell you exactly how we will work together. I just cannot pretend the creative leap comes from a recipe.
               </p>
             </div>
             <div className="mt-10 border-t border-[var(--color-rule)] pt-6">
