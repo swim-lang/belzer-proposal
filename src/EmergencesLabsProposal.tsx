@@ -4,6 +4,7 @@ import { Reveal } from './components/Reveal'
 const calendarHref = 'https://cal.com/anchovies/30min?overlayCalendar=true'
 const garzaFeatureHref =
   'https://the-brandidentity.com/project/how-did-anchovies-bring-consumer-brand-thinking-to-a-texas-law-firm'
+const genesiPreviewHref = 'https://pitch.com/v/genesi-pitch-ssispr'
 const acceptHref =
   'mailto:sean@anchovies.agency?subject=Emergences%20Labs%20Proposal&body=Hi%20Sean%2C%0A%0AWe%27d%20like%20to%20move%20forward%20with%20the%20Emergences%20Labs%2C%20NeoWork%2C%20and%20NeoHuman%20three-brand%20engagement.%0A%0A'
 
@@ -20,8 +21,9 @@ const navSections = [
 const signals = [
   ['01', 'Human at the center', 'The brand should make human capability feel consequential, not decorate another AI company with familiar machine-age signals.'],
   ['02', 'A serious house of knowledge', 'Emergences Labs needs the authority of an institution, the curiosity of a research lab, and the clarity of a product company.'],
-  ['03', 'A family, not three strangers', 'Emergences Labs, NeoWork, and NeoHuman each need a clear role and identity while sharing enough logic to feel deliberately related.'],
-  ['04', 'Focused, not finished', 'The materials shared so far give us a meaningful starting point. Discovery will test that direction, build alignment, and turn it into an ownable idea.'],
+  ['03', 'Considered grandeur', 'Warm, inhabited, classically grounded, and weighted, with a hint of the future. Grandeur should come through light, scale, and composition rather than familiar symbols or ornament.'],
+  ['04', 'A family, not three strangers', 'Emergences Labs, NeoWork, and NeoHuman each need a clear role and identity while sharing enough logic to feel deliberately related.'],
+  ['05', 'Clarity as a creative constraint', "The brief tells us what must be true without dictating the final answer. We will honor the team's alignment and keep enough room for the work to become better than the references can currently describe."],
 ]
 
 const outcomes = [
@@ -65,6 +67,14 @@ const selectedWork = [
     href: 'https://anchovies.agency/work/garza',
     featureHref: garzaFeatureHref,
     body: 'For Garza, the big idea and the process behind it are best told in The Brand Identity.',
+  },
+  {
+    name: 'Genesi',
+    label: 'In progress',
+    image: '/work/emergences/genesi.webp',
+    href: genesiPreviewHref,
+    preview: true,
+    body: 'Still in beta and hot off the presses. The big idea begins with Marcus Aurelius: a Roman coin recast for a modern political and public affairs company. The identity uses the weight of history to make the organization feel considered, credible, and distinct without asking it to live in the past.',
   },
 ]
 
@@ -159,10 +169,10 @@ const phases = [
   {
     num: '01',
     title: 'Discovery and alignment',
-    body: 'We turn the thinking already inside the team into a shared creative brief. This phase creates confidence around the outcomes, not a rigid prescription for what the logo must look like.',
+    body: 'We begin by absorbing the thinking already inside the team and translating it into a shared creative brief. This phase confirms the non-negotiables, resolves the remaining tensions, and defines what success must feel like without prescribing the final form.',
     items: [
-      'Founder and stakeholder discovery session',
-      'Internal survey and reference-set review',
+      'Founder and stakeholder working session',
+      'Existing survey and reference synthesis',
       'Category and visual landscape audit',
       'Audience, product, and brand architecture review',
       'Success criteria and creative brief',
@@ -383,14 +393,14 @@ function Hero() {
 function WhatWeHeard() {
   return (
     <section id="heard" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-      <MetaRow left="§ 02 - What we heard" right="A focused starting point" />
+      <MetaRow left="§ 02 - What we heard" right="Clear constraints, open possibility" />
       <div className="grid gap-14 py-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
         <Reveal>
           <h2 className="display max-w-[590px] text-[50px] leading-[54px] md:text-[74px] md:leading-[74px]">
-            You know the register. You need the idea.
+            The brief is clear. The answer should still surprise us.
           </h2>
           <p className="mt-8 max-w-[500px] text-[15px] leading-[24px] text-ink-2">
-            The references and internal thinking shared so far point toward a world with intelligence, restraint, and cultural weight. They are useful coordinates, not a substitute for discovery. The work is to test that direction together and find the one idea only Emergences Labs can own.
+            You have already done unusually thoughtful work defining the world: human, warm, inhabited, classically grounded, grand with restraint, and unmistakably outside familiar AI shorthand. We understand those as real constraints. Our job is to honor that clarity without mistaking the current references for the limit of what is possible. The brief tells us what must be true. The work can still become better than any of us can describe before we begin.
           </p>
         </Reveal>
         <Reveal className="border-t border-[var(--color-rule)]">
@@ -441,7 +451,7 @@ function BigIdea() {
 function SelectedWork() {
   return (
     <section id="work" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-      <MetaRow left="§ 04 - Selected work" right="Three relevant ways we think" />
+      <MetaRow left="§ 04 - Selected work" right="Four relevant ways we think" />
       <div className="grid gap-10 py-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
         <Reveal>
           <h2 className="display max-w-[650px] text-[50px] leading-[54px] md:text-[74px] md:leading-[74px]">
@@ -450,16 +460,16 @@ function SelectedWork() {
         </Reveal>
         <Reveal className="max-w-[600px] pt-2">
           <p className="text-[16px] leading-[26px] text-ink-2">
-            We do not apply one aesthetic or repeat one formula. Each project finds its own big idea: a clear vessel for what makes the client special. These projects show three very different ways that outcome can take shape.
+            We do not apply one aesthetic or repeat one formula. Each project finds its own big idea: a clear vessel for what makes the client special. These projects show four very different ways that outcome can take shape.
           </p>
         </Reveal>
       </div>
-      <div className="grid gap-px bg-[var(--color-rule)] border border-[var(--color-rule)] lg:grid-cols-3">
+      <div className="grid gap-px bg-[var(--color-rule)] border border-[var(--color-rule)] lg:grid-cols-2">
         {selectedWork.map((project) => (
           <Reveal key={project.name} className="group bg-paper">
             <article>
               <a href={project.href} target="_blank" rel="noreferrer" className="block">
-                <div className="relative aspect-[4/3] overflow-hidden bg-ink">
+                <div className="relative aspect-video overflow-hidden bg-ink">
                   <img src={project.image} alt={`${project.name} brand identity`} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]" />
                   <div className="absolute inset-0 hidden items-end bg-ink/90 p-7 text-paper opacity-0 transition-opacity duration-300 group-hover:opacity-100 lg:flex">
                     <p className="text-[14px] leading-[22px]">{project.body}</p>
@@ -476,7 +486,7 @@ function SelectedWork() {
                 <p className="mt-4 text-[13px] leading-[21px] text-ink-2 lg:hidden">{project.body}</p>
                 <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
                   <a href={project.href} target="_blank" rel="noreferrer" className="text-[12px] text-mac hover:underline">
-                    View project
+                    {'preview' in project && project.preview ? 'Preview the work' : 'View project'}
                   </a>
                   {'featureHref' in project && project.featureHref ? (
                     <a href={project.featureHref} target="_blank" rel="noreferrer" className="text-[12px] text-mac hover:underline">
