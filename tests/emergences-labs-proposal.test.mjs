@@ -41,6 +41,16 @@ test('Emergences Labs proposal is routed with the full identity and product syst
   assert.match(proposal, /\/work\/emergences\/lex-politica\.jpg/)
   assert.match(proposal, /\/work\/emergences\/wild-hare\.jpg/)
   assert.match(proposal, /\/work\/emergences\/garza\.webp/)
+  assert.match(proposal, /the-brandidentity\.com\/project\/how-did-anchovies-bring-consumer-brand-thinking-to-a-texas-law-firm/)
+  assert.match(proposal, /Read the process feature/)
+
+  assert.match(proposal, /Attention/)
+  assert.match(proposal, /Curiosity/)
+  assert.match(proposal, /Empathy/)
+  assert.match(proposal, /Conviction/)
+  assert.match(proposal, /The outcome should be clear\. The route does not need to be predictable\./)
+  assert.match(proposal, /some mystery in how we arrive there is part of what you are hiring me for/)
+  assert.match(proposal, /Founder and Creative Director, Anchovies/)
 
   assert.match(proposal, /\$5,000/)
   assert.match(proposal, /\$17,500/)

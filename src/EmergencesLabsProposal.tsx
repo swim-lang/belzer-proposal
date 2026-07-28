@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { Reveal } from './components/Reveal'
 
 const calendarHref = 'https://cal.com/anchovies/30min?overlayCalendar=true'
+const garzaFeatureHref =
+  'https://the-brandidentity.com/project/how-did-anchovies-bring-consumer-brand-thinking-to-a-texas-law-firm'
 const acceptHref =
   'mailto:sean@anchovies.agency?subject=Emergences%20Labs%20Proposal&body=Hi%20Sean%2C%0A%0AWe%27d%20like%20to%20move%20forward%20with%20the%20Emergences%20Labs%2C%20NeoWork%2C%20and%20NeoHuman%20three-brand%20engagement.%0A%0A'
 
@@ -61,15 +63,16 @@ const selectedWork = [
     label: 'Category defiance',
     image: '/work/emergences/garza.webp',
     href: 'https://anchovies.agency/work/garza',
+    featureHref: garzaFeatureHref,
     body: 'A law firm stepped outside the safe visual conventions of its category with an identity rooted in local culture and real personality. The result gave the firm a more confident, memorable way to show up in its market.',
   },
 ]
 
 const principles = [
-  ['Listen for the worldview', 'We learn the business, but the deeper work is understanding how Emergences Labs sees people, work, learning, and the future. That is where the identity becomes specific.'],
-  ['Align before designing', 'We review the internal survey, reference set, and stakeholder perspectives, then use a guided visual exercise to find genuine agreement before creative development begins.'],
-  ['Lead with one answer', 'We present one recommended identity direction and push it far enough to judge as a complete system. More effort goes into the strongest idea instead of spreading attention across weaker options.'],
-  ['Improvise with intent', 'The process has structure, but the creative route is tailored to the problem. Every project asks for a different way in. The constants are relevance, simplicity, distinction, and clear reasoning.'],
+  ['Attention', 'Listening for more than the brief: what people repeat, what they protect, what they have trouble articulating, and the cultural frequency surrounding the work.'],
+  ['Curiosity', 'Entering the client’s world without a preloaded answer, then following the references, tensions, and unexpected connections that make the opportunity specific.'],
+  ['Empathy', 'Understanding the human stakes behind the investment and matching the client’s passion with genuine care for the chapter they are trying to begin.'],
+  ['Conviction', 'Intuition can identify the right signal. Decisiveness is having the courage to act on it, while using experience to distinguish meaningful risk from empty novelty.'],
 ]
 
 const phases = [
@@ -374,20 +377,35 @@ function SelectedWork() {
       <div className="grid gap-px bg-[var(--color-rule)] border border-[var(--color-rule)] lg:grid-cols-3">
         {selectedWork.map((project) => (
           <Reveal key={project.name} className="group bg-paper">
-            <a href={project.href} target="_blank" rel="noreferrer" className="block">
+            <article>
+              <a href={project.href} target="_blank" rel="noreferrer" className="block">
               <div className="relative aspect-[4/3] overflow-hidden bg-ink">
                 <img src={project.image} alt={`${project.name} brand identity`} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]" />
                 <div className="absolute inset-0 hidden items-end bg-ink/90 p-7 text-paper opacity-0 transition-opacity duration-300 group-hover:opacity-100 lg:flex">
                   <p className="text-[14px] leading-[22px]">{project.body}</p>
                 </div>
               </div>
+              </a>
               <div className="min-h-[188px] p-7">
                 <span className="eyebrow text-ink-2">{project.label}</span>
-                <h3 className="serif mt-5 text-[34px] leading-[39px]">{project.name}</h3>
+                <h3 className="serif mt-5 text-[34px] leading-[39px]">
+                  <a href={project.href} target="_blank" rel="noreferrer" className="transition-colors hover:text-mac">
+                    {project.name}
+                  </a>
+                </h3>
                 <p className="mt-4 text-[13px] leading-[21px] text-ink-2 lg:hidden">{project.body}</p>
-                <span className="mt-6 inline-block text-[12px] text-mac">View project</span>
+                <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+                  <a href={project.href} target="_blank" rel="noreferrer" className="text-[12px] text-mac hover:underline">
+                    View project
+                  </a>
+                  {'featureHref' in project && project.featureHref ? (
+                    <a href={project.featureHref} target="_blank" rel="noreferrer" className="text-[12px] text-mac hover:underline">
+                      Read the process feature
+                    </a>
+                  ) : null}
+                </div>
               </div>
-            </a>
+            </article>
           </Reveal>
         ))}
       </div>
@@ -401,7 +419,7 @@ function Process() {
       <MetaRow left="§ 05 - How we work" right="Structure with room to discover" />
       <Reveal>
         <h2 className="display max-w-[980px] py-14 text-[50px] leading-[54px] md:text-[76px] md:leading-[76px]">
-          Confidence comes from alignment, judgment, and one idea carried far enough.
+          The process is structured. The creative act is more human.
         </h2>
       </Reveal>
       <div className="grid border-y border-[var(--color-rule)] md:grid-cols-2">
@@ -418,6 +436,36 @@ function Process() {
         <p className="serif max-w-[780px] text-[26px] leading-[35px]">
           Sean remains the creative director and primary point of contact throughout the engagement. The team supports the work, but the relationship is never handed off.
         </p>
+      </Reveal>
+      <Reveal className="mt-12 border-y border-[var(--color-rule)] py-12 md:py-16">
+        <div className="grid gap-10 lg:grid-cols-[0.65fr_1.35fr] lg:gap-24">
+          <div>
+            <span className="eyebrow text-ink-2">A note on process</span>
+            <h3 className="display mt-7 max-w-[460px] text-[46px] leading-[49px] md:text-[62px] md:leading-[63px]">
+              The outcome should be clear. The route does not need to be predictable.
+            </h3>
+          </div>
+          <div className="max-w-[720px]">
+            <p className="serif text-[27px] leading-[37px]">
+              Process can explain what happens around the work: discovery, alignment, presentation, and refinement. It cannot fully explain the moment when one idea begins to feel inevitable.
+            </p>
+            <div className="mt-8 space-y-5 text-[15px] leading-[25px] text-ink-2">
+              <p>
+                My creative process is built on attention. I listen for what clients say, what they repeat, what they avoid, and what culture is doing around them. I bring curiosity without a preloaded answer, empathy for the stakes behind the investment, and the conviction to act when the right signal appears.
+              </p>
+              <p>
+                The inner workings are not a formula. They are years of references, failures, instincts, conversations, and lived context operating together. That is the closest honest description I can give. The outcome should never feel mysterious, but some mystery in how we arrive there is part of what you are hiring me for.
+              </p>
+              <p>
+                For Emergences Labs, that feels especially appropriate. You are building ways to understand human capability alongside systems whose inner workings are not always fully legible. My role is similar in one useful sense: absorb many signals, find the pattern that matters, and turn it into a clear, ownable decision.
+              </p>
+            </div>
+            <div className="mt-10 border-t border-[var(--color-rule)] pt-6">
+              <span className="serif text-[27px] italic">Sean Ashlow</span>
+              <span className="eyebrow mt-2 block text-ink-2">Founder and Creative Director, Anchovies</span>
+            </div>
+          </div>
+        </div>
       </Reveal>
     </section>
   )
