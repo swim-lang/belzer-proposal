@@ -437,7 +437,7 @@ function BigIdea() {
             AI branding keeps finding new ways to picture the machine. Emergences Labs has a more valuable subject: the qualities in people that become more important as machines advance.
           </p>
         </Reveal>
-        <Reveal className="grid border-t border-paper/25 sm:grid-cols-2">
+        <Reveal className="grid sm:grid-cols-2">
           {outcomes.map((outcome, index) => (
             <article key={outcome.title} className={`min-h-[235px] border-paper/25 p-7 ${index < 2 ? 'border-b' : ''} ${index % 2 === 0 ? 'sm:border-r' : ''}`}>
               <span className="eyebrow text-paper/45">Outcome {String(index + 1).padStart(2, '0')}</span>
@@ -542,8 +542,9 @@ function Process() {
               I made this while thinking about your question. It did not exist before this proposal. The relationships keep changing because they do in me, too. What remains at the center is the outcome: everything comes together to form the big idea, a vessel for what makes you special.
             </p>
           </div>
-          <div className="relative mx-auto aspect-[3/4] max-w-[1120px] border-y border-paper/20 md:aspect-[16/9]">
-            <svg aria-hidden="true" viewBox="0 0 1000 500" preserveAspectRatio="none" className="absolute inset-0 h-full w-full">
+          <div className="border-y border-paper/20">
+            <div className="relative mx-auto aspect-[3/4] max-w-[1120px] md:aspect-[16/9]">
+              <svg aria-hidden="true" viewBox="0 0 1000 500" preserveAspectRatio="none" className="absolute inset-0 h-full w-full">
               {processConnections.map(([from, to], index) => {
                 const path = getProcessPath(from, to, index)
                 const connected = activeSignal === from || activeSignal === to
@@ -594,41 +595,42 @@ function Process() {
                   </path>
                 )
               })}
-            </svg>
-            {processSignals.map((signal, index) => {
-              const isOutcome = 'outcome' in signal && signal.outcome
-              const tooltipBelow = signal.y < 24
-              const tooltipAlign =
-                signal.x < 25 ? 'left-0' : signal.x > 72 ? 'right-0' : 'left-1/2 -translate-x-1/2'
-              return (
-              <button
-                type="button"
-                key={signal.label}
-                aria-label={`${signal.label}: ${signal.note}`}
-                className={`group absolute z-[2] flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 bg-ink text-left hover:z-30 focus-visible:z-30 md:gap-3 ${
-                  isOutcome ? 'z-10 border border-mac px-4 py-3 shadow-[0_0_0_18px_var(--color-ink)] md:px-5 md:py-4 md:shadow-[0_0_0_28px_var(--color-ink)]' : 'px-2 py-2 md:px-3'
-                }`}
-                style={{ left: `${signal.x}%`, top: `${signal.y}%` }}
-                onMouseEnter={() => setActiveSignal(index)}
-                onMouseLeave={() => setActiveSignal(null)}
-                onFocus={() => setActiveSignal(index)}
-                onBlur={() => setActiveSignal(null)}
-              >
-                <span className={`${isOutcome ? 'h-3 w-3' : 'h-2 w-2'} shrink-0 bg-mac transition-transform duration-300 ${activeSignal === index ? 'scale-150' : ''}`} />
-                <span className={`serif whitespace-nowrap ${isOutcome ? 'text-[18px] leading-[23px] md:text-[28px] md:leading-[32px]' : 'text-[15px] leading-[20px] md:text-[23px] md:leading-[28px]'}`}>
-                  {signal.label}
-                </span>
-                <span
-                  role="tooltip"
-                  className={`pointer-events-none absolute z-40 w-[190px] border border-paper/20 bg-paper px-4 py-3 text-[12px] leading-[18px] text-ink opacity-0 shadow-lg transition-all duration-200 group-hover:opacity-100 group-focus-visible:opacity-100 ${
-                    tooltipBelow ? 'top-full mt-3 translate-y-1 group-hover:translate-y-0 group-focus-visible:translate-y-0' : 'bottom-full mb-3 -translate-y-1 group-hover:translate-y-0 group-focus-visible:translate-y-0'
-                  } ${tooltipAlign}`}
+              </svg>
+              {processSignals.map((signal, index) => {
+                const isOutcome = 'outcome' in signal && signal.outcome
+                const tooltipBelow = signal.y < 24
+                const tooltipAlign =
+                  signal.x < 25 ? 'left-0' : signal.x > 72 ? 'right-0' : 'left-1/2 -translate-x-1/2'
+                return (
+                <button
+                  type="button"
+                  key={signal.label}
+                  aria-label={`${signal.label}: ${signal.note}`}
+                  className={`group absolute z-[2] flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 bg-ink text-left hover:z-30 focus-visible:z-30 md:gap-3 ${
+                    isOutcome ? 'z-10 border border-mac px-4 py-3 shadow-[0_0_0_18px_var(--color-ink)] md:px-5 md:py-4 md:shadow-[0_0_0_28px_var(--color-ink)]' : 'px-2 py-2 md:px-3'
+                  }`}
+                  style={{ left: `${signal.x}%`, top: `${signal.y}%` }}
+                  onMouseEnter={() => setActiveSignal(index)}
+                  onMouseLeave={() => setActiveSignal(null)}
+                  onFocus={() => setActiveSignal(index)}
+                  onBlur={() => setActiveSignal(null)}
                 >
-                  {signal.note}
-                </span>
-              </button>
-              )
-            })}
+                  <span className={`${isOutcome ? 'h-3 w-3' : 'h-2 w-2'} shrink-0 bg-mac transition-transform duration-300 ${activeSignal === index ? 'scale-150' : ''}`} />
+                  <span className={`serif whitespace-nowrap ${isOutcome ? 'text-[18px] leading-[23px] md:text-[28px] md:leading-[32px]' : 'text-[15px] leading-[20px] md:text-[23px] md:leading-[28px]'}`}>
+                    {signal.label}
+                  </span>
+                  <span
+                    role="tooltip"
+                    className={`pointer-events-none absolute z-40 w-[190px] border border-paper/20 bg-paper px-4 py-3 text-[12px] leading-[18px] text-ink opacity-0 shadow-lg transition-all duration-200 group-hover:opacity-100 group-focus-visible:opacity-100 ${
+                      tooltipBelow ? 'top-full mt-3 translate-y-1 group-hover:translate-y-0 group-focus-visible:translate-y-0' : 'bottom-full mb-3 -translate-y-1 group-hover:translate-y-0 group-focus-visible:translate-y-0'
+                    } ${tooltipAlign}`}
+                  >
+                    {signal.note}
+                  </span>
+                </button>
+                )
+              })}
+            </div>
           </div>
           <div className="flex flex-col justify-between gap-4 pt-7 sm:flex-row">
             <span className="eyebrow text-paper/45">No fixed beginning</span>
@@ -637,7 +639,7 @@ function Process() {
           </div>
         </div>
       </Reveal>
-      <Reveal className="mt-12 border-y border-[var(--color-rule)] py-12 md:py-16">
+      <Reveal className="mt-12 border-t border-[var(--color-rule)] py-12 md:py-16">
         <div className="grid gap-10 lg:grid-cols-[0.65fr_1.35fr] lg:gap-24">
           <div>
             <span className="eyebrow text-ink-2">A note on process</span>
@@ -698,8 +700,8 @@ function Scope() {
         </Reveal>
       </div>
       <div className="border-t border-[var(--color-rule)]">
-        {phases.map((phase) => (
-          <Reveal key={phase.num} className="grid gap-8 border-b border-[var(--color-rule)] py-12 lg:grid-cols-[100px_0.9fr_1.1fr] lg:gap-12">
+        {phases.map((phase, index) => (
+          <Reveal key={phase.num} className={`grid gap-8 py-12 lg:grid-cols-[100px_0.9fr_1.1fr] lg:gap-12 ${index < phases.length - 1 ? 'border-b border-[var(--color-rule)]' : ''}`}>
             <div>
               <span className="display text-[64px] leading-[64px]">{phase.num}</span>
               <span className="eyebrow mt-4 block text-ink-2">Phase</span>

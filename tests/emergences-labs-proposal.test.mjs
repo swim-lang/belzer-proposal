@@ -18,6 +18,7 @@ test('Emergences Labs proposal is routed with the full identity and product syst
 
   assert.match(proposal, /Make human capability impossible to overlook\./)
   assert.match(proposal, /The machine is the context\. The human is the subject\./)
+  assert.match(proposal, /<Reveal className="grid sm:grid-cols-2">/)
   assert.match(proposal, /The brief is clear\. The answer should still surprise us\./)
   assert.match(proposal, /human, warm, inhabited, classically grounded, grand with restraint/)
   assert.match(proposal, /We understand those as real constraints\./)
@@ -87,6 +88,8 @@ test('Emergences Labs proposal is routed with the full identity and product syst
   assert.match(proposal, /I can explain the steps\. I cannot reduce the process\./)
   assert.match(proposal, /Made in real time/)
   assert.match(proposal, /Before the idea becomes clear\./)
+  assert.match(proposal, /<div className="border-y border-paper\/20">/)
+  assert.match(proposal, /relative mx-auto aspect-\[3\/4\] max-w-\[1120px\] md:aspect-\[16\/9\]/)
   assert.match(proposal, /Reveal className="emergences-process-field"/)
   assert.match(styles, /\.emergences-labs-proposal > section > \.emergences-process-field/)
   assert.match(styles, /max-width: none;/)
@@ -110,6 +113,8 @@ test('Emergences Labs proposal is routed with the full identity and product syst
   assert.match(proposal, /In the mysteries underneath AI, there is a mystery to my creative process too\./)
   assert.match(proposal, /\/signatures\/sean-ashlow\.png/)
   assert.match(proposal, /Founder and Creative Director, Anchovies/)
+  assert.match(proposal, /mt-12 border-t border-\[var\(--color-rule\)\] py-12/)
+  assert.match(proposal, /index < phases\.length - 1/)
 
   assert.match(proposal, /\$5,000/)
   assert.match(proposal, /\$17,500/)
