@@ -46,25 +46,25 @@ const outcomes = [
 const selectedWork = [
   {
     name: 'Lex Politica',
-    label: 'Institutional authority',
+    label: 'The big idea',
     image: '/work/emergences/lex-politica.jpg',
     href: 'https://anchovies.agency/work/lex-politica',
-    body: 'A single ownable mark helped a new legal intelligence platform feel part newspaper, part institution, and part modern think tank. The identity carries authority without becoming conservative or expected.',
+    body: 'The big idea was ancient and modern at once. It came from reading the cultural world around a lawyer who had represented Elon Musk and moved through a world that felt equal parts Washington Post and socialite. The work had to balance the appropriateness of a traditional field with the bravery to pursue something aesthetically distinct.',
   },
   {
     name: 'Wild Hare',
-    label: 'Premium distinction',
+    label: 'The big idea',
     image: '/work/emergences/wild-hare.jpg',
     href: 'https://anchovies.agency/work/wild-hare',
-    body: 'A familiar retail category became more ownable through a mythical central character and a bold visual world. The new identity moved the business toward a more premium audience without losing its warmth or personality.',
+    body: 'The big idea was to rethink what a hare or rabbit could be. The mythical Wolpertinger became a vessel for creativity and the pursuit of the unexpected, giving the brand a character that could hold both whimsy and sophistication.',
   },
   {
     name: 'Garza',
-    label: 'Category defiance',
+    label: 'The big idea',
     image: '/work/emergences/garza.webp',
     href: 'https://anchovies.agency/work/garza',
     featureHref: garzaFeatureHref,
-    body: 'A law firm stepped outside the safe visual conventions of its category with an identity rooted in local culture and real personality. The result gave the firm a more confident, memorable way to show up in its market.',
+    body: 'For Garza, the big idea and the process behind it are best told in The Brand Identity.',
   },
 ]
 
@@ -450,7 +450,7 @@ function SelectedWork() {
         </Reveal>
         <Reveal className="max-w-[600px] pt-2">
           <p className="text-[16px] leading-[26px] text-ink-2">
-            We do not apply one aesthetic or repeat one formula. Each identity begins with a different tension, then finds the simplest distinctive system capable of resolving it. These projects show three parts of that range.
+            We do not apply one aesthetic or repeat one formula. Each project finds its own big idea: a clear vessel for what makes the client special. These projects show three very different ways that outcome can take shape.
           </p>
         </Reveal>
       </div>

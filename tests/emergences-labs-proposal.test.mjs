@@ -43,6 +43,12 @@ test('Emergences Labs proposal is routed with the full identity and product syst
   assert.match(proposal, /\/work\/emergences\/garza\.webp/)
   assert.match(proposal, /the-brandidentity\.com\/project\/how-did-anchovies-bring-consumer-brand-thinking-to-a-texas-law-firm/)
   assert.match(proposal, /Read the process feature/)
+  assert.match(proposal, /The big idea was ancient and modern at once\./)
+  assert.match(proposal, /equal parts Washington Post and socialite/)
+  assert.match(proposal, /balance the appropriateness of a traditional field with the bravery to pursue something aesthetically distinct/)
+  assert.match(proposal, /The big idea was to rethink what a hare or rabbit could be\./)
+  assert.match(proposal, /The mythical Wolpertinger became a vessel for creativity and the pursuit of the unexpected/)
+  assert.match(proposal, /For Garza, the big idea and the process behind it are best told in The Brand Identity\./)
 
   assert.match(proposal, /Listening/)
   assert.match(proposal, /Culture/)
