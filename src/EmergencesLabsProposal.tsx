@@ -68,11 +68,39 @@ const selectedWork = [
   },
 ]
 
-const principles = [
-  ['Attention', 'Listening for more than the brief: what people repeat, what they protect, what they have trouble articulating, and the cultural frequency surrounding the work.'],
-  ['Curiosity', 'Entering the client’s world without a preloaded answer, then following the references, tensions, and unexpected connections that make the opportunity specific.'],
-  ['Empathy', 'Understanding the human stakes behind the investment and matching the client’s passion with genuine care for the chapter they are trying to begin.'],
-  ['Conviction', 'Intuition can identify the right signal. Decisiveness is having the courage to act on it, while using experience to distinguish meaningful risk from empty novelty.'],
+const processSignals = [
+  { label: 'Listening', x: 14, y: 14 },
+  { label: 'Cultural intuition', x: 37, y: 8 },
+  { label: 'Curiosity', x: 74, y: 17 },
+  { label: 'Empathy', x: 16, y: 43 },
+  { label: 'Memory', x: 47, y: 38 },
+  { label: 'Imagination', x: 79, y: 46 },
+  { label: 'Taste', x: 13, y: 75 },
+  { label: 'Risk', x: 34, y: 70 },
+  { label: 'Decisiveness', x: 61, y: 67 },
+  { label: 'Love for the work', x: 77, y: 81 },
+]
+
+const processConnections = [
+  [0, 1],
+  [0, 3],
+  [0, 4],
+  [1, 2],
+  [1, 4],
+  [1, 5],
+  [2, 4],
+  [2, 5],
+  [3, 4],
+  [3, 6],
+  [3, 7],
+  [4, 5],
+  [4, 7],
+  [4, 8],
+  [5, 8],
+  [5, 9],
+  [6, 7],
+  [7, 8],
+  [8, 9],
 ]
 
 const phases = [
@@ -379,12 +407,12 @@ function SelectedWork() {
           <Reveal key={project.name} className="group bg-paper">
             <article>
               <a href={project.href} target="_blank" rel="noreferrer" className="block">
-              <div className="relative aspect-[4/3] overflow-hidden bg-ink">
-                <img src={project.image} alt={`${project.name} brand identity`} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]" />
-                <div className="absolute inset-0 hidden items-end bg-ink/90 p-7 text-paper opacity-0 transition-opacity duration-300 group-hover:opacity-100 lg:flex">
-                  <p className="text-[14px] leading-[22px]">{project.body}</p>
+                <div className="relative aspect-[4/3] overflow-hidden bg-ink">
+                  <img src={project.image} alt={`${project.name} brand identity`} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]" />
+                  <div className="absolute inset-0 hidden items-end bg-ink/90 p-7 text-paper opacity-0 transition-opacity duration-300 group-hover:opacity-100 lg:flex">
+                    <p className="text-[14px] leading-[22px]">{project.body}</p>
+                  </div>
                 </div>
-              </div>
               </a>
               <div className="min-h-[188px] p-7">
                 <span className="eyebrow text-ink-2">{project.label}</span>
@@ -416,48 +444,91 @@ function SelectedWork() {
 function Process() {
   return (
     <section id="process" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-      <MetaRow left="§ 05 - How we work" right="Structure with room to discover" />
+      <MetaRow left="§ 05 - How we work" right="A process, not a formula" />
       <Reveal>
         <h2 className="display max-w-[980px] py-14 text-[50px] leading-[54px] md:text-[76px] md:leading-[76px]">
-          The process is structured. The creative act is more human.
+          I can explain the steps. I cannot reduce the process.
         </h2>
       </Reveal>
-      <div className="grid border-y border-[var(--color-rule)] md:grid-cols-2">
-        {principles.map(([title, body], index) => (
-          <Reveal key={title} className={`min-h-[280px] p-8 md:p-10 ${index < 2 ? 'border-b border-[var(--color-rule)]' : ''} ${index % 2 === 0 ? 'md:border-r' : ''}`}>
-            <span className="eyebrow text-ink-2">Principle {String(index + 1).padStart(2, '0')}</span>
-            <h3 className="serif mt-8 text-[33px] leading-[39px]">{title}</h3>
-            <p className="mt-5 max-w-[530px] text-[14px] leading-[23px] text-ink-2">{body}</p>
-          </Reveal>
-        ))}
-      </div>
-      <Reveal className="mt-12 grid gap-8 border border-mac p-8 md:grid-cols-[0.7fr_1.3fr] md:p-10">
-        <span className="eyebrow text-mac">Creative leadership</span>
-        <p className="serif max-w-[780px] text-[26px] leading-[35px]">
-          Sean remains the creative director and primary point of contact throughout the engagement. The team supports the work, but the relationship is never handed off.
+      <Reveal>
+        <p className="mb-10 max-w-[700px] text-[16px] leading-[26px] text-ink-2">
+          There are parts we can schedule and name. What happens inside them is a web of signals, history, instinct, and judgment that refuses to move in a straight line.
         </p>
+        <div className="mx-[-24px] bg-ink px-6 py-16 text-paper md:mx-[-64px] md:px-16 md:py-20 lg:mx-[-120px] lg:px-[120px]">
+          <MetaRow left="Made in real time" right="For Emergences Labs" dark />
+          <div className="grid gap-8 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+            <h3 className="display max-w-[690px] text-[48px] leading-[51px] md:text-[72px] md:leading-[72px]">
+              This is the closest thing I can draw to an answer.
+            </h3>
+            <p className="max-w-[620px] text-[15px] leading-[25px] text-paper/65">
+              I made this map while thinking about your question. It did not exist before this proposal. It is not a method or a sequence. It is an attempt to show how the mind moves through the work, with every signal affecting the others.
+            </p>
+          </div>
+          <div className="relative mx-auto aspect-[4/5] max-w-[1120px] border-y border-paper/20 md:aspect-[16/8]">
+            <svg aria-hidden="true" viewBox="0 0 1000 500" preserveAspectRatio="none" className="absolute inset-0 h-full w-full">
+              {processConnections.map(([from, to]) => {
+                const start = processSignals[from]
+                const end = processSignals[to]
+                const startX = start.x * 10
+                const startY = start.y * 5
+                const endX = end.x * 10
+                const endY = end.y * 5
+                const curveX = (startX + endX) / 2 + ((from + to) % 2 === 0 ? 36 : -36)
+                const curveY = (startY + endY) / 2 + (((to - from) % 3) - 1) * 28
+                return (
+                  <path
+                    key={`${from}-${to}`}
+                    d={`M ${startX} ${startY} Q ${curveX} ${curveY} ${endX} ${endY}`}
+                    fill="none"
+                    stroke={(from + to) % 5 === 0 ? 'var(--color-mac)' : 'currentColor'}
+                    opacity={(from + to) % 5 === 0 ? '0.72' : '0.22'}
+                    strokeWidth="1"
+                  />
+                )
+              })}
+            </svg>
+            {processSignals.map((signal) => (
+              <div
+                key={signal.label}
+                className="absolute flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 bg-ink px-2 py-2 md:gap-3 md:px-3"
+                style={{ left: `${signal.x}%`, top: `${signal.y}%` }}
+              >
+                <span className="h-2 w-2 shrink-0 bg-mac" />
+                <span className="serif whitespace-nowrap text-[15px] leading-[20px] md:text-[23px] md:leading-[28px]">{signal.label}</span>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-col justify-between gap-4 pt-7 sm:flex-row">
+            <span className="eyebrow text-paper/45">No fixed beginning</span>
+            <span className="eyebrow text-paper/45">No fixed center</span>
+            <span className="eyebrow text-paper/45">No two projects produce the same map</span>
+          </div>
+        </div>
       </Reveal>
       <Reveal className="mt-12 border-y border-[var(--color-rule)] py-12 md:py-16">
         <div className="grid gap-10 lg:grid-cols-[0.65fr_1.35fr] lg:gap-24">
           <div>
             <span className="eyebrow text-ink-2">A note on process</span>
             <h3 className="display mt-7 max-w-[460px] text-[46px] leading-[49px] md:text-[62px] md:leading-[63px]">
-              The outcome should be clear. The route does not need to be predictable.
+              The honest answer is that it is complicated.
             </h3>
           </div>
           <div className="max-w-[720px]">
             <p className="serif text-[27px] leading-[37px]">
-              Process can explain what happens around the work: discovery, alignment, presentation, and refinement. It cannot fully explain the moment when one idea begins to feel inevitable.
+              You asked about my process. I have a clean answer for the parts that can be scheduled: we talk, I listen, we align, I make, and we refine. The honest answer about the creative part is messier.
             </p>
             <div className="mt-8 space-y-5 text-[15px] leading-[25px] text-ink-2">
               <p>
-                My creative process is built on attention. I listen for what clients say, what they repeat, what they avoid, and what culture is doing around them. I bring curiosity without a preloaded answer, empathy for the stakes behind the investment, and the conviction to act when the right signal appears.
+                It is intuition, and intuition is an antenna. It is the ability to pick up on the right frequency from the client, from culture, and from all the context I have collected over time. It is remembering what failed in the past, sensing what feels exhausted in the present, and imagining what could be right for tomorrow. It is empathy for the person in front of me, curiosity about the world they are trying to build, and enough love for the work to match their passion. This is more than a contract for me.
               </p>
               <p>
-                The inner workings are not a formula. They are years of references, failures, instincts, conversations, and lived context operating together. That is the closest honest description I can give. The outcome should never feel mysterious, but some mystery in how we arrive there is part of what you are hiring me for.
+                Then there is decisiveness. Intuition may catch the right frequency, but being decisive is having the guts to follow it. That means knowing when difference is meaningful, when risk is worth taking, when restraint is smarter, and when an idea needs to be protected before everyone else can see it.
               </p>
               <p>
-                For Emergences Labs, that feels especially appropriate. You are building ways to understand human capability alongside systems whose inner workings are not always fully legible. My role is similar in one useful sense: absorb many signals, find the pattern that matters, and turn it into a clear, ownable decision.
+                I would like to simplify that for you, but I cannot do it honestly. It is a web of references, conversations, failures, obsessions, taste, timing, memory, instinct, and relationships between things I may not fully recognize until the work reveals them. The deliverables and decisions will be clear. The inner process will always contain some mystery. I do not think that is a weakness in creative work. I think it is where much of the value lives.
+              </p>
+              <p>
+                That is why the question feels so appropriate coming from Emergences Labs. In the mysteries underneath AI, there is a mystery to my creative process too. The outcomes can be clear even when the inner workings are harder to quantify. I can tell you exactly how we will work together. I just cannot pretend the creative leap comes from a recipe.
               </p>
             </div>
             <div className="mt-10 border-t border-[var(--color-rule)] pt-6">
