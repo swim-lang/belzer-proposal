@@ -628,7 +628,7 @@ function Process() {
               <img
                 src="/signatures/sean-ashlow.png"
                 alt="Sean Ashlow"
-                className="h-auto w-[230px] mix-blend-multiply md:w-[270px]"
+                className="h-auto w-[230px] md:w-[270px]"
               />
               <span className="eyebrow mt-2 block text-ink-2">Founder and Creative Director, Anchovies</span>
             </div>
