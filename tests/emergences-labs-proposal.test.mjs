@@ -64,6 +64,7 @@ test('Emergences Labs proposal is routed with the full identity and product syst
   assert.doesNotMatch(proposal, /stroke=\{\(from \+ to\) % 5/)
   assert.match(proposal, /I would like to simplify that for you, but I cannot do it honestly\./)
   assert.match(proposal, /In the mysteries underneath AI, there is a mystery to my creative process too\./)
+  assert.match(proposal, /\/signatures\/sean-ashlow\.png/)
   assert.match(proposal, /Founder and Creative Director, Anchovies/)
 
   assert.match(proposal, /\$5,000/)

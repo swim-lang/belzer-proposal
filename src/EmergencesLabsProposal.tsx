@@ -625,7 +625,11 @@ function Process() {
               </p>
             </div>
             <div className="mt-10 border-t border-[var(--color-rule)] pt-6">
-              <span className="serif text-[27px] italic">Sean Ashlow</span>
+              <img
+                src="/signatures/sean-ashlow.png"
+                alt="Sean Ashlow"
+                className="h-auto w-[230px] mix-blend-multiply md:w-[270px]"
+              />
               <span className="eyebrow mt-2 block text-ink-2">Founder and Creative Director, Anchovies</span>
             </div>
           </div>
