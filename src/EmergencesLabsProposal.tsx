@@ -197,29 +197,32 @@ const phases = [
   {
     num: '03',
     title: 'Product identities and expression',
-    body: 'We develop focused identities for NeoWork and NeoHuman inside the shared family, then show how the full system moves from the research lab into real product experiences.',
+    body: 'We develop focused identities for NeoWork and NeoHuman inside the shared family. With access to the current software, we extend the system into the product itself through high-fidelity studies of primary workflows and the smaller states and controls that make a system feel finished.',
     items: [
       'Emergences Labs, NeoWork, and NeoHuman family architecture',
       'NeoWork product identity and logo system',
       'NeoHuman product identity and logo system',
       'Product-specific color, type, and graphic expression',
       'Digital design tokens and component direction',
+      'Current product environment and backend software review',
       'Product-site homepage direction',
       'Assessment and results interface studies',
       'Dashboard and learning-surface studies',
-      'Responsive desktop and mobile examples',
+      'Navigation, forms, tables, cards, empty states, and notifications',
+      'Responsive desktop and mobile product mockups',
       'Figma design system library',
     ],
   },
   {
     num: '04',
     title: 'Launch world and handoff',
-    body: 'We make the system feel real across the places people will encounter it, then package the work so the team can use it with confidence.',
+    body: 'We make the system feel real through a broad mockup suite across the places people will encounter it, from major launch moments to the smaller everyday touchpoints that prove the identity can keep working.',
     items: [
       'Research report or publication template',
       'Presentation deck template',
       'Social content starter system',
       'Profile and launch assets',
+      'Email, event badge, signage, and document mockups',
       'Logo animation',
       'Two short motion studies',
       'Merchandise and event concepts',
@@ -232,17 +235,17 @@ const phases = [
 
 const timeline = [
   ['Week 01', 'Listen and align', 'Discovery, internal materials, category review, stakeholder alignment, and success criteria.'],
-  ['Week 02', 'Find the creative territory', 'Guided moodboard, creative brief, brand architecture, and approval of the direction we will explore.'],
-  ['Weeks 03 to 06', 'Build the master identity', 'One recommended concept developed across logo, type, color, visual language, and initial applications for Emergences Labs.'],
-  ['Weeks 07 to 09', 'Build the product family', 'Focused identities for NeoWork and NeoHuman, plus product and website studies that prove how the family works together.'],
-  ['Weeks 10 to 12', 'Refine and hand off', 'Structured refinement, motion and launch applications, final assets, Figma library, brand guide, training, and launch support.'],
+  ['Week 02', 'Find the big idea', 'Guided moodboard, creative brief, brand architecture, and one recommended territory for the Emergences Labs identity.'],
+  ['Weeks 03 to 04', 'Build the identity family', 'Develop the master identity, focused NeoWork and NeoHuman expressions, and the shared system connecting all three.'],
+  ['Week 05', 'Prove it in use', 'Product and backend interface studies, responsive mockups, motion, publications, presentations, launch assets, and everyday touchpoints.'],
+  ['Week 06', 'Refine and hand off', 'Structured refinement, final assets, Figma library, brand guide, team training, and the start of launch support.'],
 ]
 
 const investment = [
   ['01', 'Discovery and creative strategy', 'Alignment, category review, brand architecture, guided moodboard, success criteria, and creative brief.', '$5,000'],
   ['02', 'Emergences Labs master identity', 'One lead concept, logo suite, typography, color, graphic language, image direction, and the core system for the institution.', '$17,500'],
   ['03', 'NeoWork and NeoHuman identities', 'Two focused product identities, each with its own logo expression and visual character inside the shared brand family.', '$13,000'],
-  ['04', 'Digital expression, launch, and handoff', 'Product and website studies, motion, research and deck templates, social assets, Figma library, brand guide, and launch support.', '$9,500'],
+  ['04', 'Digital expression, launch, and handoff', 'Current software and backend interface studies, responsive product mockups, an expanded touchpoint suite, motion, templates, Figma library, brand guide, and launch support.', '$9,500'],
 ]
 
 const milestones = [
@@ -253,11 +256,11 @@ const milestones = [
 
 const boundaries = [
   ['Focused creative routes', 'We lead with one recommended direction for the Emergences Labs master identity, then develop focused product identities for NeoWork and NeoHuman inside the approved family. Two structured refinement rounds are included.'],
-  ['Product expression', 'Product and interface work is designed to establish the visual system. Full product UX, engineering, and coded websites are not included.'],
+  ['Product expression', 'With access to the current software, we will design representative backend, product, and interface surfaces across primary workflows and smaller UI touchpoints. Full product UX architecture, engineering, and coded websites are not included.'],
   ['Decision makers start with us', 'Anyone who will approve the identity at the end should participate in discovery and early visual alignment at the beginning.'],
   ['One day-to-day lead', 'Emergences Labs designates one primary contact to gather feedback, make routine decisions, and keep communication moving.'],
   ['Team access', 'Sean remains the creative lead and primary point of contact, with the Anchovies team brought in where their specialties strengthen the work.'],
-  ['Client inputs', 'Emergences Labs provides timely access to internal research, current product context, and one consolidated set of feedback at each milestone.'],
+  ['Client inputs', 'Emergences Labs provides timely access to internal research, a walkthrough of the current software and product environment, and one consolidated set of feedback at each milestone.'],
 ]
 
 function MetaRow({ left, right, dark = false }: { left: string; right: string; dark?: boolean }) {
@@ -378,7 +381,7 @@ function Hero() {
         {[
           ['The subject', 'Human capability'],
           ['The form', 'One family, three identities'],
-          ['The engagement', '$45,000 · 10 to 12 weeks'],
+          ['The engagement', '$45,000 · 6 weeks'],
         ].map(([label, value], index) => (
           <div key={label} className={`flex min-h-[150px] flex-col justify-between gap-8 p-7 ${index < 2 ? 'border-b border-[var(--color-rule)] md:border-b-0 md:border-r' : ''}`}>
             <span className="eyebrow text-ink-2">{label}</span>
@@ -527,7 +530,9 @@ function Process() {
         <p className="mb-10 max-w-[700px] text-[16px] leading-[26px] text-ink-2">
           There are parts we can schedule and name. What happens inside them is a web of signals, history, instinct, and judgment that refuses to move in a straight line.
         </p>
-        <div className="mx-[-24px] bg-ink px-6 py-16 text-paper md:mx-[-64px] md:px-16 md:py-20 lg:mx-[-120px] lg:px-[120px]">
+      </Reveal>
+      <Reveal className="emergences-process-field">
+        <div className="bg-ink px-6 py-16 text-paper md:px-16 md:py-20 lg:px-[120px]">
           <MetaRow left="Made in real time" right="For Emergences Labs" dark />
           <div className="grid gap-8 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
             <h3 className="display max-w-[690px] text-[48px] leading-[51px] md:text-[72px] md:leading-[72px]">
@@ -721,7 +726,7 @@ function Scope() {
 function Timeline() {
   return (
     <section className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-      <MetaRow left="§ 07 - Timeline" right="10 to 12 weeks" />
+      <MetaRow left="§ 07 - Timeline" right="6 weeks" />
       <Reveal>
         <h2 className="display max-w-[900px] py-14 text-[50px] leading-[54px] md:text-[76px] md:leading-[76px]">
           Enough time to find the right idea. Enough momentum to keep it alive.
@@ -754,7 +759,7 @@ function Investment() {
           <span className="eyebrow text-mac">Total project fee</span>
           <div className="display mt-5 text-[78px] leading-[82px]">$45,000</div>
           <div className="mt-7 border-t border-[var(--color-rule)] pt-5 text-[13px] leading-[21px] text-ink-2">
-            <p>Ten to twelve weeks</p>
+            <p>Six weeks</p>
             <p>50% / 25% / 25% milestone structure</p>
           </div>
         </Reveal>

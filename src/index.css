@@ -94,6 +94,27 @@ span.display {
   margin-right: auto;
 }
 
+.emergences-labs-proposal > section > .emergences-process-field {
+  width: auto;
+  max-width: none;
+  margin-left: -24px;
+  margin-right: -24px;
+}
+
+@media (min-width: 768px) {
+  .emergences-labs-proposal > section > .emergences-process-field {
+    margin-left: -64px;
+    margin-right: -64px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .emergences-labs-proposal > section > .emergences-process-field {
+    margin-left: -120px;
+    margin-right: -120px;
+  }
+}
+
 .lapinco-proposal {
   --font-serif: "Newsreader", "ABC Gaisyr", ui-serif, Georgia, serif;
 }
