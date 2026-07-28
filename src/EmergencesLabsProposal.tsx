@@ -72,12 +72,12 @@ const processSignals = [
   { label: 'Intuition', note: 'An antenna for the frequency underneath the words.', x: 14, y: 14 },
   { label: 'Listening', note: 'Knowing what to listen for, not simply what to ask.', x: 39, y: 8 },
   { label: 'Curiosity', note: 'A perpetual practice, not a workshop exercise.', x: 75, y: 17 },
-  { label: 'Empathy', note: "Feeling the stakes and matching the client's passion.", x: 19, y: 42 },
+  { label: 'Empathy', note: "Feeling the stakes and matching the client's passion.", x: 19, y: 38 },
   { label: 'Culture', note: 'Context gathered from living curiously in the world.', x: 48, y: 36 },
   { label: 'Memory', note: 'What worked, what failed, and what still echoes.', x: 82, y: 37 },
   { label: 'Taste', note: 'Recognizing the difference between new and meaningful.', x: 13, y: 74 },
   { label: 'Imagination', note: 'A sense of what tomorrow could make possible.', x: 35, y: 69 },
-  { label: 'Courage', note: 'The willingness to choose the unexpected idea.', x: 59, y: 65 },
+  { label: 'Courage', note: 'The willingness to choose the unexpected idea.', x: 59, y: 70 },
   { label: 'Decisiveness', note: 'Having the guts to follow the signal.', x: 80, y: 72 },
   { label: 'Love', note: 'Caring about the work beyond the contract.', x: 61, y: 88 },
   { label: 'Restraint', note: 'Knowing when not to add another thing.', x: 28, y: 90 },
@@ -527,7 +527,7 @@ function Process() {
               I made this while thinking about your question. It did not exist before this proposal. The relationships keep changing because they do in me, too. What remains at the center is the outcome: everything comes together to form the big idea, a vessel for what makes you special.
             </p>
           </div>
-          <div className="relative mx-auto aspect-[4/5] max-w-[1120px] border-y border-paper/20 md:aspect-[16/8]">
+          <div className="relative mx-auto aspect-[3/4] max-w-[1120px] border-y border-paper/20 md:aspect-[16/9]">
             <svg aria-hidden="true" viewBox="0 0 1000 500" preserveAspectRatio="none" className="absolute inset-0 h-full w-full">
               {processConnections.map(([from, to], index) => {
                 const path = getProcessPath(from, to, index)
@@ -590,8 +590,8 @@ function Process() {
                 type="button"
                 key={signal.label}
                 aria-label={`${signal.label}: ${signal.note}`}
-                className={`group absolute flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 bg-ink text-left md:gap-3 ${
-                  isOutcome ? 'border border-mac px-4 py-3 md:px-5 md:py-4' : 'px-2 py-2 md:px-3'
+                className={`group absolute z-[2] flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 bg-ink text-left hover:z-30 focus-visible:z-30 md:gap-3 ${
+                  isOutcome ? 'z-10 border border-mac px-4 py-3 shadow-[0_0_0_18px_var(--color-ink)] md:px-5 md:py-4 md:shadow-[0_0_0_28px_var(--color-ink)]' : 'px-2 py-2 md:px-3'
                 }`}
                 style={{ left: `${signal.x}%`, top: `${signal.y}%` }}
                 onMouseEnter={() => setActiveSignal(index)}
@@ -605,7 +605,7 @@ function Process() {
                 </span>
                 <span
                   role="tooltip"
-                  className={`pointer-events-none absolute z-10 w-[190px] border border-paper/20 bg-paper px-4 py-3 text-[12px] leading-[18px] text-ink opacity-0 shadow-lg transition-all duration-200 group-hover:opacity-100 group-focus-visible:opacity-100 ${
+                  className={`pointer-events-none absolute z-40 w-[190px] border border-paper/20 bg-paper px-4 py-3 text-[12px] leading-[18px] text-ink opacity-0 shadow-lg transition-all duration-200 group-hover:opacity-100 group-focus-visible:opacity-100 ${
                     tooltipBelow ? 'top-full mt-3 translate-y-1 group-hover:translate-y-0 group-focus-visible:translate-y-0' : 'bottom-full mb-3 -translate-y-1 group-hover:translate-y-0 group-focus-visible:translate-y-0'
                   } ${tooltipAlign}`}
                 >

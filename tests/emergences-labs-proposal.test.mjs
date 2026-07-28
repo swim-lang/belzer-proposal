@@ -49,6 +49,10 @@ test('Emergences Labs proposal is routed with the full identity and product syst
   assert.match(proposal, /The big idea was to rethink what a hare or rabbit could be\./)
   assert.match(proposal, /The mythical Wolpertinger became a vessel for creativity and the pursuit of the unexpected/)
   assert.match(proposal, /For Garza, the big idea and the process behind it are best told in The Brand Identity\./)
+  assert.match(proposal, /aspect-\[3\/4\].*md:aspect-\[16\/9\]/)
+  assert.match(proposal, /hover:z-30 focus-visible:z-30/)
+  assert.match(proposal, /shadow-\[0_0_0_18px_var\(--color-ink\)\]/)
+  assert.match(proposal, /absolute z-40 w-\[190px\]/)
 
   assert.match(proposal, /Listening/)
   assert.match(proposal, /Culture/)
