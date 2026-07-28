@@ -69,39 +69,72 @@ const selectedWork = [
 ]
 
 const processSignals = [
-  { label: 'Listening', x: 14, y: 14 },
-  { label: 'Cultural intuition', x: 37, y: 8 },
-  { label: 'Curiosity', x: 74, y: 17 },
-  { label: 'Empathy', x: 16, y: 43 },
-  { label: 'Memory', x: 47, y: 38 },
-  { label: 'Imagination', x: 79, y: 46 },
-  { label: 'Taste', x: 13, y: 75 },
-  { label: 'Risk', x: 34, y: 70 },
-  { label: 'Decisiveness', x: 61, y: 67 },
-  { label: 'Love for the work', x: 77, y: 81 },
+  { label: 'Intuition', note: 'An antenna for the frequency underneath the words.', x: 14, y: 14 },
+  { label: 'Listening', note: 'Knowing what to listen for, not simply what to ask.', x: 39, y: 8 },
+  { label: 'Curiosity', note: 'A perpetual practice, not a workshop exercise.', x: 75, y: 17 },
+  { label: 'Empathy', note: "Feeling the stakes and matching the client's passion.", x: 19, y: 42 },
+  { label: 'Culture', note: 'Context gathered from living curiously in the world.', x: 48, y: 36 },
+  { label: 'Memory', note: 'What worked, what failed, and what still echoes.', x: 78, y: 44 },
+  { label: 'Taste', note: 'Recognizing the difference between new and meaningful.', x: 13, y: 74 },
+  { label: 'Imagination', note: 'A sense of what tomorrow could make possible.', x: 35, y: 69 },
+  { label: 'Courage', note: 'The willingness to choose the unexpected idea.', x: 59, y: 65 },
+  { label: 'Decisiveness', note: 'Having the guts to follow the signal.', x: 80, y: 72 },
+  { label: 'Love', note: 'Caring about the work beyond the contract.', x: 61, y: 88 },
+  { label: 'Restraint', note: 'Knowing when not to add another thing.', x: 28, y: 90 },
 ]
 
 const processConnections = [
   [0, 1],
   [0, 3],
   [0, 4],
+  [0, 6],
   [1, 2],
   [1, 4],
   [1, 5],
   [2, 4],
   [2, 5],
+  [2, 8],
   [3, 4],
   [3, 6],
-  [3, 7],
+  [3, 10],
   [4, 5],
   [4, 7],
   [4, 8],
+  [4, 11],
   [5, 8],
   [5, 9],
   [6, 7],
+  [6, 11],
   [7, 8],
+  [7, 10],
   [8, 9],
+  [8, 10],
+  [9, 10],
+  [10, 11],
 ]
+
+function getProcessPath(from: number, to: number, index: number) {
+  const start = processSignals[from]
+  const end = processSignals[to]
+  const startX = start.x * 10
+  const startY = start.y * 5
+  const endX = end.x * 10
+  const endY = end.y * 5
+  const direction = index % 2 === 0 ? 1 : -1
+  const lift = 28 + (index % 4) * 11
+  const drift = 18 + (index % 3) * 9
+
+  const makePath = (phase: number) => {
+    const firstX = startX + (endX - startX) * 0.34 + direction * drift * phase
+    const firstY = startY + (endY - startY) * 0.28 - direction * lift * phase
+    const secondX = startX + (endX - startX) * 0.68 - direction * drift * phase
+    const secondY = startY + (endY - startY) * 0.72 + direction * lift * phase
+    return `M ${startX} ${startY} C ${firstX} ${firstY} ${secondX} ${secondY} ${endX} ${endY}`
+  }
+
+  const paths = [makePath(0.45), makePath(1), makePath(-0.35), makePath(0.45)]
+  return { initial: paths[0], values: paths.join(';') }
+}
 
 const phases = [
   {
@@ -442,6 +475,17 @@ function SelectedWork() {
 }
 
 function Process() {
+  const [activeSignal, setActiveSignal] = useState<number | null>(null)
+  const [reduceMotion, setReduceMotion] = useState(false)
+
+  useEffect(() => {
+    const query = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const updatePreference = () => setReduceMotion(query.matches)
+    updatePreference()
+    query.addEventListener('change', updatePreference)
+    return () => query.removeEventListener('change', updatePreference)
+  }, [])
+
   return (
     <section id="process" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
       <MetaRow left="§ 05 - How we work" right="A process, not a formula" />
@@ -458,45 +502,94 @@ function Process() {
           <MetaRow left="Made in real time" right="For Emergences Labs" dark />
           <div className="grid gap-8 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
             <h3 className="display max-w-[690px] text-[48px] leading-[51px] md:text-[72px] md:leading-[72px]">
-              This is the closest thing I can draw to an answer.
+              Before the idea becomes clear.
             </h3>
             <p className="max-w-[620px] text-[15px] leading-[25px] text-paper/65">
-              I made this map while thinking about your question. It did not exist before this proposal. It is not a method or a sequence. It is an attempt to show how the mind moves through the work, with every signal affecting the others.
+              I made this while thinking about your question. It did not exist before this proposal. It is not a diagram of a system. It is a glimpse at the relationships moving underneath a creative decision. The connections keep changing because they do in me, too.
             </p>
           </div>
           <div className="relative mx-auto aspect-[4/5] max-w-[1120px] border-y border-paper/20 md:aspect-[16/8]">
             <svg aria-hidden="true" viewBox="0 0 1000 500" preserveAspectRatio="none" className="absolute inset-0 h-full w-full">
-              {processConnections.map(([from, to]) => {
-                const start = processSignals[from]
-                const end = processSignals[to]
-                const startX = start.x * 10
-                const startY = start.y * 5
-                const endX = end.x * 10
-                const endY = end.y * 5
-                const curveX = (startX + endX) / 2 + ((from + to) % 2 === 0 ? 36 : -36)
-                const curveY = (startY + endY) / 2 + (((to - from) % 3) - 1) * 28
+              {processConnections.map(([from, to], index) => {
+                const path = getProcessPath(from, to, index)
+                const connected = activeSignal === from || activeSignal === to
+                const dimmed = activeSignal !== null && !connected
+                const duration = 7.5 + (index % 6) * 0.8
                 return (
                   <path
                     key={`${from}-${to}`}
-                    d={`M ${startX} ${startY} Q ${curveX} ${curveY} ${endX} ${endY}`}
+                    d={path.initial}
                     fill="none"
-                    stroke={(from + to) % 5 === 0 ? 'var(--color-mac)' : 'currentColor'}
-                    opacity={(from + to) % 5 === 0 ? '0.72' : '0.22'}
-                    strokeWidth="1"
-                  />
+                    stroke={connected ? 'var(--color-mac)' : 'currentColor'}
+                    opacity={connected ? '0.9' : dimmed ? '0.05' : '0.28'}
+                    strokeWidth={connected ? '1.6' : '1'}
+                    pathLength="1"
+                    strokeDasharray="1"
+                    strokeDashoffset={reduceMotion ? 0 : 1}
+                    className="transition-[stroke,opacity,stroke-width] duration-300"
+                  >
+                    {!reduceMotion ? (
+                      <>
+                        <animate
+                          attributeName="d"
+                          values={path.values}
+                          dur={`${duration}s`}
+                          begin={`${-(index % 8) * 0.7}s`}
+                          repeatCount="indefinite"
+                        />
+                        <animate
+                          attributeName="stroke-dashoffset"
+                          values="1;0;0;-1"
+                          keyTimes="0;0.34;0.74;1"
+                          dur={`${duration + 2.5}s`}
+                          begin={`${-(index % 6) * 0.9}s`}
+                          repeatCount="indefinite"
+                        />
+                        {activeSignal === null ? (
+                          <animate
+                            attributeName="opacity"
+                            values="0.06;0.34;0.22;0.06"
+                            keyTimes="0;0.3;0.76;1"
+                            dur={`${duration + 2.5}s`}
+                            begin={`${-(index % 7) * 0.8}s`}
+                            repeatCount="indefinite"
+                          />
+                        ) : null}
+                      </>
+                    ) : null}
+                  </path>
                 )
               })}
             </svg>
-            {processSignals.map((signal) => (
-              <div
+            {processSignals.map((signal, index) => {
+              const tooltipBelow = signal.y < 24
+              const tooltipAlign =
+                signal.x < 25 ? 'left-0' : signal.x > 72 ? 'right-0' : 'left-1/2 -translate-x-1/2'
+              return (
+              <button
+                type="button"
                 key={signal.label}
-                className="absolute flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 bg-ink px-2 py-2 md:gap-3 md:px-3"
+                aria-label={`${signal.label}: ${signal.note}`}
+                className="group absolute flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 bg-ink px-2 py-2 text-left md:gap-3 md:px-3"
                 style={{ left: `${signal.x}%`, top: `${signal.y}%` }}
+                onMouseEnter={() => setActiveSignal(index)}
+                onMouseLeave={() => setActiveSignal(null)}
+                onFocus={() => setActiveSignal(index)}
+                onBlur={() => setActiveSignal(null)}
               >
-                <span className="h-2 w-2 shrink-0 bg-mac" />
+                <span className={`h-2 w-2 shrink-0 bg-mac transition-transform duration-300 ${activeSignal === index ? 'scale-150' : ''}`} />
                 <span className="serif whitespace-nowrap text-[15px] leading-[20px] md:text-[23px] md:leading-[28px]">{signal.label}</span>
-              </div>
-            ))}
+                <span
+                  role="tooltip"
+                  className={`pointer-events-none absolute z-10 w-[190px] border border-paper/20 bg-paper px-4 py-3 text-[12px] leading-[18px] text-ink opacity-0 shadow-lg transition-all duration-200 group-hover:opacity-100 group-focus-visible:opacity-100 ${
+                    tooltipBelow ? 'top-full mt-3 translate-y-1 group-hover:translate-y-0 group-focus-visible:translate-y-0' : 'bottom-full mb-3 -translate-y-1 group-hover:translate-y-0 group-focus-visible:translate-y-0'
+                  } ${tooltipAlign}`}
+                >
+                  {signal.note}
+                </span>
+              </button>
+              )
+            })}
           </div>
           <div className="flex flex-col justify-between gap-4 pt-7 sm:flex-row">
             <span className="eyebrow text-paper/45">No fixed beginning</span>
