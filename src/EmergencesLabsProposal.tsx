@@ -3,7 +3,7 @@ import { Reveal } from './components/Reveal'
 
 const calendarHref = 'https://cal.com/anchovies/30min?overlayCalendar=true'
 const acceptHref =
-  'mailto:sean@anchovies.agency?subject=Emergences%20Labs%20Proposal&body=Hi%20Sean%2C%0A%0AWe%27d%20like%20to%20move%20forward%20with%20the%20Emergences%20Labs%20brand%20identity%20and%20design%20system.%0A%0A'
+  'mailto:sean@anchovies.agency?subject=Emergences%20Labs%20Proposal&body=Hi%20Sean%2C%0A%0AWe%27d%20like%20to%20move%20forward%20with%20the%20Emergences%20Labs%2C%20NeoWork%2C%20and%20NeoHuman%20three-brand%20engagement.%0A%0A'
 
 const navSections = [
   { id: 'overview', label: 'Overview' },
@@ -18,8 +18,8 @@ const navSections = [
 const signals = [
   ['01', 'Human at the center', 'The brand should make human capability feel consequential, not decorate another AI company with familiar machine-age signals.'],
   ['02', 'A serious house of knowledge', 'Emergences Labs needs the authority of an institution, the curiosity of a research lab, and the clarity of a product company.'],
-  ['03', 'One identity, several expressions', 'The master system must hold the lab, NeoWork, NeoHuman, research, product experiences, social content, and future launches together.'],
-  ['04', 'Focused, not finished', 'You have references, internal thinking, and strong opinions. Our job is to turn that useful direction into alignment and one ownable idea.'],
+  ['03', 'A family, not three strangers', 'Emergences Labs, NeoWork, and NeoHuman each need a clear role and identity while sharing enough logic to feel deliberately related.'],
+  ['04', 'Focused, not finished', 'The materials shared so far give us a meaningful starting point. Discovery will test that direction, build alignment, and turn it into an ownable idea.'],
 ]
 
 const outcomes = [
@@ -33,7 +33,7 @@ const outcomes = [
   },
   {
     title: 'Products that feel related.',
-    body: 'A clear family architecture for Emergences Labs, NeoWork, and NeoHuman, with product-facing design studies that show how the system behaves in practice.',
+    body: 'A complete master identity for Emergences Labs plus focused identities for NeoWork and NeoHuman, all connected by a clear family architecture.',
   },
   {
     title: 'A world worth entering.',
@@ -50,18 +50,18 @@ const selectedWork = [
     body: 'A single ownable mark helped a new legal intelligence platform feel part newspaper, part institution, and part modern think tank. The identity carries authority without becoming conservative or expected.',
   },
   {
-    name: 'Out There',
-    label: 'World-building',
-    image: '/work/emergences/out-there.svg',
-    href: 'https://anchovies.agency/work/out-there',
-    body: 'We turned a broad creative company into a distinct world with its own name, point of view, and visual logic. The process started with what the company believed, then found the clearest form for it.',
+    name: 'Wild Hare',
+    label: 'Premium distinction',
+    image: '/work/emergences/wild-hare.jpg',
+    href: 'https://anchovies.agency/work/wild-hare',
+    body: 'A familiar retail category became more ownable through a mythical central character and a bold visual world. The new identity moved the business toward a more premium audience without losing its warmth or personality.',
   },
   {
-    name: 'Freddie',
-    label: 'Humanizing a technical category',
-    image: '/work/emergences/freddie.jpg',
-    href: 'https://anchovies.agency/work/freddie',
-    body: 'A performance-oriented product became warmer, stranger, and more culturally alive through illustration, motion, and a flexible identity. The work made the category feel human without losing product credibility.',
+    name: 'Garza',
+    label: 'Category defiance',
+    image: '/work/emergences/garza.webp',
+    href: 'https://anchovies.agency/work/garza',
+    body: 'A law firm stepped outside the safe visual conventions of its category with an identity rooted in local culture and real personality. The result gave the firm a more confident, memorable way to show up in its market.',
   },
 ]
 
@@ -88,8 +88,8 @@ const phases = [
   },
   {
     num: '02',
-    title: 'Big idea and identity',
-    body: 'We find the central idea that can make Emergences Labs feel like a serious institution built around human potential, then develop it as one complete recommended identity.',
+    title: 'Master brand identity',
+    body: 'We find the central idea that can make Emergences Labs feel like a serious institution built around human potential, then develop it as one complete recommended identity and system.',
     items: [
       'Creative concept and narrative',
       'Primary logo or wordmark',
@@ -103,15 +103,17 @@ const phases = [
   },
   {
     num: '03',
-    title: 'Digital and product expression',
-    body: 'We show how the identity moves from the research lab into products. These are high-fidelity brand and interface studies that give internal teams a practical visual system to extend.',
+    title: 'Product identities and expression',
+    body: 'We develop focused identities for NeoWork and NeoHuman inside the shared family, then show how the full system moves from the research lab into real product experiences.',
     items: [
       'Emergences Labs, NeoWork, and NeoHuman family architecture',
+      'NeoWork product identity and logo system',
+      'NeoHuman product identity and logo system',
+      'Product-specific color, type, and graphic expression',
       'Digital design tokens and component direction',
       'Product-site homepage direction',
       'Assessment and results interface studies',
       'Dashboard and learning-surface studies',
-      'Data visualization and icon direction',
       'Responsive desktop and mobile examples',
       'Figma design system library',
     ],
@@ -138,29 +140,31 @@ const phases = [
 const timeline = [
   ['Week 01', 'Listen and align', 'Discovery, internal materials, category review, stakeholder alignment, and success criteria.'],
   ['Week 02', 'Find the creative territory', 'Guided moodboard, creative brief, brand architecture, and approval of the direction we will explore.'],
-  ['Weeks 03 to 05', 'Build the identity', 'One recommended concept developed across logo, type, color, visual language, and initial applications.'],
-  ['Weeks 06 to 08', 'Extend the system', 'Product and website studies, research and social applications, motion, merchandise, and event concepts.'],
-  ['Weeks 09 to 10', 'Refine and hand off', 'Structured refinement, final assets, Figma library, brand guide, training, and launch support.'],
+  ['Weeks 03 to 06', 'Build the master identity', 'One recommended concept developed across logo, type, color, visual language, and initial applications for Emergences Labs.'],
+  ['Weeks 07 to 09', 'Build the product family', 'Focused identities for NeoWork and NeoHuman, plus product and website studies that prove how the family works together.'],
+  ['Weeks 10 to 12', 'Refine and hand off', 'Structured refinement, motion and launch applications, final assets, Figma library, brand guide, training, and launch support.'],
 ]
 
 const investment = [
   ['01', 'Discovery and creative strategy', 'Alignment, category review, brand architecture, guided moodboard, success criteria, and creative brief.', '$5,000'],
-  ['02', 'Identity and core design system', 'One lead concept, logo suite, typography, color, graphic language, image direction, and foundational applications.', '$14,500'],
-  ['03', 'Digital and product expression', 'Family architecture, product-site direction, interface studies, data and icon direction, responsive examples, and Figma system.', '$8,500'],
-  ['04', 'Motion, applications, and handoff', 'Motion identity, research and deck templates, social system, launch assets, merchandise, event concepts, guide, and support.', '$7,000'],
+  ['02', 'Emergences Labs master identity', 'One lead concept, logo suite, typography, color, graphic language, image direction, and the core system for the institution.', '$17,500'],
+  ['03', 'NeoWork and NeoHuman identities', 'Two focused product identities, each with its own logo expression and visual character inside the shared brand family.', '$13,000'],
+  ['04', 'Digital expression, launch, and handoff', 'Product and website studies, motion, research and deck templates, social assets, Figma library, brand guide, and launch support.', '$9,500'],
 ]
 
 const milestones = [
-  ['50%', '$17,500', 'Due at kickoff to schedule the engagement and begin discovery.'],
-  ['25%', '$8,750', 'Due after presentation and approval of the core identity direction.'],
-  ['25%', '$8,750', 'Due before final files, Figma library, brand guide, and handoff.'],
+  ['50%', '$22,500', 'Due at kickoff to schedule the engagement and begin discovery.'],
+  ['25%', '$11,250', 'Due after presentation and approval of the Emergences Labs master identity direction.'],
+  ['25%', '$11,250', 'Due before final files, Figma library, brand guide, and handoff.'],
 ]
 
 const boundaries = [
-  ['One lead direction', 'The engagement is built around one recommended identity concept, supported by two structured refinement rounds.'],
+  ['Focused creative routes', 'We lead with one recommended direction for the Emergences Labs master identity, then develop focused product identities for NeoWork and NeoHuman inside the approved family. Two structured refinement rounds are included.'],
   ['Product expression', 'Product and interface work is designed to establish the visual system. Full product UX, engineering, and coded websites are not included.'],
+  ['Decision makers start with us', 'Anyone who will approve the identity at the end should participate in discovery and early visual alignment at the beginning.'],
+  ['One day-to-day lead', 'Emergences Labs designates one primary contact to gather feedback, make routine decisions, and keep communication moving.'],
   ['Team access', 'Sean remains the creative lead and primary point of contact, with the Anchovies team brought in where their specialties strengthen the work.'],
-  ['Client inputs', 'Emergences Labs provides timely access to stakeholders, internal research, current product context, and consolidated feedback.'],
+  ['Client inputs', 'Emergences Labs provides timely access to internal research, current product context, and one consolidated set of feedback at each milestone.'],
 ]
 
 function MetaRow({ left, right, dark = false }: { left: string; right: string; dark?: boolean }) {
@@ -280,8 +284,8 @@ function Hero() {
       <Reveal className="mt-16 grid border-y border-[var(--color-rule)] md:grid-cols-3">
         {[
           ['The subject', 'Human capability'],
-          ['The form', 'One identity, many expressions'],
-          ['The engagement', '$35,000 · 8 to 10 weeks'],
+          ['The form', 'One family, three identities'],
+          ['The engagement', '$45,000 · 10 to 12 weeks'],
         ].map(([label, value], index) => (
           <div key={label} className={`flex min-h-[150px] flex-col justify-between gap-8 p-7 ${index < 2 ? 'border-b border-[var(--color-rule)] md:border-b-0 md:border-r' : ''}`}>
             <span className="eyebrow text-ink-2">{label}</span>
@@ -303,7 +307,7 @@ function WhatWeHeard() {
             You know the register. You need the idea.
           </h2>
           <p className="mt-8 max-w-[500px] text-[15px] leading-[24px] text-ink-2">
-            Parable, Cosmos Institute, Anthropic, and Lex Politica point toward a world with intelligence, restraint, and cultural weight. They are useful coordinates, not a finished identity. The work is to find the one idea only Emergences Labs can own.
+            The references and internal thinking shared so far point toward a world with intelligence, restraint, and cultural weight. They are useful coordinates, not a substitute for discovery. The work is to test that direction together and find the one idea only Emergences Labs can own.
           </p>
         </Reveal>
         <Reveal className="border-t border-[var(--color-rule)]">
@@ -426,12 +430,12 @@ function Scope() {
       <div className="grid gap-10 py-14 lg:grid-cols-[1fr_420px] lg:gap-20">
         <Reveal>
           <h2 className="display max-w-[760px] text-[50px] leading-[54px] md:text-[76px] md:leading-[76px]">
-            One system, developed from first principles to final use.
+            One master brand. Two focused product identities. One connected system.
           </h2>
         </Reveal>
         <Reveal>
           <p className="text-[15px] leading-[24px] text-ink-2">
-            The scope is intentionally broad enough to prove the identity across real product and public contexts, while staying focused on the core system your team can extend.
+            Working on the three brands together lets us share discovery, align the architecture early, and give each product its own character without paying to solve the same strategic questions three separate times.
           </p>
         </Reveal>
       </div>
@@ -464,7 +468,7 @@ function Scope() {
 function Timeline() {
   return (
     <section className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-      <MetaRow left="§ 07 - Timeline" right="8 to 10 weeks" />
+      <MetaRow left="§ 07 - Timeline" right="10 to 12 weeks" />
       <Reveal>
         <h2 className="display max-w-[900px] py-14 text-[50px] leading-[54px] md:text-[76px] md:leading-[76px]">
           Enough time to find the right idea. Enough momentum to keep it alive.
@@ -490,14 +494,14 @@ function Investment() {
       <div className="grid gap-12 py-14 lg:grid-cols-[1fr_420px] lg:gap-24">
         <Reveal>
           <h2 className="display max-w-[720px] text-[52px] leading-[56px] md:text-[82px] md:leading-[82px]">
-            Brand identity and product design system.
+            Three identities, built as one family.
           </h2>
         </Reveal>
         <Reveal className="border border-mac p-8">
           <span className="eyebrow text-mac">Total project fee</span>
-          <div className="display mt-5 text-[78px] leading-[82px]">$35,000</div>
+          <div className="display mt-5 text-[78px] leading-[82px]">$45,000</div>
           <div className="mt-7 border-t border-[var(--color-rule)] pt-5 text-[13px] leading-[21px] text-ink-2">
-            <p>Eight to ten weeks</p>
+            <p>Ten to twelve weeks</p>
             <p>50% / 25% / 25% milestone structure</p>
           </div>
         </Reveal>
@@ -512,8 +516,22 @@ function Investment() {
           </div>
         ))}
       </Reveal>
+      <Reveal className="mt-12 grid gap-8 border border-mac p-8 md:grid-cols-[0.7fr_1.3fr] md:p-10">
+        <div>
+          <span className="eyebrow text-mac">Three-brand partnership</span>
+          <p className="serif mt-5 text-[28px] leading-[35px]">Built together for less duplication and more coherence.</p>
+        </div>
+        <div>
+          <p className="text-[14px] leading-[23px] text-ink-2">
+            Commissioned separately, three identities of this depth would exceed this investment. We are packaging the Emergences Labs master identity with focused identities for NeoWork and NeoHuman at $45,000 because the work is unusually aligned with where Anchovies wants to go, and because we see the opportunity to earn a long-term creative relationship from the start.
+          </p>
+          <p className="mt-5 text-[14px] leading-[23px] text-ink-2">
+            Shared discovery and one coordinated process make the package more efficient without asking any one brand to feel like an afterthought.
+          </p>
+        </div>
+      </Reveal>
       <Reveal className="mt-14">
-        <MetaRow left="Payment milestones" right="$35,000 total" />
+        <MetaRow left="Payment milestones" right="$45,000 total" />
         <div className="mt-6 grid border border-[var(--color-rule)] md:grid-cols-3">
           {milestones.map(([percent, amount, body], index) => (
             <article key={`${percent}-${index}`} className={`min-h-[225px] p-7 ${index < 2 ? 'border-b border-[var(--color-rule)] md:border-b-0 md:border-r' : ''}`}>
@@ -528,7 +546,7 @@ function Investment() {
       </Reveal>
       <Reveal className="mt-14 grid border-y border-[var(--color-rule)] md:grid-cols-2">
         {boundaries.map(([title, body], index) => (
-          <article key={title} className={`min-h-[210px] p-8 ${index < 2 ? 'border-b border-[var(--color-rule)]' : ''} ${index % 2 === 0 ? 'md:border-r' : ''}`}>
+          <article key={title} className={`min-h-[210px] p-8 ${index < boundaries.length - 2 ? 'border-b border-[var(--color-rule)]' : ''} ${index % 2 === 0 ? 'md:border-r' : ''}`}>
             <span className="eyebrow text-ink-2">Note {String(index + 1).padStart(2, '0')}</span>
             <h3 className="serif mt-6 text-[28px] leading-[34px]">{title}</h3>
             <p className="mt-4 text-[13px] leading-[21px] text-ink-2">{body}</p>
