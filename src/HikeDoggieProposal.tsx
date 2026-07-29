@@ -8,6 +8,8 @@ const PRICE_SOP_FOUNDATION = '$5,500'
 const PRICE_PROTOTYPE = '$6,500'
 const PRICE_TOTAL = '$12,000'
 const PRICE_ADVISORY = '$1,500/mo'
+const PRICE_KICKOFF = '$9,000'
+const PRICE_FINAL = '$3,000'
 // ─────────────────────────────────────────────────────────────────────
 
 type DetailRow = [string, string, string]
@@ -194,6 +196,19 @@ const investmentLines = [
     'App build and beta',
     'App, desktop version, and admin backend. Much will already be built by then; the remaining work is agentic nuance, and the range depends on the features you choose. The approved prototype turns this into a firm quote.',
     '$8k to $20k',
+  ],
+]
+
+const paymentMilestones: DetailRow[] = [
+  [
+    '75%',
+    'Due at kickoff',
+    `${PRICE_KICKOFF} reserves the working window and covers the early labor across SOP extraction, organization, standardization, and prototype preparation.`,
+  ],
+  [
+    '25%',
+    'Due at final Phase 2 delivery',
+    `${PRICE_FINAL} is due when the prototype, walkthrough, and firm build estimate are delivered.`,
   ],
 ]
 
@@ -522,7 +537,7 @@ export function HikeDoggieProposal() {
             </h2>
           </Reveal>
           <Reveal className="max-w-[500px] text-[15px] leading-[24px] text-ink-2">
-            Realistically: two weeks for the SOP Foundation, one week for the prototype, with everyone moving. Exact dates are confirmed at kickoff, once Delight Tree access and the SOP materials are in hand. Call recording starts in week one regardless. Context capture should never wait on a plan.
+            Realistically: two weeks for the SOP Foundation, one week for the prototype, with everyone moving. Exact dates are confirmed at kickoff, once Delight Tree access and the SOP materials are in hand. The three-week schedule depends on timely access, decisions, feedback, and approvals from Hike Doggie. Client-side delays move the delivery dates accordingly. Call recording starts in week one regardless. Context capture should never wait on a plan.
           </Reveal>
         </div>
         <Reveal className="grid border-t border-l border-[var(--color-rule)] md:grid-cols-3">
@@ -579,6 +594,21 @@ export function HikeDoggieProposal() {
             </Reveal>
           ))}
         </div>
+        <Reveal className="pt-14">
+          <MetaRow left="Fig. 03 - Payment structure" right="75% / 25%" />
+          <div className="mt-8 grid border-t border-[var(--color-rule)] md:grid-cols-2">
+            {paymentMilestones.map(([amount, title, body], index) => (
+              <div
+                key={title}
+                className={`min-h-[250px] border-b border-[var(--color-rule)] p-8 ${index === 0 ? 'md:border-r' : ''}`}
+              >
+                <p className="serif text-[64px] leading-none">{amount}</p>
+                <h3 className="serif mt-5 text-[30px] leading-[34px]">{title}</h3>
+                <p className="mt-4 max-w-[460px] text-[14px] leading-[22px] text-ink-2">{body}</p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </section>
 
       <section id="next" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
