@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Reveal } from './components/Reveal'
 
-const acceptProposalHref = 'mailto:sean@anchovies.agency?subject=Accepting%20the%20Hike%20Doggie%20SOP%20%26%20Prototype%20Proposal'
+const contractHref = '/proposal/hike-doggie/contract'
 
 // ── Pricing (edit here) ──────────────────────────────────────────────
 const PRICE_SOP_FOUNDATION = '$5,500'
@@ -49,8 +49,8 @@ const heroCards: DetailRow[] = [
   ],
   [
     '04',
-    'A partner in the room',
-    'Ongoing advisory as the team learns to run and evolve agentic systems. The big questions and the small ones, throughout.',
+    'A build path, priced honestly',
+    'The approved prototype turns a broad app idea into a defined production scope and a firm estimate for whatever comes next.',
   ],
 ]
 
@@ -145,7 +145,6 @@ const deliverables = [
   ['Process', 'Call-recording workflow', 'Sales calls recorded and stored from week one. The start of the context asset.'],
   ['Product', 'Prototype design', 'A usable, testable prototype of the training experience, built from the real SOP content.'],
   ['Product', 'Build estimate', 'A firm quote for the app build, derived line-by-line from the approved prototype.'],
-  ['Advisory', 'Ongoing counsel', 'Regular working sessions plus async access: how to run, evolve, and think in agentic systems.'],
 ]
 
 const timeline = [
@@ -239,7 +238,7 @@ const nextSteps: DetailRow[] = [
   [
     '01',
     'Confirm scope',
-    'Confirm this engagement covers the SOP Foundation, the prototype, and advisory, with the build quoted after the prototype is approved.',
+    'Confirm this engagement covers the SOP Foundation and prototype, with advisory optional and the build quoted after the prototype is approved.',
   ],
   [
     '02',
@@ -264,7 +263,7 @@ function MetaRow({ left, right, dark = false }: { left: string; right: string; d
 
 function AnchorButton({
   children,
-  href = acceptProposalHref,
+  href = contractHref,
   variant = 'dark',
 }: {
   children: string
@@ -338,8 +337,8 @@ function HikeDoggieNav() {
               </a>
             ))}
           </nav>
-          <a href={acceptProposalHref} className="rounded-full border border-ink px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper whitespace-nowrap">
-            Accept proposal
+          <a href={contractHref} className="rounded-full border border-ink px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper whitespace-nowrap">
+            Review contract
           </a>
         </div>
       </div>
@@ -395,10 +394,10 @@ export function HikeDoggieProposal() {
           </Reveal>
           <Reveal className="flex max-w-[440px] flex-col gap-7">
             <p className="text-[15px] leading-[23px] text-ink-2">
-              The direction is set. We walked it together in the working session. This proposal prices the first two phases, keeps advisory in the room throughout, and lets the prototype price the build honestly.
+              The direction is set. We walked it together in the working session. This proposal prices the first two phases, keeps future advisory optional, and lets the prototype price the build honestly.
             </p>
             <div className="flex flex-wrap items-center gap-4">
-              <AnchorButton>{'Accept proposal ->'}</AnchorButton>
+              <AnchorButton>{'Review contract ->'}</AnchorButton>
               <AnchorButton href="#approach" variant="outline">
                 View the scope
               </AnchorButton>
@@ -562,11 +561,11 @@ export function HikeDoggieProposal() {
         <Reveal className="grid gap-10 border-b border-[var(--color-rule)] py-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
             <p className="display text-[72px] leading-none md:text-[124px]">{PRICE_TOTAL}</p>
-            <p className="eyebrow mt-5 text-ink-2">Total - SOP Foundation and Prototype · plus {PRICE_ADVISORY} advisory</p>
+            <p className="eyebrow mt-5 text-ink-2">Total - SOP Foundation and Prototype · optional {PRICE_ADVISORY} advisory</p>
           </div>
           <div className="flex max-w-[560px] flex-col gap-5 text-[15px] leading-[24px] text-ink-2">
             <p>This covers the two phases that can be priced honestly today: the full SOP Foundation, including the manual work of extracting and organizing everything out of Delight Tree, and the prototype that will define and price the build.</p>
-            <p>Advisory runs alongside as a month-to-month retainer, cancel anytime. Pricing reflects a founding-client consideration in exchange for case-study rights and referenceable results as this work becomes a portfolio.</p>
+            <p>Advisory remains available as an optional month-to-month retainer, cancel anytime. Pricing reflects a founding-client consideration in exchange for case-study rights and referenceable results as this work becomes a portfolio.</p>
           </div>
         </Reveal>
         <Reveal className="pt-12">
@@ -647,10 +646,10 @@ export function HikeDoggieProposal() {
           </Reveal>
           <Reveal className="flex flex-col gap-4">
             <span className="eyebrow text-paper/55">Begin</span>
-            <AnchorButton href={acceptProposalHref} variant="light">
-              {'Accept proposal ->'}
+            <AnchorButton href={contractHref} variant="light">
+              {'Review contract ->'}
             </AnchorButton>
-            <p className="text-[13px] leading-[20px] text-paper/60">{PRICE_TOTAL} - SOP Foundation and Prototype · {PRICE_ADVISORY} advisory</p>
+            <p className="text-[13px] leading-[20px] text-paper/60">{PRICE_TOTAL} - SOP Foundation and Prototype · optional {PRICE_ADVISORY} advisory</p>
           </Reveal>
         </div>
       </section>

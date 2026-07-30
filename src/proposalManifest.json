@@ -489,6 +489,19 @@
     "showInDashboard": true
   },
   {
+    "id": "hike-doggie-contract",
+    "name": "Hike Doggie Contract",
+    "tagline": "SOP foundation and training prototype agreement",
+    "status": "Active",
+    "href": "/proposal/hike-doggie/contract",
+    "paths": [
+      "/proposal/hike-doggie/contract"
+    ],
+    "sourceFile": "src/contracts/hikeDoggieContract.ts",
+    "kind": "contract",
+    "showInDashboard": false
+  },
+  {
     "id": "hike-doggie",
     "name": "Hike Doggie",
     "tagline": "SOP foundation and working prototype \u00b7 July 2026",

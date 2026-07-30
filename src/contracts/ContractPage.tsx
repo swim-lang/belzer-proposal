@@ -31,6 +31,12 @@ function formatDate(value: string) {
   return new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric' }).format(new Date(year, month - 1, day))
 }
 
+function getTodayInputValue() {
+  const now = new Date()
+  const localNow = new Date(now.getTime() - now.getTimezoneOffset() * 60_000)
+  return localNow.toISOString().slice(0, 10)
+}
+
 function trackContractEvent(input: {
   contractSlug: string
   eventType: 'view' | 'download_pdf'
@@ -330,7 +336,7 @@ function SignaturePanel({
 }) {
   if (submittedSignature) {
     return (
-      <aside className="no-print order-first w-full min-w-0 border border-[var(--color-rule)] bg-paper p-6 lg:order-none lg:sticky lg:top-28 lg:self-start">
+      <aside className="no-print order-first w-full min-w-0 border border-[var(--color-rule)] bg-paper p-6 lg:order-none lg:sticky lg:top-28 lg:max-h-[calc(100vh-8rem)] lg:self-start lg:overflow-y-auto">
         <div className="flex flex-col gap-2 border-b border-[var(--color-rule)] pb-5">
           <span className="eyebrow text-ink-2">Complete</span>
           <h2 className="serif text-[32px] leading-[36px] tracking-[-0.016em]">Contract signed and submitted.</h2>
@@ -359,7 +365,7 @@ function SignaturePanel({
   }
 
   return (
-    <aside className="no-print order-first w-full min-w-0 border border-[var(--color-rule)] bg-paper p-6 lg:order-none lg:sticky lg:top-28 lg:self-start">
+    <aside className="no-print order-first w-full min-w-0 border border-[var(--color-rule)] bg-paper p-6 lg:order-none lg:sticky lg:top-28 lg:max-h-[calc(100vh-8rem)] lg:self-start lg:overflow-y-auto">
       <div className="flex flex-col gap-2 border-b border-[var(--color-rule)] pb-5">
         <span className="eyebrow text-ink-2">Ready to proceed</span>
         <h2 className="serif text-[32px] leading-[36px] tracking-[-0.016em]">Review, sign, and submit.</h2>
@@ -465,7 +471,7 @@ export function ContractPage({ contract }: ContractPageProps) {
   const isPrintParam = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('print') === '1'
   const [signerName, setSignerName] = useState('')
   const [signerTitle, setSignerTitle] = useState('')
-  const [signedDate, setSignedDate] = useState('')
+  const [signedDate, setSignedDate] = useState(getTodayInputValue)
   const [consentAccepted, setConsentAccepted] = useState(false)
   const [signatureMethod, setSignatureMethod] = useState<SignatureMethod>('drawn')
   const [typedSignature, setTypedSignature] = useState('')
@@ -751,10 +757,9 @@ export function ContractPage({ contract }: ContractPageProps) {
             </p>
             <p>
               <strong>6.4 No Satisfaction Guarantee and No Refund for Subjective Preference.</strong> The Client
-              acknowledges that branding and creative services involve professional judgment and subjective preferences.
-              Payment is for professional time, process, and deliverables produced. Subjective dissatisfaction does not
-              create a refund right and does not constitute breach, provided the Agency delivers the listed deliverables
-              and offers the included revision process.
+              acknowledges that{' '}
+              {contract.subjectiveReviewTerms ??
+                'branding and creative services involve professional judgment and subjective preferences. Payment is for professional time, process, and deliverables produced. Subjective dissatisfaction does not create a refund right and does not constitute breach, provided the Agency delivers the listed deliverables and offers the included revision process.'}
             </p>
             <p>
               <strong>6.5 Delivery vs Presentation.</strong> The Agency may withhold delivery of final export files and
@@ -818,13 +823,26 @@ export function ContractPage({ contract }: ContractPageProps) {
             </p>
           </ContractSection>
 
-          <ContractSection number="9" title="Naming and Trademark">
-            <p>
-              <strong>9.1 Trademark Clearance and Registration.</strong> The Client is responsible for trademark
-              clearance, registration, and enforcement. The Agency does not provide legal advice, does not guarantee
-              trademark availability, and does not guarantee registrability.
-            </p>
-          </ContractSection>
+          {contract.sectionNine ? (
+            <ContractSection number="9" title={contract.sectionNine.title}>
+              {contract.sectionNine.clauses.map((clause, index) => (
+                <p key={clause.label}>
+                  <strong>
+                    9.{index + 1} {clause.label}.
+                  </strong>{' '}
+                  {clause.body}
+                </p>
+              ))}
+            </ContractSection>
+          ) : (
+            <ContractSection number="9" title="Naming and Trademark">
+              <p>
+                <strong>9.1 Trademark Clearance and Registration.</strong> The Client is responsible for trademark
+                clearance, registration, and enforcement. The Agency does not provide legal advice, does not guarantee
+                trademark availability, and does not guarantee registrability.
+              </p>
+            </ContractSection>
+          )}
 
           <ContractSection number="10" title="Confidentiality">
             <p>

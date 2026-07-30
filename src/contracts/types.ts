@@ -40,6 +40,14 @@ export type ContractData = {
   revisionRounds: string[]
   scopePhases: ContractScopePhase[]
   optionalSupport: string[]
+  subjectiveReviewTerms?: string
+  sectionNine?: {
+    title: string
+    clauses: {
+      label: string
+      body: string
+    }[]
+  }
   additionalTerms?: {
     title: string
     body: string
