@@ -23,7 +23,7 @@ export const hikeDoggieContract: ContractData = {
     {
       amount: '$9,000',
       label: 'Due at project kickoff',
-      body: 'This reserves the working window and begins the labor-intensive SOP extraction, inventory, organization, and standardization work.',
+      body: 'This kickoff payment reflects the substantial front-loaded SOP extraction, inventory, organization, and standardization work; reserves a concentrated production window so the project can move at a brisk pace; and helps cover the third-party AI, agent-processing, and technical-tool costs Anchovies expects to incur during the engagement.',
     },
     {
       amount: '$3,000',
@@ -81,7 +81,7 @@ export const hikeDoggieContract: ContractData = {
     'Production app, desktop experience, admin backend, integrations, beta testing, and deployment',
     'New SOP creation or substantial late-added source materials outside the approved Week 1 inventory',
     'Ongoing SOP maintenance, content updates, training operations, or implementation support',
-    'Third-party platform subscriptions, software fees, hosting, or usage costs',
+    'Client-selected third-party platform subscriptions, software fees, hosting, or usage costs beyond Anchovies’ internal project tools',
   ],
   subjectiveReviewTerms:
     'SOP organization, process design, information architecture, and prototype work involve professional judgment and iterative collaboration. Payment is for the professional time, process, and listed deliverables produced. Subjective dissatisfaction does not create a refund right or constitute breach, provided the Agency delivers the listed scope and offers the included review process.',
