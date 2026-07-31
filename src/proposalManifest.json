@@ -476,6 +476,32 @@
     "showInDashboard": true
   },
   {
+    "id": "hike-doggie-platform-contract",
+    "name": "Hike Doggie Platform Contract",
+    "tagline": "Operating foundation, prototype, and production platform agreement",
+    "status": "Active",
+    "href": "/proposal/hike-doggie-platform/contract",
+    "paths": [
+      "/proposal/hike-doggie-platform/contract"
+    ],
+    "sourceFile": "src/contracts/hikeDoggiePlatformContract.ts",
+    "kind": "contract",
+    "showInDashboard": false
+  },
+  {
+    "id": "hike-doggie-platform",
+    "name": "Hike Doggie Platform",
+    "tagline": "Operating foundation, prototype, and production platform · July 2026",
+    "status": "Active",
+    "href": "/proposal/hike-doggie-platform",
+    "paths": [
+      "/proposal/hike-doggie-platform"
+    ],
+    "sourceFile": "src/HikeDoggiePlatformProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true
+  },
+  {
     "id": "hike-doggie-board",
     "name": "Hike Doggie Board Overview",
     "tagline": "SOP Training App board one-pager \u00b7 July 2026",
