@@ -11,6 +11,7 @@ import { FiberSoftChewProposal } from './FiberSoftChewProposal'
 import { GarySpringsteadProposal } from './GarySpringsteadProposal'
 import { GenesiProposal } from './GenesiProposal'
 import { HikeDoggieBoardOverview } from './HikeDoggieBoardOverview'
+import { HikeDoggieFoundationProposal } from './HikeDoggieFoundationProposal'
 import { HikeDoggiePlatformProposal } from './HikeDoggiePlatformProposal'
 import { HikeDoggieProposal } from './HikeDoggieProposal'
 import { HumanaAIProposal } from './HAAIProposal'
@@ -42,6 +43,7 @@ import { fiberSoftChewContract } from './contracts/fiberSoftChewContract'
 import { garySpringsteadContract } from './contracts/garySpringsteadContract'
 import { genesiContract } from './contracts/genesiContract'
 import { hikeDoggieContract } from './contracts/hikeDoggieContract'
+import { hikeDoggieFoundationContract } from './contracts/hikeDoggieFoundationContract'
 import { hikeDoggiePlatformContract } from './contracts/hikeDoggiePlatformContract'
 import { lapincoContract } from './contracts/lapincoContract'
 import { mollyEngelsContract } from './contracts/mollyEngelsContract'
@@ -133,6 +135,10 @@ export default function App() {
         return withProposalGate(<HumanaAIProposal2 />)
       case 'hike-doggie-board':
         return withProposalGate(<HikeDoggieBoardOverview />)
+      case 'hike-doggie-foundation-contract':
+        return withProposalGate(<ContractPage contract={hikeDoggieFoundationContract} />)
+      case 'hike-doggie-foundation':
+        return withProposalGate(<HikeDoggieFoundationProposal />)
       case 'hike-doggie-platform-contract':
         return withProposalGate(<ContractPage contract={hikeDoggiePlatformContract} />)
       case 'hike-doggie-platform':

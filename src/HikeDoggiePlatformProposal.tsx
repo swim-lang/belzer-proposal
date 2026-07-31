@@ -6,42 +6,10 @@ const contractHref = '/proposal/hike-doggie-platform/contract'
 const phases = [
   {
     number: '01',
-    title: 'Build the source of truth',
-    price: '$5,500',
-    timing: 'Weeks 1 to 2',
-    body: 'We extract and standardize the SOP library, then widen the source of truth to the operational context the system needs. That includes selected CRM data, sales-call records, inquiries from Typeform and similar sources, and useful links back to the tools Hike Doggie already uses.',
-    outcome: 'One organized, portable operating foundation that connects the standards, activity, and context behind the work.',
-    includes: [
-      'SOP inventory, extraction, cleanup, and standardization',
-      'A consistent SOP template with owners and cadences',
-      'CRM and existing-system review',
-      'Sales-call tracking and recording workflow',
-      'Inquiry aggregation from Typeform and approved sources',
-      'Source-of-truth structure with links to approved third-party tools',
-    ],
-  },
-  {
-    number: '02',
-    title: 'Design and prove the experience',
-    price: '$6,500',
-    timing: 'Week 3',
-    body: 'We use the real operating foundation to design a working prototype. The prototype shows how people learn, find answers, capture context, draft communications, and keep SOPs alive without turning the business into another software-management job.',
-    outcome: 'A clickable, testable prototype that proves the core experience before production development begins.',
-    includes: [
-      'Feature and workflow decisions workshop',
-      'Core trainee and operator journeys',
-      'Clickable desktop and mobile prototype',
-      'Voice capture opportunities',
-      'Email drafting opportunities with human review',
-      'Agent-supported SOP management',
-    ],
-  },
-  {
-    number: '03',
     title: 'Build the platform',
-    price: '$10,000',
-    timing: 'Production phase',
-    body: 'We turn the approved prototype into a working web platform for desktop and mobile, with the controls Hike Doggie needs to manage content and agents. We will also prepare and submit an iPhone version for App Store review when the product is ready.',
+    price: '$10,000 value',
+    timing: 'Approximately 6 to 8 weeks',
+    body: 'After the separately contracted foundation and prototype are complete, we turn the approved experience into a working web platform for desktop and mobile, with the controls Hike Doggie needs to manage content and agents. We will also prepare and submit an iPhone version for App Store review when the product is ready.',
     outcome: 'A working Hike Doggie platform that can launch as a web app regardless of Apple review, with App Store submission included as a distribution path rather than a condition of delivery.',
     includes: [
       'Responsive web platform for phone and desktop',
@@ -55,10 +23,10 @@ const phases = [
 ]
 
 const outcomes = [
-  ['01', 'The business in one view', 'SOPs, inquiries, call context, and approved operating data become easier to find and use.'],
+  ['01', 'The prototype becomes real', 'The separately approved experience becomes working production software for Hike Doggie operators and trainees.'],
   ['02', 'Agents that help with the work', 'Agents help maintain SOPs, prepare email drafts, organize context, and support voice-first capture with people making the final decisions.'],
   ['03', 'A product people can use anywhere', 'The platform works on desktop and mobile. App Store distribution is pursued, but the product does not depend on Apple approval to be useful.'],
-  ['04', 'A foundation that can grow', 'The first release is intentionally focused, but its structure can support future features, clients, and commercial opportunities.'],
+  ['04', 'A shared commercial asset', 'The product belongs to a separate venture with equal ownership among Sean, Kath, and Bill.'],
 ]
 
 const boundaries = [
@@ -81,9 +49,9 @@ const boundaries = [
 ]
 
 const payments = [
-  ['Foundation and prototype', '$12,000', '$9,000 at kickoff and $3,000 at final Phase 2 delivery.'],
-  ['Production platform value', '$10,000', 'Sean contributes $6,666.67 in development value. Hike Doggie contributes $3,333.33 in cash at Phase 3 kickoff.'],
-  ['Hike Doggie cash commitment', '$15,333.33', 'The complete $12,000 for Phases 1 and 2, plus the $3,333.33 Phase 3 cash contribution.'],
+  ['Production platform value', '$10,000', 'The fixed value for turning the approved prototype into the working platform.'],
+  ['Sean development contribution', '$6,666.67', 'Contributed through discounted or uncompensated product design and development.'],
+  ['Hike Doggie cash contribution', '$3,333.33', 'Due when the product venture documents are signed and production begins.'],
 ]
 
 function MetaRow({ left, right }: { left: string; right: string }) {
@@ -112,7 +80,7 @@ export function HikeDoggiePlatformProposal() {
   useEffect(() => {
     document.title = 'Anchovies x Hike Doggie - Platform Proposal'
     const meta = document.querySelector<HTMLMetaElement>('meta[name="description"]')
-    if (meta) meta.content = 'A staged operating foundation, prototype, and production platform proposal for Hike Doggie.'
+    if (meta) meta.content = 'A production platform and product partnership proposal for Hike Doggie.'
   }, [])
 
   return (
@@ -129,16 +97,16 @@ export function HikeDoggiePlatformProposal() {
 
       <section id="overview" className="border-b border-[var(--color-rule)] px-6 pb-16 pt-20 md:px-16 md:pt-28 lg:px-[120px] lg:pb-24 lg:pt-[120px]">
         <div className="flex flex-col gap-3 pb-16 sm:flex-row sm:justify-between lg:pb-24">
-          <span className="eyebrow text-ink-2">§ 01 - Revised proposal</span>
-          <span className="eyebrow text-ink-2">Prepared for Hike Doggie · July 2026</span>
+          <span className="eyebrow text-ink-2">§ 01 - Production proposal</span>
+          <span className="eyebrow text-ink-2">App development + product partnership · July 2026</span>
         </div>
         <Reveal>
-          <h1 className="display max-w-[1180px] text-[52px] leading-[54px] sm:text-[76px] sm:leading-[76px] md:text-[100px] md:leading-[96px] lg:text-[124px] lg:leading-[116px]">From working knowledge to a working platform.</h1>
+          <h1 className="display max-w-[1180px] text-[52px] leading-[54px] sm:text-[76px] sm:leading-[76px] md:text-[100px] md:leading-[96px] lg:text-[124px] lg:leading-[116px]">Turn the approved idea into a shared product.</h1>
         </Reveal>
         <div className="mt-16 grid gap-10 border-t border-[var(--color-rule)] pt-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-[140px]">
-          <Reveal><h2 className="serif max-w-[700px] text-[30px] leading-[38px] md:text-[40px] md:leading-[48px]">Give the team one source of truth, prove the experience, then build the product for desktop and mobile.</h2></Reveal>
+          <Reveal><h2 className="serif max-w-[700px] text-[30px] leading-[38px] md:text-[40px] md:leading-[48px]">A separate production engagement for the desktop and mobile platform, paired with a simple one-third ownership structure.</h2></Reveal>
           <Reveal className="flex max-w-[500px] flex-col gap-7">
-            <p className="text-[15px] leading-[24px] text-ink-2">This version keeps the approved foundation and prototype intact, makes the production build concrete, and names the realities of building something new. The goal is clarity without pretending every technical or App Store variable can be known before the work begins.</p>
+            <p className="text-[15px] leading-[24px] text-ink-2">This proposal begins only after the separate Phase 1 and Phase 2 engagement is complete and the prototype is approved. It covers production development, the product partnership, App Store realities, and the operating costs that come with a live agentic product.</p>
             <div className="flex flex-wrap gap-3"><Button href={contractHref}>Review contract</Button><Button href="#phases" outline>View the phases</Button></div>
           </Reveal>
         </div>
@@ -158,7 +126,7 @@ export function HikeDoggiePlatformProposal() {
       </section>
 
       <section id="phases" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[140px]">
-        <MetaRow left="§ 03 - The engagement" right="Three connected phases" />
+        <MetaRow left="§ 03 - The build" right="One production phase" />
         <div className="mt-12 border-t border-[var(--color-rule)]">
           {phases.map((phase) => (
             <Reveal key={phase.number} className="grid gap-8 border-b border-[var(--color-rule)] py-12 lg:grid-cols-[150px_1fr_1fr] lg:gap-14">
@@ -200,8 +168,8 @@ export function HikeDoggiePlatformProposal() {
       </section>
 
       <section className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[140px]">
-        <MetaRow left="§ 06 - Investment" right="Three phases, one build path" />
-        <Reveal className="mt-12"><p className="display text-[76px] leading-none md:text-[124px]">$22,000</p><p className="eyebrow mt-5 text-ink-2">Complete project value · $15,333.33 Hike Doggie cash commitment</p></Reveal>
+        <MetaRow left="§ 06 - Investment" right="Production platform only" />
+        <Reveal className="mt-12"><p className="display text-[76px] leading-none md:text-[124px]">$10,000</p><p className="eyebrow mt-5 text-ink-2">Project value · $3,333.33 Hike Doggie cash contribution</p></Reveal>
         <div className="mt-14 border-t border-[var(--color-rule)]">
           {payments.map(([title, amount, body]) => (
             <Reveal key={title} className="grid gap-4 border-b border-[var(--color-rule)] py-7 md:grid-cols-[1fr_180px_1.4fr] md:gap-10">
@@ -212,7 +180,7 @@ export function HikeDoggiePlatformProposal() {
       </section>
 
       <section className="bg-ink px-6 py-24 text-paper md:px-16 lg:px-[120px] lg:py-[150px]">
-        <Reveal><h2 className="display max-w-[1050px] text-[52px] leading-[56px] md:text-[84px] md:leading-[84px]">Build the operating foundation. Prove the experience. Put the product in people's hands.</h2></Reveal>
+        <Reveal><h2 className="display max-w-[1050px] text-[52px] leading-[56px] md:text-[84px] md:leading-[84px]">When the foundation is ready, put the product in people's hands.</h2></Reveal>
         <div className="mt-12 flex flex-wrap gap-3"><a href={contractHref} className="inline-flex min-h-11 items-center justify-center rounded-full bg-paper px-5 py-3 text-[13px] font-medium text-ink transition-colors hover:bg-paper/85">Review contract</a><a href="#phases" className="inline-flex min-h-11 items-center justify-center rounded-full border border-paper/30 px-5 py-3 text-[13px] font-medium text-paper transition-colors hover:bg-paper hover:text-ink">Review the phases</a></div>
       </section>
     </main>

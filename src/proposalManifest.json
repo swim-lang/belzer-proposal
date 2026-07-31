@@ -476,9 +476,35 @@
     "showInDashboard": true
   },
   {
+    "id": "hike-doggie-foundation-contract",
+    "name": "Hike Doggie Foundation Contract",
+    "tagline": "Operating foundation and training prototype agreement",
+    "status": "Active",
+    "href": "/proposal/hike-doggie-foundation/contract",
+    "paths": [
+      "/proposal/hike-doggie-foundation/contract"
+    ],
+    "sourceFile": "src/contracts/hikeDoggieFoundationContract.ts",
+    "kind": "contract",
+    "showInDashboard": false
+  },
+  {
+    "id": "hike-doggie-foundation",
+    "name": "Hike Doggie Foundation",
+    "tagline": "Phase 1 and Phase 2 operating foundation and prototype · July 2026",
+    "status": "Active",
+    "href": "/proposal/hike-doggie-foundation",
+    "paths": [
+      "/proposal/hike-doggie-foundation"
+    ],
+    "sourceFile": "src/HikeDoggieFoundationProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true
+  },
+  {
     "id": "hike-doggie-platform-contract",
     "name": "Hike Doggie Platform Contract",
-    "tagline": "Operating foundation, prototype, and production platform agreement",
+    "tagline": "Production platform and product partnership agreement",
     "status": "Active",
     "href": "/proposal/hike-doggie-platform/contract",
     "paths": [
@@ -491,7 +517,7 @@
   {
     "id": "hike-doggie-platform",
     "name": "Hike Doggie Platform",
-    "tagline": "Operating foundation, prototype, and production platform · July 2026",
+    "tagline": "App development and product partnership · July 2026",
     "status": "Active",
     "href": "/proposal/hike-doggie-platform",
     "paths": [
