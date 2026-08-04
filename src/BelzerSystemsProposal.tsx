@@ -7,7 +7,7 @@ const navSections = [
   { id: 'overview', label: 'Overview' },
   { id: 'heard', label: 'What We Heard' },
   { id: 'pilot', label: 'The Pilot' },
-  { id: 'day', label: 'A Day With It' },
+  { id: 'day', label: 'How It Works' },
   { id: 'value', label: 'Value' },
   { id: 'investment', label: 'Investment' },
   { id: 'boundaries', label: 'Boundaries' },
@@ -16,37 +16,40 @@ const navSections = [
 
 const heard = [
   {
-    title: 'The firm is busy enough that coordination has become its own job.',
-    body: 'Emails, assignments, dates, client questions, and matter details keep moving. Too much valuable time is spent finding, relaying, and confirming information.',
+    title: 'The firm needs one shared view.',
+    body: 'Tasks, dates, client questions, contacts, matter details, and files are spread across email, calendars, software, and conversations. The first step is bringing the most useful information together so the team can see what is happening without checking every system separately.',
   },
   {
-    title: 'The pieces already exist, but they live in different places.',
-    body: 'Gmail, Box, calendars, PracticePanther, and the knowledge in the team’s heads each hold part of the picture. The first need is a clearer way to see the work together.',
+    title: 'Agents need connected context.',
+    body: 'An agent cannot reliably help with a task unless it understands the people, matter, files, dates, roles, and firm process around that task. The workspace begins creating that shared context so spoken or typed instructions can produce more useful work.',
   },
   {
-    title: 'The first win should make the day calmer.',
-    body: 'This is not an attempt to build an AI lawyer or replace every system. It is a focused effort to reduce chasing, make ownership visible, and give the team more room for judgment and client work.',
+    title: 'The workspace can become more capable over time.',
+    body: 'Gmail, Box, calendars, and PracticePanther can remain in place while the first workspace is built. As the firm sees what is useful, selected workflows can be connected more deeply or moved into the private system instead of remaining spread across third-party tools.',
   },
 ]
 
 const pilotFeatures = [
-  'Private, self-hosted internal workspace configured for Belzer Law',
-  'Daily operating view with priorities, owners, next steps, and items requiring review',
-  'Email triage, action extraction, and reply drafts that require human approval before sending',
-  'Voice or chat capture that turns instructions into organized tasks and draft communications',
-  'Lightweight matter index with owner, current priorities, key dates, and links to the correct Box files',
-  'Deadline preparation from triggering dates and firm-approved rules, with the source and calculation visible',
+  'Private, self-hosted firm workspace configured for Belzer Law',
+  'One shared view of active matters, tasks, priorities, owners, dates, and items requiring review',
+  'Firm contacts and matter relationships connected to the relevant tasks, communications, dates, and files',
+  'Selected email and calendar information brought into the workspace where access permits',
+  'Connections or direct links to Box, PracticePanther, and other approved tools based on available integration methods',
+  'Central firm memory for processes, templates, roles, decisions, recurring instructions, and approved matter context',
+  'Voice or chat instructions converted into proposed tasks, assignments, follow-ups, and draft communications',
+  'Email triage, action extraction, and reply drafts prepared with connected firm context and human review',
+  'A review queue for agent-prepared work before it changes a calendar, sends a message, or creates an external action',
+  'Deadline suggestions prepared from triggering dates and firm-approved rules, with the source and calculation visible',
   'Britt or attorney approval required before any suggested deadline is added to a calendar',
-  'Searchable internal wiki for firm processes, templates, recurring workflows, and institutional knowledge',
-  'A small set of recurring routines and follow-up checks selected during the observation session',
+  'A foundation for gradually bringing selected third-party workflows into the private workspace',
   'Workflow observation, configuration, team onboarding, and practical handoff',
 ]
 
 const pilotOutcomes = [
-  'Aaron spends less time working through his inbox and manually directing follow-up.',
-  'Britt spends less time relaying information, recreating tasks, and checking where work stands.',
-  'The team can see who owns the next step, when it matters, and where the supporting files live.',
-  'Routine coordination becomes easier without removing attorney judgment or changing every tool at once.',
+  'The team can see active work, contacts, matter context, ownership, dates, and items awaiting review in one place.',
+  'Agents can use connected firm context when preparing tasks, assignments, follow-ups, and drafts for approval.',
+  'The firm begins building central memory that becomes more useful as approved knowledge and workflows are added.',
+  'Selected functions can gradually move out of third-party tools and into a system the firm controls.',
 ]
 
 const boundaries = [
@@ -55,25 +58,31 @@ const boundaries = [
   'The pilot does not provide legal advice, autonomous legal analysis, or legal research.',
   'Box, PracticePanther, Gmail, and existing calendars remain the systems of record unless separately agreed.',
   'The pilot does not replace the firm’s complete case-management, document-management, billing, or docketing systems.',
+  'When a third-party tool cannot support a practical direct connection, the workspace will link to it and organize the task that must be completed there.',
   'A client-facing app, motions bank, large document-review engine, and deeper integrations can be considered after the pilot proves what is useful.',
   'Connections to existing tools are limited to the access and integration methods confirmed during technical setup.',
 ]
 
 const daySteps = [
   {
-    label: 'Morning',
-    title: 'The day begins with what needs attention.',
-    body: 'Aaron opens one workspace and sees the emails that need his judgment, draft responses ready for review, current matter priorities, and the work already moving without him.',
+    label: 'Shared view',
+    title: 'See the work and its context together.',
+    body: 'The team sees active matters, contacts, tasks, owners, dates, selected email and calendar items, supporting files, and work waiting for review in one workspace.',
   },
   {
-    label: 'New order',
-    title: 'Dates are prepared, not silently published.',
-    body: 'A new court order is connected to its matter. The workspace prepares suggested deadlines, shows the triggering date and calculation, and waits for Britt or an attorney to approve them.',
+    label: 'Connected context',
+    title: 'Give agents enough information to help.',
+    body: 'The workspace connects an instruction to the relevant people, matter, files, dates, roles, templates, and firm process before an agent prepares work.',
   },
   {
-    label: 'Quick direction',
-    title: 'A spoken instruction becomes organized work.',
-    body: 'Aaron can describe what should happen next. The workspace prepares the task, assigns the proposed owner, links the relevant matter and files, and drafts any communication for review.',
+    label: 'Agent assistance',
+    title: 'Turn spoken or typed direction into proposed work.',
+    body: 'Aaron or Britt can describe what needs to happen. An agent uses the connected context to prepare tasks, proposed owners, follow-ups, calendar items, and draft communications for human review.',
+  },
+  {
+    label: 'Expansion over time',
+    title: 'Connect current tools, then replace selected functions when useful.',
+    body: 'The workspace can first organize a task and direct the team or an approved agent to the correct application. Later, selected workflows can be brought directly into the private system when access, risk, and value support it.',
   },
 ]
 
@@ -186,15 +195,15 @@ export function BelzerSystemsProposal() {
         <div className="mt-10 grid gap-12 lg:grid-cols-[1.12fr_0.88fr] lg:items-end">
           <Reveal>
             <h1 className="display max-w-[920px] text-[54px] leading-[54px] md:text-[86px] md:leading-[84px] lg:text-[108px] lg:leading-[102px]">
-              One front door for the firm’s work.
+              A private workspace that connects the firm’s work and context.
             </h1>
           </Reveal>
           <Reveal className="flex max-w-[570px] flex-col gap-6 lg:pb-3">
             <p className="serif text-[26px] leading-[34px] md:text-[35px] md:leading-[43px]">
-              Less chasing. Clearer ownership. A calmer way to run the day.
+              See the work in one place. Give agents the context to help with it.
             </p>
             <p className="text-[15px] leading-[24px] text-ink-2">
-              Gmail, Box, calendars, and PracticePanther can remain the rooms where specialized work happens. This workspace becomes the front desk: one place to see what came in, where it lives, what happens next, who owns it, and when it is due.
+              We will bring selected information from email, calendars, contacts, matters, files, and approved firm knowledge into one secure workspace. That connected context allows an agent to turn spoken or typed instructions into proposed tasks, follow-ups, drafts, and other work for review. As the system proves useful, selected workflows now handled in third-party tools can be brought into it.
             </p>
             <div className="flex flex-wrap gap-3 pt-1">
               <AnchorButton href={calendarHref}>Schedule a proposal review</AnchorButton>
@@ -209,7 +218,7 @@ export function BelzerSystemsProposal() {
         <div className="mt-10 grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
           <Reveal>
             <h2 className="display text-[46px] leading-[48px] md:text-[74px] md:leading-[74px]">
-              Get the house in order before building more rooms.
+              Build shared firm context before asking agents to do more.
             </h2>
           </Reveal>
           <div className="border-t border-[var(--color-rule)]">
@@ -231,10 +240,10 @@ export function BelzerSystemsProposal() {
             <div>
               <span className="eyebrow text-ink-2">Belzer Firm Workflow Pilot</span>
               <h2 className="display mt-8 text-[52px] leading-[52px] md:text-[72px] md:leading-[70px]">
-                A private operating workspace built around the way the firm actually works.
+                A private firm workspace with shared context for people and agents.
               </h2>
               <p className="mt-8 text-[18px] leading-[29px]">
-                The system brings daily priorities, communications, matter context, files, and deadline preparation into one clearer working view without replacing every tool underneath it.
+                The first release brings active work and its supporting context into one view. It connects to approved tools where practical, links to the correct third-party system when needed, and begins building central firm memory that agents can use when preparing work.
               </p>
             </div>
             <div className="border-t border-[var(--color-rule)] pt-7">
@@ -276,11 +285,11 @@ export function BelzerSystemsProposal() {
       </section>
 
       <section id="day" className="border-b border-[var(--color-rule)] bg-ink px-5 py-16 text-paper md:px-10 md:py-20 lg:px-[96px]">
-        <MetaRow left="A day with the workspace" right="What the change feels like" dark />
+        <MetaRow left="How the first release works" right="Four concrete workflows" dark />
         <div className="mt-12 grid gap-10 lg:grid-cols-[0.68fr_1.32fr]">
           <Reveal>
             <h2 className="display text-[52px] leading-[54px] md:text-[82px] md:leading-[82px]">
-              The technology matters less than the morning it creates.
+              What the team can do in the first release.
             </h2>
           </Reveal>
           <div className="border-t border-white/25">
@@ -303,7 +312,7 @@ export function BelzerSystemsProposal() {
         <div className="mt-12 grid gap-12 lg:grid-cols-[0.88fr_1.12fr] lg:items-end">
           <Reveal>
             <h2 className="display text-[52px] leading-[54px] md:text-[84px] md:leading-[84px]">
-              It does not need to transform every hour to justify the first step.
+              Saving about twenty attorney hours covers the investment.
             </h2>
           </Reveal>
           <Reveal className="grid border border-[var(--color-rule)] md:grid-cols-[0.85fr_1.15fr]">
@@ -368,7 +377,7 @@ export function BelzerSystemsProposal() {
         <div className="mt-10 grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
           <Reveal>
             <h2 className="display text-[46px] leading-[48px] md:text-[72px] md:leading-[72px]">
-              Build the front desk before rebuilding the whole firm.
+              What the first release includes and excludes.
             </h2>
           </Reveal>
           <div className="border-t border-[var(--color-rule)]">
@@ -387,7 +396,7 @@ export function BelzerSystemsProposal() {
         <div className="mt-12 grid gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:items-end">
           <Reveal>
             <h2 className="display text-[52px] leading-[54px] md:text-[88px] md:leading-[86px]">
-              Start with a calmer day. Let the next system earn its place.
+              Confirm the first workflows and begin the pilot.
             </h2>
           </Reveal>
           <Reveal className="flex max-w-[520px] flex-col gap-6">
