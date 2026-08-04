@@ -3,20 +3,11 @@ import { Reveal } from './components/Reveal'
 
 const calendarHref = 'https://cal.com/anchovies/30min?overlayCalendar=true'
 
-type System = {
-  number: string
-  title: string
-  format: string
-  outcome: string
-  features: string[]
-  results: string[]
-  boundaries: string[]
-}
-
 const navSections = [
   { id: 'overview', label: 'Overview' },
   { id: 'heard', label: 'What We Heard' },
-  { id: 'systems', label: 'Two Systems' },
+  { id: 'pilot', label: 'The Pilot' },
+  { id: 'day', label: 'A Day With It' },
   { id: 'value', label: 'Value' },
   { id: 'investment', label: 'Investment' },
   { id: 'boundaries', label: 'Boundaries' },
@@ -25,86 +16,65 @@ const navSections = [
 
 const heard = [
   {
-    title: 'The firm needs clearer lanes.',
-    body: 'Belzer Law is busy and growing. Work moves quickly, but ownership, next steps, and client communication should be easier to see.',
+    title: 'The firm is busy enough that coordination has become its own job.',
+    body: 'Emails, assignments, dates, client questions, and matter details keep moving. Too much valuable time is spent finding, relaying, and confirming information.',
   },
   {
-    title: 'Aaron needs more room to lead.',
-    body: 'The goal is to recover time for leadership, relationships, and business development without losing visibility into the work.',
+    title: 'The pieces already exist, but they live in different places.',
+    body: 'Gmail, Box, calendars, PracticePanther, and the knowledge in the team’s heads each hold part of the picture. The first need is a clearer way to see the work together.',
   },
   {
-    title: 'Start with operations and experience.',
-    body: 'The clearest first opportunities are repetitive coordination and client communication, not AI-generated legal work.',
+    title: 'The first win should make the day calmer.',
+    body: 'This is not an attempt to build an AI lawyer or replace every system. It is a focused effort to reduce chasing, make ownership visible, and give the team more room for judgment and client work.',
   },
 ]
 
-const systems: System[] = [
-  {
-    number: '01',
-    title: 'Client Experience App',
-    format: 'Private iPhone app through TestFlight',
-    outcome:
-      'Give every client one clear, private place to understand their matter, send what the firm needs, and know what comes next.',
-    features: [
-      'Private iPhone app distributed through TestFlight',
-      'Initial client onboarding',
-      'Matter home with plain-English status and current contacts',
-      'Requests, next steps, decisions, and deadlines in one place',
-      'Secure document library and client document uploads',
-      'Private messages and attorney-reviewed updates',
-      'Push notifications for missing documents, upcoming actions, and important changes',
-      'Lightweight staff controls for publishing updates and requests',
-    ],
-    results: [
-      'Fewer repeated client emails',
-      'Faster collection of client materials',
-      'Clearer expectations throughout the matter',
-      'A more considered, boutique client experience',
-    ],
-    boundaries: [
-      'Android version',
-      'Public App Store launch',
-      'Billing or payment collection',
-      'AI legal advice',
-      'Autonomous legal responses',
-    ],
-  },
-  {
-    number: '02',
-    title: 'Firm Workflow Portal',
-    format: 'Responsive internal portal for the Belzer team',
-    outcome:
-      'Make it immediately clear who owns the work, what needs to happen, when it is due, and how the team should move it forward.',
-    features: [
-      'Matter dashboard with owners, assignments, deadlines, and current priorities',
-      'Repeatable case checklists and role-specific views',
-      'Voice or chat capture that prepares tasks for review',
-      'Email drafts and action extraction, always requiring human approval before sending',
-      'New-client document naming and organization workflow',
-      'Calendar and deadline visibility using firm-approved dates',
-      'Workflow observation session',
-      'Onboarding for Aaron, Britt, and key team members',
-    ],
-    results: [
-      'Clearer task ownership and handoffs',
-      'Less time spent checking who is doing what',
-      'More consistent internal processes',
-      'More room for leadership, relationships, and growth',
-    ],
-    boundaries: [
-      'Autonomous email sending',
-      'AI legal research',
-      'Automatic legal deadline calculation',
-      'Replacement of the firm’s entire case-management system',
-    ],
-  },
+const pilotFeatures = [
+  'Private, self-hosted internal workspace configured for Belzer Law',
+  'Daily operating view with priorities, owners, next steps, and items requiring review',
+  'Email triage, action extraction, and reply drafts that require human approval before sending',
+  'Voice or chat capture that turns instructions into organized tasks and draft communications',
+  'Lightweight matter index with owner, current priorities, key dates, and links to the correct Box files',
+  'Deadline preparation from triggering dates and firm-approved rules, with the source and calculation visible',
+  'Britt or attorney approval required before any suggested deadline is added to a calendar',
+  'Searchable internal wiki for firm processes, templates, recurring workflows, and institutional knowledge',
+  'A small set of recurring routines and follow-up checks selected during the observation session',
+  'Workflow observation, configuration, team onboarding, and practical handoff',
 ]
 
-const sharedBoundaries = [
-  'Belzer attorneys remain responsible for all legal judgment, legal advice, and final client communications.',
-  'The first release is limited to the functions listed in the selected system.',
-  'New integrations, platforms, and major features are scoped separately after the first release proves what is useful.',
-  'Belzer provides timely access, content, approvals, and firm-approved dates needed to complete the work.',
+const pilotOutcomes = [
+  'Aaron spends less time working through his inbox and manually directing follow-up.',
+  'Britt spends less time relaying information, recreating tasks, and checking where work stands.',
+  'The team can see who owns the next step, when it matters, and where the supporting files live.',
+  'Routine coordination becomes easier without removing attorney judgment or changing every tool at once.',
+]
+
+const boundaries = [
+  'No email, client communication, or external action is sent without human approval.',
+  'No legal deadline is published to a calendar without Britt or attorney review and approval.',
+  'The pilot does not provide legal advice, autonomous legal analysis, or legal research.',
+  'Box, PracticePanther, Gmail, and existing calendars remain the systems of record unless separately agreed.',
+  'The pilot does not replace the firm’s complete case-management, document-management, billing, or docketing systems.',
+  'A client-facing app, motions bank, large document-review engine, and deeper integrations can be considered after the pilot proves what is useful.',
+  'Connections to existing tools are limited to the access and integration methods confirmed during technical setup.',
+]
+
+const daySteps = [
+  {
+    label: 'Morning',
+    title: 'The day begins with what needs attention.',
+    body: 'Aaron opens one workspace and sees the emails that need his judgment, draft responses ready for review, current matter priorities, and the work already moving without him.',
+  },
+  {
+    label: 'New order',
+    title: 'Dates are prepared, not silently published.',
+    body: 'A new court order is connected to its matter. The workspace prepares suggested deadlines, shows the triggering date and calculation, and waits for Britt or an attorney to approve them.',
+  },
+  {
+    label: 'Quick direction',
+    title: 'A spoken instruction becomes organized work.',
+    body: 'Aaron can describe what should happen next. The workspace prepares the task, assigns the proposed owner, links the relevant matter and files, and drafts any communication for review.',
+  },
 ]
 
 function MetaRow({ left, right, dark = false }: { left: string; right: string; dark?: boolean }) {
@@ -172,7 +142,7 @@ function ProposalNav() {
           <span className="h-[10px] w-px bg-[var(--color-rule)]" />
           <span className="eyebrow text-ink-2">Prepared for Belzer Law</span>
         </div>
-        <span className="eyebrow text-ink-2">Client + Firm Systems · July 2026</span>
+        <span className="eyebrow text-ink-2">Firm Workflow Pilot · July 2026</span>
       </div>
       <div className="sticky top-0 z-40 border-b border-[var(--color-rule)] bg-paper/92 backdrop-blur-sm">
         <div className="flex items-center justify-between gap-4 px-5 py-4 md:px-10">
@@ -202,62 +172,9 @@ function ProposalNav() {
   )
 }
 
-function SystemCard({ system }: { system: System }) {
-  return (
-    <Reveal className="grid border border-[var(--color-rule)] bg-paper lg:grid-cols-[0.8fr_1.2fr]">
-      <div className="flex flex-col justify-between gap-10 border-b border-[var(--color-rule)] p-6 md:p-8 lg:border-b-0 lg:border-r lg:p-10">
-        <div>
-          <div className="flex flex-wrap items-start justify-between gap-4">
-            <span className="eyebrow text-ink-2">System {system.number}</span>
-            <div className="text-right">
-              <span className="display block text-[40px] leading-none">$7,900</span>
-              <span className="eyebrow mt-2 block text-ink-2">About six weeks</span>
-            </div>
-          </div>
-          <h3 className="display mt-12 text-[46px] leading-[48px] md:text-[64px] md:leading-[64px]">{system.title}</h3>
-          <p className="eyebrow mt-5 text-ink-2">{system.format}</p>
-          <p className="mt-8 text-[18px] leading-[29px] text-ink">{system.outcome}</p>
-        </div>
-        <AnchorButton href={calendarHref}>Discuss this system</AnchorButton>
-      </div>
-
-      <div className="grid md:grid-cols-2">
-        <div className="border-b border-[var(--color-rule)] p-6 md:border-b-0 md:border-r md:p-8 lg:p-10">
-          <span className="eyebrow text-ink-2">What Belzer receives</span>
-          <div className="mt-6 border-t border-[var(--color-rule)]">
-            {system.features.map((feature) => (
-              <div key={feature} className="border-b border-[var(--color-rule)] py-3 text-[14px] leading-[21px]">
-                {feature}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="grid grid-rows-[auto_1fr]">
-          <div className="border-b border-[var(--color-rule)] p-6 md:p-8 lg:p-10">
-            <span className="eyebrow text-ink-2">Expected outcome</span>
-            <div className="mt-5 space-y-3">
-              {system.results.map((result) => (
-                <p key={result} className="text-[15px] leading-[23px]">{result}</p>
-              ))}
-            </div>
-          </div>
-          <div className="p-6 md:p-8 lg:p-10">
-            <span className="eyebrow text-ink-2">Not in the first release</span>
-            <div className="mt-5 space-y-2">
-              {system.boundaries.map((boundary) => (
-                <p key={boundary} className="text-[13px] leading-[20px] text-ink-2">{boundary}</p>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </Reveal>
-  )
-}
-
 export function BelzerSystemsProposal() {
   useEffect(() => {
-    document.title = 'Anchovies × Belzer Law - Client + Firm Systems'
+    document.title = 'Anchovies × Belzer Law - Firm Workflow Pilot'
   }, [])
 
   return (
@@ -265,23 +182,23 @@ export function BelzerSystemsProposal() {
       <ProposalNav />
 
       <section id="overview" className="border-b border-[var(--color-rule)] px-5 py-12 md:px-10 md:py-16 lg:px-[96px]">
-        <MetaRow left="Belzer Law / Client + Firm Systems" right="$7,900 each · $15,800 together" />
+        <MetaRow left="Belzer Law / Firm Workflow Pilot" right="$7,900 · Approximately six weeks" />
         <div className="mt-10 grid gap-12 lg:grid-cols-[1.12fr_0.88fr] lg:items-end">
           <Reveal>
             <h1 className="display max-w-[920px] text-[54px] leading-[54px] md:text-[86px] md:leading-[84px] lg:text-[108px] lg:leading-[102px]">
-              Less chasing. Clearer work. A better client experience.
+              One front door for the firm’s work.
             </h1>
           </Reveal>
-          <Reveal className="flex max-w-[560px] flex-col gap-6 lg:pb-3">
+          <Reveal className="flex max-w-[570px] flex-col gap-6 lg:pb-3">
             <p className="serif text-[26px] leading-[34px] md:text-[35px] md:leading-[43px]">
-              Two practical systems built around the work Belzer Law does every day.
+              Less chasing. Clearer ownership. A calmer way to run the day.
             </p>
             <p className="text-[15px] leading-[24px] text-ink-2">
-              Start with the client experience, start with the firm’s internal workflow, or build both as one connected engagement. Each direction has a clear first release and a concrete outcome.
+              Gmail, Box, calendars, and PracticePanther can remain the rooms where specialized work happens. This workspace becomes the front desk: one place to see what came in, where it lives, what happens next, who owns it, and when it is due.
             </p>
             <div className="flex flex-wrap gap-3 pt-1">
               <AnchorButton href={calendarHref}>Schedule a proposal review</AnchorButton>
-              <AnchorButton href="#systems" variant="outline">Compare the two systems</AnchorButton>
+              <AnchorButton href="#pilot" variant="outline">See the pilot</AnchorButton>
             </div>
           </Reveal>
         </div>
@@ -292,7 +209,7 @@ export function BelzerSystemsProposal() {
         <div className="mt-10 grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
           <Reveal>
             <h2 className="display text-[46px] leading-[48px] md:text-[74px] md:leading-[74px]">
-              More clarity for clients. More control for the firm.
+              Get the house in order before building more rooms.
             </h2>
           </Reveal>
           <div className="border-t border-[var(--color-rule)]">
@@ -307,109 +224,155 @@ export function BelzerSystemsProposal() {
         </div>
       </section>
 
-      <section id="systems" className="border-b border-[var(--color-rule)] px-5 py-16 md:px-10 md:py-20 lg:px-[96px]">
-        <MetaRow left="Two systems" right="Choose either one or build both" />
-        <Reveal className="mt-10 grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-end">
-          <h2 className="display text-[50px] leading-[52px] md:text-[82px] md:leading-[82px]">
-            Choose where clarity would matter most first.
-          </h2>
-          <p className="max-w-[560px] text-[17px] leading-[28px] text-ink-2">
-            Both systems are designed around a bounded first release. Either one can stand alone. The second can be added later for the same $7,900 investment.
-          </p>
-        </Reveal>
-        <div className="mt-12 flex flex-col gap-8">
-          {systems.map((system) => <SystemCard key={system.title} system={system} />)}
+      <section id="pilot" className="border-b border-[var(--color-rule)] px-5 py-16 md:px-10 md:py-20 lg:px-[96px]">
+        <MetaRow left="The pilot" right="One focused internal system" />
+        <div className="mt-10 grid border border-[var(--color-rule)] lg:grid-cols-[0.8fr_1.2fr]">
+          <Reveal className="flex flex-col justify-between gap-12 border-b border-[var(--color-rule)] p-6 md:p-9 lg:border-b-0 lg:border-r lg:p-11">
+            <div>
+              <span className="eyebrow text-ink-2">Belzer Firm Workflow Pilot</span>
+              <h2 className="display mt-8 text-[52px] leading-[52px] md:text-[72px] md:leading-[70px]">
+                A private operating workspace built around the way the firm actually works.
+              </h2>
+              <p className="mt-8 text-[18px] leading-[29px]">
+                The system brings daily priorities, communications, matter context, files, and deadline preparation into one clearer working view without replacing every tool underneath it.
+              </p>
+            </div>
+            <div className="border-t border-[var(--color-rule)] pt-7">
+              <span className="display block text-[64px] leading-none">$7,900</span>
+              <span className="eyebrow mt-3 block text-ink-2">Approximately six weeks</span>
+            </div>
+          </Reveal>
+
+          <div className="grid md:grid-cols-2">
+            <div className="border-b border-[var(--color-rule)] p-6 md:border-b-0 md:border-r md:p-9 lg:p-11">
+              <span className="eyebrow text-ink-2">What Belzer receives</span>
+              <div className="mt-6 border-t border-[var(--color-rule)]">
+                {pilotFeatures.map((feature) => (
+                  <div key={feature} className="border-b border-[var(--color-rule)] py-3 text-[14px] leading-[21px]">
+                    {feature}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="p-6 md:p-9 lg:p-11">
+              <span className="eyebrow text-ink-2">Expected outcome</span>
+              <div className="mt-6 space-y-5">
+                {pilotOutcomes.map((outcome, index) => (
+                  <div key={outcome} className="grid grid-cols-[28px_1fr] gap-3">
+                    <span className="eyebrow pt-1 text-ink-2">{String(index + 1).padStart(2, '0')}</span>
+                    <p className="text-[16px] leading-[25px]">{outcome}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-10 border-t border-[var(--color-rule)] pt-7">
+                <span className="eyebrow text-ink-2">Early visibility</span>
+                <p className="mt-4 text-[17px] leading-[27px]">
+                  A first working version will be presented within 7 to 10 business days so the team can respond to something real while the broader pilot continues.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="value" className="border-b border-[var(--color-rule)] bg-ink px-5 py-16 text-paper md:px-10 md:py-20 lg:px-[96px]">
-        <MetaRow left="A simple value illustration" right="Transparent break-even math" dark />
-        <div className="mt-12 grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+      <section id="day" className="border-b border-[var(--color-rule)] bg-ink px-5 py-16 text-paper md:px-10 md:py-20 lg:px-[96px]">
+        <MetaRow left="A day with the workspace" right="What the change feels like" dark />
+        <div className="mt-12 grid gap-10 lg:grid-cols-[0.68fr_1.32fr]">
           <Reveal>
-            <h2 className="display text-[52px] leading-[54px] md:text-[84px] md:leading-[84px]">
-              The investment only has to recover a small amount of firm time.
+            <h2 className="display text-[52px] leading-[54px] md:text-[82px] md:leading-[82px]">
+              The technology matters less than the morning it creates.
             </h2>
           </Reveal>
-          <Reveal className="grid border border-white/25 md:grid-cols-2">
-            <div className="border-b border-white/25 p-7 md:border-b-0 md:border-r md:p-9">
-              <span className="eyebrow text-paper/55">One system</span>
+          <div className="border-t border-white/25">
+            {daySteps.map((step, index) => (
+              <Reveal key={step.title} className="grid gap-5 border-b border-white/25 py-7 md:grid-cols-[54px_0.75fr_1.25fr]">
+                <span className="eyebrow text-paper/50">{String(index + 1).padStart(2, '0')}</span>
+                <div>
+                  <span className="eyebrow text-paper/50">{step.label}</span>
+                  <h3 className="serif mt-3 text-[25px] leading-[31px]">{step.title}</h3>
+                </div>
+                <p className="text-[15px] leading-[24px] text-paper/70">{step.body}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="value" className="border-b border-[var(--color-rule)] px-5 py-16 md:px-10 md:py-20 lg:px-[96px]">
+        <MetaRow left="A simple value illustration" right="Transparent break-even math" />
+        <div className="mt-12 grid gap-12 lg:grid-cols-[0.88fr_1.12fr] lg:items-end">
+          <Reveal>
+            <h2 className="display text-[52px] leading-[54px] md:text-[84px] md:leading-[84px]">
+              It does not need to transform every hour to justify the first step.
+            </h2>
+          </Reveal>
+          <Reveal className="grid border border-[var(--color-rule)] md:grid-cols-[0.85fr_1.15fr]">
+            <div className="border-b border-[var(--color-rule)] bg-mac p-7 text-white md:border-b-0 md:border-r md:p-9">
+              <span className="eyebrow text-white/60">Break-even illustration</span>
               <span className="display mt-8 block text-[72px] leading-none">Under 20 hours</span>
-              <p className="mt-5 text-[15px] leading-[24px] text-paper/70">$7,900 divided by an illustrative $400 attorney hour is 19.75 hours.</p>
+              <p className="mt-5 text-[15px] leading-[24px] text-white/75">$7,900 divided by an illustrative $400 attorney hour is 19.75 hours.</p>
             </div>
-            <div className="p-7 md:p-9">
-              <span className="eyebrow text-paper/55">Both systems</span>
-              <span className="display mt-8 block text-[72px] leading-none">Under 40 hours</span>
-              <p className="mt-5 text-[15px] leading-[24px] text-paper/70">$15,800 divided by the same illustrative $400 attorney hour is 39.5 hours.</p>
+            <div className="flex flex-col justify-between gap-8 p-7 md:p-9">
+              <p className="serif text-[27px] leading-[35px]">
+                Recovering approximately twenty hours across the firm covers the initial investment.
+              </p>
+              <p className="text-[13px] leading-[21px] text-ink-2">
+                This is transparent break-even math, not a guaranteed savings claim. Actual value depends on adoption, usage, matter volume, and the time the workspace recovers across the firm.
+              </p>
             </div>
-            <p className="border-t border-white/25 p-7 text-[13px] leading-[21px] text-paper/55 md:col-span-2 md:p-9">
-              This is transparent break-even math, not a guaranteed savings claim. The actual value depends on adoption, usage, matter volume, and the time each system recovers across the firm.
-            </p>
           </Reveal>
         </div>
       </section>
 
       <section id="investment" className="border-b border-[var(--color-rule)] px-5 py-16 md:px-10 md:py-20 lg:px-[96px]">
-        <MetaRow left="Investment and delivery" right="A clear first release" />
-        <div className="mt-10 grid border border-[var(--color-rule)] lg:grid-cols-3">
-          <Reveal className="border-b border-[var(--color-rule)] p-6 md:p-8 lg:border-b-0 lg:border-r lg:p-10">
-            <span className="eyebrow text-ink-2">Client Experience App</span>
-            <span className="display mt-7 block text-[62px] leading-none">$7,900</span>
-            <p className="mt-4 text-[15px] leading-[24px] text-ink-2">Approximately six weeks, ending with TestFlight onboarding.</p>
-          </Reveal>
-          <Reveal className="border-b border-[var(--color-rule)] p-6 md:p-8 lg:border-b-0 lg:border-r lg:p-10">
-            <span className="eyebrow text-ink-2">Firm Workflow Portal</span>
-            <span className="display mt-7 block text-[62px] leading-none">$7,900</span>
-            <p className="mt-4 text-[15px] leading-[24px] text-ink-2">Approximately six weeks, ending with team onboarding.</p>
-          </Reveal>
-          <Reveal className="bg-mac p-6 text-white md:p-8 lg:p-10">
-            <span className="eyebrow text-white/65">Both systems</span>
-            <span className="display mt-7 block text-[62px] leading-none">$15,800</span>
-            <p className="mt-4 text-[15px] leading-[24px] text-white/80">Approximately ten weeks as one coordinated engagement.</p>
-          </Reveal>
-        </div>
-
+        <MetaRow left="Investment and delivery" right="One clear first release" />
         <div className="mt-10 grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
           <Reveal>
-            <h3 className="display text-[42px] leading-[44px] md:text-[60px] md:leading-[60px]">50 / 25 / 25</h3>
-            <p className="mt-5 max-w-[420px] text-[15px] leading-[24px] text-ink-2">
-              The same milestone structure applies whether Belzer selects one system or both.
+            <span className="eyebrow text-ink-2">Total investment</span>
+            <span className="display mt-7 block text-[78px] leading-none">$7,900</span>
+            <p className="mt-5 max-w-[420px] text-[16px] leading-[26px] text-ink-2">
+              Approximately six weeks, with the first working version presented within 7 to 10 business days.
             </p>
           </Reveal>
           <Reveal className="border-t border-[var(--color-rule)]">
             {[
-              ['50%', 'At kickoff', '$3,950 for one system · $7,900 for both'],
-              ['25%', 'After approval of the working prototype and core experience', '$1,975 for one system · $3,950 for both'],
-              ['25%', 'At launch or TestFlight onboarding', '$1,975 for one system · $3,950 for both'],
+              ['60%', 'At kickoff', '$4,740'],
+              ['20%', 'After approval of the first working version and core workflow', '$1,580'],
+              ['20%', 'At team onboarding and pilot launch', '$1,580'],
             ].map(([percent, milestone, amount]) => (
-              <div key={milestone} className="grid gap-3 border-b border-[var(--color-rule)] py-5 sm:grid-cols-[70px_1fr_auto] sm:items-center sm:gap-6">
-                <span className="display text-[30px] leading-none">{percent}</span>
-                <span className="text-[14px] leading-[21px]">{milestone}</span>
+              <div key={milestone} className="grid gap-3 border-b border-[var(--color-rule)] py-6 sm:grid-cols-[72px_1fr_auto] sm:items-center sm:gap-6">
+                <span className="display text-[32px] leading-none">{percent}</span>
+                <span className="text-[15px] leading-[22px]">{milestone}</span>
                 <span className="eyebrow text-ink-2 sm:text-right">{amount}</span>
               </div>
             ))}
           </Reveal>
         </div>
 
-        <Reveal className="mt-10 grid border border-[var(--color-rule)] md:grid-cols-2">
-          <div className="border-b border-[var(--color-rule)] p-6 md:border-b-0 md:border-r md:p-8">
-            <span className="eyebrow text-ink-2">Feedback</span>
-            <p className="mt-4 text-[17px] leading-[27px]">Two structured feedback rounds are included in the selected engagement.</p>
-          </div>
-          <div className="p-6 md:p-8">
-            <span className="eyebrow text-ink-2">Stabilization</span>
-            <p className="mt-4 text-[17px] leading-[27px]">A 30-day stabilization period covers bugs and small launch adjustments.</p>
-          </div>
+        <Reveal className="mt-10 grid border border-[var(--color-rule)] md:grid-cols-3">
+          {[
+            ['Observation', 'A focused working session to see where communication, ownership, dates, and files currently create friction.'],
+            ['Feedback', 'Two structured feedback rounds are included while the first release takes shape.'],
+            ['Stabilization', 'A 30-day stabilization period covers bugs and small launch adjustments.'],
+          ].map(([title, body], index) => (
+            <div key={title} className={`p-6 md:p-8 ${index < 2 ? 'border-b border-[var(--color-rule)] md:border-b-0 md:border-r' : ''}`}>
+              <span className="eyebrow text-ink-2">{title}</span>
+              <p className="mt-4 text-[16px] leading-[25px]">{body}</p>
+            </div>
+          ))}
         </Reveal>
       </section>
 
       <section id="boundaries" className="border-b border-[var(--color-rule)] px-5 py-16 md:px-10 md:py-20 lg:px-[96px]">
-        <MetaRow left="Boundaries" right="What keeps the first release focused" />
+        <MetaRow left="Boundaries" right="What keeps the pilot useful" />
         <div className="mt-10 grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
           <Reveal>
-            <h2 className="display text-[46px] leading-[48px] md:text-[72px] md:leading-[72px]">Useful first. Expand only when it earns it.</h2>
+            <h2 className="display text-[46px] leading-[48px] md:text-[72px] md:leading-[72px]">
+              Build the front desk before rebuilding the whole firm.
+            </h2>
           </Reveal>
           <div className="border-t border-[var(--color-rule)]">
-            {sharedBoundaries.map((boundary, index) => (
+            {boundaries.map((boundary, index) => (
               <Reveal key={boundary} className="grid gap-5 border-b border-[var(--color-rule)] py-6 sm:grid-cols-[52px_1fr]">
                 <span className="eyebrow text-ink-2">{String(index + 1).padStart(2, '0')}</span>
                 <p className="text-[17px] leading-[27px]">{boundary}</p>
@@ -420,20 +383,20 @@ export function BelzerSystemsProposal() {
       </section>
 
       <section id="next" className="bg-ink px-5 py-16 text-paper md:px-10 md:py-20 lg:px-[96px]">
-        <MetaRow left="Next step" right="Choose where to begin" dark />
+        <MetaRow left="Next step" right="One decision" dark />
         <div className="mt-12 grid gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:items-end">
           <Reveal>
             <h2 className="display text-[52px] leading-[54px] md:text-[88px] md:leading-[86px]">
-              Decide which kind of clarity would help most right now.
+              Start with a calmer day. Let the next system earn its place.
             </h2>
           </Reveal>
           <Reveal className="flex max-w-[520px] flex-col gap-6">
             <p className="text-[17px] leading-[28px] text-paper/72">
-              We can review the two directions together, choose the right starting point, and confirm the first release before kickoff.
+              We will review the pilot with Aaron and Britt together, confirm the first workflows, and begin with an observation session focused on the work that consumes the most time today.
             </p>
             <div className="flex flex-wrap gap-3">
               <AnchorButton href={calendarHref}>Schedule a proposal review</AnchorButton>
-              <AnchorButton href="#systems" variant="light">Compare the two systems</AnchorButton>
+              <AnchorButton href="#pilot" variant="light">Review the pilot</AnchorButton>
             </div>
           </Reveal>
         </div>
