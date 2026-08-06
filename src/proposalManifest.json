@@ -68,6 +68,20 @@
     "access": "active"
   },
   {
+    "id": "emergences-labs-contract",
+    "name": "Emergences Labs Contract",
+    "tagline": "Three-brand identity and product design system · $45,000",
+    "status": "Active",
+    "href": "/proposal/emergences-labs/contract",
+    "paths": [
+      "/proposal/emergences-labs/contract"
+    ],
+    "sourceFile": "src/contracts/emergencesLabsContract.ts",
+    "kind": "contract",
+    "showInDashboard": false,
+    "access": "active"
+  },
+  {
     "id": "knd",
     "name": "KND Law Firm",
     "tagline": "Custom software proposal",

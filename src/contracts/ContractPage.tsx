@@ -725,10 +725,9 @@ export function ContractPage({ contract }: ContractPageProps) {
               scope.
             </p>
             <p>
-              <strong>5.2 Change Orders.</strong> If the Client requests additional deliverables, additional revision
-              rounds beyond what is included, added pages or templates, major direction shifts, accelerated timelines, or
-              work that materially expands the scope, the Agency will provide a written change estimate. Work begins on
-              changes only after written approval.
+              <strong>5.2 Change Orders.</strong>{' '}
+              {contract.contractOverrides?.changeOrders ??
+                'If the Client requests additional deliverables, additional revision rounds beyond what is included, added pages or templates, major direction shifts, accelerated timelines, or work that materially expands the scope, the Agency will provide a written change estimate. Work begins on changes only after written approval.'}
             </p>
             <p>
               <strong>5.3 Good-Faith Extras.</strong> If the Agency performs incidental extra work without issuing a
@@ -738,27 +737,23 @@ export function ContractPage({ contract }: ContractPageProps) {
 
           <ContractSection number="6" title="Review, Acceptance, and Revisions">
             <p>
-              <strong>6.1 Review Window.</strong> For each deliverable or deliverable set, the Client will provide
-              feedback within 10 calendar days of receipt. If the Client does not respond within 10 days, the deliverable
-              is deemed accepted.
+              <strong>6.1 Review Window.</strong>{' '}
+              {contract.contractOverrides?.reviewWindow ??
+                'For each deliverable or deliverable set, the Client will provide feedback within 10 calendar days of receipt. If the Client does not respond within 10 days, the deliverable is deemed accepted.'}
             </p>
             <p>
               <strong>6.2 Included Revisions by Phase.</strong>
             </p>
             <BulletList items={contract.revisionRounds} />
+            <p>{contract.contractOverrides?.revisionDefinition ?? 'Revisions mean refining the agreed direction, not restarting the project. New directions or substantial rework are handled via Section 5.'}</p>
             <p>
-              Revisions mean refining the agreed direction, not restarting the project. New directions or substantial
-              rework are handled via Section 5.
+              <strong>6.3 Direction Changes.</strong>{' '}
+              {contract.contractOverrides?.directionChanges ??
+                'If the Client requests a new direction after approving a prior direction, or requests substantial rework not tied to the agreed scope, that work is out of scope and handled via Section 5.'}
             </p>
             <p>
-              <strong>6.3 Direction Changes.</strong> If the Client requests a new direction after approving a prior
-              direction, or requests substantial rework not tied to the agreed scope, that work is out of scope and
-              handled via Section 5.
-            </p>
-            <p>
-              <strong>6.4 No Satisfaction Guarantee and No Refund for Subjective Preference.</strong> The Client
-              acknowledges that{' '}
-              {contract.subjectiveReviewTerms ??
+              <strong>6.4 {contract.contractOverrides?.reviewTitle ?? 'No Satisfaction Guarantee and No Refund for Subjective Preference'}.</strong>{' '}
+              {contract.contractOverrides?.reviewTerms ?? contract.subjectiveReviewTerms ??
                 'branding and creative services involve professional judgment and subjective preferences. Payment is for professional time, process, and deliverables produced. Subjective dissatisfaction does not create a refund right and does not constitute breach, provided the Agency delivers the listed deliverables and offers the included revision process.'}
             </p>
             <p>
@@ -766,9 +761,9 @@ export function ContractPage({ contract }: ContractPageProps) {
               handoff packages until all invoices due are paid in full.
             </p>
             <p>
-              <strong>6.6 Deemed Acceptance and Project Continuity.</strong> If a deliverable is deemed accepted under
-              Section 6.1, the Agency may proceed to the next phase. Later requests to revisit a deemed-accepted phase are
-              treated as a direction change under Section 6.3.
+              <strong>6.6 Deemed Acceptance and Project Continuity.</strong>{' '}
+              {contract.contractOverrides?.projectContinuity ??
+                'If a deliverable is deemed accepted under Section 6.1, the Agency may proceed to the next phase. Later requests to revisit a deemed-accepted phase are treated as a direction change under Section 6.3.'}
             </p>
           </ContractSection>
 
@@ -778,19 +773,19 @@ export function ContractPage({ contract }: ContractPageProps) {
               Section.
             </p>
             <p>
-              <strong>7.2 Termination for Convenience.</strong> Either party may terminate for any reason by providing
-              written notice. Termination becomes effective 7 days after notice is sent.
+              <strong>7.2 Termination for Convenience.</strong>{' '}
+              {contract.contractOverrides?.terminationForConvenience ??
+                'Either party may terminate for any reason by providing written notice. Termination becomes effective 7 days after notice is sent.'}
             </p>
             <p>
-              <strong>7.3 Milestones Earned.</strong> Milestones are earned upon commencement of the applicable phases
-              associated with that milestone, not upon subjective approval. Upon termination, the Client remains
-              responsible for paying all milestones earned through the effective termination date, plus any approved
-              expenses.
+              <strong>7.3 Milestones Earned.</strong>{' '}
+              {contract.contractOverrides?.milestonesEarned ??
+                'Milestones are earned upon commencement of the applicable phases associated with that milestone, not upon subjective approval. Upon termination, the Client remains responsible for paying all milestones earned through the effective termination date, plus any approved expenses.'}
             </p>
             <p>
-              <strong>7.4 Payment on Termination.</strong> If the Contract is terminated, the Client will pay for all
-              work performed and milestones earned through the termination effective date; reimburse any preapproved,
-              noncancellable expenses; and no refunds are owed for completed work or time already spent.
+              <strong>7.4 Payment on Termination.</strong>{' '}
+              {contract.contractOverrides?.paymentOnTermination ??
+                'If the Contract is terminated, the Client will pay for all work performed and milestones earned through the termination effective date; reimburse any preapproved, noncancellable expenses; and no refunds are owed for completed work or time already spent.'}
             </p>
           </ContractSection>
 
@@ -801,13 +796,14 @@ export function ContractPage({ contract }: ContractPageProps) {
               files, raw working documents, and design source files unless Section 18 explicitly includes them.
             </p>
             <p>
-              <strong>8.2 Transfer of Ownership.</strong> Upon the Client&apos;s full payment of all amounts due, the
-              Agency assigns to the Client all right, title, and interest in the Deliverables created specifically for the
-              Client.
+              <strong>8.2 Transfer of Ownership.</strong>{' '}
+              {contract.contractOverrides?.transferOfOwnership ??
+                'Upon the Client\'s full payment of all amounts due, the Agency assigns to the Client all right, title, and interest in the Deliverables created specifically for the Client.'}
             </p>
             <p>
-              <strong>8.3 Working Files.</strong> Working Files are not transferred unless explicitly included in Section
-              18 or purchased via a written change order.
+              <strong>8.3 Working Files.</strong>{' '}
+              {contract.contractOverrides?.workingFiles ??
+                'Working Files are not transferred unless explicitly included in Section 18 or purchased via a written change order.'}
             </p>
             <p>
               <strong>8.4 Background IP.</strong> The Agency may use pre-existing tools, templates, methods, fonts
@@ -816,10 +812,9 @@ export function ContractPage({ contract }: ContractPageProps) {
               non-exclusive, worldwide license to use any Background IP solely as incorporated into the Deliverables.
             </p>
             <p>
-              <strong>8.5 Portfolio Rights.</strong> The Client grants the Agency a perpetual, non-exclusive right to
-              display the Deliverables for portfolio, website, awards, and promotional purposes after public launch. If
-              the Client requests that a specific item be kept private for legitimate confidentiality reasons, the parties
-              will agree in writing to a limited exception.
+              <strong>8.5 Portfolio Rights.</strong>{' '}
+              {contract.contractOverrides?.portfolioRights ??
+                'The Client grants the Agency a perpetual, non-exclusive right to display the Deliverables for portfolio, website, awards, and promotional purposes after public launch. If the Client requests that a specific item be kept private for legitimate confidentiality reasons, the parties will agree in writing to a limited exception.'}
             </p>
           </ContractSection>
 

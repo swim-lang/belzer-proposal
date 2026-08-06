@@ -39,6 +39,7 @@ import { ContentProvider } from './context/ContentContext'
 import { ContractPage } from './contracts/ContractPage'
 import { avodahContract } from './contracts/avodahContract'
 import { cipherContract } from './contracts/cipherContract'
+import { emergencesLabsContract } from './contracts/emergencesLabsContract'
 import { fiberSoftChewContract } from './contracts/fiberSoftChewContract'
 import { garySpringsteadContract } from './contracts/garySpringsteadContract'
 import { genesiContract } from './contracts/genesiContract'
@@ -185,6 +186,8 @@ export default function App() {
         return withProposalGate(<DoubleUpDavesProposal />)
       case 'emergences-labs':
         return withProposalGate(<EmergencesLabsProposal />)
+      case 'emergences-labs-contract':
+        return withProposalGate(<ContractPage contract={emergencesLabsContract} />)
       case 'soup-to-software':
         return withProposalGate(<SoupToSoftwareProposal />)
       case 'homemade':

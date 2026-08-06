@@ -5,8 +5,7 @@ const calendarHref = 'https://cal.com/anchovies/30min?overlayCalendar=true'
 const garzaFeatureHref =
   'https://the-brandidentity.com/project/how-did-anchovies-bring-consumer-brand-thinking-to-a-texas-law-firm'
 const genesiPreviewHref = 'https://pitch.com/v/genesi-pitch-ssispr'
-const acceptHref =
-  'mailto:sean@anchovies.agency?subject=Emergences%20Labs%20Proposal&body=Hi%20Sean%2C%0A%0AWe%27d%20like%20to%20move%20forward%20with%20the%20Emergences%20Labs%2C%20NeoWork%2C%20and%20NeoHuman%20three-brand%20engagement.%0A%0A'
+const contractHref = '/proposal/emergences-labs/contract'
 
 const navSections = [
   { id: 'overview', label: 'Overview' },
@@ -191,7 +190,8 @@ const phases = [
       'Typography and color system',
       'Graphic, image, and editorial language',
       'One identity presentation',
-      'Two structured refinement rounds',
+      'Two structured refinement rounds as the standard path',
+      'No-cost creative reset if the direction fundamentally misses the agreed outcome',
     ],
   },
   {
@@ -238,7 +238,7 @@ const timeline = [
   ['Week 02', 'Find the big idea', 'Guided moodboard, creative brief, brand architecture, and one recommended territory for the Emergences Labs identity.'],
   ['Weeks 03 to 04', 'Build the identity family', 'Develop the master identity, focused NeoWork and NeoHuman expressions, and the shared system connecting all three.'],
   ['Week 05', 'Prove it in use', 'Product and backend interface studies, responsive mockups, motion, publications, presentations, launch assets, and everyday touchpoints.'],
-  ['Week 06', 'Refine and hand off', 'Structured refinement, final assets, Figma library, brand guide, team training, and the start of launch support.'],
+  ['Week 06', 'Refine and hand off', 'Structured refinement, final assets, Figma library, brand guide, team training, and the start of launch support. If a creative reset is needed, we will agree on the added time without adding a creative fee.'],
 ]
 
 const investment = [
@@ -250,17 +250,19 @@ const investment = [
 
 const milestones = [
   ['50%', '$22,500', 'Due at kickoff to schedule the engagement and begin discovery.'],
-  ['25%', '$11,250', 'Due after presentation and approval of the Emergences Labs master identity direction.'],
+  ['25%', '$11,250', 'Due only after written approval of the Emergences Labs master identity direction.'],
   ['25%', '$11,250', 'Due before final files, Figma library, brand guide, and handoff.'],
 ]
 
 const boundaries = [
-  ['Focused creative routes', 'We lead with one recommended direction for the Emergences Labs master identity, then develop focused product identities for NeoWork and NeoHuman inside the approved family. Two structured refinement rounds are included.'],
+  ['Direction assurance', 'We lead with one complete recommended direction and two structured refinement rounds as the standard path. If it still feels fundamentally wrong against the agreed brief and outcome, we will diagnose why, revisit the connecting big idea, and develop a materially distinct new territory at no additional creative fee.'],
   ['Product expression', 'With access to the current software, we will design representative backend, product, and interface surfaces across primary workflows and smaller UI touchpoints. Full product UX architecture, engineering, and coded websites are not included.'],
   ['Decision makers start with us', 'Anyone who will approve the identity at the end should participate in discovery and early visual alignment at the beginning.'],
   ['One day-to-day lead', 'Emergences Labs designates one primary contact to gather feedback, make routine decisions, and keep communication moving.'],
-  ['Team access', 'Sean remains the creative lead and primary point of contact, with the Anchovies team brought in where their specialties strengthen the work.'],
+  ['Named working team', 'Sean Ashlow, Kira Knoop, and Logan Causey remain the working team throughout. Sean remains the creative lead and primary point of contact for email, meetings, reviews, and decisions.'],
   ['Client inputs', 'Emergences Labs provides timely access to internal research, a walkthrough of the current software and product environment, and one consolidated set of feedback at each milestone.'],
+  ['Approval-gated payment', 'The second payment is not due until the Emergences Labs master identity direction is approved in writing. A creative reset does not trigger an added fee or that milestone.'],
+  ['Direction-stage exit', 'If Emergences Labs chooses to end the engagement before approving the master identity direction, Anchovies retains the kickoff payment, nothing further is owed, and Emergences Labs receives and owns the project-specific work created through that point.'],
 ]
 
 function MetaRow({ left, right, dark = false }: { left: string; right: string; dark?: boolean }) {
@@ -761,7 +763,7 @@ function Investment() {
           <span className="eyebrow text-mac">Total project fee</span>
           <div className="display mt-5 text-[78px] leading-[82px]">$45,000</div>
           <div className="mt-7 border-t border-[var(--color-rule)] pt-5 text-[13px] leading-[21px] text-ink-2">
-            <p>Six weeks</p>
+            <p>Six-week target</p>
             <p>50% / 25% / 25% milestone structure</p>
           </div>
         </Reveal>
@@ -834,11 +836,11 @@ function Closing() {
         </Reveal>
         <Reveal className="flex flex-col gap-6">
           <p className="text-[14px] leading-[23px] text-paper/60">
-            We can use a proposal review to meet additional stakeholders, answer questions, and confirm the right starting point before kickoff.
+            The updated agreement confirms the complete three-brand scope, the named working team, approval-gated payments, and what happens if the first creative direction does not reach the agreed outcome.
           </p>
           <div className="flex flex-wrap gap-3">
             <AnchorButton href={calendarHref} variant="light">Schedule proposal review</AnchorButton>
-            <AnchorButton href={acceptHref} variant="outline">Accept proposal</AnchorButton>
+            <AnchorButton href={contractHref} variant="outline">Review contract</AnchorButton>
           </div>
         </Reveal>
       </div>
