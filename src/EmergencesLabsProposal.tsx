@@ -347,7 +347,7 @@ function ProposalNav() {
               </a>
             ))}
           </nav>
-          <AnchorButton href={calendarHref}>Schedule proposal review</AnchorButton>
+          <AnchorButton href={contractHref}>Review contract</AnchorButton>
         </div>
       </div>
     </>
