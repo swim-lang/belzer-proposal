@@ -581,6 +581,19 @@
     "showInDashboard": true
   },
   {
+    "id": "double-up-daves-contract",
+    "name": "Double Up Daves Contract",
+    "tagline": "Website design and development agreement",
+    "status": "Active",
+    "href": "/proposal/double-up-daves/contract",
+    "paths": [
+      "/proposal/double-up-daves/contract"
+    ],
+    "sourceFile": "src/contracts/doubleUpDavesContract.ts",
+    "kind": "contract",
+    "showInDashboard": false
+  },
+  {
     "id": "double-up-daves",
     "name": "Double Up Daves",
     "tagline": "Brand identity and website \u00b7 July 2026",

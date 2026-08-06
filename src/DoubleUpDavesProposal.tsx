@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Reveal } from './components/Reveal'
 
-const calendarHref = 'https://cal.com/anchovies/30min?overlayCalendar=true'
 const workHref = 'https://anchovies.agency/work'
+const contractHref = '/proposal/double-up-daves/contract'
 
 type ScopeItem = {
   num: string
@@ -219,7 +219,7 @@ function ProposalNav() {
               </a>
             ))}
           </nav>
-          <AnchorButton href={calendarHref}>Schedule a proposal review</AnchorButton>
+          <AnchorButton href={contractHref}>Review contract</AnchorButton>
         </div>
       </div>
     </>
@@ -259,7 +259,7 @@ function Hero() {
             Dave is building toward making this his full-time work. The foundation should support that ambition, stay flexible as the offer evolves, and keep his knowledge and relationships at the center.
           </p>
           <div className="flex flex-wrap gap-3 pt-2">
-            <AnchorButton href={calendarHref}>Schedule a proposal review</AnchorButton>
+            <AnchorButton href={contractHref}>Review contract</AnchorButton>
             <AnchorButton href={workHref} variant="outline">View our work</AnchorButton>
           </div>
         </Reveal>
@@ -512,15 +512,14 @@ function Investment() {
       <Reveal className="mt-12 border-y border-[var(--color-rule)] py-10">
         <div className="flex flex-col gap-3 pb-8 sm:flex-row sm:items-end sm:justify-between">
           <span className="eyebrow text-ink-2">Payment structure</span>
-          <span className="serif text-[38px] leading-[42px] md:text-[42px] md:leading-[46px]">50% / 25% / 25%</span>
+          <span className="serif text-[38px] leading-[42px] md:text-[42px] md:leading-[46px]">60% / 40%</span>
         </div>
-        <div className="grid border-t border-[var(--color-rule)] md:grid-cols-3">
+        <div className="grid border-t border-[var(--color-rule)] md:grid-cols-2">
           {[
-            ['50%', 'To begin', 'Due to schedule the project and begin the selected scope.'],
-            ['25%', 'Direction approved', 'Due after approval of the core design direction and priority page experience.'],
-            ['25%', 'At launch', 'Due when the selected work launches, with final files and handoff to follow.'],
+            ['60%', '$1,440 to begin', 'Due to schedule the project and begin the website scope.'],
+            ['40%', '$960 before launch', 'Due when the agreed website is launch-ready and before public launch and final handoff.'],
           ].map(([amount, title, body], index) => (
-            <div key={title} className={`flex min-h-[190px] flex-col gap-5 py-8 md:p-8 ${index < 2 ? 'border-b border-[var(--color-rule)] md:border-b-0 md:border-r' : ''} ${index === 0 ? 'md:pl-0' : ''}`}>
+            <div key={title} className={`flex min-h-[190px] flex-col gap-5 py-8 md:p-8 ${index === 0 ? 'border-b border-[var(--color-rule)] md:border-b-0 md:border-r md:pl-0' : ''}`}>
               <span className="serif text-[42px] leading-[46px] text-mac">{amount}</span>
               <div className="mt-auto">
                 <span className="eyebrow block text-ink-2">{title}</span>
@@ -563,7 +562,7 @@ function Boundaries() {
 function NextStep() {
   return (
     <section className="bg-ink px-6 py-20 text-paper md:px-16 lg:px-[120px] lg:py-[120px]">
-      <MetaRow left="§ 08 - Next step" right="Meet and choose a direction" dark />
+      <MetaRow left="§ 08 - Next step" right="Review the website agreement" dark />
       <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-24">
         <Reveal>
           <h2 className="display max-w-[880px] text-[54px] leading-[54px] md:text-[82px] md:leading-[78px] lg:text-[104px] lg:leading-[96px]">
@@ -571,9 +570,9 @@ function NextStep() {
           </h2>
         </Reveal>
         <Reveal className="flex max-w-[500px] flex-col gap-6">
-          <p className="text-[15px] leading-[24px] text-paper/65">Schedule a proposal review so we can talk through the right scope together. From there, we will confirm the direction, send a simple agreement and first invoice, then schedule the work.</p>
+          <p className="text-[15px] leading-[24px] text-paper/65">The website-only scope is ready. Review and sign the agreement, then the 60% kickoff invoice will reserve the project window and get the work moving.</p>
           <div className="flex flex-wrap gap-3 pt-2">
-            <AnchorButton href={calendarHref}>Schedule a proposal review</AnchorButton>
+            <AnchorButton href={contractHref}>Review contract</AnchorButton>
             <AnchorButton href={workHref} variant="light">View our work</AnchorButton>
           </div>
         </Reveal>
