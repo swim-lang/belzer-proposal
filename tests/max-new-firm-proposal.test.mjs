@@ -28,12 +28,12 @@ test('separates the three scope parts from the payment schedule', () => {
   assert.match(proposal, /Temporary Website/)
   assert.match(proposal, /Brand Strategy \+ Identity/)
   assert.match(proposal, /Website Design \+ Development/)
-  assert.match(proposal, /\$7,000/)
-  assert.match(proposal, /\$14,000/)
+  assert.match(proposal, /\$6,950/)
+  assert.match(proposal, /\$13,900/)
   assert.match(proposal, /50% at kickoff/)
   assert.match(proposal, /25% after brand approval/)
   assert.match(proposal, /25% before launch/)
-  assert.match(proposal, /\$3,500/)
+  assert.match(proposal, /\$3,475/)
 })
 
 test('defines the temporary site and six-week full timeline', () => {
@@ -71,6 +71,9 @@ test('defines seven core pages and the custom technical foundation', () => {
 test('includes legal work links and the primary CTAs', () => {
   assert.match(proposal, /https:\/\/www\.avodahlegal\.com\//)
   assert.match(proposal, /https:\/\/lexpolitica\.com\//)
+  assert.match(proposal, /https:\/\/sidweberlaw\.com\//)
+  assert.match(proposal, /https:\/\/mavenadvocacy\.com\//)
+  assert.match(proposal, /https:\/\/belzerlawfirm\.com\//)
   assert.match(proposal, /https:\/\/pitch\.com\/v\/anchovies-press-zwdsbn/)
   assert.match(proposal, /Schedule a proposal review/)
   assert.match(proposal, /https:\/\/anchovies\.agency\/work/)

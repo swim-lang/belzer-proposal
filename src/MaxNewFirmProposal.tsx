@@ -84,7 +84,7 @@ const phases = [
     number: '02',
     label: 'Brand foundation',
     title: 'Brand Strategy + Identity',
-    price: '$7,000',
+    price: '$6,950',
     timing: 'Approximately 3 weeks',
     summary:
       'Define what the firm stands for, how it should be understood, and how that belief system becomes a distinctive public identity.',
@@ -106,7 +106,7 @@ const phases = [
     number: '03',
     label: 'Complete digital presence',
     title: 'Website Design + Development',
-    price: '$7,000',
+    price: '$6,950',
     timing: 'Approximately 3 additional weeks',
     summary:
       'Turn the approved brand and message into a custom digital platform that supports the firm now and its future growth.',
@@ -227,6 +227,24 @@ const work = [
     kind: 'Law firm website',
     href: 'https://lexpolitica.com/',
     note: 'A distinctive identity and editorial website that moves beyond the visual habits of the legal category.',
+  },
+  {
+    name: 'Sid Weber Law',
+    kind: 'Law firm website',
+    href: 'https://sidweberlaw.com/',
+    note: 'A focused litigation website with a clear voice, strong editorial structure, and an assured public presence.',
+  },
+  {
+    name: 'Maven Advocacy',
+    kind: 'Legal advocacy website',
+    href: 'https://mavenadvocacy.com/',
+    note: 'A sharp advocacy platform that organizes complex work into a confident, accessible digital experience.',
+  },
+  {
+    name: 'Belzer Law Firm',
+    kind: 'Law firm website',
+    href: 'https://belzerlawfirm.com/',
+    note: 'A distinctive business litigation website built around the firm’s personality, experience, and client relationships.',
   },
   {
     name: 'Brand identity work',
@@ -551,7 +569,7 @@ function Scope() {
             The temporary website gets you online in week one. Brand strategy
             and identity establish the message and visual system. Website design
             and development turn that approved system into the complete
-            seven-page platform. The full engagement is $14,000.
+            seven-page platform. The full engagement is $13,900.
           </p>
         </Reveal>
       </div>
@@ -700,12 +718,9 @@ function Technology() {
           </p>
         </Reveal>
       </div>
-      <Reveal className="grid border-y border-paper/20 md:grid-cols-2 lg:grid-cols-3">
+      <Reveal className="grid gap-px border-y border-paper/20 bg-paper/20 md:grid-cols-2 lg:grid-cols-3">
         {technology.map(([title, body], index) => (
-          <div
-            key={title}
-            className={`min-h-[230px] p-8 md:p-10 ${index < 3 ? 'border-b border-paper/20' : ''} ${index % 3 !== 2 ? 'lg:border-r' : ''} ${index % 2 === 0 ? 'md:border-r' : ''} ${index === 1 || index === 3 ? 'lg:border-r' : ''} ${index === 2 || index === 4 ? 'md:border-r' : ''}`}
-          >
+          <div key={title} className="min-h-[230px] bg-ink p-8 md:p-10">
             <span className="eyebrow text-paper/45">0{index + 1}</span>
             <h3 className="serif pt-8 text-[30px] leading-[36px]">{title}</h3>
             <p className="pt-5 text-[13px] leading-[20px] text-paper/55">
@@ -759,7 +774,7 @@ function Investment() {
         <Reveal>
           <span className="eyebrow text-mac">Complete engagement</span>
           <h2 className="display pt-5 text-[72px] leading-[76px] sm:text-[94px] sm:leading-[96px] md:text-[118px] md:leading-[114px]">
-            $14,000
+            $13,900
           </h2>
           <p className="serif max-w-[720px] pt-7 text-[30px] leading-[39px]">
             Temporary Website, Brand Strategy + Identity, and Website Design +
@@ -787,7 +802,7 @@ function Investment() {
                 essential firm applications.
               </p>
             </div>
-            <span className="serif text-[30px]">$7,000</span>
+            <span className="serif text-[30px]">$6,950</span>
           </div>
           <div className="grid grid-cols-[1fr_auto] gap-6 py-7">
             <div>
@@ -799,7 +814,7 @@ function Investment() {
                 development, editing controls, QA, launch, and handoff.
               </p>
             </div>
-            <span className="serif text-[30px]">$7,000</span>
+            <span className="serif text-[30px]">$6,950</span>
           </div>
         </Reveal>
       </div>
@@ -809,17 +824,17 @@ function Investment() {
           {[
             [
               '50% at kickoff',
-              '$7,000',
+              '$6,950',
               'Reserves the project window and begins the temporary website, discovery, strategy, and identity.',
             ],
             [
               '25% after brand approval',
-              '$3,500',
+              '$3,475',
               'Due after the primary brand direction is approved and before full website production.',
             ],
             [
               '25% before launch',
-              '$3,500',
+              '$3,475',
               'Due before the complete website launches and final files are handed over.',
             ],
           ].map(([label, amount, body], index) => (
@@ -863,11 +878,11 @@ function Work() {
           </p>
         </Reveal>
       </div>
-      <div className="grid border-y border-[var(--color-rule)] lg:grid-cols-3">
-        {work.map((item, index) => (
+      <div className="grid gap-px border-y border-[var(--color-rule)] bg-[var(--color-rule)] lg:grid-cols-3">
+        {work.map((item) => (
           <Reveal
             key={item.name}
-            className={`flex min-h-[320px] flex-col p-8 md:p-10 ${index < work.length - 1 ? 'border-b border-[var(--color-rule)] lg:border-b-0 lg:border-r' : ''}`}
+            className="flex min-h-[320px] flex-col bg-paper p-8 md:p-10"
           >
             <span className="eyebrow text-ink-2">{item.kind}</span>
             <h3 className="serif pt-10 text-[38px] leading-[44px]">
@@ -951,7 +966,7 @@ function NextStep() {
           </h2>
           <div className="lg:text-right">
             <span className="display block text-[68px] leading-[72px]">
-              $14,000
+              $13,900
             </span>
             <span className="text-[13px] text-ink-2">
               Approximately six weeks
