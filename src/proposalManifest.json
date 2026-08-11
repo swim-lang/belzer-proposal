@@ -581,6 +581,19 @@
     "showInDashboard": true
   },
   {
+    "id": "max-new-firm",
+    "name": "Max - New Litigation Firm",
+    "tagline": "Brand foundation and custom website · August 2026",
+    "status": "Active",
+    "href": "/proposal/max-new-firm",
+    "paths": [
+      "/proposal/max-new-firm"
+    ],
+    "sourceFile": "src/MaxNewFirmProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true
+  },
+  {
     "id": "double-up-daves-contract",
     "name": "Double Up Daves Contract",
     "tagline": "Website design and development agreement",

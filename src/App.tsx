@@ -20,6 +20,7 @@ import { HumanaAIProposal2 } from './HumanaAIProposal2'
 import { LapincoProposal } from './LapincoProposal'
 import { LexPoliticaProposal } from './LexPoliticaProposal'
 import { LittleTechAssociationProposal } from './LittleTechAssociationProposal'
+import { MaxNewFirmProposal } from './MaxNewFirmProposal'
 import { MollyEngelsProposal } from './MollyEngelsProposal'
 import { OffMenuProposal } from './OffMenuProposal'
 import { PathLawGroupProposal } from './PathLawGroupProposal'
@@ -155,6 +156,8 @@ export default function App() {
         return withProposalGate(<ContractPage contract={mollyEngelsContract} />)
       case 'molly':
         return withProposalGate(<MollyEngelsProposal />)
+      case 'max-new-firm':
+        return withProposalGate(<MaxNewFirmProposal />)
       case 'genesi-contract':
         return withProposalGate(<ContractPage contract={genesiContract} />)
       case 'genesi':
