@@ -167,15 +167,19 @@ function getProcessPath(from: number, to: number, index: number) {
 const phases = [
   {
     num: '01',
-    title: 'Discovery and alignment',
-    body: 'We begin by absorbing the thinking already inside the team and translating it into a shared creative brief. This phase confirms the non-negotiables, resolves the remaining tensions, and defines what success must feel like without prescribing the final form.',
+    title: 'Brand strategy and alignment',
+    body: 'We begin by defining the business truth the brand must carry: what Emergences Labs really sells, how it creates that value, why it exists, and who it serves. We test that thinking against the market, compress it into a clear positioning statement, then build one unifying brand-world idea that can guide identity, messaging, photography, product expression, and every decision that follows.',
     items: [
       'Founder and stakeholder working session',
       'Existing survey and reference synthesis',
-      'Category and visual landscape audit',
+      'Light market, category, and competitor research',
+      'Differentiation opportunities and relevant association mapping',
+      'What the company sells, how it delivers value, why it exists, and who it serves',
+      'Clear brand positioning statement',
       'Audience, product, and brand architecture review',
-      'Success criteria and creative brief',
-      'Guided interactive moodboard',
+      'One unifying creative idea and brand-world premise',
+      'Messaging, photography, identity, and product-expression direction',
+      'Success criteria, creative brief, and guided interactive moodboard',
     ],
   },
   {
@@ -234,15 +238,15 @@ const phases = [
 ]
 
 const timeline = [
-  ['Week 01', 'Listen and align', 'Discovery, internal materials, category review, stakeholder alignment, and success criteria.'],
-  ['Week 02', 'Find the big idea', 'Guided moodboard, creative brief, brand architecture, and one recommended territory for the Emergences Labs identity.'],
+  ['Week 01', 'Define the position', 'Discovery, internal materials, light market and category research, audience clarity, differentiation, and a concise brand positioning statement.'],
+  ['Week 02', 'Build the brand world', 'Relevant association mapping, a unifying creative idea, guided moodboard, creative brief, brand architecture, and one recommended territory for the Emergences Labs identity.'],
   ['Weeks 03 to 04', 'Build the identity family', 'Develop the master identity, focused NeoWork and NeoHuman expressions, and the shared system connecting all three.'],
   ['Week 05', 'Prove it in use', 'Product and backend interface studies, responsive mockups, motion, publications, presentations, launch assets, and everyday touchpoints.'],
   ['Week 06', 'Refine and hand off', 'Structured refinement, final assets, Figma library, brand guide, team training, and the start of launch support. If a creative reset is needed, we will agree on the added time without adding a creative fee.'],
 ]
 
 const investment = [
-  ['01', 'Discovery and creative strategy', 'Alignment, category review, brand architecture, guided moodboard, success criteria, and creative brief.', '$5,000'],
+  ['01', 'Brand strategy and alignment', 'Business and audience definition, light market research, differentiation, positioning statement, brand architecture, unifying creative idea, guided moodboard, success criteria, and creative brief.', '$5,000'],
   ['02', 'Emergences Labs master identity', 'One lead concept, logo suite, typography, color, graphic language, image direction, and the core system for the institution.', '$17,500'],
   ['03', 'NeoWork and NeoHuman identities', 'Two focused product identities, each with its own logo expression and visual character inside the shared brand family.', '$13,000'],
   ['04', 'Digital expression, launch, and handoff', 'Current software and backend interface studies, responsive product mockups, an expanded touchpoint suite, motion, templates, Figma library, brand guide, and launch support.', '$9,500'],

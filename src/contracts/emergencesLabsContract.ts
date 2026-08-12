@@ -48,19 +48,23 @@ export const emergencesLabsContract: ContractData = {
   scopePhases: [
     {
       label: 'A',
-      title: 'Discovery and creative strategy',
+      title: 'Brand strategy and alignment',
       price: '$5,000',
       timing: 'Week 1',
       includes: [
         'Founder and stakeholder working session',
         'Existing survey and reference synthesis',
-        'Category and visual landscape audit',
+        'Light market, category, and competitor research',
+        'Differentiation opportunities and relevant association mapping',
+        'Definition of what the company sells, how it delivers value, why it exists, and who it serves',
+        'Clear brand positioning statement',
         'Audience, product, and brand architecture review',
-        'Success criteria and creative brief',
-        'Guided interactive moodboard',
+        'One unifying creative idea and brand-world premise',
+        'Messaging, photography, identity, and product-expression direction',
+        'Success criteria, creative brief, and guided interactive moodboard',
       ],
       deliverable:
-        'A shared creative brief, success criteria, brand-family architecture, and visual alignment that define what the work must accomplish without prescribing its final form.',
+        'A clear positioning statement, differentiation logic, shared creative brief, success criteria, brand-family architecture, and one unifying brand-world idea that guides identity, messaging, photography, product expression, and later brand decisions.',
     },
     {
       label: 'B',
