@@ -41,6 +41,24 @@ function downloadText(text: string, filename: string, type = 'text/plain') {
   URL.revokeObjectURL(url)
 }
 
+async function downloadSignedPdf(event: ContractEvent) {
+  const response = await fetch('/api/signed-contract-pdf', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({
+      contractSlug: event.contractSlug,
+      signedDocumentHtml: event.signedDocumentHtml,
+    }),
+  })
+  if (!response.ok) throw new Error(`PDF generation failed with ${response.status}`)
+  const url = URL.createObjectURL(await response.blob())
+  const anchor = document.createElement('a')
+  anchor.href = url
+  anchor.download = `${event.contractSlug}-signed-contract.pdf`
+  anchor.click()
+  window.setTimeout(() => URL.revokeObjectURL(url), 30_000)
+}
+
 function signedCopyDocument(event: ContractEvent): string {
   const body = event.signedDocumentHtml || `
     <article>
@@ -82,6 +100,8 @@ function ContractEventDetail({
   onClose: () => void
 }) {
   const html = signedCopyDocument(event)
+  const [pdfError, setPdfError] = useState('')
+  const [pdfLoading, setPdfLoading] = useState(false)
   const openSignedCopy = () => {
     const blob = new Blob([html], { type: 'text/html' })
     const url = URL.createObjectURL(blob)
@@ -99,6 +119,26 @@ function ContractEventDetail({
             <span className="text-[13px] font-medium">{event.contractSlug} · {event.eventType}</span>
           </div>
           <div className="flex flex-wrap items-center justify-end gap-2">
+            {event.signedDocumentHtml && (
+              <button
+                type="button"
+                disabled={pdfLoading}
+                onClick={async () => {
+                  setPdfLoading(true)
+                  setPdfError('')
+                  try {
+                    await downloadSignedPdf(event)
+                  } catch {
+                    setPdfError('Could not generate PDF.')
+                  } finally {
+                    setPdfLoading(false)
+                  }
+                }}
+                className="rounded-full border border-[var(--color-rule)]/30 px-3 py-1.5 text-[11px] text-ink-2 transition-colors hover:border-ink hover:text-ink disabled:cursor-wait disabled:opacity-50"
+              >
+                {pdfLoading ? 'Preparing PDF...' : 'Download signed PDF'}
+              </button>
+            )}
             <button type="button" onClick={openSignedCopy} className="rounded-full border border-[var(--color-rule)]/30 px-3 py-1.5 text-[11px] text-ink-2 transition-colors hover:border-ink hover:text-ink">
               Open signed copy
             </button>
@@ -116,6 +156,7 @@ function ContractEventDetail({
         </div>
 
         <div className="flex flex-col gap-6 px-6 py-5">
+          {pdfError && <p className="text-[12px] text-red-700">{pdfError}</p>}
           <section className="grid grid-cols-2 gap-x-4 gap-y-2 text-[12px]">
             <span className="text-ink-2">ID</span>
             <span className="font-mono break-all">{event.id}</span>

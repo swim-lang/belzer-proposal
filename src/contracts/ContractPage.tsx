@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type PointerEvent, type ReactNode } from 'react'
+import { flushSync } from 'react-dom'
 import type { ContractData } from './types'
 
 type ContractPageProps = {
@@ -98,29 +99,15 @@ async function submitContractEvent(input: {
   return res.json() as Promise<{ ok?: boolean; id?: string }>
 }
 
-function PrintButton({
-  onBeforePrint,
-  children = 'Download PDF',
-}: {
-  onBeforePrint?: () => void | Promise<void>
-  children?: ReactNode
-}) {
-  const handlePrint = () => {
-    document.documentElement.classList.add('contract-print-mode')
-    Promise.resolve(onBeforePrint?.()).finally(() => {
-      window.setTimeout(() => window.print(), 100)
-    })
-  }
-
-  return (
-    <button
-      type="button"
-      onClick={handlePrint}
-      className="rounded-full bg-ink px-5 py-3 text-[13px] font-medium text-paper transition-colors hover:bg-ink-2"
-    >
-      {children}
-    </button>
-  )
+function downloadBlob(blob: Blob, filename: string) {
+  const url = URL.createObjectURL(blob)
+  const anchor = document.createElement('a')
+  anchor.href = url
+  anchor.download = filename
+  document.body.appendChild(anchor)
+  anchor.click()
+  anchor.remove()
+  window.setTimeout(() => URL.revokeObjectURL(url), 30_000)
 }
 
 function TextField({
@@ -308,7 +295,9 @@ function SignaturePanel({
   onSubmit,
   proposalHref,
   depositHref,
-  onBeforePrint,
+  onDownloadPdf,
+  pdfStatus,
+  pdfError,
 }: {
   clientName: string
   signerName: string
@@ -332,7 +321,9 @@ function SignaturePanel({
   onSubmit: () => void
   proposalHref: string
   depositHref?: string
-  onBeforePrint: () => void | Promise<void>
+  onDownloadPdf: () => void | Promise<void>
+  pdfStatus: 'idle' | 'generating' | 'error'
+  pdfError: string
 }) {
   if (submittedSignature) {
     return (
@@ -345,7 +336,15 @@ function SignaturePanel({
           </p>
         </div>
         <div className="flex flex-col gap-3 pt-5">
-          <PrintButton onBeforePrint={onBeforePrint}>Download signed PDF</PrintButton>
+          <button
+            type="button"
+            onClick={onDownloadPdf}
+            disabled={pdfStatus === 'generating'}
+            className="rounded-full bg-ink px-5 py-3 text-[13px] font-medium text-paper transition-colors hover:bg-ink-2 disabled:cursor-wait disabled:opacity-60"
+          >
+            {pdfStatus === 'generating' ? 'Preparing PDF...' : 'Download signed PDF'}
+          </button>
+          {pdfStatus === 'error' && <p className="text-[12px] leading-[18px] text-red-700">{pdfError}</p>}
           {depositHref && (
             <a
               href={depositHref}
@@ -479,6 +478,8 @@ export function ContractPage({ contract }: ContractPageProps) {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'submitting' | 'submitted' | 'error'>('idle')
   const [submitError, setSubmitError] = useState('')
   const [submittedSignature, setSubmittedSignature] = useState<SubmittedSignature | null>(null)
+  const [pdfStatus, setPdfStatus] = useState<'idle' | 'generating' | 'error'>('idle')
+  const [pdfError, setPdfError] = useState('')
   const [isPrintMode, setIsPrintMode] = useState(isPrintParam)
   const displayedDate = useMemo(() => formatDate(submittedSignature?.signedDate ?? ''), [submittedSignature?.signedDate])
   const effectiveDate = submittedSignature ? formatDate(submittedSignature.signedDate) : contract.effectiveDate
@@ -521,7 +522,17 @@ export function ContractPage({ contract }: ContractPageProps) {
     trackContractEvent({ contractSlug: contract.slug, eventType: 'view' })
   }, [contract.slug, isPrintParam])
 
-  const preparePrint = async () => {
+  const downloadSignedPdf = async () => {
+    if (!submittedSignature || pdfStatus === 'generating') return
+    const signedDocumentHtml = document.querySelector('.contract-document')?.outerHTML ?? ''
+    if (!signedDocumentHtml) {
+      setPdfStatus('error')
+      setPdfError('The signed copy could not be prepared. Please refresh and try again.')
+      return
+    }
+
+    setPdfStatus('generating')
+    setPdfError('')
     trackContractEvent({
       contractSlug: contract.slug,
       eventType: 'download_pdf',
@@ -530,7 +541,15 @@ export function ContractPage({ contract }: ContractPageProps) {
       signedDate: submittedSignature?.signedDate ?? signedDate,
     })
 
-    if (submittedSignature) {
+    try {
+      const response = await fetch('/api/signed-contract-pdf', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ contractSlug: contract.slug, signedDocumentHtml }),
+      })
+      if (!response.ok) throw new Error(`PDF generation failed with ${response.status}`)
+      downloadBlob(await response.blob(), `${contract.slug}-signed-contract.pdf`)
+
       await submitContractEvent({
         contractSlug: contract.slug,
         eventType: 'signed_pdf_generated',
@@ -543,11 +562,13 @@ export function ContractPage({ contract }: ContractPageProps) {
         typedSignature: submittedSignature.signatureMethod === 'typed' ? submittedSignature.typedSignature : '',
         drawnSignatureDataUrl: submittedSignature.signatureMethod === 'drawn' ? submittedSignature.drawnSignatureDataUrl : '',
         generatedAt: new Date().toISOString(),
-        signedDocumentHtml: document.querySelector('.contract-document')?.outerHTML ?? '',
+        signedDocumentHtml,
       })
+      setPdfStatus('idle')
+    } catch {
+      setPdfStatus('error')
+      setPdfError('The PDF could not be downloaded. Please try again or contact Anchovies for a copy.')
     }
-
-    setIsPrintMode(true)
   }
 
   const handleSubmit = async () => {
@@ -568,6 +589,8 @@ export function ContractPage({ contract }: ContractPageProps) {
     setSubmitError('')
 
     try {
+      flushSync(() => setSubmittedSignature(nextSignature))
+      const signedDocumentHtml = document.querySelector('.contract-document')?.outerHTML ?? ''
       await submitContractEvent({
         contractSlug: contract.slug,
         eventType: 'contract_signed',
@@ -579,10 +602,11 @@ export function ContractPage({ contract }: ContractPageProps) {
         signatureMethod: nextSignature.signatureMethod,
         typedSignature: nextSignature.signatureMethod === 'typed' ? nextSignature.typedSignature : '',
         drawnSignatureDataUrl: nextSignature.signatureMethod === 'drawn' ? nextSignature.drawnSignatureDataUrl : '',
+        signedDocumentHtml,
       })
-      setSubmittedSignature(nextSignature)
       setSubmitStatus('submitted')
     } catch {
+      setSubmittedSignature(null)
       setSubmitStatus('error')
       setSubmitError('Something went wrong while submitting. Please try again.')
     }
@@ -605,7 +629,16 @@ export function ContractPage({ contract }: ContractPageProps) {
               <a href={proposalHref} className="hidden rounded-full px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper sm:inline-flex">
                 Proposal
               </a>
-              {submittedSignature && <PrintButton onBeforePrint={preparePrint}>Download signed PDF</PrintButton>}
+              {submittedSignature && (
+                <button
+                  type="button"
+                  onClick={downloadSignedPdf}
+                  disabled={pdfStatus === 'generating'}
+                  className="rounded-full bg-ink px-5 py-3 text-[13px] font-medium text-paper transition-colors hover:bg-ink-2 disabled:cursor-wait disabled:opacity-60"
+                >
+                  {pdfStatus === 'generating' ? 'Preparing PDF...' : 'Download signed PDF'}
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -1067,7 +1100,9 @@ export function ContractPage({ contract }: ContractPageProps) {
             onSubmit={handleSubmit}
             proposalHref={proposalHref}
             depositHref={contract.depositHref}
-            onBeforePrint={preparePrint}
+            onDownloadPdf={downloadSignedPdf}
+            pdfStatus={pdfStatus}
+            pdfError={pdfError}
           />
         )}
       </div>
