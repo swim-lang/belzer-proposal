@@ -15,13 +15,14 @@ test('registers the protected Syreeta Mack proposal route', () => {
 })
 
 test('preserves the approved total and transparent phase pricing', () => {
-  for (const price of ['$500', '$1,350', '$1,400', '$3,750']) {
+  for (const price of ['$500', '$1,600', '$1,650', '$3,750']) {
     assert.match(proposal, new RegExp(price.replace('$', '\\$').replace(',', ',')))
   }
   assert.match(proposal, /50%/)
   assert.match(proposal, /25%/)
   assert.match(proposal, /\$1,875/)
   assert.match(proposal, /\$937\.50/)
+  assert.match(proposal, /title: 'Launch Toolkit',[\s\S]*price: 'Included'/)
 })
 
 test('includes strategy, identity, website, social, and print scope', () => {
@@ -51,9 +52,10 @@ test('defines the five-page website and three-to-four-week delivery', () => {
   assert.match(proposal, /Schedule a proposal review/)
 })
 
-test('keeps the initial work presentation intentionally flexible', () => {
-  assert.match(proposal, /already seen the broader Anchovies portfolio through Contra/)
-  assert.match(proposal, /curate the most relevant projects directly into this proposal/)
+test('links the selected relevant work and broader archive', () => {
+  for (const slug of ['arc88', 'seed', 'out-there', 'within', 'the-work', 'layers']) {
+    assert.match(proposal, new RegExp(`https:\\/\\/anchovies\\.agency\\/work\\/${slug}`))
+  }
   assert.match(proposal, /https:\/\/anchovies\.agency\/work/)
 })
 

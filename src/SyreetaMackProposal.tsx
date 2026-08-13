@@ -79,7 +79,7 @@ const phases = [
   {
     number: '02',
     title: 'Visual Identity + Brand World',
-    price: '$1,350',
+    price: '$1,600',
     timing: 'Week two',
     summary:
       'Translate the strategy into one complete identity that balances editorial discipline with a more personal, handmade point of view.',
@@ -102,7 +102,7 @@ const phases = [
   {
     number: '03',
     title: 'Website Strategy, Design + Development',
-    price: '$1,400',
+    price: '$1,650',
     timing: 'Week three',
     summary:
       'Create a five-page portfolio website that introduces your point of view, shows the range of your work, and gives the right people a clear reason to reach out.',
@@ -124,7 +124,7 @@ const phases = [
   {
     number: '04',
     title: 'Launch Toolkit',
-    price: '$500',
+    price: 'Included',
     timing: 'Week four',
     summary:
       'Extend the brand into the practical materials needed to introduce the business, pursue projects, and show up consistently from day one.',
@@ -166,6 +166,45 @@ const deliverables = [
   {
     label: 'Launch',
     items: ['Profile and launch graphics', 'Four social templates', 'Business card', 'Email signature', 'Capabilities sheet', 'Event announcement template'],
+  },
+]
+
+const selectedWork = [
+  {
+    name: 'Arc 88',
+    type: 'Design and industrial practice',
+    href: 'https://anchovies.agency/work/arc88',
+    note: 'A disciplined editorial system for a creative practice built around objects, process, and exacting taste.',
+  },
+  {
+    name: 'Seed',
+    type: 'Arts and culture',
+    href: 'https://anchovies.agency/work/seed',
+    note: 'A visual identity with cultural energy, flexibility, and enough character to support many expressions.',
+  },
+  {
+    name: 'Out There',
+    type: 'Creative studio',
+    href: 'https://anchovies.agency/work/out-there',
+    note: 'A new name and identity for a storytelling studio ready to claim a clearer, more distinctive future.',
+  },
+  {
+    name: 'Within',
+    type: 'Naming and identity',
+    href: 'https://anchovies.agency/work/within',
+    note: 'A concise brand world built around an idea that is simple enough to remember and rich enough to expand.',
+  },
+  {
+    name: 'The Work',
+    type: 'Creative practice',
+    href: 'https://anchovies.agency/work/the-work',
+    note: 'An identity that gives creative work a direct, confident frame without overexplaining what makes it valuable.',
+  },
+  {
+    name: 'Layers',
+    type: 'Brand identity',
+    href: 'https://anchovies.agency/work/layers',
+    note: 'A flexible system that shows how one central idea can create depth across many brand touchpoints.',
   },
 ]
 
@@ -301,8 +340,8 @@ export function SyreetaMackProposal() {
           <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
             <div>
               <p className="eyebrow mb-6 text-ink-2">Brand strategy · visual identity · website · launch toolkit</p>
-              <h1 className="serif max-w-5xl text-[clamp(4rem,10vw,10rem)] leading-[0.88] tracking-normal text-ink">
-                Put your name on the work.
+              <h1 className="serif max-w-5xl text-[clamp(4rem,10vw,10rem)] leading-[0.92] tracking-normal text-ink">
+                A creative practice of your own.
               </h1>
             </div>
             <div className="space-y-7">
@@ -367,7 +406,7 @@ export function SyreetaMackProposal() {
         <Reveal className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
             <MetaRow left="§ 03 - The opportunity" right="Taste made visible" dark />
-            <h2 className="serif mt-10 max-w-4xl text-[clamp(3.2rem,8vw,8rem)] leading-[0.9] tracking-normal">
+            <h2 className="serif mt-10 max-w-4xl text-[clamp(3.2rem,8vw,8rem)] leading-[0.94] tracking-normal">
               Build the kind of presence that can ask for the bigger project.
             </h2>
           </div>
@@ -386,7 +425,7 @@ export function SyreetaMackProposal() {
         <Reveal className="space-y-12">
           <MetaRow left="§ 04 - Scope" right="Four connected phases" />
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-            <h2 className="serif max-w-4xl text-[clamp(3rem,7vw,6.5rem)] leading-[0.92] tracking-normal">One idea, carried from strategy through launch.</h2>
+            <h2 className="serif max-w-4xl text-[clamp(3rem,7vw,6.5rem)] leading-[0.96] tracking-normal">A complete brand, website, and launch toolkit.</h2>
             <p className="max-w-xl text-base leading-7 text-ink-2">
               Each phase builds on the one before it. Strategy clarifies the offer, the identity makes it recognizable, the website makes it useful, and the launch toolkit helps you put it into the world.
             </p>
@@ -420,7 +459,7 @@ export function SyreetaMackProposal() {
         <Reveal className="space-y-12">
           <MetaRow left="§ 05 - Website" right="Five pages plus a project system" />
           <div className="grid gap-8 lg:grid-cols-[1fr_0.7fr] lg:items-end">
-            <h2 className="serif max-w-5xl text-[clamp(3.4rem,7vw,7rem)] leading-[0.92] tracking-normal">A portfolio that creates curiosity and makes the next step obvious.</h2>
+            <h2 className="serif max-w-5xl text-[clamp(3.4rem,7vw,7rem)] leading-[0.96] tracking-normal">A portfolio that creates curiosity and makes the next step obvious.</h2>
             <p className="text-base leading-7 text-ink-2">
               The website will stay focused, but it will not feel generic. It should express your taste, tell the story behind the work, and give the practice enough structure to grow without rebuilding it next year.
             </p>
@@ -440,7 +479,7 @@ export function SyreetaMackProposal() {
       <section id="deliverables" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[160px]">
         <Reveal className="space-y-12">
           <MetaRow left="§ 06 - Deliverables" right="A complete first chapter" />
-          <h2 className="serif max-w-4xl text-[clamp(3rem,6vw,6rem)] leading-[0.95] tracking-normal">More than a logo and a website.</h2>
+          <h2 className="serif max-w-4xl text-[clamp(3rem,6vw,6rem)] leading-[0.98] tracking-normal">Everything included.</h2>
           <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
             {deliverables.map((group, groupIndex) => (
               <div key={group.label}>
@@ -456,12 +495,32 @@ export function SyreetaMackProposal() {
               </div>
             ))}
           </div>
-          <div className="grid gap-8 border-t border-ink/20 pt-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-            <h3 className="serif text-4xl leading-tight">Our work can stay one click away for now.</h3>
-            <div className="space-y-5">
-              <p className="text-base leading-7 text-ink-2">You have already seen the broader Anchovies portfolio through Contra. We can curate the most relevant projects directly into this proposal once we decide which examples best support the conversation.</p>
-              <AnchorButton href={workHref} variant="outline" external>View our work</AnchorButton>
+          <div className="border-t border-ink/20 pt-10">
+            <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+              <h3 className="serif text-4xl leading-[1.08]">Selected work.</h3>
+              <p className="text-base leading-7 text-ink-2">A few projects that reflect the editorial structure, cultural awareness, human detail, and flexible world-building that feel relevant to this engagement.</p>
             </div>
+            <div className="mt-10 grid border-y border-ink/20 md:grid-cols-2 xl:grid-cols-3">
+              {selectedWork.map((project, index) => (
+                <a
+                  key={project.name}
+                  href={project.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`group flex min-h-[230px] flex-col justify-between gap-10 border-ink/20 p-7 transition-colors hover:bg-ink hover:text-paper ${index < 4 ? 'border-b' : ''} ${index < 3 ? 'xl:border-b' : 'xl:border-b-0'} ${index % 2 === 0 ? 'md:border-r' : ''} ${index % 3 !== 2 ? 'xl:border-r' : 'xl:border-r-0'}`}
+                >
+                  <div className="flex items-start justify-between gap-5">
+                    <p className="eyebrow text-ink-2 transition-colors group-hover:text-paper/55">{project.type}</p>
+                    <span className="text-lg leading-none" aria-hidden="true">↗</span>
+                  </div>
+                  <div>
+                    <h4 className="serif text-4xl leading-[1.08]">{project.name}</h4>
+                    <p className="mt-4 text-sm leading-6 text-ink-2 transition-colors group-hover:text-paper/65">{project.note}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+            <div className="mt-8"><AnchorButton href={workHref} variant="outline" external>View all work</AnchorButton></div>
           </div>
         </Reveal>
       </section>
@@ -469,13 +528,16 @@ export function SyreetaMackProposal() {
       <section id="timeline" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[160px]">
         <Reveal className="space-y-10">
           <MetaRow left="§ 07 - Timeline" right="Approximately three to four weeks" />
-          <h2 className="serif max-w-5xl text-[clamp(3.4rem,7vw,7rem)] leading-[0.92] tracking-normal">A focused sprint from behind the scenes to ready for the room.</h2>
-          <div className="grid gap-6 lg:grid-cols-4">
+          <h2 className="serif max-w-5xl text-[clamp(3.4rem,7vw,7rem)] leading-[0.96] tracking-normal">A focused four-week sprint.</h2>
+          <div className="relative grid gap-0 border-y border-ink/20 lg:grid-cols-4 lg:border-y-0 lg:pt-12 before:absolute before:left-0 before:right-0 before:top-[62px] before:hidden before:h-px before:bg-ink/25 lg:before:block">
             {timeline.map(([when, title, body], index) => (
-              <article key={title} className="border-t border-ink/25 pt-6">
-                <div className="mb-6 flex items-end gap-3"><span className="serif text-5xl leading-none">{String(index + 1).padStart(2, '0')}</span><span className="eyebrow pb-1 text-ink-2">{when}</span></div>
-                <h3 className="serif mb-5 text-3xl leading-tight">{title}</h3>
-                <p className="text-sm leading-6 text-ink-2">{body}</p>
+              <article key={title} className="relative grid grid-cols-[48px_1fr] gap-5 border-b border-ink/20 py-7 last:border-b-0 lg:block lg:border-b-0 lg:border-r lg:px-7 lg:py-0 lg:first:pl-0 lg:last:border-r-0 lg:last:pr-0">
+                <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-ink bg-paper text-sm font-semibold lg:mb-12">{String(index + 1).padStart(2, '0')}</div>
+                <div>
+                  <p className="eyebrow mb-4 text-[#2457f5]">{when}</p>
+                  <h3 className="serif mb-5 text-3xl leading-[1.08]">{title}</h3>
+                  <p className="text-sm leading-6 text-ink-2">{body}</p>
+                </div>
               </article>
             ))}
           </div>
@@ -486,7 +548,7 @@ export function SyreetaMackProposal() {
         <Reveal className="space-y-12">
           <MetaRow left="§ 08 - Investment" right="Complete engagement" dark />
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-            <h2 className="serif text-[clamp(3.5rem,8vw,8rem)] leading-[0.9] tracking-normal">Build it right once.</h2>
+            <h2 className="serif text-[clamp(3.5rem,8vw,8rem)] leading-[0.94] tracking-normal">Complete brand and website.</h2>
             <div className="lg:text-right">
               <p className="serif text-[clamp(4rem,10vw,9rem)] leading-none tracking-normal">$3,750</p>
               <p className="eyebrow mt-3 text-paper/55">Fixed scope · approximately three to four weeks</p>
@@ -509,7 +571,7 @@ export function SyreetaMackProposal() {
             <p className="eyebrow mb-6 text-paper/50">Payment milestones</p>
             <div className="grid gap-5 lg:grid-cols-3">
               {paymentMilestones.map(([percent, amount, title, body]) => (
-                <article key={title} className="border-t border-paper/20 pt-6">
+                <article key={`${percent}-${title}`} className="border-t border-paper/20 pt-6">
                   <div className="flex items-end justify-between gap-4"><p className="serif text-5xl">{percent}</p><p className="serif text-xl">{amount}</p></div>
                   <h3 className="serif mt-6 text-2xl">{title}</h3>
                   <p className="mt-3 text-sm leading-6 text-paper/62">{body}</p>
@@ -531,18 +593,31 @@ export function SyreetaMackProposal() {
         </Reveal>
       </section>
 
-      <section className="bg-[#2457f5] px-6 py-24 text-white md:px-16 lg:px-[120px] lg:py-[150px]">
-        <Reveal className="grid gap-12 lg:grid-cols-[1fr_0.75fr] lg:items-end">
-          <div>
-            <p className="eyebrow mb-7 text-white/60">Next step</p>
-            <h2 className="serif max-w-5xl text-[clamp(3.5rem,8vw,8rem)] leading-[0.9] tracking-normal">Let the next room know who made it happen.</h2>
-          </div>
-          <div className="space-y-7">
-            <p className="text-lg leading-8 text-white/75">We can review the proposal together, answer questions, and make sure the scope feels like the right first chapter for the practice you want to build.</p>
-            <div className="flex flex-col gap-3 sm:flex-row"><AnchorButton href={calendarHref} variant="light" external>Schedule a proposal review</AnchorButton><AnchorButton href={workHref} variant="dark" external>View our work</AnchorButton></div>
+      <section className="px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
+        <Reveal className="border border-ink/25 p-7 sm:p-10 lg:p-14">
+          <MetaRow left="§ 10 - Next step" right="Review together" />
+          <div className="mt-12 grid gap-12 lg:grid-cols-[1fr_0.75fr] lg:items-end">
+            <h2 className="serif max-w-5xl text-[clamp(3.5rem,8vw,8rem)] leading-[0.94] tracking-normal">Review the proposal together.</h2>
+            <div className="space-y-7">
+              <p className="text-lg leading-8 text-ink-2">We can answer questions, review the scope, and make sure this feels like the right first chapter for the creative practice you want to build.</p>
+              <div className="flex flex-col gap-3 sm:flex-row"><AnchorButton href={calendarHref} external>Schedule a proposal review</AnchorButton><AnchorButton href={workHref} variant="outline" external>View our work</AnchorButton></div>
+            </div>
           </div>
         </Reveal>
       </section>
+
+      <footer className="flex flex-col gap-5 border-t border-[var(--color-rule)] bg-paper px-6 py-8 text-ink-2 md:flex-row md:items-center md:justify-between md:px-16 lg:px-[120px]">
+        <div className="flex items-center gap-5">
+          <img src="/logos/anchovies-mark.svg" alt="Anchovies" className="block h-[14px] w-auto" />
+          <span className="eyebrow text-ink">Anchovies</span>
+          <span className="block h-[10px] w-px bg-[var(--color-rule)]" />
+          <span className="eyebrow">Prepared for Syreeta Mack</span>
+        </div>
+        <div className="flex flex-wrap items-center gap-5">
+          <span className="eyebrow">August 2026</span>
+          <span className="eyebrow text-ink">Proposal · v1</span>
+        </div>
+      </footer>
     </main>
   )
 }
