@@ -62,6 +62,7 @@ test('links the selected relevant work and broader archive', () => {
     'https://goduo.co/',
     'https://lexpolitica.com/',
     'https://off-menu-mauve.vercel.app/',
+    'https://wildharefloral.co/',
   ]) {
     assert.ok(proposal.includes(url), `missing selected website: ${url}`)
   }

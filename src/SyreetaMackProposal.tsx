@@ -207,6 +207,12 @@ const selectedWork = [
     href: 'https://off-menu-mauve.vercel.app/',
     note: 'An in-progress ecommerce experience that carries a new consumer brand from product story into a focused path to purchase.',
   },
+  {
+    name: 'Wild Hare',
+    type: 'Floral studio website',
+    href: 'https://wildharefloral.co/',
+    note: 'A playful, expressive website that turns a floral studio\'s unexpected point of view into a memorable digital world.',
+  },
 ]
 
 const timeline = [
@@ -508,7 +514,7 @@ export function SyreetaMackProposal() {
                   href={project.href}
                   target="_blank"
                   rel="noreferrer"
-                  className={`group flex min-h-[230px] flex-col justify-between gap-10 border-ink/20 p-7 transition-colors hover:bg-ink hover:text-paper ${index < 4 ? 'border-b' : ''} ${index < 3 ? 'xl:border-b' : 'xl:border-b-0'} ${index % 2 === 0 ? 'md:border-r' : ''} ${index % 3 !== 2 ? 'xl:border-r' : 'xl:border-r-0'}`}
+                  className={`group flex min-h-[230px] flex-col justify-between gap-10 border-ink/20 p-7 transition-colors hover:bg-ink hover:text-paper ${index < selectedWork.length - 1 ? 'border-b' : ''} ${index < 6 && index % 2 === 0 ? 'md:border-r' : ''} ${index === selectedWork.length - 1 ? 'md:col-span-2 xl:col-span-3' : ''} ${index < 6 ? 'xl:border-b' : 'xl:border-b-0'} ${index < 6 && index % 3 !== 2 ? 'xl:border-r' : 'xl:border-r-0'}`}
                 >
                   <div className="flex items-start justify-between gap-5">
                     <p className="eyebrow text-ink-2 transition-colors group-hover:text-paper/55">{project.type}</p>
