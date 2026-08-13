@@ -553,6 +553,26 @@ html.contract-print-mode .scope-phase {
   transform: translateY(0);
 }
 
+.syreeta-timeline::before {
+  transform: scaleX(0);
+  transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1) 120ms;
+}
+
+.syreeta-timeline-step {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.65s ease var(--timeline-delay), transform 0.65s ease var(--timeline-delay);
+}
+
+[data-reveal="in"] .syreeta-timeline::before {
+  transform: scaleX(1);
+}
+
+[data-reveal="in"] .syreeta-timeline-step {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ——— Intake rating tile type sizing ——— */
 .rating-tile {
   font-size: 22px;
@@ -805,6 +825,8 @@ html.contract-print-mode .scope-phase {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .syreeta-timeline::before { transform: scaleX(1); transition: none; }
+  .syreeta-timeline-step { opacity: 1; transform: none; transition: none; }
   .map-line { stroke-dashoffset: 0; }
   .map-dot, .map-pulse, .map-node, .map-center { animation: none; opacity: 1; transform: none; }
   .map-node-inner, .mobile-map-row-content { animation: none; transform: none; }

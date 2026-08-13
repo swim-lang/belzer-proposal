@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type CSSProperties } from 'react'
 import { Reveal } from './components/Reveal'
 
 const calendarHref = 'https://cal.com/anchovies/30min?overlayCalendar=true'
 const workHref = 'https://anchovies.agency/work'
+const acceptHref = 'mailto:sean@anchovies.agency?subject=Syreeta%20Mack%20Proposal%20Acceptance&body=Hi%20Sean%2C%0A%0AI%27d%20like%20to%20move%20forward%20with%20the%20Syreeta%20Mack%20proposal.%20Please%20send%20the%20next%20steps.%0A'
 
 const navSections = [
   { id: 'overview', label: 'Overview' },
@@ -340,7 +341,7 @@ export function SyreetaMackProposal() {
           <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
             <div>
               <p className="eyebrow mb-6 text-ink-2">Brand strategy · visual identity · website · launch toolkit</p>
-              <h1 className="serif max-w-5xl text-[clamp(4rem,10vw,10rem)] leading-[0.92] tracking-normal text-ink">
+              <h1 className="serif max-w-5xl text-[clamp(3.6rem,8.5vw,8.5rem)] leading-[0.94] tracking-normal text-ink">
                 A creative practice of your own.
               </h1>
             </div>
@@ -403,20 +404,20 @@ export function SyreetaMackProposal() {
       </section>
 
       <section id="opportunity" className="border-b border-[var(--color-rule)] bg-ink px-6 py-24 text-paper md:px-16 lg:px-[120px] lg:py-[160px]">
-        <Reveal className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <div>
-            <MetaRow left="§ 03 - The opportunity" right="Taste made visible" dark />
-            <h2 className="serif mt-10 max-w-4xl text-[clamp(3.2rem,8vw,8rem)] leading-[0.94] tracking-normal">
+        <Reveal className="space-y-12">
+          <MetaRow left="§ 03 - The opportunity" right="Taste made visible" dark />
+          <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+            <h2 className="serif max-w-4xl text-[clamp(3.2rem,8vw,8rem)] leading-[0.94] tracking-normal">
               Build the kind of presence that can ask for the bigger project.
             </h2>
-          </div>
-          <div className="space-y-7 text-lg leading-8 text-paper/72">
-            <p>
-              The goal is not to make the work feel larger than it is. It is to finally let the public presence catch up to the scale of what you have already done.
-            </p>
-            <p>
-              We will define the real value beneath creative strategy, production, curation, and cultural programming, then build a brand world around one thoughtful idea. The result should feel editorial and assured, but also alive: structured enough to signal authority, human enough to remain approachable, and memorable enough that a person wants to know what you might make together.
-            </p>
+            <div className="space-y-7 pt-1 text-lg leading-8 text-paper/72">
+              <p>
+                The goal is not to make the work feel larger than it is. It is to finally let the public presence catch up to the scale of what you have already done.
+              </p>
+              <p>
+                We will define the real value beneath creative strategy, production, curation, and cultural programming, then build a brand world around one thoughtful idea. The result should feel editorial and assured, but also alive: structured enough to signal authority, human enough to remain approachable, and memorable enough that a person wants to know what you might make together.
+              </p>
+            </div>
           </div>
         </Reveal>
       </section>
@@ -529,9 +530,9 @@ export function SyreetaMackProposal() {
         <Reveal className="space-y-10">
           <MetaRow left="§ 07 - Timeline" right="Approximately three to four weeks" />
           <h2 className="serif max-w-5xl text-[clamp(3.4rem,7vw,7rem)] leading-[0.96] tracking-normal">A focused four-week sprint.</h2>
-          <div className="relative grid gap-0 border-y border-ink/20 lg:grid-cols-4 lg:border-y-0 lg:pt-12 before:absolute before:left-0 before:right-0 before:top-[62px] before:hidden before:h-px before:bg-ink/25 lg:before:block">
+          <div className="syreeta-timeline relative grid gap-0 border-y border-ink/20 lg:grid-cols-4 lg:border-y-0 lg:pt-12 before:absolute before:left-0 before:right-0 before:top-[62px] before:hidden before:h-px before:origin-left before:bg-ink/25 lg:before:block">
             {timeline.map(([when, title, body], index) => (
-              <article key={title} className="relative grid grid-cols-[48px_1fr] gap-5 border-b border-ink/20 py-7 last:border-b-0 lg:block lg:border-b-0 lg:border-r lg:px-7 lg:py-0 lg:first:pl-0 lg:last:border-r-0 lg:last:pr-0">
+              <article key={title} style={{ '--timeline-delay': `${180 + index * 130}ms` } as CSSProperties} className="syreeta-timeline-step relative grid grid-cols-[48px_1fr] gap-5 border-b border-ink/20 py-7 last:border-b-0 lg:block lg:border-b-0 lg:border-r lg:px-7 lg:py-0 lg:first:pl-0 lg:last:border-r-0 lg:last:pr-0">
                 <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-ink bg-paper text-sm font-semibold lg:mb-12">{String(index + 1).padStart(2, '0')}</div>
                 <div>
                   <p className="eyebrow mb-4 text-[#2457f5]">{when}</p>
@@ -595,12 +596,12 @@ export function SyreetaMackProposal() {
 
       <section className="px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
         <Reveal className="border border-ink/25 p-7 sm:p-10 lg:p-14">
-          <MetaRow left="§ 10 - Next step" right="Review together" />
+          <MetaRow left="§ 10 - Next step" right="Choose what works" />
           <div className="mt-12 grid gap-12 lg:grid-cols-[1fr_0.75fr] lg:items-end">
-            <h2 className="serif max-w-5xl text-[clamp(3.5rem,8vw,8rem)] leading-[0.94] tracking-normal">Review the proposal together.</h2>
+            <h2 className="serif max-w-5xl text-[clamp(3.5rem,8vw,8rem)] leading-[0.94] tracking-normal">Choose the next step.</h2>
             <div className="space-y-7">
-              <p className="text-lg leading-8 text-ink-2">We can answer questions, review the scope, and make sure this feels like the right first chapter for the creative practice you want to build.</p>
-              <div className="flex flex-col gap-3 sm:flex-row"><AnchorButton href={calendarHref} external>Schedule a proposal review</AnchorButton><AnchorButton href={workHref} variant="outline" external>View our work</AnchorButton></div>
+              <p className="text-lg leading-8 text-ink-2">If everything feels right, accept the proposal by email and we will prepare the kickoff. If you would rather talk it through first, schedule a proposal review.</p>
+              <div className="flex flex-col gap-3 sm:flex-row"><AnchorButton href={acceptHref}>Accept proposal</AnchorButton><AnchorButton href={calendarHref} variant="outline" external>Schedule a proposal review</AnchorButton></div>
             </div>
           </div>
         </Reveal>

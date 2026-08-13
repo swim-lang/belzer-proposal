@@ -50,6 +50,8 @@ test('defines the five-page website and three-to-four-week delivery', () => {
   }
   assert.match(proposal, /Approximately three to four weeks/)
   assert.match(proposal, /Schedule a proposal review/)
+  assert.match(proposal, /Accept proposal/)
+  assert.match(proposal, /mailto:sean@anchovies\.agency\?subject=Syreeta%20Mack%20Proposal%20Acceptance/)
 })
 
 test('links the selected relevant work and broader archive', () => {
