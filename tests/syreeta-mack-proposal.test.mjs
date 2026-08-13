@@ -55,9 +55,18 @@ test('defines the five-page website and three-to-four-week delivery', () => {
 })
 
 test('links the selected relevant work and broader archive', () => {
-  for (const slug of ['arc88', 'seed', 'out-there', 'within', 'the-work', 'layers']) {
-    assert.match(proposal, new RegExp(`https:\\/\\/anchovies\\.agency\\/work\\/${slug}`))
+  for (const url of [
+    'https://arc88studio.com/',
+    'https://runway.haus/',
+    'https://swim-lang.github.io/molly-engels/',
+    'https://goduo.co/',
+    'https://lexpolitica.com/',
+    'https://off-menu-mauve.vercel.app/',
+  ]) {
+    assert.ok(proposal.includes(url), `missing selected website: ${url}`)
   }
+  assert.match(proposal, /Portfolio website · Beta/)
+  assert.match(proposal, /Ecommerce website · Beta/)
   assert.match(proposal, /https:\/\/anchovies\.agency\/work/)
 })
 

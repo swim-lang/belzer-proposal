@@ -173,39 +173,39 @@ const deliverables = [
 const selectedWork = [
   {
     name: 'Arc 88',
-    type: 'Design and industrial practice',
-    href: 'https://anchovies.agency/work/arc88',
-    note: 'A disciplined editorial system for a creative practice built around objects, process, and exacting taste.',
+    type: 'Brand + portfolio website',
+    href: 'https://arc88studio.com/',
+    note: 'A restrained brand and website that gives an industrial design studio\'s objects, process, and point of view room to lead.',
   },
   {
-    name: 'Seed',
-    type: 'Arts and culture',
-    href: 'https://anchovies.agency/work/seed',
-    note: 'A visual identity with cultural energy, flexibility, and enough character to support many expressions.',
+    name: 'Runway',
+    type: 'Creative company website',
+    href: 'https://runway.haus/',
+    note: 'A confident digital home that uses scale, rhythm, and strong art direction to make the company feel immediate.',
   },
   {
-    name: 'Out There',
-    type: 'Creative studio',
-    href: 'https://anchovies.agency/work/out-there',
-    note: 'A new name and identity for a storytelling studio ready to claim a clearer, more distinctive future.',
+    name: 'Molly Engels',
+    type: 'Portfolio website · Beta',
+    href: 'https://swim-lang.github.io/molly-engels/',
+    note: 'An in-progress portfolio for a multidisciplinary creative, designed to give the work personality without getting in its way.',
   },
   {
-    name: 'Within',
-    type: 'Naming and identity',
-    href: 'https://anchovies.agency/work/within',
-    note: 'A concise brand world built around an idea that is simple enough to remember and rich enough to expand.',
+    name: 'Duo',
+    type: 'Business website',
+    href: 'https://goduo.co/',
+    note: 'A conversion-focused website that organizes a broad service story into a clear, energetic path through the business.',
   },
   {
-    name: 'The Work',
-    type: 'Creative practice',
-    href: 'https://anchovies.agency/work/the-work',
-    note: 'An identity that gives creative work a direct, confident frame without overexplaining what makes it valuable.',
+    name: 'Lex Politica',
+    type: 'Law firm website',
+    href: 'https://lexpolitica.com/',
+    note: 'A distinctive editorial website that translates a bold legal identity into a clear and credible digital experience.',
   },
   {
-    name: 'Layers',
-    type: 'Brand identity',
-    href: 'https://anchovies.agency/work/layers',
-    note: 'A flexible system that shows how one central idea can create depth across many brand touchpoints.',
+    name: 'Off Menu',
+    type: 'Ecommerce website · Beta',
+    href: 'https://off-menu-mauve.vercel.app/',
+    note: 'An in-progress ecommerce experience that carries a new consumer brand from product story into a focused path to purchase.',
   },
 ]
 
@@ -498,8 +498,8 @@ export function SyreetaMackProposal() {
           </div>
           <div className="border-t border-ink/20 pt-10">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-              <h3 className="serif text-4xl leading-[1.08]">Selected work.</h3>
-              <p className="text-base leading-7 text-ink-2">A few projects that reflect the editorial structure, cultural awareness, human detail, and flexible world-building that feel relevant to this engagement.</p>
+              <h3 className="serif text-4xl leading-[1.08]">Selected websites.</h3>
+              <p className="text-base leading-7 text-ink-2">A mix of live and in-progress websites showing how identity, story, structure, and interaction can come together in very different ways.</p>
             </div>
             <div className="mt-10 grid border-y border-ink/20 md:grid-cols-2 xl:grid-cols-3">
               {selectedWork.map((project, index) => (
