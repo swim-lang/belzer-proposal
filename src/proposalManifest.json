@@ -594,6 +594,19 @@
     "showInDashboard": true
   },
   {
+    "id": "syreeta-mack",
+    "name": "Syreeta Mack",
+    "tagline": "Brand identity, website, and launch toolkit · August 2026",
+    "status": "Draft",
+    "href": "/proposal/syreeta-mack",
+    "paths": [
+      "/proposal/syreeta-mack"
+    ],
+    "sourceFile": "src/SyreetaMackProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true
+  },
+  {
     "id": "double-up-daves-contract",
     "name": "Double Up Daves Contract",
     "tagline": "Website design and development agreement",

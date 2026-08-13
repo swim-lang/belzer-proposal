@@ -31,6 +31,7 @@ import { SavedFirmPage } from './SavedFirmPage'
 import { SleepGoddessProposal } from './SleepGoddessProposal'
 import { SoftHoursProposal } from './SoftHoursProposal'
 import { SoupToSoftwareProposal } from './SoupToSoftwareProposal'
+import { SyreetaMackProposal } from './SyreetaMackProposal'
 import { TamrahProposal } from './TamrahProposal'
 import { WildflowerBlancProposal } from './WildflowerBlancProposal'
 import { Admin } from './admin/Admin'
@@ -156,6 +157,8 @@ export default function App() {
         return withProposalGate(<ContractPage contract={mollyEngelsContract} />)
       case 'molly':
         return withProposalGate(<MollyEngelsProposal />)
+      case 'syreeta-mack':
+        return withProposalGate(<SyreetaMackProposal />)
       case 'max-new-firm':
         return withProposalGate(<MaxNewFirmProposal />)
       case 'genesi-contract':
