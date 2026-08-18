@@ -2,8 +2,8 @@ import type { ContractData } from './types'
 
 export const belzerSystemsContract: ContractData = {
   slug: 'belzer-systems',
-  title: 'Firm Workflow Pilot Agreement',
-  preparedDate: 'August 2026',
+  title: 'Belzer Firm Workflow Pilot Agreement',
+  preparedDate: 'August 18, 2026',
   agencySignedDate: 'August 18, 2026',
   effectiveDate: '[date both parties sign]',
   projectStart: 'after this Contract is signed and the kickoff invoice is paid',
@@ -14,7 +14,6 @@ export const belzerSystemsContract: ContractData = {
     label: 'Client',
     address: '737 29th Street, Suite 100A, Boulder, CO 80303',
     contactName: 'Aaron Belzer',
-    email: 'aaron@belzerlawfirm.com',
   },
   agency: {
     name: 'Anchovies LLC',
@@ -24,23 +23,24 @@ export const belzerSystemsContract: ContractData = {
   paymentMilestones: [
     {
       amount: '$4,740',
-      label: 'Due at kickoff',
-      body: 'This 60% payment begins the pilot and reserves the working period.',
+      label: 'Due at project kickoff',
+      body: 'This 60% payment reserves the project window and begins observation, technical setup, workspace configuration, and development.',
     },
     {
       amount: '$1,580',
       label: 'Due after approval of the first working version and core workflow',
-      body: 'This 20% payment is due after the Client approves the first working version and core workflow.',
+      body: 'This 20% payment is due after Belzer Law approves the first working version and its core workflow.',
     },
     {
       amount: '$1,580',
       label: 'Due at team onboarding and pilot launch',
-      body: 'This final 20% payment is due when the team onboarding and pilot launch are ready.',
+      body: 'This final 20% payment is due when the pilot is ready for team onboarding and launch.',
     },
   ],
   revisionRounds: [
-    'First working version: 1 consolidated feedback round after the initial workspace and core workflow are presented.',
-    'Pilot completion: 1 consolidated feedback round covering the approved workflow, team onboarding, and practical handoff.',
+    'First working version and core workflow: 1 consolidated feedback round after the initial working presentation.',
+    'Pilot refinement and launch: 1 consolidated feedback round before team onboarding and pilot launch.',
+    'A 30-day stabilization period after launch covers bugs and small launch adjustments within the agreed scope.',
   ],
   scopePhases: [
     {
@@ -50,28 +50,30 @@ export const belzerSystemsContract: ContractData = {
       timing: 'Approximately six weeks',
       includes: [
         'Private, self-hosted firm workspace configured for Belzer Law',
-        'Shared view of active matters, tasks, priorities, owners, dates, and items requiring review',
+        'One shared view of active matters, tasks, priorities, owners, dates, and items requiring review',
         'Firm contacts and matter relationships connected to relevant tasks, communications, dates, and files',
         'Selected email and calendar information brought into the workspace where access permits',
         'Connections or direct links to Box, PracticePanther, and other approved tools based on available integration methods',
         'Central firm memory for processes, templates, roles, decisions, recurring instructions, and approved matter context',
-        'Voice or chat instructions converted into proposed tasks, assignments, follow-ups, calendar items, and draft communications',
+        'Voice or chat instructions converted into proposed tasks, assignments, follow-ups, and draft communications',
         'Email triage, action extraction, and reply drafts prepared with connected firm context and human review',
-        'Review queue for agent-prepared work before any external action',
-        'Deadline suggestions with visible sources and calculations, subject to Britt or attorney approval',
-        'Workflow observation, configuration, team onboarding, practical handoff, and 30 days of stabilization support',
+        'A review queue for agent-prepared work before it changes a calendar, sends a message, or creates an external action',
+        'Deadline suggestions prepared from triggering dates and firm-approved rules, with the source and calculation visible',
+        'Britt or attorney approval before any suggested deadline is added to a calendar',
+        'A foundation for gradually bringing selected third-party workflows into the private workspace',
+        'Focused workflow observation, configuration, two structured feedback rounds, team onboarding, and practical handoff',
+        'A 30-day stabilization period for bugs and small launch adjustments',
       ],
       deliverable:
-        'A working first release that gives Belzer Law one shared view of active work and connected context, with agent-prepared tasks, follow-ups, drafts, and deadline suggestions held for human review.',
+        'A working first release of Belzer Law\'s private firm workspace, configured around the agreed workflow and connected context, together with team onboarding and practical handoff.',
     },
   ],
   optionalSupport: [
-    'Client-facing application',
-    'Motions bank or broad case-knowledge library',
-    'Large document-review engine',
-    'Complete replacement of case-management, document-management, billing, or docketing systems',
-    'Deeper integrations or new workflows beyond the agreed pilot',
-    'Ongoing support after the included 30-day stabilization period',
+    'Client-facing application or portal',
+    'Motions bank or large document-review system',
+    'Replacement of the firm\'s complete case-management, document-management, billing, or docketing systems',
+    'Deeper integrations or migration of additional third-party workflows beyond the agreed first release',
+    'Ongoing support, hosting, maintenance, subscriptions, or agent usage after the included stabilization period',
   ],
   contractOverrides: {
     changeOrders:
@@ -82,37 +84,42 @@ export const belzerSystemsContract: ContractData = {
       'Revisions refine the agreed workspace and core workflow. A new workflow, new system, or material expansion is handled through Section 5.',
     directionChanges:
       'If the Client requests a materially different system direction after approving the core workflow, the parties will confirm the resulting scope, timing, and cost in writing before that work begins.',
-    reviewTitle: 'Technical Functionality and Third-Party Limitations',
+    reviewTitle: 'Pilot Review and Included Revisions',
     reviewTerms:
-      'the Agency will deliver the project-specific work described in Section 18 and correct reproducible defects during the included stabilization period. The Agency does not guarantee uninterrupted operation or permanent compatibility of independent third-party services, and does not guarantee a particular business, legal, or efficiency outcome.',
+      'the Agency will deliver the listed pilot scope, provide two structured feedback rounds, and correct reproducible defects during the included stabilization period. Payment covers the professional time, implementation work, and project-specific deliverables produced. Requests beyond the agreed first release or included feedback rounds are handled through Section 5.',
     milestonesEarned:
       'The kickoff milestone is earned when work begins. The second milestone is earned after approval of the first working version and core workflow. The final milestone is earned when team onboarding and pilot launch are ready.',
     paymentOnTermination:
       'If the Contract is terminated, the Client will pay earned milestones and preapproved, noncancellable expenses through the effective termination date. No unearned future milestone becomes due solely because the Contract ends.',
     transferOfOwnership:
-      'Upon full payment of all amounts due, the Agency assigns to the Client all right, title, and interest in the project-specific Deliverables, including project-specific source code, configurations, documentation, and firm-specific system content created under this Contract.',
+      'Upon full payment of all amounts due, the Agency assigns to the Client all right, title, and interest in the project-specific Deliverables and work product, including project-specific source code, configurations, documentation, and firm-specific system content created under this Contract.',
     workingFiles:
-      'Project-specific source code, configuration files, implementation documentation, and handoff materials are included. The Agency retains ownership of its pre-existing tools, reusable methods, general templates, and other Background IP, subject to the license in Section 8.4.',
+      'Project-specific source code, configuration files, implementation documentation, and organized handoff materials are included upon full payment. The Agency retains ownership of its pre-existing tools, reusable methods, general templates, frameworks, and other Background IP, subject to the license in Section 8.4.',
     portfolioRights:
       'Because the system may involve confidential firm operations, the Agency may share only a high-level, non-confidential description of the engagement after receiving the Client\'s written approval. Client data, matter information, internal workflows, screenshots, and private system details will not be used in the Agency\'s portfolio without written permission.',
   },
   sectionNine: {
-    title: 'AI Systems and Third-Party Services',
+    title: 'AI Systems, Firm Data, and Third-Party Services',
     clauses: [
+      {
+        label: 'Client Materials and Access',
+        body:
+          'Belzer Law represents that it has the right to provide the accounts, documents, data, templates, credentials, and other materials used for this engagement. Belzer Law remains responsible for the accuracy, legality, retention, and professional use of its information.',
+      },
       {
         label: 'Human Review and Legal Responsibility',
         body:
-          'The system prepares proposed work for human review. It does not provide legal advice or autonomous legal analysis. No client communication, external action, or legal deadline will be sent or published without the Client\'s review and approval.',
+          'The system prepares proposed work for human review. It does not provide legal advice, autonomous legal analysis, or legal research. No email, client communication, external action, or suggested legal deadline will be sent or published without review and approval by Britt or an attorney designated by Belzer Law.',
       },
       {
         label: 'Third-Party Services',
         body:
-          'The Agency is responsible for its own implementation work, but is not responsible for outages, policy or API changes, access restrictions, discontinued features, compatibility decisions, pricing changes, or other conduct of independent platforms such as Google, Microsoft, Box, PracticePanther, OpenAI, Anthropic, or similar providers. The Agency will make reasonable efforts to adapt agreed integrations within scope, but cannot guarantee third-party availability or permanent compatibility.',
+          'Anchovies is responsible for its own implementation work, but not for outages, policy or API changes, access restrictions, discontinued features, compatibility decisions, pricing changes, or other conduct of independent platforms such as Google, Microsoft, Box, PracticePanther, OpenAI, Anthropic, or similar providers. Anchovies will make reasonable efforts to adapt integrations within the agreed scope, but cannot guarantee third-party availability or permanent compatibility.',
       },
       {
         label: 'Accounts, Access, and Provider Costs',
         body:
-          'The Client will control its provider accounts and approve all access. No recurring monthly fee to Anchovies is included in the project fee. Any third-party software, hosting, storage, or AI-agent subscription is contracted and paid for separately by the Client.',
+          'Belzer Law will control its provider accounts and approve all access. No recurring monthly fee to Anchovies is included in the project fee. Any third-party software, hosting, storage, or agent subscription is contracted and paid for separately by Belzer Law.',
       },
     ],
   },
@@ -123,9 +130,9 @@ export const belzerSystemsContract: ContractData = {
         'This Contract implements the Belzer Firm Workflow Pilot accepted by Aaron Belzer. The total investment, payment schedule, approximately six-week timeline, first working version, two structured feedback rounds, and 30-day stabilization period match the accepted proposal.',
     },
     {
-      title: 'Systems of Record',
+      title: 'Systems of Record and Integration Boundary',
       body:
-        'Box, PracticePanther, Gmail, and existing calendars remain the systems of record unless the parties separately agree in writing to replace a specific function. When a direct connection is not practical, the workspace may link to the applicable system and organize the work that must be completed there.',
+        'Box, PracticePanther, Gmail, and existing calendars remain the systems of record unless the parties separately agree in writing to replace a specific function. Connections are limited to methods confirmed during technical setup. When a direct connection is not practical, the workspace may link to the applicable system and organize the work that must be completed there.',
     },
   ],
 }
