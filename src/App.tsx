@@ -40,6 +40,7 @@ import { LockedProposalNotice } from './components/LockedProposalNotice'
 import { ContentProvider } from './context/ContentContext'
 import { ContractPage } from './contracts/ContractPage'
 import { avodahContract } from './contracts/avodahContract'
+import { belzerSystemsContract } from './contracts/belzerSystemsContract'
 import { cipherContract } from './contracts/cipherContract'
 import { doubleUpDavesContract } from './contracts/doubleUpDavesContract'
 import { emergencesLabsContract } from './contracts/emergencesLabsContract'
@@ -116,6 +117,8 @@ export default function App() {
         return withProposalGate(<BelzerPilotProposal />)
       case 'belzer-systems':
         return withProposalGate(<BelzerSystemsProposal />)
+      case 'belzer-systems-contract':
+        return withProposalGate(<ContractPage contract={belzerSystemsContract} />)
       case 'blanchet-search-visibility':
         return withProposalGate(<BlanchetSearchVisibilityProposal />)
       case 'knd':

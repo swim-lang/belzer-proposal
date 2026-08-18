@@ -43,6 +43,20 @@
     "access": "active"
   },
   {
+    "id": "belzer-systems-contract",
+    "name": "Belzer Law: Firm Workflow Pilot Contract",
+    "tagline": "Firm workflow pilot agreement · $7,900",
+    "status": "Active",
+    "href": "/proposal/belzer-systems/contract",
+    "paths": [
+      "/proposal/belzer-systems/contract"
+    ],
+    "sourceFile": "src/contracts/belzerSystemsContract.ts",
+    "kind": "contract",
+    "showInDashboard": false,
+    "access": "active"
+  },
+  {
     "id": "blanchet-search-visibility",
     "name": "Blanchet",
     "tagline": "Search visibility sprint · $2,750 · 7 days",
