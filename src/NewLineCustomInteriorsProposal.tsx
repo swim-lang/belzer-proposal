@@ -89,6 +89,44 @@ const boundaries = [
   ['Extensions', 'New branding, ongoing SEO, paid media, long-form content production, additional pages, and major custom software can be scoped separately.'],
 ]
 
+const selectedWork = [
+  {
+    num: '01',
+    name: 'GoDuo',
+    href: 'https://goduo.co/',
+    image: '/work/new-line/goduo.webp',
+    note: 'A direct, conversion-led website for a company serving the trades and home services.',
+  },
+  {
+    num: '02',
+    name: 'No Walls Real Estate',
+    href: 'https://nowallsrealestate.com/',
+    image: '/work/new-line/no-walls.webp',
+    note: 'A visual real estate platform designed to make the work immediately recognizable.',
+  },
+  {
+    num: '03',
+    name: 'ERC',
+    href: 'https://erc.com/',
+    image: '/work/new-line/erc.webp',
+    note: 'A premium property website that pairs clear positioning with an immersive first impression.',
+  },
+  {
+    num: '04',
+    name: 'Ren Homes',
+    href: 'https://renhomes.flywheelsites.com/',
+    image: '/work/new-line/ren-homes.webp',
+    note: 'A custom-home website that lets architecture, detail, and project photography carry the story.',
+  },
+  {
+    num: '05',
+    name: 'Lex Politica',
+    href: 'https://lexpolitica.com/',
+    image: '/work/new-line/lex-politica.webp',
+    note: 'A distinct professional-services website built around authority, clarity, and a strong point of view.',
+  },
+]
+
 function Button({ children, href, variant = 'primary' }: { children: string; href: string; variant?: 'primary' | 'outline' | 'light' }) {
   const external = href.startsWith('http')
   const classes =
@@ -477,20 +515,44 @@ function SelectedWork() {
   return (
     <section id="work" className="border-b border-[var(--color-rule)] bg-ink px-5 py-20 text-paper md:px-10 lg:px-[96px] lg:py-[112px]">
       <div className="mx-auto max-w-[1280px]">
-        <MetaRow left="§ 08 - Selected work" right="Anchovies" dark />
-        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:gap-24">
+        <MetaRow left="§ 08 - Selected website work" right="Five live examples" dark />
+        <div className="grid gap-12 pb-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:gap-24 lg:pb-24">
           <Reveal>
             <h2 className="display max-w-[800px] text-[52px] leading-[56px] md:text-[78px] md:leading-[82px] lg:text-[92px] lg:leading-[96px]">
-              Websites built to make good work easier to recognize.
+              Different businesses. The same attention to what makes each one worth choosing.
             </h2>
           </Reveal>
-          <Reveal className="flex max-w-[500px] flex-col items-start gap-6">
+          <Reveal className="max-w-[500px]">
             <p className="text-[15px] leading-[24px] text-paper/65">
-              Anchovies combines positioning, design, copy, and custom development so the final site feels specific to the business and useful to the people it needs to reach.
+              These examples show how positioning, design, copy, and development can create a website that feels specific to the business and useful to the people it needs to reach.
             </p>
-            <Button href={workHref} variant="light">View our work</Button>
           </Reveal>
         </div>
+
+        <div className="grid gap-x-6 gap-y-12 md:grid-cols-2">
+          {selectedWork.map((item, index) => (
+            <Reveal key={item.name} className={index === 0 ? 'md:col-span-2' : undefined}>
+              <a href={item.href} target="_blank" rel="noreferrer" className="group block">
+                <div className={`overflow-hidden border border-paper/25 ${index === 0 ? 'aspect-[16/8]' : 'aspect-[16/10]'}`}>
+                  <img
+                    src={item.image}
+                    alt={`${item.name} website homepage`}
+                    className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.015]"
+                  />
+                </div>
+                <div className="grid gap-4 border-b border-paper/25 py-6 sm:grid-cols-[64px_0.8fr_1.2fr] sm:items-start sm:gap-6">
+                  <span className="eyebrow text-paper/55">{item.num}</span>
+                  <h3 className="serif text-[29px] leading-[34px]">{item.name}</h3>
+                  <p className="max-w-[480px] text-[13px] leading-[20px] text-paper/60">{item.note}</p>
+                </div>
+              </a>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal className="mt-12 flex justify-start md:justify-end">
+          <Button href={workHref} variant="light">View all work</Button>
+        </Reveal>
       </div>
     </section>
   )

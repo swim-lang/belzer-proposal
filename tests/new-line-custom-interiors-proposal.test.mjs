@@ -56,3 +56,25 @@ test('New Line Custom Interiors proposal preserves scope, timing, pricing, and p
   assert.doesNotMatch(proposal, /WordPress[^.]*included/i)
   assert.doesNotMatch(proposal, /—/)
 })
+
+test('New Line Custom Interiors proposal features the selected websites in the requested order', () => {
+  const proposal = read('src/NewLineCustomInteriorsProposal.tsx')
+  const expected = [
+    ['GoDuo', 'https://goduo.co/', '/work/new-line/goduo.webp'],
+    ['No Walls Real Estate', 'https://nowallsrealestate.com/', '/work/new-line/no-walls.webp'],
+    ['ERC', 'https://erc.com/', '/work/new-line/erc.webp'],
+    ['Ren Homes', 'https://renhomes.flywheelsites.com/', '/work/new-line/ren-homes.webp'],
+    ['Lex Politica', 'https://lexpolitica.com/', '/work/new-line/lex-politica.webp'],
+  ]
+
+  let lastIndex = -1
+  for (const [name, href, image] of expected) {
+    const index = proposal.indexOf(`name: '${name}'`)
+    assert.ok(index > lastIndex, `${name} should follow the requested work order`)
+    lastIndex = index
+    assert.match(proposal, new RegExp(href.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')))
+    assert.match(proposal, new RegExp(image.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')))
+  }
+
+  assert.doesNotMatch(proposal, /arc88studio/)
+})
