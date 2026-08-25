@@ -18,7 +18,7 @@ const navSections = [
 
 const outcomes = [
   ['01', 'Premium', 'Present New Line as the considered choice for custom homes and substantial residential projects.'],
-  ['02', 'Clear', 'Give visitors a direct understanding of the work, the process, and why Brad is the right person to call.'],
+  ['02', 'Clear', 'Give visitors a direct understanding of the work, the process, and why New Line is the right company to call.'],
   ['03', 'Visible', 'Build a stronger foundation for local search, traditional search, and AI-assisted discovery.'],
   ['04', 'Useful', 'Turn the portfolio into proof and give qualified prospects a clear path to start a conversation.'],
 ]
@@ -29,7 +29,7 @@ const pages = [
   ['03', 'Remodeling + Interiors', 'A focused overview of kitchens, bathrooms, basements, additions, and substantial interior work.'],
   ['04', 'Projects', 'A visual portfolio organized around the quality, range, and details of the work.'],
   ['05', 'Process', 'A clear explanation of what clients can expect before, during, and after construction.'],
-  ['06', 'About', 'Brad, the company, its experience, and the standards behind the work.'],
+  ['06', 'About', 'Your experience, the company, and the standards behind the work.'],
   ['07', 'Contact', 'A concise qualification and inquiry experience for the next right-fit project.'],
 ]
 
@@ -82,7 +82,7 @@ const timeline = [
 ]
 
 const boundaries = [
-  ['Content', 'The scope includes copywriting for the seven core pages and entry of up to 10 priority projects. Brad supplies accurate project facts, approvals, and available photography.'],
+  ['Content', 'The scope includes copywriting for the seven core pages and entry of up to 10 priority projects. You supply accurate project facts, approvals, and available photography.'],
   ['Photography', 'Image selection, sequencing, and light web preparation are included. New photography production, extensive retouching, and licensing are not included.'],
   ['Search', 'The site will follow strong technical, local, and AI-discovery practices. Search rankings, AI citations, traffic, inquiries, and project wins cannot be guaranteed.'],
   ['Timing', 'The two-week schedule assumes timely access, content, and feedback. Client delays move the launch date without changing the scope.'],
@@ -197,7 +197,7 @@ function Hero() {
           </Reveal>
           <Reveal className="flex max-w-[500px] flex-col gap-6">
             <p className="text-[15px] leading-[24px] text-ink-2">
-              The current website has served the company since 2014. This proposal replaces it with a faster, clearer, mobile-first site designed around the work New Line does now and the work Brad wants to do next.
+              The current website has served the company since 2014. This proposal replaces it with a faster, clearer, mobile-first site designed around the work New Line does now and the work you want to do next.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
               <Button href={acceptHref}>Start the website</Button>
@@ -245,7 +245,7 @@ function Opportunity() {
               New Line is expanding into custom homes. The website needs to make that capability clear while keeping remodeling and interiors visible as meaningful parts of the business.
             </p>
             <p className="text-ink-2">
-              The current site relies on category conventions, general claims, and a gallery that gives visitors limited context. The new site will lead with real project proof, a more considered point of view, and clear information about how Brad works.
+              The current site relies on category conventions, general claims, and a gallery that gives visitors limited context. The new site will lead with real project proof, a more considered point of view, and clear information about how you work.
             </p>
             <p className="text-ink-2">
               That shift supports a premium position. The goal is to help the right clients understand the value before they compare New Line only on price.
@@ -290,7 +290,7 @@ function Website() {
               The website will be designed and coded specifically for New Line. It will be fast, responsive, easy to navigate, and built around the questions a qualified residential client needs answered.
             </p>
             <p>
-              Brad will have a focused way to update projects, testimonials, and selected core content without returning to WordPress or editing code.
+              You will have a focused way to update projects, testimonials, and selected core content without returning to WordPress or editing code.
             </p>
           </Reveal>
         </div>
@@ -380,7 +380,7 @@ function ValueCalculator() {
   const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
 
   return (
-    <section id="value" className="border-b border-[var(--color-rule)] bg-[#d9ddcf] px-5 py-20 md:px-10 lg:px-[96px] lg:py-[112px]">
+    <section id="value" className="border-b border-[var(--color-rule)] bg-paper px-5 py-20 md:px-10 lg:px-[96px] lg:py-[112px]">
       <div className="mx-auto max-w-[1280px]">
         <MetaRow left="§ 06 - A simple value illustration" right="Transparent project math" />
         <div className="grid gap-12 lg:grid-cols-[0.88fr_1.12fr] lg:items-end lg:gap-20">
@@ -389,7 +389,7 @@ function ValueCalculator() {
               One right-fit project can put the website cost in perspective.
             </h2>
             <p className="mt-7 max-w-[560px] text-[15px] leading-[24px] text-ink-2">
-              Use Brad's own typical project value below. This compares gross project value with the website investment. It is not a profit calculation or a promise that the website will produce a specific lead.
+              Use your typical project value below. This compares gross project value with the website investment. It is not a profit calculation or a promise that the website will produce a specific lead.
             </p>
           </Reveal>
 
@@ -403,14 +403,14 @@ function ValueCalculator() {
               <input
                 id="project-value"
                 type="range"
-                min="25000"
+                min="10000"
                 max="1000000"
-                step="25000"
+                step="10000"
                 value={projectValue}
                 onChange={(event) => setProjectValue(Number(event.target.value))}
                 className="mt-8 h-2 w-full cursor-pointer accent-[var(--color-mac)]"
               />
-              <div className="mt-3 flex justify-between text-[11px] text-ink-2"><span>$25K</span><span>$1M</span></div>
+              <div className="mt-3 flex justify-between text-[11px] text-ink-2"><span>$10K</span><span>$1M</span></div>
             </div>
             <div className="grid md:grid-cols-2">
               <div className="border-b border-[var(--color-rule)] p-7 md:border-b-0 md:border-r md:p-10">
@@ -518,7 +518,7 @@ function Closing() {
   return (
     <section className="px-5 py-20 md:px-10 lg:px-[96px] lg:py-[128px]">
       <div className="mx-auto max-w-[1280px]">
-        <MetaRow left="§ 10 - Next step" right="Ready when Brad is" />
+        <MetaRow left="§ 10 - Next step" right="Ready when you are" />
         <Reveal>
           <h2 className="display max-w-[1040px] text-[54px] leading-[58px] md:text-[82px] md:leading-[86px] lg:text-[106px] lg:leading-[108px]">
             Build the website around the projects New Line wants more of.

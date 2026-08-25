@@ -45,9 +45,14 @@ test('New Line Custom Interiors proposal preserves scope, timing, pricing, and p
   }
 
   assert.match(proposal, /type="range"/)
+  assert.match(proposal, /min="10000"/)
+  assert.match(proposal, /step="10000"/)
+  assert.match(proposal, /\$10K/)
   assert.match(proposal, /websiteCost = 6500/)
   assert.match(proposal, /not a profit calculation or a promise/i)
   assert.match(proposal, /Search rankings, AI citations, traffic, inquiries, and project wins cannot be guaranteed/)
+  assert.doesNotMatch(proposal, /bg-\[#d9ddcf\]/)
+  assert.doesNotMatch(proposal, /work Brad wants|how Brad works|Brad will have|Brad supplies|Ready when Brad is|Use Brad's own/)
   assert.doesNotMatch(proposal, /WordPress[^.]*included/i)
   assert.doesNotMatch(proposal, /—/)
 })
