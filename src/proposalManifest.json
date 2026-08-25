@@ -645,5 +645,19 @@
     "sourceFile": "src/DoubleUpDavesProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
+  },
+  {
+    "id": "new-line-custom-interiors",
+    "name": "New Line Custom Interiors",
+    "tagline": "Custom website and search foundation · $6,500 · August 2026",
+    "status": "Draft",
+    "href": "/proposal/new-line-custom-interiors",
+    "paths": [
+      "/proposal/new-line-custom-interiors"
+    ],
+    "sourceFile": "src/NewLineCustomInteriorsProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true,
+    "access": "active"
   }
 ]

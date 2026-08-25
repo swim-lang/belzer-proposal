@@ -22,6 +22,7 @@ import { LexPoliticaProposal } from './LexPoliticaProposal'
 import { LittleTechAssociationProposal } from './LittleTechAssociationProposal'
 import { MaxNewFirmProposal } from './MaxNewFirmProposal'
 import { MollyEngelsProposal } from './MollyEngelsProposal'
+import { NewLineCustomInteriorsProposal } from './NewLineCustomInteriorsProposal'
 import { OffMenuProposal } from './OffMenuProposal'
 import { PathLawGroupProposal } from './PathLawGroupProposal'
 import { PreMeetingPage } from './PreMeetingPage'
@@ -160,6 +161,8 @@ export default function App() {
         return withProposalGate(<ContractPage contract={mollyEngelsContract} />)
       case 'molly':
         return withProposalGate(<MollyEngelsProposal />)
+      case 'new-line-custom-interiors':
+        return withProposalGate(<NewLineCustomInteriorsProposal />)
       case 'syreeta-mack':
         return withProposalGate(<SyreetaMackProposal />)
       case 'max-new-firm':
