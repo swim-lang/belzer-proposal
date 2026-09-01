@@ -4,6 +4,7 @@ import { BapsCharitiesProposal } from './BapsCharitiesProposal'
 import { BelzerPilotProposal } from './BelzerPilotProposal'
 import { BelzerSystemsProposal } from './BelzerSystemsProposal'
 import { BlanchetSearchVisibilityProposal } from './BlanchetSearchVisibilityProposal'
+import { ClavicularMiamiGymProposal } from './ClavicularMiamiGymProposal'
 import { CipherProposal } from './CipherProposal'
 import { DoubleUpDavesProposal } from './DoubleUpDavesProposal'
 import { EmergencesLabsProposal } from './EmergencesLabsProposal'
@@ -163,6 +164,8 @@ export default function App() {
         return withProposalGate(<MollyEngelsProposal />)
       case 'new-line-custom-interiors':
         return withProposalGate(<NewLineCustomInteriorsProposal />)
+      case 'clavicular-miami-gym':
+        return withProposalGate(<ClavicularMiamiGymProposal />)
       case 'syreeta-mack':
         return withProposalGate(<SyreetaMackProposal />)
       case 'max-new-firm':

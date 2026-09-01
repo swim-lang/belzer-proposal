@@ -68,6 +68,20 @@
     "showInDashboard": true
   },
   {
+    "id": "clavicular-miami-gym",
+    "name": "Clavicular Miami Gym",
+    "tagline": "Strategy, naming, identity, launch system, and website · $0 agency fee",
+    "status": "Active",
+    "href": "/proposal/clavicular-miami-gym",
+    "paths": [
+      "/proposal/clavicular-miami-gym"
+    ],
+    "sourceFile": "src/ClavicularMiamiGymProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true,
+    "access": "active"
+  },
+  {
     "id": "emergences-labs",
     "name": "Emergences Labs",
     "tagline": "Three-brand identity and product design system · $45,000",
