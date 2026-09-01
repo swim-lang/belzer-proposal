@@ -112,11 +112,11 @@ const principles: Principle[] = [
 const phases: Phase[] = [
   {
     num: '01',
-    title: 'Miami discovery and business framing',
-    body: 'We start in person. The first job is to understand the space, the audience, the operating model, the role Braden wants to play, and the revenue paths that matter most. This keeps the identity tied to a business people can actually join.',
+    title: 'Discovery and business framing',
+    body: 'The first job is to understand the space, the audience, the operating model, the role Braden wants to play, and the revenue paths that matter most. This keeps the identity tied to a business people can actually join.',
     deliverable: 'A concise strategic brief and an agreed definition of what the brand must do.',
     includes: [
-      'In-person Miami discovery session',
+      'Discovery session',
       'Space and camera-use walkthrough',
       'Audience and gym-user priorities',
       'Revenue-path discussion',
@@ -202,7 +202,7 @@ const deliverableGroups: DeliverableGroup[] = [
   {
     title: 'Foundation',
     items: [
-      'In-person discovery',
+      'Discovery session',
       'Business and audience brief',
       'Positioning',
       'Naming criteria',
@@ -256,7 +256,7 @@ const timeline: TimelineStep[] = [
   {
     when: 'Week 01',
     title: 'Discovery and alignment',
-    items: ['Miami discovery', 'Business framing', 'Audience and revenue paths', 'Positioning', 'Moodboard alignment'],
+    items: ['Discovery session', 'Business framing', 'Audience and revenue paths', 'Positioning', 'Moodboard alignment'],
   },
   {
     when: 'Week 02',
@@ -279,7 +279,7 @@ const valueLines: ValueLine[] = [
   {
     num: '01',
     title: 'Discovery, strategy, and naming',
-    summary: 'In-person Miami discovery, business framing, positioning, naming, verbal direction, and visual alignment.',
+    summary: 'Discovery, business framing, positioning, naming, verbal direction, and visual alignment.',
     value: '$15,000',
   },
   {
@@ -327,7 +327,6 @@ const agreements: Agreement[] = [
 
 const includedCosts = [
   'Anchovies’ agency time across the scope above',
-  'Initial in-person Miami discovery travel',
   'Core marketing website design and development',
   'Final standards, production files, and source-file handoff',
 ]
@@ -345,7 +344,7 @@ const futureWork = [
   'Fabrication management and installation',
   'Ongoing campaigns, social content, or community management',
   'Custom membership software, ecommerce, or complex booking integrations',
-  'Additional on-site work or travel after the initial discovery',
+  'On-site work or travel',
 ]
 
 function MetaRow({ left, right, dark = false }: { left: string; right: string; dark?: boolean }) {
