@@ -61,27 +61,27 @@ const navSections = [
 const signals: Signal[] = [
   {
     num: '01',
-    title: 'It has to look right with the sound off.',
-    body: 'The gym will live in vertical clips, long-form streams, photos, interviews, and other creators’ feeds before many people ever visit it. The identity, signage, lighting, sightlines, and recurring content zones need to register instantly on camera.',
+    title: 'Designed for the camera',
+    body: 'Braden can use the gym as a recurring setting for his own streams, clips, photos, and interviews. The identity, signage, equipment zones, lighting, and stream graphics should make the brand recognizable on camera without turning the gym into a space only for creators.',
   },
   {
     num: '02',
-    title: 'Clavicular creates the gravity. The gym needs its own orbit.',
-    body: 'Braden’s audience can create immediate attention, but the business should build brand equity of its own: a clear offer, a repeatable member experience, recognizable assets, and a reason to stay relevant beyond any single stream.',
+    title: 'Independent brand equity',
+    body: 'Braden’s audience can create immediate attention, but the business should build brand equity of its own: a clear offer, a repeatable in-gym experience, recognizable assets, and a reason to stay relevant beyond any single stream.',
   },
   {
     num: '03',
-    title: 'Attention is the advantage. Revenue is the job.',
-    body: 'The brand should be designed around a real commercial model—not just a reveal. Memberships, day access, creator sessions, coaching, merchandise, events, sponsorships, and digital extensions should feel like one system rather than unrelated add-ons.',
+    title: 'A clear revenue model',
+    body: 'A free-access model can still be commercially valuable. The gym can create revenue through Braden’s content, sponsorships, brand partnerships, merchandise, events, coaching, digital products, and selective paid experiences. The brand should connect those opportunities without forcing a traditional membership model.',
   },
   {
     num: '04',
-    title: 'The brand has to be bold without dressing up as bold.',
+    title: 'A distinct, disciplined identity',
     body: 'Black-and-red aggression, Roman-statue cosplay, and supplement-label graphics are easy shortcuts. They are also easy to forget. The better move is a disciplined identity with enough edge to earn attention and enough control to be trusted with a card on file.',
   },
   {
     num: '05',
-    title: 'The useful core is transformation.',
+    title: 'Transformation as the foundation',
     body: 'Clavicular’s audience already understands the idea of ascension. The opportunity is to translate that instinct into a physical experience people can enter, participate in, and measure—without reducing the brand to internet vocabulary or a personality merch line.',
   },
 ]
@@ -89,22 +89,22 @@ const signals: Signal[] = [
 const principles: Principle[] = [
   {
     num: '01',
-    title: 'Native to the creator world',
-    body: 'A name people can say on stream, a mark that reads in a thumbnail, and a visual system that works across 9:16, 16:9, the building, and the body.',
+    title: 'Works in content',
+    body: 'A name people can say on stream, a mark that reads in a thumbnail, and a visual system that works across 9:16, 16:9, the building, and the body. The physical space and stream graphics should reinforce the same brand without feeling like product placement.',
   },
   {
     num: '02',
-    title: 'Built like a business',
-    body: 'A clear offer architecture, membership path, conversion-focused website, and launch system designed to turn reach into repeatable revenue.',
+    title: 'Built as a business',
+    body: 'A clear access model, partnership structure, conversion-focused website, and launch system designed to turn reach into repeatable value and revenue.',
   },
   {
     num: '03',
-    title: 'Specific, not performative',
+    title: 'Connected to Clavicular',
     body: 'The identity should mirror the confidence, directness, transformation, and internet awareness of Clavicular without imitating his feed or trying too hard to speak in memes.',
   },
   {
     num: '04',
-    title: 'Able to outlive the moment',
+    title: 'Built for long-term value',
     body: 'The strongest version feels culturally current now and structurally sound later—recognizable enough for press, disciplined enough to expand, and independent enough to hold long-term value.',
   },
 ]
@@ -118,12 +118,12 @@ const phases: Phase[] = [
     includes: [
       'In-person Miami discovery session',
       'Space and camera-use walkthrough',
-      'Audience and member priorities',
+      'Audience and gym-user priorities',
       'Revenue-path discussion',
       'Competitive and category scan',
       'Creator and collaborator use cases',
       'Brand architecture recommendation',
-      'Website and membership requirements',
+      'Website, access, and participation requirements',
     ],
   },
   {
@@ -166,7 +166,7 @@ const phases: Phase[] = [
     includes: [
       'Exterior and interior signage concepts',
       'Wayfinding and environmental graphic direction',
-      'Membership card or access credential',
+      'Access credential or participation touchpoint',
       'Apparel and merchandise capsule',
       'Towel, bottle, and small-format applications',
       'Social avatar and profile system',
@@ -187,7 +187,7 @@ const phases: Phase[] = [
       'Custom responsive design',
       'Development of up to six core pages or templates',
       'Launch capture or interest form',
-      'Membership and booking UX recommendation',
+      'Access, booking, or membership UX recommendation',
       'Foundational search and social metadata',
       'Analytics setup',
       'Browser and mobile QA',
@@ -260,17 +260,17 @@ const timeline: TimelineStep[] = [
   },
   {
     when: 'Week 02',
-    title: 'Name and identity pitch',
+    title: 'Naming and identity presentation',
     items: ['Name directions', 'Verbal foundation', 'Identity development', 'Full creative presentation', 'Decision and refinement'],
   },
   {
     when: 'Week 03',
-    title: 'Build the world',
+    title: 'Identity and launch applications',
     items: ['Identity completion', 'Signage and merch', 'Social and stream system', 'Website copy and design'],
   },
   {
     when: 'Week 04',
-    title: 'Make it usable',
+    title: 'Website and handoff',
     items: ['Core website build', 'Brand standards', 'Final production assets', 'QA', 'Handoff'],
   },
 ]
@@ -305,22 +305,22 @@ const valueLines: ValueLine[] = [
 const agreements: Agreement[] = [
   {
     label: 'Ownership',
-    title: 'The finished work is yours.',
+    title: 'Ownership of final work',
     body: 'Braden and the gym entity own all approved final project deliverables and production-ready source files delivered through this engagement.',
   },
   {
     label: 'Case study',
-    title: 'The work is the value exchange.',
+    title: 'Case-study rights',
     body: 'After the public launch, Anchovies may document the finished work in our portfolio and submit it to select design publications, awards, and journals. Timing is coordinated with the gym, sensitive business information stays private, and no paid endorsement from Braden is required.',
   },
   {
     label: 'Feedback',
-    title: 'No artificial revision counter.',
+    title: 'Revisions within scope',
     body: 'We will keep refining within the agreed scope until the work is right. Consolidated feedback and timely decisions are what keep a one-month sprint possible.',
   },
   {
     label: 'Mutual fit',
-    title: 'Either side can pause the collaboration.',
+    title: 'Mutual exit',
     body: 'Because the agency fee is waived, either party can step away if the direction, participation, or scope materially stops making sense. Any completed and approved work is organized before the closeout.',
   },
 ]
@@ -473,8 +473,8 @@ function Hero() {
         </Reveal>
       </div>
       <Reveal>
-        <h1 className="serif max-w-[1220px] pb-16 text-[58px] font-medium leading-[56px] tracking-[-0.04em] sm:text-[84px] sm:leading-[78px] md:text-[112px] md:leading-[100px] lg:text-[142px] lg:leading-[126px]">
-          Built for the stream. Ready for the real world.
+        <h1 className="serif max-w-[1220px] pb-16 text-[52px] font-medium leading-[52px] tracking-[-0.036em] sm:text-[72px] sm:leading-[70px] md:text-[92px] md:leading-[88px] lg:text-[108px] lg:leading-[104px]">
+          Built for the stream. Ready for real-world revenue.
         </h1>
       </Reveal>
       <div className="grid gap-12 pb-20 lg:grid-cols-[1.2fr_430px] lg:gap-[120px]">
@@ -485,7 +485,7 @@ function Hero() {
         </Reveal>
         <Reveal className="flex flex-col gap-7">
           <p className="text-[15px] leading-[23px] text-ink-2">
-            This is not a standard gym with a famous face attached. It is a physical space, a recurring content set, a community, a product platform, and a new revenue engine. The brand has to make all five feel like one thing.
+            This is not a standard gym with a famous face attached. It is a physical space, a recurring setting for Braden’s content, a community, and a platform for partnerships, products, and experiences. Access may be free, paid, or hybrid; the brand still needs to turn attention into durable business value.
           </p>
           <div className="flex flex-wrap gap-4">
             <LinkButton href="#alignment">See the thinking -&gt;</LinkButton>
@@ -516,10 +516,10 @@ function Alignment() {
       <div className="grid gap-12 pt-12 lg:grid-cols-[500px_1fr] lg:gap-20">
         <Reveal className="flex flex-col gap-8">
           <h2 className="serif text-[48px] font-medium leading-[52px] tracking-[-0.026em] md:text-[64px] md:leading-[64px]">
-            The camera changes the brief.
+            The stream changes the brief.
           </h2>
           <p className="text-[15px] leading-[24px] text-ink-2">
-            Most gym brands are designed around a building, a membership sale, and maybe an apparel line. This one will be judged in public, in motion, and often in real time. That is a different job—and a better opportunity if we design for it from the start.
+            This is still a real gym for the people who train there. It can also serve as a recurring setting for Braden’s streams and content, which means the brand and physical experience will often be seen in public, in motion, and in real time. We should account for both uses from the start.
           </p>
         </Reveal>
         <Reveal className="border-t border-[var(--color-rule)] lg:border-t-0">
@@ -543,8 +543,8 @@ function PointOfView() {
     <section className="border-b border-[var(--color-rule)] bg-ink px-6 py-24 text-paper md:px-16 lg:px-[120px] lg:py-[160px]">
       <MetaRow left="§ 03 — Point of view" right="One brand · four jobs" dark />
       <Reveal>
-        <h2 className="serif max-w-[1100px] py-16 text-[52px] font-medium leading-[56px] tracking-[-0.034em] md:text-[94px] md:leading-[94px] lg:text-[116px] lg:leading-[114px]">
-          Make it impossible to mistake, even with the sound off.
+        <h2 className="serif max-w-[1100px] py-16 text-[52px] font-medium leading-[56px] tracking-[-0.03em] md:text-[76px] md:leading-[78px] lg:text-[84px] lg:leading-[86px]">
+          Have a clear point of view.
         </h2>
       </Reveal>
       <Reveal className="grid border-y border-paper/25 md:grid-cols-2 xl:grid-cols-4">
@@ -567,14 +567,14 @@ function SelectedWork() {
       <div className="grid gap-12 border-t border-[var(--color-rule)] py-16 lg:grid-cols-[1.2fr_420px] lg:gap-20">
         <Reveal>
           <h2 className="serif max-w-[760px] text-[48px] font-medium leading-[52px] tracking-[-0.026em] md:text-[66px] md:leading-[68px]">
-            Relevant range, in one place.
+            Relevant work.
           </h2>
         </Reveal>
         <Reveal className="text-[15px] leading-[24px] text-ink-2">
-          The deck begins with our work for Within, then moves through identity systems with the restraint, edge, and masculine presence we think are useful references here. They are not proposed styles. They show how we build distinct worlds.
+          The deck begins with our work for Within, then moves through identity systems with the restraint, edge, and masculine presence we think are useful references here. They are not proposed styles. They show how we build different identity systems for different audiences.
         </Reveal>
       </div>
-      <Reveal className="grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
+      <Reveal>
         <a href={portfolioHref} target="_blank" rel="noreferrer" className="group flex min-h-[390px] flex-col justify-between bg-ink p-8 text-paper transition-colors hover:bg-ink-2 md:p-12">
           <div className="flex items-start justify-between gap-8">
             <span className="eyebrow text-paper/55">Portfolio deck · 103 slides</span>
@@ -583,17 +583,6 @@ function SelectedWork() {
           <div>
             <h3 className="serif text-[58px] font-medium leading-[58px] tracking-[-0.03em] md:text-[88px] md:leading-[84px]">Selected work</h3>
             <div className="mt-8 inline-flex rounded-full bg-[var(--color-mac)] px-4 py-2.5 text-[12px] font-medium text-paper group-hover:bg-[var(--color-mac-hover)]">Open deck -&gt;</div>
-          </div>
-        </a>
-        <a href={aboutHref} target="_blank" rel="noreferrer" className="group flex min-h-[390px] flex-col justify-between border border-[var(--color-rule)] p-8 transition-colors hover:bg-ink hover:text-paper md:p-12">
-          <div className="flex items-start justify-between gap-8">
-            <span className="eyebrow text-ink-2 group-hover:text-paper/55">The team</span>
-            <span className="eyebrow text-ink-2 group-hover:text-paper/55">Denver · boutique studio</span>
-          </div>
-          <div>
-            <h3 className="serif text-[44px] font-medium leading-[46px] tracking-[-0.024em] md:text-[58px] md:leading-[58px]">Small team. Wide range.</h3>
-            <p className="mt-6 max-w-[380px] text-[14px] leading-[22px] text-ink-2 group-hover:text-paper/70">Nearly two decades of creative direction paired with art directors who stay close to what is culturally current.</p>
-            <div className="mt-8 inline-flex rounded-full bg-[var(--color-mac)] px-4 py-2.5 text-[12px] font-medium text-paper group-hover:bg-[var(--color-mac-hover)]">Meet Anchovies -&gt;</div>
           </div>
         </a>
       </Reveal>
@@ -607,9 +596,9 @@ function Scope() {
       <MetaRow left="§ 05 — Scope" right="Five connected phases" />
       <div className="grid gap-12 border-t border-[var(--color-rule)] py-16 lg:grid-cols-[1.2fr_420px] lg:gap-20">
         <Reveal>
-          <h2 className="serif max-w-[760px] text-[44px] font-medium leading-[49px] tracking-[-0.024em] md:text-[58px] md:leading-[60px]">From first conversation to a launch-ready system.</h2>
+          <h2 className="serif max-w-[760px] text-[44px] font-medium leading-[49px] tracking-[-0.024em] md:text-[58px] md:leading-[60px]">Scope and process.</h2>
         </Reveal>
-        <Reveal className="text-[15px] leading-[24px] text-ink-2">Discovery keeps the business logic honest. Alignment keeps the creative work focused. The identity then moves directly into the launch touchpoints and website.</Reveal>
+        <Reveal className="text-[15px] leading-[24px] text-ink-2">Discovery defines the business requirements. Alignment sets the creative direction. The approved identity then moves into launch applications and the website.</Reveal>
       </div>
       <div className="border-t border-[var(--color-rule)]">
         {phases.map((phase) => (
@@ -644,7 +633,7 @@ function Deliverables() {
       <MetaRow left="§ 06 — Final deliverables" right="A complete launch system" />
       <div className="grid gap-12 border-t border-[var(--color-rule)] py-16 lg:grid-cols-[1.2fr_420px] lg:gap-20">
         <Reveal>
-          <h2 className="serif max-w-[760px] text-[44px] font-medium leading-[49px] tracking-[-0.024em] md:text-[58px] md:leading-[60px]">Enough to launch. Structured to keep growing.</h2>
+          <h2 className="serif max-w-[760px] text-[44px] font-medium leading-[49px] tracking-[-0.024em] md:text-[58px] md:leading-[60px]">Final deliverables.</h2>
         </Reveal>
         <Reveal className="text-[15px] leading-[24px] text-ink-2">We will finalize the exact application mix after discovery, but the commitment is simple: deliver the strategy, identity, and practical tools needed to put the brand into the world.</Reveal>
       </div>
@@ -675,7 +664,7 @@ function Timeline() {
     <section id="timeline" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[160px]">
       <MetaRow left="§ 07 — Timeline" right="Four-week core sprint" />
       <Reveal>
-        <h2 className="serif max-w-[1080px] py-14 text-[54px] font-medium leading-[57px] tracking-[-0.032em] md:text-[92px] md:leading-[92px]">One month. Clear decisions. No wasted theater.</h2>
+        <h2 className="serif max-w-[1080px] py-14 text-[54px] font-medium leading-[57px] tracking-[-0.032em] md:text-[92px] md:leading-[92px]">One month.</h2>
       </Reveal>
       <Reveal>
         <p className="max-w-[760px] pb-12 text-[14px] leading-[22px] text-ink-2">The schedule assumes timely access to the team, consolidated feedback, and a decisive name and identity approval. Formal trademark clearance, location construction, and advanced booking or membership integrations can continue on their own timelines without slowing the core brand sprint.</p>
@@ -701,7 +690,7 @@ function TheTrade() {
       <MetaRow left="§ 08 — The trade" right="Comparable value · agency fee waived" dark />
       <div className="grid gap-12 py-16 lg:grid-cols-[1fr_480px] lg:items-end lg:gap-20">
         <Reveal>
-          <h2 className="serif max-w-[700px] text-[58px] font-medium leading-[61px] tracking-[-0.034em] md:text-[96px] md:leading-[94px]">We do the work. The work becomes the case study.</h2>
+          <h2 className="serif max-w-[700px] text-[48px] font-medium leading-[52px] tracking-[-0.028em] md:text-[58px] md:leading-[62px]">We do the work. The work becomes the case study.</h2>
         </Reveal>
         <Reveal className="lg:text-right">
           <div className="serif text-[92px] font-medium leading-[90px] tracking-[-0.04em] md:text-[138px] md:leading-[130px]">$0</div>
@@ -749,9 +738,9 @@ function TheTrade() {
 function Terms() {
   return (
     <section id="terms" className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[160px]">
-      <MetaRow left="§ 09 — Working agreement" right="Simple on purpose" />
+      <MetaRow left="§ 09 — Working agreement" right="Ownership · revisions · future scope" />
       <Reveal>
-        <h2 className="serif max-w-[920px] py-14 text-[50px] font-medium leading-[54px] tracking-[-0.03em] md:text-[82px] md:leading-[82px]">A serious commitment without making the relationship complicated.</h2>
+        <h2 className="serif max-w-[920px] py-14 text-[48px] font-medium leading-[52px] tracking-[-0.028em] md:text-[64px] md:leading-[66px]">A simple working agreement.</h2>
       </Reveal>
       <Reveal className="grid border-l border-t border-[var(--color-rule)] md:grid-cols-2">
         {agreements.map((agreement) => (
@@ -765,7 +754,7 @@ function Terms() {
       <Reveal className="mt-12 grid gap-10 border border-[var(--color-rule)] p-8 md:p-12 lg:grid-cols-[1fr_520px] lg:gap-20">
         <div>
           <span className="eyebrow text-ink-2">After the core engagement</span>
-          <h3 className="serif mt-7 max-w-[560px] text-[42px] font-medium leading-[46px] tracking-[-0.022em]">Paid work begins only where the first scope ends.</h3>
+          <h3 className="serif mt-7 max-w-[560px] text-[42px] font-medium leading-[46px] tracking-[-0.022em]">Future paid work</h3>
           <p className="mt-6 max-w-[580px] text-[14px] leading-[22px] text-ink-2">If the launch grows into deeper environmental, production, content, or technical work, we scope that separately before it begins. There is no automatic retainer and no surprise expansion.</p>
         </div>
         <InlineList items={futureWork} />
@@ -774,29 +763,19 @@ function Terms() {
   )
 }
 
-function TeamAndClose() {
+function Team() {
   return (
     <>
       <section className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[150px]">
-        <MetaRow left="§ 10 — The team" right="Boutique by design" />
+        <MetaRow left="§ 10 — The team" right="Experience and approach" />
         <div className="grid gap-12 pt-14 lg:grid-cols-[1.1fr_440px] lg:gap-20">
           <Reveal>
-            <h2 className="serif max-w-[760px] text-[48px] font-medium leading-[52px] tracking-[-0.028em] md:text-[74px] md:leading-[74px]">Experience where it matters. Current where it counts.</h2>
+            <h2 className="serif max-w-[760px] text-[44px] font-medium leading-[48px] tracking-[-0.024em] md:text-[54px] md:leading-[58px]">Brand strategy with business context.</h2>
           </Reveal>
           <Reveal className="flex flex-col gap-7">
-            <p className="text-[15px] leading-[24px] text-ink-2">Sean Ashlow has led Anchovies for nearly two decades. Kira Knoop and Logan Causey bring the art-direction, typography, illustration, and cultural awareness that keep the work from feeling like it was approved by committee. The team stays small so the people shaping the idea are the people making it.</p>
+            <p className="text-[15px] leading-[24px] text-ink-2">Anchovies brings nearly two decades of experience using strategy and design to support positioning, differentiation, conversion, and long-term brand value. Sean leads business and creative strategy. Kira Knoop and Logan Causey lead art direction, typography, illustration, and brand application. The team stays small so the people making the decisions are also doing the work.</p>
             <div><LinkButton href={aboutHref} variant="outline">Meet the team -&gt;</LinkButton></div>
           </Reveal>
-        </div>
-      </section>
-      <section className="border-b border-[var(--color-rule)] px-6 py-24 md:px-16 lg:px-[120px] lg:py-[160px]">
-        <MetaRow left="§ 11 — In closing" right="For Clavicular · Miami" />
-        <Reveal>
-          <h2 className="serif max-w-[1120px] py-16 text-[54px] font-medium leading-[57px] tracking-[-0.034em] md:text-[96px] md:leading-[94px]">A gym people notice online. A brand they choose in real life.</h2>
-        </Reveal>
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-20">
-          <Reveal><p className="max-w-[560px] text-[17px] leading-[28px] text-ink-2">The attention is already there. Our job is to give it a name, a world, and a business platform strong enough to compound.</p></Reveal>
-          <Reveal><p className="max-w-[560px] text-[17px] leading-[28px] text-ink-2">Distinct without performing. Commercial without becoming generic. Clearly connected to Clavicular, but valuable enough to stand on its own.</p></Reveal>
         </div>
       </section>
       <footer className="flex flex-col gap-5 bg-paper px-6 py-10 text-ink-2 md:flex-row md:items-center md:justify-between md:px-16 lg:px-[120px]">
@@ -842,7 +821,7 @@ export function ClavicularMiamiGymProposal() {
       <Timeline />
       <TheTrade />
       <Terms />
-      <TeamAndClose />
+      <Team />
     </main>
   )
 }
