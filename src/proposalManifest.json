@@ -1,5 +1,16 @@
 [
   {
+    "id": "lej",
+    "name": "Legal Entrepreneurs for Justice",
+    "tagline": "Brand education, firm support, and AI curriculum · September 2026",
+    "status": "Active",
+    "href": "/proposal/lej",
+    "paths": ["/proposal/lej"],
+    "sourceFile": "src/LejProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true
+  },
+  {
     "id": "belzer",
     "name": "Belzer Law",
     "tagline": "Custom software proposal",

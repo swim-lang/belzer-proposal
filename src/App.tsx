@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { LejProposal } from './LejProposal'
 import { AvodahProposal } from './AvodahProposal'
 import { BapsCharitiesProposal } from './BapsCharitiesProposal'
 import { BelzerPilotProposal } from './BelzerPilotProposal'
@@ -104,6 +105,8 @@ export default function App() {
     }
 
     switch (proposalEntry.id) {
+      case 'lej':
+        return withProposalGate(<LejProposal />)
       case 'belzer': {
         if (pathname === '/belzer' || pathname.startsWith('/belzer/')) {
           window.history.replaceState(null, '', '/proposal/belzer')
