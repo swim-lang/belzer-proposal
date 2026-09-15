@@ -99,7 +99,7 @@ export function BennettProposal() {
         <h1 className="display max-w-[1100px] pb-12 text-[56px] tracking-[-0.028em] sm:text-[80px] md:text-[104px] lg:text-[128px]">Brand & website proposal.</h1>
         <div className="grid gap-10 border-t border-[var(--color-rule)] pt-10 lg:grid-cols-[1.4fr_1fr] lg:gap-20">
           <p className="serif max-w-[680px] text-[28px] leading-[1.3] md:text-[36px]">A clear identity for the firm you have built and the business you want it to become.</p>
-          <div className="space-y-6"><p className="text-[15px] leading-6 text-ink-2">You have spent the last two years strengthening the business. This project brings the name, brand, website, and everyday materials up to the same standard, with both partners involved from the start.</p><div className="flex flex-wrap gap-x-8 gap-y-3"><span className="eyebrow">{money(total)} · Fixed project fee</span><span className="eyebrow">4–6 week target</span></div></div>
+          <div className="space-y-6"><p className="text-[15px] leading-6 text-ink-2">You have spent the last two years strengthening the business. This project brings the name, brand, website, and everyday materials up to the same standard, with both partners involved from the start.</p><div className="flex flex-wrap gap-x-8 gap-y-3"><span className="eyebrow">{money(total)} · Fixed project fee</span><span className="eyebrow">5–7 week target</span></div></div>
         </div>
       </section>
 
@@ -154,12 +154,12 @@ export function BennettProposal() {
       </Section>
 
       <Section id="timeline" number="05" title="Timeline">
-        <div className="mb-12 grid gap-6 lg:grid-cols-2"><p className="serif text-[36px]">Approximately 4–6 weeks.</p><p className="max-w-[550px] text-[15px] leading-6 text-ink-2">A target from kickoff to handoff, with overlapping work where practical. We will confirm the schedule after discovery and the website page inventory are agreed. Partner availability, feedback, and content approvals affect timing.</p></div>
+        <div className="mb-12 grid gap-6 lg:grid-cols-2"><p className="serif text-[36px]">Approximately 5–7 weeks.</p><p className="max-w-[550px] text-[15px] leading-6 text-ink-2">A target from kickoff to handoff, with overlapping work where practical. We will confirm the schedule after discovery and the website page inventory are agreed. Partner availability, feedback, and content approvals affect timing.</p></div>
         {[
           ['Week 1', 'Discovery & naming', 'Missoula visit, partner input, positioning, naming exploration, and website scope.'],
           ['Weeks 2–3', 'Identity & direction', 'Creative presentation, naming decision, identity refinement, and initial website structure and copy.'],
-          ['Weeks 3–5', 'Website & launch materials', 'Responsive website design and build, client templates, stationery, social assets, and signage artwork.'],
-          ['Weeks 5–6', 'Testing & handoff', 'Final approvals, website testing and launch, organized assets, and team walkthrough.'],
+          ['Weeks 3–6', 'Website & launch materials', 'Responsive website design and build, client templates, stationery, social assets, and signage artwork.'],
+          ['Weeks 5–7', 'Testing & handoff', 'Final approvals, website testing and launch, organized assets, and team walkthrough.'],
         ].map(([time, title, body]) => <div key={time} className="grid gap-3 border-t border-[var(--color-rule)] py-7 md:grid-cols-[120px_1fr_1.5fr] md:gap-8"><span className="eyebrow text-ink-2">{time}</span><h3 className="serif text-[25px]">{title}</h3><p className="text-[14px] leading-6 text-ink-2">{body}</p></div>)}
         <p className="mt-6 text-[13px] leading-6 text-ink-2">Signage fabrication, installation, and the office renovation follow their own schedules and do not need to hold up the website launch.</p>
       </Section>
