@@ -1,5 +1,16 @@
 [
   {
+    "id": "bennett",
+    "name": "Bennett Law Office",
+    "tagline": "Brand strategy, naming, identity, website, and launch materials · September 2026",
+    "status": "Active",
+    "href": "/proposal/bennett",
+    "paths": ["/proposal/bennett"],
+    "sourceFile": "src/BennettProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true
+  },
+  {
     "id": "lej",
     "name": "Legal Entrepreneurs for Justice",
     "tagline": "Brand education, firm support, and AI curriculum · September 2026",

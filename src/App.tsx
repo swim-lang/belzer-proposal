@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { BennettProposal } from './BennettProposal'
 import { LejProposal } from './LejProposal'
 import { AvodahProposal } from './AvodahProposal'
 import { BapsCharitiesProposal } from './BapsCharitiesProposal'
@@ -105,6 +106,8 @@ export default function App() {
     }
 
     switch (proposalEntry.id) {
+      case 'bennett':
+        return withProposalGate(<BennettProposal />)
       case 'lej':
         return withProposalGate(<LejProposal />)
       case 'belzer': {
