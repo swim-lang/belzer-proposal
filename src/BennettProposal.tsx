@@ -178,7 +178,7 @@ export function BennettProposal() {
             <p className="max-w-[530px] text-[15px] leading-7 text-ink-2">If this feels right, let us know and we’ll prepare the agreement and kickoff invoice. If you’d like to talk it through first, choose a time for us to review the proposal together.</p>
           </div>
           <div className="flex flex-col items-start justify-center gap-4">
-            <a href="/proposal/bennett/contract" className="inline-flex w-full items-center justify-center rounded-full border border-ink px-6 py-4 text-center text-[14px] font-medium transition-colors hover:bg-ink hover:text-paper sm:w-auto">Review contract draft</a>
+            <a href="/proposal/bennett/contract" className="inline-flex w-full items-center justify-center rounded-full border border-ink px-6 py-4 text-center text-[14px] font-medium transition-colors hover:bg-ink hover:text-paper sm:w-auto">Review and sign the contract</a>
             <a href={approvalHref} className="inline-flex w-full items-center justify-center rounded-full bg-ink px-6 py-4 text-center text-[14px] font-medium text-paper transition-colors hover:bg-ink-2 sm:w-auto">Let’s get started</a>
             <a href={calendarHref} target="_blank" rel="noreferrer" className="inline-flex w-full items-center justify-center rounded-full border border-ink px-6 py-4 text-center text-[14px] font-medium transition-colors hover:bg-ink hover:text-paper sm:w-auto">Review the proposal together</a>
           </div>

@@ -1,10 +1,11 @@
 import type { ContractData } from './types'
 
-// Draft only: no signature or invoice URL is supplied on behalf of either party.
+// Sean authorized his saved agency signature and client signing on September 16.
 export const bennettContract: ContractData = {
   slug: 'bennett',
   title: 'Brand Strategy, Naming, Identity, Website, and Launch Materials',
-  draftOnly: true,
+  agencySignedDate: 'September 16, 2026',
+  depositHref: 'https://next.waveapps.com/a/invoices/5f3aecf9-dd9d-45fe-804f-bdcf03c3d6fe/public/2613555163805369956/c3c0031b316c4fca8d5dbfbd201503d3',
   preparedDate: 'September 16, 2026',
   effectiveDate: '[date both parties sign]',
   projectStart: 'after this Contract is signed and the kickoff invoice is paid',

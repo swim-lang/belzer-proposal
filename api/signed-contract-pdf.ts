@@ -80,7 +80,7 @@ export default async function handler(req: any, res: any) {
   try {
     browser = await puppeteer.launch({
       args: launchArgs(),
-      defaultViewport: chromium.defaultViewport,
+      defaultViewport: { width: 1280, height: 960, deviceScaleFactor: 1 },
       executablePath: await executablePath(),
       headless: true,
     })
@@ -95,7 +95,7 @@ export default async function handler(req: any, res: any) {
       }
     })
     await page.setContent(documentHtml(signedDocumentHtml), { waitUntil: 'domcontentloaded' })
-    await page.evaluate(async () => {
+    const imagesLoaded = await page.evaluate(async () => {
       const images = Array.from(document.images)
       await Promise.race([
         Promise.all(
@@ -110,7 +110,10 @@ export default async function handler(req: any, res: any) {
         ),
         new Promise<void>((resolve) => window.setTimeout(resolve, 5_000)),
       ])
+      await document.fonts.ready
+      return images.every((image) => image.complete && image.naturalWidth > 0)
     })
+    if (!imagesLoaded) throw new Error('A signature image could not be loaded; refusing an incomplete PDF')
     const pdf = await page.pdf({
       format: 'letter',
       printBackground: true,
