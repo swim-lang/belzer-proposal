@@ -1,5 +1,16 @@
 [
   {
+    "id": "bennett-contract",
+    "name": "Bennett Law Office: Contract Draft",
+    "tagline": "Brand and website engagement · $39,500 · Draft for review",
+    "status": "Active",
+    "href": "/proposal/bennett/contract",
+    "paths": ["/proposal/bennett/contract"],
+    "sourceFile": "src/contracts/bennettContract.ts",
+    "kind": "contract",
+    "showInDashboard": false
+  },
+  {
     "id": "bennett",
     "name": "Bennett Law Office",
     "tagline": "Brand strategy, naming, identity, website, and launch materials · September 2026",

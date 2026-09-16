@@ -23,6 +23,7 @@ export type ContractScopePhase = {
 
 export type ContractData = {
   slug: string
+  draftOnly?: boolean
   title: string
   preparedDate: string
   agencySignedDate?: string

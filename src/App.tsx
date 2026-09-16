@@ -43,6 +43,7 @@ import { ProposalGate } from './components/ProposalGate'
 import { LockedProposalNotice } from './components/LockedProposalNotice'
 import { ContentProvider } from './context/ContentContext'
 import { ContractPage } from './contracts/ContractPage'
+import { bennettContract } from './contracts/bennettContract'
 import { avodahContract } from './contracts/avodahContract'
 import { belzerSystemsContract } from './contracts/belzerSystemsContract'
 import { cipherContract } from './contracts/cipherContract'
@@ -108,6 +109,8 @@ export default function App() {
     switch (proposalEntry.id) {
       case 'bennett':
         return withProposalGate(<BennettProposal />)
+      case 'bennett-contract':
+        return withProposalGate(<ContractPage contract={bennettContract} />)
       case 'lej':
         return withProposalGate(<LejProposal />)
       case 'belzer': {
