@@ -29,6 +29,7 @@ try {
  await page.type('input[type=password]',source.match(/PROPOSAL_PASSWORD = '([^']+)'/)[1]);
  await page.click('button[type=submit]');
  await page.waitForSelector('.agency-signature-line img');
+ await page.waitForFunction(()=>{const i=document.querySelector('.agency-signature-line img');return i?.complete&&i.naturalWidth>0;});
  assert.ok(await page.$eval('.agency-signature-line img',i=>i.complete&&i.naturalWidth>0));
  const labels=await page.$$('label');
  for(const l of labels){const text=await l.evaluate(e=>e.textContent);if(text.includes('Signer name'))await(await l.$('input')).type('QA TEST ONLY');if(text==='Title')await(await l.$('input')).type('Test - not a client signature');}
