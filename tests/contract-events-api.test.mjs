@@ -30,6 +30,8 @@ test('signed contracts download as real PDF files for clients and admins', () =>
   assert.match(pdfApi, /content-type', 'application\/pdf'/)
   assert.match(pdfApi, /content-disposition'/)
   assert.match(pdfApi, /page\.pdf/)
+  assert.doesNotMatch(pdfApi, /chromium\.defaultViewport/)
+  assert.match(pdfApi, /if \(!imagesLoaded\) throw/)
   assert.match(pdfApi, /cache-control', 'private, no-store'/)
   assert.match(pdfApi, /signedDocumentHtml\.includes\('contract-document'\)/)
   assert.match(contractPage, /fetch\('\/api\/signed-contract-pdf'/)

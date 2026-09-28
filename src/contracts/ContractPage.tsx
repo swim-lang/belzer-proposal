@@ -572,7 +572,7 @@ export function ContractPage({ contract }: ContractPageProps) {
   }
 
   const handleSubmit = async () => {
-    if (!canSubmit || submitStatus === 'submitting') return
+    if (contract.draftOnly || !canSubmit || submitStatus === 'submitting') return
 
     const submittedAt = new Date().toISOString()
     const nextSignature: SubmittedSignature = {
@@ -648,7 +648,7 @@ export function ContractPage({ contract }: ContractPageProps) {
         <article className="contract-document order-last min-w-0 bg-white px-7 py-8 shadow-[0_20px_80px_rgba(10,10,10,0.08)] lg:order-none md:px-12 md:py-12">
           <header className="contract-header">
             <div>
-              <p className="eyebrow text-ink-2">Service Agreement</p>
+              <p className="eyebrow text-ink-2">{contract.draftOnly ? 'Draft Service Agreement · Unsigned · For Review' : 'Service Agreement'}</p>
               <h1>{contract.title}</h1>
             </div>
             <div className="contract-meta">
@@ -1010,16 +1010,16 @@ export function ContractPage({ contract }: ContractPageProps) {
                   <strong>Agency:</strong> {contract.agency.name}
                 </p>
                 <div className="signature-line agency-signature-line">
-                  <img src={agencySignature.image} alt={agencySignature.name} />
+                  {!contract.draftOnly && <img src={agencySignature.image} alt={agencySignature.name} />}
                 </div>
                 <p>
-                  <strong>Signature:</strong> {agencySignature.name}
+                  <strong>Signature:</strong> {contract.draftOnly ? '_______________________' : agencySignature.name}
                 </p>
                 <p>
                   <strong>Name / Title:</strong> {agencySignature.name} · {agencySignature.title}
                 </p>
                 <p>
-                  <strong>Date:</strong> {contract.agencySignedDate ?? agencySignature.date}
+                  <strong>Date:</strong> {contract.draftOnly ? '____________' : (contract.agencySignedDate ?? agencySignature.date)}
                 </p>
               </div>
             </div>
@@ -1076,7 +1076,7 @@ export function ContractPage({ contract }: ContractPageProps) {
           )}
         </article>
 
-        {!isPrintMode && (
+        {!isPrintMode && !contract.draftOnly && (
           <SignaturePanel
             clientName={contract.client.name}
             signerName={signerName}

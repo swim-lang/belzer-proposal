@@ -3,7 +3,7 @@
     "id": "m-bouvier",
     "name": "M. Bouvier Law",
     "tagline": "Brand identity and nine-page website · $9,900 · September 2026",
-    "status": "Draft",
+    "status": "Active",
     "href": "/proposal/m-bouvier",
     "paths": [
       "/proposal/m-bouvier"
@@ -11,6 +11,17 @@
     "sourceFile": "src/MBouvierProposal.tsx",
     "kind": "proposal",
     "showInDashboard": true
+  },
+  {
+    "id": "bennett-contract",
+    "name": "Bennett Law Office: Contract Draft",
+    "tagline": "Brand and website engagement · $39,500 · Draft for review",
+    "status": "Active",
+    "href": "/proposal/bennett/contract",
+    "paths": ["/proposal/bennett/contract"],
+    "sourceFile": "src/contracts/bennettContract.ts",
+    "kind": "contract",
+    "showInDashboard": false
   },
   {
     "id": "bennett",
