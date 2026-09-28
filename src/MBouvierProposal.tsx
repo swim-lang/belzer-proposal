@@ -1,7 +1,7 @@
 import { useEffect, type ReactNode } from 'react'
 
 const calendarHref = 'https://cal.com/anchovies/30min?overlayCalendar=true'
-const approvalHref = `mailto:sean@anchovies.agency?subject=${encodeURIComponent('M Bouvier Law + Anchovies: let’s get started')}&body=${encodeURIComponent('Hi Sean,\n\nI’m excited to move forward with the M Bouvier Law proposal. Please send over the agreement and kickoff invoice so we can get started.\n\nThanks!')}`
+const approvalHref = `mailto:sean@anchovies.agency?subject=${encodeURIComponent('M. Bouvier Law + Anchovies: let’s get started')}&body=${encodeURIComponent('Hi Sean,\n\nI’m excited to move forward with the M. Bouvier Law proposal. Please send over the agreement and kickoff invoice so we can get started.\n\nThanks!')}`
 
 const sections = [
   ['goals', 'Goals'], ['scope', 'Scope'], ['process', 'Process'],
@@ -10,25 +10,25 @@ const sections = [
 const scope = [
   {
     title: 'Brand identity',
-    intro: 'A distinctive identity for M Bouvier Law that feels professional, personal, and true to you, with the everyday materials to put it to work.',
+    intro: 'A distinctive identity for M. Bouvier Law that feels professional, personal, and true to you, with the everyday materials to put it to work.',
     items: ['A focused discovery conversation and visual moodboard to align on your story, taste, and the clients you want to serve', 'Primary logo, secondary lockup, and a supporting monogram or mark where appropriate', 'Typography, color palette, and a supporting graphic language', 'One developed creative direction shown across the website and printed materials, followed by refinement together', 'Print-ready business card design and editable letterhead and client correspondence template', 'One email signature, social profile image and cover, and three reusable social post templates', 'A concise brand guide covering logo, type, color, layout, and image use', 'Organized vector, print, and web logo files, plus editable templates'],
-    note: 'Discovery is part of the design process. We are working with M Bouvier Law as the name; naming and a separate brand strategy engagement are not included. Printing and paid asset licenses are separate.',
+    note: 'Discovery is part of the design process. We are working with M. Bouvier Law as the name; naming and a separate brand strategy engagement are not included. Printing and paid asset licenses are separate.',
   },
   {
     title: 'Nine-page website',
     intro: 'A custom website that makes your experience easy to understand and helps the right people feel comfortable reaching out.',
-    items: ['A nine-page structure, with clear paths for criminal defense, family law, and mediation', 'Concise copywriting for all nine pages, based on your interview, background, and approved service information', 'Custom desktop and mobile design, followed by responsive development', 'A personal biography and approach that show who clients will work with directly', 'A contact form routed to your email, clear phone and email links, and a confirmation message', 'Foundational search setup: page titles, descriptions, headings, sitemap, and indexing', 'Analytics and Search Console setup using firm-owned accounts', 'Browser, mobile, form, and basic accessibility checks before launch', 'Domain connection, launch support, and a walkthrough for routine content updates'],
+    items: ['A nine-page structure, with clear paths for criminal defense, family law, and mediation', 'Concise copywriting for all nine pages, based on your interview, background, and approved service information', 'Custom desktop and mobile design, followed by responsive development', 'A firm introduction and approach that show who clients will work with directly', 'An Insights listing and reusable article template; ongoing article writing is separate', 'A contact form routed to your email, clear phone and email links, and a confirmation message', 'Foundational search setup: page titles, descriptions, headings, sitemap, and indexing', 'Analytics and Search Console setup using firm-owned accounts', 'Browser, mobile, form, and basic accessibility checks before launch', 'Domain connection, launch support, and a walkthrough for routine content updates'],
     note: 'You review credentials, services, and legal content before launch and provide approved privacy and disclaimer wording. Hosting, domains, photography production, ongoing SEO, paid advertising, client portals, payment systems, and custom integrations are separate.',
   },
 ]
 const pages = [
   ['Home', 'Introduce the practice, your personal service, and the main ways you can help.'],
-  ['About Meaghan', 'Tell your story and make your experience, credentials, and personality clear.'],
+  ['About the Firm', 'Introduce the firm, its values, and the experience behind its personal approach to client service.'],
   ['Criminal Defense', 'Explain your criminal defense work and help visitors understand the next step.'],
-  ['DUI Defense', 'Give people facing a DUI a focused, approachable introduction to your help.'],
   ['Family Law', 'Describe the family matters you take on and your approach to resolving them.'],
   ['Mediation', 'Explain the mediation process and who it may be right for.'],
   ['Working Together', 'Set expectations for direct communication, the first conversation, and working with you.'],
+  ['Insights', 'A place to share helpful perspectives and firm updates, with an editable article template for future publishing.'],
   ['FAQs', 'Answer practical questions about getting started, communication, and fit.'],
   ['Contact', 'Make it easy to call, email, or send an initial inquiry.'],
 ]
@@ -39,8 +39,8 @@ const phases = [
   ['04', 'Launch & handoff', 'Review the content together, test the site and contact form, connect the domain, and hand over the files and guidance.'],
 ]
 const investment = [
-  { label: 'Brand identity & everyday materials', amount: 3000 },
-  { label: 'Nine-page website, copy & launch', amount: 4900 },
+  { label: 'Brand identity & everyday materials', amount: 4000 },
+  { label: 'Nine-page website, copy & launch', amount: 5900 },
 ]
 const total = investment.reduce((sum, item) => sum + item.amount, 0)
 const money = (value: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value)
@@ -54,7 +54,7 @@ function Section({ id, number, title, children, dark = false }: { id: string; nu
   return <section id={id} aria-labelledby={`${id}-title`} className={`scroll-mt-32 border-b border-[var(--color-rule)] px-6 py-20 md:px-16 lg:px-[120px] lg:py-[120px] ${dark ? 'bg-ink text-paper' : ''}`}>
     <div className="flex items-center justify-between gap-6">
       <span className={`eyebrow ${dark ? 'text-paper/60' : 'text-ink-2'}`}>§ {number} · {title}</span>
-      <span className={`eyebrow hidden sm:block ${dark ? 'text-paper/60' : 'text-ink-2'}`}>Anchovies × M Bouvier Law</span>
+      <span className={`eyebrow hidden sm:block ${dark ? 'text-paper/60' : 'text-ink-2'}`}>Anchovies × M. Bouvier Law</span>
     </div>
     <h2 id={`${id}-title`} className="display mb-12 mt-10 text-[48px] md:text-[72px]">{title}</h2>
     {children}
@@ -63,15 +63,15 @@ function Section({ id, number, title, children, dark = false }: { id: string; nu
 
 export function MBouvierProposal() {
   useEffect(() => {
-    document.title = 'Anchovies × M Bouvier Law · Proposal'
-    document.querySelector('meta[name="description"]')?.setAttribute('content', 'Brand identity and a nine-page website for M Bouvier Law.')
+    document.title = 'Anchovies × M. Bouvier Law · Proposal'
+    document.querySelector('meta[name="description"]')?.setAttribute('content', 'Brand identity and a nine-page website for M. Bouvier Law.')
   }, [])
 
   return <div className="bg-paper text-ink">
     <a href="#overview" className="sr-only focus:not-sr-only focus:block focus:p-4">Skip to proposal</a>
     <header className="sticky top-0 z-40 border-b border-[var(--color-rule)] bg-paper/95 backdrop-blur-sm">
       <div className="flex items-center justify-between gap-4 px-6 py-4 md:px-16">
-        <a href="#overview" aria-label="M Bouvier Law proposal overview" className="flex items-center gap-3"><img src="/logos/anchovies-mark.svg" alt="Anchovies" className="h-[14px] w-auto" /><span className="hidden text-[13px] sm:inline">Anchovies × M Bouvier Law</span></a>
+        <a href="#overview" aria-label="M. Bouvier Law proposal overview" className="flex items-center gap-3"><img src="/logos/anchovies-mark.svg" alt="Anchovies" className="h-[14px] w-auto" /><span className="hidden text-[13px] sm:inline">Anchovies × M. Bouvier Law</span></a>
         <a href="#investment" className="rounded-full border border-ink px-4 py-2 text-[12px] font-medium transition-colors hover:bg-ink hover:text-paper">View investment</a>
       </div>
       <nav aria-label="Proposal sections" className="flex gap-6 overflow-x-auto border-t border-ink/10 px-6 py-3 text-[12px] text-ink-2 md:px-16">
@@ -125,7 +125,7 @@ export function MBouvierProposal() {
       <Section id="work" number="04" title="Selected Work">
         <div className="grid gap-8 lg:grid-cols-2">
           <p className="serif text-[30px] leading-[1.3]">You’ve seen the work. Now let’s make something that feels like you.</p>
-          <div><p className="mb-6 text-[15px] leading-6 text-ink-2">Thank you for taking the time to explore our portfolio. We’ll bring the same care and personal attention to M Bouvier Law.</p><a href="https://anchovies.agency/" target="_blank" rel="noreferrer" className="inline-block border-b border-ink py-3 text-[15px] hover:text-ink-2">View our work ↗</a></div>
+          <div><p className="mb-6 text-[15px] leading-6 text-ink-2">Thank you for taking the time to explore our portfolio. We’ll bring the same care and personal attention to M. Bouvier Law.</p><a href="https://anchovies.agency/" target="_blank" rel="noreferrer" className="inline-block border-b border-ink py-3 text-[15px] hover:text-ink-2">View our work ↗</a></div>
         </div>
       </Section>
 
@@ -159,6 +159,6 @@ export function MBouvierProposal() {
         </div>
       </Section>
     </main>
-    <footer className="flex flex-col justify-between gap-5 px-6 py-10 md:flex-row md:px-16 lg:px-[120px]"><img src="/logos/anchovies-wordmark.svg" alt="Anchovies" className="h-[13px] w-fit" /><span className="eyebrow text-ink-2">Prepared for M Bouvier Law · September 2026</span><a href="#overview" className="text-[12px]">Back to top ↑</a></footer>
+    <footer className="flex flex-col justify-between gap-5 px-6 py-10 md:flex-row md:px-16 lg:px-[120px]"><img src="/logos/anchovies-wordmark.svg" alt="Anchovies" className="h-[13px] w-fit" /><span className="eyebrow text-ink-2">Prepared for M. Bouvier Law · September 2026</span><a href="#overview" className="text-[12px]">Back to top ↑</a></footer>
   </div>
 }
