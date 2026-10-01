@@ -14,5 +14,5 @@ test('Bennett contract preserves proposal economics and enables authorized signi
   const page = readFileSync('src/contracts/ContractPage.tsx', 'utf8')
   assert.ok(page.includes('if (contract.draftOnly || !canSubmit'))
   assert.ok(page.includes('!isPrintMode && !contract.draftOnly'))
-  assert.ok(page.includes('!contract.draftOnly && <img'))
+  assert.ok(page.includes('!contract.draftOnly && !contract.agencySignaturePending && <img'))
 })

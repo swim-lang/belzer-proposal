@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { mBouvierContract } from './contracts/mBouvierContract'
 import { MBouvierProposal } from './MBouvierProposal'
 import { BennettProposal } from './BennettProposal'
 import { LejProposal } from './LejProposal'
@@ -108,6 +109,8 @@ export default function App() {
     }
 
     switch (proposalEntry.id) {
+      case 'm-bouvier-contract':
+        return withProposalGate(<ContractPage contract={mBouvierContract} />)
       case 'm-bouvier':
         return withProposalGate(<MBouvierProposal />)
       case 'bennett':

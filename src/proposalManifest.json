@@ -1,5 +1,18 @@
 [
   {
+    "id": "m-bouvier-contract",
+    "name": "M. Bouvier Law Contract",
+    "tagline": "Brand identity and nine-page website · $9,900",
+    "status": "Active",
+    "href": "/proposal/m-bouvier/contract",
+    "paths": [
+      "/proposal/m-bouvier/contract"
+    ],
+    "sourceFile": "src/contracts/mBouvierContract.ts",
+    "kind": "contract",
+    "showInDashboard": false
+  },
+  {
     "id": "m-bouvier",
     "name": "M. Bouvier Law",
     "tagline": "Brand identity and nine-page website · $9,900 · September 2026",

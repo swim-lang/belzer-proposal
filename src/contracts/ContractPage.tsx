@@ -96,7 +96,7 @@ async function submitContractEvent(input: {
     throw new Error(`Contract event failed with ${res.status}`)
   }
 
-  return res.json() as Promise<{ ok?: boolean; id?: string }>
+  return res.json() as Promise<{ ok?: boolean; id?: string; saved?: boolean }>
 }
 
 function downloadBlob(blob: Blob, filename: string) {
@@ -480,9 +480,22 @@ export function ContractPage({ contract }: ContractPageProps) {
   const [submittedSignature, setSubmittedSignature] = useState<SubmittedSignature | null>(null)
   const [pdfStatus, setPdfStatus] = useState<'idle' | 'generating' | 'error'>('idle')
   const [pdfError, setPdfError] = useState('')
+  const savedSnapshot = useRef('')
+  const receiptKey = `anchovies:contract-receipt:${contract.slug}:${contract.preparedDate}`
+  useEffect(() => {
+    if (!contract.requireSavedSubmission) return
+    try {
+      const receipt = JSON.parse(sessionStorage.getItem(receiptKey) || 'null')
+      if (receipt?.id && receipt?.signature?.submittedAt && receipt?.html?.includes('contract-document')) {
+        savedSnapshot.current = receipt.html
+        setSubmittedSignature(receipt.signature)
+        setSubmitStatus('submitted')
+      }
+    } catch { /* Storage can be unavailable in a private browser. */ }
+  }, [contract.requireSavedSubmission, receiptKey])
   const [isPrintMode, setIsPrintMode] = useState(isPrintParam)
   const displayedDate = useMemo(() => formatDate(submittedSignature?.signedDate ?? ''), [submittedSignature?.signedDate])
-  const effectiveDate = submittedSignature ? formatDate(submittedSignature.signedDate) : contract.effectiveDate
+  const effectiveDate = submittedSignature && !contract.agencySignaturePending ? formatDate(submittedSignature.signedDate) : contract.effectiveDate
   const proposalHref = `/proposal/${contract.slug}`
   const clientContactLine = [contract.client.contactName, contract.client.email].filter(Boolean).join(' · ')
   const hasInvestmentAdjustment = !!contract.originalValue && !!contract.accommodation
@@ -523,8 +536,8 @@ export function ContractPage({ contract }: ContractPageProps) {
   }, [contract.slug, isPrintParam])
 
   const downloadSignedPdf = async () => {
-    if (!submittedSignature || pdfStatus === 'generating') return
-    const signedDocumentHtml = document.querySelector('.contract-document')?.outerHTML ?? ''
+    if (!submittedSignature || pdfStatus === 'generating' || (contract.requireSavedSubmission && submitStatus !== 'submitted')) return
+    const signedDocumentHtml = savedSnapshot.current || document.querySelector('.contract-document')?.outerHTML || ''
     if (!signedDocumentHtml) {
       setPdfStatus('error')
       setPdfError('The signed copy could not be prepared. Please refresh and try again.')
@@ -591,7 +604,7 @@ export function ContractPage({ contract }: ContractPageProps) {
     try {
       flushSync(() => setSubmittedSignature(nextSignature))
       const signedDocumentHtml = document.querySelector('.contract-document')?.outerHTML ?? ''
-      await submitContractEvent({
+      const receipt = await submitContractEvent({
         contractSlug: contract.slug,
         eventType: 'contract_signed',
         signerName: nextSignature.signerName,
@@ -604,6 +617,13 @@ export function ContractPage({ contract }: ContractPageProps) {
         drawnSignatureDataUrl: nextSignature.signatureMethod === 'drawn' ? nextSignature.drawnSignatureDataUrl : '',
         signedDocumentHtml,
       })
+      if (contract.requireSavedSubmission) {
+        if (!receipt.ok || !receipt.saved || !receipt.id) throw new Error('Storage was not confirmed')
+        savedSnapshot.current = signedDocumentHtml
+        try {
+          sessionStorage.setItem(receiptKey, JSON.stringify({ id: receipt.id, signature: nextSignature, html: signedDocumentHtml }))
+        } catch { /* Server persistence remains authoritative when browser storage is unavailable. */ }
+      }
       setSubmitStatus('submitted')
     } catch {
       setSubmittedSignature(null)
@@ -629,7 +649,7 @@ export function ContractPage({ contract }: ContractPageProps) {
               <a href={proposalHref} className="hidden rounded-full px-4 py-2 text-[12px] font-medium text-ink transition-colors hover:bg-ink hover:text-paper sm:inline-flex">
                 Proposal
               </a>
-              {submittedSignature && (
+              {submittedSignature && (!contract.requireSavedSubmission || submitStatus === 'submitted') && (
                 <button
                   type="button"
                   onClick={downloadSignedPdf}
@@ -1010,16 +1030,16 @@ export function ContractPage({ contract }: ContractPageProps) {
                   <strong>Agency:</strong> {contract.agency.name}
                 </p>
                 <div className="signature-line agency-signature-line">
-                  {!contract.draftOnly && <img src={agencySignature.image} alt={agencySignature.name} />}
+                  {!contract.draftOnly && !contract.agencySignaturePending && <img src={agencySignature.image} alt={agencySignature.name} />}
                 </div>
                 <p>
-                  <strong>Signature:</strong> {contract.draftOnly ? '_______________________' : agencySignature.name}
+                  <strong>Signature:</strong> {contract.draftOnly || contract.agencySignaturePending ? '_______________________' : agencySignature.name}
                 </p>
                 <p>
                   <strong>Name / Title:</strong> {agencySignature.name} · {agencySignature.title}
                 </p>
                 <p>
-                  <strong>Date:</strong> {contract.draftOnly ? '____________' : (contract.agencySignedDate ?? agencySignature.date)}
+                  <strong>Date:</strong> {contract.draftOnly || contract.agencySignaturePending ? '____________' : (contract.agencySignedDate ?? agencySignature.date)}
                 </p>
               </div>
             </div>
@@ -1096,7 +1116,7 @@ export function ContractPage({ contract }: ContractPageProps) {
             canSubmit={canSubmit}
             submitStatus={submitStatus}
             submitError={submitError}
-            submittedSignature={submittedSignature}
+            submittedSignature={contract.requireSavedSubmission && submitStatus !== 'submitted' ? null : submittedSignature}
             onSubmit={handleSubmit}
             proposalHref={proposalHref}
             depositHref={contract.depositHref}
