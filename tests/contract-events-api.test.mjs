@@ -41,3 +41,11 @@ test('signed contracts download as real PDF files for clients and admins', () =>
   assert.match(contractPage, /signedDocumentHtml,/)
   assert.match(contractAdmin, /Download signed PDF/)
 })
+
+test('all agreements require confirmed backend storage before success or download', () => {
+  assert.doesNotMatch(contractPage, /requireSavedSubmission/)
+  assert.doesNotMatch(contractPage, /id: 'local-dev'/)
+  assert.match(contractPage, /if \(!receipt.ok \|\| !receipt.saved \|\| !receipt.id\) throw/)
+  assert.match(contractPage, /submittedSignature=\{submitStatus !== 'submitted' \? null : submittedSignature\}/)
+  assert.match(contractPage, /savedSnapshot.current = signedDocumentHtml/)
+})

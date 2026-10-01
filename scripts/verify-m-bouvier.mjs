@@ -33,7 +33,7 @@ try {
     // Suppress view/download analytics to avoid any live client events.
     if (payload.eventType !== 'contract_signed') return req.respond({status:200,contentType:'application/json',body:'{"ok":true,"saved":true}'})
     assert.equal(payload.signerName,'QA TEST ONLY')
-    assert.ok(!payload.signedDocumentHtml.includes('sean-ashlow-signature.png'))
+    assert.ok(payload.signedDocumentHtml.includes('sean-ashlow-signature.png'))
     if (delaySave) await new Promise(r=>setTimeout(r,1800))
     if (failSave) return req.respond({status:200,contentType:'application/json',body:'{"ok":true,"saved":false,"id":"qa-not-saved"}'})
     payload.contractSlug=slug
@@ -51,7 +51,7 @@ try {
    if (req.url().endsWith('/api/signed-contract-pdf')) {
     const payload=JSON.parse(req.postData())
     assert.ok(payload.signedDocumentHtml.includes('QA TEST ONLY'))
-    assert.ok(!payload.signedDocumentHtml.includes('sean-ashlow-signature.png'))
+    assert.ok(payload.signedDocumentHtml.includes('sean-ashlow-signature.png'))
     payload.contractSlug=slug
     payload.signedDocumentHtml=expectedHtml
     if(base.startsWith('https:')) {
@@ -71,7 +71,9 @@ try {
  const gate=readFileSync('src/components/ProposalGate.tsx','utf8').match(/PROPOSAL_PASSWORD = '([^']+)'/)[1]
  await page.type('input[type=password]',gate);await page.click('button[type=submit]')
  await page.waitForSelector('.contract-document')
- assert.equal(await page.$('.agency-signature-line img'),null)
+ assert.ok(await page.$('.agency-signature-line img'))
+ assert.match(await page.$eval('.agency-signature-line', e=>e.parentElement.innerText), /Date: October 1, 2026/)
+ await page.waitForFunction(()=>{const img=document.querySelector('.agency-signature-line img');return img?.complete && img.naturalWidth>0})
  const text=await page.$eval('.contract-document',e=>e.innerText)
  for(const value of ['$9,900','$4,950','$2,475','$4,000','$5,900','Insights','About the Firm','5 to 7'])assert.ok(text.includes(value),value)
  for(const label of await page.$$('label')) {
@@ -97,7 +99,7 @@ try {
  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false)
  await page.screenshot({path:out+'/mobile-submitted.png'})
  assert.deepEqual(errors,[])
- console.log(JSON.stringify({base,failedSaveRejected:true,noPrematureSuccess:true,persistenceConfirmed:true,readBackRequiresDatabaseCheck:true,refreshRecovery:true,pdfSaved,mobileOverflow:false,agencyUnsigned:true,clientSigned:false,emailsSent:0}))
+ console.log(JSON.stringify({base,failedSaveRejected:true,noPrematureSuccess:true,persistenceConfirmed:true,readBackRequiresDatabaseCheck:true,refreshRecovery:true,pdfSaved,mobileOverflow:false,agencySignaturePreloaded:true,clientSigned:false,emailsSent:0}))
 } finally {
  await browser.close()
  // Delete only IDs created by this QA run, guarded by the unique QA contract slug.

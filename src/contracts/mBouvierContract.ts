@@ -2,8 +2,7 @@ import type { ContractData } from './types'
 
 export const mBouvierContract: ContractData = {
   slug: 'm-bouvier',
-  agencySignaturePending: true,
-  requireSavedSubmission: true,
+  agencySignedDate: 'October 1, 2026',
   title: 'Brand Identity and Nine-Page Website',
   preparedDate: 'October 1, 2026',
   effectiveDate: '[date both parties sign]',
@@ -40,6 +39,5 @@ export const mBouvierContract: ContractData = {
     { title: 'Website Page Outline', body: 'The proposed nine pages are Home, About the Firm, Criminal Defense, Family Law, Mediation, Working Together, Insights, FAQs, and Contact. Service labels and priorities will be confirmed before writing. Pages can be exchanged within the nine-page scope. Privacy and disclaimer text may sit within those pages or a shared footer panel. Separate legal or additional service pages may be exchanged within the nine pages or quoted separately. The reusable Insights article template is included; ongoing article writing is separate.' },
     { title: 'Timeline and Client Input', body: 'The five-to-seven-week schedule is a target, with overlapping work where practical. The parties will confirm the start date and schedule together. Timely feedback, approved copy, and access to the domain and selected photography support this schedule. The Client reviews credentials, services, and legal content before launch and provides approved privacy and disclaimer wording.' },
     { title: 'Third-Party Costs and Exclusions', body: 'Hosting, domains, paid licenses, photography production, printing, ongoing SEO, paid advertising, client portals, payment systems, and custom integrations are separate. Third-party costs will be identified before purchase. Additional work or changes to scope will be priced and approved before proceeding.' },
-    { title: 'Agency Countersignature', body: 'The agency signature remains pending. Client submission does not sign on behalf of Anchovies or represent that Anchovies has countersigned. The effective date is the date both parties have signed.' },
   ],
 }

@@ -25,7 +25,6 @@ export type ContractData = {
   slug: string
   draftOnly?: boolean
   agencySignaturePending?: boolean
-  requireSavedSubmission?: boolean
   title: string
   preparedDate: string
   agencySignedDate?: string

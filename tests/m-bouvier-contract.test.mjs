@@ -14,10 +14,9 @@ test('M. Bouvier agreement preserves approved pricing, deliverables, and payment
  assert.match(contract.contractOverrides.milestonesEarned,/not due before the Client approves/)
  assert.match(contract.additionalTerms[0].body,/Home, About the Firm, Criminal Defense, Family Law, Mediation, Working Together, Insights, FAQs, and Contact/)
 })
-test('M. Bouvier requires a saved receipt and leaves agency signature unset and uses the verified invoice',()=>{
- assert.equal(contract.agencySignaturePending,true)
- assert.equal(contract.requireSavedSubmission,true)
- assert.equal(contract.agencySignedDate,undefined)
+test('M. Bouvier preloads the authorized agency signature and date and uses the verified invoice',()=>{
+ assert.notEqual(contract.agencySignaturePending,true)
+ assert.equal(contract.agencySignedDate,'October 1, 2026')
  assert.ok(contract.depositHref.includes('2624248677186782877/9515bd4215d34381973f6796afe72418'))
  assert.equal(contract.draftOnly,undefined)
  assert.equal(contract.client.name,'M. Bouvier Law')
