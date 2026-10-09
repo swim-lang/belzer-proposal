@@ -1,3 +1,4 @@
+import { ThriveWebsiteProposal } from './ThriveWebsiteProposal'
 import { AvodahBusinessRefreshProposal } from './AvodahBusinessRefreshProposal'
 import type { ReactNode } from 'react'
 import { mBouvierContract } from './contracts/mBouvierContract'
@@ -110,6 +111,8 @@ export default function App() {
     }
 
     switch (proposalEntry.id) {
+      case 'thrive-website':
+        return withProposalGate(<ThriveWebsiteProposal />)
       case 'avodah-business-refresh':
         return withProposalGate(<AvodahBusinessRefreshProposal />)
       case 'm-bouvier-contract':

@@ -1,5 +1,18 @@
 [
   {
+    "id": "thrive-website",
+    "name": "Thrive Preschool: Website Options",
+    "tagline": "WordPress maintenance or migration · Draft for review",
+    "status": "Draft",
+    "href": "/proposal/thrive-website",
+    "paths": [
+      "/proposal/thrive-website"
+    ],
+    "sourceFile": "src/ThriveWebsiteProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true
+  },
+  {
     "id": "avodah-business-refresh",
     "name": "Avodah: Earley Business Legal Refresh",
     "tagline": "Focused website refresh · $2,500 · October 2026",

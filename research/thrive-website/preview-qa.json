@@ -1,0 +1,27 @@
+{
+  "gate": true,
+  "noindex": true,
+  "price": {
+    "maintenance": 1500,
+    "migrationRange": [
+      14500,
+      19500
+    ]
+  },
+  "anchors": true,
+  "approvalLink": true,
+  "calendarLink": true,
+  "noEmDashes": true,
+  "noOverflowAt": [
+    1440,
+    768,
+    390,
+    320
+  ],
+  "regressions": [
+    "src/AvodahBusinessRefreshProposal.tsx",
+    "src/MBouvierProposal.tsx",
+    "src/BennettProposal.tsx"
+  ],
+  "errors": []
+}
