@@ -2,12 +2,11 @@
   "gate": true,
   "noindex": true,
   "price": {
-    "maintenance": 1000,
+    "maintenance": 999,
     "migration": 4000,
     "payments": [
       2000,
-      1000,
-      1000
+      2000
     ]
   },
   "anchors": true,
