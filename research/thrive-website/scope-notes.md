@@ -56,3 +56,7 @@ Current Flywheel, CRM, form-service, chat and assistant subscriptions are not al
 ## Unverified items before contracting / implementation
 
 Fresh authenticated production database; live plugin state; actual slowdown cause and performance baseline; current form mapping and notifications; GoHighLevel/GTM/Meta account configuration; field/data-retention requirements; calendar parity and school categories; asset licenses; client editing owner; recurring service costs. No submissions, client messages, site edits or deployment occurred during research.
+
+## Architecture clarification after client review
+
+Sean authorized adding an explicit stack and republishing. The proposed application is Next.js App Router with React and TypeScript, using pre-rendered/server-rendered public HTML. The staff editor and server handlers share this application; Vercel hosts the site and handlers. Supabase PostgreSQL stores structured content, drafts and revisions, Auth provides staff login, Storage holds media, with access policies. GitHub is source/version control. Content draft/publish is distinct from code preview deployments. This supersedes the original Astro/file-only candidate above. Existing WordPress PHP/plugin runtime is replaced; design/content/suitable assets are retained. No migration implementation occurred. Price, payment schedule, timeline and existing integrations unchanged. Official references checked: https://nextjs.org/docs , https://supabase.com/docs , https://vercel.com/docs/functions .
