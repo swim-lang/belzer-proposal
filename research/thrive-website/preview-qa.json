@@ -3,10 +3,10 @@
   "noindex": true,
   "price": {
     "maintenance": 999,
-    "migration": 4000,
+    "migration": 3999,
     "payments": [
-      2000,
-      2000
+      1999.5,
+      1999.5
     ]
   },
   "anchors": true,
