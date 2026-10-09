@@ -36,7 +36,11 @@ The companion audit used public REST endpoints and markup for current counts and
 
 Reuse existing identity, layout patterns, content models, icons and suitable styles/scripts where rights allow. PHP templates, WordPress plugins and Elementor data are specifications for rebuilding, not portable application code. The old theme was not in Git; no clear project-level asset licensing records found. Fonts include Mabry Pro, Stinger Fit and files named StingerFitTrial. Confirm webfont rights and existing asset ownership before committing to reuse. No legal conclusion about current ownership is implied.
 
-## Pricing rationale for Sean
+## Current direction from Sean
+
+Sean revised the draft after review: maintenance is $1,000 with the existing 10-hour allowance; full migration is a $4,000 fixed project fee, including a lightweight content backend and an agent-led implementation workflow. This replaces the initial pricing and the earlier exclusion of a client content backend. The backend includes authenticated routine content/event editing, persistent storage, preview/approval, basic history and recovery. Broader CRM, booking, visual page-builder and advanced permission systems remain separate. Migration payment milestones are $2,000 / $1,000 / $1,000. Existing timeline targets remain unchanged. Recurring services are separate. This is still a proposal draft, not authorization to migrate or publish.
+
+## Original pricing rationale (superseded)
 
 Draft only, subject to Sean's review:
 
@@ -45,7 +49,7 @@ Draft only, subject to Sean's review:
 
 Target migration: 6–8 weeks, one consolidated refinement, 30-day correction window for introduced defects. Proposed 50/25/25 milestones; maintenance 100% upfront. No invoice or agreement created. Neither choice requires buying the other. No implicit credit for later migration.
 
-Lean implementation assumption: static rendered pages and typed content collections (Astro is a candidate), GitHub, Vercel, retained GoHighLevel embeds, a small event collection and static search. No client CMS/admin, CRM replacement, parent portal, new branding, new copy campaign or Reunion launch. Agent-assisted changes require a preview and human approval. A trained site owner must accept this editing workflow before replacing WordPress.
+Original implementation assumption (backend exclusion superseded above): static rendered pages and typed content collections (Astro is a candidate), GitHub, Vercel, retained GoHighLevel embeds, a small event collection and static search. No client CMS/admin, CRM replacement, parent portal, new branding, new copy campaign or Reunion launch. Agent-assisted changes require a preview and human approval. A trained site owner must accept this editing workflow before replacing WordPress.
 
 Current Flywheel, CRM, form-service, chat and assistant subscriptions are not all verified. Do not promise hosting savings. $20/month is a provider starting price, not an all-in quote. Keep old hosting through the rollback/archive handoff.
 
