@@ -1,0 +1,802 @@
+[
+  {
+    "url": "https://www.earleybusinesslegal.com/blog/",
+    "group": "post-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/blog/",
+    "title": "Blog - Earley Business Legal",
+    "description": "",
+    "h1": [
+      "Blog"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/blog/",
+    "forms": 4,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit/",
+    "group": "post-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit/",
+    "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. - Earley Business Legal",
+    "description": "",
+    "h1": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit/",
+    "forms": 4,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-2/",
+    "group": "post-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-2/",
+    "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. - Earley Business Legal",
+    "description": "",
+    "h1": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-2/",
+    "forms": 4,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-3/",
+    "group": "post-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-3/",
+    "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. - Earley Business Legal",
+    "description": "",
+    "h1": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-3/",
+    "forms": 4,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/",
+    "title": "Virginia Business Lawyer | Entity Formation and Agreements",
+    "description": "Discover essential legal considerations for entrepreneurs and business owners. Contact a Virginia business lawyer today to learn more.",
+    "h1": [
+      "Richmond Business Lawyer"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/static-page/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/static-page/",
+    "title": "Static Page - Earley Business Legal",
+    "description": "",
+    "h1": [
+      "Static Page",
+      "",
+      "Lorem ipsum dolor sit amet consectetur."
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/static-page/",
+    "forms": 3,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/engagement-letter/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/engagement-letter/",
+    "title": "Engagement Letter - Earley Business Legal",
+    "description": "",
+    "h1": [
+      "Engagement Letter"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/engagement-letter/",
+    "forms": 3,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/virginia-business-formation-lawyer/partnership-agreement/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/virginia-business-formation-lawyer/partnership-agreement/",
+    "title": "Virginia Partnership Agreement Lawyer | Protect Your Interests",
+    "description": "A Virginia partnership agreement lawyer could help secure your business goals with a legal foundation that protects partner interests.",
+    "h1": [
+      "Virginia Partnership Agreement Lawyer"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/virginia-business-formation-lawyer/partnership-agreement/",
+    "forms": 3,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/virginia-business-formation-lawyer/limited-liability-company/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/virginia-business-formation-lawyer/limited-liability-company/",
+    "title": "Virginia Limited Liability Company (LLC) Formation Lawyer",
+    "description": "Our Virginia limited liability formation lawyers could assist in creating an LLC that protects and promotes business growth. Call today.",
+    "h1": [
+      "Virginia Limited Liability Company (LLC) Formation Lawyer"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/virginia-business-formation-lawyer/limited-liability-company/",
+    "forms": 3,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/virginia-business-formation-lawyer/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/virginia-business-formation-lawyer/",
+    "title": "Virginia Business Formation Lawyer | Choosing an Entity",
+    "description": "A Virginia business formation lawyer could help select the best entity for you, protecting against lawsuits and optimizing tax obligations.",
+    "h1": [
+      "Virginia Business Formation Lawyer"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/virginia-business-formation-lawyer/",
+    "forms": 3,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/virginia-business-merger-and-acquisitions-lawyer/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/virginia-business-merger-and-acquisitions-lawyer/",
+    "title": "Virginia Business Merger and Acquisitions Lawyer",
+    "description": "Drafting an LOI is crucial in business deals. Call a Virginia merger and acquisitions lawyer from our firm to assist in negotiating terms.",
+    "h1": [
+      "Virginia Business Merger and Acquisitions Lawyer"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/virginia-business-merger-and-acquisitions-lawyer/",
+    "forms": 3,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/virginia-business-formation-lawyer/limited-liability-company-formation/process-of-registering/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/virginia-business-formation-lawyer/limited-liability-company-formation/process-of-registering/",
+    "title": "Process of Registering an LLC in Virginia | Benefits and Costs",
+    "description": "Learn about the process of registering an LLC in Virginia, the benefits, and how it shields personal assets from business liabilities.",
+    "h1": [
+      "Process of Registering an LLC in Virginia"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/virginia-business-formation-lawyer/limited-liability-company-formation/process-of-registering/",
+    "forms": 3,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/virginia-business-formation-lawyer/partnership-agreement/creating/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/virginia-business-formation-lawyer/partnership-agreement/creating/",
+    "title": "Creating a Partnership Agreement in Virginia | Avoiding Disputes",
+    "description": "Discover why creating a partnership agreement in Virginia is crucial for managing company operations among multiple owners. Call us today.",
+    "h1": [
+      "Creating a Partnership Agreement in Virginia"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/virginia-business-formation-lawyer/partnership-agreement/creating/",
+    "forms": 3,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/virginia-business-formation-lawyer/operating-agreement/creating/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/virginia-business-formation-lawyer/operating-agreement/creating/",
+    "title": "Creating an Operating Agreement in Virginia",
+    "description": "Creating an operating agreement in Virginia will allow you to enjoy tax benefits and limited liability. Call today to get help.",
+    "h1": [
+      "Creating an Operating Agreement in Virginia"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/virginia-business-formation-lawyer/operating-agreement/creating/",
+    "forms": 3,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/virginia-business-formation-lawyer/operating-agreement/benefits/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/virginia-business-formation-lawyer/operating-agreement/benefits/",
+    "title": "Benefits of an Operating Agreement in Virginia",
+    "description": "Discover the benefits of an operating agreement in Virginia, even where it's not required. Protect your business and assets. Call today.",
+    "h1": [
+      "Benefits of an Operating Agreement in Virginia"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/virginia-business-formation-lawyer/operating-agreement/benefits/",
+    "forms": 3,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/testimonials/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/testimonials/",
+    "title": "Testimonials | What Our Clients Say About Us",
+    "description": "Discover why clients trust Earley Business Legal for legal guidance. Read the testimonials from satisfied clients who found success with us.",
+    "h1": [
+      "Testimonials"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/testimonials/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/about-us/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/about-us/",
+    "title": "About Us | Learn About Our Legal Professionals",
+    "description": "Earley Business Legal offers legal services tailored for businesses, ensuring you get the support you need. Learn more about us today.",
+    "h1": [
+      "About Us"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/about-us/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/our-team/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/our-team/",
+    "title": "Our Team | Meet the Attorneys at Our Firm",
+    "description": "Meet our team at Earley Business Legal, committed to providing expert guidance and personalized service for your business needs.",
+    "h1": [
+      "Our Team"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/our-team/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/contact/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/contact/",
+    "title": "Contact Us | Reach Out to Our Seasoned Lawyers",
+    "description": "Reach out to Earley Business Legal for seasoned legal advice. Contact our experienced attorneys today to discuss your business needs.",
+    "h1": [
+      "Contact Us"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/contact/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/handshake-legal/operating-partnership-agreement/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/handshake-legal/operating-partnership-agreement/",
+    "title": "Operating Partnership Agreement - Earley Business Legal",
+    "description": "Maximize your partnership\u2019s potential with a comprehensive Operating Partnership Agreement. Connect with us today for more information.",
+    "h1": [
+      "OPERATING / PARTNERSHIP AGREEMENT"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/handshake-legal/operating-partnership-agreement/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/handshake-legal/llc-organization/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/handshake-legal/llc-organization/",
+    "title": "LLC Organization - Earley Business Legal",
+    "description": "LLCs have many benefits, including personal asset protection. To determine if an LLC organization is right for you, consult our team today.",
+    "h1": [
+      "LLC Organization"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/handshake-legal/llc-organization/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/handshake-legal/master-services-agreement-sow/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/handshake-legal/master-services-agreement-sow/",
+    "title": "Master Services Agreement & SOW - Earley Business Legal",
+    "description": "Streamline your client engagements with a customized Master Services Agreement & SOW. Get in touch with us to begin drafting today.",
+    "h1": [
+      "Master Services Agreement & SOW"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/handshake-legal/master-services-agreement-sow/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/handshake-legal/form-1099-independent-contractor-agreement/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/handshake-legal/form-1099-independent-contractor-agreement/",
+    "title": "Form 1099 Independent Contractor Agreement - Earley Business Legal",
+    "description": "Learn about Form 1099 Independent Contractor Agreements and why they're essential for your business. Contact us to customize your agreement.",
+    "h1": [
+      "Form 1099 Independent Contractor Agreement"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/handshake-legal/form-1099-independent-contractor-agreement/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/handshake-legal/form-nda/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/handshake-legal/form-nda/",
+    "title": "Form NDA - Earley Business Legal",
+    "description": "Need to safeguard sensitive business information? Our form NDA helps you protect your intellectual property. Call today to get started.",
+    "h1": [
+      "Form NDA"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/handshake-legal/form-nda/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/handshake-legal/copyright-filing/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/handshake-legal/copyright-filing/",
+    "title": "Copyright Filing - Earley Business Legal",
+    "description": "Understand the importance of copyright filing, what it covers, and how to file for it. Speak with our team for more information.",
+    "h1": [
+      "Copyright Filing"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/handshake-legal/copyright-filing/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/handshake-legal/form-waiver/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/handshake-legal/form-waiver/",
+    "title": "Form Waiver - Earley Business Legal",
+    "description": "Waivers are essential for businesses that engage in risky activities. Ensure your form waiver is legally sound by working with our team.",
+    "h1": [
+      "Form Waiver"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/handshake-legal/form-waiver/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/handshake-legal/terms-of-use/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/handshake-legal/terms-of-use/",
+    "title": "Terms of Use - Earley Business Legal",
+    "description": "Stay informed about your rights and responsibilities with our comprehensive Terms of Use. Call our office today if you have any concerns.",
+    "h1": [
+      "Terms of Use"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/handshake-legal/terms-of-use/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/handshake-legal/offer-letter/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/handshake-legal/offer-letter/",
+    "title": "Offer Letter - Earley Business Legal",
+    "description": "Drafting an offer letter is crucial for setting clear expectations and protecting your business. Get in touch with us today for help.",
+    "h1": [
+      "Offer Letter"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/handshake-legal/offer-letter/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/handshake-legal/letter-of-intent/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/handshake-legal/letter-of-intent/",
+    "title": "Letter of Intent - Earley Business Legal",
+    "description": "Navigate the complexities of business acquisitions with a well-crafted Letter of Intent. For legal guidance, seek our services today.",
+    "h1": [
+      "Letter of Intent"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/handshake-legal/letter-of-intent/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/handshake-legal/convertible-note/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/handshake-legal/convertible-note/",
+    "title": "Convertible Note - Earley Business Legal",
+    "description": "Explore how a convertible note can streamline early-stage fundraising for your business. Contact our office today to get started.",
+    "h1": [
+      "Convertible Note"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/handshake-legal/convertible-note/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/handshake-legal/safe-agreement/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/handshake-legal/safe-agreement/",
+    "title": "SAFE Agreement - Earley Business Legal",
+    "description": "Discover how a SAFE agreement can help safeguard your assets and define expectations. Call us for tailored solutions today.",
+    "h1": [
+      "SAFE Agreement"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/handshake-legal/safe-agreement/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/handshake-legal/confidentiality-agreement-assignment-of-ip/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/handshake-legal/confidentiality-agreement-assignment-of-ip/",
+    "title": "Confidentiality Agreement & Assignment of IP - Earley Business Legal",
+    "description": "Protect your business by implementing a Confidentiality and IP Assignment Agreement. Reach out today to secure your business.",
+    "h1": [
+      "Confidentiality Agreement & Assignment of IP"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/handshake-legal/confidentiality-agreement-assignment-of-ip/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/handshake-legal/beneficial-ownership-information/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/handshake-legal/beneficial-ownership-information/",
+    "title": "Beneficial Ownership Information - Earley Business Legal",
+    "description": "Ensure compliance with new regulations by filing your Beneficial Ownership Information Form accurately and promptly. Call us for help.",
+    "h1": [
+      "Beneficial Ownership Information"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/handshake-legal/beneficial-ownership-information/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/handshake-legal/trademark-filing/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/handshake-legal/trademark-filing/",
+    "title": "Trademark Filing - Earley Business Legal",
+    "description": "Avoid potential disputes and enhance your brand\u2019s value with trademark filing. Reach out today to take the first step towards protection.",
+    "h1": [
+      "Trademark Filing"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/handshake-legal/trademark-filing/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/handshake-legal/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/handshake-legal/",
+    "title": "Handshake Legal - Earley Business Legal",
+    "description": "Check out our Handshake Legal Portal for a simple, affordable way to craft the right agreement for your business. Call today to learn more.",
+    "h1": [
+      "Handshake Legal"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/handshake-legal/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/handshake-legal/privacy-policy/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/handshake-legal/privacy-policy/",
+    "title": "Privacy Policy - Earley Business Legal",
+    "description": "Learn the importance of having a privacy policy on all websites and mobile apps. Consult us to learn what essential information to include.",
+    "h1": [
+      "Privacy Policy"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/handshake-legal/privacy-policy/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/virginia-business-merger-and-acquisitions-lawyer/small-pe-funds-and-deal-counsel/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/virginia-business-merger-and-acquisitions-lawyer/small-pe-funds-and-deal-counsel/",
+    "title": "Legal Help for Small PE Funds | Virginia Fund & Deal Counsel",
+    "description": "Forming a fund or buying your first business? We help small PE funds and searchers build smart structures and close deals with legacy-owned companies.",
+    "h1": [
+      "Legal Help for Small PE Funds | Virginia Fund & Deal Counsel"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/virginia-business-merger-and-acquisitions-lawyer/small-pe-funds-and-deal-counsel/",
+    "forms": 3,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/virginia-business-merger-and-acquisitions-lawyer/sell-your-growth-business-legal-guide-for-founders/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/virginia-business-merger-and-acquisitions-lawyer/sell-your-growth-business-legal-guide-for-founders/",
+    "title": "Sell Your Growth Business | Legal Guide for Founders Ready to Sell Their Business",
+    "description": "Selling a business in Virginia? Get expert legal guidance tailored to founders. Protect your deal, avoid risk, and sell smart with Earley Business Legal.",
+    "h1": [
+      "Sell Your Growth Business | Legal Guide for Founders"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/virginia-business-merger-and-acquisitions-lawyer/sell-your-growth-business-legal-guide-for-founders/",
+    "forms": 3,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/virginia-business-merger-and-acquisitions-lawyer/business-sale-legacy-owner-legal-guide/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/virginia-business-merger-and-acquisitions-lawyer/business-sale-legacy-owner-legal-guide/",
+    "title": "Sell Your Virginia Business | Legacy Owner Legal Guide",
+    "description": "Selling your Virginia business? Get trusted legal counsel for small business exits. Fair fees, legacy-first advice, and same-day call backs.",
+    "h1": [
+      "Sell Your Virginia Business | Legacy Owner Legal Guide"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/virginia-business-merger-and-acquisitions-lawyer/business-sale-legacy-owner-legal-guide/",
+    "forms": 3,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/virginia-business-merger-and-acquisitions-lawyer/eta-buying-your-first-business/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/virginia-business-merger-and-acquisitions-lawyer/eta-buying-your-first-business/",
+    "title": "Virginia ETA Lawyer | Buy Your First Business Smart",
+    "description": "Buying your first business? A Virginia ETA lawyer can help search fund and ETA buyers close smart, secure deals. Get legal counsel that speaks your language.",
+    "h1": [
+      "Virginia ETA Lawyer | Buy Your First Business Smart"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/virginia-business-merger-and-acquisitions-lawyer/eta-buying-your-first-business/",
+    "forms": 3,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/virginia-business-merger-and-acquisitions-lawyer/strategic-acquisition-guide/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/virginia-business-merger-and-acquisitions-lawyer/strategic-acquisition-guide/",
+    "title": "Virginia M&A Attorney | Legal Support for Founders Ready to Sell Their Business",
+    "description": "Buying a business to grow? Our Virginia M&A lawyers help business owners structure deals, limit liability, and protect long-term value. Start smart.",
+    "h1": [
+      "Virginia Strategic Business Acquisition Guide"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/virginia-business-merger-and-acquisitions-lawyer/strategic-acquisition-guide/",
+    "forms": 3,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/virginia-commercial-contracts-lawyer/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/virginia-commercial-contracts-lawyer/",
+    "title": "Virginia Commercial Contracts Lawyer | Business Contracts",
+    "description": "A Virginia commercial contracts lawyer could help draft a clear, comprehensive contract that meets your specific needs. Contact us today.",
+    "h1": [
+      "Virginia Commercial Contracts Lawyer"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/virginia-commercial-contracts-lawyer/",
+    "forms": 3,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/richmond-business/formation-lawyer/",
+    "group": "page-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/richmond-business/formation-lawyer/",
+    "title": "Richmond Business Formation Lawyer | Entity Creation",
+    "description": "A Richmond business formation lawyer could help make the best decisions and contracts for your new business. Call today.",
+    "h1": [
+      "Richmond Business Formation Lawyer"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/richmond-business/formation-lawyer/",
+    "forms": 3,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/nap/",
+    "group": "nap-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/nap/",
+    "title": "NAP Archive - Earley Business Legal",
+    "description": "",
+    "h1": [
+      "Our Team"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/nap/",
+    "forms": 4,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/teams/",
+    "group": "team-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/our-team/",
+    "title": "Our Team | Meet the Attorneys at Our Firm",
+    "description": "Meet our team at Earley Business Legal, committed to providing expert guidance and personalized service for your business needs.",
+    "h1": [
+      "Our Team"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/our-team/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/teams/andrew/",
+    "group": "team-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/teams/andrew/",
+    "title": "ANDREW HEMBY - Earley Business Legal",
+    "description": "",
+    "h1": [
+      "ANDREW HEMBY"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/teams/andrew/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/teams/chris/",
+    "group": "team-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/teams/chris/",
+    "title": "CHRIS ROHDE - Earley Business Legal",
+    "description": "",
+    "h1": [
+      "CHRIS ROHDE"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/teams/chris/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/teams/blair/",
+    "group": "team-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/teams/blair/",
+    "title": "BLAIR BRAKE - Earley Business Legal",
+    "description": "",
+    "h1": [
+      "BLAIR BRAKE"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/teams/blair/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/our-team/justin/",
+    "group": "team-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/our-team/justin/",
+    "title": "JUSTIN WHITMEL EARLEY - Earley Business Legal",
+    "description": "",
+    "h1": [
+      "JUSTIN WHITMEL EARLEY"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/our-team/justin/",
+    "forms": 2,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/testimonial/",
+    "group": "testimonial-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/testimonial/",
+    "title": "Testimonials Archive - Earley Business Legal",
+    "description": "",
+    "h1": [
+      "Our Team"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/testimonial/",
+    "forms": 4,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/testimonial/series-a-tech-company/",
+    "group": "testimonial-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/testimonial/series-a-tech-company/",
+    "title": "Series A Tech Company - Earley Business Legal",
+    "description": "",
+    "h1": [
+      "Series A Tech Company"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/testimonial/series-a-tech-company/",
+    "forms": 4,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/testimonial/serial-entrepreneur/",
+    "group": "testimonial-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/testimonial/serial-entrepreneur/",
+    "title": "Serial Entrepreneur - Earley Business Legal",
+    "description": "",
+    "h1": [
+      "Serial Entrepreneur"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/testimonial/serial-entrepreneur/",
+    "forms": 4,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/testimonial/high-growth-tech-company/",
+    "group": "testimonial-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/testimonial/high-growth-tech-company/",
+    "title": "High Growth Tech Company - Earley Business Legal",
+    "description": "",
+    "h1": [
+      "High Growth Tech Company"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/testimonial/high-growth-tech-company/",
+    "forms": 4,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/testimonial/owner-of-software-company-in-25m-sale/",
+    "group": "testimonial-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/testimonial/owner-of-software-company-in-25m-sale/",
+    "title": "Owner of Software Company in $25M sale - Earley Business Legal",
+    "description": "",
+    "h1": [
+      "Owner of Software Company in $25M sale"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/testimonial/owner-of-software-company-in-25m-sale/",
+    "forms": 4,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/testimonial/serial-entrepreneur-2/",
+    "group": "testimonial-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/testimonial/serial-entrepreneur-2/",
+    "title": "Serial Entrepreneur - Earley Business Legal",
+    "description": "",
+    "h1": [
+      "Serial Entrepreneur"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/testimonial/serial-entrepreneur-2/",
+    "forms": 4,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/category/lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit/",
+    "group": "category-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/category/lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit/",
+    "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Archives - Earley Business Legal",
+    "description": "",
+    "h1": [
+      "Our Team"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/category/lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit/",
+    "forms": 4,
+    "wordpress": true
+  },
+  {
+    "url": "https://www.earleybusinesslegal.com/author/earleybusinstg/",
+    "group": "author-sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.earleybusinesslegal.com/author/earleybusinstg/",
+    "title": "earleybusinstg, Author at Earley Business Legal",
+    "description": "",
+    "h1": [
+      "Our Team"
+    ],
+    "canonical": "https://www.earleybusinesslegal.com/author/earleybusinstg/",
+    "forms": 4,
+    "wordpress": true
+  }
+]

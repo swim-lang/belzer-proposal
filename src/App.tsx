@@ -1,3 +1,4 @@
+import { AvodahBusinessRefreshProposal } from './AvodahBusinessRefreshProposal'
 import type { ReactNode } from 'react'
 import { mBouvierContract } from './contracts/mBouvierContract'
 import { MBouvierProposal } from './MBouvierProposal'
@@ -109,6 +110,8 @@ export default function App() {
     }
 
     switch (proposalEntry.id) {
+      case 'avodah-business-refresh':
+        return withProposalGate(<AvodahBusinessRefreshProposal />)
       case 'm-bouvier-contract':
         return withProposalGate(<ContractPage contract={mBouvierContract} />)
       case 'm-bouvier':

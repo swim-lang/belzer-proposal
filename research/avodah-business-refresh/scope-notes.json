@@ -1,0 +1,38 @@
+{
+  "review_date": "2026-10-09",
+  "site": "https://www.earleybusinesslegal.com/",
+  "source_conversation": "https://mail.missiveapp.com/#inbox/conversations/cd9ebfb1-4b01-446f-81a4-25ba43944f44",
+  "portal_task_id": "86d068c0-fada-4570-823f-102ad84ca821",
+  "confirmed_quote": {
+    "amount_usd": 2500,
+    "date": "2026-10-05",
+    "scope": "Focused design sprint, keep the existing domain and useful content, Avodah front-facing. No major rewrite or rebuild."
+  },
+  "client_status": "October 8: Justin and Ben inclined to proceed if the scope matches expectations. Not final approval.",
+  "draft_assumptions": [
+    "Seven individually edited priority pages; remaining content preserved with shared template styling.",
+    "Two-week target, one consolidated revision round, 14-day post-launch check.",
+    "Proposed 50/50 payments, consistent with earlier Avodah engagement; not negotiated in this email thread.",
+    "Existing WordPress and hosting access not verified. Technical constraints checked at kickoff."
+  ],
+  "observations": [
+    "57 sitemap entries: 39 page entries, 5 team entries (including archive), 6 testimonial entries (including archive), 4 post entries (including blog index), 1 location archive, 1 category archive, 1 author archive. These are sitemap entries, not a count of pages to redesign.",
+    "All 57 fetched successfully; /teams/ redirects to /our-team/.",
+    "19 fetched entries have no meta description detected, including Justin profile and utility/archive pages.",
+    "Homepage and shared footer still use Earley Business Legal attribution. Team roles and office information require client confirmation.",
+    "Three lorem-ipsum posts, a lorem-ipsum category, and /static-page/ are exposed through the public sitemap. Review for approved indexing cleanup; do not delete useful content based solely on the URL.",
+    "Handshake product pages and engagement-letter route require preservation and workflow-owner confirmation. No forms submitted.",
+    "Existing portal business-law research task explicitly excludes Beneficial Ownership Filing article from adaptation. No new legal content or document editing included."
+  ],
+  "limitations": [
+    "No Search Console, analytics, ranking, backlink, lead-volume, form recipient or conversion data verified. Inquiries and AI referrals are client-reported.",
+    "Public HTML review cannot confirm CMS access, plugin health, forwarding delivery, or end-to-end portal operation.",
+    "No legal claims independently evaluated. Firm reviews all legal and personnel wording."
+  ],
+  "comparison": {
+    "existing_avodah_contract_usd": 8000,
+    "foundation_usd": 3500,
+    "blog_and_site_improvements_usd": 4500,
+    "note": "Earlier proposal was a larger research/blog engagement with 50 articles. Do not copy those deliverables or payment links into this smaller refresh."
+  }
+}

@@ -1,5 +1,18 @@
 [
   {
+    "id": "avodah-business-refresh",
+    "name": "Avodah: Earley Business Legal Refresh",
+    "tagline": "Focused website refresh · $2,500 · October 2026",
+    "status": "Draft",
+    "href": "/proposal/avodah-business-refresh",
+    "paths": [
+      "/proposal/avodah-business-refresh"
+    ],
+    "sourceFile": "src/AvodahBusinessRefreshProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true
+  },
+  {
     "id": "m-bouvier-contract",
     "name": "M. Bouvier Law Contract",
     "tagline": "Brand identity and nine-page website · $9,900",
