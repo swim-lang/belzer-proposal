@@ -49,7 +49,7 @@ const phases = [
 const work = [
   { name: 'Molly Engels', tag: 'Color & personality', slug: 'molly-engles', image: 'molly-engles.jpg', body: 'A playful identity built around a personal story. A useful reference for the color and character you responded to.' },
   { name: 'Rhythm', tag: 'Fitness & movement', slug: 'rhythm', image: 'rhythm.jpg', body: 'A vibrant fitness identity carried across graphics, motion, and signage. Athletic energy with a welcoming personality.' },
-  { name: 'Moat', tag: 'A complete brand in use', slug: 'moat', image: 'moat.png', body: 'A distinctive visual world extended into packaging, print, and the website. An example of how the pieces work together.' },
+  { name: 'Moat', tag: 'World-building', slug: 'moat', image: 'moat.png', body: 'A modern castle became the world behind this smart-lock brand. The name, story, and visual identity share one idea, giving packaging, print, and the website meaning beyond aesthetics.' },
 ]
 
 function Section({ id, number, title, children, dark = false }: { id: string; number: string; title: string; children: ReactNode; dark?: boolean }) {
