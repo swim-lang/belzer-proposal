@@ -46,7 +46,11 @@ const phases = [
   ['03', 'The pitch', 'Present one developed solution: name, rationale, messaging, and identity, shown across website, packaging, and other relevant mockups. You see the brand as a whole.'],
   ['04', 'Refinement & handoff', 'Use your feedback to refine the solution, complete the applications and templates, and deliver the brand book and organized assets. Walk your team through putting the brand to work.'],
 ]
+const namedBrands = ['Copper Coyote', 'Moat', 'Soft Hours', 'Heartwood', 'Notably', 'Off Menu', 'Seed', 'Out There', 'Nymph', 'Within', 'Soft', 'Lookout Tower', 'Pickleballers Next Door', 'Trek', 'Odd Feather', 'Nylo', 'Marlowe Bennet', 'Museum', 'The Passenger', 'Italic', 'The Work', 'Green Nomad', 'Layers', 'Good Measure']
 const work = [
+  { name: 'Wild Hare', tag: 'Bold & feminine', slug: 'wild-hare', image: 'wild-hare.jpg', body: 'A confident, feminine identity with vivid pink and a bold personality. A reference for making a specific audience feel the brand is unmistakably theirs.' },
+  { name: 'Freddie', tag: 'Health with personality', slug: 'freddie', image: 'freddie.jpg', body: 'A playful sleep-glasses brand that moves beyond sterile, performance-first health branding. A useful example of bringing humor and humanity to a functional product.' },
+  { name: 'Nymph', tag: 'A distinct point of view', slug: 'nymph', image: 'nymph.png', body: 'The work that caught your attention in our conversation. A bold outdoor identity with a memorable name and unmistakable personality, showing how far a clear point of view can carry a brand.' },
   { name: 'Molly Engels', tag: 'Color & personality', slug: 'molly-engles', image: 'molly-engles.jpg', body: 'A playful identity built around a personal story. A useful reference for the color and character you responded to.' },
   { name: 'Rhythm', tag: 'Fitness & movement', slug: 'rhythm', image: 'rhythm.jpg', body: 'A vibrant fitness identity carried across graphics, motion, and signage. Athletic energy with a welcoming personality.' },
   { name: 'Moat', tag: 'World-building', slug: 'moat', image: 'moat.png', body: 'A modern castle became the world behind this smart-lock brand. The name, story, and visual identity share one idea, giving packaging, print, and the website meaning beyond aesthetics.' },
@@ -128,16 +132,21 @@ export function CordsBrandProposal() {
           <img src={`/images/cords-proposal/${item.image}`} alt={`${item.name} brand identity by Anchovies`} loading="lazy" className="aspect-[4/3] w-full object-cover" />
           <p className="eyebrow mt-6 text-ink-2">{item.tag}</p><h3 className="serif mb-4 mt-3 text-[32px] group-hover:underline">{item.name} ↗</h3><p className="text-[14px] leading-6 text-ink-2">{item.body}</p>
         </a>)}</div>
+        <div className="mt-14 border-t border-[var(--color-rule)] pt-10">
+          <h3 className="serif mb-5 text-[34px]">Brands we’ve named</h3>
+          <p className="mb-8 max-w-[740px] text-[15px] leading-6 text-ink-2">Naming is a core part of our practice. Our experience spans fitness, wellness, retail, hospitality, and more. Here is a selection of names we’ve developed, including Copper Coyote, an earlier naming and identity project.</p>
+          <ul className="grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">{namedBrands.map(name => <li key={name} className="border-t border-[var(--color-rule)] py-3 text-[16px]">{name}</li>)}</ul>
+        </div>
         <div className="mt-12 border-t border-[var(--color-rule)] pt-8"><a href="https://anchovies.agency/work" target="_blank" rel="noreferrer" className="inline-block border-b border-ink py-3 text-[15px]">Explore and filter our work ↗</a><p className="mt-4 text-[14px] leading-6 text-ink-2">Use the portfolio filters to explore more industries and types of work.</p></div>
       </Section>
 
       <Section id="timeline" number="05" title="Timeline">
-        <div className="mb-12 grid gap-6 lg:grid-cols-2"><p className="serif text-[36px]">A proposed 5–7 weeks.</p><p className="max-w-[550px] text-[15px] leading-6 text-ink-2">A working target from kickoff to design handoff. We’ll agree on the schedule before starting. Consolidated feedback from both founders, timely name approval, product information, and reference photography help keep the work moving. Website production, packaging production, and launch scheduling sit outside this branding timeline.</p></div>
+        <div className="mb-12 grid gap-6 lg:grid-cols-2"><p className="serif text-[36px]">Four weeks.</p><p className="max-w-[550px] text-[15px] leading-6 text-ink-2">Four weeks from kickoff to final handoff. We’ll agree on the start date together. Consolidated feedback from both founders, timely name approval, product information, and reference photography help keep the work moving. Website production, packaging production, and launch scheduling sit outside this branding timeline.</p></div>
         {[
           ['Week 1', 'Discovery & moodboarding', 'Strategy, founder input, and collaborative naming and visual moodboards.'],
-          ['Weeks 2–3', 'Development & pitch', 'Name and identity development, presented as one solution with applied mockups.'],
-          ['Weeks 3–6', 'Refinement & applications', 'Refine the solution and complete website, packaging, and merchandise examples, plus social and email templates.'],
-          ['Weeks 6–7', 'Final files & handoff', 'Final identity assets, brand guidelines, editable examples, and a team walkthrough.'],
+          ['Week 2', 'Development & pitch', 'Name and identity development, presented as one solution with applied mockups.'],
+          ['Week 3', 'Refinement & applications', 'Refine the solution and complete website, packaging, and merchandise examples, plus social and email templates.'],
+          ['Week 4', 'Final files & handoff', 'Final identity assets, brand guidelines, editable examples, and a team walkthrough.'],
         ].map(([time, title, body]) => <div key={time} className="grid gap-3 border-t border-[var(--color-rule)] py-7 md:grid-cols-[120px_1fr_1.5fr] md:gap-8"><span className="eyebrow text-ink-2">{time}</span><h3 className="serif text-[25px]">{title}</h3><p className="text-[14px] leading-6 text-ink-2">{body}</p></div>)}
       </Section>
 

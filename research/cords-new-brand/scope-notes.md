@@ -45,3 +45,7 @@ Re-read full-transcript excerpts from the Oct 9 meeting: athletes already respon
 ## Release authorization
 
 Sean approved publishing the current proposal on October 12, 2026. Earlier local-only instructions are superseded by this explicit approval. Total $8,999; strategy, naming, complete identity; single-solution process and six athlete-focused goals retained.
+
+## Four-week schedule and broader portfolio
+
+Sean requested a flat four-week schedule: week 1 discovery/moodboarding, week 2 development/pitch, week 3 refinement/applications, week 4 handoff. Added Wild Hare (preferred over Wildflower), Freddie, and Nymph to the existing Molly/Rhythm/Moat references. Real case-study og:image assets retrieved October 12 with cache-busted URLs after bare URLs returned a generic Framer shell. Naming section lists Copper Coyote from Sean, Moat from the meeting, and 22 distinct projects tagged Naming on the public portfolio. Labeled a selection, not an exhaustive historical list; Sean is checking Pitch for additional naming work.
