@@ -9,8 +9,8 @@ const sections = [
 ]
 const investment = [
   { label: 'Brand strategy', amount: 1000 },
-  { label: 'Naming', amount: 4000 },
-  { label: 'Brand identity', amount: 4999 },
+  { label: 'Naming', amount: 3500 },
+  { label: 'Brand identity', amount: 5499 },
 ]
 const total = investment.reduce((sum, item) => sum + item.amount, 0)
 const money = (amount: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: Number.isInteger(amount) ? 0 : 2, maximumFractionDigits: 2 }).format(amount)
@@ -323,7 +323,7 @@ export function CordsBrandProposal() {
 
       <Section id="investment" number="06" title="Investment" dark>
         <p className="display mb-5 text-[76px] md:text-[112px]">{money(total)}</p>
-        <p className="mb-10 max-w-[760px] text-[17px] leading-7 text-paper/80">One fixed project fee for naming, brand strategy, and a complete brand identity, including the mockups, guidelines, and templates described above.</p>
+        <p className="mb-10 max-w-[760px] text-[17px] leading-7 text-paper/80">One complete engagement for brand strategy, naming, and brand identity, including the mockups, guidelines, and templates described above. The breakdown shows how the fixed project fee is allocated; these are connected parts of the engagement, not separate purchase options.</p>
         {investment.map(item => <div key={item.label} className="flex justify-between gap-6 border-t border-paper/25 py-6 text-[16px]"><span>{item.label}</span><span className="shrink-0 tabular-nums">{money(item.amount)}</span></div>)}
         <div className="mt-12 grid gap-8 md:grid-cols-3">{payments.map(payment => <div key={payment.label} className="border-t border-paper/25 pt-6"><span className="eyebrow text-paper/60">{payment.percent}% · {payment.label}</span><p className="serif mt-4 text-[40px]">{money(total * payment.percent / 100)}</p></div>)}</div>
         <p className="mt-10 max-w-[800px] text-[14px] leading-6 text-paper/75">Third-party costs and additional work will be identified and approved before proceeding.</p>
