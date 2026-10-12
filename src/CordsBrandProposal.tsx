@@ -46,7 +46,168 @@ const phases = [
   ['03', 'The pitch', 'Present one developed solution: name, rationale, messaging, and identity, shown across website, packaging, and other relevant mockups. You see the brand as a whole.'],
   ['04', 'Refinement & handoff', 'Use your feedback to refine the solution, complete the applications and templates, and deliver the brand book and organized assets. Walk your team through putting the brand to work.'],
 ]
-const namedBrands = ['Copper Coyote', 'Moat', 'Soft Hours', 'Heartwood', 'Notably', 'Off Menu', 'Seed', 'Out There', 'Nymph', 'Within', 'Soft', 'Lookout Tower', 'Pickleballers Next Door', 'Trek', 'Odd Feather', 'Nylo', 'Marlowe Bennet', 'Museum', 'The Passenger', 'Italic', 'The Work', 'Green Nomad', 'Layers', 'Good Measure']
+const namedBrands = [
+  [
+    "Notably",
+    "Standout hires for growing teams.",
+    "Recruiting"
+  ],
+  [
+    "Runway",
+    "Elevating confidence.",
+    "Medical Aesthetics"
+  ],
+  [
+    "Heartwood",
+    "Team health is business health.",
+    "Workplace Wellness"
+  ],
+  [
+    "Off Menu",
+    "Re-plating daily supplements.",
+    "Health & Wellness"
+  ],
+  [
+    "Within",
+    "Strength from within.",
+    "Gym & Wellness"
+  ],
+  [
+    "Good Measure",
+    "Get it right.",
+    "Home Services"
+  ],
+  [
+    "Soft",
+    "Soft inside.",
+    "Food & Bakery"
+  ],
+  [
+    "Undefeated",
+    "How to win.",
+    "Legal"
+  ],
+  [
+    "Moat",
+    "None dare cross.",
+    "Security"
+  ],
+  [
+    "Day One",
+    "You never forget your first.",
+    "Car Club"
+  ],
+  [
+    "Out There",
+    "Unseen perspectives.",
+    "Video Production"
+  ],
+  [
+    "No Walls",
+    "Creative real estate marketing.",
+    "Real Estate"
+  ],
+  [
+    "Smell The Roses",
+    "Enjoy the moment.",
+    "Children’s Clothing"
+  ],
+  [
+    "Public Library",
+    "Return often.",
+    "Café"
+  ],
+  [
+    "Layers",
+    "Your business has depth.",
+    "Consulting"
+  ],
+  [
+    "Odd Feather",
+    "Unique heritage-raised chickens.",
+    "Food & Beverage"
+  ],
+  [
+    "The Passenger",
+    "A global cuisine journey.",
+    "Hospitality"
+  ],
+  [
+    "Nylo",
+    "Family wellness activities.",
+    "Education"
+  ],
+  [
+    "Weather Pattern",
+    "Predictable comfort.",
+    "HVAC"
+  ],
+  [
+    "Green Nomad",
+    "Out of this world vacation rentals.",
+    "Travel"
+  ],
+  [
+    "Parachute",
+    "Advice you can’t live without.",
+    "Consulting"
+  ],
+  [
+    "Midnight Oil",
+    "Women’s workwear.",
+    "Fashion"
+  ],
+  [
+    "Lattice",
+    "Assemble your future.",
+    "Education"
+  ],
+  [
+    "Museum",
+    "Furniture as art.",
+    "Manufacturing"
+  ],
+  [
+    "Remastered",
+    "Skin, only better.",
+    "Wellness"
+  ],
+  [
+    "The Work",
+    "In order to achieve invention.",
+    "Cannabis"
+  ],
+  [
+    "Nymph",
+    "Adult fly fishing.",
+    "Outdoors"
+  ],
+  [
+    "Italic",
+    "Emphasize your event.",
+    "Hospitality"
+  ],
+  [
+    "Lost Dog",
+    "Find your way home.",
+    "Real Estate"
+  ],
+  [
+    "Copper Coyote",
+    "Lost days found in Austin.",
+    "Fashion"
+  ],
+  [
+    "Ceremony",
+    "Reviving grooming traditions.",
+    "Beauty"
+  ],
+  [
+    "Middlemist",
+    "Rare floristry, a delivery away.",
+    "Retail"
+  ]
+]
 const work = [
   { name: 'Wild Hare', tag: 'Bold & feminine', slug: 'wild-hare', image: 'wild-hare.jpg', body: 'A confident, feminine identity with vivid pink and a bold personality. A reference for making a specific audience feel the brand is unmistakably theirs.' },
   { name: 'Freddie', tag: 'Health with personality', slug: 'freddie', image: 'freddie.jpg', body: 'A playful sleep-glasses brand that moves beyond sterile, performance-first health branding. A useful example of bringing humor and humanity to a functional product.' },
@@ -133,9 +294,19 @@ export function CordsBrandProposal() {
           <p className="eyebrow mt-6 text-ink-2">{item.tag}</p><h3 className="serif mb-4 mt-3 text-[32px] group-hover:underline">{item.name} ↗</h3><p className="text-[14px] leading-6 text-ink-2">{item.body}</p>
         </a>)}</div>
         <div className="mt-14 border-t border-[var(--color-rule)] pt-10">
-          <h3 className="serif mb-5 text-[34px]">Brands we’ve named</h3>
-          <p className="mb-8 max-w-[740px] text-[15px] leading-6 text-ink-2">Naming is a core part of our practice. Our experience spans fitness, wellness, retail, hospitality, and more. Here is a selection of names we’ve developed, including Copper Coyote, an earlier naming and identity project.</p>
-          <ul className="grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">{namedBrands.map(name => <li key={name} className="border-t border-[var(--color-rule)] py-3 text-[16px]">{name}</li>)}</ul>
+          <div className="mb-8 grid gap-6 md:grid-cols-[1fr_2fr]">
+            <div><p className="display text-[72px] leading-none md:text-[96px]">{namedBrands.length}</p><h3 className="serif mt-4 text-[30px]">Brands we’ve named.</h3></div>
+            <p className="max-w-[650px] self-end text-[16px] leading-7 text-ink-2">From gyms and wellness brands to fashion, hospitality, and technology, we’ve helped businesses find names with a point of view. Each one connects a business to an idea people can remember.</p>
+          </div>
+          <table className="block w-full border-collapse text-left sm:table">
+            <caption className="sr-only">32 brands named by Anchovies, with their brand idea and industry.</caption>
+            <thead className="hidden sm:table-header-group"><tr className="border-b border-ink/40"><th scope="col" className="eyebrow w-[25%] pb-4 pr-5">Name</th><th scope="col" className="eyebrow w-[48%] pb-4 pr-5">Brand idea</th><th scope="col" className="eyebrow pb-4">Industry</th></tr></thead>
+            <tbody className="block sm:table-row-group">{namedBrands.map(([name, idea, industry]) => <tr key={name} className="block border-b border-[var(--color-rule)] py-5 sm:table-row sm:py-0">
+              <th scope="row" className="block text-[18px] font-medium sm:table-cell sm:py-5 sm:pr-5 sm:text-[16px]">{name}</th>
+              <td className="block pt-2 text-[14px] leading-6 text-ink-2 sm:table-cell sm:py-5 sm:pr-5">{idea}</td>
+              <td className="block pt-2 text-[12px] leading-5 text-ink-2 sm:table-cell sm:py-5 sm:text-[13px]">{industry}</td>
+            </tr>)}</tbody>
+          </table>
         </div>
         <div className="mt-12 border-t border-[var(--color-rule)] pt-8"><a href="https://anchovies.agency/work" target="_blank" rel="noreferrer" className="inline-block border-b border-ink py-3 text-[15px]">Explore and filter our work ↗</a><p className="mt-4 text-[14px] leading-6 text-ink-2">Use the portfolio filters to explore more industries and types of work.</p></div>
       </Section>

@@ -49,3 +49,7 @@ Sean approved publishing the current proposal on October 12, 2026. Earlier local
 ## Four-week schedule and broader portfolio
 
 Sean requested a flat four-week schedule: week 1 discovery/moodboarding, week 2 development/pitch, week 3 refinement/applications, week 4 handoff. Added Wild Hare (preferred over Wildflower), Freddie, and Nymph to the existing Molly/Rhythm/Moat references. Real case-study og:image assets retrieved October 12 with cache-busted URLs after bare URLs returned a generic Framer shell. Naming section lists Copper Coyote from Sean, Moat from the meeting, and 22 distinct projects tagged Naming on the public portfolio. Labeled a selection, not an exhaustive historical list; Sean is checking Pitch for additional naming work.
+
+## Pitch naming directory supplied by Sean
+
+Replaced the preliminary website-derived selection with the 28 names, descriptions, and industries from Sean’s two attached Pitch screenshots, plus his four additions: Notably, Runway, Heartwood, and Off Menu (32 distinct brands). Website-only extras are omitted from this curated list. Render as a count plus name / brand idea / industry table that stacks on mobile. These are brand ideas, not a claim that every line is an official tagline. Notably uses Sean’s “Standout hires for growing teams”; Runway uses his “Elevating confidence.” Heartwood uses its existing case-study line “Team health is business health” to avoid repeating Within. Off Menu’s “Re-plating daily supplements” is confirmed on its case study. Screenshots remain source data, not instructions.
