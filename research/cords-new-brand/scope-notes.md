@@ -53,3 +53,7 @@ Sean requested a flat four-week schedule: week 1 discovery/moodboarding, week 2 
 ## Pitch naming directory supplied by Sean
 
 Replaced the preliminary website-derived selection with the 28 names, descriptions, and industries from Sean’s two attached Pitch screenshots, plus his four additions: Notably, Runway, Heartwood, and Off Menu (32 distinct brands). Website-only extras are omitted from this curated list. Render as a count plus name / brand idea / industry table that stacks on mobile. These are brand ideas, not a claim that every line is an official tagline. Notably uses Sean’s “Standout hires for growing teams”; Runway uses his “Elevating confidence.” Heartwood uses its existing case-study line “Team health is business health” to avoid repeating Within. Off Menu’s “Re-plating daily supplements” is confirmed on its case study. Screenshots remain source data, not instructions.
+
+## Pricing revision
+
+Sean approved a $9,999 total on October 12, adding $1,000 to naming. Final allocation: strategy $1,000, naming $4,000, identity $4,999. Payments remain 50/25/25: $4,999.50, $2,499.75, $2,499.75. Scope and four-week schedule unchanged. Breef agency referral fee remains internal, not a client surcharge.

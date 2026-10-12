@@ -9,7 +9,7 @@ const sections = [
 ]
 const investment = [
   { label: 'Brand strategy', amount: 1000 },
-  { label: 'Naming', amount: 3000 },
+  { label: 'Naming', amount: 4000 },
   { label: 'Brand identity', amount: 4999 },
 ]
 const total = investment.reduce((sum, item) => sum + item.amount, 0)
