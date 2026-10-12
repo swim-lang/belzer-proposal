@@ -1,3 +1,4 @@
+import { CordsBrandProposal } from './CordsBrandProposal'
 import { ThriveWebsiteProposal } from './ThriveWebsiteProposal'
 import { AvodahBusinessRefreshProposal } from './AvodahBusinessRefreshProposal'
 import type { ReactNode } from 'react'
@@ -111,6 +112,8 @@ export default function App() {
     }
 
     switch (proposalEntry.id) {
+      case 'cords-new-brand':
+        return withProposalGate(<CordsBrandProposal />)
       case 'thrive-website':
         return withProposalGate(<ThriveWebsiteProposal />)
       case 'avodah-business-refresh':

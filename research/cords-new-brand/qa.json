@@ -1,0 +1,33 @@
+{
+  "gate": true,
+  "noindex": true,
+  "pricing": {
+    "total": 8999,
+    "parts": [
+      3000,
+      1000,
+      4999
+    ],
+    "payments": [
+      4499.5,
+      2249.75,
+      2249.75
+    ]
+  },
+  "anchors": true,
+  "approvalLink": true,
+  "calendarLink": true,
+  "noEmDashes": true,
+  "noOverflowAt": [
+    1440,
+    768,
+    390,
+    320
+  ],
+  "regressions": [
+    "src/AvodahBusinessRefreshProposal.tsx",
+    "src/MBouvierProposal.tsx",
+    "src/BennettProposal.tsx"
+  ],
+  "errors": []
+}

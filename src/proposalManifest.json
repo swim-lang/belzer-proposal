@@ -1,5 +1,18 @@
 [
   {
+    "id": "cords-new-brand",
+    "name": "Cords Club: New Brand (TBD)",
+    "tagline": "Naming, identity, website design, and launch materials \u00b7 Draft",
+    "status": "Active",
+    "href": "/proposal/cords-new-brand",
+    "paths": [
+      "/proposal/cords-new-brand"
+    ],
+    "sourceFile": "src/CordsBrandProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true
+  },
+  {
     "id": "thrive-website",
     "name": "Thrive Preschool: Website Options",
     "tagline": "WordPress maintenance $999 or migration $3,999",
