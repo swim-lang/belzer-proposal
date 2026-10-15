@@ -1,5 +1,18 @@
 [
   {
+    "id": "tplg-portal",
+    "name": "TPLG: Portal & Agent Pilot",
+    "tagline": "Portal beta $3,500 · Optional agent pilot +$2,500",
+    "status": "Draft",
+    "href": "/proposal/tplg-portal",
+    "paths": [
+      "/proposal/tplg-portal"
+    ],
+    "sourceFile": "src/TPLGPortalProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true
+  },
+  {
     "id": "cords-new-brand",
     "name": "Cords Club: New Brand (TBD)",
     "tagline": "Brand strategy, naming, and complete identity · $9,999",

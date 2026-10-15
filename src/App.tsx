@@ -1,3 +1,4 @@
+import { TPLGPortalProposal } from './TPLGPortalProposal'
 import { CordsBrandProposal } from './CordsBrandProposal'
 import { ThriveWebsiteProposal } from './ThriveWebsiteProposal'
 import { AvodahBusinessRefreshProposal } from './AvodahBusinessRefreshProposal'
@@ -112,6 +113,8 @@ export default function App() {
     }
 
     switch (proposalEntry.id) {
+      case 'tplg-portal':
+        return withProposalGate(<TPLGPortalProposal />)
       case 'cords-new-brand':
         return withProposalGate(<CordsBrandProposal />)
       case 'thrive-website':
