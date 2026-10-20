@@ -15,7 +15,7 @@ October 20, 2026. Draft only; no publication or client contact authorized. Sourc
 
 Cords: strategy before naming, one integrated recommendation, initial availability distinct from legal clearance, mockup/production boundaries. Bennett: strategy/naming/identity/site with practical launch materials, realistic applications and outcomes. M. Bouvier: defined page count, copy, handoff and search boundaries. Genesi: strategy, application system, website and communication tools. New Line Custom Interiors: relevant architectural project-story and qualification approach. Soft Hours: postlaunch/ongoing SEO is distinct from launch scope.
 
-$19,900 allocation carried from Sean-reviewed plan: strategy $2,000; naming $3,500; identity $6,500; website/copy/both releases $7,900. Payments 50/25/25 = $9,950/$4,975/$4,975. One connected engagement. Relationship consideration expressed as included scope, no invented regular price or discount.
+$19,900 allocation carried from Sean-reviewed plan: strategy $2,000; naming $3,500; identity $6,500; website/copy/both releases $5,900; SEO and measurement $2,000. Payments 50/25/25 = $9,950/$4,975/$4,975. One connected engagement. Relationship consideration expressed as included scope, no invented regular price or discount.
 
 Early website: five existing priority experiences, 7–10 business days, one refinement. Full site: eight core pages plus reusable detail templates populated with three project stories and two Ideas stories; standard legal/confirmation pages using supplied wording. Two website refinement rounds. Three consolidated brand rounds. Overall target 6–8 weeks, dependent on access, assets, approvals and naming/legal timing.
 
@@ -24,3 +24,9 @@ User's latest additions are included at same price: one taste-discovery flow (up
 This is a proposal for those features, not a working moodboard/AI system. No model/provider choice or paid services provisioned. Exact backend, private storage/retention, consent, and editing platform are implementation decisions at kickoff. No automatic external board import, CRM, generated room planner, automated quotes, advanced portal, or lighting simulation included. Lighting illustrations/concepts must not misrepresent completed work.
 
 Measure qualification, inquiry-to-consultation, search visibility and won project value only with client sales records; no revenue/rank guarantees or claims that a $50K contract equals profit. Future business sale is supported by brand independence and repeatable tools, not guaranteed valuation uplift.
+
+## Visual revision, October 20
+
+Replaced the list-heavy Added Experiences section with two interactive concept panels and expandable inclusion details. Taste choices use two images from Modern Leaf's public homepage, stored locally in public/images/modern-leaf-proposal. Selection animates only while visible, supports pause/manual selection, and respects reduced motion. No responses are saved. Lighting uses an original illustrative SVG and accessible switch; it is not a simulation. SEO moved into main scope and investment, with the $2,000 allocated from the website amount; total and payments unchanged. Consultation and lighting remain included. Timeline now uses connected desktop milestones and vertical mobile milestones.
+
+Validation: production build passed; all 70 existing tests passed; git diff --check passed. Browser checks passed for image selection, autoplay/pause, reduced motion, lighting switch, expandable details, pricing, timeline layout and no horizontal overflow at 1440, 768, 390 and 320px. Desktop experiences/timeline and mobile experiences screenshots visually reviewed. No production deployment made.
