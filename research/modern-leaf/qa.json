@@ -1,0 +1,15 @@
+{
+  "gate": true,
+  "noindex": true,
+  "widths": [
+    1440,
+    768,
+    390,
+    320
+  ],
+  "pricing": true,
+  "anchors": true,
+  "workLinks": 10,
+  "regressions": 3,
+  "errors": []
+}

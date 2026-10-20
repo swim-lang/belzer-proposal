@@ -1,5 +1,18 @@
 [
   {
+    "id": "modern-leaf",
+    "name": "Modern Leaf: Brand & Website",
+    "tagline": "Naming, identity, and two website releases · $19,900",
+    "status": "Draft",
+    "href": "/proposal/modern-leaf",
+    "paths": [
+      "/proposal/modern-leaf"
+    ],
+    "sourceFile": "src/ModernLeafProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true
+  },
+  {
     "id": "tplg-portal",
     "name": "TPLG: Portal & Agent Pilot",
     "tagline": "Portal beta $3,500 · Optional agent pilot +$2,500",

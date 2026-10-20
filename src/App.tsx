@@ -1,3 +1,4 @@
+import { ModernLeafProposal } from './ModernLeafProposal'
 import { TPLGPortalProposal } from './TPLGPortalProposal'
 import { CordsBrandProposal } from './CordsBrandProposal'
 import { ThriveWebsiteProposal } from './ThriveWebsiteProposal'
@@ -113,6 +114,8 @@ export default function App() {
     }
 
     switch (proposalEntry.id) {
+      case 'modern-leaf':
+        return withProposalGate(<ModernLeafProposal />)
       case 'tplg-portal':
         return withProposalGate(<TPLGPortalProposal />)
       case 'cords-new-brand':
