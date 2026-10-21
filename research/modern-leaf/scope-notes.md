@@ -36,3 +36,5 @@ Validation: production build passed; all 70 existing tests passed; git diff --ch
 Sean authorized publication for review before sending to clients. Replaced the schematic lighting demo with his downloaded bathroom_showcase_16x9.mp4 Blender render. Six seconds, 1280 x 720 H.264, no audio, 1.42 MB. Native click-to-play controls, inline mobile playback, first-frame poster, no autoplay, and explicit illustrative-render label. Scope, pricing and timeline unchanged. Local preview restarted on port 5188.
 
 Final review: silent looping preview with pause control, reduced-motion preference respected, and equal-height desktop experience panels.
+
+Final copy/layout review: Taste direction and Virtual showroom labels; removed Oasis client-facing reference; reframed supplied-media showroom scope; simplified post-launch review and separated scheduling note.

@@ -39,3 +39,10 @@
 .ml-showroom-video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;margin:28px 0 22px;background:#ddd8cc;border:1px solid #c9c4b7}
 
 @media(min-width:1024px){.ml-experiences>div{display:grid;grid-template-rows:subgrid;grid-row:span 5;row-gap:0}.ml-light-demo{display:flex;flex-direction:column}.ml-light-demo .ml-showroom-video{margin-top:auto;margin-bottom:auto}.ml-light-demo .ml-light-caption{margin-top:22px}}
+
+.ml-followup{grid-template-columns:1fr 1.5fr;gap:48px;padding:28px 0;margin-top:40px;align-items:center}
+.ml-followup h3{margin-top:12px;font-size:28px;line-height:1.2}
+.ml-followup>p:last-child{max-width:580px;margin:0}
+.ml-schedule-note{border-top:1px solid var(--color-rule);padding-top:24px;display:grid;grid-template-columns:1fr 1.5fr;gap:48px}
+.ml-schedule-note p{font-size:13px;line-height:1.8;color:#66695e;max-width:580px}
+@media(max-width:767px){.ml-followup{display:block;padding:24px 0}.ml-followup>p:last-child{margin-top:16px}.ml-schedule-note{display:block}.ml-schedule-note p{margin-top:12px}}

@@ -19,7 +19,7 @@ export function TasteDemo() {
  },[playing,visible])
  const choices=[{name:'Warm & understated',image:'reference-one.jpg',note:'Natural materials · soft light · quiet detail'}, {name:'Color & contrast',image:'reference-two.jpg',note:'Rich tones · expressive surfaces · contrast'}]
  return <div ref={ref} className="ml-demo">
-  <div className="ml-demo-top"><span>01 / YOUR DIRECTION</span><button type="button" onClick={()=>setPlaying(!playing)} aria-pressed={playing}>{playing?'Pause preview':'Play preview'}</button></div>
+  <div className="ml-demo-top"><span>01 / TASTE DIRECTION</span><button type="button" onClick={()=>setPlaying(!playing)} aria-pressed={playing}>{playing?'Pause preview':'Play preview'}</button></div>
   <p className="serif ml-demo-question">What feels more like you?</p>
   <div className="ml-choices">{choices.map((choice,index)=><button key={choice.name} type="button" className={`ml-choice ${selected===index?'is-selected':''}`} aria-pressed={selected===index} onClick={()=>{setPlaying(false);setSelected(index)}}><div className="ml-choice-photo"><img src={`/images/modern-leaf-proposal/${choice.image}`} alt={choice.name==='Color & contrast'?'Cabinetry with dark blue doors, timber and turquoise tile':'Natural timber vanity with soft integrated lighting'}/><span className="ml-choice-check" aria-hidden="true">{selected===index?'✓':'+'}</span></div><span className="ml-choice-label">{choice.name}</span></button>)}</div>
   <div className="ml-brief"><span className="ml-small-label">YOUR EXAMPLE BRIEF</span><p className="serif" key={selected}>{choices[selected].note}</p></div>
@@ -37,19 +37,19 @@ export function LightingDemo(){
  },[])
  const toggle=()=>{if(!video.current)return;if(video.current.paused)video.current.play().catch(()=>{});else video.current.pause()}
  return <div className="ml-demo ml-light-demo">
-  <div className="ml-demo-top"><span>02 / A CLOSER LOOK</span><button type="button" onClick={toggle} aria-pressed={playing}>{playing?'Pause preview':'Play preview'}</button></div>
+  <div className="ml-demo-top"><span>02 / VIRTUAL SHOWROOM</span><button type="button" onClick={toggle} aria-pressed={playing}>{playing?'Pause preview':'Play preview'}</button></div>
   <video ref={video} className="ml-showroom-video" muted loop playsInline preload="metadata" onPlay={()=>setPlaying(true)} onPause={()=>setPlaying(false)} poster="/video/modern-leaf/bathroom-showcase-poster.jpg" aria-label="Virtual showroom concept: a rendered bathroom with custom cabinetry and integrated lighting">
    <source src="/video/modern-leaf/bathroom-showcase.mp4" type="video/mp4"/>
    Your browser does not support this video. <a href="/video/modern-leaf/bathroom-showcase.mp4">View the showroom concept</a>.
   </video>
-  <div className="ml-light-caption"><p className="serif">See the space come together.</p><span>Materials, proportions, and integrated light.</span></div>
+  <div className="ml-light-caption"><p className="serif">Explore the space.</p><span>Materials, proportions, and integrated light.</span></div>
   <p className="ml-demo-footnote">Illustrative 3D concept · This is a rendered example, not a completed client project.</p>
  </div>
 }
 const steps=[
  ['01','Days 1–10','A stronger website now','Shop visit, content review, and the focused first release within 7–10 business days.'],
  ['02','Weeks 2–4','Name & identity','Collaborative moodboards, one integrated recommendation, then refinement.'],
- ['03','Weeks 4–7','Build the full experience','Website, project stories, Ideas, guided inquiry, and lighting interaction.'],
+ ['03','Weeks 4–7','Build the full experience','Website, project stories, Ideas, guided inquiry, and virtual showroom.'],
  ['04','Weeks 7–8','Review & launch','Test, refine, complete the handoff, and launch after approval.'],
 ]
-export function ModernLeafTimeline(){return <div className="ml-timeline"><div className="ml-timeline-track">{steps.map(([n,time,title,body])=><div className="ml-milestone" key={n}><span className="ml-timeline-dot">{n}</span><p className="eyebrow text-ink-2">{time}</p><h3 className="serif">{title}</h3><p className="ml-timeline-body">{body}</p>{n==='01'&&<span className="ml-release">First release</span>}{n==='04'&&<span className="ml-release">Full launch</span>}</div>)}</div><div className="ml-followup"><span className="eyebrow text-ink-2">30 days after launch</span><p className="serif">Review what is working. Refine the next step.</p><p>Review early search and inquiry signals, make the included small adjustments, and agree on useful priorities.</p></div></div>}
+export function ModernLeafTimeline(){return <div className="ml-timeline"><div className="ml-timeline-track">{steps.map(([n,time,title,body])=><div className="ml-milestone" key={n}><span className="ml-timeline-dot">{n}</span><p className="eyebrow text-ink-2">{time}</p><h3 className="serif">{title}</h3><p className="ml-timeline-body">{body}</p>{n==='01'&&<span className="ml-release">First release</span>}{n==='04'&&<span className="ml-release">Full launch</span>}</div>)}</div><div className="ml-followup"><div><span className="eyebrow text-ink-2">30 days after launch</span><h3 className="serif">Post-launch review</h3></div><p>Review early search and inquiry results, make the included small improvements, and agree on next steps.</p></div></div>}
