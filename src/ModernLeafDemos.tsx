@@ -52,4 +52,20 @@ const steps=[
  ['03','Weeks 4–7','Build the full experience','Website, project stories, Ideas, guided inquiry, and virtual showroom.'],
  ['04','Weeks 7–8','Review & launch','Test, refine, complete the handoff, and launch after approval.'],
 ]
-export function ModernLeafTimeline(){return <div className="ml-timeline"><div className="ml-timeline-track">{steps.map(([n,time,title,body])=><div className="ml-milestone" key={n}><span className="ml-timeline-dot">{n}</span><p className="eyebrow text-ink-2">{time}</p><h3 className="serif">{title}</h3><p className="ml-timeline-body">{body}</p>{n==='01'&&<span className="ml-release">First release</span>}{n==='04'&&<span className="ml-release">Full launch</span>}</div>)}</div><div className="ml-followup"><div><span className="eyebrow text-ink-2">30 days after launch</span><h3 className="serif">Post-launch review</h3></div><p>Review early search and inquiry results, make the included small improvements, and agree on next steps.</p></div></div>}
+export function ModernLeafTimeline(){
+ const track=useRef<HTMLDivElement>(null)
+ const [active,setActive]=useState(0)
+ useEffect(()=>{
+  let frame=0
+  const update=()=>{
+   frame=0
+   if(!track.current)return
+   const nodes=Array.from(track.current.querySelectorAll<HTMLElement>('.ml-milestone'))
+   if(window.innerWidth<768){setActive(nodes.filter(node=>node.getBoundingClientRect().top<window.innerHeight*.75).length)}
+   else{const top=track.current.getBoundingClientRect().top;setActive(Math.max(0,Math.min(4,Math.ceil((window.innerHeight*.8-top)/(window.innerHeight*.45)*4))))}
+  }
+  const schedule=()=>{if(!frame)frame=requestAnimationFrame(update)}
+  update();window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',schedule)
+  return ()=>{cancelAnimationFrame(frame);window.removeEventListener('scroll',schedule);window.removeEventListener('resize',schedule)}
+ },[])
+ return <div className="ml-timeline"><div ref={track} className="ml-timeline-track">{steps.map(([n,time,title,body],index)=><div className={`ml-milestone ${index<active?'is-active':''}`} key={n}><span className="ml-timeline-dot">{n}</span><p className="eyebrow text-ink-2">{time}</p><h3 className="serif">{title}</h3><p className="ml-timeline-body">{body}</p>{n==='01'&&<span className="ml-release">First release</span>}{n==='04'&&<span className="ml-release">Full launch</span>}</div>)}</div><div className="ml-followup"><div><span className="eyebrow text-ink-2">30 days after launch</span><h3 className="serif">Post-launch review</h3></div><p>Review early search and inquiry results, make the included small improvements, and agree on next steps.</p></div></div>}

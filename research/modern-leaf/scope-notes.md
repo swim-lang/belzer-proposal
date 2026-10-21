@@ -38,3 +38,5 @@ Sean authorized publication for review before sending to clients. Replaced the s
 Final review: silent looping preview with pause control, reduced-motion preference respected, and equal-height desktop experience panels.
 
 Final copy/layout review: Taste direction and Virtual showroom labels; removed Oasis client-facing reference; reframed supplied-media showroom scope; simplified post-launch review and separated scheduling note.
+
+Final review revision: centered outcome statement without supporting caveat; bold scope notes; added experiences now exploratory with details TBD at discovery, removing specific tool limits; work ordered LTBa, Arc 88, 206, Soft Hours, Seed, Museum; scroll-responsive timeline markers with reduced-motion support.

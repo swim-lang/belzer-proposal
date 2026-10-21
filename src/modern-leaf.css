@@ -27,7 +27,7 @@
 .ml-timeline-track{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:48px}
 .ml-milestone{position:relative;border-top:1px solid #979b8d;padding:42px 24px 0 0}
 .ml-timeline-dot{position:absolute;top:-15px;left:0;width:30px;height:30px;border-radius:50%;background:var(--color-paper);border:1px solid #777d6e;display:grid;place-items:center;font-size:10px}
-.ml-milestone:first-child .ml-timeline-dot,.ml-milestone:last-child .ml-timeline-dot{background:var(--color-ink);color:var(--color-paper)}
+.ml-timeline-dot{transition:background .35s,color .35s,box-shadow .35s}.ml-milestone.is-active .ml-timeline-dot{background:var(--color-ink);color:var(--color-paper);box-shadow:0 0 0 5px #2529230a}
 .ml-milestone h3{font-size:28px;line-height:1.15;margin:20px 0 16px}.ml-timeline-body{font-size:14px;line-height:1.8;color:#66695e}
 .ml-release{display:inline-block;margin-top:20px;padding:5px 10px;border:1px solid var(--color-rule);border-radius:20px;font-size:10px}
 .ml-followup{margin-top:40px;border-top:1px solid var(--color-rule);padding-top:25px;display:grid;grid-template-columns:1fr 1.4fr 1.6fr;gap:24px;align-items:start}
@@ -46,3 +46,5 @@
 .ml-schedule-note{border-top:1px solid var(--color-rule);padding-top:24px;display:grid;grid-template-columns:1fr 1.5fr;gap:48px}
 .ml-schedule-note p{font-size:13px;line-height:1.8;color:#66695e;max-width:580px}
 @media(max-width:767px){.ml-followup{display:block;padding:24px 0}.ml-followup>p:last-child{margin-top:16px}.ml-schedule-note{display:block}.ml-schedule-note p{margin-top:12px}}
+
+@media(prefers-reduced-motion:reduce){.ml-timeline-dot{transition:none}}
