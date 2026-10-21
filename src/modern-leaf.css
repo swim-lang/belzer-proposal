@@ -35,3 +35,5 @@
 @keyframes ml-reveal{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:767px){.ml-demo{padding:18px}.ml-demo-question{font-size:26px}.ml-timeline-track{display:block;margin-top:30px}.ml-milestone{border-top:0;border-left:1px solid #979b8d;margin-left:15px;padding:0 0 36px 32px}.ml-timeline-dot{left:-15px;top:0}.ml-milestone h3{margin-top:15px}.ml-followup{display:block;margin-top:0}.ml-followup p{margin-top:15px}}
 @media(prefers-reduced-motion:reduce){.ml-demo *{animation:none!important;transition:none!important}}
+
+.ml-showroom-video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;margin:28px 0 22px;background:#ddd8cc;border:1px solid #c9c4b7}

@@ -27,18 +27,14 @@ export function TasteDemo() {
  </div>
 }
 export function LightingDemo(){
- const [lit,setLit]=useState(false)
- return <div className={`ml-demo ml-light-demo ${lit?'is-lit':''}`}>
-  <div className="ml-demo-top"><span>02 / SET THE ATMOSPHERE</span><button type="button" role="switch" aria-checked={lit} aria-label="Integrated lighting" onClick={()=>setLit(!lit)} className="ml-switch"><span aria-hidden="true"/></button></div>
-  <svg viewBox="0 0 600 320" className="ml-room" role="img" aria-label={lit?'Illustrated cabinetry with warm integrated lighting':'Illustrated cabinetry in daylight'}>
-   <defs><linearGradient id="ml-wall" x2="0" y2="1"><stop stopColor="#e5e0d6"/><stop offset="1" stopColor="#c9c0af"/></linearGradient><linearGradient id="ml-glow" x2="0" y2="1"><stop stopColor="#ffd48e" stopOpacity=".9"/><stop offset="1" stopColor="#ffd48e" stopOpacity="0"/></linearGradient><filter id="ml-soft"><feGaussianBlur stdDeviation="5"/></filter></defs>
-   <path fill="url(#ml-wall)" d="M0 0h600v320H0z"/><path fill="#d2c9b9" d="M0 265h600v55H0z"/>
-   <g stroke="#7d7464" strokeWidth="1"><path fill="#a89b83" d="M56 38h488v102H56z"/><path d="M178 38v102m122-102v102m122-102v102"/><path fill="#c4b69c" d="M56 194h488v93H56z"/><path d="M178 194v93m122-93v93m122-93v93"/><path fill="#e8e2d7" d="M45 184h510v12H45z"/></g>
-   <path fill="#3b3d35" d="M258 187v-28q0-20 17-20t17 20v7h-5v-7q0-15-12-15t-12 15v28z"/><ellipse cx="390" cy="179" rx="29" ry="7" fill="#a9a08f"/><path d="M367 166q3 18 23 18t23-18z" fill="#ddd6c8"/>
-   <g className="ml-room-glow"><path fill="url(#ml-glow)" d="M55 141h490v43H55z"/><path stroke="#ffe4ac" strokeWidth="5" filter="url(#ml-soft)" d="M57 141h486M57 289h486"/><path stroke="#ffe8bb" strokeWidth="2" d="M57 141h486M57 289h486"/><path fill="url(#ml-glow)" d="M55 290h490v30H55z"/></g>
-  </svg>
-  <div className="ml-light-caption"><p className="serif">{lit?'The room, transformed.':'The detail is already there.'}</p><span>{lit?'Integrated light on':'Integrated light off'}</span></div>
-  <p className="ml-demo-footnote">Interactive concept · Illustrative scene, not a lighting simulation.</p>
+ return <div className="ml-demo ml-light-demo">
+  <div className="ml-demo-top"><span>02 / A CLOSER LOOK</span><span>SHOWROOM CONCEPT</span></div>
+  <video className="ml-showroom-video" controls playsInline preload="metadata" poster="/video/modern-leaf/bathroom-showcase-poster.jpg" aria-label="Virtual showroom concept: a rendered bathroom with custom cabinetry and integrated lighting">
+   <source src="/video/modern-leaf/bathroom-showcase.mp4" type="video/mp4"/>
+   Your browser does not support this video. <a href="/video/modern-leaf/bathroom-showcase.mp4">View the showroom concept</a>.
+  </video>
+  <div className="ml-light-caption"><p className="serif">See the space come together.</p><span>Materials, proportions, and integrated light.</span></div>
+  <p className="ml-demo-footnote">Illustrative 3D concept · Press play to explore. This is a rendered example, not a completed client project.</p>
  </div>
 }
 const steps=[
