@@ -37,3 +37,5 @@
 @media(prefers-reduced-motion:reduce){.ml-demo *{animation:none!important;transition:none!important}}
 
 .ml-showroom-video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;margin:28px 0 22px;background:#ddd8cc;border:1px solid #c9c4b7}
+
+@media(min-width:1024px){.ml-experiences>div{display:grid;grid-template-rows:subgrid;grid-row:span 5;row-gap:0}.ml-light-demo{display:flex;flex-direction:column}.ml-light-demo .ml-showroom-video{margin-top:auto;margin-bottom:auto}.ml-light-demo .ml-light-caption{margin-top:22px}}

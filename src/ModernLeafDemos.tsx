@@ -27,14 +27,23 @@ export function TasteDemo() {
  </div>
 }
 export function LightingDemo(){
+ const video=useRef<HTMLVideoElement>(null)
+ const [playing,setPlaying]=useState(false)
+ useEffect(()=>{
+  const preference=window.matchMedia('(prefers-reduced-motion: reduce)')
+  const update=()=>{if(preference.matches)video.current?.pause();else video.current?.play().catch(()=>{})}
+  update();preference.addEventListener('change',update)
+  return ()=>preference.removeEventListener('change',update)
+ },[])
+ const toggle=()=>{if(!video.current)return;if(video.current.paused)video.current.play().catch(()=>{});else video.current.pause()}
  return <div className="ml-demo ml-light-demo">
-  <div className="ml-demo-top"><span>02 / A CLOSER LOOK</span><span>SHOWROOM CONCEPT</span></div>
-  <video className="ml-showroom-video" controls playsInline preload="metadata" poster="/video/modern-leaf/bathroom-showcase-poster.jpg" aria-label="Virtual showroom concept: a rendered bathroom with custom cabinetry and integrated lighting">
+  <div className="ml-demo-top"><span>02 / A CLOSER LOOK</span><button type="button" onClick={toggle} aria-pressed={playing}>{playing?'Pause preview':'Play preview'}</button></div>
+  <video ref={video} className="ml-showroom-video" muted loop playsInline preload="metadata" onPlay={()=>setPlaying(true)} onPause={()=>setPlaying(false)} poster="/video/modern-leaf/bathroom-showcase-poster.jpg" aria-label="Virtual showroom concept: a rendered bathroom with custom cabinetry and integrated lighting">
    <source src="/video/modern-leaf/bathroom-showcase.mp4" type="video/mp4"/>
    Your browser does not support this video. <a href="/video/modern-leaf/bathroom-showcase.mp4">View the showroom concept</a>.
   </video>
   <div className="ml-light-caption"><p className="serif">See the space come together.</p><span>Materials, proportions, and integrated light.</span></div>
-  <p className="ml-demo-footnote">Illustrative 3D concept · Press play to explore. This is a rendered example, not a completed client project.</p>
+  <p className="ml-demo-footnote">Illustrative 3D concept · This is a rendered example, not a completed client project.</p>
  </div>
 }
 const steps=[
