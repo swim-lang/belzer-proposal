@@ -1,5 +1,18 @@
 [
   {
+    "id": "modern-leaf-contract",
+    "name": "Modern Leaf: Agreement",
+    "tagline": "Brand and phased website agreement \u00b7 $19,900",
+    "status": "Active",
+    "href": "/proposal/modern-leaf/contract",
+    "paths": [
+      "/proposal/modern-leaf/contract"
+    ],
+    "sourceFile": "src/contracts/modernLeafContract.ts",
+    "kind": "contract",
+    "showInDashboard": true
+  },
+  {
     "id": "modern-leaf",
     "name": "Modern Leaf: Brand & Website",
     "tagline": "Naming, identity, and two website releases · $19,900",

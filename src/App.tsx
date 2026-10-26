@@ -1,3 +1,4 @@
+import { modernLeafContract } from './contracts/modernLeafContract'
 import { ModernLeafProposal } from './ModernLeafProposal'
 import { TPLGPortalProposal } from './TPLGPortalProposal'
 import { CordsBrandProposal } from './CordsBrandProposal'
@@ -114,6 +115,8 @@ export default function App() {
     }
 
     switch (proposalEntry.id) {
+      case 'modern-leaf-contract':
+        return withProposalGate(<ContractPage contract={modernLeafContract} />)
       case 'modern-leaf':
         return withProposalGate(<ModernLeafProposal />)
       case 'tplg-portal':
