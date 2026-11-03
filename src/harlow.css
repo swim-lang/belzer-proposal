@@ -1,0 +1,6 @@
+.harlow-timeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:64px 0 40px;padding:0;list-style:none}
+.harlow-milestone{position:relative;border-top:1px solid var(--color-rule);padding:38px 32px 0 0}
+.harlow-timeline-dot{position:absolute;top:-16px;left:0;display:grid;place-items:center;width:32px;height:32px;border:1px solid var(--color-ink);border-radius:50%;background:var(--color-paper);font-size:10px}
+.harlow-milestone h3{font-size:30px;line-height:1.2;margin:18px 0 16px}
+.harlow-timeline-body{font-size:14px;line-height:1.8;color:var(--color-ink-2,#66695e)}
+@media(max-width:767px){.harlow-timeline{display:block;margin:36px 0 0}.harlow-milestone{margin-left:16px;border-top:0;border-left:1px solid var(--color-rule);padding:0 0 40px 32px}.harlow-timeline-dot{top:0;left:-16px}.harlow-milestone:last-child{border-left-color:transparent;padding-bottom:10px}.harlow-milestone h3{font-size:28px}}
