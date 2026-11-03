@@ -58,9 +58,14 @@ const process = [
  ['Refinement & handoff','Refine the direction, finish the guide and templates, and walk through the launch plan together.'],
 ]
 const work = [
- ['Soft Hours','Fashion & lifestyle','Branding for a restwear label, showing how identity and imagery create a consistent feeling around a product.','soft-hours'],
- ['Nymph','Outdoor identity','A distinct point of view for an outdoor brand. A reference for building recognition and personality within an established category.','nymph'],
- ['Moat','Brand world','A smart-lock brand built around the idea of a modern castle. A reference for connecting story, visuals, and applications beyond a logo.','moat'],
+ ['Soft Hours','Fashion & lifestyle','A restwear label built around quiet personal time. A reference for connecting a product to a way of living.','soft-hours'],
+ ['Freddie','Consumer products','Sleep glasses with an approachable lifestyle identity. A reference for making a functional product feel personal.','freddie'],
+ ['Off Menu','Consumer products','A daily supplement with flavor and personality at its center. A reference for carrying a brand through packaging and product storytelling.','offmenu'],
+ ['Good Measure','Trades & craft','An identity for a business serving roofing contractors. A useful reference for the practical, workwear-adjacent character in Harlow’s references.','good-measure'],
+ ['Arc 88','Design & objects','An industrial design studio whose identity connects its thinking with the objects it makes. A reference for a considered, elevated presentation.','arc88'],
+ ['Garza','Local character','A law firm identity rooted in South Texas. A reference for drawing personality from a place and its culture.','garza'],
+ ['Koplow','Identity & applications','A focused identity for a defense practice, carried through physical applications. A reference for consistency across different touchpoints.','koplow'],
+ ['The Work','Product & craft','A cannabis brand centered on the care behind its product. A reference for making craft part of the brand story.','the-work'],
 ]
 function Section({id,number,title,children,dark=false}:{id:string;number:string;title:string;children:ReactNode;dark?:boolean}){
  return <section id={id} aria-labelledby={`${id}-title`} className={`scroll-mt-32 border-b border-[var(--color-rule)] px-6 py-16 md:px-16 lg:px-[120px] lg:py-24 ${dark?'bg-ink text-paper':''}`}><span className={`eyebrow ${dark?'text-paper/60':'text-ink-2'}`}>§ {number} · {title}</span><h2 id={`${id}-title`} className="display mb-10 mt-8 text-[48px] md:text-[72px]">{title}</h2>{children}</section>
