@@ -1,5 +1,18 @@
 [
   {
+    "id": "harlow",
+    "name": "Harlow: Brand Strategy & Identity",
+    "tagline": "First hat launch \u00b7 $4,500",
+    "status": "Draft",
+    "href": "/proposal/harlow",
+    "paths": [
+      "/proposal/harlow"
+    ],
+    "sourceFile": "src/HarlowProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true
+  },
+  {
     "id": "modern-leaf-contract",
     "name": "Modern Leaf: Agreement",
     "tagline": "Brand and phased website agreement \u00b7 $19,900",

@@ -1,3 +1,4 @@
+import { HarlowProposal } from './HarlowProposal'
 import { modernLeafContract } from './contracts/modernLeafContract'
 import { ModernLeafProposal } from './ModernLeafProposal'
 import { TPLGPortalProposal } from './TPLGPortalProposal'
@@ -115,6 +116,8 @@ export default function App() {
     }
 
     switch (proposalEntry.id) {
+      case 'harlow':
+        return withProposalGate(<HarlowProposal />)
       case 'modern-leaf-contract':
         return withProposalGate(<ContractPage contract={modernLeafContract} />)
       case 'modern-leaf':
