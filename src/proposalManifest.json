@@ -1,5 +1,18 @@
 [
   {
+    "id": "corrigan-ussery",
+    "name": "Corrigan & Ussery: Website",
+    "tagline": "Five-page website · Four weeks",
+    "status": "Draft",
+    "href": "/proposal/corrigan-ussery",
+    "paths": [
+      "/proposal/corrigan-ussery"
+    ],
+    "sourceFile": "src/CorriganUsseryProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true
+  },
+  {
     "id": "harlow",
     "name": "Harlow: Brand Strategy & Identity",
     "tagline": "First hat launch \u00b7 $4,500",
