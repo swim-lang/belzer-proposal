@@ -17,3 +17,10 @@ November 10: Maven, Lex Politica and Koplow agency pages returned HTTP 200 with 
 
 ## QA
 Reused existing proposal section, navigation, scope and timeline patterns. Dedicated CSS only. Password gate and noindex verified; navigation anchors, no horizontal overflow at 320/390/768/1024/1440, no browser errors. Desktop/mobile screenshots inspected. Existing 71 tests and build passed.
+
+## Identity revision and pricing evidence, November 10
+Sean supplied the current logo and requested a focused identity, small-size readability, defense-oriented character, and business essentials. Added recommendation and itemized deliverables; kept four-week target with identity approval as dependency. No logo redesign performed in the proposal. Ammunition joke reserved for Sean's optional conversational use.
+
+Andy confirmed his connected tools cannot read historical Wave invoice history. Found the accepted Maven proposal via Missive conversation b75d89b5-3f8f-422c-83df-1383d9a914ff: April 17, 2024 attachment Maven.png, accepted April 18. Attachment lists strategy 2300, identity 8500, copy 1500, web design 3500, development 4500, total 20300. Three-page web design, Framer development with CMS/SEO/animation/learning hub. Cover email says relationship discount of 16000 and rush fee waived; no separate discount math shown on attachment. Do not present this as payment verification or apply further discount to 20300.
+
+Working recommendation for Sean's review: identity and business materials 5500; five-page website including copy 9500; total15000; proposed50/25/25 payments7500/3750/3750. No standalone strategy engagement or portal. Not client approved. Prior fee-TBD and existing-identity-only notes above are superseded by this revision.
