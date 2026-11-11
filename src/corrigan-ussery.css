@@ -1,23 +1,17 @@
-.cu-timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:64px 0 40px;padding:0;list-style:none}
-.cu-milestone{position:relative;border-top:1px solid var(--color-rule);padding:38px 32px 0 0}
-.cu-timeline-dot{position:absolute;top:-16px;left:0;display:grid;place-items:center;width:32px;height:32px;border:1px solid var(--color-ink);border-radius:50%;background:var(--color-paper);font-size:10px}
-.cu-milestone h3{font-size:30px;line-height:1.2;margin:18px 0 16px}
-.cu-timeline-body{font-size:14px;line-height:1.8;color:var(--color-ink-2,#66695e)}
-@media(max-width:767px){.cu-timeline{display:block;margin:36px 0 0}.cu-milestone{margin-left:16px;border-top:0;border-left:1px solid var(--color-rule);padding:0 0 40px 32px}.cu-timeline-dot{top:0;left:-16px}.cu-milestone:last-child{border-left-color:transparent;padding-bottom:10px}.cu-milestone h3{font-size:28px}}
+/* Shared Genesi typography and section structure, with responsive dividers and timeline. */
+.corrigan-template section[id]{scroll-margin-top:100px}
+.cu-pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.cu-pillar{padding:0 28px;display:flex;flex-direction:column;gap:24px}.cu-pillar:first-child{padding-left:0}.cu-pillar:last-child{padding-right:0}.cu-pillar+.cu-pillar{border-left:1px solid var(--color-rule)}
+.cu-timeline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));list-style:none;margin:16px 0 0;padding:0}
+.cu-timeline .cu-milestone{position:relative;padding:42px 28px 0 0;border-top:1px solid #b8b5ad}
+.cu-timeline .cu-timeline-dot{position:absolute;top:-16px;left:0;display:grid;place-items:center;width:32px;height:32px;border:1px solid var(--color-ink);border-radius:50%;background:var(--color-paper);font-size:10px;transition:background-color .45s ease,color .45s ease,box-shadow .45s ease}
+.cu-timeline .cu-milestone.is-active .cu-timeline-dot{background:var(--color-ink);color:var(--color-paper);box-shadow:0 0 0 5px rgb(10 10 10 / .06)}
+@media(min-width:768px) and (max-width:1279px){.cu-pillars{grid-template-columns:repeat(2,minmax(0,1fr))}.cu-pillar{padding:32px}.cu-pillar:nth-child(odd){padding-left:0;border-left:0}.cu-pillar:nth-child(even){padding-right:0}.cu-pillar:nth-child(n+3){border-top:1px solid var(--color-rule)}}
+@media(max-width:767px){.corrigan-template section[id]{scroll-margin-top:170px}.cu-pillars{grid-template-columns:1fr}.cu-pillar{padding:28px 0}.cu-pillar+.cu-pillar{border-left:0;border-top:1px solid #d7d4cc}.cu-timeline{grid-template-columns:1fr;margin-left:16px}.cu-timeline .cu-milestone{border-top:0;border-left:1px solid #b8b5ad;padding:0 0 40px 32px}.cu-timeline .cu-milestone:last-child{border-left-color:transparent;padding-bottom:0}.cu-timeline .cu-timeline-dot{top:0;left:-16px}}
+@media(prefers-reduced-motion:reduce){.cu-timeline .cu-timeline-dot{transition:none}}
+.cu-payments>div{display:flex;flex-direction:column}
+.cu-payments>div>p{margin-top:auto}
+.cu-payments h4{padding-bottom:12px}
 
-.cu-scope-group{display:grid;grid-template-columns:260px minmax(0,1fr);gap:56px;border-top:1px solid var(--color-rule);padding:40px 0 56px}
-.cu-scope-heading h3{font-size:34px;line-height:1.15;margin:0 0 18px}.cu-scope-heading>p{font-size:15px;line-height:1.8;color:var(--color-ink-2)}
-.cu-scope-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 36px;align-items:start}.cu-scope-card{min-width:0;border-top:1px solid var(--color-rule);padding-top:18px}.cu-scope-card h4{font-size:26px;line-height:1.2;margin:0 0 14px}.cu-scope-card>p{font-size:14px;line-height:1.8;color:var(--color-ink-2)}
-.cu-scope-card details{margin-top:18px}.cu-scope-card summary,.cu-pages summary{display:flex;justify-content:space-between;gap:12px;cursor:pointer;font-size:13px;font-weight:600;padding:12px 0;list-style:none}.cu-scope-card summary::-webkit-details-marker,.cu-pages summary::-webkit-details-marker{display:none}.cu-scope-card summary:focus-visible,.cu-pages summary:focus-visible{outline:2px solid currentColor;outline-offset:4px}.cu-scope-card details[open] summary span,.cu-pages[open] summary span{transform:rotate(45deg)}
-.cu-scope-card ul{list-style:disc;padding-left:18px;margin-top:10px;font-size:13px;line-height:1.8;color:var(--color-ink-2)}.cu-scope-card li+li{margin-top:10px}.cu-pages{margin-top:24px;border-top:1px solid var(--color-rule)}.cu-pages ol{padding-left:18px;list-style:decimal}.cu-pages li{margin:14px 0;font-size:13px;line-height:1.7}.cu-pages p{font-size:13px;line-height:1.7;color:var(--color-ink-2)}
-@media(max-width:1023px){.cu-scope-group{grid-template-columns:1fr;gap:30px}.cu-scope-heading{max-width:650px}}
-@media(max-width:639px){.cu-scope-cards{grid-template-columns:1fr;gap:24px}.cu-scope-heading h3{font-size:30px}}
-@media print{.cu-scope-card details ul,.cu-pages ol,.cu-pages>p{display:block!important}.cu-scope-card details::details-content,.cu-pages::details-content{content-visibility:visible!important}}
-
-.cu-milestone .cu-timeline-dot{transition:background-color .5s ease,color .5s ease,box-shadow .5s ease,transform .5s ease}
-.cu-milestone.is-active .cu-timeline-dot{background:var(--color-ink);color:var(--color-paper);box-shadow:0 0 0 6px color-mix(in srgb,var(--color-ink) 8%,transparent);transform:scale(1.06)}
-@media(min-width:768px){.cu-milestone:nth-child(2) .cu-timeline-dot{transition-delay:.12s}.cu-milestone:nth-child(3) .cu-timeline-dot{transition-delay:.24s}.cu-milestone:nth-child(4) .cu-timeline-dot{transition-delay:.36s}}
-@media(prefers-reduced-motion:reduce){.cu-milestone .cu-timeline-dot{transition:none}.cu-milestone.is-active .cu-timeline-dot{transform:none}}
-@media(max-width:359px){.cu-wordmark{width:90px;height:16px}}
-
-.cu-scope-card summary,.cu-pages summary{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:44px;max-width:100%;border-radius:999px;padding:11px 18px;background:var(--color-ink);color:var(--color-paper);line-height:1.4;font-weight:500}.cu-scope-card summary:hover,.cu-pages summary:hover{background:#303030}.cu-scope-card summary:focus-visible,.cu-pages summary:focus-visible{outline-color:var(--color-ink)}.cu-pages summary{margin-top:16px}
+.cu-tplg-preview{transform:scale(1.13)}
+@media(min-width:768px) and (max-width:1199px){.cu-timeline{grid-template-columns:1fr;margin-left:16px}.cu-timeline .cu-milestone{border-top:0;border-left:1px solid #b8b5ad;padding:0 0 40px 32px}.cu-timeline .cu-milestone:last-child{border-left-color:transparent;padding-bottom:0}.cu-timeline .cu-timeline-dot{top:0;left:-16px}}
