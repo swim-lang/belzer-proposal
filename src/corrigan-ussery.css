@@ -13,3 +13,9 @@
 @media(max-width:1023px){.cu-scope-group{grid-template-columns:1fr;gap:30px}.cu-scope-heading{max-width:650px}}
 @media(max-width:639px){.cu-scope-cards{grid-template-columns:1fr;gap:24px}.cu-scope-heading h3{font-size:30px}}
 @media print{.cu-scope-card details ul,.cu-pages ol,.cu-pages>p{display:block!important}.cu-scope-card details::details-content,.cu-pages::details-content{content-visibility:visible!important}}
+
+.cu-milestone .cu-timeline-dot{transition:background-color .5s ease,color .5s ease,box-shadow .5s ease,transform .5s ease}
+.cu-milestone.is-active .cu-timeline-dot{background:var(--color-ink);color:var(--color-paper);box-shadow:0 0 0 6px color-mix(in srgb,var(--color-ink) 8%,transparent);transform:scale(1.06)}
+@media(min-width:768px){.cu-milestone:nth-child(2) .cu-timeline-dot{transition-delay:.12s}.cu-milestone:nth-child(3) .cu-timeline-dot{transition-delay:.24s}.cu-milestone:nth-child(4) .cu-timeline-dot{transition-delay:.36s}}
+@media(prefers-reduced-motion:reduce){.cu-milestone .cu-timeline-dot{transition:none}.cu-milestone.is-active .cu-timeline-dot{transform:none}}
+@media(max-width:359px){.cu-wordmark{width:90px;height:16px}}
