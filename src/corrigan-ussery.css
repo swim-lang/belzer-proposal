@@ -4,3 +4,12 @@
 .cu-milestone h3{font-size:30px;line-height:1.2;margin:18px 0 16px}
 .cu-timeline-body{font-size:14px;line-height:1.8;color:var(--color-ink-2,#66695e)}
 @media(max-width:767px){.cu-timeline{display:block;margin:36px 0 0}.cu-milestone{margin-left:16px;border-top:0;border-left:1px solid var(--color-rule);padding:0 0 40px 32px}.cu-timeline-dot{top:0;left:-16px}.cu-milestone:last-child{border-left-color:transparent;padding-bottom:10px}.cu-milestone h3{font-size:28px}}
+
+.cu-scope-group{display:grid;grid-template-columns:260px minmax(0,1fr);gap:56px;border-top:1px solid var(--color-rule);padding:40px 0 56px}
+.cu-scope-heading h3{font-size:34px;line-height:1.15;margin:22px 0 18px}.cu-scope-heading>p{font-size:15px;line-height:1.8;color:var(--color-ink-2)}
+.cu-scope-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 36px;align-items:start}.cu-scope-card{min-width:0;border-top:1px solid var(--color-rule);padding-top:18px}.cu-scope-card h4{font-size:26px;line-height:1.2;margin:14px 0}.cu-scope-card>p{font-size:14px;line-height:1.8;color:var(--color-ink-2)}
+.cu-scope-card details{margin-top:18px}.cu-scope-card summary,.cu-pages summary{display:flex;justify-content:space-between;gap:12px;cursor:pointer;font-size:13px;font-weight:600;padding:12px 0;list-style:none}.cu-scope-card summary::-webkit-details-marker,.cu-pages summary::-webkit-details-marker{display:none}.cu-scope-card summary:focus-visible,.cu-pages summary:focus-visible{outline:2px solid currentColor;outline-offset:4px}.cu-scope-card details[open] summary span,.cu-pages[open] summary span{transform:rotate(45deg)}
+.cu-scope-card ul{list-style:disc;padding-left:18px;margin-top:10px;font-size:13px;line-height:1.8;color:var(--color-ink-2)}.cu-scope-card li+li{margin-top:10px}.cu-pages{margin-top:24px;border-top:1px solid var(--color-rule)}.cu-pages ol{padding-left:18px;list-style:decimal}.cu-pages li{margin:14px 0;font-size:13px;line-height:1.7}.cu-pages p{font-size:13px;line-height:1.7;color:var(--color-ink-2)}
+@media(max-width:1023px){.cu-scope-group{grid-template-columns:1fr;gap:30px}.cu-scope-heading{max-width:650px}}
+@media(max-width:639px){.cu-scope-cards{grid-template-columns:1fr;gap:24px}.cu-scope-heading h3{font-size:30px}}
+@media print{.cu-scope-card details ul,.cu-pages ol,.cu-pages>p{display:block!important}.cu-scope-card details::details-content,.cu-pages::details-content{content-visibility:visible!important}}

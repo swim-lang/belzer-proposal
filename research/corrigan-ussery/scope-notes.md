@@ -27,3 +27,9 @@ Working recommendation for Sean's review: identity and business materials 5500; 
 
 ## Approved price refinement
 Sean approved the cost direction and requested just under $15,000. Updated total to $14,999: identity $5,499 and website $9,500. Exact 50/25/25 payments are $7,499.50, $3,749.75, $3,749.75. Reserve this line for the eventual email, not the proposal: “If Capitol logos were ammunition, Washington would never run short.” No email drafting or sending requested in this revision.
+
+## November 11 review
+Sean requested $16,999 total, Genesi beta label, TPLG brand pitch, expanded awards, clearer scope and logo repair. Identity is now $7,499; website remains $9,500. Payments: $8,499.50 / $4,249.75 / $4,249.75. Scope reorganized into identity and website groups with expandable deliverable lists; underlying deliverables unchanged. Header now embeds the existing local Anchovies SVG paths directly, removing the image request. Gate logo also verified loading.
+TPLG original July 28 Brand Pitch email (Missive conversation 019fa98f-eed2-74af-99d7-e1e8fde55133) links https://swim-lang.github.io/tplg-deck/#29. Linked root to start presentation at beginning and verified title/body in browser. This is a brand presentation, not the separate staff portal or V2 preview.
+Verified Lawyerist award articles: 2023 Belzer Law Firm, 2025 Lex Politica, 2026 Sidweber Law and Burnham Law. Each linked to its year article. Genesi explicitly labeled Beta / work in progress.
+Build passed; gate, noindex, logo, totals, all disclosure controls, collapsed/expanded overflow at 320–1440px checked. Desktop/mobile scope screenshots inspected. Local only.
