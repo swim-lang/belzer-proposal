@@ -1,3 +1,4 @@
+import { corriganUsseryContract } from './contracts/corriganUsseryContract'
 import { CorriganUsseryProposal } from './CorriganUsseryProposal'
 import { HarlowProposal } from './HarlowProposal'
 import { modernLeafContract } from './contracts/modernLeafContract'
@@ -117,6 +118,8 @@ export default function App() {
     }
 
     switch (proposalEntry.id) {
+      case 'corrigan-ussery-contract':
+        return withProposalGate(<ContractPage contract={corriganUsseryContract} />)
       case 'corrigan-ussery':
         return withProposalGate(<CorriganUsseryProposal />)
       case 'harlow':

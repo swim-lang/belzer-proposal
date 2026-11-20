@@ -1,5 +1,18 @@
 [
   {
+    "id": "corrigan-ussery-contract",
+    "name": "Corrigan & Ussery: Agreement",
+    "tagline": "Focused identity and five-page website · $16,999",
+    "status": "Active",
+    "href": "/proposal/corrigan-ussery/contract",
+    "paths": [
+      "/proposal/corrigan-ussery/contract"
+    ],
+    "sourceFile": "src/contracts/corriganUsseryContract.ts",
+    "kind": "contract",
+    "showInDashboard": true
+  },
+  {
     "id": "corrigan-ussery",
     "name": "Corrigan & Ussery: Identity & Website",
     "tagline": "Focused identity + five-page website · Four weeks",
