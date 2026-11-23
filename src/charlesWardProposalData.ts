@@ -1,6 +1,7 @@
 export const charlesWardProposals = {
   "pilates-loft": {
     "name": "The Pilates Loft",
+    "fee": 2900,
     "kind": "Website Proposal",
     "headline": "Personal attention, from the first click.",
     "subhead": "A website that makes the value of your studio clear.",
@@ -77,6 +78,7 @@ export const charlesWardProposals = {
           "One spam-protected inquiry form",
           "Email delivery and confirmation testing",
           "Page titles, descriptions, and sitemap",
+          "Redirects for existing pages replaced by the new site",
           "Accurate local studio information",
           "Visitor and inquiry-submission analytics",
           "Mobile, keyboard, and browser checks",
@@ -124,6 +126,7 @@ export const charlesWardProposals = {
   },
   "novella": {
     "name": "Novella Real Estate",
+    "fee": 3500,
     "kind": "Brand Refresh Proposal",
     "headline": "Give independence a stronger presence.",
     "subhead": "A sharper brand for the brokerage you are building.",
@@ -200,8 +203,8 @@ export const charlesWardProposals = {
           "Four editable social templates: recruiting, listing, agent introduction, and client story",
           "One reusable six-slide recruiting presentation",
           "Email signature design template",
-          "Homepage and recruiting-page hero concepts, each shown on desktop and mobile",
-          "Editable template files and organized exports",
+          "Two website hero concepts: homepage and recruiting page, each shown on desktop and mobile",
+          "Editable templates in an agreed tool your team uses, plus organized exports",
           "Recorded walkthrough and rollout priorities"
         ]
       }
@@ -226,7 +229,7 @@ export const charlesWardProposals = {
       ]
     ],
     "timing": "A three-week target once source files and initial materials are ready. Allow two business days for consolidated feedback at review milestones. We will confirm the start date and required broker approvals at kickoff.",
-    "investment": "A fixed fee for brand direction, identity refinement, four social templates, a recruiting presentation, an email signature template, digital design examples, and handoff.",
+    "investment": "A fixed fee for brand direction, identity refinement, four social templates, a recruiting presentation, an email signature template, two website hero concepts shown on desktop and mobile, and handoff.",
     "closing": "Give the right agents a reason to lean in.",
     "closingBody": "Novella has a point of view worth making visible. Let’s give the team a brand they are proud to put in front of the people they want to work with."
   }

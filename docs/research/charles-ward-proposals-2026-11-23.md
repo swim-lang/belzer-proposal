@@ -10,8 +10,12 @@ Local review only. No publication, email, contract, or invoice authorized in thi
 
 ## Draft decisions for Sean
 
-- Pilates Loft: $3,000 website, three core pages, copy/design/build, one inquiry form, local search foundations, analytics, and launch. Preserve Mindbody; no scheduling or payment integration rebuild. General goals and experience only in public form; sensitive intake remains in established workflow. Hosting/subscriptions separate.
-- Novella: $3,000 working figure supplied by Sean, not a previously agreed client price. Refine existing identity and apply to four social templates, one six-slide recruiting presentation, one email signature template, and desktop/mobile hero concepts for homepage and recruiting page. No website implementation, naming, full logo replacement, eighteen-agent rollout, or ongoing content service.
-- Both: proposed three-week target and 50/50 payments ($1,500 each). These are draft terms, not recorded client commitments.
+- Pilates Loft: $2,900 website, three core pages, copy/design/build, one inquiry form, local search foundations, analytics, and launch. Preserve Mindbody; no scheduling or payment integration rebuild. General goals and experience only in public form; sensitive intake remains in established workflow. Hosting/subscriptions separate.
+- Novella: $3,500 revised working figure supplied by Sean, not a previously agreed client price. Refine existing identity and apply to four social templates, one six-slide recruiting presentation, one email signature template, and desktop/mobile hero concepts for homepage and recruiting page. No website implementation, naming, full logo replacement, eighteen-agent rollout, or ongoing content service.
+- Both: proposed three-week target and Sean-approved 50/50 payments (Pilates Loft: $1,450 each; Novella: $1,750 each). These are draft terms, not recorded client commitments.
 - Reuse approved Corrigan/Genesi typography, layout, scope rows, timeline, investment, and closing CTAs. New CSS is scoped to these two drafts. No existing proposal content or pricing changed.
 - Review routes: /proposal/pilates-loft and /proposal/novella. Existing proposal gate and noindex conventions retained.
+
+## Final draft review
+
+Sean revised Pilates Loft to $2,900 and Novella to $3,500. Payment amounts derive from each proposal fee. Added redirects for replaced Pilates pages, specified two website hero concepts for Novella (desktop and mobile, not full-page implementation), and clarified editable templates will use an agreed team tool. No additional pages or new brand scope added.
