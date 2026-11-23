@@ -1,0 +1,2 @@
+/* Only the new Charles Ward proposals: preserve the approved Corrigan template. */
+@media(min-width:1200px){.charles-ward-template .cu-timeline{grid-template-columns:repeat(3,minmax(0,1fr));gap:0}.charles-ward-template .cu-milestone{padding-right:40px}}

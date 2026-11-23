@@ -1,5 +1,31 @@
 [
   {
+    "id": "pilates-loft",
+    "name": "The Pilates Loft",
+    "tagline": "Three-page website · $3,000 · November 2026",
+    "status": "Draft",
+    "href": "/proposal/pilates-loft",
+    "paths": [
+      "/proposal/pilates-loft"
+    ],
+    "sourceFile": "src/CharlesWardProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true
+  },
+  {
+    "id": "novella",
+    "name": "Novella Real Estate",
+    "tagline": "Brand refresh · $3,000 · November 2026",
+    "status": "Draft",
+    "href": "/proposal/novella",
+    "paths": [
+      "/proposal/novella"
+    ],
+    "sourceFile": "src/CharlesWardProposal.tsx",
+    "kind": "proposal",
+    "showInDashboard": true
+  },
+  {
     "id": "corrigan-ussery-contract",
     "name": "Corrigan & Ussery: Agreement",
     "tagline": "Focused identity and five-page website · $16,999",
