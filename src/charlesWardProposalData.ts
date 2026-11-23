@@ -3,25 +3,25 @@ export const charlesWardProposals = {
     "name": "The Pilates Loft",
     "fee": 2900,
     "kind": "Website Proposal",
-    "headline": "Personal attention, from the first click.",
-    "subhead": "A website that makes the value of your studio clear.",
-    "intro": "Jamie’s personal attention is the reason to choose The Pilates Loft. The new website should help prospective clients understand that difference, picture themselves in the studio, and request a conversation. Mindbody continues to handle the client relationship after that first introduction.",
-    "outcome": "More of the right inquiries. A better start for every client.",
+    "headline": "Show why the teacher matters.",
+    "subhead": "A three-page website that explains how Jamie teaches and helps new clients find their way into the studio.",
+    "intro": "Before someone calls Jamie, the website can help them understand what they are paying for: close attention, instruction suited to them, and a small studio where the teacher knows how they move. We will explain that experience and make it easy to request a visit. Scheduling and payments stay in Mindbody.",
+    "outcome": "New clients who understand the teaching before they ask about the price.",
     "outcomes": [
       [
-        "Make the premium feel worthwhile",
+        "Explain what the fee pays for",
         "Explain the care, expertise, and small-group attention behind the experience so visitors can see why this is different from a drop-in class."
       ],
       [
-        "Turn interest into a conversation",
+        "Help visitors take the first step",
         "Give new visitors one clear next step: request a visit or introductory call with Jamie. Help them feel ready to reach out without asking them to choose and pay for a program first."
       ],
       [
-        "Attract people who will stay",
+        "Connect Pilates to life outside the studio",
         "Speak to people who want to keep moving well in everyday life, whether that means skiing, golf, or time with their grandchildren. Show a thoughtful path into the studio."
       ],
       [
-        "Learn what brings people in",
+        "See which pages lead to inquiries",
         "Track visits and inquiry submissions so the team can see which pages and messages generate interest, then make future decisions with evidence."
       ]
     ],
@@ -36,15 +36,15 @@ export const charlesWardProposals = {
       },
       {
         "title": "Inquiries",
-        "body": "A clear request form that starts a conversation with Jamie."
+        "body": "A short request form so Jamie can follow up personally."
       },
       {
         "title": "Launch",
         "body": "Search basics, analytics, testing, and a practical handoff."
       }
     ],
-    "scopeTitle": "A focused website, ready to welcome new clients.",
-    "scopeIntro": "We use Charles’s positioning document as the starting point, confirm the details with Jamie, and take the first pass on copy and design. The existing name and visual identity carry forward.",
+    "scopeTitle": "Three pages with a job to do.",
+    "scopeIntro": "The positioning makes a useful distinction: people need help finding the right instruction before choosing a lesson. We will build the site around that sequence, confirm the details with Jamie, and write the first draft. The existing name and visual identity carry forward.",
     "engagement": [
       {
         "title": "Structure & copy.",
@@ -121,33 +121,33 @@ export const charlesWardProposals = {
     ],
     "timing": "A three-week target once access, photography, and initial materials are ready. Allow two business days for consolidated feedback at each review. We will confirm a start date together; delayed approvals or new scope may move launch.",
     "investment": "A fixed fee for the three-page website, copy, design, development, inquiry form, foundational search setup, analytics, and launch support.",
-    "closing": "Make the first visit start well.",
-    "closingBody": "The website should give people a sense of the attention they will receive before they ever walk through the door. Let’s make that first impression as thoughtful as the studio itself."
+    "closing": "Help someone picture their first lesson.",
+    "closingBody": "Someone may arrive looking for a Pilates class without knowing what makes one studio different from another. We want them to leave knowing who Jamie is, how the teaching works, and why they would like to try it."
   },
   "novella": {
     "name": "Novella Real Estate",
     "fee": 3500,
     "kind": "Brand Refresh Proposal",
-    "headline": "Give independence a stronger presence.",
-    "subhead": "A sharper brand for the brokerage you are building.",
-    "intro": "The positioning gives Novella a clear point of view. Now the visual identity and everyday materials need to carry it with the same conviction. We will refine the existing brand so experienced agents see a credible home for their business, and buyers and sellers see a team they can trust.",
-    "outcome": "A brokerage experienced agents want to join, and clients remember.",
+    "headline": "Give experienced agents a reason to choose Novella.",
+    "subhead": "An identity refresh and recruiting toolkit built around the case for an independent brokerage.",
+    "intro": "An experienced agent is deciding where to put their name and their client relationships. Charles’s positioning gives them reasons to consider Novella. We will bring those reasons into the identity, recruiting materials, and website concepts so the quality of the presentation supports the decision.",
+    "outcome": "Help agents see a place for their business at Novella.",
     "outcomes": [
       [
-        "Earn a serious look from experienced agents",
-        "Bring the presentation up to the standard of the opportunity. Make independence, support, and professional pride visible before the first recruiting conversation."
+        "Get onto an experienced agent’s shortlist",
+        "Show what an agent gains by joining: independence, marketing support, and a brokerage they would be proud to represent. Give them reasons to ask more about how Novella works."
       ],
       [
-        "Make the difference easier to recognize",
-        "Translate the client-first positioning into a clear visual and verbal impression, with enough character to stand apart from interchangeable brokerage marketing."
+        "Explain the choice to stay independent",
+        "Use the positioning to explain how Novella’s independence serves agents and their clients. Let that argument guide the design and copy, rather than relying on familiar real estate slogans."
       ],
       [
-        "Build confidence across every touchpoint",
-        "Give clients and prospective agents a consistent impression whether they meet Novella through a social post, a presentation, or the website."
+        "Make the brokerage recognizable across its agents",
+        "Give individual agents a shared visual language for listings, introductions, and client stories, so their marketing also builds recognition for Novella."
       ],
       [
-        "Make good marketing easier to repeat",
-        "Give the team practical templates and guidance so each new piece reinforces the brand without starting from scratch."
+        "Reduce the work of making the next piece",
+        "Let the team update a listing, introduce an agent, or prepare a recruiting presentation using files they already know how to use."
       ]
     ],
     "pillars": [
@@ -168,8 +168,8 @@ export const charlesWardProposals = {
         "body": "Digital examples, a concise brand guide, and organized files."
       }
     ],
-    "scopeTitle": "Make the existing brand work harder.",
-    "scopeIntro": "This is a focused refresh built on Charles’s positioning work. We retain the Novella name and the character of the wordmark and star, then strengthen how the whole system shows up.",
+    "scopeTitle": "Keep the name. Improve how it shows up.",
+    "scopeIntro": "Charles’s positioning connects the brokerage’s independence to the interests of its clients and agents. Our job is to make that idea understandable in the materials people actually see. We retain the Novella name and the character of the wordmark and star.",
     "engagement": [
       {
         "title": "Brand direction.",
@@ -230,7 +230,7 @@ export const charlesWardProposals = {
     ],
     "timing": "A three-week target once source files and initial materials are ready. Allow two business days for consolidated feedback at review milestones. We will confirm the start date and required broker approvals at kickoff.",
     "investment": "A fixed fee for brand direction, identity refinement, four social templates, a recruiting presentation, an email signature template, two website hero concepts shown on desktop and mobile, and handoff.",
-    "closing": "Give the right agents a reason to lean in.",
-    "closingBody": "Novella has a point of view worth making visible. Let’s give the team a brand they are proud to put in front of the people they want to work with."
+    "closing": "Would you send it to an agent you want to recruit?",
+    "closingBody": "That is the test we want the finished work to pass: would an experienced agent understand what Novella offers, see the care behind the brokerage, and want to learn more? The recruiting materials and website concepts give us concrete ways to answer that together."
   }
 } as const
